@@ -26,6 +26,8 @@ Go to your Vercel project **Settings** → **Environment Variables** and add:
 
 ### Build Configuration
 
+The project is configured with [vercel.json](vercel.json) to use the Next.js framework and run the custom build command.
+
 The build process includes:
 1. TinaCMS schema generation (`tinacms build`)
 2. Next.js build (`next build`)
@@ -35,6 +37,12 @@ If you need to build without TinaCMS (for testing):
 ```bash
 npm run build:no-tina
 ```
+
+### Vercel Configuration
+
+The [vercel.json](vercel.json) file specifies:
+- Framework: Next.js (handles output directory automatically)
+- Build command: `npm run build` (includes TinaCMS and Storybook)
 
 ### Storybook Access
 
@@ -56,6 +64,12 @@ npm run dev
 This sets `TINA_PUBLIC_IS_LOCAL=true` which uses local authentication and content API.
 
 ## Troubleshooting
+
+### Build fails with "No Output Directory named 'dist' found"
+
+**Cause:** Vercel doesn't recognize the Next.js framework automatically.
+
+**Solution:** The [vercel.json](vercel.json) file has been added to specify the Next.js framework. This should be automatically detected on the next deployment.
 
 ### Build fails with "Missing token" error
 
