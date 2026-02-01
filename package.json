@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
-    "build": "tinacms build && next build",
+    "build": "tinacms build && next build && npm run build-storybook",
+    "build:no-tina": "next build && npm run build-storybook",
     "start": "next start",
     "lint": "eslint",
     "storybook": "storybook dev -p 6006",
