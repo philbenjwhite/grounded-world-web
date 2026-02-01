@@ -52,8 +52,10 @@ This ensures that accessing `/storybook` loads the Storybook UI correctly.
 ### Files Created
 - [.storybook/main.ts](.storybook/main.ts) - Main Storybook configuration
 - [.storybook/preview.ts](.storybook/preview.ts) - Preview configuration with Tailwind CSS imports
-- [src/components/Button.tsx](src/components/Button.tsx) - Example component
-- [src/components/Button.stories.tsx](src/components/Button.stories.tsx) - Example story
+- [src/components/Button/](src/components/Button/) - Example Button component (collocated structure)
+  - [Button.tsx](src/components/Button/Button.tsx) - Component implementation
+  - [Button.stories.tsx](src/components/Button/Button.stories.tsx) - Storybook stories
+  - [index.ts](src/components/Button/index.ts) - Export file
 
 ### Tailwind CSS Integration
 
@@ -74,13 +76,33 @@ Components can use these tokens via Tailwind classes:
 </button>
 ```
 
+## Component Structure
+
+Components follow a collocated structure where related files are kept together:
+
+```
+src/components/
+└── ComponentName/
+    ├── ComponentName.tsx         # Component implementation
+    ├── ComponentName.stories.tsx # Storybook stories
+    ├── ComponentName.test.tsx    # Tests (optional)
+    └── index.ts                  # Exports
+```
+
+### Example Component Structure
+
+The Button component demonstrates this pattern:
+- **Default export** in `Button.tsx` for the component
+- **index.ts** re-exports for clean imports: `import Button from '@/components/Button'`
+- **Stories collocated** next to the component for easy discovery
+
 ## Writing Stories
 
-Create new stories by adding files with the pattern `*.stories.tsx` in your `src` directory:
+Create new stories by adding a `*.stories.tsx` file next to your component:
 
 ```tsx
 import type { Meta, StoryObj } from '@storybook/react';
-import { YourComponent } from './YourComponent';
+import YourComponent from './YourComponent';
 
 const meta = {
   title: 'Components/YourComponent',
