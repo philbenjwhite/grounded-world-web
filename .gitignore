@@ -43,3 +43,7 @@ next-env.d.ts
 # TinaCMS
 /tina/__generated__
 /.tina
+
+*storybook.log
+storybook-static
+/public/storybook
