@@ -28,6 +28,25 @@ https://your-domain.com/storybook
 
 The built Storybook files are served directly by Next.js from the public folder.
 
+### Routing Configuration
+
+The [next.config.ts](next.config.ts) includes a rewrite rule to properly serve the Storybook index page:
+
+```typescript
+async rewrites() {
+  return {
+    beforeFiles: [
+      {
+        source: '/storybook',
+        destination: '/storybook/index.html',
+      },
+    ],
+  };
+}
+```
+
+This ensures that accessing `/storybook` loads the Storybook UI correctly.
+
 ## Configuration
 
 ### Files Created
