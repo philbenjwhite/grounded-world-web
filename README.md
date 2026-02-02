@@ -4,17 +4,17 @@ Next.js web application with TinaCMS for content management, Storybook for compo
 
 ## 📚 Documentation
 
-- **[Designer's Guide](DESIGNER_GUIDE.md)** - Complete guide for designers creating components with AI
-- **[Quick Start Cheat Sheet](DESIGNER_QUICK_START.md)** - One-page reference for designers
-- **[Storybook Setup](STORYBOOK_SETUP.md)** - Storybook configuration and usage
-- **[Deployment Guide](DEPLOYMENT.md)** - Vercel deployment instructions
+- **[Designer's Guide](docs/DESIGNER_GUIDE.md)** - Complete guide for designers creating components with AI
+- **[Quick Start Cheat Sheet](docs/DESIGNER_QUICK_START.md)** - One-page reference for designers
+- **[Storybook Setup](docs/STORYBOOK_SETUP.md)** - Storybook configuration and usage
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Vercel deployment instructions
 
 ## 🚀 Quick Start
 
 ### For Designers Creating Components
 
-1. Read the [Designer's Guide](DESIGNER_GUIDE.md) for the full workflow
-2. Or jump to the [Quick Start](DESIGNER_QUICK_START.md) for a cheat sheet
+1. Read the [Designer's Guide](docs/DESIGNER_GUIDE.md) for the full workflow
+2. Or jump to the [Quick Start](docs/DESIGNER_QUICK_START.md) for a cheat sheet
 3. View components in Storybook: `npm run storybook`
 
 ### For Developers
@@ -98,7 +98,7 @@ This project uses [TinaCMS](https://tina.io) for content management:
 - **Local development**: Uses local authentication
 - **Production**: Requires `TINA_TOKEN` environment variable
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for setup instructions.
+See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for setup instructions.
 
 ## Learn More
 

@@ -261,7 +261,7 @@ Ctrl + C
 - Slack: `#design-system`
 - GitHub: Comment on your PR
 
-**Full Guide:** See [DESIGNER_GUIDE.md](DESIGNER_GUIDE.md) for detailed instructions
+**Full Guide:** See [DESIGNER_GUIDE.md](./DESIGNER_GUIDE.md) for detailed instructions
 
 ---
 
