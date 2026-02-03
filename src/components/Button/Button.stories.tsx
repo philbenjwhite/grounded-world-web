@@ -9,14 +9,6 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'tertiary'],
-    },
-    size: {
-      control: 'select',
-      options: ['sm', 'md', 'lg'],
-    },
     disabled: {
       control: 'boolean',
     },
@@ -26,51 +18,17 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     children: 'Button',
-    variant: 'primary',
   },
 };
 
-export const Secondary: Story = {
+export const Hover: Story = {
   args: {
     children: 'Button',
-    variant: 'secondary',
   },
-};
-
-export const Tertiary: Story = {
-  args: {
-    children: 'Button',
-    variant: 'tertiary',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    children: 'Small Button',
-    size: 'sm',
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    children: 'Medium Button',
-    size: 'md',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    children: 'Large Button',
-    size: 'lg',
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    children: 'Disabled Button',
-    disabled: true,
+  parameters: {
+    pseudo: { hover: true },
   },
 };

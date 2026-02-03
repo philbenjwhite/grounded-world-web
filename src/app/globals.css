@@ -4,6 +4,68 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Semantic Color Tokens (default/light — same as dark until light mode is defined) */
+
+  /* Surface */
+  --surface-cyan: var(--color-brand-4DD9FF);
+  --surface-azure-1: var(--color-brand-00AEEF);
+  --surface-azure-2: var(--color-brand-0077B5);
+  --surface-magenta: var(--color-brand-FF08CC);
+  --surface-green: var(--color-brand-1CC35B);
+  --surface-gold: var(--color-brand-FFA603);
+  --surface-white: var(--color-neutral-FFFFFF);
+  --surface-gray-1: var(--color-neutral-FAFAFA);
+  --surface-gray-2: var(--color-neutral-E5E5E5);
+  --surface-gray-3: var(--color-neutral-B1B3B6);
+  --surface-gray-4: var(--color-neutral-848484);
+  --surface-gray-5: var(--color-neutral-333333);
+  --surface-black: var(--color-neutral-000000);
+
+  /* Text */
+  --text-cyan: var(--color-brand-4DD9FF);
+  --text-azure-1: var(--color-brand-00AEEF);
+  --text-azure-2: var(--color-brand-0077B5);
+  --text-magenta: var(--color-brand-FF08CC);
+  --text-green: var(--color-brand-1CC35B);
+  --text-gold: var(--color-brand-FFA603);
+  --text-white: var(--color-neutral-FFFFFF);
+  --text-gray-1: var(--color-neutral-FAFAFA);
+  --text-gray-2: var(--color-neutral-E5E5E5);
+  --text-gray-3: var(--color-neutral-B1B3B6);
+  --text-gray-4: var(--color-neutral-848484);
+  --text-gray-5: var(--color-neutral-333333);
+  --text-black: var(--color-neutral-000000);
+
+  /* Icon */
+  --icon-cyan: var(--color-brand-4DD9FF);
+  --icon-azure-1: var(--color-brand-00AEEF);
+  --icon-azure-2: var(--color-brand-0077B5);
+  --icon-magenta: var(--color-brand-FF08CC);
+  --icon-green: var(--color-brand-1CC35B);
+  --icon-gold: var(--color-brand-FFA603);
+  --icon-white: var(--color-neutral-FFFFFF);
+  --icon-gray-1: var(--color-neutral-FAFAFA);
+  --icon-gray-2: var(--color-neutral-E5E5E5);
+  --icon-gray-3: var(--color-neutral-B1B3B6);
+  --icon-gray-4: var(--color-neutral-848484);
+  --icon-gray-5: var(--color-neutral-333333);
+  --icon-black: var(--color-neutral-000000);
+
+  /* Stroke */
+  --stroke-cyan: var(--color-brand-4DD9FF);
+  --stroke-azure-1: var(--color-brand-00AEEF);
+  --stroke-azure-2: var(--color-brand-0077B5);
+  --stroke-magenta: var(--color-brand-FF08CC);
+  --stroke-green: var(--color-brand-1CC35B);
+  --stroke-gold: var(--color-brand-FFA603);
+  --stroke-white: var(--color-neutral-FFFFFF);
+  --stroke-gray-1: var(--color-neutral-FAFAFA);
+  --stroke-gray-2: var(--color-neutral-E5E5E5);
+  --stroke-gray-3: var(--color-neutral-B1B3B6);
+  --stroke-gray-4: var(--color-neutral-848484);
+  --stroke-gray-5: var(--color-neutral-333333);
+  --stroke-black: var(--color-neutral-000000);
 }
 
 @theme inline {
@@ -11,20 +73,124 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Brand Colors - referencing your design system primitives */
-  --color-primary: var(--primitive-brand-ca7436, #CA7436);
-  --color-primary-hover: var(--primitive-brand-eb7f31, #EB7F31);
-  --color-primary-active: var(--primitive-brand-f39552, #F39552);
+  /* Color/Brand */
+  --color-brand-4DD9FF: #4DD9FF;
+  --color-brand-00AEEF: #00AEEF;
+  --color-brand-0077B5: #0077B5;
+  --color-brand-FFA603: #FFA603;
+  --color-brand-FF08CC: #FF08CC;
+  --color-brand-1CC35B: #1CC35B;
+
+  /* Color/Neutral */
+  --color-neutral-000000: #000000;
+  --color-neutral-333333: #333333;
+  --color-neutral-848484: #848484;
+  --color-neutral-B1B3B6: #B1B3B6;
+  --color-neutral-E5E5E5: #E5E5E5;
+  --color-neutral-FAFAFA: #FAFAFA;
+  --color-neutral-FFFFFF: #FFFFFF;
+
+  /* Size */
+  --size-0: 0px;
+  --size-1: 1px;
+  --size-2: 2px;
+  --size-4: 4px;
+  --size-6: 6px;
+  --size-8: 8px;
+  --size-10: 10px;
+  --size-12: 12px;
+  --size-14: 14px;
+  --size-16: 16px;
+  --size-18: 18px;
+  --size-20: 20px;
+  --size-24: 24px;
+  --size-32: 32px;
+  --size-40: 40px;
+  --size-48: 48px;
+  --size-56: 56px;
+  --size-60: 60px;
+  --size-64: 64px;
+  --size-80: 80px;
+  --size-88: 88px;
+  --size-96: 96px;
+  --size-100: 100px;
+  --size-400: 400px;
+  --size-500: 500px;
+  --size-600: 600px;
+  --size-700: 700px;
+  --size-800: 800px;
 
   /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Semantic Color Tokens (built on primitives) */
+/* Dark Mode (Mode 1) */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* Surface */
+    --surface-cyan: var(--color-brand-4DD9FF);
+    --surface-azure-1: var(--color-brand-00AEEF);
+    --surface-azure-2: var(--color-brand-0077B5);
+    --surface-magenta: var(--color-brand-FF08CC);
+    --surface-green: var(--color-brand-1CC35B);
+    --surface-gold: var(--color-brand-FFA603);
+    --surface-white: var(--color-neutral-FFFFFF);
+    --surface-gray-1: var(--color-neutral-FAFAFA);
+    --surface-gray-2: var(--color-neutral-E5E5E5);
+    --surface-gray-3: var(--color-neutral-B1B3B6);
+    --surface-gray-4: var(--color-neutral-848484);
+    --surface-gray-5: var(--color-neutral-333333);
+    --surface-black: var(--color-neutral-000000);
+
+    /* Text */
+    --text-cyan: var(--color-brand-4DD9FF);
+    --text-azure-1: var(--color-brand-00AEEF);
+    --text-azure-2: var(--color-brand-0077B5);
+    --text-magenta: var(--color-brand-FF08CC);
+    --text-green: var(--color-brand-1CC35B);
+    --text-gold: var(--color-brand-FFA603);
+    --text-white: var(--color-neutral-FFFFFF);
+    --text-gray-1: var(--color-neutral-FAFAFA);
+    --text-gray-2: var(--color-neutral-E5E5E5);
+    --text-gray-3: var(--color-neutral-B1B3B6);
+    --text-gray-4: var(--color-neutral-848484);
+    --text-gray-5: var(--color-neutral-333333);
+    --text-black: var(--color-neutral-000000);
+
+    /* Icon */
+    --icon-cyan: var(--color-brand-4DD9FF);
+    --icon-azure-1: var(--color-brand-00AEEF);
+    --icon-azure-2: var(--color-brand-0077B5);
+    --icon-magenta: var(--color-brand-FF08CC);
+    --icon-green: var(--color-brand-1CC35B);
+    --icon-gold: var(--color-brand-FFA603);
+    --icon-white: var(--color-neutral-FFFFFF);
+    --icon-gray-1: var(--color-neutral-FAFAFA);
+    --icon-gray-2: var(--color-neutral-E5E5E5);
+    --icon-gray-3: var(--color-neutral-B1B3B6);
+    --icon-gray-4: var(--color-neutral-848484);
+    --icon-gray-5: var(--color-neutral-333333);
+    --icon-black: var(--color-neutral-000000);
+
+    /* Stroke */
+    --stroke-cyan: var(--color-brand-4DD9FF);
+    --stroke-azure-1: var(--color-brand-00AEEF);
+    --stroke-azure-2: var(--color-brand-0077B5);
+    --stroke-magenta: var(--color-brand-FF08CC);
+    --stroke-green: var(--color-brand-1CC35B);
+    --stroke-gold: var(--color-brand-FFA603);
+    --stroke-white: var(--color-neutral-FFFFFF);
+    --stroke-gray-1: var(--color-neutral-FAFAFA);
+    --stroke-gray-2: var(--color-neutral-E5E5E5);
+    --stroke-gray-3: var(--color-neutral-B1B3B6);
+    --stroke-gray-4: var(--color-neutral-848484);
+    --stroke-gray-5: var(--color-neutral-333333);
+    --stroke-black: var(--color-neutral-000000);
   }
 }
 
