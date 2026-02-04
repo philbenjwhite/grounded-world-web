@@ -426,21 +426,7 @@ const ServiceHeroNav: React.FC = () => {
       });
     });
 
-    // Animate lines
-    linesRef.current.forEach((line, index) => {
-      const material = line.material as THREE.LineBasicMaterial;
-      const currentColor = material.color;
-      const newVariationColor = generateColorVariation(newColor);
-
-      gsap.to(currentColor, {
-        duration: 1.5,
-        r: newVariationColor.r,
-        g: newVariationColor.g,
-        b: newVariationColor.b,
-        ease: "power2.out",
-        delay: index * 0.03
-      });
-    });
+    // No lines to animate in current implementation
 
     // Animate shapes
     shapesRef.current.forEach((shape, index) => {
