@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ServiceHeroNav from './ServiceHeroNav';
+import ServiceHeroNavConceptC from './ServiceHeroNavConceptC';
 
 const meta: Meta<typeof ServiceHeroNav> = {
   title: 'Components/ServiceHeroNav',
@@ -52,6 +53,38 @@ export const TabletView: Story = {
     docs: {
       description: {
         story: 'ServiceHeroNav on tablet-sized screens, showing the transition between mobile and desktop layouts.',
+      },
+    },
+  },
+};
+
+// ConceptC Stories
+type ConceptCStory = StoryObj<typeof ServiceHeroNavConceptC>;
+
+export const ConceptC: ConceptCStory = {
+  name: 'Concept C - Quadrant Layout',
+  render: () => <ServiceHeroNavConceptC />,
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        story: 'Alternative hero design with diagonal quadrant layout. Dark, cinematic interface divided into four triangular sections (Research, Strategy, Activation, Impact). Features mouse-tracking gradients, background image overlays, and smooth arrow animations on hover.',
+      },
+    },
+  },
+};
+
+export const ConceptCMobile: ConceptCStory = {
+  name: 'Concept C - Mobile',
+  render: () => <ServiceHeroNavConceptC />,
+  parameters: {
+    layout: 'fullscreen',
+    viewport: {
+      defaultViewport: 'mobile1',
+    },
+    docs: {
+      description: {
+        story: 'Concept C optimized for mobile devices, maintaining the quadrant layout with touch-friendly interactions.',
       },
     },
   },
