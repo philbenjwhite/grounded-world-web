@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
-import { ArrowUpRight, MagnifyingGlass, Strategy, Palette, ChartLineUp } from 'phosphor-react';
+import { ArrowUpRight, MagnifyingGlass, Strategy, Palette, ChartLineUp } from '@phosphor-icons/react';
 
 interface NavItem {
   id: string;
