@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import ServiceHeroNav from '@/components/ServiceHeroNav';
 import ServiceHeroNavConceptC from '@/components/ServiceHeroNav/ServiceHeroNavConceptC';
-import { ArrowsClockwise } from 'phosphor-react';
+import { ArrowsClockwise } from '@phosphor-icons/react';
 
 export default function TestNavPage() {
   const [variant, setVariant] = useState<'default' | 'conceptc'>('default');

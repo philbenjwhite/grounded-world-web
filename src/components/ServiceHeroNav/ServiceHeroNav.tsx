@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
-import { ArrowUpRight, MagnifyingGlass, Strategy, Palette, ChartLineUp } from '@phosphor-icons/react';
+import { ArrowUpRight, MagnifyingGlass, Strategy, Palette, ChartLineUp, IconProps } from '@phosphor-icons/react';
 
 interface NavItem {
   id: string;
@@ -11,7 +11,7 @@ interface NavItem {
   color: string;
   description: string;
   url: string;
-  icon: React.ComponentType<{ size?: number; weight?: string; color?: string }>;
+  icon: React.ComponentType<IconProps>;
 }
 
 const navItems: NavItem[] = [
@@ -52,10 +52,10 @@ const navItems: NavItem[] = [
 const ServiceHeroNav: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const sceneRef = useRef<THREE.Scene | undefined>();
-  const rendererRef = useRef<THREE.WebGLRenderer | undefined>();
-  const cameraRef = useRef<THREE.PerspectiveCamera | undefined>();
-  const animationFrameRef = useRef<number | undefined>();
+  const sceneRef = useRef<THREE.Scene | null>(null);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+  const animationFrameRef = useRef<number | null>(null);
   const [activeNav, setActiveNav] = useState<string>('research');
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
@@ -206,7 +206,7 @@ const ServiceHeroNav: React.FC = () => {
             velocity.set(waveX, waveY, waveZ).add(springForce);
 
             // Add some subtle flocking with nearby birds
-            const neighbors = [];
+            const neighbors: THREE.Mesh[] = [];
             dotsRef.current.forEach(otherBird => {
               if (otherBird !== bird && bird.position.distanceTo(otherBird.position) < 4) {
                 neighbors.push(otherBird);
@@ -368,31 +368,6 @@ const ServiceHeroNav: React.FC = () => {
     // No large energy orbs - keeping all dots consistent
   };
 
-  const createThemedElements = (scene: THREE.Scene, navId: string) => {
-    const navItem = navItems.find(item => item.id === navId);
-    if (!navItem) return;
-
-    // Clear existing elements
-    clearScene(scene);
-
-    const baseColor = navItem.color;
-
-    switch (navId) {
-      case 'research':
-        createMolecularElements(scene, baseColor);
-        break;
-      case 'strategy':
-        createNetworkElements(scene, baseColor);
-        break;
-      case 'activation':
-        createCreativeElements(scene, baseColor);
-        break;
-      case 'impact':
-        createDataElements(scene, baseColor);
-        break;
-    }
-  };
-
   const clearScene = (scene: THREE.Scene) => {
     dotsRef.current.forEach(dot => scene.remove(dot));
     shapesRef.current.forEach(shape => scene.remove(shape));
@@ -408,7 +383,6 @@ const ServiceHeroNav: React.FC = () => {
   };
 
   const animateColorChange = (newColor: string) => {
-    const targetColor = new THREE.Color(newColor);
 
     // Animate dots
     dotsRef.current.forEach((dot, index) => {
@@ -468,7 +442,7 @@ const ServiceHeroNav: React.FC = () => {
     }
   };
 
-  const animateToThemedPattern = (scene: THREE.Scene, navId: string) => {
+  const animateToThemedPattern = (_scene: THREE.Scene, navId: string) => {
     const navItem = navItems.find(item => item.id === navId);
     if (!navItem) return;
 
@@ -565,9 +539,9 @@ const ServiceHeroNav: React.FC = () => {
     });
   };
 
-  const animateToLightningPattern = (scene: THREE.Scene) => {
+  const animateToLightningPattern = (_scene: THREE.Scene) => {
     // Return birds to natural flocking behavior
-    dotsRef.current.forEach((bird, index) => {
+    dotsRef.current.forEach((bird) => {
       const material = bird.material as THREE.MeshBasicMaterial;
 
       // Return to subtle, faded default state
@@ -843,11 +817,6 @@ const ServiceHeroNav: React.FC = () => {
 
               // Calculate starting angle for each dot (90 degrees apart)
               const baseAngle = index * 90;
-              // Calculate current position based on rotation state
-              const currentAngle = baseAngle + currentRotation;
-              // Calculate exact counter-rotation to keep content at 0 degrees (always horizontal)
-              const counterRotation = -(baseAngle + currentRotation);
-
               return (
                 <div
                   key={item.id}

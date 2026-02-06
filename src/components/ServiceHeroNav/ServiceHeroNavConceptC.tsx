@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight } from 'phosphor-react';
+import { ArrowRight } from '@phosphor-icons/react';
 
 interface Quadrant {
   id: 'research' | 'strategy' | 'activation' | 'impact';
