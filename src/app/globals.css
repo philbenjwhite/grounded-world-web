@@ -7,7 +7,7 @@
 
   /* Semantic Color Tokens (default/light — same as dark until light mode is defined) */
 
-  /* Surface */
+  /* Surfaces */
   --surface-cyan: var(--color-brand-4DD9FF);
   --surface-azure-1: var(--color-brand-00AEEF);
   --surface-azure-2: var(--color-brand-0077B5);
@@ -74,21 +74,21 @@
   --color-foreground: var(--foreground);
 
   /* Color/Brand */
-  --color-brand-4DD9FF: #4DD9FF;
-  --color-brand-00AEEF: #00AEEF;
-  --color-brand-0077B5: #0077B5;
-  --color-brand-FFA603: #FFA603;
-  --color-brand-FF08CC: #FF08CC;
-  --color-brand-1CC35B: #1CC35B;
+  --color-brand-4DD9FF: #4dd9ff;
+  --color-brand-00AEEF: #00aeef;
+  --color-brand-0077B5: #0077b5;
+  --color-brand-FFA603: #ffa603;
+  --color-brand-FF08CC: #ff08cc;
+  --color-brand-1CC35B: #1cc35b;
 
   /* Color/Neutral */
   --color-neutral-000000: #000000;
   --color-neutral-333333: #333333;
   --color-neutral-848484: #848484;
-  --color-neutral-B1B3B6: #B1B3B6;
-  --color-neutral-E5E5E5: #E5E5E5;
-  --color-neutral-FAFAFA: #FAFAFA;
-  --color-neutral-FFFFFF: #FFFFFF;
+  --color-neutral-B1B3B6: #b1b3b6;
+  --color-neutral-E5E5E5: #e5e5e5;
+  --color-neutral-FAFAFA: #fafafa;
+  --color-neutral-FFFFFF: #ffffff;
 
   /* Size */
   --size-0: 0px;
