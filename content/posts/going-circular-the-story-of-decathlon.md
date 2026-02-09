@@ -1,0 +1,37 @@
+---
+title: "Going Circular: The Story of Decathlon"
+date: 2023-10-24T20:51:17.000Z
+description: The shift to a circular economy is a big deal in France - like pretty much everywhere else. People are realizing that the old way of doing things, where we t...
+author: phil-white
+category: brand-purpose
+---
+
+The shift to a circular economy is a big deal in France - like pretty much everywhere else. People are realizing that the old way of doing things, where we take, make, use, and throw stuff away, is messing up our planet. In fact, a whopping 93% of the French people think our economic system needs a major facelift, if not a complete overhaul. We're talking about a different kind of economy - one that's all about [responsible consumption](https://grounded.world/what-is-circular-fashion-the-future-of-fashion/), products that last longer, and turning trash into resources. This isn't just about changing what we buy; it's a full-scale societal transformation, requiring new lifestyles and sustainable ways of producing and consuming. But getting this [circular economy](https://grounded.world/sustainability-buzzwords/) going is tricky.
+
+The idea of the circular economy has been around for a while, but it really got some attention in France in the early 2010s. In 2013, an "[Institut National de l'Économie Circulaire" (INEC)](https://institut-economie-circulaire.fr/) was set up, and the ["Agence de l'Environnement et de la Maîtrise de l’Énergie"](https://fr.wikipedia.org/wiki/Agence_de_l%27environnement_et_de_la_ma%C3%AEtrise_de_l%27%C3%A9nergie) (ADEME) released their first report on it.
+
+Today, the French Government officially recognizes the transition to a circular economy as a key part of our ecological and social shift. They built on the ["Feuille de Route Economie Circulaire,"](https://www.ecologie.gouv.fr/feuille-route-economie-circulaire-frec) a roadmap published in 2018 after intense consultation and dialogue with stakeholders, and passed a law in February 2020 to promote the circular economy and reduce waste. This law focuses on five big goals: cutting down on single-use stuff, raising consumer awareness, dealing with waste smartly, encouraging reusing things, battling planned obsolescence, and making production practices better.
+
+On a bigger scale, the circular economy is a top priority in the [Green Deal initiative led by the European Commission](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/european-green-deal_en). In March 2020, they launched an action plan, emphasizing both legal and non-legal actions to boost sustainable product development, eco-design, consumer education, and waste reduction. They're honing in on key industries like packaging, plastics, textiles, electronics, and construction.
+
+So, the French Government and the European Commission are pushing hard for change, but here's the real deal – not many companies are fully on board with the circular economy. Most are into the idea and make long-term plans, but shifting from the old ways to the circular way is a big ask. It means shaking up how they do business, from top to bottom. It's a tough job. But let's focus on one of the rare French companies that's bravely making the change and gaining recognition as a trailblazer – Decathlon.
+
+**Decathlon, a pioneer in the circular economy in France**
+
+In case you're not familiar with [Decathlon](https://sustainability.decathlon.com/about-decathlon), they're a big name in the sports market. They've been around since 1976 and have both online and physical stores, with 325 shops in France and 1751 worldwide. Their mission? To make sports accessible to all and bring joy to people through sports. But Decathlon is also a front-runner in going green. Back in the early 2010s, they started measuring their carbon footprint, looking at the environmental impact all along the supply chain. They set science-based targets to cut their carbon footprint, reduce waste, and use fewer natural resources, water, and energy. They’ve been tracking progress closely and in full transparency, grading how [eco-friendly their sport gear was](https://grounded.world/sustainable-fashion-4-ways-fashion-brands-can-be-more-sustainable/) and showing it on shelves to their customers. Their most recent commitments are part of their 2020-2026 Transition Plan, which they worked on with "Decathlonians" from over 30 countries.
+
+![](/images/blog/2023-10-decathlon-developpement-durable-seconde-vie_1-8_1_w19352rl-300x200.jpg)Lately, Decathlon has been exploring how to turn their old linear business model into a circular one. They've launched a major initiative called [«Second Life»](https://www.decathlon.co.uk/shop-in-shop/second-life-products) anchored on three activities: repairing, renting and re-selling. They’ve got all sorts of projects going like fixing stuff in their shops and offering spare parts together with DIY videos online. They are renting out gear that you typically don’t use all year round like tents, kayaks or skis and testing a subscription scheme based on your intensity of practice in Belgium. They are also selling second-hand items on shelves, testing a buy-back scheme for bikes and other durable products, and even letting people recycle in their shops.
+
+![](/images/blog/2023-10-screen-shot-2023-10-24-at-6.19.54-pm-300x293.png)But switching to a circular model isn’t a walk in the park. It means shaking things up with their teams, their value chain partners and supporting start-ups, from designing stuff to making it to how it gets used and reused. Transforming their business also means measuring performance differently. At Decathlon, they have embraced the concept of « sustainable value creation ». It’s built on three pillars: sustainable sales (selling eco-friendly products and services), customer loyalty (keeping folks happy and coming back for more), and reducing their footprint, both environmentally and socially.
+
+**Be responsible, be brave, be humble **
+
+So, Decathlon is really making moves in the circular economy to create products that last longer and are easier to fix, rent or recycle. It's a big deal, and [they're not just talking about it](https://grounded.world/avoid-greenwashing/); they're doing it. Here are three words of wisdom from « Decathlonians » involved in the transformation.
+
+"*We can't put the responsibility for making the right choices for the environment on our customers, it's up to us to offer them more responsible products and services.*" - Isabelle Guyader, Chief Sustainability Officer, Decathlon Group
+
+"*Dare, try, get in motion.*" - Luc Teerlinck, Innovation & Business Model Transformation, Decathlon Belgium
+
+"*Humility is essential: it's not about making empty promises. It’s about showing tangible proof of your actions.*" - Erwan Soquet, Head of Communications, Decathlon France
+
+So, there you have it – a glimpse into Decathlon's vision and strategy. PS:  »Decathlonians, if you've got more to add, feel free to reach out.
