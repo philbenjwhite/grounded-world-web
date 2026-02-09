@@ -1,5 +1,9 @@
 import Link from "next/link";
 import client from "../../tina/__generated__/client";
+import Section from "@/components/Section";
+import Container from "@/components/Container";
+import Heading from "@/components/Heading";
+import Text from "@/components/Text";
 
 export default async function Home() {
   let posts: { title: string; date: string; _sys: { filename: string } }[] = [];
@@ -17,67 +21,29 @@ export default async function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-900">
-      <header className="border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
-        <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <Link
-            href="/"
-            className="text-xl font-bold text-zinc-900 dark:text-white"
-          >
-            Grounded World
-          </Link>
-          <div className="flex gap-6">
-            <Link
-              href="/"
-              className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-            >
-              Home
-            </Link>
-            <Link
-              href="/posts"
-              className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-            >
-              Blog
-            </Link>
-            <Link
-              href="/admin"
-              className="text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-            >
-              Admin
-            </Link>
-          </div>
-        </nav>
-      </header>
+    <div>
+      <Section>
+        <Container>
+          <Heading level={1} size="h1">
+            Activating Purpose
+          </Heading>
+          <Text>
+            Grounded is a multi-award-winning, B Corp certified brand activation
+            agency — thriving at the intersection of brand experience,
+            commercial innovation, sustainability and social impact. We work
+            with brands, retailers, startups and nonprofits all over the world —
+            helping them transform purpose into profit, commercialize
+            sustainability and drive behavior change at scale. No hushing. No
+            Washing. No tweaking around the edges.
+          </Text>
+        </Container>
+      </Section>
 
-      <main className="mx-auto max-w-5xl px-6 py-16">
-        <section className="mb-16 text-center">
-          <h1 className="mb-6 text-5xl font-bold tracking-tight text-zinc-900 dark:text-white">
-            Welcome to Grounded World
-          </h1>
-          <p className="mx-auto max-w-2xl text-xl text-zinc-600 dark:text-zinc-400">
-            A Next.js website powered by TinaCMS and styled with Tailwind CSS.
-            Edit your content through the admin panel.
-          </p>
-          <div className="mt-8 flex justify-center gap-4">
-            <Link
-              href="/posts"
-              className="rounded-lg bg-zinc-900 px-6 py-3 font-medium text-white transition hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
-            >
-              Read Blog
-            </Link>
-            <Link
-              href="/admin"
-              className="rounded-lg border border-zinc-300 px-6 py-3 font-medium text-zinc-900 transition hover:bg-zinc-100 dark:border-zinc-700 dark:text-white dark:hover:bg-zinc-800"
-            >
-              Edit Content
-            </Link>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="mb-8 text-3xl font-bold text-zinc-900 dark:text-white">
+      <Section>
+        <Container>
+          <Heading level={2} size="h2">
             Latest Posts
-          </h2>
+          </Heading>
           {posts.length > 0 ? (
             <div className="grid gap-6 md:grid-cols-2">
               {posts.map((post) => (
@@ -108,16 +74,8 @@ export default async function Home() {
               to create your first post.
             </p>
           )}
-        </section>
-      </main>
-
-      <footer className="border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
-        <div className="mx-auto max-w-5xl px-6 py-8 text-center text-zinc-600 dark:text-zinc-400">
-          <p>
-            Built with Next.js, TinaCMS, and Tailwind CSS
-          </p>
-        </div>
-      </footer>
+        </Container>
+      </Section>
     </div>
   );
 }

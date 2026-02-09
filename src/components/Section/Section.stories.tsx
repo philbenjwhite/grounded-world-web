@@ -7,6 +7,10 @@ const meta = {
   component: Section,
   parameters: {
     layout: "fullscreen",
+    backgrounds: {
+      default: "dark",
+      values: [{ name: "dark", value: "#000000" }],
+    },
   },
   tags: ["autodocs"],
   argTypes: {
@@ -16,44 +20,49 @@ const meta = {
     },
     className: { control: "text" },
   },
+  decorators: [
+    (Story) => (
+      <div className="bg-black">
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Section>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => (
-    <div className="bg-black">
-      <Section>
-        <Container>
-          <div className="bg-gray-800 p-8 text-center">
-            <p className="text-gray-300 font-medium">
-              Section with vertical padding
-            </p>
-          </div>
-        </Container>
-      </Section>
-    </div>
-  ),
+  args: {
+    as: "section",
+    children: (
+      <Container>
+        <div className="bg-gray-800 p-8 text-center">
+          <p className="text-gray-300 font-medium">
+            Section with vertical padding
+          </p>
+        </div>
+      </Container>
+    ),
+  },
 };
 
 export const WithContainer: Story = {
-  render: () => (
-    <div className="bg-black">
-      <Section>
-        <Container>
-          <div className="bg-gray-800 p-8">
-            <h2 className="text-xl font-bold text-white mb-4">
-              Section + Container
-            </h2>
-            <p className="text-gray-400">
-              Section provides vertical padding, Container constrains width.
-            </p>
-          </div>
-        </Container>
-      </Section>
-    </div>
-  ),
+  args: {
+    as: "section",
+    children: (
+      <Container>
+        <div className="bg-gray-800 p-8">
+          <h2 className="text-xl font-bold text-white mb-4">
+            Section + Container
+          </h2>
+          <p className="text-gray-400">
+            Section provides vertical padding, Container constrains width.
+          </p>
+        </div>
+      </Container>
+    ),
+  },
 };
 
 export const MultipleSections: Story = {
@@ -88,21 +97,20 @@ export const MultipleSections: Story = {
 };
 
 export const AsDiv: Story = {
-  render: () => (
-    <div className="bg-black">
-      <Section as="div">
-        <Container>
-          <div className="bg-gray-800 p-8 text-center">
-            <p className="text-gray-300 font-medium mb-2">
-              Rendered as a div element
-            </p>
-            <p className="text-gray-500 text-sm">
-              Use as=&quot;div&quot; when nesting inside another section or when
-              semantic section markup isn&apos;t appropriate.
-            </p>
-          </div>
-        </Container>
-      </Section>
-    </div>
-  ),
+  args: {
+    as: "div",
+    children: (
+      <Container>
+        <div className="bg-gray-800 p-8 text-center">
+          <p className="text-gray-300 font-medium mb-2">
+            Rendered as a div element
+          </p>
+          <p className="text-gray-500 text-sm">
+            Use as=&quot;div&quot; when nesting inside another section or when
+            semantic section markup isn&apos;t appropriate.
+          </p>
+        </div>
+      </Container>
+    ),
+  },
 };

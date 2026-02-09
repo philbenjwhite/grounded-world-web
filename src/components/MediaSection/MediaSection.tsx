@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import Container from '../Container';
+import Heading from '../Heading';
 
 export interface MediaItem {
   id: string;
@@ -90,15 +91,9 @@ const GridView = ({
         {/* Header */}
         <div className="flex flex-col gap-[var(--size-16)] mb-[var(--layout-section-gap)] lg:flex-row lg:items-center lg:justify-between">
           {title && (
-            <h2
-              className="
-                text-[length:var(--font-size-h2)]
-                font-bold
-                text-[color:var(--comp-media-section-title)]
-              "
-            >
+            <Heading level={2} size="h2">
               {title}
-            </h2>
+            </Heading>
           )}
 
           {/* Filter Tabs */}

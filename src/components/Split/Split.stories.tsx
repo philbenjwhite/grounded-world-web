@@ -7,6 +7,10 @@ const meta = {
   component: Split,
   parameters: {
     layout: "fullscreen",
+    backgrounds: {
+      default: "dark",
+      values: [{ name: "dark", value: "#000000" }],
+    },
   },
   tags: ["autodocs"],
   argTypes: {
@@ -23,7 +27,17 @@ const meta = {
       options: ["start", "center", "end", "stretch"],
     },
     reverseOnMobile: { control: "boolean" },
+    className: { control: "text" },
   },
+  decorators: [
+    (Story) => (
+      <div className="bg-black p-8">
+        <Container>
+          <Story />
+        </Container>
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof Split>;
 
 export default meta;
@@ -47,132 +61,115 @@ const RightContent = () => (
   </div>
 );
 
+export const Playground: Story = {
+  args: {
+    ratio: "50/50",
+    gap: "md",
+    align: "start",
+    reverseOnMobile: false,
+    left: <LeftContent />,
+    right: <RightContent />,
+  },
+};
+
 export const Default: Story = {
-  render: () => (
-    <div className="bg-black p-8">
-      <Container>
-        <Split left={<LeftContent />} right={<RightContent />} />
-      </Container>
-    </div>
-  ),
+  args: {
+    ratio: "50/50",
+    gap: "md",
+    left: <LeftContent />,
+    right: <RightContent />,
+  },
 };
 
 export const Ratio6040: Story = {
-  render: () => (
-    <div className="bg-black p-8">
-      <Container>
-        <Split
-          ratio="60/40"
-          left={
-            <div className="bg-gray-800 p-8">
-              <h2 className="text-xl font-bold text-white mb-4">
-                60% Width Column
-              </h2>
-              <p className="text-gray-400">Larger content area on the left.</p>
-            </div>
-          }
-          right={
-            <div className="bg-gray-700 p-8">
-              <h2 className="text-xl font-bold text-white mb-4">
-                40% Width Column
-              </h2>
-              <p className="text-gray-400">Smaller content area on the right.</p>
-            </div>
-          }
-        />
-      </Container>
-    </div>
-  ),
+  args: {
+    ratio: "60/40",
+    gap: "md",
+    left: (
+      <div className="bg-gray-800 p-8">
+        <h2 className="text-xl font-bold text-white mb-4">60% Width Column</h2>
+        <p className="text-gray-400">Larger content area on the left.</p>
+      </div>
+    ),
+    right: (
+      <div className="bg-gray-700 p-8">
+        <h2 className="text-xl font-bold text-white mb-4">40% Width Column</h2>
+        <p className="text-gray-400">Smaller content area on the right.</p>
+      </div>
+    ),
+  },
 };
 
 export const Ratio3070: Story = {
-  render: () => (
-    <div className="bg-black p-8">
-      <Container>
-        <Split
-          ratio="30/70"
-          left={
-            <div className="bg-gray-800 p-8">
-              <h2 className="text-lg font-bold text-white mb-2">30%</h2>
-              <p className="text-gray-400 text-sm">Narrow column</p>
-            </div>
-          }
-          right={
-            <div className="bg-gray-700 p-8">
-              <h2 className="text-xl font-bold text-white mb-4">70%</h2>
-              <p className="text-gray-400">
-                Wide content area, useful for main content with a narrow sidebar
-                or label column.
-              </p>
-            </div>
-          }
-        />
-      </Container>
-    </div>
-  ),
+  args: {
+    ratio: "30/70",
+    gap: "md",
+    left: (
+      <div className="bg-gray-800 p-8">
+        <h2 className="text-lg font-bold text-white mb-2">30%</h2>
+        <p className="text-gray-400 text-sm">Narrow column</p>
+      </div>
+    ),
+    right: (
+      <div className="bg-gray-700 p-8">
+        <h2 className="text-xl font-bold text-white mb-4">70%</h2>
+        <p className="text-gray-400">
+          Wide content area, useful for main content with a narrow sidebar or
+          label column.
+        </p>
+      </div>
+    ),
+  },
 };
 
 export const ImageAndText: Story = {
-  render: () => (
-    <div className="bg-black p-8">
-      <Container>
-        <Split
-          ratio="50/50"
-          align="center"
-          gap="lg"
-          left={
-            <div className="bg-gray-800 aspect-video rounded-lg" />
-          }
-          right={
-            <div className="p-4">
-              <h2 className="text-2xl font-bold text-white mb-4">
-                Image + Text Layout
-              </h2>
-              <p className="text-gray-400 mb-4">
-                A common pattern for featuring content alongside imagery.
-                The align=&quot;center&quot; prop vertically centers both columns.
-              </p>
-              <button className="bg-white text-black px-4 py-2 rounded font-medium">
-                Learn More
-              </button>
-            </div>
-          }
-        />
-      </Container>
-    </div>
-  ),
+  args: {
+    ratio: "50/50",
+    align: "center",
+    gap: "lg",
+    left: <div className="bg-gray-800 aspect-video rounded-lg" />,
+    right: (
+      <div className="p-4">
+        <h2 className="text-2xl font-bold text-white mb-4">
+          Image + Text Layout
+        </h2>
+        <p className="text-gray-400 mb-4">
+          A common pattern for featuring content alongside imagery. The
+          align=&quot;center&quot; prop vertically centers both columns.
+        </p>
+        <button className="bg-white text-black px-4 py-2 rounded font-medium">
+          Learn More
+        </button>
+      </div>
+    ),
+  },
 };
 
 export const ReverseOnMobile: Story = {
-  render: () => (
-    <div className="bg-black p-8">
-      <Container>
-        <Split
-          ratio="50/50"
-          reverseOnMobile
-          left={
-            <div className="bg-gray-800 p-8">
-              <h2 className="text-xl font-bold text-white mb-4">
-                Appears Second on Mobile
-              </h2>
-              <p className="text-gray-400">
-                This column appears first on desktop but second on mobile.
-              </p>
-            </div>
-          }
-          right={
-            <div className="bg-gray-700 p-8">
-              <h2 className="text-xl font-bold text-white mb-4">
-                Appears First on Mobile
-              </h2>
-              <p className="text-gray-400">
-                Use reverseOnMobile when the right content should appear first
-                on smaller screens (e.g., headline before image).
-              </p>
-            </div>
-          }
-        />
-      </Container>
-    </div>
-  ),
+  args: {
+    ratio: "50/50",
+    gap: "md",
+    reverseOnMobile: true,
+    left: (
+      <div className="bg-gray-800 p-8">
+        <h2 className="text-xl font-bold text-white mb-4">
+          Appears Second on Mobile
+        </h2>
+        <p className="text-gray-400">
+          This column appears first on desktop but second on mobile.
+        </p>
+      </div>
+    ),
+    right: (
+      <div className="bg-gray-700 p-8">
+        <h2 className="text-xl font-bold text-white mb-4">
+          Appears First on Mobile
+        </h2>
+        <p className="text-gray-400">
+          Use reverseOnMobile when the right content should appear first on
+          smaller screens (e.g., headline before image).
+        </p>
+      </div>
+    ),
+  },
 };
