@@ -35,6 +35,91 @@ export default defineConfig({
   schema: {
     collections: [
       {
+        name: "category",
+        label: "Categories",
+        path: "content/categories",
+        format: "json",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return values?.name
+                ?.toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "");
+            },
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "name",
+            label: "Name",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            required: true,
+            description: "URL-friendly version of the name (lowercase, hyphens only)",
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "reference",
+            name: "parent",
+            label: "Parent Category",
+            collections: ["category"],
+            description: "Optional parent category for hierarchy",
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Category Image",
+          },
+          {
+            type: "string",
+            name: "textColor",
+            label: "Text Color",
+            ui: {
+              component: "color",
+            },
+          },
+          {
+            type: "string",
+            name: "hoverTextColor",
+            label: "Hover Text Color",
+            ui: {
+              component: "color",
+            },
+          },
+          {
+            type: "string",
+            name: "backgroundColor",
+            label: "Background Color",
+            ui: {
+              component: "color",
+            },
+          },
+          {
+            type: "string",
+            name: "hoverBackgroundColor",
+            label: "Hover Background Color",
+            ui: {
+              component: "color",
+            },
+          },
+        ],
+      },
+      {
         name: "post",
         label: "Posts",
         path: "content/posts",
@@ -98,19 +183,10 @@ export default defineConfig({
             ],
           },
           {
-            type: "string",
+            type: "reference",
             name: "category",
             label: "Category",
-            options: [
-              { value: "brand-purpose", label: "Brand Purpose" },
-              { value: "sustainability", label: "Sustainability" },
-              { value: "brand-activism", label: "Brand Activism" },
-              { value: "social-impact", label: "Social Impact" },
-              { value: "retail-shopper", label: "Retail & Shopper" },
-              { value: "strategy", label: "Strategy" },
-              { value: "b-corps", label: "B-Corps" },
-              { value: "partnerships", label: "Partnerships & Community" },
-            ],
+            collections: ["category"],
           },
           {
             type: "string",
