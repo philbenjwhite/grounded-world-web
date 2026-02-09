@@ -66,6 +66,9 @@ export const WithContainer: Story = {
 };
 
 export const MultipleSections: Story = {
+  args: {
+    children: <div />,
+  },
   render: () => (
     <div className="bg-black">
       <Section className="bg-gray-900">

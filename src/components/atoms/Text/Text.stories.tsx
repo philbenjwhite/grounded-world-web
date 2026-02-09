@@ -49,6 +49,9 @@ export const Default: Story = {
 };
 
 export const AllSizes: Story = {
+  args: {
+    children: 'Text',
+  },
   render: () => (
     <div className="flex flex-col gap-4">
       <div>
@@ -80,6 +83,9 @@ export const AllSizes: Story = {
 };
 
 export const Colors: Story = {
+  args: {
+    children: 'Text',
+  },
   render: () => (
     <div className="flex flex-col gap-3">
       <Text color="primary">Primary - Main body text color (White)</Text>
@@ -94,6 +100,9 @@ export const Colors: Story = {
 };
 
 export const AsSpan: Story = {
+  args: {
+    children: 'Text',
+  },
   render: () => (
     <Text as="p">
       This is a paragraph with <Text as="span" color="link">inline link text</Text> and{' '}

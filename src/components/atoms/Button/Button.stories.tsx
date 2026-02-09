@@ -85,6 +85,9 @@ export const SubmitButton: Story = {
 };
 
 export const AllVariants: Story = {
+  args: {
+    children: 'Button',
+  },
   render: () => (
     <div className="flex flex-col gap-4 items-start">
       <div>

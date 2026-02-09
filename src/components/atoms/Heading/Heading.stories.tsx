@@ -49,6 +49,9 @@ export const Default: Story = {
 };
 
 export const AllSizes: Story = {
+  args: {
+    children: 'Heading',
+  },
   render: () => (
     <div className="flex flex-col gap-4">
       <Heading level={1} size="h1">H1 Size - 64px</Heading>
@@ -60,6 +63,9 @@ export const AllSizes: Story = {
 };
 
 export const SemanticVsVisual: Story = {
+  args: {
+    children: 'Heading',
+  },
   render: () => (
     <div className="flex flex-col gap-4">
       <div className="border-b border-gray-700 pb-4">
@@ -79,6 +85,9 @@ export const SemanticVsVisual: Story = {
 };
 
 export const Colors: Story = {
+  args: {
+    children: 'Heading',
+  },
   render: () => (
     <div className="flex flex-col gap-4">
       <Heading level={2} color="primary">Primary Color (White)</Heading>

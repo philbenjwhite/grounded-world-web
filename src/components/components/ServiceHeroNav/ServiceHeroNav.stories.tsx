@@ -63,6 +63,7 @@ type ConceptCStory = StoryObj<typeof ServiceHeroNavConceptC>;
 
 export const ConceptC: ConceptCStory = {
   name: 'Concept C - Quadrant Layout',
+  args: {},
   render: () => <ServiceHeroNavConceptC />,
   parameters: {
     layout: 'fullscreen',
@@ -76,6 +77,7 @@ export const ConceptC: ConceptCStory = {
 
 export const ConceptCMobile: ConceptCStory = {
   name: 'Concept C - Mobile',
+  args: {},
   render: () => <ServiceHeroNavConceptC />,
   parameters: {
     layout: 'fullscreen',
