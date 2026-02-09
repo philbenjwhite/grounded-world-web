@@ -66,7 +66,6 @@ export default function OurWorkPage() {
         title="Our Work"
         categories={categories}
         items={workItems}
-        variant="carousel"
         onItemClick={handleItemClick}
       />
     </main>

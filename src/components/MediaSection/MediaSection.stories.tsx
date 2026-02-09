@@ -19,12 +19,7 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    variant: {
-      control: 'radio',
-      options: ['grid', 'carousel'],
-    },
     title: { control: 'text' },
-    label: { control: 'text' },
     categories: { control: 'object' },
     onItemClick: { action: 'itemClicked' },
     onFilterChange: { action: 'filterChanged' },
@@ -34,22 +29,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// =============================================================================
-// GRID VARIANT STORIES (Concept A)
-// =============================================================================
-
-export const Grid: Story = {
+export const Default: Story = {
   args: {
-    variant: 'grid',
     title: 'Section title',
     categories: categoryNames,
     items: createItems(6),
   },
 };
 
-export const GridWithImages: Story = {
+export const WithImages: Story = {
   args: {
-    variant: 'grid',
     title: 'Our Work',
     categories: categoryNames,
     items: createItems(6).map((item, i) => ({
@@ -60,58 +49,16 @@ export const GridWithImages: Story = {
   },
 };
 
-export const GridTwelveTiles: Story = {
+export const TwelveTiles: Story = {
   args: {
-    variant: 'grid',
     title: 'Extended Gallery',
     categories: categoryNames,
     items: createItems(12),
   },
 };
 
-// =============================================================================
-// CAROUSEL VARIANT STORIES (Concept B)
-// =============================================================================
-
-export const Carousel: Story = {
-  args: {
-    variant: 'carousel',
-    label: 'Tabs',
-    categories: categoryNames,
-    items: createItems(8),
-  },
-};
-
-export const CarouselWithImages: Story = {
-  args: {
-    variant: 'carousel',
-    label: 'Tabs',
-    categories: categoryNames,
-    items: createItems(8).map((item, i) => ({
-      ...item,
-      imageUrl: `https://picsum.photos/seed/${i + 10}/800/600`,
-      imageAlt: `Sample image ${i + 1}`,
-    })),
-  },
-};
-
-export const CarouselFiltered: Story = {
-  args: {
-    variant: 'carousel',
-    label: 'Tabs',
-    categories: categoryNames,
-    items: createItems(8),
-    defaultCategory: 'Brand Activation',
-  },
-};
-
-// =============================================================================
-// SHARED STORIES
-// =============================================================================
-
 export const EmptyState: Story = {
   args: {
-    variant: 'grid',
     title: 'No Results',
     categories: categoryNames,
     items: [],

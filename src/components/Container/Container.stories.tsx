@@ -17,24 +17,12 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <div className="bg-[var(--color-cyan)] p-8 text-center">
-        <p className="text-[var(--color-black)] font-medium">
-          Container content (max-width: 1440px, centered)
-        </p>
-      </div>
-    ),
-  },
-};
-
-export const WithBackground: Story = {
   render: () => (
-    <div className="bg-[var(--color-gray-1)]">
+    <div className="bg-black">
       <Container>
-        <div className="bg-[var(--color-magenta)] p-8 text-center">
-          <p className="text-white font-medium">
-            Container inside a full-width background
+        <div className="bg-gray-800 p-8 text-center">
+          <p className="text-gray-300 font-medium">
+            Container content (max-width: 1440px, centered)
           </p>
         </div>
       </Container>
@@ -42,33 +30,40 @@ export const WithBackground: Story = {
   ),
 };
 
-export const NestedContent: Story = {
-  args: {
-    children: (
-      <div className="grid grid-cols-3 gap-4 p-8">
-        <div className="bg-[var(--color-cyan)] p-4 rounded text-center">
-          Column 1
+export const WithContent: Story = {
+  render: () => (
+    <div className="bg-black">
+      <Container>
+        <div className="bg-gray-800 p-8">
+          <h2 className="text-xl font-bold text-white mb-4">
+            Content inside Container
+          </h2>
+          <p className="text-gray-400">
+            The black background extends full-width while the gray content area
+            is constrained to 1440px max-width and centered.
+          </p>
         </div>
-        <div className="bg-[var(--color-orange)] p-4 rounded text-center">
-          Column 2
-        </div>
-        <div className="bg-[var(--color-green)] p-4 rounded text-center">
-          Column 3
-        </div>
-      </div>
-    ),
-  },
+      </Container>
+    </div>
+  ),
 };
 
-export const WithCustomClass: Story = {
-  args: {
-    className: "py-16",
-    children: (
-      <div className="bg-[var(--color-gray-2)] p-8 text-center">
-        <p className="text-white font-medium">
-          Container with custom padding (py-16)
-        </p>
-      </div>
-    ),
-  },
+export const NestedGrid: Story = {
+  render: () => (
+    <div className="bg-black">
+      <Container>
+        <div className="grid grid-cols-3 gap-4 p-8">
+          <div className="bg-gray-800 p-4 rounded text-center text-gray-300">
+            Column 1
+          </div>
+          <div className="bg-gray-800 p-4 rounded text-center text-gray-300">
+            Column 2
+          </div>
+          <div className="bg-gray-800 p-4 rounded text-center text-gray-300">
+            Column 3
+          </div>
+        </div>
+      </Container>
+    </div>
+  ),
 };

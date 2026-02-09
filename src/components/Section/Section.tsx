@@ -1,4 +1,5 @@
 import React from "react";
+import cn from "classnames";
 
 export interface SectionProps {
   /** Content to render inside the section */
@@ -15,12 +16,7 @@ const Section = ({
   as: Component = "section",
 }: SectionProps) => {
   return (
-    <Component
-      className={`
-        py-[var(--layout-section-padding-y)]
-        ${className ?? ""}
-      `}
-    >
+    <Component className={cn("py-[var(--layout-section-padding-y)]", className)}>
       {children}
     </Component>
   );

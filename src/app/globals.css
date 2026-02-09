@@ -256,3 +256,16 @@ body {
     grid-row: auto !important;
   }
 }
+
+/* Split layout component */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--split-gap, 2rem);
+}
+
+@media (min-width: 1024px) {
+  .split-layout {
+    grid-template-columns: var(--split-cols, 1fr 1fr);
+  }
+}

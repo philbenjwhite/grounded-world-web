@@ -22,61 +22,64 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-    children: (
-      <div className="bg-[var(--color-cyan)] p-8 text-center">
-        <p className="text-[var(--color-black)] font-medium">
-          Section content with vertical padding
-        </p>
-      </div>
-    ),
-  },
+  render: () => (
+    <div className="bg-black">
+      <Section>
+        <Container>
+          <div className="bg-gray-800 p-8 text-center">
+            <p className="text-gray-300 font-medium">
+              Section with vertical padding
+            </p>
+          </div>
+        </Container>
+      </Section>
+    </div>
+  ),
 };
 
 export const WithContainer: Story = {
   render: () => (
-    <Section className="bg-[var(--color-gray-1)]">
-      <Container>
-        <div className="bg-[var(--color-magenta)] p-8 text-center">
-          <p className="text-white font-medium">
-            Section with Container inside
-          </p>
-        </div>
-      </Container>
-    </Section>
+    <div className="bg-black">
+      <Section>
+        <Container>
+          <div className="bg-gray-800 p-8">
+            <h2 className="text-xl font-bold text-white mb-4">
+              Section + Container
+            </h2>
+            <p className="text-gray-400">
+              Section provides vertical padding, Container constrains width.
+            </p>
+          </div>
+        </Container>
+      </Section>
+    </div>
   ),
 };
 
 export const MultipleSections: Story = {
   render: () => (
-    <div>
-      <Section className="bg-[var(--color-cyan)]">
+    <div className="bg-black">
+      <Section className="bg-gray-900">
         <Container>
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-[var(--color-black)]">
-              Section 1
-            </h2>
-            <p className="text-[var(--color-black)]">First section content</p>
+          <div className="bg-gray-800 p-8 text-center">
+            <h2 className="text-xl font-bold text-white">Section 1</h2>
+            <p className="text-gray-400">First section content</p>
           </div>
         </Container>
       </Section>
-      <Section className="bg-[var(--color-orange)]">
+      <Section className="bg-gray-950">
         <Container>
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-[var(--color-black)]">
-              Section 2
-            </h2>
-            <p className="text-[var(--color-black)]">Second section content</p>
+          <div className="bg-gray-800 p-8 text-center">
+            <h2 className="text-xl font-bold text-white">Section 2</h2>
+            <p className="text-gray-400">Second section content</p>
           </div>
         </Container>
       </Section>
-      <Section className="bg-[var(--color-green)]">
+      <Section className="bg-gray-900">
         <Container>
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-[var(--color-black)]">
-              Section 3
-            </h2>
-            <p className="text-[var(--color-black)]">Third section content</p>
+          <div className="bg-gray-800 p-8 text-center">
+            <h2 className="text-xl font-bold text-white">Section 3</h2>
+            <p className="text-gray-400">Third section content</p>
           </div>
         </Container>
       </Section>
@@ -85,27 +88,21 @@ export const MultipleSections: Story = {
 };
 
 export const AsDiv: Story = {
-  args: {
-    as: "div",
-    children: (
-      <div className="bg-[var(--color-gray-2)] p-8 text-center">
-        <p className="text-white font-medium">Rendered as a div element</p>
-      </div>
-    ),
-  },
-};
-
-export const WithCustomPadding: Story = {
-  args: {
-    className: "py-24 bg-[var(--color-gray-1)]",
-    children: (
-      <Container>
-        <div className="bg-[var(--color-magenta)] p-8 text-center">
-          <p className="text-white font-medium">
-            Section with custom padding (py-24)
-          </p>
-        </div>
-      </Container>
-    ),
-  },
+  render: () => (
+    <div className="bg-black">
+      <Section as="div">
+        <Container>
+          <div className="bg-gray-800 p-8 text-center">
+            <p className="text-gray-300 font-medium mb-2">
+              Rendered as a div element
+            </p>
+            <p className="text-gray-500 text-sm">
+              Use as=&quot;div&quot; when nesting inside another section or when
+              semantic section markup isn&apos;t appropriate.
+            </p>
+          </div>
+        </Container>
+      </Section>
+    </div>
+  ),
 };

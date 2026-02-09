@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo } from 'react';
 import Container from '../Container';
 
 export interface MediaItem {
@@ -13,16 +13,12 @@ export interface MediaItem {
 }
 
 export interface MediaSectionProps {
-  /** Section heading (used in grid variant) */
+  /** Section heading */
   title?: string;
-  /** Label displayed above the filter tabs (used in carousel variant) */
-  label?: string;
   /** Category labels for filter tabs ("All" is prepended automatically) */
   categories: string[];
   /** Media items to render */
   items: MediaItem[];
-  /** Layout variant: "grid" for bento grid, "carousel" for sliding carousel */
-  variant?: 'grid' | 'carousel';
   /** Callback when a media item is clicked */
   onItemClick?: (item: MediaItem) => void;
   /** Callback when the active filter changes */
@@ -184,210 +180,13 @@ const GridView = ({
 };
 
 // =============================================================================
-// CAROUSEL VARIANT (Concept B)
-// =============================================================================
-
-interface CarouselViewProps {
-  label?: string;
-  filteredItems: MediaItem[];
-  activeCategory: string;
-  allCategories: string[];
-  onCategoryChange: (category: string) => void;
-  onItemClick?: (item: MediaItem) => void;
-  className?: string;
-}
-
-const CarouselView = ({
-  label,
-  filteredItems,
-  activeCategory,
-  allCategories,
-  onCategoryChange,
-  onItemClick,
-  className,
-}: CarouselViewProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleCategoryChangeInternal = (category: string) => {
-    setCurrentIndex(0);
-    onCategoryChange(category);
-  };
-
-  const goNext = useCallback(() => {
-    if (filteredItems.length === 0) return;
-    setCurrentIndex((prev) => (prev + 1) % filteredItems.length);
-  }, [filteredItems.length]);
-
-  const goPrev = useCallback(() => {
-    if (filteredItems.length === 0) return;
-    setCurrentIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length);
-  }, [filteredItems.length]);
-
-  const getVisibleItem = (offset: number) => {
-    if (filteredItems.length === 0) return null;
-    const idx = (currentIndex + offset + filteredItems.length) % filteredItems.length;
-    return filteredItems[idx];
-  };
-
-  const prevItem = getVisibleItem(-1);
-  const centerItem = getVisibleItem(0);
-  const nextItem = getVisibleItem(1);
-
-  const renderCard = (item: MediaItem | null, variant: 'prev' | 'center' | 'next') => {
-    if (!item) return null;
-
-    const isCenter = variant === 'center';
-
-    return (
-      <div
-        key={`${item.id}-${variant}`}
-        className={`
-          rounded-[var(--comp-media-section-item-radius)]
-          bg-[var(--comp-media-section-item-surface)]
-          overflow-hidden
-          transition-all
-          duration-300
-          ease-in-out
-          flex-shrink-0
-          ${isCenter
-            ? 'w-[60%] h-full z-20 cursor-pointer hover:scale-[1.01]'
-            : 'w-[18%] h-[80%] z-10 opacity-50'
-          }
-        `}
-        onClick={isCenter ? () => onItemClick?.(item) : undefined}
-        role={isCenter ? 'button' : undefined}
-        tabIndex={isCenter ? 0 : undefined}
-        onKeyDown={isCenter ? (e) => { if (e.key === 'Enter' || e.key === ' ') onItemClick?.(item); } : undefined}
-      >
-        {item.imageUrl ? (
-          <img
-            src={item.imageUrl}
-            alt={item.imageAlt ?? item.title}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <div className="w-full h-full" />
-        )}
-      </div>
-    );
-  };
-
-  return (
-    <section
-      className={`
-        bg-[var(--comp-media-section-surface)]
-        px-[var(--layout-section-padding-x)]
-        py-[var(--layout-section-padding-y)]
-        ${className ?? ''}
-      `}
-    >
-      <Container>
-        {/* Filter Tabs */}
-        <div className="flex flex-col items-center gap-[var(--size-8)] mb-[var(--layout-section-gap)]">
-          {label && (
-            <span className="text-[color:var(--color-gray-4)] text-[length:var(--font-size-body-xl)]">
-              {label}
-            </span>
-          )}
-          <div className="flex flex-wrap justify-center gap-[var(--layout-tab-tab-gap)]" role="tablist">
-            {allCategories.map((category) => (
-              <button
-                key={category}
-                role="tab"
-                aria-selected={activeCategory === category}
-                onClick={() => handleCategoryChangeInternal(category)}
-                className={`
-                  px-[var(--layout-tab-padding-x)]
-                  py-[var(--layout-tab-padding-y)]
-                  rounded-full
-                  border
-                  text-[length:var(--font-size-body-sm)]
-                  font-medium
-                  transition-colors
-                  cursor-pointer
-                  ${
-                    activeCategory === category
-                      ? 'bg-[var(--comp-tab-surface-active)] border-[var(--comp-tab-stroke-active)] text-[color:var(--comp-tab-text-active)]'
-                      : 'bg-[var(--comp-tab-surface-default)] border-[var(--comp-tab-stroke-default)] text-[color:var(--comp-tab-text-default)] hover:bg-[var(--comp-tab-surface-hover)] hover:border-[var(--comp-tab-stroke-hover)]'
-                  }
-                `}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Carousel */}
-        {filteredItems.length > 0 ? (
-          <div className="relative flex items-center h-[500px]">
-            {/* Left Arrow */}
-            <button
-              onClick={goPrev}
-              className="
-                absolute left-4 z-30
-                w-[var(--size-40)] h-[var(--size-40)]
-                rounded-full
-                bg-[var(--color-cyan)]
-                flex items-center justify-center
-                cursor-pointer
-                transition-transform
-                hover:scale-110
-              "
-              aria-label="Previous item"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 12L6 8L10 4" stroke="var(--color-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-
-            {/* Cards - using flexbox */}
-            <div className="flex items-center justify-center gap-4 w-full h-full">
-              {renderCard(prevItem, 'prev')}
-              {renderCard(centerItem, 'center')}
-              {renderCard(nextItem, 'next')}
-            </div>
-
-            {/* Right Arrow */}
-            <button
-              onClick={goNext}
-              className="
-                absolute right-4 z-30
-                w-[var(--size-40)] h-[var(--size-40)]
-                rounded-full
-                bg-[var(--color-cyan)]
-                flex items-center justify-center
-                cursor-pointer
-                transition-transform
-                hover:scale-110
-              "
-              aria-label="Next item"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 4L10 8L6 12" stroke="var(--color-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        ) : (
-          <p className="text-[color:var(--color-gray-4)] text-[length:var(--font-size-body-md)] text-center">
-            No items to display.
-          </p>
-        )}
-      </Container>
-    </section>
-  );
-};
-
-// =============================================================================
 // MAIN COMPONENT
 // =============================================================================
 
 const MediaSection = ({
   title = 'Section title',
-  label = 'Tabs',
   categories,
   items,
-  variant = 'grid',
   onItemClick,
   onFilterChange,
   defaultCategory = 'All',
@@ -406,20 +205,6 @@ const MediaSection = ({
     setActiveCategory(category);
     onFilterChange?.(category);
   };
-
-  if (variant === 'carousel') {
-    return (
-      <CarouselView
-        label={label}
-        filteredItems={filteredItems}
-        activeCategory={activeCategory}
-        allCategories={allCategories}
-        onCategoryChange={handleCategoryChange}
-        onItemClick={onItemClick}
-        className={className}
-      />
-    );
-  }
 
   return (
     <GridView

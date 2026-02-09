@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import cn from "classnames";
 
 export interface ContainerProps {
   /** Content to render inside the container */
@@ -9,14 +10,7 @@ export interface ContainerProps {
 
 const Container = ({ children, className }: ContainerProps) => {
   return (
-    <div
-      className={`
-        max-w-[1440px]
-        mx-auto
-        w-full
-        ${className ?? ''}
-      `}
-    >
+    <div className={cn("max-w-[1440px] mx-auto w-full", className)}>
       {children}
     </div>
   );
