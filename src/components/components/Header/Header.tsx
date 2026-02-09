@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../Container';
+import Container from '../../layout/Container';
 
 export interface HeaderProps {
   /** Optional className for additional styling */

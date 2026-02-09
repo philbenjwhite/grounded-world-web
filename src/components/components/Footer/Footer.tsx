@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from '../Container';
-import Text from '../Text';
+import Container from '../../layout/Container';
+import Text from '../../atoms/Text';
 
 export interface FooterProps {
   /** Optional className for additional styling */

@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import Container from '../Container';
-import Heading from '../Heading';
+import Container from '../../layout/Container';
+import Heading from '../../atoms/Heading';
 
 export interface MediaItem {
   id: string;

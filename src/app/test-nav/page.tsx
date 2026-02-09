@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import ServiceHeroNav from '@/components/ServiceHeroNav';
-import ServiceHeroNavConceptC from '@/components/ServiceHeroNav/ServiceHeroNavConceptC';
+import ServiceHeroNav from '@/components/components/ServiceHeroNav';
+import ServiceHeroNavConceptC from '@/components/components/ServiceHeroNav/ServiceHeroNavConceptC';
 import { ArrowsClockwise } from '@phosphor-icons/react';
 
 export default function TestNavPage() {

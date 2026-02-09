@@ -1,7 +1,7 @@
 "use client";
 
-import MediaSection from "../../components/MediaSection";
-import type { MediaItem } from "../../components/MediaSection/MediaSection";
+import MediaSection from "../../components/components/MediaSection";
+import type { MediaItem } from "../../components/components/MediaSection/MediaSection";
 
 const categories = [
   "Brand Activation",

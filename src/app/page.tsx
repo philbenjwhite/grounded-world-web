@@ -1,9 +1,9 @@
 import Link from "next/link";
 import client from "../../tina/__generated__/client";
-import Section from "@/components/Section";
-import Container from "@/components/Container";
-import Heading from "@/components/Heading";
-import Text from "@/components/Text";
+import Section from "@/components/layout/Section";
+import Container from "@/components/layout/Container";
+import Heading from "@/components/atoms/Heading";
+import Text from "@/components/atoms/Text";
 
 export default async function Home() {
   let posts: { title: string; date: string; _sys: { filename: string } }[] = [];
