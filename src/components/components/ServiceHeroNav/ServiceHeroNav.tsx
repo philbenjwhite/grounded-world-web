@@ -1,11 +1,20 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import * as THREE from 'three';
-import { gsap } from 'gsap';
-import { ArrowUpRight, MagnifyingGlass, Strategy, Palette, ChartLineUp, IconProps } from '@phosphor-icons/react';
+import {
+  ArrowUpRight,
+  Envelope,
+  List,
+  MagnifyingGlass,
+  Compass,
+  Lightning,
+  ChartLineUp,
+  IconProps,
+} from '@phosphor-icons/react';
 
-interface NavItem {
+/* ─── Data ──────────────────────────────────────────── */
+
+interface ServiceItem {
   id: string;
   label: string;
   color: string;
@@ -14,944 +23,623 @@ interface NavItem {
   icon: React.ComponentType<IconProps>;
 }
 
-const navItems: NavItem[] = [
-  {
-    id: 'research',
-    label: 'Research',
-    color: '#00AEEF',
-    description: 'Deep dive into user needs, behaviors, and pain points to inform strategic decisions and create user-centered solutions.',
-    url: 'https://visualboston.com/research',
-    icon: MagnifyingGlass
-  },
-  {
-    id: 'strategy',
-    label: 'Strategy',
-    color: '#FFA603',
-    description: 'Develop comprehensive product roadmaps and strategic frameworks that align business objectives with user value.',
-    url: 'https://visualboston.com/strategy',
-    icon: Strategy
-  },
-  {
-    id: 'activation',
-    label: 'Activation',
-    color: '#FF08CC',
-    description: 'Transform strategies into tangible experiences through design systems, prototyping, and user interface development.',
-    url: 'https://visualboston.com/activation',
-    icon: Palette
-  },
-  {
-    id: 'impact',
-    label: 'Impact',
-    color: '#1CC35B',
-    description: 'Measure success through analytics, user feedback, and continuous optimization to drive meaningful business outcomes.',
-    url: 'https://visualboston.com/impact',
-    icon: ChartLineUp
-  },
+const serviceItems: ServiceItem[] = [
+  { id: 'research', label: 'Research', color: '#00AEEF', description: 'User needs & behavioral insights', url: '/services/research', icon: MagnifyingGlass },
+  { id: 'strategy', label: 'Strategy', color: '#FFA603', description: 'Roadmaps & strategic frameworks', url: '/services/strategy', icon: Compass },
+  { id: 'activation', label: 'Activation', color: '#FF08CC', description: 'Design systems & interfaces', url: '/services/activation', icon: Lightning },
+  { id: 'impact', label: 'Impact', color: '#1CC35B', description: 'Analytics & optimization', url: '/services/impact', icon: ChartLineUp },
 ];
 
+const workPlaceholders = [
+  { title: 'Brand Activation Campaign', tag: 'Case Study', accent: '#00AEEF' },
+  { title: 'Digital Transformation', tag: 'Featured', accent: '#FF08CC' },
+  { title: 'Sustainability Impact Report', tag: 'Research', accent: '#1CC35B' },
+  { title: 'Community Platform', tag: 'Product', accent: '#FFA603' },
+];
+
+const resourceTypes = [
+  { label: 'Podcast', accent: '#00AEEF', url: '/resources/podcast' },
+  { label: 'White Papers', accent: '#1CC35B', url: '/resources/white-papers' },
+  { label: 'How To Guides', accent: '#FF08CC', url: '/resources/guides' },
+  { label: 'Articles & Blogs', accent: '#FFA603', url: '/resources/articles' },
+];
+
+const colorMap: Record<string, string> = {
+  research: '#00AEEF', strategy: '#FFA603', activation: '#FF08CC', impact: '#1CC35B',
+  'about-us': '#4DD9FF', 'our-work': '#B1B3B6', resources: '#0077B5',
+  newsletter: '#FFA603',
+};
+
+/* ─── Component ─────────────────────────────────────── */
+
 const ServiceHeroNav: React.FC = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const sceneRef = useRef<THREE.Scene | null>(null);
-  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
-  const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
-  const animationFrameRef = useRef<number | null>(null);
-  const [activeNav, setActiveNav] = useState<string>('research');
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
-  const [isAnyHovered, setIsAnyHovered] = useState(false);
-  const [currentRotation, setCurrentRotation] = useState(0);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [activeWork, setActiveWork] = useState(0);
+  const svcCanvasRef = useRef<HTMLCanvasElement>(null);
+  const svcParticlesRef = useRef<Array<{ x: number; y: number; vy: number; vx: number; size: number; life: number; color: string }>>([]);
+  const svcAnimRef = useRef<number>(0);
+  const hoveredNavRef = useRef<string | null>(null);
 
-  // Store references to Three.js objects for color animation
-  const dotsRef = useRef<THREE.Mesh[]>([]);
-  const shapesRef = useRef<THREE.Mesh[]>([]);
-
-  // Ensure we're on client side and detect touch device
   useEffect(() => {
     setIsClient(true);
-
-    // Detect touch device
-    const checkTouch = () => {
-      return 'ontouchstart' in window ||
-             navigator.maxTouchPoints > 0 ||
-             /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    };
-
-    setIsTouchDevice(checkTouch());
+    setIsTouchDevice(
+      'ontouchstart' in window || navigator.maxTouchPoints > 0 ||
+      /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    );
   }, []);
 
-  // Ensure video always plays
+  // Video playback
   useEffect(() => {
     if (!videoRef.current || !isClient) return;
-
     const video = videoRef.current;
-
-    const ensureVideoPlays = async () => {
-      try {
-        if (video.paused) {
-          await video.play();
-        }
-      } catch (error) {
-        console.log('Video autoplay prevented:', error);
-      }
-    };
-
-    // Initial play attempt
-    ensureVideoPlays();
-
-    // Handle pause events - restart playback
-    const handlePause = () => {
-      setTimeout(() => {
-        ensureVideoPlays();
-      }, 100);
-    };
-
-    // Handle visibility change - restart when tab becomes visible
-    const handleVisibilityChange = () => {
-      if (!document.hidden) {
-        ensureVideoPlays();
-      }
-    };
-
-    // Add event listeners
-    video.addEventListener('pause', handlePause);
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    window.addEventListener('focus', ensureVideoPlays);
-
-    // Periodic check to ensure video is playing
-    const playbackInterval = setInterval(() => {
-      if (video.paused) {
-        ensureVideoPlays();
-      }
-    }, 2000);
-
-    return () => {
-      video.removeEventListener('pause', handlePause);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      window.removeEventListener('focus', ensureVideoPlays);
-      clearInterval(playbackInterval);
-    };
+    const play = async () => { try { if (video.paused) await video.play(); } catch { /* silent */ } };
+    play();
+    const onPause = () => setTimeout(play, 100);
+    const onVis = () => { if (!document.hidden) play(); };
+    video.addEventListener('pause', onPause);
+    document.addEventListener('visibilitychange', onVis);
+    window.addEventListener('focus', play);
+    const iv = setInterval(() => { if (video.paused) play(); }, 2000);
+    return () => { video.removeEventListener('pause', onPause); document.removeEventListener('visibilitychange', onVis); window.removeEventListener('focus', play); clearInterval(iv); };
   }, [isClient]);
 
-  // Track rotation for perfect text alignment
+  // Sync hover state to ref for particle animation loop
+  useEffect(() => { hoveredNavRef.current = hoveredNav; }, [hoveredNav]);
+
+  // Particle animation for services card
   useEffect(() => {
-    if (!isClient || isAnyHovered) return;
-
-    const startTime = Date.now();
-    const rotationSpeed = 360 / 60000; // 360 degrees in 60 seconds (milliseconds)
-
-    const updateRotation = () => {
-      const elapsed = Date.now() - startTime;
-      const rotation = (elapsed * rotationSpeed) % 360;
-      setCurrentRotation(rotation);
-
-      if (!isAnyHovered) {
-        requestAnimationFrame(updateRotation);
+    if (!isClient) return;
+    const canvas = svcCanvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    let running = true;
+    const animate = () => {
+      if (!running) return;
+      const w = canvas.offsetWidth;
+      const h = canvas.offsetHeight;
+      const dpr = window.devicePixelRatio || 1;
+      if (canvas.width !== w * dpr || canvas.height !== h * dpr) {
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
       }
-    };
-
-    requestAnimationFrame(updateRotation);
-  }, [isClient, isAnyHovered]);
-
-  useEffect(() => {
-    // Ensure we're on the client side
-    if (!canvasRef.current || typeof window === 'undefined' || !isClient) return;
-
-    try {
-      // Scene setup
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({
-        canvas: canvasRef.current,
-        alpha: false,
-        antialias: true
-      });
-
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      renderer.setClearColor(0x000000, 1);
-      camera.position.z = 30;
-
-      sceneRef.current = scene;
-      rendererRef.current = renderer;
-      cameraRef.current = camera;
-
-      // Create default lightning effect background
-      createLightningBackground(scene);
-
-      // Animation loop
-      const animate = () => {
-        animationFrameRef.current = requestAnimationFrame(animate);
-
-        // Bird flocking behavior
-        dotsRef.current.forEach((bird, index) => {
-          const userData = bird.userData;
-
-          if (!hoveredNav) {
-            // Smooth, elastic wave motion when not hovered
-            const time = Date.now() * 0.001;
-            const velocity = userData.velocity;
-
-            // Create wave patterns for natural movement
-            const waveX = Math.sin(time + index * 0.1) * 0.03;
-            const waveY = Math.cos(time * 1.2 + index * 0.15) * 0.025;
-            const waveZ = Math.sin(time * 0.8 + index * 0.2) * 0.02;
-
-            // Add elastic spring force toward original position
-            const springForce = userData.originalPosition.clone()
-              .sub(bird.position)
-              .multiplyScalar(0.001);
-
-            // Combine wave motion with spring force
-            velocity.set(waveX, waveY, waveZ).add(springForce);
-
-            // Add some subtle flocking with nearby birds
-            const neighbors: THREE.Mesh[] = [];
-            dotsRef.current.forEach(otherBird => {
-              if (otherBird !== bird && bird.position.distanceTo(otherBird.position) < 4) {
-                neighbors.push(otherBird);
-              }
-            });
-
-            if (neighbors.length > 0) {
-              const center = new THREE.Vector3();
-              neighbors.forEach(neighbor => center.add(neighbor.position));
-              center.divideScalar(neighbors.length);
-              const cohesion = center.sub(bird.position).normalize().multiplyScalar(0.002);
-              velocity.add(cohesion);
-            }
-
-            // Apply smooth, damped movement
-            bird.position.add(velocity);
-
-            // Soft boundaries with elastic bounce
-            const distance = bird.position.length();
-            if (distance > 25) {
-              const bounceForce = bird.position.clone().normalize().multiplyScalar(-0.1);
-              bird.position.add(bounceForce);
-            }
-
-            // Gentle center avoidance
-            const centerDistance = Math.sqrt(bird.position.x * bird.position.x + bird.position.y * bird.position.y);
-            if (centerDistance < 12) {
-              const pushAway = bird.position.clone().normalize().multiplyScalar(0.02);
-              bird.position.add(pushAway);
-            }
-          } else if (userData.targetPosition) {
-            // Move toward target when hovered with more dynamic movement
-            const direction = userData.targetPosition.clone().sub(bird.position);
-            const distance = direction.length();
-
-            // Create vanishing effect as dots approach target
-            const material = bird.material as THREE.MeshBasicMaterial;
-            const vanishDistance = Math.max(0.1, Math.min(1, distance / 10));
-            const currentOpacity = material.opacity;
-
-            // Gradually fade as approaching target (vanish into thin air)
-            material.opacity = currentOpacity * vanishDistance;
-
-            if (distance > 0.2) {
-              // Gentler movement toward target with smoother easing
-              const t = Math.min(distance / 25, 1); // Slower approach for smoother transition
-              const ease = 1 - Math.pow(1 - t, 2); // Gentler ease-out quadratic instead of cubic
-
-              direction.normalize().multiplyScalar(0.008 * ease); // Much gentler movement speed
-
-              // Apply smooth spring force
-              const springForce = direction.clone().multiplyScalar(0.05); // Reduced spring intensity
-              bird.position.add(springForce);
-
-              // Add gentle flowing movement
-              const time = Date.now() * 0.001; // Slower time scale
-              const flow = new THREE.Vector3(
-                Math.sin(time * 0.5 + index * 0.1) * 0.003, // Reduced amplitude and frequency
-                Math.cos(time * 0.7 + index * 0.15) * 0.003,
-                Math.sin(time * 0.3 + index * 0.2) * 0.002
-              );
-              bird.position.add(flow);
-            } else {
-              // Become nearly invisible when very close (vanished)
-              material.opacity *= 0.1;
-            }
-          }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+      const hov = hoveredNavRef.current;
+      const svc = hov ? serviceItems.find(s => s.id === hov) : null;
+      if (svc && svcParticlesRef.current.length < 35) {
+        svcParticlesRef.current.push({
+          x: Math.random() * w,
+          y: h + 2,
+          vy: -(Math.random() * 0.6 + 0.2),
+          vx: (Math.random() - 0.5) * 0.2,
+          size: Math.random() * 1.5 + 0.5,
+          life: 1,
+          color: svc.color,
         });
-
-        // No energy orbs to animate anymore
-
-        renderer.render(scene, camera);
-      };
-
-      animate();
-
-      // Handle resize
-      const handleResize = () => {
-        if (!camera || !renderer) return;
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-      };
-
-      window.addEventListener('resize', handleResize);
-
-      return () => {
-        window.removeEventListener('resize', handleResize);
-        if (animationFrameRef.current) {
-          cancelAnimationFrame(animationFrameRef.current);
-        }
-        renderer.dispose();
-      };
-    } catch (error) {
-      console.error('Error initializing Three.js scene:', error);
-    }
+      }
+      svcParticlesRef.current = svcParticlesRef.current.filter(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life -= 0.006;
+        if (p.life <= 0) return false;
+        const a = Math.min(p.life * 0.4, 0.2);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + Math.floor(a * 255).toString(16).padStart(2, '0');
+        ctx.fill();
+        return true;
+      });
+      svcAnimRef.current = requestAnimationFrame(animate);
+    };
+    animate();
+    return () => { running = false; cancelAnimationFrame(svcAnimRef.current); };
   }, [isClient]);
 
-  const createLightningBackground = (scene: THREE.Scene) => {
-    // Clear existing elements first
-    clearScene(scene);
-
-    // Create electrical nodes scattered around
-    const nodeCount = 300;
-    const nodes = [];
-
-    for (let i = 0; i < nodeCount; i++) {
-      // Distribute across the full screen, avoiding center area
-      let x, y, z;
-      do {
-        x = (Math.random() - 0.5) * 50;
-        y = (Math.random() - 0.5) * 30;
-        z = (Math.random() - 0.5) * 20;
-      } while (Math.sqrt(x*x + y*y) < 12); // Avoid center circle
-
-      const geometry = new THREE.SphereGeometry(0.04 + Math.random() * 0.02, 8, 8);
-
-      // Calculate distance from bottom for opacity gradient effect
-      const distanceFromBottom = (y + 15) / 30; // Normalize to 0-1 range
-      const distanceFromEdge = Math.min(
-        (x + 25) / 50, // Distance from left edge
-        (25 - x) / 50, // Distance from right edge
-        (y + 15) / 30, // Distance from bottom
-        (15 - y) / 30  // Distance from top
-      );
-
-      // Create subtle default state - much more subtle and faded
-      const baseOpacity = Math.max(0.02, (1.5 - distanceFromBottom) * distanceFromEdge * 0.15); // Much more subtle
-
-      const material = new THREE.MeshBasicMaterial({
-        color: new THREE.Color().setHSL(0.6, 0.2, 0.7), // Desaturated and darker
-        transparent: true,
-        opacity: Math.min(0.15, baseOpacity) // Much lower maximum opacity
-      });
-
-      const node = new THREE.Mesh(geometry, material);
-      node.position.set(x, y, z);
-
-      // Store original position for animation
-      node.userData = {
-        originalPosition: node.position.clone(),
-        phase: Math.random() * Math.PI * 2,
-        velocity: new THREE.Vector3(
-          (Math.random() - 0.5) * 0.05,
-          (Math.random() - 0.5) * 0.05,
-          (Math.random() - 0.5) * 0.05
-        ),
-        targetPosition: null,
-        flockingSpeed: 0.003 + Math.random() * 0.002
-      };
-
-      scene.add(node);
-      dotsRef.current.push(node);
-      nodes.push(node);
-    }
-
-    // All nodes now have their velocity set during creation above
-
-    // No large energy orbs - keeping all dots consistent
+  const handleHover = (id: string | null) => {
+    setHoveredNav(id);
   };
 
-  const clearScene = (scene: THREE.Scene) => {
-    dotsRef.current.forEach(dot => scene.remove(dot));
-    shapesRef.current.forEach(shape => scene.remove(shape));
-    dotsRef.current = [];
-    shapesRef.current = [];
-  };
+  const nextWork = () => setActiveWork((p) => (p + 1) % workPlaceholders.length);
 
-
-  const generateColorVariation = (baseColor: string) => {
-    const color = new THREE.Color(baseColor);
-    const variation = Math.random() * 0.6 + 0.2; // 0.2 to 0.8 variation
-    return color.clone().multiplyScalar(variation);
-  };
-
-  const animateColorChange = (newColor: string) => {
-
-    // Animate dots
-    dotsRef.current.forEach((dot, index) => {
-      const material = dot.material as THREE.MeshBasicMaterial;
-      const currentColor = material.color;
-      const newVariationColor = generateColorVariation(newColor);
-
-      gsap.to(currentColor, {
-        duration: 1.5,
-        r: newVariationColor.r,
-        g: newVariationColor.g,
-        b: newVariationColor.b,
-        ease: "power2.out",
-        delay: index * 0.02
-      });
-    });
-
-    // No lines to animate in current implementation
-
-    // Animate shapes
-    shapesRef.current.forEach((shape, index) => {
-      const material = shape.material as THREE.MeshBasicMaterial;
-      const currentColor = material.color;
-      const newVariationColor = generateColorVariation(newColor);
-
-      gsap.to(currentColor, {
-        duration: 1.5,
-        r: newVariationColor.r,
-        g: newVariationColor.g,
-        b: newVariationColor.b,
-        ease: "power2.out",
-        delay: index * 0.04
-      });
-    });
-  };
-
-  const handleNavClick = (navId: string) => {
-    setActiveNav(navId);
-    const navItem = navItems.find(item => item.id === navId);
-    if (navItem) {
-      animateColorChange(navItem.color);
-    }
-  };
-
-  const handleNavHover = (navId: string | null) => {
-    setHoveredNav(navId);
-    setIsAnyHovered(navId !== null);
-
-    if (sceneRef.current) {
-      if (navId) {
-        // Animate existing elements to themed pattern
-        animateToThemedPattern(sceneRef.current, navId);
-      } else {
-        // Return to default lightning background
-        animateToLightningPattern(sceneRef.current);
-      }
-    }
-  };
-
-  const animateToThemedPattern = (_scene: THREE.Scene, navId: string) => {
-    const navItem = navItems.find(item => item.id === navId);
-    if (!navItem) return;
-
-    // Get the navigation dot position
-    const navIndex = navItems.findIndex(item => item.id === navId);
-    const navAngle = navIndex * 90 * (Math.PI / 180); // Convert to radians
-    const orbitalRadius = 300; // Approximate orbital radius
-    const navPosition = new THREE.Vector3(
-      Math.cos(navAngle) * orbitalRadius * 0.1,
-      Math.sin(navAngle) * orbitalRadius * 0.1,
-      0
-    );
-
-    // Animate existing birds to move toward the hovered navigation
-    const targetColor = new THREE.Color(navItem.color);
-
-    dotsRef.current.forEach((bird, index) => {
-      const material = bird.material as THREE.MeshBasicMaterial;
-
-      // Animate color change with smooth power easing
-      gsap.to(material.color, {
-        duration: 1.8,
-        r: targetColor.r,
-        g: targetColor.g,
-        b: targetColor.b,
-        ease: "power2.out"
-      });
-
-      // Dramatically increase visibility when targeting - come to life!
-      gsap.to(material, {
-        duration: 1.8,
-        opacity: 0.9 + Math.random() * 0.1, // Bright and vivid on hover
-        ease: "power2.out"
-      });
-
-      // Create recognizable patterns based on navigation type
-      let targetPos;
-
-      switch (navId) {
-        case 'research':
-          // DNA helix pattern
-          const helixT = (index / dotsRef.current.length) * Math.PI * 4;
-          const helixRadius = 8;
-          const helixHeight = 12;
-          targetPos = new THREE.Vector3(
-            navPosition.x + Math.cos(helixT) * helixRadius,
-            navPosition.y + (index / dotsRef.current.length - 0.5) * helixHeight,
-            navPosition.z + Math.sin(helixT) * helixRadius
-          );
-          break;
-
-        case 'strategy':
-          // Geometric grid pattern
-          const gridSize = Math.ceil(Math.sqrt(dotsRef.current.length / 4));
-          const row = Math.floor(index / gridSize);
-          const col = index % gridSize;
-          targetPos = new THREE.Vector3(
-            navPosition.x + (col - gridSize/2) * 2.5,
-            navPosition.y + (row - gridSize/2) * 2.5,
-            navPosition.z + Math.sin((row + col) * 0.5) * 3
-          );
-          break;
-
-        case 'activation':
-          // Flower/mandala pattern
-          const petalAngle = (index / dotsRef.current.length) * Math.PI * 2;
-          const petalLayer = Math.floor(index / 50);
-          const petalRadius = 4 + petalLayer * 3;
-          const petalOffset = Math.sin(petalAngle * 6) * 2;
-          targetPos = new THREE.Vector3(
-            navPosition.x + Math.cos(petalAngle) * (petalRadius + petalOffset),
-            navPosition.y + Math.sin(petalAngle) * (petalRadius + petalOffset),
-            navPosition.z + Math.sin(petalAngle * 3) * 4
-          );
-          break;
-
-        case 'impact':
-          // Ascending spiral (like growth chart)
-          const spiralAngle = (index / dotsRef.current.length) * Math.PI * 6;
-          const spiralRadius = 3 + (index / dotsRef.current.length) * 8;
-          const spiralHeight = (index / dotsRef.current.length) * 10;
-          targetPos = new THREE.Vector3(
-            navPosition.x + Math.cos(spiralAngle) * spiralRadius,
-            navPosition.y + spiralHeight - 5,
-            navPosition.z + Math.sin(spiralAngle) * spiralRadius
-          );
-          break;
-
-        default:
-          targetPos = navPosition.clone();
-      }
-
-      bird.userData.targetPosition = targetPos;
-    });
-  };
-
-  const animateToLightningPattern = (_scene: THREE.Scene) => {
-    // Return birds to natural flocking behavior
-    dotsRef.current.forEach((bird) => {
-      const material = bird.material as THREE.MeshBasicMaterial;
-
-      // Return to subtle, faded default state
-      gsap.to(material.color, {
-        duration: 2.0,
-        r: 0.4,
-        g: 0.5,
-        b: 0.7,
-        ease: "power2.out"
-      });
-
-      gsap.to(material, {
-        duration: 2.0,
-        opacity: 0.05 + Math.random() * 0.1, // Much more subtle default state
-        ease: "power2.out"
-      });
-
-      // Clear target position to return to natural flocking
-      bird.userData.targetPosition = null;
-
-      // Reset velocity for natural movement with higher speeds
-      bird.userData.velocity = new THREE.Vector3(
-        (Math.random() - 0.5) * 0.05,
-        (Math.random() - 0.5) * 0.05,
-        (Math.random() - 0.5) * 0.05
-      );
-    });
-  };
-
-  // Don't render until client-side hydration is complete
   if (!isClient) {
-    return (
-      <div className="relative w-full h-screen overflow-hidden bg-black">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-white/50">Loading...</div>
-        </div>
-      </div>
-    );
+    return <div className="flex flex-col w-full h-screen overflow-hidden" style={{ background: 'var(--background, #0a0a0a)' }}><div className="flex-1 flex items-center justify-center"><div style={{ color: 'var(--color-gray-4)' }}>Loading...</div></div></div>;
   }
 
+  const hoveredColor = hoveredNav ? colorMap[hoveredNav] : null;
+  const isNewsHovered = hoveredNav === 'newsletter';
+  const isWorkHovered = hoveredNav === 'our-work';
+  const isResourcesHovered = hoveredNav === 'resources';
+  const isAboutHovered = hoveredNav === 'about-us';
+
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black">
-      {/* Full Page Color Overlay - perfectly matched with video overlay */}
-      {hoveredNav && (
-        <div
-          className="absolute inset-0 z-5 transition-all duration-700 ease-out pointer-events-none"
-          style={{
-            background: `linear-gradient(0deg, ${navItems.find(item => item.id === hoveredNav)?.color}60 0%, ${navItems.find(item => item.id === hoveredNav)?.color}20 50%, transparent 80%)`
-          }}
-        />
-      )}
-      {/* CSS Animation Keyframes */}
+    <div className="shn-outer flex flex-col w-full h-screen overflow-hidden" style={{ background: 'var(--background, #0a0a0a)' }}>
+
       <style>{`
-        @keyframes orbit {
-          from {
-            transform: translate(-50%, -50%) rotate(0deg);
-          }
-          to {
-            transform: translate(-50%, -50%) rotate(360deg);
-          }
+        @keyframes cardIn {
+          from { opacity: 0; transform: translateY(12px) scale(0.97); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
         }
-        @keyframes counter-orbit {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(-360deg);
-          }
+        @keyframes heroIn {
+          from { opacity: 0; transform: scale(0.98); }
+          to   { opacity: 1; transform: scale(1); }
         }
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.8);
-          }
-          to {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-          }
+        @keyframes svcItemIn {
+          from { opacity: 0; transform: translate(-50%, -50%) translateY(14px) scale(0.6); }
+          to   { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
         }
-        @keyframes fadeInRing {
-          from {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-          }
+        @keyframes awardsScroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
         }
-        @keyframes fadeInDot {
-          from {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.5);
-          }
-          to {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-          }
+        @keyframes globeDrift {
+          0%, 100% { transform: translateX(0px); }
+          50%      { transform: translateX(-8px); }
         }
-        @keyframes orbitDots {
-          from {
-            transform: translate(-50%, -50%) rotate(0deg);
-          }
-          to {
-            transform: translate(-50%, -50%) rotate(360deg);
-          }
+        .bento-grid {
+          display: grid;
+          grid-template-areas:
+            "hero      hero      hero      services  services"
+            "hero      hero      hero      services  services"
+            "hero      hero      hero      work      work"
+            "about     resources resources work      work"
+            "about     resources resources work      work"
+            "about     resources resources news      news";
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+          grid-template-rows: 1fr 0.7fr 1fr 0.7fr 0.7fr 0.4fr;
+          gap: 8px;
+          width: 100%;
+          height: 100%;
         }
-        @keyframes headerTextIn {
-          0% {
-            opacity: 0;
-            transform: translate(-50%, -50%) translateY(20px) scale(0.8);
-          }
-          20% {
-            opacity: 1;
-            transform: translate(-50%, -50%) translateY(0px) scale(1);
-          }
-          80% {
-            opacity: 1;
-            transform: translate(-50%, -50%) translateY(0px) scale(1);
-          }
-          100% {
-            opacity: 0;
-            transform: translate(-50%, -50%) translateY(-10px) scale(0.95);
-          }
+
+        .bcard {
+          background: rgba(255, 255, 255, 0.025);
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          overflow: hidden;
+          position: relative;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
         }
-        @keyframes helperTextIn {
-          from {
-            opacity: 0;
-            transform: translateX(-50%) translateY(10px);
+        .bcard-link { cursor: pointer; }
+        .bcard-link:hover {
+          background: rgba(255, 255, 255, 0.045);
+          border-color: rgba(255, 255, 255, 0.12);
+          transform: translateY(-2px) scale(1.008);
+        }
+
+        .awards-track {
+          display: flex;
+          gap: 32px;
+          animation: awardsScroll 20s linear infinite;
+        }
+        .awards-track:hover { animation-play-state: paused; }
+
+        @media (max-width: 768px) {
+          .shn-outer {
+            height: auto;
+            min-height: 100vh;
+            overflow-y: auto;
           }
-          to {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0px);
+          .shn-grid-wrap {
+            flex: none;
+            min-height: auto;
+          }
+          .bento-grid {
+            grid-template-areas:
+              "hero"
+              "services"
+              "work"
+              "resources"
+              "about"
+              "news";
+            grid-template-columns: 1fr;
+            grid-template-rows: 300px 380px 320px 180px 180px 72px;
+            gap: 6px;
           }
         }
       `}</style>
-      {/* Three.js Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full"
-      />
 
-      {/* Helper Text - positioned at actual page bottom */}
-      <div
-        className="absolute z-25 pointer-events-none"
-        style={{
-          bottom: '5%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          animation: 'helperTextIn 0.8s ease-out forwards',
-          animationDelay: '4.5s', // Start at the very end after all animations complete
-          opacity: 0
-        }}
+      {/* ─── HEADER ────────────────────────────────────────────────
+           TODO: Replace with dedicated <Header /> component.
+           This is a placeholder layout — logo + menu icon only.
+           Nav links intentionally omitted since this page's bento
+           grid already surfaces the same destinations.
+           ───────────────────────────────────────────────────────── */}
+      <header
+        className="shrink-0 flex items-center justify-between px-5 md:px-8 lg:px-10 py-3 md:py-4"
       >
-        <p
-          className="text-lg md:text-xl text-gray-400 text-center font-medium whitespace-nowrap"
+        {/* Logo */}
+        <a href="/" className="shrink-0">
+          <img
+            src="/grounded-logo-light.svg"
+            alt="Grounded World"
+            className="h-10 md:h-12 lg:h-14 w-auto"
+          />
+        </a>
+
+        {/* Menu icon */}
+        <button
+          className="shrink-0 flex items-center justify-center rounded-full transition-all duration-300"
           style={{
-            textShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
-            letterSpacing: '0.02em'
+            width: 44,
+            height: 44,
+            background: 'rgba(255,255,255,0.06)',
+            border: '1px solid rgba(255,255,255,0.08)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'rgba(255,255,255,0.12)';
+            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
+            e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
           }}
         >
-          Select an option
-        </p>
-      </div>
+          <List size={22} weight="bold" style={{ color: 'rgba(255,255,255,0.85)' }} />
+        </button>
+      </header>
 
-      {/* Navigation Overlay - Centered Container */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="relative">
-          {/* Animated Header Text */}
+      {/* Page-level background glow — responds to hovered card */}
+      <div
+        className="absolute inset-0 pointer-events-none transition-all duration-700"
+        style={{
+          background: hoveredColor
+            ? `radial-gradient(ellipse 80% 50% at 50% 100%, ${hoveredColor}12, ${hoveredColor}06 40%, transparent 70%)`
+            : 'transparent',
+          zIndex: 0,
+        }}
+      />
+
+      {/* ─── BENTO GRID ─── */}
+      <div className="shn-grid-wrap flex-1 min-h-0 p-2 md:p-3 relative z-10">
+        <div className="bento-grid">
+
+          {/* ━━━ HERO (3×3 — dominant) ━━━ */}
           <div
-            className="absolute z-30 pointer-events-none"
+            className="bcard"
             style={{
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              animation: 'headerTextIn 2.5s ease-in-out forwards',
-              animationDelay: '0.2s',
-              opacity: 0
+              gridArea: 'hero',
+              borderRadius: '32px 24px 24px 24px',
+              animation: 'heroIn 1s ease-out both',
+              animationDelay: '0.1s',
+              backdropFilter: 'none', WebkitBackdropFilter: 'none',
             }}
           >
-            <h1
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold text-white text-center tracking-tight"
-              style={{
-                textShadow: '0 0 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.6)',
-                fontWeight: '700',
-                letterSpacing: '-0.02em',
-                lineHeight: '1.1'
-              }}
-            >
-              <span className="block sm:hidden">
-                Activating<br />Purpose
-              </span>
-              <span className="hidden sm:block whitespace-nowrap">
+            <video ref={videoRef} className="absolute inset-0 w-full h-full object-cover" autoPlay loop muted playsInline style={{ borderRadius: 'inherit' }}>
+              <source src="https://player.vimeo.com/progressive_redirect/playback/1161946524/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&log_user=0&signature=ff985305bacd44ceec1d96f384a10daa44f54d5055afc72a0b9ec4ab171053ab" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.1) 100%)', borderRadius: 'inherit' }} />
+            <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 lg:p-10">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-[0.9]" style={{ color: 'var(--color-white)' }}>
                 Activating Purpose
-              </span>
-            </h1>
-          </div>
+              </h1>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light tracking-tight mt-1 md:mt-2" style={{ color: 'var(--color-gray-3)' }}>
+                Accelerating Impact
+              </p>
 
-          {/* Center Video */}
-          <div className="absolute z-10 pointer-events-auto" style={{
-            top: '36%', // Moved up a bit more
-            left: '28%', // Moved further left to better center the globe
-            transform: 'translate(-50%, -50%)',
-            animation: 'fadeInScale 0.8s ease-out forwards',
-            animationDelay: '0.1s',
-            opacity: 0
-          }}>
-            <div
-              className="rounded-full overflow-hidden relative"
-              style={{
-                width: 'min(525px, max(68vw, 340px))', // 25% smaller: 700*0.75=525, 90*0.75=68, 450*0.75=340
-                height: 'min(525px, max(68vw, 340px))',
-                clipPath: 'circle(50%)',
-                border: 'none',
-                boxShadow: 'none'
-              }}
-            >
-              <video
-                ref={videoRef}
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source
-                  src="https://player.vimeo.com/progressive_redirect/playback/1161946524/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&log_user=0&signature=ff985305bacd44ceec1d96f384a10daa44f54d5055afc72a0b9ec4ab171053ab"
-                  type="video/mp4"
-                />
-              </video>
-
-              {/* Video Color Overlay - EXACTLY matching page gradient direction and values */}
-              {hoveredNav && (
-                <div
-                  className="absolute inset-0 transition-all duration-700 ease-out pointer-events-none"
-                  style={{
-                    background: `linear-gradient(0deg, ${navItems.find(item => item.id === hoveredNav)?.color}60 0%, ${navItems.find(item => item.id === hoveredNav)?.color}20 50%, transparent 80%)`,
-                    clipPath: 'circle(50%)'
-                  }}
-                />
-              )}
+              {/* ─── AWARDS MARQUEE ──────────────────────────────────
+                   TODO: Replace placeholder rectangles with actual
+                   award logos / images. This infinite-scroll carousel
+                   auto-animates right→left and pauses on hover.
+                   ──────────────────────────────────────────────────── */}
+              <div className="mt-4 md:mt-6 overflow-hidden" style={{ maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)' }}>
+                <div className="awards-track">
+                  {/* Duplicate set for seamless loop */}
+                  {[...Array(2)].map((_, setIndex) => (
+                    <React.Fragment key={setIndex}>
+                      {Array.from({ length: 10 }).map((_, i) => (
+                        <div
+                          key={`${setIndex}-${i}`}
+                          className="shrink-0 rounded-md flex items-center justify-center"
+                          style={{
+                            width: i % 3 === 0 ? 100 : 80,
+                            height: 36,
+                            background: 'rgba(255,255,255,0.06)',
+                            border: '1px solid rgba(255,255,255,0.08)',
+                          }}
+                        >
+                          <span className="text-[9px] font-medium" style={{ color: 'rgba(255,255,255,0.25)' }}>Award</span>
+                        </div>
+                      ))}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Dotted Orbit Circle */}
+          {/* ━━━ SERVICES (2×2) — Half-circle layout ━━━ */}
           <div
-            className="absolute z-15 pointer-events-none"
+            className="bcard"
             style={{
-              width: 'min(575px, max(74vw, 370px))', // Much closer to smaller video: 525+50
-              height: 'min(575px, max(74vw, 370px))',
-              border: '3px dotted rgba(120, 120, 130, 0.8)',
-              borderRadius: '50%',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              animation: 'fadeInRing 0.8s ease-out forwards, orbitDots 120s linear infinite',
-              animationDelay: '2.8s, 3.5s', // Start after header text completes (2.5s + buffers)
-              opacity: 0,
-              filter: 'drop-shadow(0 0 10px rgba(120, 120, 130, 0.3))'
+              gridArea: 'services',
+              borderRadius: '24px 32px 24px 24px',
+              animation: 'cardIn 0.7s ease-out both',
+              animationDelay: '0.2s',
             }}
-          />
+          >
+            {/* Particle canvas — rises from bottom on hover */}
+            <canvas
+              ref={svcCanvasRef}
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              style={{ borderRadius: 'inherit', zIndex: 1 }}
+            />
 
+            {/* Hover background tint */}
+            <div
+              className="absolute inset-0 transition-all duration-700 pointer-events-none"
+              style={{
+                opacity: hoveredNav && serviceItems.some(s => s.id === hoveredNav) ? 1 : 0,
+                background: hoveredNav && colorMap[hoveredNav]
+                  ? `radial-gradient(ellipse at 50% 100%, ${colorMap[hoveredNav]}18, ${colorMap[hoveredNav]}06 50%, transparent 80%)`
+                  : 'transparent',
+                borderRadius: 'inherit',
+                zIndex: 0,
+              }}
+            />
 
-          {/* Orbiting Navigation Dots */}
-          <div className="absolute z-20 pointer-events-none" style={{
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)'
-          }}>
-            {navItems.map((item, index) => {
-              const isActive = activeNav === item.id;
-              const isHovered = hoveredNav === item.id;
+            <div className="relative z-10 flex flex-col h-full p-4 md:p-5 lg:p-6">
+              <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium" style={{ color: 'var(--color-gray-4)' }}>Services</p>
 
-              // Calculate starting angle for each dot (90 degrees apart)
-              const baseAngle = index * 90;
-              return (
+              {/* ─── HALF-CIRCLE PLACEHOLDER ─────────────────────
+                   TODO: Replace with animated SVG graphic.
+                   Dotted arc + filled dome + orbiting items.
+                   ────────────────────────────────────────────────── */}
+              <div className="relative flex-1 mt-2">
+                {/* ─── SVG Globe ─── */}
                 <div
-                  key={item.id}
-                  className="absolute pointer-events-auto"
+                  className="absolute pointer-events-none"
                   style={{
-                    top: '0',
-                    left: '0'
+                    left: '50%',
+                    top: '55%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '62%',
+                    aspectRatio: '1',
                   }}
                 >
-                  {/* Orbiting Dot Container */}
-                  <div
-                    className={`absolute`}
-                    style={{
-                      width: 'min(575px, max(74vw, 370px))', // Match closer ring size
-                      height: 'min(575px, max(74vw, 370px))',
-                      transform: `translate(-50%, -50%) rotate(${baseAngle}deg)`,
-                      animationName: 'orbit',
-                      animationDuration: '60s',
-                      animationTimingFunction: 'linear',
-                      animationIterationCount: 'infinite',
-              animationDelay: `${3.5 - index * 15}s`, // Start orbit animation after other elements are visible
-                      animationPlayState: isAnyHovered ? 'paused' : 'running',
-                      animationFillMode: 'forwards'
-                    }}
-                  >
-                  <button
-                    className="absolute group transition-all duration-500 ease-out"
-                    style={{
-                      top: '0',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      animation: 'fadeInDot 0.6s ease-out forwards',
-              animationDelay: `${3 + index * 0.1}s`, // Start after header text completes (2.5s + 0.5s buffer)
-                      opacity: 0
-                    }}
-                    onClick={() => {
-                      if (isTouchDevice) {
-                        // On touch devices, single tap navigates directly
-                        const navItem = navItems.find(navItem => navItem.id === item.id);
-                        if (navItem) {
-                          window.open(navItem.url, '_blank');
-                        }
-                      } else {
-                        // On desktop, maintain existing behavior
-                        handleNavClick(item.id);
-                        const navItem = navItems.find(navItem => navItem.id === item.id);
-                        if (navItem) {
-                          window.open(navItem.url, '_blank');
-                        }
-                      }
-                    }}
-                    onMouseEnter={() => !isTouchDevice && handleNavHover(item.id)}
-                    onMouseLeave={() => !isTouchDevice && handleNavHover(null)}
-                  >
-                    {/* Counter-rotating container to keep content at 0 degrees */}
-                    <div
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/sphere.svg" alt="" className="w-full h-full" />
+                </div>
+
+                {/* Service items on the arc — animate in staggered */}
+                {serviceItems.map((svc, i) => {
+                  const isHovered = hoveredNav === svc.id;
+                  // Positions mathematically on the ellipse: center(50,75) rx=35 ry=52
+                  // Angles: 155°, 115°, 65°, 25° from right horizontal
+                  // Positions on the dotted orbit ellipse
+                  const positions = [
+                    { left: '18%', top: '72%' },
+                    { left: '24%', top: '24%' },
+                    { left: '76%', top: '24%' },
+                    { left: '82%', top: '72%' },
+                  ];
+                  const pos = positions[i];
+                  return (
+                    <a
+                      key={svc.id}
+                      href={svc.url}
+                      className="absolute flex flex-col items-center gap-1.5 no-underline group/svc"
                       style={{
-                        transform: `rotate(${-baseAngle}deg)`,
-                        animationName: 'counter-orbit',
-                        animationDuration: '60s',
-                        animationTimingFunction: 'linear',
-                        animationIterationCount: 'infinite',
-                animationDelay: `${3.5 - index * 15}s`, // Start counter-rotation with orbit animation
-                        animationPlayState: isAnyHovered ? 'paused' : 'running',
-                        animationFillMode: 'forwards'
+                        left: pos.left,
+                        top: pos.top,
+                        animation: `svcItemIn 0.6s ease-out both`,
+                        animationDelay: `${0.4 + i * 0.12}s`,
                       }}
+                      onMouseEnter={() => !isTouchDevice && handleHover(svc.id)}
+                      onMouseLeave={() => !isTouchDevice && handleHover(null)}
+                      onClick={(e) => { e.preventDefault(); window.open(svc.url, isTouchDevice ? '_self' : '_blank'); }}
                     >
-                      {/* Navigation Dot with Content */}
                       <div
-                        className={`relative rounded-full transition-all duration-500 ease-out flex items-center justify-center overflow-hidden ${
-                          isTouchDevice
-                            ? 'w-16 h-16 sm:w-20 sm:h-20' // Larger on touch devices for better tap targets
-                            : isHovered
-                            ? 'w-32 h-12 sm:w-36 sm:h-12'
-                            : 'w-11 h-11 sm:w-12 sm:h-12'
-                        }`}
+                        className="w-9 h-9 md:w-10 md:h-10 rounded-full shrink-0 flex items-center justify-center transition-all duration-300"
                         style={{
-                          backgroundColor: item.color,
-                          boxShadow: isTouchDevice
-                            ? `0 0 20px ${item.color}50, 0 0 40px ${item.color}30` // More prominent on touch
-                            : isHovered
-                            ? `0 0 30px ${item.color}80, 0 0 60px ${item.color}60, 0 0 90px ${item.color}40`
-                            : isActive
-                            ? `0 0 20px ${item.color}50, 0 0 40px ${item.color}30`
-                            : `0 0 10px ${item.color}30`
+                          backgroundColor: `${svc.color}${isHovered ? '25' : '10'}`,
+                          border: `1.5px solid ${svc.color}${isHovered ? '60' : '25'}`,
+                          boxShadow: isHovered ? `0 0 20px ${svc.color}40` : 'none',
+                          transform: isHovered ? 'scale(1.15)' : 'scale(1)',
                         }}
                       >
-                        {/* Default Icon - always visible on touch, hover-dependent on desktop */}
-                        <div
-                          className={`absolute transition-all duration-300 ${
-                            isTouchDevice
-                              ? 'opacity-100 transform scale-100' // Always visible on touch
-                              : isHovered ? 'opacity-0 transform scale-75' : 'opacity-100 transform scale-100'
-                          }`}
-                        >
-                          <item.icon
-                            size={isTouchDevice ? 28 : 20} // Larger icon on touch devices
-                            weight="bold"
-                            color="white"
-                          />
-                        </div>
-
-                        {/* Arrow Icon - only shows on desktop hover */}
-                        {!isTouchDevice && (
-                          <div
-                            className={`absolute transition-all duration-300 ${
-                              isHovered ? 'opacity-100 transform translate-x-10' : 'opacity-0 transform translate-x-8'
-                            }`}
-                          >
-                            <ArrowUpRight
-                              size={18}
-                              weight="bold"
-                              color="white"
-                            />
-                          </div>
-                        )}
-
-                        {/* Title Text - only shows on desktop hover */}
-                        {!isTouchDevice && (
-                          <div
-                            className={`absolute left-3 text-white font-semibold text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
-                              isHovered ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-4'
-                            }`}
-                          >
-                            {item.label}
-                          </div>
-                        )}
+                        <svc.icon size={16} weight="bold" style={{ color: svc.color }} />
                       </div>
-                    </div>
+                      <span className="text-[10px] md:text-xs font-medium whitespace-nowrap transition-all duration-300" style={{ color: isHovered ? 'var(--color-white)' : 'var(--color-gray-4)', opacity: isHovered ? 1 : 0, transform: isHovered ? 'translateY(0)' : 'translateY(-4px)' }}>
+                        {svc.label}
+                      </span>
+                    </a>
+                  );
+                })}
+              </div>
 
-                  </button>
+              <p className="text-[10px] md:text-[11px] leading-relaxed mt-2" style={{ color: 'var(--color-gray-4)' }}>
+                Moving the needle &mdash; culturally, socially, environmentally and behaviorally.
+              </p>
+            </div>
+          </div>
+
+          {/* ━━━ OUR WORK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+               TODO: Replace this placeholder with a dedicated
+               <WorkCarousel /> component fed by real case-study
+               data from CMS. The gray image placeholders and
+               static titles should be swapped for actual content.
+               ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+          <div
+            className="bcard bcard-link"
+            style={{
+              gridArea: 'work',
+              borderRadius: '24px',
+              animation: 'cardIn 0.7s ease-out both',
+              animationDelay: '0.35s',
+              borderColor: isWorkHovered ? 'rgba(177, 179, 182, 0.2)' : undefined,
+            }}
+            onMouseEnter={() => !isTouchDevice && handleHover('our-work')}
+            onMouseLeave={() => !isTouchDevice && handleHover(null)}
+          >
+            <div className="relative z-10 flex flex-col h-full p-4 md:p-4 lg:p-5">
+              <div className="flex items-center justify-between mb-2 md:mb-3">
+                <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium" style={{ color: 'var(--color-gray-4)' }}>Our Work</p>
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] md:text-xs transition-opacity duration-300" style={{ color: 'var(--color-gray-4)', opacity: isWorkHovered ? 1 : 0 }}>View all</span>
+                  <ArrowUpRight size={16} weight="bold" className="transition-all duration-300" style={{ color: isWorkHovered ? 'var(--color-gray-3)' : 'transparent', transform: isWorkHovered ? 'translate(0,0) scale(1.15)' : 'translate(-2px, 2px) scale(1)' }} />
+                </div>
+              </div>
+
+              {/* Stacked cards + vertical bar pagination side-by-side */}
+              <div className="flex flex-1 min-h-0 gap-2 md:gap-3">
+                {/* Stacked cards container */}
+                <div className="relative flex-1 min-w-0 flex flex-col">
+                  <div className="relative w-full cursor-pointer" style={{ aspectRatio: '16/9' }} onClick={nextWork}>
+                    {workPlaceholders.map((_, i) => {
+                      const offset = (i - activeWork + workPlaceholders.length) % workPlaceholders.length;
+                      return (
+                        <div
+                          key={i}
+                          className="absolute inset-0 rounded-lg md:rounded-xl overflow-hidden transition-all duration-500 ease-out"
+                          style={{
+                            opacity: offset === 0 ? 1 : offset === 1 ? 0.5 : offset === 2 ? 0.2 : 0,
+                            transform: `translateY(${offset * 6}px) scale(${1 - offset * 0.035})`,
+                            zIndex: workPlaceholders.length - offset,
+                            pointerEvents: offset === 0 ? 'auto' : 'none',
+                          }}
+                        >
+                          {/* Gray placeholder image */}
+                          <div className="absolute inset-0 flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #1a1a1a, #2a2a2a, #1e1e1e)' }}>
+                            <span className="text-xs md:text-sm font-medium" style={{ color: 'rgba(255,255,255,0.18)' }}>case study here</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  {/* Title area — always visible below card image */}
+                  <div className="shrink-0 pt-2 md:pt-3">
+                    <span className="text-[9px] md:text-[10px] uppercase tracking-wider font-semibold" style={{ color: workPlaceholders[activeWork].accent }}>{workPlaceholders[activeWork].tag}</span>
+                    <p className="text-xs md:text-sm font-semibold mt-0.5 leading-tight" style={{ color: 'var(--color-white)' }}>{workPlaceholders[activeWork].title}</p>
                   </div>
                 </div>
-              );
-            })}
+
+                {/* Vertical bar pagination — centered beside cards */}
+                <div className="shrink-0 flex flex-col items-center justify-center gap-2">
+                  {workPlaceholders.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={(e) => { e.stopPropagation(); setActiveWork(i); }}
+                      className="transition-all duration-400 rounded-sm"
+                      style={{
+                        width: 5,
+                        height: i === activeWork ? 24 : 12,
+                        background: i === activeWork ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.2)',
+                        padding: 0,
+                        cursor: 'pointer',
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* ━━━ RESOURCES — Simple 2×2 grid (2×2 area) ━━━ */}
+          <div
+            className="bcard"
+            style={{
+              gridArea: 'resources',
+              borderRadius: '24px',
+              animation: 'cardIn 0.7s ease-out both',
+              animationDelay: '0.4s',
+              borderColor: isResourcesHovered ? 'rgba(0, 119, 181, 0.2)' : undefined,
+            }}
+            onMouseEnter={() => !isTouchDevice && handleHover('resources')}
+            onMouseLeave={() => !isTouchDevice && handleHover(null)}
+          >
+            <div className="absolute inset-0 transition-opacity duration-500 pointer-events-none" style={{ opacity: isResourcesHovered ? 1 : 0, background: 'radial-gradient(ellipse at 50% 100%, rgba(0, 119, 181, 0.06), transparent 60%)', borderRadius: 'inherit' }} />
+            <div className="relative z-10 flex flex-col h-full p-3 md:p-4 lg:p-5">
+              <div className="flex items-center justify-between mb-3 md:mb-4">
+                <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium" style={{ color: 'var(--color-gray-4)' }}>Resources</p>
+                <ArrowUpRight size={16} weight="bold" className="transition-all duration-300" style={{ color: isResourcesHovered ? '#0077B5' : 'transparent', transform: isResourcesHovered ? 'translate(0,0) scale(1.15)' : 'translate(-2px, 2px) scale(1)' }} />
+              </div>
+
+              <div className="flex-1 grid grid-cols-2 gap-2 md:gap-3 content-center">
+                {resourceTypes.map((rt) => (
+                  <a
+                    key={rt.label}
+                    href={rt.url}
+                    className="flex items-center gap-2.5 rounded-lg p-2.5 md:p-3 transition-all duration-300 no-underline group/rt"
+                    style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.04)' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.borderColor = `${rt.accent}25`; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.02)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.04)'; }}
+                  >
+                    <div className="w-1 h-5 md:h-6 rounded-full shrink-0 transition-all duration-300" style={{ background: rt.accent, opacity: 0.6 }} />
+                    <span className="text-[11px] md:text-xs font-medium leading-tight transition-colors duration-300" style={{ color: 'var(--color-gray-3)' }}>{rt.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          {/* ━━━ NEWSLETTER ━━━ */}
+          <div
+            className="bcard bcard-link group"
+            style={{
+              gridArea: 'news',
+              borderRadius: '24px',
+              animation: 'cardIn 0.6s ease-out both',
+              animationDelay: '0.55s',
+              borderColor: isNewsHovered ? 'rgba(255, 166, 3, 0.25)' : undefined,
+              boxShadow: isNewsHovered ? '0 0 24px rgba(255, 166, 3, 0.06)' : undefined,
+            }}
+            onMouseEnter={() => !isTouchDevice && handleHover('newsletter')}
+            onMouseLeave={() => !isTouchDevice && handleHover(null)}
+          >
+            <div className="absolute inset-0 transition-opacity duration-500 pointer-events-none" style={{ opacity: isNewsHovered ? 1 : 0, background: 'radial-gradient(ellipse at 50% 100%, rgba(255, 166, 3, 0.08), transparent 60%)', borderRadius: 'inherit' }} />
+            <div className="relative z-10 flex items-center gap-3 h-full p-3 md:p-4">
+              <Envelope size={20} weight="duotone" className="shrink-0 transition-colors duration-300" style={{ color: isNewsHovered ? '#FFA603' : 'rgba(255,255,255,0.2)' }} />
+              <div className="flex-1 min-w-0">
+                <p className="text-xs md:text-sm font-semibold transition-colors duration-300 leading-tight" style={{ color: isNewsHovered ? 'var(--color-white)' : 'var(--color-gray-3)' }}>Newsletter</p>
+                <p className="text-[9px] md:text-[10px] leading-snug mt-0.5 truncate" style={{ color: 'var(--color-gray-4)' }}>Weekly purpose-driven insights</p>
+              </div>
+              <div className="shrink-0 h-7 md:h-8 px-3 rounded-full text-[10px] md:text-xs font-semibold flex items-center transition-all duration-300" style={{ background: isNewsHovered ? '#FFA603' : 'rgba(255,255,255,0.05)', color: isNewsHovered ? '#000' : 'var(--color-gray-4)' }}>Subscribe</div>
+            </div>
+          </div>
+
+          {/* ━━━ ABOUT US ━━━ */}
+          <div
+            className="bcard bcard-link group"
+            style={{
+              gridArea: 'about',
+              borderRadius: '24px',
+              animation: 'cardIn 0.6s ease-out both',
+              animationDelay: '0.5s',
+              borderColor: isAboutHovered ? 'rgba(77, 217, 255, 0.2)' : undefined,
+              boxShadow: isAboutHovered ? '0 0 24px rgba(77, 217, 255, 0.06)' : undefined,
+            }}
+            onMouseEnter={() => !isTouchDevice && handleHover('about-us')}
+            onMouseLeave={() => !isTouchDevice && handleHover(null)}
+            onClick={() => window.open('/about', isTouchDevice ? '_self' : '_blank')}
+          >
+            <div className="absolute inset-0 transition-opacity duration-500 pointer-events-none" style={{ opacity: isAboutHovered ? 1 : 0, background: 'radial-gradient(ellipse at 50% 100%, rgba(77, 217, 255, 0.08), transparent 60%)', borderRadius: 'inherit' }} />
+            <div className="relative z-10 flex flex-col justify-between h-full p-3 md:p-4">
+              <div>
+                <div className="flex items-center justify-between mb-2 md:mb-3">
+                  <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium" style={{ color: 'var(--color-gray-4)' }}>About Us</p>
+                  <ArrowUpRight size={16} weight="bold" className="transition-all duration-300" style={{ color: isAboutHovered ? '#4DD9FF' : 'transparent', transform: isAboutHovered ? 'translate(0,0) scale(1.15)' : 'translate(-2px, 2px) scale(1)' }} />
+                </div>
+                <p className="text-sm md:text-base lg:text-lg font-bold leading-tight tracking-tight" style={{ color: 'var(--color-white)' }}>
+                  Big Brand Muscle.
+                </p>
+                <p className="text-sm md:text-base lg:text-lg font-bold leading-tight tracking-tight" style={{ color: '#4DD9FF' }}>
+                  Boutique Hustle.
+                </p>
+              </div>
+              <div className="flex items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/bcorp-logo.svg" alt="Certified B Corporation" className="h-14 md:h-16 lg:h-20 w-auto" style={{ opacity: 0.5 }} />
+              </div>
+            </div>
           </div>
 
         </div>
