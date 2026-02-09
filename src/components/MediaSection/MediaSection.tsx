@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState, useMemo, useCallback, useRef } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
+import Container from '../Container';
 
 export interface MediaItem {
   id: string;
@@ -89,93 +90,95 @@ const GridView = ({
         ${className ?? ''}
       `}
     >
-      {/* Header */}
-      <div className="flex flex-col gap-[var(--size-16)] mb-[var(--layout-section-gap)] lg:flex-row lg:items-center lg:justify-between">
-        {title && (
-          <h2
-            className="
-              text-[length:var(--font-size-h2)]
-              font-bold
-              text-[color:var(--comp-media-section-title)]
-            "
-          >
-            {title}
-          </h2>
-        )}
-
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-[var(--layout-tab-tab-gap)]" role="tablist">
-          {allCategories.map((category) => (
-            <button
-              key={category}
-              role="tab"
-              aria-selected={activeCategory === category}
-              onClick={() => onCategoryChange(category)}
-              className={`
-                px-[var(--layout-tab-padding-x)]
-                py-[var(--layout-tab-padding-y)]
-                rounded-full
-                border
-                text-[length:var(--font-size-body-sm)]
-                font-medium
-                transition-colors
-                cursor-pointer
-                ${
-                  activeCategory === category
-                    ? 'bg-[var(--comp-tab-surface-active)] border-[var(--comp-tab-stroke-active)] text-[color:var(--comp-tab-text-active)]'
-                    : 'bg-[var(--comp-tab-surface-default)] border-[var(--comp-tab-stroke-default)] text-[color:var(--comp-tab-text-default)] hover:bg-[var(--comp-tab-surface-hover)] hover:border-[var(--comp-tab-stroke-hover)]'
-                }
-              `}
+      <Container>
+        {/* Header */}
+        <div className="flex flex-col gap-[var(--size-16)] mb-[var(--layout-section-gap)] lg:flex-row lg:items-center lg:justify-between">
+          {title && (
+            <h2
+              className="
+                text-[length:var(--font-size-h2)]
+                font-bold
+                text-[color:var(--comp-media-section-title)]
+              "
             >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
+              {title}
+            </h2>
+          )}
 
-      {/* Bento Grid */}
-      {filteredItems.length > 0 ? (
-        <div className="grid grid-cols-1 lg:grid-cols-3 auto-rows-[250px] gap-[var(--comp-media-section-gap)]">
-          {filteredItems.map((item, index) => {
-            const placement = getGridPlacement(index);
-            return (
-              <div
-                key={item.id}
-                className="
-                  media-grid-item
-                  rounded-[var(--comp-media-section-item-radius)]
-                  bg-[var(--comp-media-section-item-surface)]
-                  overflow-hidden
+          {/* Filter Tabs */}
+          <div className="flex flex-wrap gap-[var(--layout-tab-tab-gap)]" role="tablist">
+            {allCategories.map((category) => (
+              <button
+                key={category}
+                role="tab"
+                aria-selected={activeCategory === category}
+                onClick={() => onCategoryChange(category)}
+                className={`
+                  px-[var(--layout-tab-padding-x)]
+                  py-[var(--layout-tab-padding-y)]
+                  rounded-full
+                  border
+                  text-[length:var(--font-size-body-sm)]
+                  font-medium
                   transition-colors
-                  hover:bg-[var(--color-magenta)]
                   cursor-pointer
-                "
-                style={placement}
-                onClick={() => onItemClick?.(item)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') onItemClick?.(item);
-                }}
+                  ${
+                    activeCategory === category
+                      ? 'bg-[var(--comp-tab-surface-active)] border-[var(--comp-tab-stroke-active)] text-[color:var(--comp-tab-text-active)]'
+                      : 'bg-[var(--comp-tab-surface-default)] border-[var(--comp-tab-stroke-default)] text-[color:var(--comp-tab-text-default)] hover:bg-[var(--comp-tab-surface-hover)] hover:border-[var(--comp-tab-stroke-hover)]'
+                  }
+                `}
               >
-                {item.imageUrl ? (
-                  <img
-                    src={item.imageUrl}
-                    alt={item.imageAlt ?? item.title}
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full" />
-                )}
-              </div>
-            );
-          })}
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
-      ) : (
-        <p className="text-[color:var(--color-gray-4)] text-[length:var(--font-size-body-md)]">
-          No items to display.
-        </p>
-      )}
+
+        {/* Bento Grid */}
+        {filteredItems.length > 0 ? (
+          <div className="grid grid-cols-1 lg:grid-cols-3 auto-rows-[250px] gap-[var(--comp-media-section-gap)]">
+            {filteredItems.map((item, index) => {
+              const placement = getGridPlacement(index);
+              return (
+                <div
+                  key={item.id}
+                  className="
+                    media-grid-item
+                    rounded-[var(--comp-media-section-item-radius)]
+                    bg-[var(--comp-media-section-item-surface)]
+                    overflow-hidden
+                    transition-colors
+                    hover:bg-[var(--color-magenta)]
+                    cursor-pointer
+                  "
+                  style={placement}
+                  onClick={() => onItemClick?.(item)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') onItemClick?.(item);
+                  }}
+                >
+                  {item.imageUrl ? (
+                    <img
+                      src={item.imageUrl}
+                      alt={item.imageAlt ?? item.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full" />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        ) : (
+          <p className="text-[color:var(--color-gray-4)] text-[length:var(--font-size-body-md)]">
+            No items to display.
+          </p>
+        )}
+      </Container>
     </section>
   );
 };
@@ -278,97 +281,99 @@ const CarouselView = ({
         ${className ?? ''}
       `}
     >
-      {/* Filter Tabs */}
-      <div className="flex flex-col items-center gap-[var(--size-8)] mb-[var(--layout-section-gap)]">
-        {label && (
-          <span className="text-[color:var(--color-gray-4)] text-[length:var(--font-size-body-xl)]">
-            {label}
-          </span>
-        )}
-        <div className="flex flex-wrap justify-center gap-[var(--layout-tab-tab-gap)]" role="tablist">
-          {allCategories.map((category) => (
-            <button
-              key={category}
-              role="tab"
-              aria-selected={activeCategory === category}
-              onClick={() => handleCategoryChangeInternal(category)}
-              className={`
-                px-[var(--layout-tab-padding-x)]
-                py-[var(--layout-tab-padding-y)]
-                rounded-full
-                border
-                text-[length:var(--font-size-body-sm)]
-                font-medium
-                transition-colors
-                cursor-pointer
-                ${
-                  activeCategory === category
-                    ? 'bg-[var(--comp-tab-surface-active)] border-[var(--comp-tab-stroke-active)] text-[color:var(--comp-tab-text-active)]'
-                    : 'bg-[var(--comp-tab-surface-default)] border-[var(--comp-tab-stroke-default)] text-[color:var(--comp-tab-text-default)] hover:bg-[var(--comp-tab-surface-hover)] hover:border-[var(--comp-tab-stroke-hover)]'
-                }
-              `}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Carousel */}
-      {filteredItems.length > 0 ? (
-        <div className="relative flex items-center h-[500px]">
-          {/* Left Arrow */}
-          <button
-            onClick={goPrev}
-            className="
-              absolute left-4 z-30
-              w-[var(--size-40)] h-[var(--size-40)]
-              rounded-full
-              bg-[var(--color-cyan)]
-              flex items-center justify-center
-              cursor-pointer
-              transition-transform
-              hover:scale-110
-            "
-            aria-label="Previous item"
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 12L6 8L10 4" stroke="var(--color-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-
-          {/* Cards - using flexbox */}
-          <div className="flex items-center justify-center gap-4 w-full h-full">
-            {renderCard(prevItem, 'prev')}
-            {renderCard(centerItem, 'center')}
-            {renderCard(nextItem, 'next')}
+      <Container>
+        {/* Filter Tabs */}
+        <div className="flex flex-col items-center gap-[var(--size-8)] mb-[var(--layout-section-gap)]">
+          {label && (
+            <span className="text-[color:var(--color-gray-4)] text-[length:var(--font-size-body-xl)]">
+              {label}
+            </span>
+          )}
+          <div className="flex flex-wrap justify-center gap-[var(--layout-tab-tab-gap)]" role="tablist">
+            {allCategories.map((category) => (
+              <button
+                key={category}
+                role="tab"
+                aria-selected={activeCategory === category}
+                onClick={() => handleCategoryChangeInternal(category)}
+                className={`
+                  px-[var(--layout-tab-padding-x)]
+                  py-[var(--layout-tab-padding-y)]
+                  rounded-full
+                  border
+                  text-[length:var(--font-size-body-sm)]
+                  font-medium
+                  transition-colors
+                  cursor-pointer
+                  ${
+                    activeCategory === category
+                      ? 'bg-[var(--comp-tab-surface-active)] border-[var(--comp-tab-stroke-active)] text-[color:var(--comp-tab-text-active)]'
+                      : 'bg-[var(--comp-tab-surface-default)] border-[var(--comp-tab-stroke-default)] text-[color:var(--comp-tab-text-default)] hover:bg-[var(--comp-tab-surface-hover)] hover:border-[var(--comp-tab-stroke-hover)]'
+                  }
+                `}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-
-          {/* Right Arrow */}
-          <button
-            onClick={goNext}
-            className="
-              absolute right-4 z-30
-              w-[var(--size-40)] h-[var(--size-40)]
-              rounded-full
-              bg-[var(--color-cyan)]
-              flex items-center justify-center
-              cursor-pointer
-              transition-transform
-              hover:scale-110
-            "
-            aria-label="Next item"
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 4L10 8L6 12" stroke="var(--color-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
         </div>
-      ) : (
-        <p className="text-[color:var(--color-gray-4)] text-[length:var(--font-size-body-md)] text-center">
-          No items to display.
-        </p>
-      )}
+
+        {/* Carousel */}
+        {filteredItems.length > 0 ? (
+          <div className="relative flex items-center h-[500px]">
+            {/* Left Arrow */}
+            <button
+              onClick={goPrev}
+              className="
+                absolute left-4 z-30
+                w-[var(--size-40)] h-[var(--size-40)]
+                rounded-full
+                bg-[var(--color-cyan)]
+                flex items-center justify-center
+                cursor-pointer
+                transition-transform
+                hover:scale-110
+              "
+              aria-label="Previous item"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 12L6 8L10 4" stroke="var(--color-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+
+            {/* Cards - using flexbox */}
+            <div className="flex items-center justify-center gap-4 w-full h-full">
+              {renderCard(prevItem, 'prev')}
+              {renderCard(centerItem, 'center')}
+              {renderCard(nextItem, 'next')}
+            </div>
+
+            {/* Right Arrow */}
+            <button
+              onClick={goNext}
+              className="
+                absolute right-4 z-30
+                w-[var(--size-40)] h-[var(--size-40)]
+                rounded-full
+                bg-[var(--color-cyan)]
+                flex items-center justify-center
+                cursor-pointer
+                transition-transform
+                hover:scale-110
+              "
+              aria-label="Next item"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 4L10 8L6 12" stroke="var(--color-black)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        ) : (
+          <p className="text-[color:var(--color-gray-4)] text-[length:var(--font-size-body-md)] text-center">
+            No items to display.
+          </p>
+        )}
+      </Container>
     </section>
   );
 };
