@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import ServiceHeroNav from './ServiceHeroNav';
 import ServiceHeroNavConceptC from './ServiceHeroNavConceptC';
+import ServiceHeroNavSimple from './ServiceHeroNavSimple';
 
 const meta: Meta<typeof ServiceHeroNav> = {
   title: 'Components/ServiceHeroNav',
@@ -87,6 +88,40 @@ export const ConceptCMobile: ConceptCStory = {
     docs: {
       description: {
         story: 'Concept C optimized for mobile devices, maintaining the quadrant layout with touch-friendly interactions.',
+      },
+    },
+  },
+};
+
+// Simple variant stories
+type SimpleStory = StoryObj<typeof ServiceHeroNavSimple>;
+
+export const Simple: SimpleStory = {
+  name: 'Simple',
+  args: {},
+  render: () => <ServiceHeroNavSimple />,
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        story: 'Simplified bento grid layout with hero video, services, newsletter, B Corp badge, awards marquee, and a primary CTA button.',
+      },
+    },
+  },
+};
+
+export const SimpleMobile: SimpleStory = {
+  name: 'Simple - Mobile',
+  args: {},
+  render: () => <ServiceHeroNavSimple />,
+  parameters: {
+    layout: 'fullscreen',
+    viewport: {
+      defaultViewport: 'mobile1',
+    },
+    docs: {
+      description: {
+        story: 'Simple variant on mobile — stacks into a single-column layout.',
       },
     },
   },
