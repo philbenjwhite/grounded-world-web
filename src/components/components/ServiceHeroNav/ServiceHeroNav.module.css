@@ -2,28 +2,55 @@
 
 :global {
   @keyframes cardIn {
-    from { opacity: 0; transform: translateY(12px) scale(0.97); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
+    from {
+      opacity: 0;
+      transform: translateY(12px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 
   @keyframes heroIn {
-    from { opacity: 0; transform: scale(0.98); }
-    to   { opacity: 1; transform: scale(1); }
+    from {
+      opacity: 0;
+      transform: scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
-  @keyframes svcItemIn {
-    from { opacity: 0; transform: translate(-50%, -50%) translateY(14px) scale(0.6); }
-    to   { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
+  @keyframes serviceItemIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateY(14px) scale(0.6);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) translateY(0) scale(1);
+    }
   }
 
   @keyframes awardsScroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 
   @keyframes globeDrift {
-    0%, 100% { transform: translateX(0px); }
-    50%      { transform: translateX(-8px); }
+    0%,
+    100% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(-8px);
+    }
   }
 }
 
@@ -34,8 +61,8 @@
 }
 
 .gridWrap {
-  flex: none;
-  min-height: auto;
+  flex: 1 1 0%;
+  min-height: 0;
 }
 
 .bentoGrid {
@@ -49,7 +76,7 @@
     "about     resources resources news      news";
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 0.7fr 1fr 0.7fr 0.7fr 0.4fr;
-  gap: 8px;
+  gap: 1rem;
   width: 100%;
   height: 100%;
 }
@@ -165,7 +192,12 @@
 }
 
 .heroOverlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.1) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
   border-radius: inherit;
 }
 
@@ -180,8 +212,20 @@
 /* ─── Awards ─── */
 
 .awardsMask {
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
 }
 
 .awardsTrack {
@@ -209,20 +253,14 @@
   color: rgba(255, 255, 255, 0.25);
 }
 
-/* ─── Section labels (shared) ─── */
-
-.sectionLabel {
-  color: var(--color-gray-4);
-}
-
 /* ─── Services internals ─── */
 
-.svcCanvas {
+.serviceCanvas {
   border-radius: inherit;
   z-index: 1;
 }
 
-.svcTint {
+.serviceTint {
   border-radius: inherit;
   z-index: 0;
   opacity: 0;
@@ -230,12 +268,12 @@
   transition: all 700ms;
 }
 
-.servicesCard[data-svc-hovered] .svcTint {
+.servicesCard[data-service-hovered] .serviceTint {
   opacity: 1;
   background: radial-gradient(
     ellipse at 50% 100%,
-    color-mix(in srgb, var(--svc-tint-color) 9%, transparent),
-    color-mix(in srgb, var(--svc-tint-color) 2.5%, transparent) 50%,
+    color-mix(in srgb, var(--service-tint-color) 9%, transparent),
+    color-mix(in srgb, var(--service-tint-color) 2.5%, transparent) 50%,
     transparent 80%
   );
 }
@@ -250,47 +288,43 @@
 
 /* ─── Service items ─── */
 
-.svcItem {
-  left: var(--svc-left);
-  top: var(--svc-top);
-  animation: svcItemIn 0.6s ease-out both;
+.serviceItem {
+  left: var(--service-left);
+  top: var(--service-top);
+  animation: serviceItemIn 0.6s ease-out both;
   animation-delay: var(--delay);
 }
 
-.svcOrb {
-  background-color: color-mix(in srgb, var(--svc-color) 6%, transparent);
-  border: 1.5px solid color-mix(in srgb, var(--svc-color) 15%, transparent);
+.serviceOrb {
+  background-color: color-mix(in srgb, var(--service-color) 6%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--service-color) 15%, transparent);
   box-shadow: none;
   transform: scale(1);
   transition: all 300ms;
 }
 
-.svcItem[data-hovered] .svcOrb {
-  background-color: color-mix(in srgb, var(--svc-color) 15%, transparent);
-  border-color: color-mix(in srgb, var(--svc-color) 38%, transparent);
-  box-shadow: 0 0 20px color-mix(in srgb, var(--svc-color) 25%, transparent);
+.serviceItem[data-hovered] .serviceOrb {
+  background-color: color-mix(in srgb, var(--service-color) 15%, transparent);
+  border-color: color-mix(in srgb, var(--service-color) 38%, transparent);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--service-color) 25%, transparent);
   transform: scale(1.15);
 }
 
-.svcIcon {
-  color: var(--svc-color);
+.serviceIcon {
+  color: var(--service-color);
 }
 
-.svcLabel {
+.serviceLabel {
   color: var(--color-gray-4);
   opacity: 0;
   transform: translateY(-4px);
   transition: all 300ms;
 }
 
-.svcItem[data-hovered] .svcLabel {
+.serviceItem[data-hovered] .serviceLabel {
   color: var(--color-white);
   opacity: 1;
   transform: translateY(0);
-}
-
-.svcDescription {
-  color: var(--color-gray-4);
 }
 
 /* ─── Work card internals (vertical Embla carousel) ─── */
@@ -368,7 +402,11 @@
 
 .resourcesGlow {
   opacity: 0;
-  background: radial-gradient(ellipse at 50% 100%, rgba(0, 119, 181, 0.06), transparent 60%);
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(0, 119, 181, 0.06),
+    transparent 60%
+  );
   border-radius: inherit;
   transition: opacity 500ms;
 }
@@ -384,7 +422,7 @@
 }
 
 .resourcesCard[data-hovered] .resourcesArrow {
-  color: #0077B5;
+  color: #0077b5;
   transform: translate(0, 0) scale(1.15);
 }
 
@@ -412,7 +450,11 @@
 
 .newsGlow {
   opacity: 0;
-  background: radial-gradient(ellipse at 50% 100%, rgba(255, 166, 3, 0.08), transparent 60%);
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(255, 166, 3, 0.08),
+    transparent 60%
+  );
   border-radius: inherit;
   transition: opacity 500ms;
 }
@@ -427,7 +469,7 @@
 }
 
 .newsletterCard[data-hovered] .newsIcon {
-  color: #FFA603;
+  color: #ffa603;
 }
 
 .newsTitle {
@@ -439,10 +481,6 @@
   color: var(--color-white);
 }
 
-.newsDescription {
-  color: var(--color-gray-4);
-}
-
 .newsSubscribeBtn {
   background: rgba(255, 255, 255, 0.05);
   color: var(--color-gray-4);
@@ -450,7 +488,7 @@
 }
 
 .newsletterCard[data-hovered] .newsSubscribeBtn {
-  background: #FFA603;
+  background: #ffa603;
   color: #000;
 }
 
@@ -458,7 +496,11 @@
 
 .aboutGlow {
   opacity: 0;
-  background: radial-gradient(ellipse at 50% 100%, rgba(77, 217, 255, 0.08), transparent 60%);
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    rgba(77, 217, 255, 0.08),
+    transparent 60%
+  );
   border-radius: inherit;
   transition: opacity 500ms;
 }
@@ -474,7 +516,7 @@
 }
 
 .aboutCard[data-hovered] .aboutArrow {
-  color: #4DD9FF;
+  color: #4dd9ff;
   transform: translate(0, 0) scale(1.15);
 }
 
@@ -483,7 +525,7 @@
 }
 
 .aboutHeadingCyan {
-  color: #4DD9FF;
+  color: #4dd9ff;
 }
 
 .bCorpLogo {

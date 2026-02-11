@@ -6,6 +6,8 @@ import cn from "classnames";
 import Header from "../Header";
 import styles from "./ServiceHeroNav.module.css";
 import { ArrowUpRightIcon, EnvelopeIcon } from "@phosphor-icons/react";
+import SectionLabel from "../../atoms/SectionLabel";
+import Text from "../../atoms/Text";
 import { type ServiceItem } from "./utils";
 
 const workPlaceholders = [
@@ -29,7 +31,7 @@ const colorMap: Record<string, string> = {
   newsletter: "#FFA603",
 };
 
-const svcPositions = [
+const servicePositions = [
   { left: "18%", top: "72%" },
   { left: "24%", top: "24%" },
   { left: "76%", top: "24%" },
@@ -49,8 +51,8 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({ axis: "y", loop: true });
   const [activeWork, setActiveWork] = useState(0);
-  const svcCanvasRef = useRef<HTMLCanvasElement>(null);
-  const svcParticlesRef = useRef<
+  const serviceCanvasRef = useRef<HTMLCanvasElement>(null);
+  const serviceParticlesRef = useRef<
     Array<{
       x: number;
       y: number;
@@ -61,7 +63,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
       color: string;
     }>
   >([]);
-  const svcAnimRef = useRef<number>(0);
+  const serviceAnimRef = useRef<number>(0);
   const hoveredNavRef = useRef<string | null>(null);
   const serviceItemsRef = useRef(serviceItems);
 
@@ -118,7 +120,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
   // Particle animation for services card
   useEffect(() => {
     if (!isClient) return;
-    const canvas = svcCanvasRef.current;
+    const canvas = serviceCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -138,8 +140,8 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
       const svc = hov
         ? serviceItemsRef.current.find((s) => s.id === hov)
         : null;
-      if (svc && svcParticlesRef.current.length < 35) {
-        svcParticlesRef.current.push({
+      if (svc && serviceParticlesRef.current.length < 35) {
+        serviceParticlesRef.current.push({
           x: Math.random() * w,
           y: h + 2,
           vy: -(Math.random() * 0.6 + 0.2),
@@ -149,7 +151,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
           color: svc.color,
         });
       }
-      svcParticlesRef.current = svcParticlesRef.current.filter((p) => {
+      serviceParticlesRef.current = serviceParticlesRef.current.filter((p) => {
         p.x += p.vx;
         p.y += p.vy;
         p.life -= 0.006;
@@ -165,12 +167,12 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
         ctx.fill();
         return true;
       });
-      svcAnimRef.current = requestAnimationFrame(animate);
+      serviceAnimRef.current = requestAnimationFrame(animate);
     };
     animate();
     return () => {
       running = false;
-      cancelAnimationFrame(svcAnimRef.current);
+      cancelAnimationFrame(serviceAnimRef.current);
     };
   }, [isClient]);
 
@@ -189,6 +191,15 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
       emblaApi.off("reInit", onEmblaSelect);
     };
   }, [emblaApi, onEmblaSelect]);
+
+  // Auto-advance work carousel every 5 seconds
+  useEffect(() => {
+    if (!emblaApi) return;
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 7000);
+    return () => clearInterval(interval);
+  }, [emblaApi]);
 
   const handleHover = (id: string | null) => {
     setHoveredNav(id);
@@ -214,7 +225,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
       colorMap[hoveredNav] ??
       null
     : null;
-  const hoveredSvcColor = hoveredNav
+  const hoveredServiceColor = hoveredNav
     ? serviceItems.find((s) => s.id === hoveredNav)?.color
     : undefined;
   const isNewsHovered = hoveredNav === "newsletter";
@@ -333,16 +344,16 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
             className={cn(styles.bcard, styles.servicesCard)}
             style={
               {
-                "--svc-tint-color": hoveredSvcColor ?? "transparent",
+                "--service-tint-color": hoveredServiceColor ?? "transparent",
               } as React.CSSProperties
             }
-            data-svc-hovered={hoveredSvcColor ? "" : undefined}
+            data-service-hovered={hoveredServiceColor ? "" : undefined}
           >
             {/* Particle canvas — rises from bottom on hover */}
             <canvas
-              ref={svcCanvasRef}
+              ref={serviceCanvasRef}
               className={cn(
-                styles.svcCanvas,
+                styles.serviceCanvas,
                 "absolute inset-0 w-full h-full pointer-events-none",
               )}
             />
@@ -350,20 +361,13 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
             {/* Hover background tint */}
             <div
               className={cn(
-                styles.svcTint,
+                styles.serviceTint,
                 "absolute inset-0 pointer-events-none",
               )}
             />
 
             <div className="relative z-10 flex flex-col h-full p-4 md:p-5 lg:p-6">
-              <p
-                className={cn(
-                  styles.sectionLabel,
-                  "text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium",
-                )}
-              >
-                Services
-              </p>
+              <SectionLabel>Services</SectionLabel>
 
               {/* ─── HALF-CIRCLE PLACEHOLDER ─────────────────────
                    TODO: Replace with animated SVG graphic.
@@ -384,20 +388,20 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                 {/* Service items on the arc — animate in staggered */}
                 {serviceItems.map((svc, i) => {
                   const isHovered = hoveredNav === svc.id;
-                  const pos = svcPositions[i];
+                  const pos = servicePositions[i];
                   return (
                     <a
                       key={svc.id}
                       href={svc.url}
                       className={cn(
-                        styles.svcItem,
+                        styles.serviceItem,
                         "absolute flex flex-col items-center gap-1.5 no-underline group/svc",
                       )}
                       style={
                         {
-                          "--svc-color": svc.color,
-                          "--svc-left": pos.left,
-                          "--svc-top": pos.top,
+                          "--service-color": svc.color,
+                          "--service-left": pos.left,
+                          "--service-top": pos.top,
                           "--delay": `${0.4 + i * 0.12}s`,
                         } as React.CSSProperties
                       }
@@ -414,19 +418,19 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                     >
                       <div
                         className={cn(
-                          styles.svcOrb,
+                          styles.serviceOrb,
                           "w-9 h-9 md:w-10 md:h-10 rounded-full shrink-0 flex items-center justify-center",
                         )}
                       >
                         <svc.icon
                           size={16}
                           weight="bold"
-                          className={styles.svcIcon}
+                          className={styles.serviceIcon}
                         />
                       </div>
                       <span
                         className={cn(
-                          styles.svcLabel,
+                          styles.serviceLabel,
                           "text-[10px] md:text-xs font-medium whitespace-nowrap",
                         )}
                       >
@@ -437,15 +441,10 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                 })}
               </div>
 
-              <p
-                className={cn(
-                  styles.svcDescription,
-                  "text-[10px] md:text-[11px] leading-relaxed mt-2",
-                )}
-              >
+              <Text size="body-xs" color="tertiary" className="leading-relaxed mt-2">
                 Moving the needle &mdash; culturally, socially, environmentally
                 and behaviorally.
-              </p>
+              </Text>
             </div>
           </div>
 
@@ -463,14 +462,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
           >
             <div className="relative z-10 flex flex-col h-full p-4 md:p-4 lg:p-5">
               <div className="flex items-center justify-between mb-2 md:mb-3">
-                <p
-                  className={cn(
-                    styles.sectionLabel,
-                    "text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium",
-                  )}
-                >
-                  Our Work
-                </p>
+                <SectionLabel>Our Work</SectionLabel>
                 <div className="flex items-center gap-2">
                   <span
                     className={cn(styles.workViewAll, "text-[10px] md:text-xs")}
@@ -579,14 +571,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
             />
             <div className="relative z-10 flex flex-col h-full p-3 md:p-4 lg:p-5">
               <div className="flex items-center justify-between mb-3 md:mb-4">
-                <p
-                  className={cn(
-                    styles.sectionLabel,
-                    "text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium",
-                  )}
-                >
-                  Resources
-                </p>
+                <SectionLabel>Resources</SectionLabel>
                 <ArrowUpRightIcon
                   size={16}
                   weight="bold"
@@ -653,14 +638,9 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                 >
                   Newsletter
                 </p>
-                <p
-                  className={cn(
-                    styles.newsDescription,
-                    "text-[9px] md:text-[10px] leading-snug mt-0.5 truncate",
-                  )}
-                >
+                <Text size="body-xs" color="tertiary" className="leading-snug mt-0.5 truncate">
                   Weekly purpose-driven insights
-                </p>
+                </Text>
               </div>
               <div
                 className={cn(
@@ -692,14 +672,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
             <div className="relative z-10 flex flex-col justify-between h-full p-3 md:p-4">
               <div>
                 <div className="flex items-center justify-between mb-2 md:mb-3">
-                  <p
-                    className={cn(
-                      styles.sectionLabel,
-                      "text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium",
-                    )}
-                  >
-                    About Us
-                  </p>
+                  <SectionLabel>About Us</SectionLabel>
                   <ArrowUpRightIcon
                     size={16}
                     weight="bold"
