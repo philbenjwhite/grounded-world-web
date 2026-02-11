@@ -42,7 +42,7 @@ const quadrants: Quadrant[] = [
   }
 ];
 
-const ServiceHeroNavConceptC: React.FC = () => {
+const ServiceQuadrantNav: React.FC = () => {
   const [hoveredQuadrant, setHoveredQuadrant] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
@@ -427,4 +427,4 @@ const ServiceHeroNavConceptC: React.FC = () => {
   );
 };
 
-export default ServiceHeroNavConceptC;
+export default ServiceQuadrantNav;

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ServiceHeroNav from './ServiceHeroNav';
+import ServiceHeroNavSimple from './ServiceHeroNavSimple';
 import type { Service } from '../../../../tina/__generated__/types';
 
 const mockServices = [
@@ -9,9 +9,9 @@ const mockServices = [
   { label: 'Impact', serviceId: 'impact', color: '#1CC35B', description: 'Analytics & optimization', url: '/services/impact', icon: 'ChartLineUp', order: 3 },
 ] as Service[];
 
-const meta: Meta<typeof ServiceHeroNav> = {
-  title: 'Components/ServiceHeroNav',
-  component: ServiceHeroNav,
+const meta: Meta<typeof ServiceHeroNavSimple> = {
+  title: 'Components/ServiceHeroNavSimple',
+  component: ServiceHeroNavSimple,
   args: {
     services: mockServices,
   },
@@ -19,7 +19,7 @@ const meta: Meta<typeof ServiceHeroNav> = {
     layout: 'fullscreen',
     docs: {
       description: {
-        component: 'An immersive hero navigation component with Three.js animated background, centered video, and orbiting navigation dots. Features responsive design, touch optimization, and smooth animations.',
+        component: 'Simplified bento grid layout with L-shaped hero video, services globe, newsletter card, B Corp badge, awards marquee, and a primary CTA button.',
       },
     },
   },
@@ -27,42 +27,28 @@ const meta: Meta<typeof ServiceHeroNav> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ServiceHeroNav>;
+type Story = StoryObj<typeof ServiceHeroNavSimple>;
 
 export const Default: Story = {
   name: 'Default',
   parameters: {
     docs: {
       description: {
-        story: 'The default ServiceHeroNav component with all animations, video, and interactive navigation elements. Hover over navigation dots to see themed Three.js patterns.',
+        story: 'The default simple layout with L-shaped hero, services panel, newsletter card, and awards marquee.',
       },
     },
   },
 };
 
-export const MobileView: Story = {
-  name: 'Mobile View',
+export const Mobile: Story = {
+  name: 'Mobile',
   parameters: {
     viewport: {
       defaultViewport: 'mobile1',
     },
     docs: {
       description: {
-        story: 'ServiceHeroNav optimized for mobile devices with single-tap navigation, larger touch targets, and responsive header text.',
-      },
-    },
-  },
-};
-
-export const TabletView: Story = {
-  name: 'Tablet View',
-  parameters: {
-    viewport: {
-      defaultViewport: 'tablet',
-    },
-    docs: {
-      description: {
-        story: 'ServiceHeroNav on tablet-sized screens, showing the transition between mobile and desktop layouts.',
+        story: 'Simple variant on mobile — stacks into a single-column layout.',
       },
     },
   },
