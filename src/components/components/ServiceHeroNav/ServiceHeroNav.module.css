@@ -293,40 +293,24 @@
   color: var(--color-gray-4);
 }
 
-/* ─── Work card internals ─── */
+/* ─── Work card internals (vertical Embla carousel) ─── */
 
-.workStackContainer {
-  aspect-ratio: 16 / 9;
+.workViewport {
+  flex: 1;
+  min-height: 0;
 }
 
-.workStackedCard {
-  pointer-events: none;
-  transition: all 500ms ease-out;
+.workSlideContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.workStackedCard[data-offset="0"] {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  z-index: 4;
-  pointer-events: auto;
-}
-
-.workStackedCard[data-offset="1"] {
-  opacity: 0.5;
-  transform: translateY(6px) scale(0.965);
-  z-index: 3;
-}
-
-.workStackedCard[data-offset="2"] {
-  opacity: 0.2;
-  transform: translateY(12px) scale(0.93);
-  z-index: 2;
-}
-
-.workStackedCard[data-offset="3"] {
-  opacity: 0;
-  transform: translateY(18px) scale(0.895);
-  z-index: 1;
+.workSlide {
+  flex: 0 0 100%;
+  min-height: 0;
+  border-radius: inherit;
+  overflow: hidden;
 }
 
 .workPlaceholderBg {

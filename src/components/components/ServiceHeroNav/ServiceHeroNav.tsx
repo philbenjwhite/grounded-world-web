@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import cn from "classnames";
 import Header from "../Header";
 import styles from "./ServiceHeroNav.module.css";
@@ -46,6 +47,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ axis: "y", loop: true });
   const [activeWork, setActiveWork] = useState(0);
   const svcCanvasRef = useRef<HTMLCanvasElement>(null);
   const svcParticlesRef = useRef<
@@ -172,12 +174,25 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
     };
   }, [isClient]);
 
+  // Sync Embla selected index to activeWork
+  const onEmblaSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setActiveWork(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on("select", onEmblaSelect);
+    emblaApi.on("reInit", onEmblaSelect);
+    return () => {
+      emblaApi.off("select", onEmblaSelect);
+      emblaApi.off("reInit", onEmblaSelect);
+    };
+  }, [emblaApi, onEmblaSelect]);
+
   const handleHover = (id: string | null) => {
     setHoveredNav(id);
   };
-
-  const nextWork = () =>
-    setActiveWork((p) => (p + 1) % workPlaceholders.length);
 
   if (!isClient) {
     return (
@@ -470,35 +485,24 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                 </div>
               </div>
 
-              {/* Stacked cards + vertical bar pagination side-by-side */}
+              {/* Vertical Embla carousel + pagination side-by-side */}
               <div className="flex flex-1 min-h-0 gap-2 md:gap-3">
-                {/* Stacked cards container */}
+                {/* Carousel viewport */}
                 <div className="relative flex-1 min-w-0 flex flex-col">
                   <div
                     className={cn(
-                      styles.workStackContainer,
-                      "relative w-full cursor-pointer",
+                      styles.workViewport,
+                      "overflow-hidden rounded-lg md:rounded-xl",
                     )}
-                    onClick={nextWork}
+                    ref={emblaRef}
                   >
-                    {workPlaceholders.map((_, i) => {
-                      const offset =
-                        (i - activeWork + workPlaceholders.length) %
-                        workPlaceholders.length;
-                      return (
-                        <div
-                          key={i}
-                          className={cn(
-                            styles.workStackedCard,
-                            "absolute inset-0 rounded-lg md:rounded-xl overflow-hidden",
-                          )}
-                          data-offset={offset}
-                        >
-                          {/* Gray placeholder image */}
+                    <div className={styles.workSlideContainer}>
+                      {workPlaceholders.map((wp, i) => (
+                        <div key={i} className={styles.workSlide}>
                           <div
                             className={cn(
                               styles.workPlaceholderBg,
-                              "absolute inset-0 flex items-center justify-center",
+                              "w-full h-full flex items-center justify-center",
                             )}
                           >
                             <span
@@ -507,15 +511,14 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                                 "text-xs md:text-sm font-medium",
                               )}
                             >
-                              case study here
+                              {wp.title}
                             </span>
                           </div>
                         </div>
-                      );
-                      ``;
-                    })}
+                      ))}
+                    </div>
                   </div>
-                  {/* Title area — always visible below card image */}
+                  {/* Title area — always visible below carousel */}
                   <div
                     className="shrink-0 pt-2 md:pt-3"
                     style={
@@ -543,14 +546,14 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                   </div>
                 </div>
 
-                {/* Vertical bar pagination — centered beside cards */}
+                {/* Vertical bar pagination — centered beside carousel */}
                 <div className="shrink-0 flex flex-col items-center justify-center gap-2">
                   {workPlaceholders.map((_, i) => (
                     <button
                       key={i}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setActiveWork(i);
+                        emblaApi?.scrollTo(i);
                       }}
                       className={cn(styles.paginationDot, "rounded-sm")}
                       data-active={i === activeWork ? "" : undefined}
