@@ -1,39 +1,36 @@
-/* ─── Keyframes (global so inline style references work) ─── */
+/* ─── Keyframes ─── */
 
-:global {
-  @keyframes cardIn {
-    from {
-      opacity: 0;
-      transform: translateY(12px) scale(0.97);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
   }
-
-  @keyframes heroIn {
-    from {
-      opacity: 0;
-      transform: scale(0.98);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
+}
 
-  @keyframes serviceItemIn {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -50%) translateY(14px) scale(0.6);
-    }
-    to {
-      opacity: 1;
-      transform: translate(-50%, -50%) translateY(0) scale(1);
-    }
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
   }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
+@keyframes serviceItemIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(14px) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0) scale(1);
+  }
 }
 
 /* ─── Layout ─── */

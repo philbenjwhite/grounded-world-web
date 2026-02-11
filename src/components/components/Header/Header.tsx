@@ -33,6 +33,7 @@ const Header = ({ className }: HeaderProps) => {
 
       {/* Menu icon */}
       <button
+        aria-label="Open menu"
         className="shrink-0 flex items-center justify-center rounded-full transition-all duration-300 cursor-pointer w-11 h-11 bg-white/6 border border-white/8 backdrop-blur-md hover:bg-white/12 hover:border-white/18"
       >
         <ListIcon

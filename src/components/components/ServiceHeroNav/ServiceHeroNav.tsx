@@ -11,14 +11,14 @@ import useEmblaCarousel from "embla-carousel-react";
 import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
-import Header from "../Header";
 import styles from "./ServiceHeroNav.module.css";
 import { ArrowUpRightIcon, EnvelopeIcon } from "@phosphor-icons/react";
 import Marquee from "react-fast-marquee";
 import Heading from "../../atoms/Heading";
 import SectionLabel from "../../atoms/SectionLabel";
 import Text from "../../atoms/Text";
-import { type ServiceItem } from "./utils";
+import { mapCmsServices } from "./utils";
+import type { Service } from "../../../../tina/__generated__/types";
 
 const workPlaceholders = [
   { title: "Brand Activation Campaign", tag: "Case Study", accent: "#00AEEF" },
@@ -51,10 +51,11 @@ const servicePositions = [
 /* ─── Component ─────────────────────────────────────── */
 
 interface ServiceHeroNavProps {
-  serviceItems: ServiceItem[];
+  services: Service[];
 }
 
-const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
+const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ services }) => {
+  const serviceItems = mapCmsServices(services);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
   const isClient = useSyncExternalStore(
@@ -239,11 +240,9 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
     <div
       className={cn(
         styles.outer,
-        "flex flex-col w-full h-screen overflow-hidden",
+        "relative flex flex-col w-full h-full overflow-hidden",
       )}
     >
-      <Header />
-
       {/* Page-level background glow — responds to hovered card */}
       <div
         className={cn(styles.pageGlow, "absolute inset-0 pointer-events-none")}
@@ -525,6 +524,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                         e.stopPropagation();
                         emblaApi?.scrollTo(i);
                       }}
+                      aria-label={`Go to slide ${i + 1}`}
                       className={cn(styles.paginationDot, "rounded-sm")}
                       data-active={i === activeWork ? "" : undefined}
                     />

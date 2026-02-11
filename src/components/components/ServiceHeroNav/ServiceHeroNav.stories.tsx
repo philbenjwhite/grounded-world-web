@@ -1,27 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {
-  MagnifyingGlassIcon,
-  CompassIcon,
-  LightningIcon,
-  ChartLineUpIcon,
-} from '@phosphor-icons/react';
 import ServiceHeroNav from './ServiceHeroNav';
-import type { ServiceItem } from './ServiceHeroNav';
 import ServiceHeroNavConceptC from './ServiceHeroNavConceptC';
 import ServiceHeroNavSimple from './ServiceHeroNavSimple';
+import type { Service } from '../../../../tina/__generated__/types';
 
-const mockServiceItems: ServiceItem[] = [
-  { id: 'research', label: 'Research', color: '#00AEEF', description: 'User needs & behavioral insights', url: '/services/research', icon: MagnifyingGlassIcon },
-  { id: 'strategy', label: 'Strategy', color: '#FFA603', description: 'Planning & roadmapping', url: '/services/strategy', icon: CompassIcon },
-  { id: 'activation', label: 'Activation', color: '#FF08CC', description: 'Campaigns & experiences', url: '/services/activation', icon: LightningIcon },
-  { id: 'impact', label: 'Impact', color: '#1CC35B', description: 'Analytics & optimization', url: '/services/impact', icon: ChartLineUpIcon },
-];
+const mockServices = [
+  { label: 'Research', serviceId: 'research', color: '#00AEEF', description: 'User needs & behavioral insights', url: '/services/research', icon: 'MagnifyingGlass', order: 0 },
+  { label: 'Strategy', serviceId: 'strategy', color: '#FFA603', description: 'Planning & roadmapping', url: '/services/strategy', icon: 'Compass', order: 1 },
+  { label: 'Activation', serviceId: 'activation', color: '#FF08CC', description: 'Campaigns & experiences', url: '/services/activation', icon: 'Lightning', order: 2 },
+  { label: 'Impact', serviceId: 'impact', color: '#1CC35B', description: 'Analytics & optimization', url: '/services/impact', icon: 'ChartLineUp', order: 3 },
+] as Service[];
 
 const meta: Meta<typeof ServiceHeroNav> = {
   title: 'Components/ServiceHeroNav',
   component: ServiceHeroNav,
   args: {
-    serviceItems: mockServiceItems,
+    services: mockServices,
   },
   parameters: {
     layout: 'fullscreen',
