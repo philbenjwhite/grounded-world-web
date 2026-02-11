@@ -1,0 +1,9 @@
+{
+  "label": "Strategy",
+  "serviceId": "strategy",
+  "color": "#FFA603",
+  "description": "Roadmaps & strategic frameworks",
+  "url": "/services/strategy",
+  "icon": "Compass",
+  "order": 1
+}

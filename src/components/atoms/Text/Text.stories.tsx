@@ -15,7 +15,7 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['body-xl', 'body-lg', 'body-md', 'body-sm', 'body-xs', 'caption'],
+      options: ['subtitle', 'body-xl', 'body-lg', 'body-md', 'body-sm', 'body-xs', 'caption'],
     },
     color: {
       control: 'select',
@@ -55,7 +55,11 @@ export const AllSizes: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
       <div>
-        <Text size="body-xs" color="tertiary">body-xs (12px)</Text>
+        <Text size="body-xs" color="tertiary">subtitle (responsive)</Text>
+        <Text size="subtitle">Subtitle - Responsive hero companion text.</Text>
+      </div>
+      <div>
+        <Text size="body-xs" color="tertiary">body-xl (20px)</Text>
         <Text size="body-xl">Body XL - Used for large introductory text and emphasis.</Text>
       </div>
       <div>
@@ -109,6 +113,14 @@ export const AsSpan: Story = {
       <Text as="span" color="secondary">secondary inline text</Text> within it.
     </Text>
   ),
+};
+
+export const Subtitle: Story = {
+  args: {
+    children: 'Accelerating Impact',
+    size: 'subtitle',
+    color: 'secondary',
+  },
 };
 
 export const BodyXL: Story = {

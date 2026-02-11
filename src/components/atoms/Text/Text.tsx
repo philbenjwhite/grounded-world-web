@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-export type TextSize = 'body-xl' | 'body-lg' | 'body-md' | 'body-sm' | 'body-xs' | 'caption';
+export type TextSize = 'subtitle' | 'body-xl' | 'body-lg' | 'body-md' | 'body-sm' | 'body-xs' | 'caption';
 export type TextColor = 'primary' | 'secondary' | 'tertiary' | 'inverted' | 'link';
 export type TextElement = 'p' | 'span' | 'div';
 
@@ -19,6 +19,7 @@ export interface TextProps {
 }
 
 const sizeClasses: Record<TextSize, string> = {
+  subtitle: 'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light tracking-tight',
   'body-xl': 'text-[length:var(--font-size-body-xl)]',
   'body-lg': 'text-[length:var(--font-size-body-lg)]',
   'body-md': 'text-[length:var(--font-size-body-md)]',
