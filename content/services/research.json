@@ -1,0 +1,9 @@
+{
+  "label": "Research",
+  "serviceId": "research",
+  "color": "#00AEEF",
+  "description": "User needs & behavioral insights",
+  "url": "/services/research",
+  "icon": "MagnifyingGlass",
+  "order": 0
+}

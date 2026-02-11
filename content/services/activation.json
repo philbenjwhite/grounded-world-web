@@ -1,0 +1,9 @@
+{
+  "label": "Activation",
+  "serviceId": "activation",
+  "color": "#FF08CC",
+  "description": "Design systems & interfaces",
+  "url": "/services/activation",
+  "icon": "Lightning",
+  "order": 2
+}

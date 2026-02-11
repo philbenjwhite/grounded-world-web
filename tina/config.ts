@@ -35,6 +35,85 @@ export default defineConfig({
   schema: {
     collections: [
       {
+        name: "service",
+        label: "Services",
+        path: "content/services",
+        format: "json",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return values?.label
+                ?.toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "");
+            },
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "label",
+            label: "Label",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "serviceId",
+            label: "Service ID",
+            required: true,
+            description: "Unique identifier used for hover states and routing (e.g. 'research', 'strategy')",
+          },
+          {
+            type: "string",
+            name: "color",
+            label: "Brand Color",
+            required: true,
+            ui: {
+              component: "color",
+            },
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Short Description",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "url",
+            label: "URL",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "icon",
+            label: "Icon",
+            required: true,
+            description: "Phosphor icon name",
+            options: [
+              { value: "MagnifyingGlass", label: "Magnifying Glass (Research)" },
+              { value: "Compass", label: "Compass (Strategy)" },
+              { value: "Lightning", label: "Lightning (Activation)" },
+              { value: "ChartLineUp", label: "Chart Line Up (Impact)" },
+              { value: "Globe", label: "Globe" },
+              { value: "Users", label: "Users" },
+              { value: "Megaphone", label: "Megaphone" },
+              { value: "Target", label: "Target" },
+              { value: "Lightbulb", label: "Lightbulb" },
+              { value: "Rocket", label: "Rocket" },
+            ],
+          },
+          {
+            type: "number",
+            name: "order",
+            label: "Display Order",
+            description: "Controls the position on the arc (0 = bottom-left, 3 = bottom-right)",
+          },
+        ],
+      },
+      {
         name: "category",
         label: "Categories",
         path: "content/categories",

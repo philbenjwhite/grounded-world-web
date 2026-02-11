@@ -1,0 +1,545 @@
+/* ─── Keyframes (global so inline style references work) ─── */
+
+:global {
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes heroIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes svcItemIn {
+    from { opacity: 0; transform: translate(-50%, -50%) translateY(14px) scale(0.6); }
+    to   { opacity: 1; transform: translate(-50%, -50%) translateY(0) scale(1); }
+  }
+
+  @keyframes awardsScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes globeDrift {
+    0%, 100% { transform: translateX(0px); }
+    50%      { transform: translateX(-8px); }
+  }
+}
+
+/* ─── Layout ─── */
+
+.outer {
+  background: var(--background, #0a0a0a);
+}
+
+.gridWrap {
+  flex: none;
+  min-height: auto;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-areas:
+    "hero      hero      hero      services  services"
+    "hero      hero      hero      services  services"
+    "hero      hero      hero      work      work"
+    "about     resources resources work      work"
+    "about     resources resources work      work"
+    "about     resources resources news      news";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.7fr 1fr 0.7fr 0.7fr 0.4fr;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Cards ─── */
+
+.bcard {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.bcardLink {
+  composes: bcard;
+  cursor: pointer;
+}
+
+.bcardLink:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px) scale(1.008);
+}
+
+/* ─── Card sections (grid-area + border-radius + animation) ─── */
+
+.heroCard {
+  grid-area: hero;
+  border-radius: 32px 24px 24px 24px;
+  animation: heroIn 1s ease-out both;
+  animation-delay: 0.1s;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.servicesCard {
+  grid-area: services;
+  border-radius: 24px 32px 24px 24px;
+  animation: cardIn 0.7s ease-out both;
+  animation-delay: 0.2s;
+}
+
+.workCard {
+  grid-area: work;
+  border-radius: 24px;
+  animation: cardIn 0.7s ease-out both;
+  animation-delay: 0.35s;
+}
+
+.workCard[data-hovered] {
+  border-color: rgba(177, 179, 182, 0.2);
+}
+
+.resourcesCard {
+  grid-area: resources;
+  border-radius: 24px;
+  animation: cardIn 0.7s ease-out both;
+  animation-delay: 0.4s;
+}
+
+.resourcesCard[data-hovered] {
+  border-color: rgba(0, 119, 181, 0.2);
+}
+
+.newsletterCard {
+  grid-area: news;
+  border-radius: 24px;
+  animation: cardIn 0.6s ease-out both;
+  animation-delay: 0.55s;
+}
+
+.newsletterCard[data-hovered] {
+  border-color: rgba(255, 166, 3, 0.25);
+  box-shadow: 0 0 24px rgba(255, 166, 3, 0.06);
+}
+
+.aboutCard {
+  grid-area: about;
+  border-radius: 24px;
+  animation: cardIn 0.6s ease-out both;
+  animation-delay: 0.5s;
+}
+
+.aboutCard[data-hovered] {
+  border-color: rgba(77, 217, 255, 0.2);
+  box-shadow: 0 0 24px rgba(77, 217, 255, 0.06);
+}
+
+/* ─── Page glow ─── */
+
+.pageGlow {
+  z-index: 0;
+  background: transparent;
+  transition: all 700ms;
+}
+
+.pageGlow[data-active] {
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 100%,
+    color-mix(in srgb, var(--glow-color) 7%, transparent),
+    color-mix(in srgb, var(--glow-color) 2.5%, transparent) 40%,
+    transparent 70%
+  );
+}
+
+/* ─── Hero internals ─── */
+
+.heroVideo {
+  border-radius: inherit;
+}
+
+.heroOverlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0.1) 100%);
+  border-radius: inherit;
+}
+
+.heroH1 {
+  color: var(--color-white);
+}
+
+.heroSubtitle {
+  color: var(--color-gray-3);
+}
+
+/* ─── Awards ─── */
+
+.awardsMask {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.awardsTrack {
+  display: flex;
+  gap: 32px;
+  animation: awardsScroll 20s linear infinite;
+}
+
+.awardsTrack:hover {
+  animation-play-state: paused;
+}
+
+.awardItem {
+  width: 80px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.awardItem[data-wide] {
+  width: 100px;
+}
+
+.awardItemText {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* ─── Section labels (shared) ─── */
+
+.sectionLabel {
+  color: var(--color-gray-4);
+}
+
+/* ─── Services internals ─── */
+
+.svcCanvas {
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.svcTint {
+  border-radius: inherit;
+  z-index: 0;
+  opacity: 0;
+  background: transparent;
+  transition: all 700ms;
+}
+
+.servicesCard[data-svc-hovered] .svcTint {
+  opacity: 1;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    color-mix(in srgb, var(--svc-tint-color) 9%, transparent),
+    color-mix(in srgb, var(--svc-tint-color) 2.5%, transparent) 50%,
+    transparent 80%
+  );
+}
+
+.globeWrap {
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 62%;
+  aspect-ratio: 1;
+}
+
+/* ─── Service items ─── */
+
+.svcItem {
+  left: var(--svc-left);
+  top: var(--svc-top);
+  animation: svcItemIn 0.6s ease-out both;
+  animation-delay: var(--delay);
+}
+
+.svcOrb {
+  background-color: color-mix(in srgb, var(--svc-color) 6%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--svc-color) 15%, transparent);
+  box-shadow: none;
+  transform: scale(1);
+  transition: all 300ms;
+}
+
+.svcItem[data-hovered] .svcOrb {
+  background-color: color-mix(in srgb, var(--svc-color) 15%, transparent);
+  border-color: color-mix(in srgb, var(--svc-color) 38%, transparent);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--svc-color) 25%, transparent);
+  transform: scale(1.15);
+}
+
+.svcIcon {
+  color: var(--svc-color);
+}
+
+.svcLabel {
+  color: var(--color-gray-4);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 300ms;
+}
+
+.svcItem[data-hovered] .svcLabel {
+  color: var(--color-white);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.svcDescription {
+  color: var(--color-gray-4);
+}
+
+/* ─── Work card internals ─── */
+
+.workStackContainer {
+  aspect-ratio: 16 / 9;
+}
+
+.workStackedCard {
+  pointer-events: none;
+  transition: all 500ms ease-out;
+}
+
+.workStackedCard[data-offset="0"] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  z-index: 4;
+  pointer-events: auto;
+}
+
+.workStackedCard[data-offset="1"] {
+  opacity: 0.5;
+  transform: translateY(6px) scale(0.965);
+  z-index: 3;
+}
+
+.workStackedCard[data-offset="2"] {
+  opacity: 0.2;
+  transform: translateY(12px) scale(0.93);
+  z-index: 2;
+}
+
+.workStackedCard[data-offset="3"] {
+  opacity: 0;
+  transform: translateY(18px) scale(0.895);
+  z-index: 1;
+}
+
+.workPlaceholderBg {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a, #1e1e1e);
+}
+
+.workPlaceholderText {
+  color: rgba(255, 255, 255, 0.18);
+}
+
+.workTag {
+  color: var(--accent);
+}
+
+.workTitle {
+  color: var(--color-white);
+}
+
+.workViewAll {
+  color: var(--color-gray-4);
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.workCard[data-hovered] .workViewAll {
+  opacity: 1;
+}
+
+.workArrow {
+  color: transparent;
+  transform: translate(-2px, 2px) scale(1);
+  transition: all 300ms;
+}
+
+.workCard[data-hovered] .workArrow {
+  color: var(--color-gray-3);
+  transform: translate(0, 0) scale(1.15);
+}
+
+.paginationDot {
+  width: 5px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0;
+  cursor: pointer;
+  transition: all 400ms;
+}
+
+.paginationDot[data-active] {
+  height: 24px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* ─── Resources internals ─── */
+
+.resourcesGlow {
+  opacity: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(0, 119, 181, 0.06), transparent 60%);
+  border-radius: inherit;
+  transition: opacity 500ms;
+}
+
+.resourcesCard[data-hovered] .resourcesGlow {
+  opacity: 1;
+}
+
+.resourcesArrow {
+  color: transparent;
+  transform: translate(-2px, 2px) scale(1);
+  transition: all 300ms;
+}
+
+.resourcesCard[data-hovered] .resourcesArrow {
+  color: #0077B5;
+  transform: translate(0, 0) scale(1.15);
+}
+
+.resourceItem {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 300ms;
+}
+
+.resourceItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.resourceBar {
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+.resourceLabel {
+  color: var(--color-gray-3);
+}
+
+/* ─── Newsletter internals ─── */
+
+.newsGlow {
+  opacity: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(255, 166, 3, 0.08), transparent 60%);
+  border-radius: inherit;
+  transition: opacity 500ms;
+}
+
+.newsletterCard[data-hovered] .newsGlow {
+  opacity: 1;
+}
+
+.newsIcon {
+  color: rgba(255, 255, 255, 0.2);
+  transition: color 300ms;
+}
+
+.newsletterCard[data-hovered] .newsIcon {
+  color: #FFA603;
+}
+
+.newsTitle {
+  color: var(--color-gray-3);
+  transition: color 300ms;
+}
+
+.newsletterCard[data-hovered] .newsTitle {
+  color: var(--color-white);
+}
+
+.newsDescription {
+  color: var(--color-gray-4);
+}
+
+.newsSubscribeBtn {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-gray-4);
+  transition: all 300ms;
+}
+
+.newsletterCard[data-hovered] .newsSubscribeBtn {
+  background: #FFA603;
+  color: #000;
+}
+
+/* ─── About internals ─── */
+
+.aboutGlow {
+  opacity: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(77, 217, 255, 0.08), transparent 60%);
+  border-radius: inherit;
+  transition: opacity 500ms;
+}
+
+.aboutCard[data-hovered] .aboutGlow {
+  opacity: 1;
+}
+
+.aboutArrow {
+  color: transparent;
+  transform: translate(-2px, 2px) scale(1);
+  transition: all 300ms;
+}
+
+.aboutCard[data-hovered] .aboutArrow {
+  color: #4DD9FF;
+  transform: translate(0, 0) scale(1.15);
+}
+
+.aboutHeadingWhite {
+  color: var(--color-white);
+}
+
+.aboutHeadingCyan {
+  color: #4DD9FF;
+}
+
+.bCorpLogo {
+  opacity: 0.5;
+}
+
+/* ─── Loading state ─── */
+
+.loadingContainer {
+  background: var(--background, #0a0a0a);
+}
+
+.loadingText {
+  color: var(--color-gray-4);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 768px) {
+  .outer {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .gridWrap {
+    flex: none;
+    min-height: auto;
+  }
+
+  .bentoGrid {
+    grid-template-areas:
+      "hero"
+      "services"
+      "work"
+      "resources"
+      "about"
+      "news";
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 380px 320px 180px 180px 72px;
+    gap: 6px;
+  }
+}
