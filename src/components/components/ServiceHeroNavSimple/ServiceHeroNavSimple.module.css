@@ -73,7 +73,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 62%;
+  width: calc(60% - 0.5rem);
   height: 100%;
   clip-path: url(#shn-hero-l-clip);
   animation: heroIn 0.9s ease-out both 0.1s;
@@ -99,8 +99,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 36%;
-  height: 70%;
+  width: calc(40% - 0.5rem);
+  height: calc(100% - 175px);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -279,8 +279,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  left: 36%;
-  height: 27%;
+  left: 33.3%;
+  height: 14%;
   display: flex;
   align-items: center;
   gap: 24px;

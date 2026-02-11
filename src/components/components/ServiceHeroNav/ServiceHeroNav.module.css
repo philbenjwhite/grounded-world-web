@@ -37,6 +37,7 @@
 
 .outer {
   background: var(--background, #0a0a0a);
+  height: 100vh;
 }
 
 .gridWrap {

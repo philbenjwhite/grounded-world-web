@@ -1,6 +1,11 @@
 "use client";
 
-import React, { useRef, useEffect, useSyncExternalStore, useState } from "react";
+import React, {
+  useRef,
+  useEffect,
+  useSyncExternalStore,
+  useState,
+} from "react";
 import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
@@ -103,7 +108,7 @@ const ServiceHeroNavSimple: React.FC<ServiceHeroNavSimpleProps> = ({
       <svg width="0" height="0" className="absolute">
         <defs>
           <clipPath id="shn-hero-l-clip" clipPathUnits="objectBoundingBox">
-            <path d="M0.031 0 H0.969 C0.986 0 1 0.012 1 0.026 V0.686 C1 0.700 0.986 0.712 0.969 0.712 H0.581 C0.564 0.712 0.555 0.724 0.555 0.738 V0.974 C0.555 0.988 0.541 1 0.524 1 H0.031 C0.014 1 0 0.988 0 0.974 V0.026 C0 0.012 0.014 0 0.031 0 Z" />
+            <path d="M0.031 0 H0.969 C0.986 0 1 0.012 1 0.026 V0.843 C1 0.857 0.986 0.856 0.969 0.856 H0.581 C0.564 0.856 0.555 0.868 0.555 0.882 V0.974 C0.555 0.988 0.541 1 0.524 1 H0.031 C0.014 1 0 0.988 0 0.974 V0.026 C0 0.012 0.014 0 0.031 0 Z" />
           </clipPath>
         </defs>
       </svg>
@@ -112,7 +117,9 @@ const ServiceHeroNavSimple: React.FC<ServiceHeroNavSimpleProps> = ({
       <div
         className={cn(styles.pageGlow, "absolute inset-0 pointer-events-none")}
         style={
-          { "--glow-color": hoveredColor ?? "transparent" } as React.CSSProperties
+          {
+            "--glow-color": hoveredColor ?? "transparent",
+          } as React.CSSProperties
         }
         data-active={hoveredColor ? "" : undefined}
       />
@@ -156,10 +163,7 @@ const ServiceHeroNavSimple: React.FC<ServiceHeroNavSimpleProps> = ({
               alt="Certified B Corporation"
               width={80}
               height={80}
-              className={cn(
-                styles.bCorpLogo,
-                "h-14 md:h-16 lg:h-20 w-auto",
-              )}
+              className={cn(styles.bCorpLogo, "h-14 md:h-16 lg:h-20 w-auto")}
             />
           </div>
         </div>
@@ -273,7 +277,7 @@ const ServiceHeroNavSimple: React.FC<ServiceHeroNavSimpleProps> = ({
             className={cn(
               styles.glassLink,
               styles.newsletterCard,
-              "flex-1 flex items-center no-underline",
+              "flex-1 flex no-underline",
             )}
             data-hovered={isNewsHovered ? "" : undefined}
             onMouseEnter={() => handleHover("newsletter")}
@@ -285,8 +289,8 @@ const ServiceHeroNavSimple: React.FC<ServiceHeroNavSimpleProps> = ({
                 "absolute inset-0 pointer-events-none",
               )}
             />
-            <div className="relative z-10 flex flex-col justify-center h-full w-full p-5 md:p-6 lg:p-8">
-              <div className="flex items-center justify-between mb-4">
+            <div className="relative z-10 flex flex-col h-full w-full p-5 md:p-6 lg:p-8">
+              <div className="flex items-center justify-between">
                 <SectionLabel>Newsletter</SectionLabel>
                 <ArrowUpRightIcon
                   size={16}
@@ -294,7 +298,7 @@ const ServiceHeroNavSimple: React.FC<ServiceHeroNavSimpleProps> = ({
                   className={styles.newsArrow}
                 />
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex-1 flex items-center gap-3">
                 <EnvelopeIcon
                   size={28}
                   weight="duotone"
@@ -315,7 +319,7 @@ const ServiceHeroNavSimple: React.FC<ServiceHeroNavSimpleProps> = ({
                   <Text
                     size="body-xs"
                     color="tertiary"
-                    className="leading-snug mt-1"
+                    className="leading-relaxed mt-2"
                   >
                     Subscribe to stay in the loop
                   </Text>
@@ -329,7 +333,14 @@ const ServiceHeroNavSimple: React.FC<ServiceHeroNavSimpleProps> = ({
         <div className={styles.cutout}>
           {/* Awards marquee */}
           <div className="flex-1 min-w-0">
-            <Marquee speed={30} pauseOnHover gradient gradientColor="black" gradientWidth={40}>
+            <Marquee
+              speed={30}
+              pauseOnHover
+              autoFill
+              gradient
+              gradientColor="black"
+              gradientWidth={40}
+            >
               {Array.from({ length: 8 }).map((_, i) => (
                 <div
                   key={i}
@@ -340,7 +351,10 @@ const ServiceHeroNavSimple: React.FC<ServiceHeroNavSimpleProps> = ({
                   data-wide={i % 3 === 0 ? "" : undefined}
                 >
                   <span
-                    className={cn(styles.awardItemText, "text-[9px] font-medium")}
+                    className={cn(
+                      styles.awardItemText,
+                      "text-[9px] font-medium",
+                    )}
                   >
                     Award
                   </span>
