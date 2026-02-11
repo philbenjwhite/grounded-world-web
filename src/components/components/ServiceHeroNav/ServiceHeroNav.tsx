@@ -20,12 +20,20 @@ import Text from "../../atoms/Text";
 import { mapCmsServices } from "./utils";
 import type { Service } from "../../../../tina/__generated__/types";
 
-const workPlaceholders = [
-  { title: "Brand Activation Campaign", tag: "Case Study", accent: "#00AEEF" },
-  { title: "Digital Transformation", tag: "Featured", accent: "#FF08CC" },
-  { title: "Sustainability Impact Report", tag: "Research", accent: "#1CC35B" },
-  { title: "Community Platform", tag: "Product", accent: "#FFA603" },
+export interface WorkItem {
+  title: string;
+  tag: string;
+  slug: string;
+}
+
+const workFallbacks: WorkItem[] = [
+  { title: "Brand Activation Campaign", tag: "Case Study", slug: "" },
+  { title: "Digital Transformation", tag: "Featured", slug: "" },
+  { title: "Sustainability Impact Report", tag: "Research", slug: "" },
+  { title: "Community Platform", tag: "Product", slug: "" },
 ];
+
+const workAccents = ["#00AEEF", "#FF08CC", "#1CC35B", "#FFA603"];
 
 const resourceTypes = [
   { label: "Podcast", accent: "#00AEEF", url: "/resources/podcast" },
@@ -52,9 +60,11 @@ const servicePositions = [
 
 interface ServiceHeroNavProps {
   services: Service[];
+  workItems?: WorkItem[];
 }
 
-const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ services }) => {
+const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ services, workItems }) => {
+  const workSlides = workItems && workItems.length > 0 ? workItems : workFallbacks;
   const serviceItems = mapCmsServices(services);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
@@ -195,14 +205,15 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ services }) => {
     };
   }, [emblaApi, onEmblaSelect]);
 
-  // Auto-advance work carousel every 7 seconds
+  // Auto-advance work carousel every 7 seconds, pause on hover
+  const [workCarouselPaused, setWorkCarouselPaused] = useState(false);
   useEffect(() => {
-    if (!emblaApi) return;
+    if (!emblaApi || workCarouselPaused) return;
     const interval = setInterval(() => {
       emblaApi.scrollNext();
     }, 7000);
     return () => clearInterval(interval);
-  }, [emblaApi]);
+  }, [emblaApi, workCarouselPaused]);
 
   const handleHover = (id: string | null) => {
     setHoveredNav(id);
@@ -439,7 +450,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ services }) => {
             <div className="relative z-10 flex flex-col h-full p-4 md:p-4 lg:p-5">
               <div className="flex items-center justify-between mb-2 md:mb-3">
                 <SectionLabel>Our Work</SectionLabel>
-                <div className="flex items-center gap-2">
+                <Link href="/our-work" className="flex items-center gap-2">
                   <span
                     className={cn(styles.workViewAll, "text-[10px] md:text-xs")}
                   >
@@ -450,7 +461,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ services }) => {
                     weight="bold"
                     className={styles.workArrow}
                   />
-                </div>
+                </Link>
               </div>
 
               {/* Vertical Embla carousel + pagination side-by-side */}
@@ -463,61 +474,112 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ services }) => {
                       "overflow-hidden rounded-lg md:rounded-xl",
                     )}
                     ref={emblaRef}
+                    onMouseEnter={() => setWorkCarouselPaused(true)}
+                    onMouseLeave={() => setWorkCarouselPaused(false)}
                   >
                     <div className={styles.workSlideContainer}>
-                      {workPlaceholders.map((wp, i) => (
+                      {workSlides.map((wp, i) => (
                         <div key={i} className={styles.workSlide}>
-                          <div
-                            className={cn(
-                              styles.workPlaceholderBg,
-                              "w-full h-full flex items-center justify-center",
-                            )}
-                          >
-                            <span
+                          {wp.slug ? (
+                            <Link
+                              href={`/our-work/${wp.slug}`}
                               className={cn(
-                                styles.workPlaceholderText,
-                                "text-xs md:text-sm font-medium",
+                                styles.workPlaceholderBg,
+                                "w-full h-full flex items-center justify-center",
                               )}
                             >
-                              {wp.title}
-                            </span>
-                          </div>
+                              <span
+                                className={cn(
+                                  styles.workPlaceholderText,
+                                  "text-xs md:text-sm font-medium",
+                                )}
+                              >
+                                {wp.title}
+                              </span>
+                            </Link>
+                          ) : (
+                            <div
+                              className={cn(
+                                styles.workPlaceholderBg,
+                                "w-full h-full flex items-center justify-center",
+                              )}
+                            >
+                              <span
+                                className={cn(
+                                  styles.workPlaceholderText,
+                                  "text-xs md:text-sm font-medium",
+                                )}
+                              >
+                                {wp.title}
+                              </span>
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
                   </div>
                   {/* Title area — always visible below carousel */}
-                  <div
-                    className="shrink-0 pt-2 md:pt-3"
-                    style={
-                      {
-                        "--accent": workPlaceholders[activeWork].accent,
-                      } as React.CSSProperties
-                    }
-                  >
-                    <Text
-                      size="body-xs"
-                      as="span"
-                      className={cn(
-                        styles.workTag,
-                        "text-[9px] md:text-[10px] uppercase tracking-wider font-semibold",
-                      )}
+                  {workSlides[activeWork]?.slug ? (
+                    <Link
+                      href={`/our-work/${workSlides[activeWork].slug}`}
+                      className="shrink-0 block pt-2 md:pt-3"
+                      style={
+                        {
+                          "--accent": workAccents[activeWork % workAccents.length],
+                        } as React.CSSProperties
+                      }
                     >
-                      {workPlaceholders[activeWork].tag}
-                    </Text>
-                    <Text
-                      size="body-xs"
-                      color="primary"
-                      className="font-semibold mt-0.5 leading-tight"
+                      <Text
+                        size="body-xs"
+                        as="span"
+                        className={cn(
+                          styles.workTag,
+                          "text-[9px] md:text-[10px] uppercase tracking-wider font-semibold",
+                        )}
+                      >
+                        {workSlides[activeWork]?.tag}
+                      </Text>
+                      <Text
+                        size="body-xs"
+                        color="primary"
+                        className="font-semibold mt-0.5 leading-tight"
+                      >
+                        {workSlides[activeWork]?.title}
+                      </Text>
+                    </Link>
+                  ) : (
+                    <div
+                      className="shrink-0 pt-2 md:pt-3"
+                      style={
+                        {
+                          "--accent": workAccents[activeWork % workAccents.length],
+                        } as React.CSSProperties
+                      }
                     >
-                      {workPlaceholders[activeWork].title}
-                    </Text>
-                  </div>
+                      <Text
+                        size="body-xs"
+                        as="span"
+                        className={cn(
+                          styles.workTag,
+                          "text-[9px] md:text-[10px] uppercase tracking-wider font-semibold",
+                        )}
+                      >
+                        {workSlides[activeWork]?.tag}
+                      </Text>
+                      <Text
+                        size="body-xs"
+                        color="primary"
+                        className="font-semibold mt-0.5 leading-tight"
+                      >
+                        {workSlides[activeWork]?.title}
+                      </Text>
+                    </div>
+                  )}
                 </div>
 
                 {/* Vertical bar pagination — centered beside carousel */}
                 <div className="shrink-0 flex flex-col items-center justify-center gap-2">
-                  {workPlaceholders.map((_, i) => (
+                  {workSlides.map((_, i) => (
                     <button
                       key={i}
                       onClick={(e) => {

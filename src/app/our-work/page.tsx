@@ -1,73 +1,53 @@
-"use client";
+import Link from "next/link";
+import client from "../../../tina/server-client";
 
-import MediaSection from "../../components/components/MediaSection";
-import type { MediaItem } from "../../components/components/MediaSection/MediaSection";
+export default async function OurWorkPage() {
+  let edges: NonNullable<
+    Awaited<
+      ReturnType<typeof client.queries.workConnection>
+    >["data"]["workConnection"]["edges"]
+  > = [];
 
-const categories = [
-  "Brand Activation",
-  "Sustainability Storytelling",
-  "Social Impact",
-  "Brand Purpose",
-];
-
-const workItems: MediaItem[] = [
-  {
-    id: "work-1",
-    title: "Brand Activation Campaign",
-    category: "Brand Activation",
-    imageUrl: "https://picsum.photos/seed/work1/800/600",
-    imageAlt: "Brand activation project",
-  },
-  {
-    id: "work-2",
-    title: "Sustainability Initiative",
-    category: "Sustainability Storytelling",
-    imageUrl: "https://picsum.photos/seed/work2/800/600",
-    imageAlt: "Sustainability storytelling project",
-  },
-  {
-    id: "work-3",
-    title: "Community Impact Program",
-    category: "Social Impact",
-    imageUrl: "https://picsum.photos/seed/work3/800/600",
-    imageAlt: "Social impact project",
-  },
-  {
-    id: "work-4",
-    title: "Purpose-Driven Campaign",
-    category: "Brand Purpose",
-    imageUrl: "https://picsum.photos/seed/work4/800/600",
-    imageAlt: "Brand purpose project",
-  },
-  {
-    id: "work-5",
-    title: "Interactive Experience",
-    category: "Brand Activation",
-    imageUrl: "https://picsum.photos/seed/work5/800/600",
-    imageAlt: "Interactive brand experience",
-  },
-  {
-    id: "work-6",
-    title: "Environmental Story",
-    category: "Sustainability Storytelling",
-    imageUrl: "https://picsum.photos/seed/work6/800/600",
-    imageAlt: "Environmental storytelling project",
-  },
-];
-
-export default function OurWorkPage() {
-  const handleItemClick = (item: MediaItem) => {
-    console.log("Clicked item:", item);
-  };
+  try {
+    const response = await client.queries.workConnection({
+      sort: "date",
+    });
+    edges = response.data.workConnection.edges ?? [];
+  } catch (error) {
+    console.error("workConnection fetch failed:", error);
+  }
 
   return (
-    <main>
-      <MediaSection
-        title="Our Work"
-        categories={categories}
-        items={workItems}
-        onItemClick={handleItemClick}
-      />
-    </main>
+    <div className="min-h-screen bg-zinc-950 text-white">
+      <main className="mx-auto max-w-5xl px-6 py-16">
+        <h1 className="mb-12 text-4xl font-bold md:text-5xl">Our Work</h1>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {edges.map((edge) => {
+            const node = edge?.node;
+            if (!node) return null;
+            const tag = node.tags?.[0];
+
+            return (
+              <Link
+                key={node._sys.filename}
+                href={`/our-work/${node._sys.filename}`}
+                className="group rounded-lg bg-zinc-900 p-6 transition-colors hover:bg-zinc-800"
+              >
+                {tag && (
+                  <span className="mb-3 inline-block rounded-full bg-zinc-800 px-3 py-1 text-xs text-zinc-400 group-hover:bg-zinc-700">
+                    {tag}
+                  </span>
+                )}
+                <h2 className="mb-2 text-lg font-semibold leading-snug">
+                  {node.title}
+                </h2>
+                <p className="text-sm text-zinc-400">{node.client}</p>
+              </Link>
+            );
+          })}
+        </div>
+      </main>
+    </div>
   );
 }
