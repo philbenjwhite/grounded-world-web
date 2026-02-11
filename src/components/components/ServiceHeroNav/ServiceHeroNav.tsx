@@ -1,8 +1,16 @@
 "use client";
 
-import React, { useRef, useEffect, useState, useCallback } from "react";
+import React, {
+  useRef,
+  useEffect,
+  useState,
+  useCallback,
+  useSyncExternalStore,
+} from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import cn from "classnames";
+import Link from "next/link";
+import Image from "next/image";
 import Header from "../Header";
 import styles from "./ServiceHeroNav.module.css";
 import { ArrowUpRightIcon, EnvelopeIcon } from "@phosphor-icons/react";
@@ -49,8 +57,11 @@ interface ServiceHeroNavProps {
 const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
-  const [isClient, setIsClient] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const isClient = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const [emblaRef, emblaApi] = useEmblaCarousel({ axis: "y", loop: true });
   const [activeWork, setActiveWork] = useState(0);
   const serviceCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -72,17 +83,6 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
   useEffect(() => {
     serviceItemsRef.current = serviceItems;
   }, [serviceItems]);
-
-  useEffect(() => {
-    setIsClient(true);
-    setIsTouchDevice(
-      "ontouchstart" in window ||
-        navigator.maxTouchPoints > 0 ||
-        /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent,
-        ),
-    );
-  }, []);
 
   // Video playback
   useEffect(() => {
@@ -351,28 +351,26 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
             <div className="relative z-10 flex flex-col h-full p-4 md:p-5 lg:p-6">
               <SectionLabel>Services</SectionLabel>
 
-              {/* ─── HALF-CIRCLE PLACEHOLDER ─────────────────────
-                   TODO: Replace with animated SVG graphic.
-                   Dotted arc + filled dome + orbiting items.
-                   ────────────────────────────────────────────────── */}
               <div className="relative flex-1 mt-2">
-                {/* ─── SVG Globe ─── */}
                 <div
                   className={cn(
                     styles.globeWrap,
                     "absolute pointer-events-none",
                   )}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/sphere.svg" alt="" className="w-full h-full" />
+                  <Image
+                    src="/sphere.svg"
+                    alt=""
+                    fill
+                    className="object-contain"
+                  />
                 </div>
 
-                {/* Service items on the arc — animate in staggered */}
                 {serviceItems.map((svc, i) => {
                   const isHovered = hoveredNav === svc.id;
                   const pos = servicePositions[i];
                   return (
-                    <a
+                    <Link
                       key={svc.id}
                       href={svc.url}
                       className={cn(
@@ -388,15 +386,8 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                         } as React.CSSProperties
                       }
                       data-hovered={isHovered ? "" : undefined}
-                      onMouseEnter={() => !isTouchDevice && handleHover(svc.id)}
-                      onMouseLeave={() => !isTouchDevice && handleHover(null)}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.open(
-                          svc.url,
-                          isTouchDevice ? "_self" : "_blank",
-                        );
-                      }}
+                      onMouseEnter={() => handleHover(svc.id)}
+                      onMouseLeave={() => handleHover(null)}
                     >
                       <div
                         className={cn(
@@ -418,7 +409,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                       >
                         {svc.label}
                       </span>
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
@@ -443,8 +434,8 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
           <div
             className={cn(styles.bcardLink, styles.workCard)}
             data-hovered={isWorkHovered ? "" : undefined}
-            onMouseEnter={() => !isTouchDevice && handleHover("our-work")}
-            onMouseLeave={() => !isTouchDevice && handleHover(null)}
+            onMouseEnter={() => handleHover("our-work")}
+            onMouseLeave={() => handleHover(null)}
           >
             <div className="relative z-10 flex flex-col h-full p-4 md:p-4 lg:p-5">
               <div className="flex items-center justify-between mb-2 md:mb-3">
@@ -505,22 +496,23 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                       } as React.CSSProperties
                     }
                   >
-                    <span
+                    <Text
+                      size="body-xs"
+                      as="span"
                       className={cn(
                         styles.workTag,
                         "text-[9px] md:text-[10px] uppercase tracking-wider font-semibold",
                       )}
                     >
                       {workPlaceholders[activeWork].tag}
-                    </span>
-                    <p
-                      className={cn(
-                        styles.workTitle,
-                        "text-xs md:text-sm font-semibold mt-0.5 leading-tight",
-                      )}
+                    </Text>
+                    <Text
+                      size="body-xs"
+                      color="primary"
+                      className="font-semibold mt-0.5 leading-tight"
                     >
                       {workPlaceholders[activeWork].title}
-                    </p>
+                    </Text>
                   </div>
                 </div>
 
@@ -546,8 +538,8 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
           <div
             className={cn(styles.bcard, styles.resourcesCard)}
             data-hovered={isResourcesHovered ? "" : undefined}
-            onMouseEnter={() => !isTouchDevice && handleHover("resources")}
-            onMouseLeave={() => !isTouchDevice && handleHover(null)}
+            onMouseEnter={() => handleHover("resources")}
+            onMouseLeave={() => handleHover(null)}
           >
             <div
               className={cn(
@@ -567,7 +559,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
 
               <div className="flex-1 grid grid-cols-2 gap-2 md:gap-3 content-center">
                 {resourceTypes.map((rt) => (
-                  <a
+                  <Link
                     key={rt.label}
                     href={rt.url}
                     className={cn(
@@ -590,7 +582,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                     >
                       {rt.label}
                     </span>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -600,8 +592,8 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
           <div
             className={cn(styles.bcardLink, styles.newsletterCard, "group")}
             data-hovered={isNewsHovered ? "" : undefined}
-            onMouseEnter={() => !isTouchDevice && handleHover("newsletter")}
-            onMouseLeave={() => !isTouchDevice && handleHover(null)}
+            onMouseEnter={() => handleHover("newsletter")}
+            onMouseLeave={() => handleHover(null)}
           >
             <div
               className={cn(
@@ -616,14 +608,17 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                 className={cn(styles.newsIcon, "shrink-0")}
               />
               <div className="flex-1 min-w-0">
-                <p
+                <Text
+                  size="body-xs"
+                  color="secondary"
+                  as="p"
                   className={cn(
                     styles.newsTitle,
-                    "text-xs md:text-sm font-semibold leading-tight",
+                    "font-semibold leading-tight",
                   )}
                 >
                   Newsletter
-                </p>
+                </Text>
                 <Text
                   size="body-xs"
                   color="tertiary"
@@ -644,14 +639,12 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
           </div>
 
           {/* ━━━ ABOUT US ━━━ */}
-          <div
+          <Link
+            href="/about"
             className={cn(styles.bcardLink, styles.aboutCard, "group")}
             data-hovered={isAboutHovered ? "" : undefined}
-            onMouseEnter={() => !isTouchDevice && handleHover("about-us")}
-            onMouseLeave={() => !isTouchDevice && handleHover(null)}
-            onClick={() =>
-              window.open("/about", isTouchDevice ? "_self" : "_blank")
-            }
+            onMouseEnter={() => handleHover("about-us")}
+            onMouseLeave={() => handleHover(null)}
           >
             <div
               className={cn(
@@ -669,28 +662,31 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                     className={styles.aboutArrow}
                   />
                 </div>
-                <p
-                  className={cn(
-                    styles.aboutHeadingWhite,
-                    "text-sm md:text-base lg:text-lg font-bold leading-tight tracking-tight",
-                  )}
+                <Heading
+                  level={3}
+                  size="h4"
+                  color="primary"
+                  className="text-sm md:text-base lg:text-lg leading-tight tracking-tight"
                 >
                   Big Brand Muscle.
-                </p>
-                <p
+                </Heading>
+                <Heading
+                  level={3}
+                  size="h4"
                   className={cn(
                     styles.aboutHeadingCyan,
-                    "text-sm md:text-base lg:text-lg font-bold leading-tight tracking-tight",
+                    "text-sm md:text-base lg:text-lg leading-tight tracking-tight",
                   )}
                 >
                   Boutique Hustle.
-                </p>
+                </Heading>
               </div>
               <div className="flex items-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/bcorp-logo.svg"
                   alt="Certified B Corporation"
+                  width={80}
+                  height={80}
                   className={cn(
                     styles.bCorpLogo,
                     "h-14 md:h-16 lg:h-20 w-auto",
@@ -698,7 +694,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                 />
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import cn from "classnames";
 import { ListIcon } from "@phosphor-icons/react";
 
@@ -20,11 +21,13 @@ const Header = ({ className }: HeaderProps) => {
     >
       {/* Logo */}
       <Link href="/" className="shrink-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/grounded-logo-light.svg"
           alt="Grounded World"
+          width={160}
+          height={56}
           className="h-10 md:h-12 lg:h-14 w-auto"
+          priority
         />
       </Link>
 

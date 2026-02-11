@@ -34,15 +34,6 @@
     }
   }
 
-  @keyframes globeDrift {
-    0%,
-    100% {
-      transform: translateX(0px);
-    }
-    50% {
-      transform: translateX(-8px);
-    }
-  }
 }
 
 /* ─── Layout ─── */
@@ -315,10 +306,6 @@
   color: var(--accent);
 }
 
-.workTitle {
-  color: var(--color-white);
-}
-
 .workViewAll {
   color: var(--color-gray-4);
   opacity: 0;
@@ -474,10 +461,6 @@
 .aboutCard[data-hovered] .aboutArrow {
   color: #4dd9ff;
   transform: translate(0, 0) scale(1.15);
-}
-
-.aboutHeadingWhite {
-  color: var(--color-white);
 }
 
 .aboutHeadingCyan {
