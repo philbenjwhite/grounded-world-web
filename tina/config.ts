@@ -199,6 +199,119 @@ export default defineConfig({
         ],
       },
       {
+        name: "work",
+        label: "Work",
+        path: "content/work",
+        format: "md",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return values?.title
+                ?.toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "")
+                .substring(0, 100);
+            },
+          },
+        },
+        defaultItem: () => ({
+          date: new Date().toISOString(),
+        }),
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "client",
+            label: "Client",
+            required: true,
+            description:
+              "Client or brand name (e.g. 'LYCRA + QIRA', 'Tribes On The Edge')",
+          },
+          {
+            type: "reference",
+            name: "service",
+            label: "Service",
+            collections: ["service"],
+            description: "Primary service type for this work",
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            description: "Brief project description / excerpt (1-2 sentences)",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "image",
+            name: "featuredImage",
+            label: "Featured Image",
+            description:
+              "Main image displayed in work listings and social sharing",
+          },
+          {
+            type: "string",
+            name: "videoUrl",
+            label: "Video URL",
+            description: "Vimeo or YouTube embed URL",
+          },
+          {
+            type: "datetime",
+            name: "date",
+            label: "Date",
+            ui: {
+              dateFormat: "MMMM D, YYYY",
+            },
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            list: true,
+            ui: {
+              component: "tags",
+            },
+          },
+          {
+            type: "string",
+            name: "seoTitle",
+            label: "SEO Title",
+            description:
+              "Custom title for search engines (defaults to title if empty)",
+          },
+          {
+            type: "string",
+            name: "seoDescription",
+            label: "SEO Description",
+            description:
+              "Custom meta description for search engines (max 160 characters)",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "boolean",
+            name: "featured",
+            label: "Featured",
+            description: "Display this work in featured/hero sections",
+          },
+          {
+            type: "rich-text",
+            name: "body",
+            label: "Body",
+            isBody: true,
+          },
+        ],
+      },
+      {
         name: "post",
         label: "Posts",
         path: "content/posts",
