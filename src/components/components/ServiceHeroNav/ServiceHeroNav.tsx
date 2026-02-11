@@ -6,6 +6,8 @@ import cn from "classnames";
 import Header from "../Header";
 import styles from "./ServiceHeroNav.module.css";
 import { ArrowUpRightIcon, EnvelopeIcon } from "@phosphor-icons/react";
+import Marquee from "react-fast-marquee";
+import Heading from "../../atoms/Heading";
 import SectionLabel from "../../atoms/SectionLabel";
 import Text from "../../atoms/Text";
 import { type ServiceItem } from "./utils";
@@ -192,7 +194,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
     };
   }, [emblaApi, onEmblaSelect]);
 
-  // Auto-advance work carousel every 5 seconds
+  // Auto-advance work carousel every 7 seconds
   useEffect(() => {
     if (!emblaApi) return;
     const interval = setInterval(() => {
@@ -281,61 +283,41 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
             </video>
             <div className={cn(styles.heroOverlay, "absolute inset-0")} />
             <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 lg:p-10">
-              <h1
-                className={cn(
-                  styles.heroH1,
-                  "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-[0.9]",
-                )}
-              >
+              <Heading level={1} size="display" color="primary">
                 Activating Purpose
-              </h1>
-              <p
-                className={cn(
-                  styles.heroSubtitle,
-                  "text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light tracking-tight mt-1 md:mt-2",
-                )}
-              >
+              </Heading>
+              <Text size="subtitle" color="secondary" className="mt-1 md:mt-2">
                 Accelerating Impact
-              </p>
+              </Text>
 
-              {/* ─── AWARDS MARQUEE ──────────────────────────────────
-                   TODO: Replace placeholder rectangles with actual
-                   award logos / images. This infinite-scroll carousel
-                   auto-animates right→left and pauses on hover.
-                   ──────────────────────────────────────────────────── */}
-              <div
-                className={cn(
-                  styles.awardsMask,
-                  "mt-4 md:mt-6 overflow-hidden",
-                )}
+              <Marquee
+                speed={30}
+                pauseOnHover
+                gradient
+                gradientColor="black"
+                gradientWidth={40}
+                className="mt-4 md:mt-6"
               >
-                <div className={styles.awardsTrack}>
-                  {/* Duplicate set for seamless loop */}
-                  {[...Array(2)].map((_, setIndex) => (
-                    <React.Fragment key={setIndex}>
-                      {Array.from({ length: 10 }).map((_, i) => (
-                        <div
-                          key={`${setIndex}-${i}`}
-                          className={cn(
-                            styles.awardItem,
-                            "shrink-0 rounded-md flex items-center justify-center",
-                          )}
-                          data-wide={i % 3 === 0 ? "" : undefined}
-                        >
-                          <span
-                            className={cn(
-                              styles.awardItemText,
-                              "text-[9px] font-medium",
-                            )}
-                          >
-                            Award
-                          </span>
-                        </div>
-                      ))}
-                    </React.Fragment>
-                  ))}
-                </div>
-              </div>
+                {Array.from({ length: 10 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={cn(
+                      styles.awardItem,
+                      "shrink-0 rounded-md flex items-center justify-center mx-4",
+                    )}
+                    data-wide={i % 3 === 0 ? "" : undefined}
+                  >
+                    <span
+                      className={cn(
+                        styles.awardItemText,
+                        "text-[9px] font-medium",
+                      )}
+                    >
+                      Award
+                    </span>
+                  </div>
+                ))}
+              </Marquee>
             </div>
           </div>
 
@@ -441,7 +423,11 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                 })}
               </div>
 
-              <Text size="body-xs" color="tertiary" className="leading-relaxed mt-2">
+              <Text
+                size="body-xs"
+                color="tertiary"
+                className="leading-relaxed mt-2"
+              >
                 Moving the needle &mdash; culturally, socially, environmentally
                 and behaviorally.
               </Text>
@@ -638,7 +624,11 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ serviceItems }) => {
                 >
                   Newsletter
                 </p>
-                <Text size="body-xs" color="tertiary" className="leading-snug mt-0.5 truncate">
+                <Text
+                  size="body-xs"
+                  color="tertiary"
+                  className="leading-snug mt-0.5 truncate"
+                >
                   Weekly purpose-driven insights
                 </Text>
               </div>

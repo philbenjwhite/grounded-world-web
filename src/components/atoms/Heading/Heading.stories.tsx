@@ -19,7 +19,7 @@ const meta = {
     },
     size: {
       control: 'select',
-      options: ['h1', 'h2', 'h3', 'h4'],
+      options: ['display', 'h1', 'h2', 'h3', 'h4'],
     },
     color: {
       control: 'select',
@@ -54,6 +54,7 @@ export const AllSizes: Story = {
   },
   render: () => (
     <div className="flex flex-col gap-4">
+      <Heading level={1} size="display">Display - Responsive hero scale</Heading>
       <Heading level={1} size="h1">H1 Size - 64px</Heading>
       <Heading level={2} size="h2">H2 Size - 56px</Heading>
       <Heading level={3} size="h3">H3 Size - 48px</Heading>
@@ -98,6 +99,14 @@ export const Colors: Story = {
       </div>
     </div>
   ),
+};
+
+export const Display: Story = {
+  args: {
+    children: 'Activating Purpose',
+    level: 1,
+    size: 'display',
+  },
 };
 
 export const H1: Story = {

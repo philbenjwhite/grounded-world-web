@@ -34,15 +34,6 @@
     }
   }
 
-  @keyframes awardsScroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
   @keyframes globeDrift {
     0%,
     100% {
@@ -201,42 +192,7 @@
   border-radius: inherit;
 }
 
-.heroH1 {
-  color: var(--color-white);
-}
-
-.heroSubtitle {
-  color: var(--color-gray-3);
-}
-
 /* ─── Awards ─── */
-
-.awardsMask {
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 8%,
-    black 92%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 8%,
-    black 92%,
-    transparent
-  );
-}
-
-.awardsTrack {
-  display: flex;
-  gap: 32px;
-  animation: awardsScroll 20s linear infinite;
-}
-
-.awardsTrack:hover {
-  animation-play-state: paused;
-}
 
 .awardItem {
   width: 80px;

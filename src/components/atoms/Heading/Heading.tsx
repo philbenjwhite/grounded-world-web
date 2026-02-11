@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
-export type HeadingSize = 'h1' | 'h2' | 'h3' | 'h4';
+export type HeadingSize = 'display' | 'h1' | 'h2' | 'h3' | 'h4';
 export type HeadingColor = 'primary' | 'secondary' | 'tertiary' | 'inverted';
 
 export interface HeadingProps {
@@ -19,6 +19,7 @@ export interface HeadingProps {
 }
 
 const sizeClasses: Record<HeadingSize, string> = {
+  display: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter leading-[0.9]',
   h1: 'text-[length:var(--font-size-h1)]',
   h2: 'text-[length:var(--font-size-h2)]',
   h3: 'text-[length:var(--font-size-h3)]',
