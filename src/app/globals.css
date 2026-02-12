@@ -119,31 +119,6 @@
 }
 
 /* ============================================
-   Light Mode (in progress — same values for now)
-   ============================================ */
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
-
-    /* Colors (Light) */
-    --color-cyan: var(--color-brand-4DD9FF);
-    --color-azure-1: var(--color-brand-00AEEF);
-    --color-azure-2: var(--color-brand-0077B5);
-    --color-magenta: var(--color-brand-FF08CC);
-    --color-green: var(--color-brand-1CC35B);
-    --color-gold: var(--color-brand-FFA603);
-    --color-white: var(--color-neutral-FFFFFF);
-    --color-gray-1: var(--color-neutral-FAFAFA);
-    --color-gray-2: var(--color-neutral-E5E5E5);
-    --color-gray-3: var(--color-neutral-B1B3B6);
-    --color-gray-4: var(--color-neutral-848484);
-    --color-gray-5: var(--color-neutral-333333);
-    --color-black: var(--color-neutral-000000);
-  }
-}
-
-/* ============================================
    Fonts (Mobile — 390px breakpoint)
    ============================================ */
 @media (max-width: 390px) {

@@ -1,0 +1,226 @@
+/* ============================================
+   Header — Desktop nav, dropdowns, mobile menu
+   ============================================ */
+
+/* ---- Service orb (themed per service) ---- */
+
+.serviceOrb {
+  background-color: color-mix(in srgb, var(--service-color) 10%, transparent);
+  border: 1.5px solid color-mix(in srgb, var(--service-color) 20%, transparent);
+  transition: background-color 300ms, border-color 300ms, box-shadow 300ms, transform 200ms;
+}
+
+.serviceIcon {
+  color: color-mix(in srgb, var(--service-color) 70%, white);
+  transition: color 300ms;
+}
+
+/* ---- Resource accent bar ---- */
+
+.resourceBar {
+  background-color: var(--accent);
+  opacity: 0.6;
+  transition: opacity 300ms, transform 200ms;
+}
+
+/* ---- Nav link ---- */
+
+.navLink {
+  color: var(--color-gray-3);
+  transition: color 250ms;
+}
+
+.navLink:hover,
+.navLink[data-active] {
+  color: var(--color-white);
+}
+
+/* ---- Dropdown trigger group ---- */
+
+.dropdownGroup {
+  position: relative;
+}
+
+/* ---- Chevron ---- */
+
+.chevron {
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdownGroup:hover .chevron,
+.dropdownGroup[data-open] .chevron {
+  transform: rotate(180deg);
+}
+
+/* ---- Dropdown panel ---- */
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background: rgba(12, 12, 12, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms;
+  z-index: 50;
+}
+
+.dropdownGroup:hover .dropdown,
+.dropdownGroup[data-open] .dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ---- Dropdown link ---- */
+
+.dropdownLink {
+  color: var(--color-gray-3);
+  transition: color 200ms, background 200ms;
+}
+
+.dropdownLink:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ---- CTA button (Contact Us) ---- */
+
+.ctaButton {
+  border: 1px solid var(--color-magenta);
+  color: var(--color-white);
+  transition: background 250ms, border-color 250ms, transform 150ms;
+}
+
+.ctaButton:hover {
+  background: var(--color-magenta);
+  border-color: var(--color-magenta);
+}
+
+.ctaButton:active {
+  transform: scale(0.97);
+}
+
+/* ---- Newsletter nav CTA ---- */
+
+.newsletterCta {
+  background: rgba(255, 166, 3, 0.1);
+  border: 1px solid rgba(255, 166, 3, 0.25);
+  color: #ffa603;
+  transition: background 250ms, border-color 250ms, color 250ms;
+}
+
+.newsletterCta:hover {
+  background: rgba(255, 166, 3, 0.2);
+  border-color: rgba(255, 166, 3, 0.4);
+}
+
+/* ---- Active nav indicator (desktop) ---- */
+
+.activeIndicator {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0;
+  border-radius: 1px;
+  background: var(--color-magenta);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    width 350ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 200ms;
+  will-change: transform, width;
+}
+
+/* ---- Mobile menu overlay ---- */
+
+.mobileOverlay {
+  background: #0a0a0a;
+}
+
+/* ---- Mobile sub-section card ---- */
+
+.mobileSubCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  transition: border-color 300ms;
+}
+
+/* ---- Mobile service orb ---- */
+
+.mobileServiceOrb {
+  background-color: color-mix(in srgb, var(--service-color) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--service-color) 18%, transparent);
+  transition: background-color 200ms, border-color 200ms;
+}
+
+.mobileServiceLink:active .mobileServiceOrb {
+  background-color: color-mix(in srgb, var(--service-color) 22%, transparent);
+  border-color: color-mix(in srgb, var(--service-color) 35%, transparent);
+}
+
+.mobileServiceIcon {
+  color: color-mix(in srgb, var(--service-color) 70%, white);
+}
+
+/* ---- Mobile resource accent bar ---- */
+
+.mobileResourceBar {
+  background-color: var(--accent);
+  opacity: 0.5;
+  transition: opacity 200ms;
+}
+
+.mobileResourceLink:active .mobileResourceBar {
+  opacity: 1;
+}
+
+/* ---- Toggle button (hamburger / close) ---- */
+
+.toggleBtn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 250ms, border-color 250ms;
+}
+
+.toggleBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ---- Prefers reduced motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .serviceOrb,
+  .serviceIcon,
+  .resourceBar,
+  .toggleBtn,
+  .navLink,
+  .chevron,
+  .dropdown,
+  .dropdownLink,
+  .ctaButton,
+  .newsletterCta,
+  .activeIndicator,
+  .mobileSubCard,
+  .mobileServiceOrb,
+  .mobileResourceBar {
+    transition: none !important;
+  }
+}
