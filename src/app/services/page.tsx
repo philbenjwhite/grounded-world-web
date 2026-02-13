@@ -1,4 +1,6 @@
 import HeroBanner from "@/components/components/HeroBanner";
+import Heading from "@/components/atoms/Heading";
+import FadeIn from "@/components/utils/FadeIn";
 import ServicesBento from "@/components/components/ServicesBento";
 
 export const metadata = {
@@ -74,17 +76,24 @@ export default function ServicesPage() {
   return (
     <>
       <HeroBanner
-        backgroundType="vimeo"
-        vimeoUrl="https://vimeo.com/1001182645/7bc8093073"
+        backgroundType="canvas"
         title="Our Services"
         subtitle="Everything we do is designed to move the needle culturally, socially, environmentally and behaviorally — inside and out. So whether you need to find your biggest intention-action gaps, foster multi-stakeholder collaboration and partnerships, tell your story or commercialize sustainability to generate an ROI — we can help you articulate purpose, activate your brands and accelerate your impact."
         ctaLabel="Discovery Call"
         ctaHref="/contact"
         ctaVariant="solid"
-        overlayOpacity="medium"
+        overlayOpacity="light"
         contentAlign="center"
         minHeight="full"
       />
+
+      {/* Section heading — pulled up into the hero fade zone */}
+      <FadeIn className="relative z-10 -mt-16 md:-mt-20 text-center">
+        <Heading level={2} size="h3" className="text-white">
+          How We Move the Needle
+        </Heading>
+      </FadeIn>
+
       <ServicesBento services={services} />
     </>
   );

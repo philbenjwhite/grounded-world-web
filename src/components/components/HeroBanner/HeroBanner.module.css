@@ -29,3 +29,7 @@
   animation: fadeInUp 0.8s ease-out 0.4s forwards;
   opacity: 0;
 }
+
+.canvasFade {
+  background: linear-gradient(to bottom, transparent 0%, var(--background) 100%);
+}

@@ -2,17 +2,23 @@
 
 import React, { useState } from "react";
 import cn from "classnames";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Heading from "../../atoms/Heading";
 import Text from "../../atoms/Text";
 import Button from "../../atoms/Button";
 import styles from "./HeroBanner.module.css";
 
+const DefaultPlexusBackground = dynamic(
+  () => import("../PlexusBackground/PlexusBackground"),
+  { ssr: false }
+);
+
 /* ─── Types ──────────────────────────────────────────── */
 
 export interface HeroBannerProps {
   /** Background media type */
-  backgroundType: "vimeo" | "image";
+  backgroundType: "vimeo" | "image" | "canvas";
 
   /** Full Vimeo URL (standard or unlisted) */
   vimeoUrl?: string;
@@ -23,6 +29,9 @@ export interface HeroBannerProps {
   imageSrc?: string;
   /** Alt text for background image */
   imageAlt?: string;
+
+  /** Optional custom canvas component (defaults to PlexusBackground) */
+  canvasComponent?: React.ComponentType;
 
   /** Main headline */
   title: string;
@@ -88,6 +97,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   posterSrc,
   imageSrc,
   imageAlt = "",
+  canvasComponent: CanvasComponent,
   title,
   subtitle,
   ctaLabel,
@@ -99,6 +109,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   contentAlign = "center",
   minHeight = "full",
 }) => {
+  const PlexusBg = CanvasComponent ?? DefaultPlexusBackground;
   const [iframeReady, setIframeReady] = useState(false);
 
   const vimeo =
@@ -145,6 +156,12 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           />
         )}
 
+        {backgroundType === "canvas" && (
+          <div className="absolute inset-0 z-0">
+            <PlexusBg />
+          </div>
+        )}
+
         {/* Vimeo iframe — hidden until loaded, then fades in over the poster */}
         {backgroundType === "vimeo" && iframeSrc && (
           <iframe
@@ -170,6 +187,16 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           overlayClasses[overlayOpacity]
         )}
       />
+
+      {/* ── Bottom fade for canvas — blends into page bg (z-15) ── */}
+      {backgroundType === "canvas" && (
+        <div
+          className={cn(
+            "absolute inset-x-0 bottom-0 z-[15] h-[35vh] pointer-events-none",
+            styles.canvasFade
+          )}
+        />
+      )}
 
       {/* ── Content Layer (z-20) ──────────────────────── */}
       <div

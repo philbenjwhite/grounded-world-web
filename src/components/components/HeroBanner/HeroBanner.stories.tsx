@@ -15,7 +15,7 @@ const meta = {
   argTypes: {
     backgroundType: {
       control: "select",
-      options: ["vimeo", "image"],
+      options: ["vimeo", "image", "canvas"],
     },
     vimeoUrl: { control: "text", if: { arg: "backgroundType", eq: "vimeo" } },
     posterSrc: { control: "text", if: { arg: "backgroundType", eq: "vimeo" } },
@@ -105,6 +105,24 @@ export const Minimal: Story = {
     overlayOpacity: "medium",
     contentAlign: "center",
     minHeight: "medium",
+  },
+};
+
+/** Canvas background — interactive Three.js plexus animation */
+export const CanvasBackground: Story = {
+  args: {
+    backgroundType: "canvas",
+    title: "Our Services",
+    subtitle:
+      "Everything we do is designed to move the needle culturally, socially, environmentally and behaviorally — inside and out.",
+    ctaLabel: "Discovery Call",
+    ctaHref: "/contact",
+    ctaVariant: "solid",
+    secondaryCtaLabel: "Explore Services",
+    secondaryCtaHref: "#services",
+    overlayOpacity: "light",
+    contentAlign: "center",
+    minHeight: "full",
   },
 };
 
