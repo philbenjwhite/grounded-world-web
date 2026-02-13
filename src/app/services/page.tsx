@@ -1,8 +1,7 @@
 import HeroBanner from "@/components/components/HeroBanner";
-import Heading from "@/components/atoms/Heading";
-import FadeIn from "@/components/utils/FadeIn";
 import ExpandingCardPanel from "@/components/components/ExpandingCardPanel";
 import ShowcaseGrid from "@/components/components/ShowcaseGrid";
+import AccordionFAQ from "@/components/components/AccordionFAQ";
 
 export const metadata = {
   title: "Our Services | Grounded World",
@@ -73,6 +72,67 @@ const services = [
   },
 ];
 
+const faqs = [
+  {
+    question:
+      "How do you tailor your approach for different types of organizations (startups, corporates, nonprofits)?",
+    answer:
+      "Every engagement starts with understanding your unique context \u2014 your culture, category, stakeholders and ambition. We then build a bespoke team, toolkit and timeline that fits whether you\u2019re a startup finding product-market fit, a corporate embedding purpose across a portfolio, or a nonprofit scaling impact.",
+  },
+  {
+    question:
+      "What does a typical engagement with Grounded look like from start to finish?",
+    answer:
+      "It usually starts with a discovery session to understand your goals and intention-action gaps. From there we scope a phased plan \u2014 typically covering research, strategy, activation and measurement \u2014 with clear milestones and deliverables along the way.",
+  },
+  {
+    question:
+      "How do you measure the impact of your work beyond traditional marketing metrics?",
+    answer:
+      "We look at commercial, cultural and societal impact together. Alongside traditional KPIs, we measure behaviour change, stakeholder engagement, partnership value and progress against sustainability targets using tools like our Flywheel of Impact.",
+  },
+  {
+    question: "How long does it usually take to see tangible results?",
+    answer:
+      "Some clients see early wins within weeks (e.g. campaign engagement), while deeper, systemic, cultural or commercial partnership based innovations and impact tend to build over months. Our phased approach stays fully transparent and accountable to whatever goals are set.",
+  },
+  {
+    question:
+      "Do you offer one-off projects or only longer-term partnerships?",
+    answer:
+      "Both. We can pop up for a one-day design sprint, plug in as an extension of your team for a quarter, or play through as your full-service agency partner. Flexibility is core to how we work.",
+  },
+  {
+    question:
+      "How do you integrate with our internal team and existing partners?",
+    answer:
+      "We can happily embed ourselves to work alongside your team, partner agencies, and key stakeholders. Collaboration and co-creation is core to how we like to work.",
+  },
+  {
+    question:
+      "What makes Grounded different from other brand and sustainability agencies?",
+    answer:
+      "We don\u2019t just do creative, tell stories or produce content. Everything we do starts with understanding the biggest intention-action gaps and then figuring how we can close those gaps to better connect purpose to profit. Our proprietary tools like the BPP, Sustain-Agility, and Flywheel of Impact ensure sustainability drives commercial value and triple bottom line impact.",
+  },
+  {
+    question:
+      "How flexible are your services if our priorities change during a project?",
+    answer:
+      "Very. We build agility into every engagement. If your priorities shift mid-project, we adapt the scope, team and timeline to match \u2014 without losing momentum or strategic coherence.",
+  },
+  {
+    question: "Do you work with international teams and global campaigns?",
+    answer:
+      "Absolutely. We\u2019ve worked with brands, retailers, startups and nonprofits across multiple markets and continents. Our model is built to flex across geographies, cultures and time zones.",
+  },
+  {
+    question:
+      "Can you scope projects in phases to match different budgets and timelines?",
+    answer:
+      "Yes \u2014 phased scoping is one of our specialities. We can start small and scale up, letting early results build the case for continued investment and broader rollout.",
+  },
+];
+
 export default function ServicesPage() {
   return (
     <>
@@ -86,16 +146,13 @@ export default function ServicesPage() {
         overlayOpacity="light"
         contentAlign="center"
         minHeight="full"
+        bottomFade
       />
 
-      {/* Section heading — pulled up into the hero fade zone */}
-      <FadeIn className="relative z-10 -mt-16 md:-mt-20 text-center">
-        <Heading level={2} size="h3" className="text-white">
-          How We Move the Needle
-        </Heading>
-      </FadeIn>
-
-      <ExpandingCardPanel items={services} />
+      <ExpandingCardPanel
+        sectionTitle="How We Move the Needle"
+        items={services}
+      />
 
       <ShowcaseGrid
         items={[
@@ -124,6 +181,12 @@ export default function ServicesPage() {
             glowColor: "#FF08CC",
           },
         ]}
+      />
+
+      <AccordionFAQ
+        sectionTitle="Services Overview"
+        sectionSubtitle="Frequently asked questions about how we work."
+        items={faqs}
       />
     </>
   );

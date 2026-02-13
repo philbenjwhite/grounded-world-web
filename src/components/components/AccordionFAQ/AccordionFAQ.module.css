@@ -1,0 +1,66 @@
+/* ── Accordion grid animation (matches bento timing) ── */
+
+:root {
+  --accordion-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --accordion-duration: 400ms;
+}
+
+/* ── Toggle item ──────────────────────────────── */
+
+.item {
+  transition:
+    border-color var(--accordion-duration) var(--accordion-ease),
+    background var(--accordion-duration) var(--accordion-ease);
+}
+
+.item:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.item[data-open="true"] {
+  border-color: color-mix(in srgb, var(--color-magenta) 20%, transparent);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ── Toggle icon rotation ─────────────────────── */
+
+.toggleIcon {
+  transition: transform var(--accordion-duration) var(--accordion-ease);
+}
+
+.item[data-open="true"] .toggleIcon {
+  transform: rotate(45deg);
+}
+
+/* ── Accordion expand (CSS grid technique) ────── */
+
+.accordionBody {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--accordion-duration) var(--accordion-ease);
+}
+
+.item[data-open="true"] .accordionBody {
+  grid-template-rows: 1fr;
+}
+
+.accordionBody > div {
+  overflow: hidden;
+}
+
+/* ── Answer text fade ─────────────────────────── */
+
+.answerInner {
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 300ms var(--accordion-ease),
+    transform 300ms var(--accordion-ease);
+}
+
+.item[data-open="true"] .answerInner {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 80ms;
+}

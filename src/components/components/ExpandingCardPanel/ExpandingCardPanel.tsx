@@ -84,6 +84,7 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
   );
   const gridRef = useScrollReveal();
   const mobileRef = useScrollReveal();
+  const headingRef = useScrollReveal(0.3);
 
   const handleToggle = (index: number) => {
     setActiveIndex((prev) => (prev === index ? null : index));
@@ -115,11 +116,11 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
     }) as React.CSSProperties;
 
   return (
-    <Section className="py-16 md:py-24 lg:py-32">
+    <Section className="relative z-20 py-16 md:py-24 lg:py-32">
       <Container className="px-[var(--layout-section-padding-x)]">
-        {/* Section heading */}
+        {/* Section heading — fades in when scrolled into view */}
         {(sectionTitle || sectionSubtitle) && (
-          <div className="mb-8 md:mb-12">
+          <div ref={headingRef} className="reveal-fade mb-10 md:mb-14 text-center">
             {sectionTitle && (
               <Heading level={2} size="h2" color="primary">
                 {sectionTitle}

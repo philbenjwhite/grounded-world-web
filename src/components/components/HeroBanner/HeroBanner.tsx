@@ -56,6 +56,8 @@ export interface HeroBannerProps {
   contentAlign?: "center" | "left";
   /** Minimum height of the hero section */
   minHeight?: "full" | "large" | "medium";
+  /** Show a bottom gradient that bleeds into the next section */
+  bottomFade?: boolean;
 }
 
 /* ─── Helpers ────────────────────────────────────────── */
@@ -108,6 +110,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   overlayOpacity = "medium",
   contentAlign = "center",
   minHeight = "full",
+  bottomFade = false,
 }) => {
   const PlexusBg = CanvasComponent ?? DefaultPlexusBackground;
   const [iframeReady, setIframeReady] = useState(false);
@@ -127,6 +130,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   const hasSecondaryCta = secondaryCtaLabel && secondaryCtaHref;
 
   return (
+    <>
     <section
       className={cn(
         "relative w-full overflow-hidden",
@@ -188,15 +192,13 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
         )}
       />
 
-      {/* ── Bottom fade for canvas — blends into page bg (z-15) ── */}
-      {backgroundType === "canvas" && (
-        <div
-          className={cn(
-            "absolute inset-x-0 bottom-0 z-[15] h-[35vh] pointer-events-none",
-            styles.canvasFade
-          )}
-        />
-      )}
+      {/* ── Internal bottom fade (z-15) ── */}
+      <div
+        className={cn(
+          "absolute inset-x-0 bottom-0 z-[15] h-[35vh] pointer-events-none",
+          styles.canvasFade
+        )}
+      />
 
       {/* ── Content Layer (z-20) ──────────────────────── */}
       <div
@@ -286,6 +288,17 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
         </div>
       </div>
     </section>
+
+    {/* ── External bottom fade — sits outside overflow-hidden to eliminate seam ── */}
+    {bottomFade && (
+      <div
+        className={cn(
+          "relative z-10 -mt-40 h-40 pointer-events-none",
+          styles.bottomFade
+        )}
+      />
+    )}
+    </>
   );
 };
 
