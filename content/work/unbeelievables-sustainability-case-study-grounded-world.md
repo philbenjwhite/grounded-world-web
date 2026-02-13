@@ -6,6 +6,7 @@ videoUrl: "https://vimeo.com/361921693"
 date: 2021-10-13T04:28:25.000Z
 seoTitle: "UnBEElievables Retail Activation Case Study | Grounded World"
 seoDescription: See how Grounded World created a sustainability marketing program and loyalty campaign for UnBEElievables. Explore the full case study.
+featuredImage: /images/work/unbeelievables-sustainability-case-study-grounded-world.jpg
 tags:
   - Brand Activation
 ---

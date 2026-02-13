@@ -6,6 +6,7 @@ videoUrl: "https://vimeo.com/793935956"
 date: 2026-01-06T09:46:59.000Z
 seoTitle: "The ReUnited States Social Impact Case Study | Grounded World"
 seoDescription: See how Grounded helped The ReUnited States documentary accelerate their social impact. Explore the case study.
+featuredImage: /images/work/tempur-sealy-ashley-furniture.jpg
 tags:
   - Brand Activation
 ---

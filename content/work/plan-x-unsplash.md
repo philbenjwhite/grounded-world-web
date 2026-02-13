@@ -6,6 +6,7 @@ videoUrl: "https://vimeo.com/760470982"
 date: 2022-10-19T06:56:39.000Z
 seoTitle: "Plan USA x Unsplash Social Impact Case Study | Grounded World"
 seoDescription: Discover how Grounded, a social impact agency, partnered Plan International USA with Unsplash to reshape the media representation of girls.
+featuredImage: /images/work/plan-x-unsplash.jpg
 tags:
   - Social Impact
 ---

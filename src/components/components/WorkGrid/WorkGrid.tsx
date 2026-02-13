@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import cn from "classnames";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import Section from "../../layout/Section";
@@ -24,6 +25,8 @@ export interface WorkItem {
   date?: string;
   /** Category tag (e.g., "Brand Activation") */
   tag?: string;
+  /** Featured image path */
+  featuredImage?: string;
 }
 
 export interface WorkGridProps {
@@ -109,13 +112,30 @@ const WorkGrid: React.FC<WorkGridProps> = ({ items }) => {
                   } as React.CSSProperties
                 }
               >
+                {/* Background image */}
+                {item.featuredImage && (
+                  <Image
+                    src={item.featuredImage}
+                    alt={item.title}
+                    fill
+                    className={cn(
+                      "object-cover transition-transform duration-700 ease-out",
+                      styles.cardImage
+                    )}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                )}
+
+                {/* Gradient scrim over image */}
+                <div className={styles.cardScrim} />
+
                 {/* Arrow */}
                 <span className={styles.cardArrow}>
                   <ArrowUpRight size={18} weight="bold" />
                 </span>
 
                 {/* Content pinned to bottom */}
-                <div>
+                <div className="relative z-10">
                   {formattedDate && (
                     <time className="mb-3 block text-xs font-medium tracking-wider text-[var(--color-gray-4)] uppercase">
                       {formattedDate}

@@ -28,6 +28,7 @@ export default async function OurWorkPage() {
           description: node.description ?? undefined,
           date: node.date ?? undefined,
           tag: node.tags?.[0] ?? undefined,
+          featuredImage: node.featuredImage ?? undefined,
         };
       })
       .filter(Boolean) as WorkItem[];

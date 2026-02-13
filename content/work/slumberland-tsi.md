@@ -6,6 +6,7 @@ videoUrl: "https://vimeo.com/939337845/2b27ab079b"
 date: 2026-01-06T11:20:36.000Z
 seoTitle: "The ReUnited States Social Impact Case Study | Grounded World"
 seoDescription: See how Grounded helped The ReUnited States documentary accelerate their social impact. Explore the case study.
+featuredImage: /images/work/slumberland-tsi.jpg
 tags:
   - Brand Activation
 ---

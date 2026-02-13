@@ -6,6 +6,7 @@ videoUrl: "https://vimeo.com/580750457"
 date: 2021-08-02T06:23:57.000Z
 seoTitle: "Tree Free Sustainable Marketing Case Study | Grounded World"
 seoDescription: Discover how Grounded, a sustainable design agency, partnered with Tree Free Greetings to launch a sustainable marketing campaign.
+featuredImage: /images/work/tree-free.jpg
 tags:
   - Brand Activation
 ---

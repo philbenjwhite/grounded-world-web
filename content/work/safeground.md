@@ -6,6 +6,7 @@ videoUrl: "https://grounded.world/wp-content/uploads/2021/08/UNMAS-SafeGround.mp
 date: 2021-08-16T04:52:09.000Z
 seoTitle: "Safe Ground Social Impact Campaign | Grounded World"
 seoDescription: See how Grounded helped the United Nations Mine Action Service develop the Safe Ground social impact campaign.
+featuredImage: /images/work/safeground.jpg
 tags:
   - Social Impact
 ---
