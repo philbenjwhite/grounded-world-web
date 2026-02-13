@@ -126,24 +126,14 @@
   }
 }
 
-.buttonRing {
-  position: absolute;
-  inset: -2px;
-  border-radius: 9999px;
-  padding: 2px;
-  background: conic-gradient(
-    from 0deg,
-    #FF08CC,
-    #FFA603,
-    #1CC35B,
-    #00AEEF,
-    #FF08CC
-  );
-  animation: ringRotate 4s linear infinite;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
+@media (hover: none) {
+  .cursorWrapper {
+    display: none !important;
+  }
+}
+
+.buttonGradientBorder {
+  background: linear-gradient(90deg, #FF08CC, #FFA603, #1CC35B, #00AEEF);
 }
 
 /* ─── Modal ─── */
@@ -178,7 +168,7 @@
   animation: modalContentIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
-/* Custom close cursor */
+/* Custom close cursor (desktop only) */
 .closeCursor {
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.6);
@@ -194,6 +184,20 @@
   to {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (hover: none) {
+  .closeCursor {
+    display: none !important;
+  }
+
+  .modalBackdrop {
+    cursor: auto;
+  }
+
+  .modalClose {
+    cursor: pointer;
   }
 }
 

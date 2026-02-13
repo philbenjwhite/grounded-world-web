@@ -81,7 +81,7 @@ const logoSpeed = logoSection?.speed ?? undefined;
 export default function Home() {
   return (
     <>
-      <div className="h-[calc(100dvh-56px)]">
+      <div className="h-[75dvh] md:h-[calc(100dvh-56px)]">
         <VideoHero />
       </div>
 

@@ -71,12 +71,13 @@ const VimeoModal: React.FC<VimeoModalProps> = ({ open, onClose, vimeoId }) => {
       <button
         className={cn(
           styles.modalClose,
-          "absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white/70 hover:text-white z-10 cursor-none",
+          "absolute top-4 right-4 md:top-6 md:right-6 w-12 h-12 md:w-10 md:h-10 rounded-full bg-white/15 md:bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white md:text-white/70 hover:text-white z-10 cursor-none",
         )}
         onClick={onClose}
         aria-label="Close video"
       >
-        <XIcon size={18} weight="bold" />
+        <XIcon size={20} weight="bold" className="md:hidden" />
+        <XIcon size={18} weight="bold" className="hidden md:block" />
       </button>
       <div
         className={cn(

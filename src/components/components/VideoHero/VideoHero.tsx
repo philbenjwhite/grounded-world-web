@@ -34,8 +34,9 @@ const VideoHero: React.FC = () => {
 
   /* ─── Video autoplay ─── */
   useEffect(() => {
-    if (!videoRef.current || !isClient) return;
+    if (!videoRef.current || !heroRef.current || !isClient) return;
     const video = videoRef.current;
+    const hero = heroRef.current;
     const play = async () => {
       try {
         if (video.paused) await video.play();
@@ -48,6 +49,16 @@ const VideoHero: React.FC = () => {
     const onVis = () => {
       if (!document.hidden) play();
     };
+
+    /* Resume when hero scrolls back into view (critical for mobile) */
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) play();
+      },
+      { threshold: 0.1 },
+    );
+    observer.observe(hero);
+
     video.addEventListener("pause", onPause);
     document.addEventListener("visibilitychange", onVis);
     window.addEventListener("focus", play);
@@ -55,6 +66,7 @@ const VideoHero: React.FC = () => {
       if (video.paused) play();
     }, 2000);
     return () => {
+      observer.disconnect();
       video.removeEventListener("pause", onPause);
       document.removeEventListener("visibilitychange", onVis);
       window.removeEventListener("focus", play);
@@ -179,7 +191,7 @@ const VideoHero: React.FC = () => {
         <button
           className={cn(
             styles.playReelButton,
-            "absolute bottom-8 left-1/2 -translate-x-1/2 z-10",
+            "absolute bottom-24 left-1/2 -translate-x-1/2 z-10",
           )}
           onClick={(e) => {
             e.stopPropagation();
@@ -187,9 +199,8 @@ const VideoHero: React.FC = () => {
           }}
           aria-label="Play reel"
         >
-          <div className="relative">
-            <div className={styles.buttonRing} />
-            <div className="flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#111111]/92 backdrop-blur-xl border border-white/10">
+          <div className={cn(styles.buttonGradientBorder, "rounded-full p-[1.5px]")}>
+            <div className="flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#111111]/92 backdrop-blur-xl">
               <PlayIcon size={18} weight="bold" className="text-[#FF08CC]" />
               <span className="text-xs font-semibold uppercase tracking-widest text-white/90">
                 Play Reel
