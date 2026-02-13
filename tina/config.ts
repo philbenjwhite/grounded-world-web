@@ -10,6 +10,47 @@ const branch =
 // Check if running in local mode
 const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === "true";
 
+/* ── Reusable inner templates for slot-based layouts ── */
+
+const innerRichTextTemplate = {
+  name: "richText" as const,
+  label: "Rich Text",
+  fields: [
+    {
+      type: "rich-text" as const,
+      name: "body",
+      label: "Content",
+    },
+  ],
+};
+
+const innerImageTemplate = {
+  name: "image" as const,
+  label: "Image",
+  fields: [
+    {
+      type: "image" as const,
+      name: "src",
+      label: "Image",
+    },
+    {
+      type: "string" as const,
+      name: "alt",
+      label: "Alt Text",
+    },
+    {
+      type: "string" as const,
+      name: "caption",
+      label: "Caption",
+    },
+    {
+      type: "boolean" as const,
+      name: "rounded",
+      label: "Rounded Corners",
+    },
+  ],
+};
+
 export default defineConfig({
   // Use local content API when running locally
   contentApiUrlOverride: isLocal ? "/api/tina/gql" : undefined,
@@ -407,6 +448,18 @@ export default defineConfig({
         name: "page",
         label: "Pages",
         path: "content/pages",
+        format: "json",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return values?.title
+                ?.toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "");
+            },
+          },
+        },
         fields: [
           {
             type: "string",
@@ -416,10 +469,447 @@ export default defineConfig({
             required: true,
           },
           {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
+            type: "string",
+            name: "slug",
+            label: "Slug",
+            required: true,
+            description: "URL path for this page (e.g. 'about', 'services')",
+          },
+          {
+            type: "object",
+            name: "sections",
+            label: "Page Sections",
+            list: true,
+            templates: [
+              /* ── Hero Banner ─────────────────────────── */
+              {
+                name: "heroBanner",
+                label: "Hero Banner",
+                fields: [
+                  {
+                    type: "string",
+                    name: "backgroundType",
+                    label: "Background Type",
+                    required: true,
+                    options: [
+                      { value: "vimeo", label: "Vimeo Video" },
+                      { value: "image", label: "Image" },
+                      { value: "canvas", label: "Animated Canvas" },
+                    ],
+                  },
+                  {
+                    type: "string",
+                    name: "vimeoUrl",
+                    label: "Vimeo URL",
+                    description: "Full Vimeo URL (standard or unlisted)",
+                  },
+                  {
+                    type: "image",
+                    name: "posterSrc",
+                    label: "Poster Image",
+                    description: "Fallback image shown while video loads",
+                  },
+                  {
+                    type: "image",
+                    name: "imageSrc",
+                    label: "Background Image",
+                  },
+                  {
+                    type: "string",
+                    name: "imageAlt",
+                    label: "Background Image Alt Text",
+                  },
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "Headline",
+                  },
+                  {
+                    type: "string",
+                    name: "subtitle",
+                    label: "Subtitle",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "string",
+                    name: "ctaLabel",
+                    label: "Primary CTA Text",
+                  },
+                  {
+                    type: "string",
+                    name: "ctaHref",
+                    label: "Primary CTA Link",
+                  },
+                  {
+                    type: "string",
+                    name: "ctaVariant",
+                    label: "Primary CTA Style",
+                    options: ["solid", "outline"],
+                  },
+                  {
+                    type: "string",
+                    name: "secondaryCtaLabel",
+                    label: "Secondary CTA Text",
+                  },
+                  {
+                    type: "string",
+                    name: "secondaryCtaHref",
+                    label: "Secondary CTA Link",
+                  },
+                  {
+                    type: "string",
+                    name: "overlayOpacity",
+                    label: "Overlay Darkness",
+                    options: [
+                      { value: "light", label: "Light" },
+                      { value: "medium", label: "Medium" },
+                      { value: "heavy", label: "Heavy" },
+                    ],
+                  },
+                  {
+                    type: "string",
+                    name: "contentAlign",
+                    label: "Content Alignment",
+                    options: [
+                      { value: "center", label: "Center" },
+                      { value: "left", label: "Left" },
+                    ],
+                  },
+                  {
+                    type: "string",
+                    name: "minHeight",
+                    label: "Minimum Height",
+                    options: [
+                      { value: "full", label: "Full Screen" },
+                      { value: "large", label: "Large" },
+                      { value: "medium", label: "Medium" },
+                    ],
+                  },
+                ],
+              },
+              /* ── Showcase Grid ───────────────────────── */
+              {
+                name: "showcaseGrid",
+                label: "Showcase Grid",
+                fields: [
+                  {
+                    type: "string",
+                    name: "sectionTitle",
+                    label: "Section Title",
+                  },
+                  {
+                    type: "string",
+                    name: "sectionSubtitle",
+                    label: "Section Subtitle",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Items",
+                    list: true,
+                    fields: [
+                      {
+                        type: "string",
+                        name: "title",
+                        label: "Title",
+                      },
+                      {
+                        type: "string",
+                        name: "description",
+                        label: "Description",
+                        ui: { component: "textarea" },
+                      },
+                      {
+                        type: "image",
+                        name: "imageSrc",
+                        label: "Image",
+                      },
+                      {
+                        type: "string",
+                        name: "imageAlt",
+                        label: "Image Alt Text",
+                      },
+                      {
+                        type: "string",
+                        name: "glowColor",
+                        label: "Glow Color",
+                        ui: { component: "color" },
+                      },
+                      {
+                        type: "string",
+                        name: "href",
+                        label: "Link",
+                      },
+                    ],
+                  },
+                ],
+              },
+              /* ── Expanding Card Panel ────────────────── */
+              {
+                name: "expandingCardPanel",
+                label: "Expanding Card Panel",
+                fields: [
+                  {
+                    type: "string",
+                    name: "sectionTitle",
+                    label: "Section Title",
+                  },
+                  {
+                    type: "string",
+                    name: "sectionSubtitle",
+                    label: "Section Subtitle",
+                  },
+                  {
+                    type: "number",
+                    name: "defaultActiveIndex",
+                    label: "Default Expanded Card",
+                    description: "Index of the card expanded on page load (0-based)",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Items",
+                    list: true,
+                    fields: [
+                      {
+                        type: "string",
+                        name: "name",
+                        label: "Name",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "color",
+                        label: "Color",
+                        required: true,
+                        ui: { component: "color" },
+                      },
+                      {
+                        type: "string",
+                        name: "icon",
+                        label: "Icon",
+                        options: [
+                          { value: "MagnifyingGlass", label: "Magnifying Glass" },
+                          { value: "Compass", label: "Compass" },
+                          { value: "Lightning", label: "Lightning" },
+                          { value: "ChartLineUp", label: "Chart Line Up" },
+                          { value: "Globe", label: "Globe" },
+                          { value: "Users", label: "Users" },
+                          { value: "Megaphone", label: "Megaphone" },
+                          { value: "Target", label: "Target" },
+                          { value: "Lightbulb", label: "Lightbulb" },
+                          { value: "Rocket", label: "Rocket" },
+                        ],
+                      },
+                      {
+                        type: "string",
+                        name: "tagline",
+                        label: "Tagline",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "bullets",
+                        label: "Bullet Points",
+                        list: true,
+                      },
+                      {
+                        type: "string",
+                        name: "ctaHref",
+                        label: "CTA Link",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "ctaLabel",
+                        label: "CTA Text",
+                        description: "Default: 'Find Out More'",
+                      },
+                      {
+                        type: "image",
+                        name: "imageSrc",
+                        label: "Image",
+                      },
+                      {
+                        type: "string",
+                        name: "imageAlt",
+                        label: "Image Alt Text",
+                      },
+                    ],
+                  },
+                ],
+              },
+              /* ── Media Section ───────────────────────── */
+              {
+                name: "mediaSection",
+                label: "Media Section",
+                fields: [
+                  {
+                    type: "string",
+                    name: "title",
+                    label: "Section Title",
+                  },
+                  {
+                    type: "string",
+                    name: "categories",
+                    label: "Filter Categories",
+                    list: true,
+                    description: "'All' is prepended automatically",
+                  },
+                  {
+                    type: "string",
+                    name: "defaultCategory",
+                    label: "Default Category",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Media Items",
+                    list: true,
+                    fields: [
+                      {
+                        type: "string",
+                        name: "id",
+                        label: "ID",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "title",
+                        label: "Title",
+                      },
+                      {
+                        type: "string",
+                        name: "category",
+                        label: "Category",
+                      },
+                      {
+                        type: "image",
+                        name: "imageUrl",
+                        label: "Image",
+                      },
+                      {
+                        type: "string",
+                        name: "imageAlt",
+                        label: "Image Alt Text",
+                      },
+                      {
+                        type: "string",
+                        name: "href",
+                        label: "Link",
+                      },
+                    ],
+                  },
+                ],
+              },
+              /* ── Carousel ────────────────────────────── */
+              {
+                name: "carousel",
+                label: "Carousel",
+                fields: [
+                  {
+                    type: "boolean",
+                    name: "loop",
+                    label: "Loop",
+                  },
+                  {
+                    type: "boolean",
+                    name: "showArrows",
+                    label: "Show Navigation Arrows",
+                  },
+                  {
+                    type: "boolean",
+                    name: "showDots",
+                    label: "Show Dot Indicators",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Carousel Items",
+                    list: true,
+                    fields: [
+                      {
+                        type: "string",
+                        name: "id",
+                        label: "ID",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "title",
+                        label: "Title",
+                      },
+                      {
+                        type: "image",
+                        name: "imageUrl",
+                        label: "Image",
+                      },
+                      {
+                        type: "string",
+                        name: "imageAlt",
+                        label: "Image Alt Text",
+                      },
+                    ],
+                  },
+                ],
+              },
+              /* ── Rich Text ───────────────────────────── */
+              {
+                name: "richText",
+                label: "Rich Text",
+                fields: [
+                  {
+                    type: "rich-text",
+                    name: "body",
+                    label: "Content",
+                  },
+                ],
+              },
+              /* ── Split Layout ─────────────────────────── */
+              {
+                name: "splitLayout",
+                label: "Split Layout",
+                fields: [
+                  {
+                    type: "string",
+                    name: "ratio",
+                    label: "Column Ratio",
+                    options: ["50/50", "40/60", "60/40", "30/70", "70/30"],
+                  },
+                  {
+                    type: "string",
+                    name: "gap",
+                    label: "Gap",
+                    options: ["none", "sm", "md", "lg", "xl"],
+                  },
+                  {
+                    type: "string",
+                    name: "verticalAlign",
+                    label: "Vertical Alignment",
+                    options: ["start", "center", "end", "stretch"],
+                  },
+                  {
+                    type: "boolean",
+                    name: "reverseOnMobile",
+                    label: "Reverse on Mobile",
+                  },
+                  {
+                    type: "object",
+                    name: "left",
+                    label: "Left Column",
+                    list: true,
+                    templates: [innerRichTextTemplate, innerImageTemplate],
+                  },
+                  {
+                    type: "object",
+                    name: "right",
+                    label: "Right Column",
+                    list: true,
+                    templates: [innerRichTextTemplate, innerImageTemplate],
+                  },
+                ],
+              },
+            ],
           },
         ],
       },

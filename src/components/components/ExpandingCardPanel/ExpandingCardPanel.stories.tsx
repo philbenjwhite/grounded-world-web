@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import ServicesBento from "./ServicesBento";
-import type { ServiceBentoItem } from "./ServicesBento";
+import ExpandingCardPanel from "./ExpandingCardPanel";
+import type { ExpandingCardItem } from "./ExpandingCardPanel";
 
-const servicesData: ServiceBentoItem[] = [
+const cardData: ExpandingCardItem[] = [
   {
     name: "Research",
     color: "#00AEEF",
@@ -58,8 +58,8 @@ const servicesData: ServiceBentoItem[] = [
 ];
 
 const meta = {
-  title: "Components/ServicesBento",
-  component: ServicesBento,
+  title: "Components/ExpandingCardPanel",
+  component: ExpandingCardPanel,
   parameters: {
     layout: "fullscreen",
     backgrounds: {
@@ -75,7 +75,7 @@ const meta = {
       control: { type: "number", min: 0, max: 3 },
     },
   },
-} satisfies Meta<typeof ServicesBento>;
+} satisfies Meta<typeof ExpandingCardPanel>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -83,14 +83,14 @@ type Story = StoryObj<typeof meta>;
 /** Default — no card expanded initially */
 export const Default: Story = {
   args: {
-    services: servicesData,
+    items: cardData,
   },
 };
 
 /** One card pre-expanded on load */
 export const PreExpanded: Story = {
   args: {
-    services: servicesData,
+    items: cardData,
     defaultActiveIndex: 0,
   },
 };
@@ -100,20 +100,20 @@ export const WithSectionTitle: Story = {
   args: {
     sectionTitle: "What We Do",
     sectionSubtitle: "Explore our services to see how we can help.",
-    services: servicesData,
+    items: cardData,
   },
 };
 
-/** Edge case — only two services */
-export const TwoServices: Story = {
+/** Edge case — only two items */
+export const TwoItems: Story = {
   args: {
-    services: servicesData.slice(0, 2),
+    items: cardData.slice(0, 2),
   },
 };
 
-/** Edge case — three services */
-export const ThreeServices: Story = {
+/** Edge case — three items */
+export const ThreeItems: Story = {
   args: {
-    services: servicesData.slice(0, 3),
+    items: cardData.slice(0, 3),
   },
 };

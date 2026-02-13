@@ -22,7 +22,7 @@ import Text from "../../atoms/Text";
 import Section from "../../layout/Section";
 import Container from "../../layout/Container";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import styles from "./ServicesBento.module.css";
+import styles from "./ExpandingCardPanel.module.css";
 
 const iconMap: Record<string, React.ComponentType<IconProps>> = {
   MagnifyingGlass: MagnifyingGlassIcon,
@@ -39,8 +39,8 @@ const iconMap: Record<string, React.ComponentType<IconProps>> = {
 
 /* ─── Types ──────────────────────────────────────────── */
 
-export interface ServiceBentoItem {
-  /** Service name (e.g., "Research") */
+export interface ExpandingCardItem {
+  /** Card name (e.g., "Research") */
   name: string;
   /** Brand color as hex (e.g., "#00AEEF") */
   color: string;
@@ -48,7 +48,7 @@ export interface ServiceBentoItem {
   icon?: string;
   /** Bold one-liner description */
   tagline: string;
-  /** Service bullet points */
+  /** Bullet points */
   bullets: string[];
   /** CTA link destination */
   ctaHref: string;
@@ -60,23 +60,23 @@ export interface ServiceBentoItem {
   imageAlt?: string;
 }
 
-export interface ServicesBentoProps {
+export interface ExpandingCardPanelProps {
   /** Optional heading above the grid */
   sectionTitle?: string;
   /** Optional intro text */
   sectionSubtitle?: string;
-  /** Array of service items */
-  services: ServiceBentoItem[];
-  /** Which service is expanded on load */
+  /** Array of card items */
+  items: ExpandingCardItem[];
+  /** Which card is expanded on load */
   defaultActiveIndex?: number;
 }
 
 /* ─── Component ──────────────────────────────────────── */
 
-const ServicesBento: React.FC<ServicesBentoProps> = ({
+const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
   sectionTitle,
   sectionSubtitle,
-  services,
+  items,
   defaultActiveIndex,
 }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(
@@ -97,20 +97,20 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
   };
 
   /* Build grid-template-columns: active card gets 2.5fr, others 1fr */
-  const gridCols = services
+  const gridCols = items
     .map((_, i) => (i === activeIndex ? "2.5fr" : "1fr"))
     .join(" ");
 
   /* CSS variable bag — only dynamic custom props, no visual inline styles */
   const cardVars = (color: string, index: number) =>
     ({
-      "--service-color": color,
+      "--item-color": color,
       "--reveal-delay": `${0.1 + index * 0.12}s`,
     }) as React.CSSProperties;
 
   const mobileCardVars = (color: string, index: number) =>
     ({
-      "--service-color": color,
+      "--item-color": color,
       "--reveal-delay": `${0.1 + index * 0.1}s`,
     }) as React.CSSProperties;
 
@@ -139,14 +139,14 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
           className={cn(styles.grid, "hidden lg:grid gap-3")}
           style={{ "--grid-cols": gridCols } as React.CSSProperties}
         >
-          {services.map((service, index) => {
+          {items.map((item, index) => {
             const isActive = activeIndex === index;
-            const IconComponent = service.icon
-              ? iconMap[service.icon]
+            const IconComponent = item.icon
+              ? iconMap[item.icon]
               : undefined;
             return (
               <div
-                key={service.name}
+                key={item.name}
                 className={cn(
                   "reveal-card",
                   styles.card,
@@ -154,7 +154,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                   "overflow-hidden cursor-pointer flex flex-col p-6 xl:p-8",
                   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
                 )}
-                style={cardVars(service.color, index)}
+                style={cardVars(item.color, index)}
                 data-active={isActive}
                 role="button"
                 tabIndex={0}
@@ -176,16 +176,16 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                     <IconComponent
                       size={28}
                       weight="duotone"
-                      className={cn(styles.serviceText, "shrink-0")}
+                      className={cn(styles.itemText, "shrink-0")}
                     />
                   )}
                   <h3
                     className={cn(
-                      styles.serviceText,
+                      styles.itemText,
                       "text-xl xl:text-2xl font-bold"
                     )}
                   >
-                    {service.name}
+                    {item.name}
                   </h3>
                 </div>
 
@@ -197,17 +197,17 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                   )}
                 >
                   <p className="text-sm text-white/70 leading-relaxed mb-4">
-                    {service.tagline}
+                    {item.tagline}
                   </p>
                   <ul className="space-y-2.5">
-                    {service.bullets.map((bullet) => (
+                    {item.bullets.map((bullet) => (
                       <li
                         key={bullet}
                         className="text-sm text-white/70 leading-relaxed flex gap-2"
                       >
                         <span
                           className={cn(
-                            styles.serviceBullet,
+                            styles.itemBullet,
                             "shrink-0 mt-1.5 w-1 h-1 rounded-full opacity-50"
                           )}
                         />
@@ -217,23 +217,23 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                   </ul>
 
                   <div className="mt-auto pt-6 flex items-end justify-between gap-4">
-                    {service.imageSrc && (
+                    {item.imageSrc && (
                       <div className="relative h-14 w-32 shrink-0">
                         <Image
-                          src={service.imageSrc}
-                          alt={service.imageAlt || service.name}
+                          src={item.imageSrc}
+                          alt={item.imageAlt || item.name}
                           fill
                           className="object-contain object-left"
                         />
                       </div>
                     )}
                     <Button
-                      href={service.ctaHref}
+                      href={item.ctaHref}
                       variant="outline"
                       onClick={(e) => e.stopPropagation()}
                       className={cn(styles.ctaLink, "shrink-0 ml-auto")}
                     >
-                      {service.ctaLabel || "Find Out More"}
+                      {item.ctaLabel || "Find Out More"}
                     </Button>
                   </div>
                 </div>
@@ -247,20 +247,20 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
           ref={mobileRef}
           className={cn(styles.mobileList, "lg:hidden flex flex-col gap-3")}
         >
-          {services.map((service, index) => {
+          {items.map((item, index) => {
             const isActive = activeIndex === index;
-            const IconComponent = service.icon
-              ? iconMap[service.icon]
+            const IconComponent = item.icon
+              ? iconMap[item.icon]
               : undefined;
             return (
               <div
-                key={service.name}
+                key={item.name}
                 className={cn(
                   "reveal-card",
                   styles.mobileCard,
                   "relative rounded-2xl border border-white/[0.06] bg-white/[0.025] overflow-hidden"
                 )}
-                style={mobileCardVars(service.color, index)}
+                style={mobileCardVars(item.color, index)}
                 data-active={isActive}
               >
                 {/* Glow overlay */}
@@ -283,21 +283,21 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                         <IconComponent
                           size={24}
                           weight="duotone"
-                          className={cn(styles.serviceText, "shrink-0")}
+                          className={cn(styles.itemText, "shrink-0")}
                         />
                       )}
                       <h3
                         className={cn(
-                          styles.serviceText,
+                          styles.itemText,
                           "text-xl font-bold"
                         )}
                       >
-                        {service.name}
+                        {item.name}
                       </h3>
                     </div>
                     {!isActive && (
                       <p className="text-sm text-white/60 mt-1 line-clamp-1">
-                        {service.tagline}
+                        {item.tagline}
                       </p>
                     )}
                   </div>
@@ -334,18 +334,18 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                   <div>
                     <div className={cn(styles.accordionInner, "px-5 pb-5")}>
                       <p className="font-semibold text-white text-sm leading-snug">
-                        {service.tagline}
+                        {item.tagline}
                       </p>
 
                       <ul className="mt-4 space-y-2">
-                        {service.bullets.map((bullet) => (
+                        {item.bullets.map((bullet) => (
                           <li
                             key={bullet}
                             className="text-sm text-white/70 leading-relaxed flex gap-2"
                           >
                             <span
                               className={cn(
-                                styles.serviceBullet,
+                                styles.itemBullet,
                                 "shrink-0 mt-1.5 w-1 h-1 rounded-full opacity-50"
                               )}
                             />
@@ -355,22 +355,22 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
                       </ul>
 
                       <div className="mt-5 flex items-center gap-4">
-                        {service.imageSrc && (
+                        {item.imageSrc && (
                           <div className="relative h-10 w-24 shrink-0">
                             <Image
-                              src={service.imageSrc}
-                              alt={service.imageAlt || service.name}
+                              src={item.imageSrc}
+                              alt={item.imageAlt || item.name}
                               fill
                               className="object-contain object-left"
                             />
                           </div>
                         )}
                         <Button
-                          href={service.ctaHref}
+                          href={item.ctaHref}
                           variant="outline"
                           className={styles.ctaLink}
                         >
-                          {service.ctaLabel || "Find Out More"}
+                          {item.ctaLabel || "Find Out More"}
                         </Button>
                       </div>
                     </div>
@@ -385,4 +385,4 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
   );
 };
 
-export default ServicesBento;
+export default ExpandingCardPanel;

@@ -16,7 +16,7 @@ const Section = ({
   as: Component = "section",
 }: SectionProps) => {
   return (
-    <Component className={cn("py-[var(--layout-section-padding-y)]", className)}>
+    <Component className={cn("py-[var(--layout-section-padding-y)] bg-black", className)}>
       {children}
     </Component>
   );

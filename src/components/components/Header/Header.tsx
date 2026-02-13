@@ -240,7 +240,7 @@ const Header = ({ className, services = [] }: HeaderProps) => {
                 {/* CTAs */}
                 <div className="mt-8 flex flex-col gap-3">
                   <Link
-                    href="/subscribe"
+                    href="/newsletter"
                     className={cn(styles.newsletterCta, styles.mobileItem, "px-5 py-3.5 rounded-xl text-sm font-semibold no-underline flex items-center justify-center gap-2")}
                     style={stagger()}
                   >
@@ -472,7 +472,7 @@ function NavItems({
 
       {/* SUBSCRIBE — secondary CTA */}
       <Link
-        href="/subscribe"
+        href="/newsletter"
         className={cn(
           styles.newsletterCta,
           "ml-2 px-4 py-2 rounded-lg text-[11px] uppercase tracking-[0.12em] font-semibold no-underline inline-flex items-center gap-1.5",

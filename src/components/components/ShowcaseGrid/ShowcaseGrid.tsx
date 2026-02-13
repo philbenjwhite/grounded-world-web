@@ -9,11 +9,11 @@ import Section from "../../layout/Section";
 import Container from "../../layout/Container";
 import Grid from "../../layout/Grid";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import styles from "./EngagementModels.module.css";
+import styles from "./ShowcaseGrid.module.css";
 
 /* ─── Types ──────────────────────────────────────────── */
 
-export interface EngagementModel {
+export interface ShowcaseGridItem {
   /** Card title (e.g., "Pop Up") */
   title: string;
   /** Descriptive paragraph */
@@ -28,21 +28,21 @@ export interface EngagementModel {
   href?: string;
 }
 
-export interface EngagementModelsProps {
+export interface ShowcaseGridProps {
   /** Section title — default: "Flexible, Fluid & Fearless." */
   sectionTitle?: string;
   /** Section subtitle — default: "Choose how we work together." */
   sectionSubtitle?: string;
-  /** Array of engagement models */
-  models: EngagementModel[];
+  /** Array of showcase items */
+  items: ShowcaseGridItem[];
 }
 
 /* ─── Component ──────────────────────────────────────── */
 
-const EngagementModels: React.FC<EngagementModelsProps> = ({
+const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
   sectionTitle = "Flexible, Fluid & Fearless.",
   sectionSubtitle = "Choose how we work together.",
-  models,
+  items,
 }) => {
   const gridRef = useScrollReveal();
 
@@ -73,9 +73,9 @@ const EngagementModels: React.FC<EngagementModelsProps> = ({
           {/* Card grid */}
           <div ref={gridRef}>
             <Grid cols={3} colsTablet={2} gap="lg" className="relative z-10">
-              {models.map((model, index) => (
+              {items.map((item, index) => (
                 <div
-                  key={model.title}
+                  key={item.title}
                   className={cn(
                     "reveal-card",
                     styles.card,
@@ -86,7 +86,7 @@ const EngagementModels: React.FC<EngagementModelsProps> = ({
                   )}
                   style={
                     {
-                      "--model-color": model.glowColor ?? "#ffffff",
+                      "--item-color": item.glowColor ?? "#ffffff",
                       "--reveal-delay": `${0.1 + index * 0.15}s`,
                     } as React.CSSProperties
                   }
@@ -94,8 +94,8 @@ const EngagementModels: React.FC<EngagementModelsProps> = ({
                   {/* Full-bleed image */}
                   <div className="relative aspect-[4/5] md:aspect-[3/4]">
                     <Image
-                      src={model.imageSrc}
-                      alt={model.imageAlt}
+                      src={item.imageSrc}
+                      alt={item.imageAlt}
                       fill
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
@@ -125,14 +125,14 @@ const EngagementModels: React.FC<EngagementModelsProps> = ({
                         "text-2xl xl:text-3xl font-bold mb-2"
                       )}
                     >
-                      {model.title}
+                      {item.title}
                     </h3>
                     <p className="text-sm text-white/80 leading-relaxed">
-                      {model.description}
+                      {item.description}
                     </p>
-                    {model.href && (
+                    {item.href && (
                       <a
-                        href={model.href}
+                        href={item.href}
                         className={cn(
                           styles.cardLink,
                           "mt-4 text-sm font-medium inline-flex items-center gap-1",
@@ -154,4 +154,4 @@ const EngagementModels: React.FC<EngagementModelsProps> = ({
   );
 };
 
-export default EngagementModels;
+export default ShowcaseGrid;

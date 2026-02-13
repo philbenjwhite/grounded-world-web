@@ -1,0 +1,15 @@
+{
+  "title": "Newsletter",
+  "slug": "newsletter",
+  "sections": [
+    {
+      "backgroundType": "image",
+      "title": "Stay Grounded",
+      "subtitle": "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.",
+      "overlayOpacity": "light",
+      "contentAlign": "center",
+      "minHeight": "large",
+      "_template": "heroBanner"
+    }
+  ]
+}

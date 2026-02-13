@@ -1,0 +1,29 @@
+{
+  "title": "About",
+  "slug": "about",
+  "sections": [
+    {
+      "backgroundType": "image",
+      "title": "This is a headline",
+      "subtitle": "This is a subtitle",
+      "ctaLabel": "Get In Touch",
+      "ctaHref": "/contact",
+      "ctaVariant": "solid",
+      "secondaryCtaLabel": "Newsletter",
+      "secondaryCtaHref": "/newsletter",
+      "overlayOpacity": "light",
+      "contentAlign": "center",
+      "minHeight": "large",
+      "_template": "heroBanner"
+    },
+    {
+      "left": [
+        {
+          "body": "## This is a heading. \n\nThis is some test content. \n",
+          "_template": "richText"
+        }
+      ],
+      "_template": "splitLayout"
+    }
+  ]
+}

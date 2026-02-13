@@ -23,13 +23,13 @@
 
 .card:hover {
   background: rgba(255, 255, 255, 0.045);
-  border-color: color-mix(in srgb, var(--service-color) 15%, transparent);
-  box-shadow: 0 0 24px color-mix(in srgb, var(--service-color) 6%, transparent);
+  border-color: color-mix(in srgb, var(--item-color) 15%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--item-color) 6%, transparent);
 }
 
 .card[data-active="true"] {
-  border-color: color-mix(in srgb, var(--service-color) 25%, transparent);
-  box-shadow: 0 0 40px color-mix(in srgb, var(--service-color) 8%, transparent);
+  border-color: color-mix(in srgb, var(--item-color) 25%, transparent);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--item-color) 8%, transparent);
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -39,7 +39,7 @@
   opacity: 0;
   background: radial-gradient(
     ellipse at 50% 100%,
-    color-mix(in srgb, var(--service-color) 12%, transparent),
+    color-mix(in srgb, var(--item-color) 12%, transparent),
     transparent 70%
   );
   transition: opacity var(--bento-duration) var(--bento-ease);
@@ -50,19 +50,19 @@
   opacity: 1;
 }
 
-/* ── Service-color utilities ─────────────────────── */
+/* ── Item-color utilities ─────────────────────── */
 
-.serviceText {
-  color: var(--service-color);
+.itemText {
+  color: var(--item-color);
 }
 
-.serviceBullet {
-  background-color: var(--service-color);
+.itemBullet {
+  background-color: var(--item-color);
 }
 
 .ctaLink {
-  color: var(--service-color);
-  border-color: var(--service-color);
+  color: var(--item-color);
+  border-color: var(--item-color);
 }
 
 /* ── Expanded details (tagline + bullets + footer) ── */
@@ -89,8 +89,8 @@
 }
 
 .mobileCard[data-active="true"] {
-  border-color: color-mix(in srgb, var(--service-color) 25%, transparent);
-  box-shadow: 0 0 32px color-mix(in srgb, var(--service-color) 8%, transparent);
+  border-color: color-mix(in srgb, var(--item-color) 25%, transparent);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--item-color) 8%, transparent);
   background: rgba(255, 255, 255, 0.04);
 }
 
@@ -98,7 +98,7 @@
   opacity: 0;
   background: radial-gradient(
     ellipse at 50% 100%,
-    color-mix(in srgb, var(--service-color) 12%, transparent),
+    color-mix(in srgb, var(--item-color) 12%, transparent),
     transparent 70%
   );
   transition: opacity var(--bento-duration) var(--bento-ease);

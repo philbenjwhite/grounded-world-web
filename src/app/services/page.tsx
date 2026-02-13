@@ -1,8 +1,8 @@
 import HeroBanner from "@/components/components/HeroBanner";
 import Heading from "@/components/atoms/Heading";
 import FadeIn from "@/components/utils/FadeIn";
-import ServicesBento from "@/components/components/ServicesBento";
-import EngagementModels from "@/components/components/EngagementModels";
+import ExpandingCardPanel from "@/components/components/ExpandingCardPanel";
+import ShowcaseGrid from "@/components/components/ShowcaseGrid";
 
 export const metadata = {
   title: "Our Services | Grounded World",
@@ -95,10 +95,10 @@ export default function ServicesPage() {
         </Heading>
       </FadeIn>
 
-      <ServicesBento services={services} />
+      <ExpandingCardPanel items={services} />
 
-      <EngagementModels
-        models={[
+      <ShowcaseGrid
+        items={[
           {
             title: "Pop Up",
             description:

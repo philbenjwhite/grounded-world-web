@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import EngagementModels from "./EngagementModels";
-import type { EngagementModel } from "./EngagementModels";
+import ShowcaseGrid from "./ShowcaseGrid";
+import type { ShowcaseGridItem } from "./ShowcaseGrid";
 
-const engagementModelsData: EngagementModel[] = [
+const showcaseGridData: ShowcaseGridItem[] = [
   {
     title: "Pop Up",
     description:
@@ -30,8 +30,8 @@ const engagementModelsData: EngagementModel[] = [
 ];
 
 const meta = {
-  title: "Components/EngagementModels",
-  component: EngagementModels,
+  title: "Components/ShowcaseGrid",
+  component: ShowcaseGrid,
   parameters: {
     layout: "fullscreen",
     backgrounds: {
@@ -44,15 +44,15 @@ const meta = {
     sectionTitle: { control: "text" },
     sectionSubtitle: { control: "text" },
   },
-} satisfies Meta<typeof EngagementModels>;
+} satisfies Meta<typeof ShowcaseGrid>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-/** Default — all three engagement models */
+/** Default — all three showcase items */
 export const Default: Story = {
   args: {
-    models: engagementModelsData,
+    items: showcaseGridData,
   },
 };
 
@@ -60,22 +60,22 @@ export const Default: Story = {
 export const WithCustomTitle: Story = {
   args: {
     sectionTitle: "How We Work",
-    sectionSubtitle: "Choose the engagement model that fits your needs.",
-    models: engagementModelsData,
+    sectionSubtitle: "Choose the model that fits your needs.",
+    items: showcaseGridData,
   },
 };
 
-/** Two models only (edge case) */
-export const TwoModels: Story = {
+/** Two items only (edge case) */
+export const TwoItems: Story = {
   args: {
-    models: engagementModelsData.slice(0, 2),
+    items: showcaseGridData.slice(0, 2),
   },
 };
 
 /** Placeholder images for dev without real assets */
 export const WithPlaceholders: Story = {
   args: {
-    models: engagementModelsData.map((m, i) => ({
+    items: showcaseGridData.map((m, i) => ({
       ...m,
       imageSrc: `https://picsum.photos/600/400?random=${i}`,
     })),
