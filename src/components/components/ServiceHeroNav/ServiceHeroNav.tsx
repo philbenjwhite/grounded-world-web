@@ -24,6 +24,7 @@ export interface WorkItem {
   title: string;
   tag: string;
   slug: string;
+  featuredImage?: string;
 }
 
 const workFallbacks: WorkItem[] = [
@@ -435,12 +436,7 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ services, workItems }) 
             </div>
           </div>
 
-          {/* ━━━ OUR WORK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-               TODO: Replace this placeholder with a dedicated
-               <WorkCarousel /> component fed by real case-study
-               data from CMS. The gray image placeholders and
-               static titles should be swapped for actual content.
-               ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */}
+          {/* ━━━ OUR WORK ━━━ */}
           <div
             className={cn(styles.bcardLink, styles.workCard)}
             data-hovered={isWorkHovered ? "" : undefined}
@@ -484,18 +480,35 @@ const ServiceHeroNav: React.FC<ServiceHeroNavProps> = ({ services, workItems }) 
                             <Link
                               href={`/our-work/${wp.slug}`}
                               className={cn(
-                                styles.workPlaceholderBg,
-                                "w-full h-full flex items-center justify-center",
+                                styles.workSlideLink,
+                                "relative w-full h-full block",
                               )}
                             >
-                              <span
-                                className={cn(
-                                  styles.workPlaceholderText,
-                                  "text-xs md:text-sm font-medium",
-                                )}
-                              >
-                                {wp.title}
-                              </span>
+                              {wp.featuredImage ? (
+                                <Image
+                                  src={wp.featuredImage}
+                                  alt={wp.title}
+                                  fill
+                                  sizes="(max-width: 768px) 100vw, 40vw"
+                                  className="object-cover"
+                                />
+                              ) : (
+                                <div
+                                  className={cn(
+                                    styles.workPlaceholderBg,
+                                    "w-full h-full flex items-center justify-center",
+                                  )}
+                                >
+                                  <span
+                                    className={cn(
+                                      styles.workPlaceholderText,
+                                      "text-xs md:text-sm font-medium",
+                                    )}
+                                  >
+                                    {wp.title}
+                                  </span>
+                                </div>
+                              )}
                             </Link>
                           ) : (
                             <div

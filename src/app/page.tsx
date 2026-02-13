@@ -44,6 +44,7 @@ export default async function Home() {
         title: node!.title,
         tag: node!.tags?.[0] ?? "",
         slug: node!._sys.filename,
+        featuredImage: node!.featuredImage ?? undefined,
       }));
   } catch {
     // Work data unavailable — carousel will use placeholders
