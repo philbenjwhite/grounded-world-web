@@ -266,11 +266,8 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
               {hasCta && (
                 <Button
                   href={ctaHref}
-                  className={cn(
-                    "uppercase tracking-widest text-sm",
-                    ctaVariant === "outline" &&
-                      "bg-transparent border-[var(--color-magenta)] hover:bg-[var(--color-magenta)]"
-                  )}
+                  variant={ctaVariant === "outline" ? "secondary" : "primary"}
+                  className="uppercase tracking-widest text-sm"
                 >
                   {ctaLabel}
                 </Button>
@@ -278,7 +275,8 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
               {hasSecondaryCta && (
                 <Button
                   href={secondaryCtaHref}
-                  className="uppercase tracking-widest text-sm bg-transparent border-[var(--color-magenta)] hover:bg-[var(--color-magenta)]"
+                  variant="secondary"
+                  className="uppercase tracking-widest text-sm"
                 >
                   {secondaryCtaLabel}
                 </Button>

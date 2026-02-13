@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import cn from "classnames";
 
-export type ButtonVariant = "primary" | "outline";
+export type ButtonVariant = "primary" | "secondary" | "outline";
 
 export interface ButtonProps {
   /** Content to render inside the button */
@@ -29,6 +29,18 @@ const baseStyles = "text-center no-underline cursor-pointer transition-colors";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: `
+    inline-block font-medium text-[length:var(--size-16)]
+    px-[var(--size-16)] py-[var(--size-8)]
+    rounded-[var(--size-8)]
+    border border-[var(--comp-button-primary-stroke-default)]
+    bg-[var(--comp-button-primary-surface-hover)]
+    text-[color:var(--comp-button-primary-text)]
+    hover:bg-[var(--comp-button-primary-surface-default)]
+    hover:border-[var(--comp-button-primary-stroke-hover)]
+    active:bg-[var(--comp-button-primary-surface-pressed)]
+    active:border-[var(--comp-button-primary-stroke-pressed)]
+  `,
+  secondary: `
     inline-block font-medium text-[length:var(--size-16)]
     px-[var(--size-16)] py-[var(--size-8)]
     rounded-[var(--size-8)]

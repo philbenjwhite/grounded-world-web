@@ -18,7 +18,7 @@ const meta = {
     href: { control: 'text' },
     variant: {
       control: 'select',
-      options: ['primary', 'outline'],
+      options: ['primary', 'secondary', 'outline'],
     },
     target: {
       control: 'select',
@@ -88,6 +88,13 @@ export const SubmitButton: Story = {
   },
 };
 
+export const Secondary: Story = {
+  args: {
+    children: 'Subscribe',
+    variant: 'secondary',
+  },
+};
+
 export const Outline: Story = {
   args: {
     children: 'Find Out More',
@@ -146,6 +153,10 @@ export const AllVariants: Story = {
         <Button href="https://example.com" disabled>
           Disabled Link
         </Button>
+      </div>
+      <div>
+        <p className="text-gray-400 text-sm mb-2">Secondary (outlined magenta)</p>
+        <Button variant="secondary">Subscribe</Button>
       </div>
       <div style={{ '--service-color': '#00AEEF' } as React.CSSProperties}>
         <p className="text-gray-400 text-sm mb-2">Outline (with --service-color: #00AEEF)</p>
