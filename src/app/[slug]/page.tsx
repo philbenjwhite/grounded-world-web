@@ -9,6 +9,7 @@ import type {
 import HeroBanner from "@/components/components/HeroBanner";
 import ShowcaseGrid from "@/components/components/ShowcaseGrid";
 import ExpandingCardPanel from "@/components/components/ExpandingCardPanel";
+import LogoCarousel from "@/components/components/LogoCarousel";
 import Split from "@/components/layout/Split";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
@@ -159,6 +160,18 @@ function renderSection(section: PageSections, index: number) {
             />
           </Container>
         </Section>
+      );
+
+    case "PageSectionsLogoCarousel":
+      return (
+        <LogoCarousel
+          key={index}
+          speed={(section as Record<string, unknown>).speed as number | undefined}
+          logos={
+            ((section as Record<string, unknown>).logos as Array<{ src?: string | null; alt?: string | null }> | undefined)
+              ?.filter((l): l is { src: string; alt: string } => Boolean(l?.src && l?.alt))
+          }
+        />
       );
 
     // MediaSection, Carousel, and RichText can be added here as components are built

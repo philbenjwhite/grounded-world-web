@@ -138,7 +138,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
       )}
     >
       {/* ── Media Layer (z-0) ─────────────────────────── */}
-      <div className="absolute inset-0 z-0 bg-black">
+      <div className="absolute inset-0 z-0 bg-(--background)">
         {/* Poster / fallback image (behind iframe or as primary image bg) */}
         {backgroundType === "vimeo" && posterSrc && (
           <Image

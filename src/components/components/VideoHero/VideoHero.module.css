@@ -1,0 +1,207 @@
+/* ─── Entrance animations (matches global fade-in-up pattern) ─── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heroContainer {
+  animation: heroIn 0.9s ease-out both 0.1s;
+}
+
+.overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+}
+
+/* Staggered content entrance — same timing as HeroBanner / global reveal */
+.animateHeading {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.3s forwards;
+}
+
+.animateSubtitle {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.5s forwards;
+}
+
+.animateBcorp {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.7s forwards;
+}
+
+.bCorpLogo {
+  opacity: 0.5;
+  filter: brightness(10);
+}
+
+/* ─── Custom play cursor ─── */
+
+@keyframes ringRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cursorWrapper {
+  pointer-events: none;
+  position: fixed;
+  z-index: 40;
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity 0.12s ease-out,
+    transform 0.12s ease-out;
+  will-change: transform, opacity;
+}
+
+.cursorWrapper[data-visible] {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Spinning gradient ring */
+.cursorRing {
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  padding: 2px;
+  background: conic-gradient(
+    from 0deg,
+    #FF08CC,
+    #FFA603,
+    #1CC35B,
+    #00AEEF,
+    #FF08CC
+  );
+  animation: ringRotate 4s linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+/* ─── Floating play reel button (touch / no-hover devices) ─── */
+
+.playReelButton {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.9s forwards;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .playReelButton {
+    display: none;
+  }
+
+  .heroContainer {
+    cursor: none;
+  }
+}
+
+.buttonRing {
+  position: absolute;
+  inset: -2px;
+  border-radius: 9999px;
+  padding: 2px;
+  background: conic-gradient(
+    from 0deg,
+    #FF08CC,
+    #FFA603,
+    #1CC35B,
+    #00AEEF,
+    #FF08CC
+  );
+  animation: ringRotate 4s linear infinite;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}
+
+/* ─── Modal ─── */
+
+@keyframes modalBackdropIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(24px);
+  }
+}
+
+@keyframes modalContentIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modalBackdrop {
+  animation: modalBackdropIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.modalContent {
+  animation: modalContentIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+/* Custom close cursor */
+.closeCursor {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.6);
+  animation: closeCursorIn 0.3s ease-out 0.4s forwards;
+  transition: opacity 0.15s ease-out;
+}
+
+.closeCursor[data-hidden] {
+  opacity: 0 !important;
+}
+
+@keyframes closeCursorIn {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Close button */
+.modalClose {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.modalClose:hover {
+  transform: scale(1.15) rotate(90deg);
+}

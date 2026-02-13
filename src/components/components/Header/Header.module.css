@@ -167,7 +167,7 @@
 /* ---- Mobile menu overlay ---- */
 
 .mobileOverlay {
-  background: #0a0a0a;
+  background: var(--background);
 }
 
 /* ---- Mobile sub-section card ---- */

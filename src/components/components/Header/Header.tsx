@@ -8,7 +8,7 @@ import cn from "classnames";
 import { CaretDownIcon, EnvelopeIcon } from "@phosphor-icons/react";
 import styles from "./Header.module.css";
 import { resourceLinks } from "./megaMenuData";
-import { mapCmsServices, type ServiceItem } from "../ServiceHeroNav/utils";
+import { mapCmsServices, type ServiceItem } from "../VideoHero/utils";
 import type { Service } from "../../../../tina/__generated__/types";
 
 export interface HeaderProps {

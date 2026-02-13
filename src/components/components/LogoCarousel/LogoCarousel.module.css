@@ -1,0 +1,8 @@
+.marquee {
+  overflow: hidden;
+}
+
+/* mix-blend-mode: lighten removes black backgrounds from non-transparent PNGs */
+.logo {
+  mix-blend-mode: lighten;
+}

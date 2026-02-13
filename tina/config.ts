@@ -802,6 +802,40 @@ export default defineConfig({
                   },
                 ],
               },
+              /* ── Logo Carousel ───────────────────────── */
+              {
+                name: "logoCarousel",
+                label: "Logo Carousel",
+                fields: [
+                  {
+                    type: "number",
+                    name: "speed",
+                    label: "Scroll Speed",
+                    description: "Pixels per second (default: 40)",
+                  },
+                  {
+                    type: "object",
+                    name: "logos",
+                    label: "Logos",
+                    list: true,
+                    fields: [
+                      {
+                        type: "image",
+                        name: "src",
+                        label: "Logo Image",
+                        description: "SVG or PNG with transparent background recommended",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "alt",
+                        label: "Alt Text",
+                        required: true,
+                      },
+                    ],
+                  },
+                ],
+              },
               /* ── Carousel ────────────────────────────── */
               {
                 name: "carousel",

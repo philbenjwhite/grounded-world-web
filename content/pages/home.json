@@ -1,5 +1,30 @@
 {
   "title": "Welcome to Grounded World",
   "slug": "home",
-  "sections": []
+  "sections": [
+    {
+      "_template": "logoCarousel",
+      "speed": 40,
+      "logos": [
+        { "src": "/images/client-logos/01-tree-free-greetings-logo-white.png", "alt": "Tree Free Greetings" },
+        { "src": "/images/client-logos/02-points4purpose-logo-white.png", "alt": "Points4Purpose" },
+        { "src": "/images/client-logos/03-innerwill-leadership-institute-logo-white.png", "alt": "InnerWill Leadership Institute" },
+        { "src": "/images/client-logos/04-limavady-irish-whiskey-logo-white.png", "alt": "Limavady Irish Whiskey" },
+        { "src": "/images/client-logos/05-onesight-logo-white.png", "alt": "OneSight" },
+        { "src": "/images/client-logos/06-golden-1-credit-union-logo-white.png", "alt": "Golden 1 Credit Union" },
+        { "src": "/images/client-logos/07-brita-logo-white.png", "alt": "Brita" },
+        { "src": "/images/client-logos/08-ford-logo-white.png", "alt": "Ford" },
+        { "src": "/images/client-logos/09-nestle-logo-white.png", "alt": "Nestlé" },
+        { "src": "/images/client-logos/10-pepsico-logo-white.png", "alt": "PepsiCo" },
+        { "src": "/images/client-logos/11-gsk-logo-white.png", "alt": "GSK" },
+        { "src": "/images/client-logos/12-nespresso-logo-white.png", "alt": "Nespresso" },
+        { "src": "/images/client-logos/13-perrier-logo-white.png", "alt": "Perrier" },
+        { "src": "/images/client-logos/14-lycra-logo-white.png", "alt": "Lycra" },
+        { "src": "/images/client-logos/15-odwalla-logo-white.png", "alt": "Odwalla" },
+        { "src": "/images/client-logos/16-carnation-logo-white.png", "alt": "Carnation" },
+        { "src": "/images/client-logos/17-libbys-logo-white.png", "alt": "Libby's" },
+        { "src": "/images/client-logos/18-idesign-logo-white.png", "alt": "iDesign" }
+      ]
+    }
+  ]
 }

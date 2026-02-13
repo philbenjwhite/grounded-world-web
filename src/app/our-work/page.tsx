@@ -37,7 +37,7 @@ export default async function OurWorkPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-(--background) text-white">
       <HeroBanner
         backgroundType="canvas"
         title="Our Work"
