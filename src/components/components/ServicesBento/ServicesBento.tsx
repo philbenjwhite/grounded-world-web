@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import Image from "next/image";
 import {
@@ -21,6 +21,7 @@ import Heading from "../../atoms/Heading";
 import Text from "../../atoms/Text";
 import Section from "../../layout/Section";
 import Container from "../../layout/Container";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 import styles from "./ServicesBento.module.css";
 
 const iconMap: Record<string, React.ComponentType<IconProps>> = {
@@ -81,26 +82,8 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
   const [activeIndex, setActiveIndex] = useState<number | null>(
     defaultActiveIndex ?? 0
   );
-  const gridRef = useRef<HTMLDivElement>(null);
-  const mobileRef = useRef<HTMLDivElement>(null);
-
-  /* Trigger entrance animation when section scrolls into view */
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.setAttribute("data-in-view", "");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    if (gridRef.current) observer.observe(gridRef.current);
-    if (mobileRef.current) observer.observe(mobileRef.current);
-    return () => observer.disconnect();
-  }, []);
+  const gridRef = useScrollReveal();
+  const mobileRef = useScrollReveal();
 
   const handleToggle = (index: number) => {
     setActiveIndex((prev) => (prev === index ? null : index));
@@ -122,13 +105,13 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
   const cardVars = (color: string, index: number) =>
     ({
       "--service-color": color,
-      "--delay": `${0.1 + index * 0.12}s`,
+      "--reveal-delay": `${0.1 + index * 0.12}s`,
     }) as React.CSSProperties;
 
   const mobileCardVars = (color: string, index: number) =>
     ({
       "--service-color": color,
-      "--delay": `${0.1 + index * 0.1}s`,
+      "--reveal-delay": `${0.1 + index * 0.1}s`,
     }) as React.CSSProperties;
 
   return (
@@ -165,6 +148,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
               <div
                 key={service.name}
                 className={cn(
+                  "reveal-card",
                   styles.card,
                   "relative rounded-3xl border border-white/[0.06] bg-white/[0.025] backdrop-blur-xl",
                   "overflow-hidden cursor-pointer flex flex-col p-6 xl:p-8",
@@ -272,6 +256,7 @@ const ServicesBento: React.FC<ServicesBentoProps> = ({
               <div
                 key={service.name}
                 className={cn(
+                  "reveal-card",
                   styles.mobileCard,
                   "relative rounded-2xl border border-white/[0.06] bg-white/[0.025] overflow-hidden"
                 )}

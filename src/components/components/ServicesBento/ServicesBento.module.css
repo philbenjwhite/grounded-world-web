@@ -4,19 +4,6 @@
   --bento-duration: 500ms;
 }
 
-/* ── Entrance animation ──────────────────────────── */
-
-@keyframes cardIn {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scale(0.97);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 /* ── Desktop grid ──────────────────────────────── */
 
 .grid {
@@ -28,16 +15,10 @@
 /* ── Card ──────────────────────────────────────── */
 
 .card {
-  opacity: 0;
   transition:
     background var(--bento-duration) var(--bento-ease),
     border-color var(--bento-duration) var(--bento-ease),
     box-shadow var(--bento-duration) var(--bento-ease);
-}
-
-.grid[data-in-view] .card {
-  animation: cardIn 0.7s ease-out both;
-  animation-delay: var(--delay, 0s);
 }
 
 .card:hover {
@@ -100,21 +81,11 @@
 
 /* ── Mobile accordion ──────────────────────────── */
 
-.mobileList {
-  /* Selector anchor for entrance animation */
-}
-
 .mobileCard {
-  opacity: 0;
   transition:
     background var(--bento-duration) var(--bento-ease),
     border-color var(--bento-duration) var(--bento-ease),
     box-shadow var(--bento-duration) var(--bento-ease);
-}
-
-.mobileList[data-in-view] .mobileCard {
-  animation: cardIn 0.7s ease-out both;
-  animation-delay: var(--delay, 0s);
 }
 
 .mobileCard[data-active="true"] {

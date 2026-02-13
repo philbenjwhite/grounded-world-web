@@ -20,10 +20,10 @@ export interface HeadingProps {
 
 const sizeClasses: Record<HeadingSize, string> = {
   display: 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter leading-[0.9]',
-  h1: 'text-[length:var(--font-size-h1)]',
-  h2: 'text-[length:var(--font-size-h2)]',
-  h3: 'text-[length:var(--font-size-h3)]',
-  h4: 'text-[length:var(--font-size-h4)]',
+  h1: 'text-[length:var(--font-size-h1)] leading-[1.1]',
+  h2: 'text-[length:var(--font-size-h2)] leading-[1.15]',
+  h3: 'text-[length:var(--font-size-h3)] leading-[1.2]',
+  h4: 'text-[length:var(--font-size-h4)] leading-[1.25]',
 };
 
 const colorClasses: Record<HeadingColor, string> = {

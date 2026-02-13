@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import cn from "classnames";
-import styles from "./FadeIn.module.css";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -16,32 +15,10 @@ export default function FadeIn({
   className,
   threshold = 0.2,
 }: FadeInProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [threshold]);
+  const ref = useScrollReveal(threshold);
 
   return (
-    <div
-      ref={ref}
-      className={cn(styles.fadeIn, visible && styles.visible, className)}
-    >
+    <div ref={ref} className={cn("reveal-fade", className)}>
       {children}
     </div>
   );
