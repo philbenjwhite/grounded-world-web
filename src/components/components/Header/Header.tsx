@@ -23,7 +23,7 @@ function isActivePath(current: string, href: string): boolean {
 
 const Header = ({ className, services = [] }: HeaderProps) => {
   const serviceItems = mapCmsServices(services);
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "/";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [headerVisible, setHeaderVisible] = useState(true);
   const navRef = useRef<HTMLElement>(null);

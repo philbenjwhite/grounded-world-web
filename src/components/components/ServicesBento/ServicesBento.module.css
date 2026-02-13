@@ -1,0 +1,166 @@
+/* Matches homepage bento timing */
+:root {
+  --bento-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --bento-duration: 500ms;
+}
+
+/* ── Entrance animation ──────────────────────────── */
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Desktop grid ──────────────────────────────── */
+
+.grid {
+  grid-template-columns: var(--grid-cols, repeat(4, 1fr));
+  grid-auto-rows: 28rem;
+  transition: grid-template-columns var(--bento-duration) var(--bento-ease);
+}
+
+/* ── Card ──────────────────────────────────────── */
+
+.card {
+  opacity: 0;
+  transition:
+    background var(--bento-duration) var(--bento-ease),
+    border-color var(--bento-duration) var(--bento-ease),
+    box-shadow var(--bento-duration) var(--bento-ease);
+}
+
+.grid[data-in-view] .card {
+  animation: cardIn 0.7s ease-out both;
+  animation-delay: var(--delay, 0s);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.045);
+  border-color: color-mix(in srgb, var(--service-color) 15%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--service-color) 6%, transparent);
+}
+
+.card[data-active="true"] {
+  border-color: color-mix(in srgb, var(--service-color) 25%, transparent);
+  box-shadow: 0 0 40px color-mix(in srgb, var(--service-color) 8%, transparent);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Card glow ──────────────────────────────────── */
+
+.cardGlow {
+  opacity: 0;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    color-mix(in srgb, var(--service-color) 12%, transparent),
+    transparent 70%
+  );
+  transition: opacity var(--bento-duration) var(--bento-ease);
+}
+
+.card:hover .cardGlow,
+.card[data-active="true"] .cardGlow {
+  opacity: 1;
+}
+
+/* ── Service-color utilities ─────────────────────── */
+
+.serviceText {
+  color: var(--service-color);
+}
+
+.serviceBullet {
+  background-color: var(--service-color);
+}
+
+.ctaLink {
+  color: var(--service-color);
+  border-color: var(--service-color);
+}
+
+/* ── Expanded details (tagline + bullets + footer) ── */
+
+.expandedDetails {
+  opacity: 0;
+  transition: opacity 400ms var(--bento-ease);
+  pointer-events: none;
+}
+
+.card[data-active="true"] .expandedDetails {
+  opacity: 1;
+  transition-delay: 200ms;
+  pointer-events: auto;
+}
+
+/* ── Mobile accordion ──────────────────────────── */
+
+.mobileList {
+  /* Selector anchor for entrance animation */
+}
+
+.mobileCard {
+  opacity: 0;
+  transition:
+    background var(--bento-duration) var(--bento-ease),
+    border-color var(--bento-duration) var(--bento-ease),
+    box-shadow var(--bento-duration) var(--bento-ease);
+}
+
+.mobileList[data-in-view] .mobileCard {
+  animation: cardIn 0.7s ease-out both;
+  animation-delay: var(--delay, 0s);
+}
+
+.mobileCard[data-active="true"] {
+  border-color: color-mix(in srgb, var(--service-color) 25%, transparent);
+  box-shadow: 0 0 32px color-mix(in srgb, var(--service-color) 8%, transparent);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mobileGlow {
+  opacity: 0;
+  background: radial-gradient(
+    ellipse at 50% 100%,
+    color-mix(in srgb, var(--service-color) 12%, transparent),
+    transparent 70%
+  );
+  transition: opacity var(--bento-duration) var(--bento-ease);
+}
+
+.mobileCard[data-active="true"] .mobileGlow {
+  opacity: 1;
+}
+
+.accordionContent {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--bento-duration) var(--bento-ease);
+}
+
+.accordionOpen {
+  grid-template-rows: 1fr;
+}
+
+.accordionContent > div {
+  overflow: hidden;
+}
+
+.accordionInner {
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 300ms var(--bento-ease),
+    transform 300ms var(--bento-ease);
+}
+
+.accordionOpen .accordionInner {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 100ms;
+}

@@ -1,42 +1,54 @@
-import React from 'react';
-import cn from 'classnames';
+import React from "react";
+import Link from "next/link";
+import cn from "classnames";
+
+export type ButtonVariant = "primary" | "outline";
 
 export interface ButtonProps {
   /** Content to render inside the button */
   children: React.ReactNode;
-  /** URL to navigate to (renders as anchor tag when provided) */
+  /** URL to navigate to (renders as Link/anchor when provided) */
   href?: string;
   /** Whether the button is disabled */
   disabled?: boolean;
   /** Click handler */
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
   /** Button type attribute (only applies when rendering as button) */
-  type?: 'button' | 'submit' | 'reset';
+  type?: "button" | "submit" | "reset";
   /** Link target attribute (only applies when rendering as anchor) */
-  target?: '_blank' | '_self' | '_parent' | '_top';
+  target?: "_blank" | "_self" | "_parent" | "_top";
   /** Link rel attribute (automatically set for target="_blank") */
   rel?: string;
   /** Optional className for additional styling */
   className?: string;
+  /** Visual variant */
+  variant?: ButtonVariant;
 }
 
-const buttonStyles = `
-  inline-block
-  font-medium text-[length:var(--size-16)]
-  px-[var(--size-16)] py-[var(--size-8)]
-  rounded-[var(--size-8)]
-  border border-[var(--comp-button-primary-stroke-default)]
-  bg-[var(--comp-button-primary-surface-default)]
-  text-[color:var(--comp-button-primary-text)]
-  hover:bg-[var(--comp-button-primary-surface-hover)]
-  hover:border-[var(--comp-button-primary-stroke-hover)]
-  active:bg-[var(--comp-button-primary-surface-pressed)]
-  active:border-[var(--comp-button-primary-stroke-pressed)]
-  transition-colors
-  text-center
-  no-underline
-  cursor-pointer
-`;
+const baseStyles = "text-center no-underline cursor-pointer transition-colors";
+
+const variantStyles: Record<ButtonVariant, string> = {
+  primary: `
+    inline-block font-medium text-[length:var(--size-16)]
+    px-[var(--size-16)] py-[var(--size-8)]
+    rounded-[var(--size-8)]
+    border border-[var(--comp-button-primary-stroke-default)]
+    bg-[var(--comp-button-primary-surface-default)]
+    text-[color:var(--comp-button-primary-text)]
+    hover:bg-[var(--comp-button-primary-surface-hover)]
+    hover:border-[var(--comp-button-primary-stroke-hover)]
+    active:bg-[var(--comp-button-primary-surface-pressed)]
+    active:border-[var(--comp-button-primary-stroke-pressed)]
+  `,
+  outline: `
+    inline-flex items-center gap-2
+    rounded-lg border bg-transparent
+    px-5 py-2.5
+    text-sm font-semibold uppercase tracking-wider
+    duration-300
+    hover:bg-white/[0.06]
+  `,
+};
 
 const disabledStyles = `
   bg-[var(--comp-button-primary-surface-disabled)]
@@ -51,38 +63,49 @@ const Button = ({
   href,
   disabled = false,
   onClick,
-  type = 'button',
+  type = "button",
   target,
   rel,
   className,
+  variant = "primary",
 }: ButtonProps) => {
   const combinedClassName = cn(
-    buttonStyles,
+    baseStyles,
+    variantStyles[variant],
     disabled && disabledStyles,
     className
   );
 
-  // Render as anchor if href is provided
   if (href) {
-    // Automatically add security attributes for external links
-    const isExternal = target === '_blank';
-    const linkRel = rel ?? (isExternal ? 'noopener noreferrer' : undefined);
+    const isExternal = target === "_blank" || href.startsWith("http");
+    const linkRel = rel ?? (isExternal ? "noopener noreferrer" : undefined);
+
+    if (isExternal || disabled) {
+      return (
+        <a
+          href={disabled ? undefined : href}
+          className={combinedClassName}
+          target={target}
+          rel={linkRel}
+          onClick={disabled ? undefined : onClick}
+          aria-disabled={disabled || undefined}
+        >
+          {children}
+        </a>
+      );
+    }
 
     return (
-      <a
-        href={disabled ? undefined : href}
+      <Link
+        href={href}
         className={combinedClassName}
-        target={target}
-        rel={linkRel}
-        onClick={disabled ? undefined : onClick}
-        aria-disabled={disabled || undefined}
+        onClick={onClick}
       >
         {children}
-      </a>
+      </Link>
     );
   }
 
-  // Render as button
   return (
     <button
       type={type}

@@ -16,6 +16,10 @@ const meta = {
     children: { control: 'text' },
     disabled: { control: 'boolean' },
     href: { control: 'text' },
+    variant: {
+      control: 'select',
+      options: ['primary', 'outline'],
+    },
     target: {
       control: 'select',
       options: ['_self', '_blank', '_parent', '_top'],
@@ -84,34 +88,75 @@ export const SubmitButton: Story = {
   },
 };
 
+export const Outline: Story = {
+  args: {
+    children: 'Find Out More',
+    variant: 'outline',
+  },
+  decorators: [
+    (Story) => (
+      <div className="bg-black p-8" style={{ '--service-color': '#00AEEF' } as React.CSSProperties}>
+        <Story />
+      </div>
+    ),
+  ],
+};
+
+export const OutlineAsLink: Story = {
+  args: {
+    children: 'Find Out More',
+    variant: 'outline',
+    href: '/services/research',
+  },
+  decorators: [
+    (Story) => (
+      <div className="bg-black p-8" style={{ '--service-color': '#FFA603' } as React.CSSProperties}>
+        <Story />
+      </div>
+    ),
+  ],
+};
+
 export const AllVariants: Story = {
   args: {
     children: 'Button',
   },
   render: () => (
-    <div className="flex flex-col gap-4 items-start">
+    <div className="flex flex-col gap-6 items-start">
       <div>
-        <p className="text-gray-400 text-sm mb-2">Button (default)</p>
+        <p className="text-gray-400 text-sm mb-2">Primary (default)</p>
         <Button>Click Me</Button>
       </div>
       <div>
-        <p className="text-gray-400 text-sm mb-2">Button (disabled)</p>
+        <p className="text-gray-400 text-sm mb-2">Primary (disabled)</p>
         <Button disabled>Disabled</Button>
       </div>
       <div>
-        <p className="text-gray-400 text-sm mb-2">Link (internal)</p>
+        <p className="text-gray-400 text-sm mb-2">Primary (link)</p>
         <Button href="/about">Internal Link</Button>
       </div>
       <div>
-        <p className="text-gray-400 text-sm mb-2">Link (external, opens in new tab)</p>
+        <p className="text-gray-400 text-sm mb-2">Primary (external link)</p>
         <Button href="https://example.com" target="_blank">
           External Link
         </Button>
       </div>
       <div>
-        <p className="text-gray-400 text-sm mb-2">Link (disabled)</p>
+        <p className="text-gray-400 text-sm mb-2">Primary (disabled link)</p>
         <Button href="https://example.com" disabled>
           Disabled Link
+        </Button>
+      </div>
+      <div style={{ '--service-color': '#00AEEF' } as React.CSSProperties}>
+        <p className="text-gray-400 text-sm mb-2">Outline (with --service-color: #00AEEF)</p>
+        <Button variant="outline" className="text-[color:var(--service-color)] border-[var(--service-color)]">
+          Find Out More
+        </Button>
+      </div>
+      <div style={{ '--service-color': '#FF08CC' } as React.CSSProperties}>
+        <p className="text-gray-400 text-sm mb-2">Outline (with --service-color: #FF08CC)</p>
+        <Button variant="outline" className="text-[color:var(--service-color)] border-[var(--service-color)]">
+          Find Out More
         </Button>
       </div>
     </div>
