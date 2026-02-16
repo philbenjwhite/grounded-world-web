@@ -3,28 +3,186 @@
   "slug": "home",
   "sections": [
     {
-      "_template": "logoCarousel",
+      "_template": "videoHero",
+      "backgroundVideoUrl": "https://player.vimeo.com/progressive_redirect/playback/1161946524/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&log_user=0&signature=ff985305bacd44ceec1d96f384a10daa44f54d5055afc72a0b9ec4ab171053ab",
+      "vimeoId": "1153662802",
+      "heading": "Activating Purpose",
+      "subheading": "Accelerating Impact"
+    },
+    {
       "speed": 40,
       "logos": [
-        { "src": "/images/client-logos/01-tree-free-greetings-logo-white.png", "alt": "Tree Free Greetings" },
-        { "src": "/images/client-logos/02-points4purpose-logo-white.png", "alt": "Points4Purpose" },
-        { "src": "/images/client-logos/03-innerwill-leadership-institute-logo-white.png", "alt": "InnerWill Leadership Institute" },
-        { "src": "/images/client-logos/04-limavady-irish-whiskey-logo-white.png", "alt": "Limavady Irish Whiskey" },
-        { "src": "/images/client-logos/05-onesight-logo-white.png", "alt": "OneSight" },
-        { "src": "/images/client-logos/06-golden-1-credit-union-logo-white.png", "alt": "Golden 1 Credit Union" },
-        { "src": "/images/client-logos/07-brita-logo-white.png", "alt": "Brita" },
-        { "src": "/images/client-logos/08-ford-logo-white.png", "alt": "Ford" },
-        { "src": "/images/client-logos/09-nestle-logo-white.png", "alt": "Nestlé" },
-        { "src": "/images/client-logos/10-pepsico-logo-white.png", "alt": "PepsiCo" },
-        { "src": "/images/client-logos/11-gsk-logo-white.png", "alt": "GSK" },
-        { "src": "/images/client-logos/12-nespresso-logo-white.png", "alt": "Nespresso" },
-        { "src": "/images/client-logos/13-perrier-logo-white.png", "alt": "Perrier" },
-        { "src": "/images/client-logos/14-lycra-logo-white.png", "alt": "Lycra" },
-        { "src": "/images/client-logos/15-odwalla-logo-white.png", "alt": "Odwalla" },
-        { "src": "/images/client-logos/16-carnation-logo-white.png", "alt": "Carnation" },
-        { "src": "/images/client-logos/17-libbys-logo-white.png", "alt": "Libby's" },
-        { "src": "/images/client-logos/18-idesign-logo-white.png", "alt": "iDesign" }
+        {
+          "src": "/images/client-logos/01-tree-free-greetings-logo-white.png",
+          "alt": "Tree Free Greetings"
+        },
+        {
+          "src": "/images/client-logos/02-points4purpose-logo-white.png",
+          "alt": "Points4Purpose"
+        },
+        {
+          "src": "/images/client-logos/03-innerwill-leadership-institute-logo-white.png",
+          "alt": "InnerWill Leadership Institute"
+        },
+        {
+          "src": "/images/client-logos/04-limavady-irish-whiskey-logo-white.png",
+          "alt": "Limavady Irish Whiskey"
+        },
+        {
+          "src": "/images/client-logos/05-onesight-logo-white.png",
+          "alt": "OneSight"
+        },
+        {
+          "src": "/images/client-logos/06-golden-1-credit-union-logo-white.png",
+          "alt": "Golden 1 Credit Union"
+        },
+        {
+          "src": "/images/client-logos/07-brita-logo-white.png",
+          "alt": "Brita"
+        },
+        {
+          "src": "/images/client-logos/08-ford-logo-white.png",
+          "alt": "Ford"
+        },
+        {
+          "src": "/images/client-logos/09-nestle-logo-white.png",
+          "alt": "Nestlé"
+        },
+        {
+          "src": "/images/client-logos/10-pepsico-logo-white.png",
+          "alt": "PepsiCo"
+        },
+        {
+          "src": "/images/client-logos/11-gsk-logo-white.png",
+          "alt": "GSK"
+        },
+        {
+          "src": "/images/client-logos/12-nespresso-logo-white.png",
+          "alt": "Nespresso"
+        },
+        {
+          "src": "/images/client-logos/13-perrier-logo-white.png",
+          "alt": "Perrier"
+        },
+        {
+          "src": "/images/client-logos/14-lycra-logo-white.png",
+          "alt": "Lycra"
+        },
+        {
+          "src": "/images/client-logos/15-odwalla-logo-white.png",
+          "alt": "Odwalla"
+        },
+        {
+          "src": "/images/client-logos/16-carnation-logo-white.png",
+          "alt": "Carnation"
+        },
+        {
+          "src": "/images/client-logos/17-libbys-logo-white.png",
+          "alt": "Libby's"
+        },
+        {
+          "src": "/images/client-logos/18-idesign-logo-white.png",
+          "alt": "iDesign"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "_template": "introSection",
+      "heading": "Get Grounded",
+      "paragraphs": [
+        "Grounded is a multi-award-winning, B Corp certified brand activation agency \u2014 thriving at the intersection of brand experience, commercial innovation, sustainability and social impact.",
+        "We work with brands, retailers, startups and nonprofits all over the world \u2014 helping them transform purpose into profit, commercialize sustainability and drive behavior change at scale.",
+        "No hushing. No Washing. No tweaking around the edges."
       ]
+    },
+    {
+      "_template": "expandingCardPanel",
+      "items": [
+        {
+          "name": "Research",
+          "color": "#00AEEF",
+          "icon": "MagnifyingGlass",
+          "tagline": "Assessing culture and the competitive landscape to find the intention-action gaps.",
+          "bullets": [
+            "Culture, category, competitor and consumer landscape assessments",
+            "Intent-to-action gap research and analysis",
+            "Ecosystem mapping, need states, category growth drivers & go to market strategy"
+          ],
+          "ctaHref": "/services/research",
+          "imageSrc": "/images/services/intention-action-gap.png",
+          "imageAlt": "Intention Action Gap"
+        },
+        {
+          "name": "Strategy",
+          "color": "#FFA603",
+          "icon": "Compass",
+          "tagline": "Connecting the \u2018why\u2019 of purpose to the \u2018way\u2019 of profit to tell your sustainability story and drive innovation.",
+          "bullets": [
+            "Corporate, brand and social purpose articulation",
+            "Sustainability strategy, marketing, corporate narrative, storytelling and innovation sprints",
+            "Brand positioning architecture & archetyping"
+          ],
+          "ctaHref": "/services/strategy",
+          "imageSrc": "/images/services/sustain-agility.png",
+          "imageAlt": "Sustain-Agility"
+        },
+        {
+          "name": "Activation",
+          "color": "#FF08CC",
+          "icon": "Lightning",
+          "tagline": "Driving behavior change and intent at the moments that matter for colleagues, customers and consumers.",
+          "bullets": [
+            "Brand identity, packaging, websites & design",
+            "Content, video, advertising, campaigns, events and experiences",
+            "Commerce (customer journeys, selling stories, brand and retail activation and tactical toolkits)"
+          ],
+          "ctaHref": "/services/activation",
+          "imageSrc": "/images/services/brand-activation-for-good.png",
+          "imageAlt": "Brand Activation For Good"
+        },
+        {
+          "name": "Impact",
+          "color": "#1CC35B",
+          "icon": "ChartLineUp",
+          "tagline": "Measuring impact, reporting on progress sparking engagement and facilitating collaboration and partnerships at scale.",
+          "bullets": [
+            "Sustainability & impact reporting",
+            "Commercial, non-profit and pre-competitive partnerships",
+            "Collaboration training, action labs, design sprints, speaking engagements and thought leadership"
+          ],
+          "ctaHref": "/services/impact",
+          "imageSrc": "/images/services/flywheel-of-impact.png",
+          "imageAlt": "Flywheel of Impact"
+        }
+      ]
+    },
+    {
+      "sectionTitle": "Our Work",
+      "loop": true,
+      "showArrows": true,
+      "showDots": true,
+      "items": [
+        {
+          "work": "content/work/lycra-qira-farm-to-fiber.md"
+        },
+        {
+          "work": "content/work/lycra.md"
+        },
+        {
+          "work": "content/work/tribes-on-the-edge.md"
+        },
+        {
+          "work": "content/work/onesight.md"
+        },
+        {
+          "work": "content/work/fresh-air-fund.md"
+        },
+        {
+          "work": "content/work/interdesign.md"
+        }
+      ],
+      "_template": "workCarousel"
     }
   ]
 }

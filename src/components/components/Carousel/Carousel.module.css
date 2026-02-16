@@ -1,0 +1,61 @@
+/* ── Slide sizing ──────────────────────────────── */
+
+.slide {
+  flex: 0 0 60%;
+}
+
+@media (max-width: 640px) {
+  .slide {
+    flex: 0 0 85%;
+  }
+}
+
+/* ── Card hover grow ──────────────────────────── */
+
+.card {
+  transition: transform var(--comp-work-card-duration) var(--comp-work-card-ease);
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* ── Card title — hover only on desktop, always visible on mobile ── */
+
+.cardTitle {
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity var(--comp-work-card-duration) var(--comp-work-card-ease),
+    transform var(--comp-work-card-duration) var(--comp-work-card-ease);
+}
+
+.card:hover .cardTitle {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Card scrim — hover only on desktop, always visible on mobile ── */
+
+.cardScrim {
+  opacity: 0;
+  transition: opacity var(--comp-work-card-duration) var(--comp-work-card-ease);
+}
+
+.card:hover .cardScrim {
+  opacity: 1;
+}
+
+/* ── Mobile overrides ──────────────────────────── */
+
+@media (max-width: 640px) {
+  .card {
+    border-radius: var(--size-16);
+  }
+
+  .cardTitle,
+  .cardScrim {
+    opacity: 1;
+    transform: none;
+  }
+}

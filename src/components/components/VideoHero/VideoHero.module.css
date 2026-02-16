@@ -168,38 +168,6 @@
   animation: modalContentIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
-/* Custom close cursor (desktop only) */
-.closeCursor {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.6);
-  animation: closeCursorIn 0.3s ease-out 0.4s forwards;
-  transition: opacity 0.15s ease-out;
-}
-
-.closeCursor[data-hidden] {
-  opacity: 0 !important;
-}
-
-@keyframes closeCursorIn {
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-@media (hover: none) {
-  .closeCursor {
-    display: none !important;
-  }
-
-  .modalBackdrop {
-    cursor: auto;
-  }
-
-  .modalClose {
-    cursor: pointer;
-  }
-}
 
 /* Close button */
 .modalClose {
@@ -207,5 +175,5 @@
 }
 
 .modalClose:hover {
-  transform: scale(1.15) rotate(90deg);
+  transform: scale(1.05);
 }

@@ -48,7 +48,7 @@ const BENTO_PATTERN = [false, true, true, false, false, true];
 
 const WorkGrid: React.FC<WorkGridProps> = ({ items }) => {
   const [activeFilter, setActiveFilter] = useState(ALL_FILTER);
-  const gridRef = useScrollReveal();
+  const gridRef = useScrollReveal(0.01);
 
   /* Derive unique tags from items */
   const tags = useMemo(() => {
@@ -89,13 +89,6 @@ const WorkGrid: React.FC<WorkGridProps> = ({ items }) => {
         <div ref={gridRef} className={styles.bentoGrid}>
           {filteredItems.map((item, index) => {
             const isWide = BENTO_PATTERN[index % BENTO_PATTERN.length];
-            const formattedDate = item.date
-              ? new Date(item.date).toLocaleDateString("en-US", {
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                })
-              : null;
 
             return (
               <Link
@@ -129,18 +122,16 @@ const WorkGrid: React.FC<WorkGridProps> = ({ items }) => {
                 {/* Gradient scrim over image */}
                 <div className={styles.cardScrim} />
 
+                {/* Amber glow overlay */}
+                <div className="work-card-glow" />
+
                 {/* Arrow */}
                 <span className={styles.cardArrow}>
                   <ArrowUpRight size={18} weight="bold" />
                 </span>
 
-                {/* Content pinned to bottom */}
-                <div className="relative z-10">
-                  {formattedDate && (
-                    <time className="mb-3 block text-xs font-medium tracking-wider text-[var(--color-gray-4)] uppercase">
-                      {formattedDate}
-                    </time>
-                  )}
+                {/* Content pinned to bottom — visible on hover */}
+                <div className={cn("relative z-10", styles.cardContent)}>
                   <h3 className="text-xl font-bold leading-snug text-[var(--font-color-primary)] md:text-2xl">
                     {item.title}
                   </h3>

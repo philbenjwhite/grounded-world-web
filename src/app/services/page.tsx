@@ -1,7 +1,5 @@
-import HeroBanner from "@/components/components/HeroBanner";
-import ExpandingCardPanel from "@/components/components/ExpandingCardPanel";
-import ShowcaseGrid from "@/components/components/ShowcaseGrid";
-import AccordionFAQ from "@/components/components/AccordionFAQ";
+import serverClient from "../../../tina/server-client";
+import ClientPage from "../[slug]/client-page";
 
 export const metadata = {
   title: "Our Services | Grounded World",
@@ -9,185 +7,16 @@ export const metadata = {
     "Everything we do is designed to move the needle culturally, socially, environmentally and behaviorally — inside and out.",
 };
 
-const services = [
-  {
-    name: "Research",
-    color: "#00AEEF",
-    icon: "MagnifyingGlass",
-    tagline:
-      "Assessing culture and the competitive landscape to find the intention-action gaps.",
-    bullets: [
-      "Culture, category, competitor and consumer landscape assessments",
-      "Intent-to-action gap research and analysis",
-      "Ecosystem mapping, need states, category growth drivers & go to market strategy",
-    ],
-    ctaHref: "/services/research",
-    imageSrc: "/images/services/intention-action-gap.png",
-    imageAlt: "Intention Action Gap",
-  },
-  {
-    name: "Strategy",
-    color: "#FFA603",
-    icon: "Compass",
-    tagline:
-      "Connecting the \u2018why\u2019 of purpose to the \u2018way\u2019 of profit to tell your sustainability story and drive innovation.",
-    bullets: [
-      "Corporate, brand and social purpose articulation",
-      "Sustainability strategy, marketing, corporate narrative, storytelling and innovation sprints",
-      "Brand positioning architecture & archetyping",
-    ],
-    ctaHref: "/services/strategy",
-    imageSrc: "/images/services/sustain-agility.png",
-    imageAlt: "Sustain-Agility",
-  },
-  {
-    name: "Activation",
-    color: "#FF08CC",
-    icon: "Lightning",
-    tagline:
-      "Driving behavior change and intent at the moments that matter for colleagues, customers and consumers.",
-    bullets: [
-      "Brand identity, packaging, websites & design",
-      "Content, video, advertising, campaigns, events and experiences",
-      "Commerce (customer journeys, selling stories, brand and retail activation and tactical toolkits)",
-    ],
-    ctaHref: "/services/activation",
-    imageSrc: "/images/services/brand-activation-for-good.png",
-    imageAlt: "Brand Activation For Good",
-  },
-  {
-    name: "Impact",
-    color: "#1CC35B",
-    icon: "ChartLineUp",
-    tagline:
-      "Measuring impact, reporting on progress sparking engagement and facilitating collaboration and partnerships at scale.",
-    bullets: [
-      "Sustainability & impact reporting",
-      "Commercial, non-profit and pre-competitive partnerships",
-      "Collaboration training, action labs, design sprints, speaking engagements and thought leadership",
-    ],
-    ctaHref: "/services/impact",
-    imageSrc: "/images/services/flywheel-of-impact.png",
-    imageAlt: "Flywheel of Impact",
-  },
-];
+export default async function ServicesPage() {
+  const result = await serverClient.queries.page({
+    relativePath: "services.json",
+  });
 
-const faqs = [
-  {
-    question:
-      "How do you tailor your approach for different types of organizations (startups, corporates, nonprofits)?",
-    answer:
-      "Every engagement starts with understanding your unique context \u2014 your culture, category, stakeholders and ambition. We then build a bespoke team, toolkit and timeline that fits whether you\u2019re a startup finding product-market fit, a corporate embedding purpose across a portfolio, or a nonprofit scaling impact.",
-  },
-  {
-    question:
-      "What does a typical engagement with Grounded look like from start to finish?",
-    answer:
-      "It usually starts with a discovery session to understand your goals and intention-action gaps. From there we scope a phased plan \u2014 typically covering research, strategy, activation and measurement \u2014 with clear milestones and deliverables along the way.",
-  },
-  {
-    question:
-      "How do you measure the impact of your work beyond traditional marketing metrics?",
-    answer:
-      "We look at commercial, cultural and societal impact together. Alongside traditional KPIs, we measure behaviour change, stakeholder engagement, partnership value and progress against sustainability targets using tools like our Flywheel of Impact.",
-  },
-  {
-    question: "How long does it usually take to see tangible results?",
-    answer:
-      "Some clients see early wins within weeks (e.g. campaign engagement), while deeper, systemic, cultural or commercial partnership based innovations and impact tend to build over months. Our phased approach stays fully transparent and accountable to whatever goals are set.",
-  },
-  {
-    question:
-      "Do you offer one-off projects or only longer-term partnerships?",
-    answer:
-      "Both. We can pop up for a one-day design sprint, plug in as an extension of your team for a quarter, or play through as your full-service agency partner. Flexibility is core to how we work.",
-  },
-  {
-    question:
-      "How do you integrate with our internal team and existing partners?",
-    answer:
-      "We can happily embed ourselves to work alongside your team, partner agencies, and key stakeholders. Collaboration and co-creation is core to how we like to work.",
-  },
-  {
-    question:
-      "What makes Grounded different from other brand and sustainability agencies?",
-    answer:
-      "We don\u2019t just do creative, tell stories or produce content. Everything we do starts with understanding the biggest intention-action gaps and then figuring how we can close those gaps to better connect purpose to profit. Our proprietary tools like the BPP, Sustain-Agility, and Flywheel of Impact ensure sustainability drives commercial value and triple bottom line impact.",
-  },
-  {
-    question:
-      "How flexible are your services if our priorities change during a project?",
-    answer:
-      "Very. We build agility into every engagement. If your priorities shift mid-project, we adapt the scope, team and timeline to match \u2014 without losing momentum or strategic coherence.",
-  },
-  {
-    question: "Do you work with international teams and global campaigns?",
-    answer:
-      "Absolutely. We\u2019ve worked with brands, retailers, startups and nonprofits across multiple markets and continents. Our model is built to flex across geographies, cultures and time zones.",
-  },
-  {
-    question:
-      "Can you scope projects in phases to match different budgets and timelines?",
-    answer:
-      "Yes \u2014 phased scoping is one of our specialities. We can start small and scale up, letting early results build the case for continued investment and broader rollout.",
-  },
-];
-
-export default function ServicesPage() {
   return (
-    <>
-      <HeroBanner
-        backgroundType="canvas"
-        title="Our Services"
-        subtitle="Everything we do is designed to move the needle culturally, socially, environmentally and behaviorally — inside and out. So whether you need to find your biggest intention-action gaps, foster multi-stakeholder collaboration and partnerships, tell your story or commercialize sustainability to generate an ROI — we can help you articulate purpose, activate your brands and accelerate your impact."
-        ctaLabel="Discovery Call"
-        ctaHref="/contact"
-        ctaVariant="solid"
-        overlayOpacity="light"
-        contentAlign="center"
-        minHeight="full"
-        bottomFade
-      />
-
-      <ExpandingCardPanel
-        sectionTitle="How We Move the Needle"
-        items={services}
-      />
-
-      <ShowcaseGrid
-        items={[
-          {
-            title: "Pop Up",
-            description:
-              "We do speaking engagements, present thought leadership at conferences and events and get the ball rolling by facilitating one day design sprints, immersions, brainstorms and workshops.",
-            imageSrc: "/images/services/toast-popping-out-of-toaster.png",
-            imageAlt: "Toast popping out of a toaster",
-            glowColor: "#00AEEF",
-          },
-          {
-            title: "Plug-in",
-            description:
-              "We can operate as part of your team or lead an IAT. We can even help you build and augment your in-house capabilities — without the need for big agency fees or expenses.",
-            imageSrc: "/images/services/European-style-type-f-socket-in-wall.png",
-            imageAlt: "Plug plugged into a wall socket",
-            glowColor: "#FFA603",
-          },
-          {
-            title: "Play Thru",
-            description:
-              "We can also make it totally turnkey and provide a full service agency solution — from strategy, creative, tactical planning, and toolkits to strategic partnerships, PR and impact reporting.",
-            imageSrc: "/images/services/pov-white-shoes-walking-on-arrow-pavement.png",
-            imageAlt: "White shoes walking forward on a yellow arrow",
-            glowColor: "#FF08CC",
-          },
-        ]}
-      />
-
-      <AccordionFAQ
-        sectionTitle="Services Overview"
-        sectionSubtitle="Frequently asked questions about how we work."
-        items={faqs}
-      />
-    </>
+    <ClientPage
+      query={result.query}
+      variables={result.variables as { relativePath: string }}
+      data={result.data}
+    />
   );
 }

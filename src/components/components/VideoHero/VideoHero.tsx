@@ -15,12 +15,24 @@ import Text from "../../atoms/Text";
 import VimeoModal from "./VimeoModal";
 import styles from "./VideoHero.module.css";
 
-const BACKGROUND_VIDEO_URL =
+const DEFAULT_BACKGROUND_VIDEO_URL =
   "https://player.vimeo.com/progressive_redirect/playback/1161946524/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&log_user=0&signature=ff985305bacd44ceec1d96f384a10daa44f54d5055afc72a0b9ec4ab171053ab";
 
-const VIMEO_ID = "1153662802";
+const DEFAULT_VIMEO_ID = "1153662802";
 
-const VideoHero: React.FC = () => {
+export interface VideoHeroProps {
+  backgroundVideoUrl?: string;
+  vimeoId?: string;
+  heading?: string;
+  subheading?: string;
+}
+
+const VideoHero: React.FC<VideoHeroProps> = ({
+  backgroundVideoUrl = DEFAULT_BACKGROUND_VIDEO_URL,
+  vimeoId = DEFAULT_VIMEO_ID,
+  heading = "Activating Purpose",
+  subheading = "Accelerating Impact",
+}) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -79,6 +91,7 @@ const VideoHero: React.FC = () => {
     if (!cursorRef.current) return;
     cursorRef.current.style.left = `${e.clientX}px`;
     cursorRef.current.style.top = `${e.clientY}px`;
+    setCursorVisible(true);
   }, []);
 
   const handleMouseEnter = useCallback(() => setCursorVisible(true), []);
@@ -144,7 +157,7 @@ const VideoHero: React.FC = () => {
           muted
           playsInline
         >
-          <source src={BACKGROUND_VIDEO_URL} type="video/mp4" />
+          <source src={backgroundVideoUrl} type="video/mp4" />
         </video>
 
         {/* Gradient overlay */}
@@ -154,12 +167,12 @@ const VideoHero: React.FC = () => {
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
           <div className={styles.animateHeading}>
             <Heading level={1} size="display" color="primary">
-              Activating Purpose
+              {heading}
             </Heading>
           </div>
           <div className={cn(styles.animateSubtitle, "mt-2")}>
             <Text size="subtitle" color="secondary">
-              Accelerating Impact
+              {subheading}
             </Text>
           </div>
         </div>
@@ -214,7 +227,7 @@ const VideoHero: React.FC = () => {
       <VimeoModal
         open={modalOpen}
         onClose={() => setModalOpen(false)}
-        vimeoId={VIMEO_ID}
+        vimeoId={vimeoId}
       />
     </div>
   );

@@ -450,6 +450,13 @@ export default defineConfig({
         path: "content/pages",
         format: "json",
         ui: {
+          router: ({ document }) => {
+            const slug = document._sys.filename;
+            if (slug === "home") return "/";
+            if (slug === "our-work") return "/our-work";
+            if (slug === "services") return "/services";
+            return `/${slug}`;
+          },
           filename: {
             readonly: false,
             slugify: (values) => {
@@ -481,6 +488,40 @@ export default defineConfig({
             label: "Page Sections",
             list: true,
             templates: [
+              /* ── Video Hero ────────────────────────── */
+              {
+                name: "videoHero",
+                label: "Video Hero",
+                fields: [
+                  {
+                    type: "string",
+                    name: "backgroundVideoUrl",
+                    label: "Background Video URL",
+                    description:
+                      "Direct MP4 URL for the looping background video",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "vimeoId",
+                    label: "Vimeo Video ID",
+                    description:
+                      "Vimeo video ID for the play modal (e.g. '1153662802')",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "heading",
+                    label: "Heading",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "subheading",
+                    label: "Subheading",
+                  },
+                ],
+              },
               /* ── Hero Banner ─────────────────────────── */
               {
                 name: "heroBanner",
@@ -585,6 +626,12 @@ export default defineConfig({
                       { value: "medium", label: "Medium" },
                     ],
                   },
+                  {
+                    type: "boolean",
+                    name: "bottomFade",
+                    label: "Bottom Fade",
+                    description: "Show a gradient that bleeds into the next section",
+                  },
                 ],
               },
               /* ── Showcase Grid ───────────────────────── */
@@ -607,6 +654,11 @@ export default defineConfig({
                     name: "items",
                     label: "Items",
                     list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.title || "New Item",
+                      }),
+                    },
                     fields: [
                       {
                         type: "string",
@@ -670,6 +722,11 @@ export default defineConfig({
                     name: "items",
                     label: "Items",
                     list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.name || "New Item",
+                      }),
+                    },
                     fields: [
                       {
                         type: "string",
@@ -766,6 +823,11 @@ export default defineConfig({
                     name: "items",
                     label: "Media Items",
                     list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.title || "New Media Item",
+                      }),
+                    },
                     fields: [
                       {
                         type: "string",
@@ -818,6 +880,11 @@ export default defineConfig({
                     name: "logos",
                     label: "Logos",
                     list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.alt || "New Logo",
+                      }),
+                    },
                     fields: [
                       {
                         type: "image",
@@ -861,6 +928,11 @@ export default defineConfig({
                     name: "items",
                     label: "Carousel Items",
                     list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.title || "New Slide",
+                      }),
+                    },
                     fields: [
                       {
                         type: "string",
@@ -882,6 +954,137 @@ export default defineConfig({
                         type: "string",
                         name: "imageAlt",
                         label: "Image Alt Text",
+                      },
+                    ],
+                  },
+                ],
+              },
+              /* ── Work Carousel ───────────────────────── */
+              {
+                name: "workCarousel",
+                label: "Work Carousel",
+                fields: [
+                  {
+                    type: "string",
+                    name: "sectionTitle",
+                    label: "Section Title",
+                  },
+                  {
+                    type: "boolean",
+                    name: "loop",
+                    label: "Loop",
+                  },
+                  {
+                    type: "boolean",
+                    name: "showArrows",
+                    label: "Show Navigation Arrows",
+                  },
+                  {
+                    type: "boolean",
+                    name: "showDots",
+                    label: "Show Dot Indicators",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Work Items",
+                    list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => {
+                        const ref = item?.work;
+                        if (!ref) return { label: "Select a work item" };
+                        const name = ref
+                          .replace(/^content\/work\//, "")
+                          .replace(/\.md$/, "")
+                          .replace(/-/g, " ");
+                        // Title-case each word
+                        const label = name
+                          .split(" ")
+                          .map(
+                            (w: string) =>
+                              w.charAt(0).toUpperCase() + w.slice(1)
+                          )
+                          .join(" ");
+                        return { label };
+                      },
+                    },
+                    fields: [
+                      {
+                        type: "reference",
+                        name: "work",
+                        label: "Work",
+                        collections: ["work"],
+                      },
+                    ],
+                  },
+                ],
+              },
+              /* ── Intro Section ───────────────────────── */
+              {
+                name: "introSection",
+                label: "Intro Section",
+                fields: [
+                  {
+                    type: "string",
+                    name: "heading",
+                    label: "Heading",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "paragraphs",
+                    label: "Paragraphs",
+                    list: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                ],
+              },
+              /* ── Accordion FAQ ────────────────────────── */
+              {
+                name: "accordionFAQ",
+                label: "Accordion FAQ",
+                fields: [
+                  {
+                    type: "string",
+                    name: "sectionTitle",
+                    label: "Section Title",
+                  },
+                  {
+                    type: "string",
+                    name: "sectionSubtitle",
+                    label: "Section Subtitle",
+                  },
+                  {
+                    type: "boolean",
+                    name: "allowMultiple",
+                    label: "Allow Multiple Open",
+                    description: "Let users open multiple FAQ items at once",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "FAQ Items",
+                    list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.question || "New FAQ",
+                      }),
+                    },
+                    fields: [
+                      {
+                        type: "string",
+                        name: "question",
+                        label: "Question",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "answer",
+                        label: "Answer",
+                        required: true,
+                        ui: { component: "textarea" },
                       },
                     ],
                   },

@@ -23,7 +23,7 @@ export const Default: Story = {
   name: "Default",
   decorators: [
     (Story) => (
-      <div style={{ height: "100vh" }}>
+      <div className="h-screen">
         <Story />
       </div>
     ),
@@ -39,7 +39,7 @@ export const Mobile: Story = {
   },
   decorators: [
     (Story) => (
-      <div style={{ height: "100vh" }}>
+      <div className="h-screen">
         <Story />
       </div>
     ),

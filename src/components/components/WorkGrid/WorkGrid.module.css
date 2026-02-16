@@ -66,21 +66,19 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 20rem;
+  min-height: 26rem;
   padding: 1.75rem;
-  border-radius: 1rem;
+  border-radius: var(--comp-work-card-radius);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--comp-work-card-surface);
   overflow: hidden;
   transition:
-    background-color 400ms ease,
-    border-color 400ms ease,
-    transform 400ms ease;
+    border-color var(--comp-work-card-duration) var(--comp-work-card-ease),
+    transform var(--comp-work-card-duration) var(--comp-work-card-ease);
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--comp-work-card-stroke);
   transform: translateY(-2px);
 }
 
@@ -94,6 +92,10 @@
   transform: scale(1.05);
 }
 
+.card:hover :global(.work-card-glow) {
+  opacity: 1;
+}
+
 /* ── Card scrim (gradient over image) ─────────── */
 
 .cardScrim {
@@ -102,12 +104,33 @@
   z-index: 1;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.15) 0%,
-    rgba(0, 0, 0, 0.5) 40%,
-    rgba(0, 0, 0, 0.85) 70%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.85) 80%,
     rgba(0, 0, 0, 0.95) 100%
   );
   pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--comp-work-card-duration) var(--comp-work-card-ease);
+}
+
+.card:hover .cardScrim {
+  opacity: 1;
+}
+
+/* ── Card content (title + description) ─────────── */
+
+.cardContent {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--comp-work-card-duration) var(--comp-work-card-ease),
+    transform var(--comp-work-card-duration) var(--comp-work-card-ease);
+}
+
+.card:hover .cardContent {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ── Card arrow ───────────────────────────────── */
@@ -123,18 +146,15 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-gray-3);
-  transition:
-    background-color 300ms ease,
-    border-color 300ms ease,
-    color 300ms ease;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  color: var(--comp-work-card-icon);
+  opacity: 0;
+  transition: opacity 300ms var(--comp-work-card-ease);
 }
 
 .card:hover .cardArrow {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold);
-  color: var(--color-black);
+  opacity: 1;
 }
 
 /* ── Reveal animation ─────────────────────────── */

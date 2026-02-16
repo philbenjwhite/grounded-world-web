@@ -16,21 +16,18 @@
 
 .card {
   transition:
-    background var(--bento-duration) var(--bento-ease),
-    border-color var(--bento-duration) var(--bento-ease),
-    box-shadow var(--bento-duration) var(--bento-ease);
+    background-color var(--bento-duration) var(--bento-ease),
+    border-color var(--bento-duration) var(--bento-ease);
 }
 
 .card:hover {
-  background: rgba(255, 255, 255, 0.045);
+  background-color: rgba(255, 255, 255, 0.045);
   border-color: color-mix(in srgb, var(--item-color) 15%, transparent);
-  box-shadow: 0 0 24px color-mix(in srgb, var(--item-color) 6%, transparent);
 }
 
 .card[data-active="true"] {
   border-color: color-mix(in srgb, var(--item-color) 25%, transparent);
-  box-shadow: 0 0 40px color-mix(in srgb, var(--item-color) 8%, transparent);
-  background: rgba(255, 255, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 /* ── Card glow ──────────────────────────────────── */
@@ -39,10 +36,11 @@
   opacity: 0;
   background: radial-gradient(
     ellipse at 50% 100%,
-    color-mix(in srgb, var(--item-color) 12%, transparent),
+    color-mix(in srgb, var(--item-color) 14%, transparent),
     transparent 70%
   );
   transition: opacity var(--bento-duration) var(--bento-ease);
+  will-change: opacity;
 }
 
 .card:hover .cardGlow,
@@ -83,25 +81,24 @@
 
 .mobileCard {
   transition:
-    background var(--bento-duration) var(--bento-ease),
-    border-color var(--bento-duration) var(--bento-ease),
-    box-shadow var(--bento-duration) var(--bento-ease);
+    background-color var(--bento-duration) var(--bento-ease),
+    border-color var(--bento-duration) var(--bento-ease);
 }
 
 .mobileCard[data-active="true"] {
   border-color: color-mix(in srgb, var(--item-color) 25%, transparent);
-  box-shadow: 0 0 32px color-mix(in srgb, var(--item-color) 8%, transparent);
-  background: rgba(255, 255, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 .mobileGlow {
   opacity: 0;
   background: radial-gradient(
     ellipse at 50% 100%,
-    color-mix(in srgb, var(--item-color) 12%, transparent),
+    color-mix(in srgb, var(--item-color) 14%, transparent),
     transparent 70%
   );
   transition: opacity var(--bento-duration) var(--bento-ease);
+  will-change: opacity;
 }
 
 .mobileCard[data-active="true"] .mobileGlow {

@@ -1,18 +1,22 @@
-import client from "../../../tina/server-client";
-import HeroBanner from "@/components/components/HeroBanner";
-import WorkGrid from "@/components/components/WorkGrid";
+import serverClient from "../../../tina/server-client";
 import type { WorkItem } from "@/components/components/WorkGrid";
+import OurWorkClientPage from "./client-page";
 
 export default async function OurWorkPage() {
-  let items: WorkItem[] = [];
+  /* Fetch page content (heroBanner config) from TinaCMS */
+  const pageResult = await serverClient.queries.page({
+    relativePath: "our-work.json",
+  });
 
+  /* Fetch work items from TinaCMS work collection */
+  let workItems: WorkItem[] = [];
   try {
-    const response = await client.queries.workConnection({
+    const response = await serverClient.queries.workConnection({
       sort: "date",
       first: 100,
     });
 
-    items = [...(response.data.workConnection.edges ?? [])]
+    workItems = [...(response.data.workConnection.edges ?? [])]
       .sort((a, b) => {
         const dateA = a?.node?.date ? new Date(a.node.date).getTime() : 0;
         const dateB = b?.node?.date ? new Date(b.node.date).getTime() : 0;
@@ -37,16 +41,11 @@ export default async function OurWorkPage() {
   }
 
   return (
-    <div className="min-h-screen bg-(--background) text-white">
-      <HeroBanner
-        backgroundType="canvas"
-        title="Our Work"
-        overlayOpacity="light"
-        contentAlign="center"
-        minHeight="medium"
-      />
-
-      <WorkGrid items={items} />
-    </div>
+    <OurWorkClientPage
+      query={pageResult.query}
+      variables={pageResult.variables as { relativePath: string }}
+      data={pageResult.data}
+      workItems={workItems}
+    />
   );
 }

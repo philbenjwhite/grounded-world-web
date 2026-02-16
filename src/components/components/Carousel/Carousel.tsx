@@ -1,8 +1,11 @@
 'use client';
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import cn from 'classnames';
+import { ArrowUpRight } from '@phosphor-icons/react';
+import CarouselPagination from '@/components/atoms/CarouselPagination';
+import styles from './Carousel.module.css';
 
 export interface CarouselItem {
   id: string;
@@ -28,6 +31,7 @@ export interface CarouselProps {
 
 const TWEEN_FACTOR = 0.3;
 const MIN_SCALE = 0.6;
+const MIN_OPACITY = 0.4;
 
 const Carousel = ({
   items,
@@ -43,7 +47,7 @@ const Carousel = ({
     containScroll: false,
   });
 
-  const [tweenValues, setTweenValues] = useState<number[]>([]);
+  const slidesRef = useRef<HTMLDivElement[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -70,13 +74,14 @@ const Carousel = ({
     setCanScrollNext(emblaApi.canScrollNext());
   }, [emblaApi]);
 
+  /* Apply tween directly to DOM — avoids React re-renders per frame */
   const onScroll = useCallback(() => {
     if (!emblaApi) return;
 
     const engine = emblaApi.internalEngine();
     const scrollProgress = emblaApi.scrollProgress();
 
-    const values = emblaApi.scrollSnapList().map((scrollSnap, index) => {
+    emblaApi.scrollSnapList().forEach((scrollSnap, index) => {
       let diffToTarget = scrollSnap - scrollProgress;
 
       if (engine.options.loop) {
@@ -91,10 +96,16 @@ const Carousel = ({
       }
 
       const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
-      return Math.max(MIN_SCALE, Math.min(1, tweenValue));
-    });
+      const scale = Math.max(MIN_SCALE, Math.min(1, tweenValue));
+      const opacity = MIN_OPACITY + ((scale - MIN_SCALE) / (1 - MIN_SCALE)) * (1 - MIN_OPACITY);
 
-    setTweenValues(values);
+      const slideNode = slidesRef.current[index];
+      if (!slideNode) return;
+      slideNode.style.transform = `scale(${scale})`;
+
+      const cardNode = slideNode.firstElementChild as HTMLElement | null;
+      if (cardNode) cardNode.style.opacity = String(opacity);
+    });
   }, [emblaApi]);
 
   useEffect(() => {
@@ -125,30 +136,28 @@ const Carousel = ({
 
   return (
     <div className={cn('relative', className)}>
-      {/* Carousel viewport */}
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex touch-pan-y">
+      {/* Carousel viewport — py/negative-my gives hover-scale breathing room */}
+      <div className="overflow-hidden py-6 -my-6" ref={emblaRef}>
+        <div className="flex touch-pan-y -ml-4">
           {items.map((item, index) => {
-            const scale = tweenValues[index] ?? 1;
             const isCenter = index === selectedIndex;
 
             return (
               <div
                 key={item.id}
-                className="flex-[0_0_60%] min-w-0 pl-4 first:pl-0"
-                style={{
-                  transform: `scale(${scale})`,
-                  transition: 'transform 0.2s ease-out',
-                }}
+                ref={(el) => { if (el) slidesRef.current[index] = el; }}
+                className={cn(styles.slide, 'min-w-0 pl-4')}
               >
                 <div
+                  data-active={isCenter || undefined}
                   className={cn(
-                    'rounded-[var(--comp-media-section-item-radius)]',
-                    'bg-[var(--comp-media-section-item-surface)]',
+                    styles.card,
+                    'work-card-hover',
+                    'rounded-[var(--comp-work-card-radius)]',
+                    'bg-[var(--comp-work-card-surface)]',
                     'overflow-hidden',
                     'aspect-video',
-                    'transition-opacity duration-200',
-                    isCenter ? 'opacity-100 cursor-pointer' : 'opacity-60'
+                    isCenter && 'cursor-pointer'
                   )}
                   onClick={isCenter ? () => onItemClick?.(item) : undefined}
                   role={isCenter ? 'button' : undefined}
@@ -165,11 +174,31 @@ const Carousel = ({
                     <img
                       src={item.imageUrl}
                       alt={item.imageAlt ?? item.title ?? ''}
-                      className="w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full" />
+                    <div className="absolute inset-0 w-full h-full" />
                   )}
+
+                  {/* Gradient scrim for text legibility */}
+                  <div className={cn(styles.cardScrim, 'absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black/80')} />
+
+                  {/* Amber glow overlay */}
+                  <div className="work-card-glow" />
+
+                  {/* Title text — bottom left */}
+                  {item.title && (
+                    <div className={cn(styles.cardTitle, 'absolute bottom-5 left-5 z-10')}>
+                      <h3 className="text-lg font-bold leading-snug text-[var(--font-color-primary)]">
+                        {item.title}
+                      </h3>
+                    </div>
+                  )}
+
+                  {/* Arrow icon — top right */}
+                  <span className="work-card-arrow absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm">
+                    <ArrowUpRight size={18} weight="bold" />
+                  </span>
                 </div>
               </div>
             );
@@ -250,21 +279,12 @@ const Carousel = ({
 
       {/* Dot indicators */}
       {showDots && (
-        <div className="flex justify-center gap-2 mt-4">
-          {items.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollTo(index)}
-              className={cn(
-                'w-2 h-2 rounded-full transition-all',
-                index === selectedIndex
-                  ? 'bg-[var(--color-cyan)] w-4'
-                  : 'bg-[var(--color-gray-4)] hover:bg-[var(--color-gray-3)]'
-              )}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
+        <CarouselPagination
+          total={items.length}
+          activeIndex={selectedIndex}
+          onSelect={scrollTo}
+          className="mt-6"
+        />
       )}
     </div>
   );

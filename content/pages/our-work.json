@@ -1,0 +1,14 @@
+{
+  "title": "Our Work",
+  "slug": "our-work",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "canvas",
+      "title": "Our Work",
+      "overlayOpacity": "light",
+      "contentAlign": "center",
+      "minHeight": "medium"
+    }
+  ]
+}
