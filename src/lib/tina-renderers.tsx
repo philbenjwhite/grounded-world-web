@@ -20,19 +20,28 @@ import Container from "@/components/layout/Container";
 import ImageBlock from "@/components/atoms/Image";
 import Button from "@/components/atoms/Button";
 import Heading from "@/components/atoms/Heading";
+import Text from "@/components/atoms/Text";
 import SectionLabel from "@/components/atoms/SectionLabel";
 import type { HeadingLevel } from "@/components/atoms/Heading/Heading";
 
-/* ─── Rich-text heading components ────────────────────── */
+/* ─── Rich-text rendering components ─────────────────── */
 
-export const richTextComponents = Object.fromEntries(
-  ([1, 2, 3, 4, 5, 6] as HeadingLevel[]).map((level) => [
-    `h${level}`,
-    (props: { children: React.ReactNode }) => (
-      <Heading level={level}>{props.children}</Heading>
-    ),
-  ]),
-);
+export const richTextComponents = {
+  ...Object.fromEntries(
+    ([1, 2, 3, 4, 5, 6] as HeadingLevel[]).map((level) => [
+      `h${level}`,
+      (props: { children: React.ReactNode }) => (
+        <Heading level={level} className="mb-6">{props.children}</Heading>
+      ),
+    ]),
+  ),
+  p: (props: { children?: React.ReactNode }) => (
+    <Text size="body-lg" color="secondary" className="mb-4">
+      {props.children}
+    </Text>
+  ),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+} as any;
 
 /* ─── Slot block renderer (splitLayout inner blocks) ──── */
 
@@ -44,7 +53,7 @@ export function renderSlotBlock(
     case "PageSectionsSplitLayoutLeftRichText":
     case "PageSectionsSplitLayoutRightRichText":
       return block.body ? (
-        <div key={index} className="prose prose-invert max-w-none">
+        <div key={index}>
           <TinaMarkdown content={block.body} components={richTextComponents} />
         </div>
       ) : null;
