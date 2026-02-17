@@ -58,33 +58,7 @@
       "left": [
         {
           "_template": "richText",
-          "body": {
-            "type": "root",
-            "children": [
-              {
-                "type": "h2",
-                "children": [{ "type": "text", "text": "Meet the Founders" }]
-              },
-              {
-                "type": "p",
-                "children": [
-                  {
-                    "type": "text",
-                    "text": "We believe every business can drive exponential transformation when grounded in purpose and profit. Making money and making a difference aren\u2019t competing forces \u2014 by solving the world\u2019s biggest problems, we unlock its biggest opportunities."
-                  }
-                ]
-              },
-              {
-                "type": "p",
-                "children": [
-                  {
-                    "type": "text",
-                    "text": "So we left global agency life in 2018 and started our own social innovation and boutique marketing agency to do exactly that."
-                  }
-                ]
-              }
-            ]
-          }
+          "body": "## Meet the Founders\n\nWe believe every business can drive exponential transformation when grounded in purpose and profit. Making money and making a difference aren\u2019t competing forces \u2014 by solving the world\u2019s biggest problems, we unlock its biggest opportunities.\n\nSo we left global agency life in 2018 and started our own social innovation and boutique marketing agency to do exactly that."
         },
         {
           "_template": "buttonGroup",
