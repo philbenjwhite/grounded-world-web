@@ -1,0 +1,196 @@
+{
+  "title": "Market Research Agency",
+  "slug": "market-research",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "image",
+      "imageSrc": "/images/services/market-research-hero-umbrellas.jpg",
+      "imageAlt": "Colorful umbrellas symbolizing diverse market perspectives",
+      "title": "Close the Intention-Action Gap",
+      "subtitle": "Your sustainability investments aren't landing. We find out why — and what to do about it.",
+      "ctaLabel": "Try The Workshop",
+      "ctaHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "ctaVariant": "solid",
+      "secondaryCtaLabel": "Learn More",
+      "secondaryCtaHref": "#our-process",
+      "overlayOpacity": "heavy",
+      "contentAlign": "center",
+      "minHeight": "large",
+      "bottomFade": false
+    },
+    {
+      "_template": "introSection",
+      "heading": "Research That Moves the Needle",
+      "paragraphs": [
+        "Most brands know they need to invest in sustainability and social impact. But too often, these investments don't translate into business traction — the message doesn't land, the audience doesn't shift, and the gap between intention and action grows wider.",
+        "Our market research practice is built to close that gap. Through a rigorous three-stage process, we uncover where your brand really stands, map the ecosystem of stakeholders and influences around you, and quantify the barriers and drivers that determine whether people act on their intentions."
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 1",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## Finding the Gaps\n\nEvery engagement starts with our 4C Landscape Assessment — a structured audit of your **culture, category, consumer, and competitor** landscape.\n\nWe map the qualitative gaps between where your brand is and where it needs to be. This isn't surface-level desk research — it's a deep, strategic read of your operating environment that surfaces the real disconnects holding you back."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Book a Discovery Call",
+              "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+              "variant": "outline",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/services/market-research-landscape-gaps.jpg",
+          "alt": "4C landscape assessment diagram showing culture, category, consumer, and competitor gaps",
+          "rounded": true
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 2",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/services/market-research-ecosystem-mapping.jpg",
+          "alt": "Ecosystem mapping visualization showing stakeholder connections and influence networks",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## Mapping the Ecosystem\n\nWith gaps identified, we go deeper. Through **stakeholder interviews, focus groups, and ethnographic research**, we build a rich picture of the people, forces, and dynamics shaping your market.\n\nOur resident AI tool, Gaia, helps us synthesize vast qualitative datasets at speed — while our researchers bring the human nuance that machines miss. The result: a clear map of opportunities and a defensible go-to-market position."
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 3",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## Quantification\n\nInsight without evidence doesn't move boardrooms. In the final stage, we deploy **Implicit Association Testing (IAT)** to measure the unconscious barriers and drivers behind consumer behaviour.\n\nThis isn't opinion polling — it's behavioural science. We prioritise the factors that actually determine whether people act, and distil them into a single \"propelling problem\" your brand is uniquely positioned to solve."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "See Our Work",
+              "href": "/our-work",
+              "variant": "secondary",
+              "external": false
+            }
+          ]
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/services/market-research-quantification-chart.jpg",
+          "alt": "Quantification chart showing implicit association testing results and barrier-driver analysis",
+          "rounded": true
+        }
+      ]
+    },
+    {
+      "_template": "featureCards",
+      "sectionLabel": "What You Get",
+      "heading": "Research Deliverables",
+      "columns": 3,
+      "items": [
+        {
+          "icon": "Target",
+          "color": "#4DD9FF",
+          "title": "Strategic Reports",
+          "body": "Clear, actionable reports that translate complex research into strategic recommendations your team can act on immediately."
+        },
+        {
+          "icon": "ChartLineUp",
+          "color": "#FF08CC",
+          "title": "Data Dashboards",
+          "body": "Interactive dashboards that visualise your market landscape, competitive positioning, and consumer sentiment in real time."
+        },
+        {
+          "icon": "Users",
+          "color": "#FFA603",
+          "title": "Leadership Workshops",
+          "body": "Facilitated sessions that align your leadership team around research findings and build consensus on the path forward."
+        }
+      ]
+    },
+    {
+      "_template": "accordionFAQ",
+      "sectionTitle": "Frequently Asked Questions",
+      "sectionSubtitle": "Everything you need to know about our market research process.",
+      "items": [
+        {
+          "question": "What does the 4C Landscape Assessment include?",
+          "answer": "The assessment covers four dimensions: Culture (internal values and external societal trends), Category (market dynamics and emerging opportunities), Consumer (audience behaviours, needs, and unmet demands), and Competitor (positioning, messaging, and whitespace analysis). It's a comprehensive strategic foundation, not a surface-level audit."
+        },
+        {
+          "question": "How do you identify the intention-action gap?",
+          "answer": "We combine qualitative research (interviews, ethnographies, focus groups) with quantitative validation (Implicit Association Testing). This dual approach reveals not just what people say they'll do, but what actually drives — or blocks — their behaviour. The gap between stated intention and real action is where the biggest opportunities live."
+        },
+        {
+          "question": "Is the research AI-led or human-led?",
+          "answer": "Both. Our AI tool Gaia accelerates qualitative data synthesis — processing interview transcripts, identifying patterns across large datasets, and flagging emerging themes at speed. But every insight is validated and contextualised by our research team. AI handles volume; humans handle nuance."
+        },
+        {
+          "question": "How are stakeholders involved in the process?",
+          "answer": "Stakeholder involvement is central to Stage 2. We design and facilitate interviews and focus groups with key internal and external stakeholders — from C-suite leadership to frontline teams to external partners. This ensures the research reflects real-world dynamics, not just assumptions."
+        },
+        {
+          "question": "What's the typical timeline?",
+          "answer": "Most engagements run 2 to 6 weeks depending on scope. A single-market sprint can be completed in as little as 2 weeks. Multi-market or enterprise-scale projects with extensive stakeholder mapping typically take 4 to 6 weeks. We'll scope the timeline precisely during your discovery call."
+        },
+        {
+          "question": "Do you benchmark against competitors?",
+          "answer": "Yes. Competitor analysis is a core part of the 4C assessment. We go beyond surface-level comparisons — we analyse messaging, positioning, sustainability claims, audience perception, and whitespace opportunities. The goal is to find where your brand can credibly differentiate."
+        },
+        {
+          "question": "Can this work for a single market or does it need to be enterprise-scale?",
+          "answer": "Both. Our methodology scales to fit. We work with startups validating a single market entry through to global enterprises mapping stakeholder ecosystems across multiple regions. The framework is the same; the depth and breadth flex to match your needs."
+        },
+        {
+          "question": "How is Implicit Association Testing (IAT) validated?",
+          "answer": "IAT is a well-established behavioural science methodology used in academic research for decades. We apply it in a commercial context to measure unconscious associations and biases that traditional surveys miss. Results are statistically validated and triangulated against our qualitative findings for maximum reliability."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
+      "backgroundAlt": "Stockholm metro station with atmospheric escalators",
+      "heading": "It's time to get grounded",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/about#contact",
+      "secondaryLabel": "Book a Discovery Call",
+      "secondaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "overlayOpacity": "heavy",
+      "className": "px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
+    }
+  ]
+}
