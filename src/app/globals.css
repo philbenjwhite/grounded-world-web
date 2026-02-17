@@ -105,16 +105,16 @@
   --comp-work-card-ease: cubic-bezier(0.4, 0, 0.2, 1);
   --comp-work-card-duration: 400ms;
 
-  /* Layout (Desktop — default) */
-  --layout-breakpoint: 1440px;
+  /* Layout (Desktop ≥1024px — default) */
+  --layout-breakpoint: 1280px;
   --layout-body-padding-x: var(--size-0);
   --layout-body-padding-y: var(--size-0);
   --layout-column-gap-x: var(--size-0);
   --layout-column-gap-y: var(--size-0);
   --layout-nav-padding-x: var(--size-0);
   --layout-nav-padding-y: var(--size-0);
-  --layout-section-padding-x: var(--size-24);
-  --layout-section-padding-y: var(--size-24);
+  --layout-section-padding-x: var(--size-40);
+  --layout-section-padding-y: var(--size-96);
   --layout-section-gap: var(--size-32);
   --layout-card-padding-x: var(--size-0);
   --layout-card-padding-y: var(--size-0);
@@ -164,29 +164,33 @@
 }
 
 /* ============================================
-   Layout (Mobile — 390px breakpoint)
+   Layout (Tablet — ≤1023px)
+   ============================================ */
+@media (max-width: 1023px) {
+  :root {
+    --layout-section-padding-x: var(--size-32);
+    --layout-section-padding-y: var(--size-64);
+  }
+}
+
+/* ============================================
+   Layout (Mobile — ≤767px)
+   ============================================ */
+@media (max-width: 767px) {
+  :root {
+    --layout-section-padding-x: var(--size-24);
+    --layout-section-padding-y: var(--size-48);
+  }
+}
+
+/* ============================================
+   Layout (Small mobile — ≤390px)
    ============================================ */
 @media (max-width: 390px) {
   :root {
     --layout-breakpoint: 390px;
-    --layout-body-padding-x: var(--size-0);
-    --layout-body-padding-y: var(--size-0);
-    --layout-column-gap-x: var(--size-0);
-    --layout-column-gap-y: var(--size-0);
-    --layout-nav-padding-x: var(--size-0);
-    --layout-nav-padding-y: var(--size-0);
     --layout-section-padding-x: var(--size-16);
-    --layout-section-padding-y: var(--size-0);
-    --layout-section-gap: var(--size-0);
-    --layout-card-padding-x: var(--size-0);
-    --layout-card-padding-y: var(--size-0);
-    --layout-button-padding-x: var(--size-0);
-    --layout-button-padding-y: var(--size-0);
-    --layout-button-gap: var(--size-0);
-    --layout-button-button-gap: var(--size-0);
-    --layout-tab-padding-x: var(--size-0);
-    --layout-tab-padding-y: var(--size-0);
-    --layout-tab-tab-gap: var(--size-0);
+    --layout-section-padding-y: var(--size-32);
   }
 }
 
@@ -310,18 +314,6 @@ body {
   animation-delay: var(--reveal-delay, 0s);
 }
 
-/* Split layout component */
-.split-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--split-gap, 2rem);
-}
-
-@media (min-width: 1024px) {
-  .split-layout {
-    grid-template-columns: var(--split-cols, 1fr 1fr);
-  }
-}
 
 /* ============================================
    Shared work-card hover effect

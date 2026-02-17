@@ -10,7 +10,7 @@ export interface ContainerProps {
 
 const Container = ({ children, className }: ContainerProps) => {
   return (
-    <div className={cn("max-w-[1440px] mx-auto w-full", className)}>
+    <div className={cn("max-w-[1280px] mx-auto w-full", className)}>
       {children}
     </div>
   );

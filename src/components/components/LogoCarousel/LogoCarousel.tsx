@@ -5,6 +5,7 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import cn from "classnames";
 import Section from "../../layout/Section";
+import Container from "../../layout/Container";
 import styles from "./LogoCarousel.module.css";
 
 export interface LogoItem {
@@ -44,29 +45,31 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({
 }) => {
   return (
     <Section className="!py-12 md:!py-16">
-      <Marquee
-        speed={speed}
-        gradient
-        gradientColor="#0a0a0a"
-        gradientWidth={120}
-        autoFill
-        className={cn("group", styles.marquee)}
-      >
-        {logos.map((logo) => (
-          <div key={logo.alt} className="mx-5 md:mx-8 flex items-center">
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={160}
-              height={60}
-              className={cn(
-                styles.logo,
-                "h-[60px] md:h-[80px] w-auto object-contain opacity-50 transition-opacity duration-300 ease-out group-hover:opacity-30 hover:!opacity-80",
-              )}
-            />
-          </div>
-        ))}
-      </Marquee>
+      <Container className="overflow-hidden">
+        <Marquee
+          speed={speed}
+          gradient
+          gradientColor="#0a0a0a"
+          gradientWidth={120}
+          autoFill
+          className={cn("group", styles.marquee)}
+        >
+          {logos.map((logo) => (
+            <div key={logo.alt} className="mx-5 md:mx-8 flex items-center">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={160}
+                height={60}
+                className={cn(
+                  styles.logo,
+                  "h-[60px] md:h-[80px] w-auto object-contain opacity-50 transition-opacity duration-300 ease-out group-hover:opacity-30 hover:!opacity-80",
+                )}
+              />
+            </div>
+          ))}
+        </Marquee>
+      </Container>
     </Section>
   );
 };

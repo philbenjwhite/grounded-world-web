@@ -18,26 +18,28 @@ export interface SplitProps {
   className?: string;
 }
 
-const ratioStyles: Record<string, string> = {
-  "50/50": "1fr 1fr",
-  "40/60": "2fr 3fr",
-  "60/40": "3fr 2fr",
-  "30/70": "3fr 7fr",
-  "70/30": "7fr 3fr",
+// Tailwind arbitrary grid-template-columns applied at lg breakpoint (stacks on mobile)
+const ratioClasses: Record<string, string> = {
+  "50/50": "lg:grid-cols-[1fr_1fr]",
+  "40/60": "lg:grid-cols-[2fr_3fr]",
+  "60/40": "lg:grid-cols-[3fr_2fr]",
+  "30/70": "lg:grid-cols-[3fr_7fr]",
+  "70/30": "lg:grid-cols-[7fr_3fr]",
 };
 
-const gapValues: Record<string, string> = {
-  none: "0",
-  sm: "1rem",
-  md: "2rem",
-  lg: "3rem",
-  xl: "4rem",
+// Tailwind gap utilities — values match the spacing scale exactly
+const gapClasses: Record<string, string> = {
+  none: "gap-0",
+  sm:   "gap-6",   // 1.5rem
+  md:   "gap-10",  // 2.5rem
+  lg:   "gap-16",  // 4rem
+  xl:   "gap-24",  // 6rem
 };
 
 const alignClasses: Record<string, string> = {
-  start: "items-start",
-  center: "items-center",
-  end: "items-end",
+  start:   "items-start",
+  center:  "items-center",
+  end:     "items-end",
   stretch: "items-stretch",
 };
 
@@ -52,13 +54,13 @@ const Split = ({
 }: SplitProps) => {
   return (
     <div
-      className={cn("split-layout", alignClasses[align], className)}
-      style={
-        {
-          "--split-cols": ratioStyles[ratio],
-          "--split-gap": gapValues[gap],
-        } as React.CSSProperties
-      }
+      className={cn(
+        "grid grid-cols-1",
+        ratioClasses[ratio],
+        gapClasses[gap],
+        alignClasses[align],
+        className,
+      )}
     >
       <div className={cn({ "order-2 lg:order-1": reverseOnMobile })}>
         {left}

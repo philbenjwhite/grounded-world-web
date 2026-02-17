@@ -178,7 +178,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 
   return (
     <>
-    <div className="relative w-full p-4 md:p-6 bg-(--background)">
+    <div className="relative w-full p-4 md:p-6 xl:p-8 bg-(--background)">
     <section
       className={cn(
         "relative w-full overflow-hidden rounded-3xl",
@@ -254,7 +254,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
       <div
         className={cn(
           "relative z-20 flex flex-col justify-center",
-          "px-6 md:px-12 lg:px-24",
+          "px-6 md:px-12 lg:px-24 xl:px-32",
           minHeight === "fit" ? "py-12 md:py-16 lg:py-20" : minHeightClasses[minHeight],
           effectiveAlign === "center"
             ? "items-center text-center"
