@@ -1,0 +1,46 @@
+import {
+  MagnifyingGlassIcon,
+  CompassIcon,
+  ChartLineUpIcon,
+  LightningIcon,
+  GlobeIcon,
+  UsersIcon,
+  MegaphoneIcon,
+  TargetIcon,
+  LightbulbIcon,
+  RocketIcon,
+  TrophyIcon,
+  LeafIcon,
+  type IconProps,
+} from "@phosphor-icons/react";
+
+export const iconMap: Record<string, React.ComponentType<IconProps>> = {
+  MagnifyingGlass: MagnifyingGlassIcon,
+  Compass: CompassIcon,
+  ChartLineUp: ChartLineUpIcon,
+  Lightning: LightningIcon,
+  Globe: GlobeIcon,
+  Users: UsersIcon,
+  Megaphone: MegaphoneIcon,
+  Target: TargetIcon,
+  Lightbulb: LightbulbIcon,
+  Rocket: RocketIcon,
+  Trophy: TrophyIcon,
+  Leaf: LeafIcon,
+};
+
+/** Dropdown options for TinaCMS icon fields */
+export const iconOptions = [
+  { value: "MagnifyingGlass", label: "Magnifying Glass" },
+  { value: "Compass", label: "Compass" },
+  { value: "Lightning", label: "Lightning" },
+  { value: "ChartLineUp", label: "Chart Line Up" },
+  { value: "Globe", label: "Globe" },
+  { value: "Users", label: "Users" },
+  { value: "Megaphone", label: "Megaphone" },
+  { value: "Target", label: "Target" },
+  { value: "Lightbulb", label: "Lightbulb" },
+  { value: "Rocket", label: "Rocket" },
+  { value: "Trophy", label: "Trophy" },
+  { value: "Leaf", label: "Leaf" },
+];

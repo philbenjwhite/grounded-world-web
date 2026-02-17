@@ -51,6 +51,65 @@ const innerImageTemplate = {
   ],
 };
 
+const innerButtonGroupTemplate = {
+  name: "buttonGroup" as const,
+  label: "Button Group",
+  fields: [
+    {
+      type: "object" as const,
+      name: "buttons",
+      label: "Buttons",
+      list: true,
+      ui: {
+        itemProps: (item: Record<string, string>) => ({
+          label: item?.label || "New Button",
+        }),
+      },
+      fields: [
+        {
+          type: "string" as const,
+          name: "label",
+          label: "Label",
+          required: true,
+        },
+        {
+          type: "string" as const,
+          name: "href",
+          label: "Link",
+          required: true,
+        },
+        {
+          type: "string" as const,
+          name: "variant",
+          label: "Style",
+          options: ["primary", "secondary", "outline"],
+        },
+        {
+          type: "boolean" as const,
+          name: "external",
+          label: "Open in New Tab",
+        },
+      ],
+    },
+  ],
+};
+
+/* Icon options for Phosphor icon picker fields */
+const iconOptions = [
+  { value: "MagnifyingGlass", label: "Magnifying Glass" },
+  { value: "Compass", label: "Compass" },
+  { value: "Lightning", label: "Lightning" },
+  { value: "ChartLineUp", label: "Chart Line Up" },
+  { value: "Globe", label: "Globe" },
+  { value: "Users", label: "Users" },
+  { value: "Megaphone", label: "Megaphone" },
+  { value: "Target", label: "Target" },
+  { value: "Lightbulb", label: "Lightbulb" },
+  { value: "Rocket", label: "Rocket" },
+  { value: "Trophy", label: "Trophy" },
+  { value: "Leaf", label: "Leaf" },
+];
+
 export default defineConfig({
   // Use local content API when running locally
   contentApiUrlOverride: isLocal ? "/api/tina/gql" : undefined,
@@ -133,18 +192,7 @@ export default defineConfig({
             label: "Icon",
             required: true,
             description: "Phosphor icon name",
-            options: [
-              { value: "MagnifyingGlass", label: "Magnifying Glass (Research)" },
-              { value: "Compass", label: "Compass (Strategy)" },
-              { value: "Lightning", label: "Lightning (Activation)" },
-              { value: "ChartLineUp", label: "Chart Line Up (Impact)" },
-              { value: "Globe", label: "Globe" },
-              { value: "Users", label: "Users" },
-              { value: "Megaphone", label: "Megaphone" },
-              { value: "Target", label: "Target" },
-              { value: "Lightbulb", label: "Lightbulb" },
-              { value: "Rocket", label: "Rocket" },
-            ],
+            options: iconOptions,
           },
           {
             type: "number",
@@ -745,18 +793,7 @@ export default defineConfig({
                         type: "string",
                         name: "icon",
                         label: "Icon",
-                        options: [
-                          { value: "MagnifyingGlass", label: "Magnifying Glass" },
-                          { value: "Compass", label: "Compass" },
-                          { value: "Lightning", label: "Lightning" },
-                          { value: "ChartLineUp", label: "Chart Line Up" },
-                          { value: "Globe", label: "Globe" },
-                          { value: "Users", label: "Users" },
-                          { value: "Megaphone", label: "Megaphone" },
-                          { value: "Target", label: "Target" },
-                          { value: "Lightbulb", label: "Lightbulb" },
-                          { value: "Rocket", label: "Rocket" },
-                        ],
+                        options: iconOptions,
                       },
                       {
                         type: "string",
@@ -1109,6 +1146,12 @@ export default defineConfig({
                 fields: [
                   {
                     type: "string",
+                    name: "sectionLabel",
+                    label: "Section Label",
+                    description: "Small uppercase label above the content",
+                  },
+                  {
+                    type: "string",
                     name: "ratio",
                     label: "Column Ratio",
                     options: ["50/50", "40/60", "60/40", "30/70", "70/30"],
@@ -1135,14 +1178,171 @@ export default defineConfig({
                     name: "left",
                     label: "Left Column",
                     list: true,
-                    templates: [innerRichTextTemplate, innerImageTemplate],
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate],
                   },
                   {
                     type: "object",
                     name: "right",
                     label: "Right Column",
                     list: true,
-                    templates: [innerRichTextTemplate, innerImageTemplate],
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate],
+                  },
+                ],
+              },
+              /* ── Feature Cards ─────────────────────────── */
+              {
+                name: "featureCards",
+                label: "Feature Cards",
+                fields: [
+                  {
+                    type: "string",
+                    name: "sectionLabel",
+                    label: "Section Label",
+                    description: "Small uppercase label above heading",
+                  },
+                  {
+                    type: "string",
+                    name: "heading",
+                    label: "Heading",
+                    required: true,
+                  },
+                  {
+                    type: "number",
+                    name: "columns",
+                    label: "Columns",
+                    description: "Number of columns (default: 3)",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Cards",
+                    list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.title || "New Card",
+                      }),
+                    },
+                    fields: [
+                      {
+                        type: "string",
+                        name: "icon",
+                        label: "Icon",
+                        options: iconOptions,
+                      },
+                      {
+                        type: "string",
+                        name: "color",
+                        label: "Color",
+                        required: true,
+                        ui: { component: "color" },
+                      },
+                      {
+                        type: "string",
+                        name: "title",
+                        label: "Title",
+                      },
+                      {
+                        type: "string",
+                        name: "body",
+                        label: "Body Text",
+                        ui: { component: "textarea" },
+                      },
+                    ],
+                  },
+                ],
+              },
+              /* ── Contact Section ───────────────────────── */
+              {
+                name: "contactSection",
+                label: "Contact Section",
+                fields: [
+                  {
+                    type: "string",
+                    name: "heading",
+                    label: "Heading",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "description",
+                    label: "Description",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "string",
+                    name: "bookingUrl",
+                    label: "Booking URL",
+                  },
+                  {
+                    type: "string",
+                    name: "bookingLabel",
+                    label: "Booking Button Label",
+                  },
+                  {
+                    type: "string",
+                    name: "email",
+                    label: "Contact Email",
+                  },
+                ],
+              },
+              /* ── CTA Banner ────────────────────────────── */
+              {
+                name: "ctaBanner",
+                label: "CTA Banner",
+                fields: [
+                  {
+                    type: "image",
+                    name: "backgroundSrc",
+                    label: "Background Image",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "backgroundAlt",
+                    label: "Background Alt Text",
+                  },
+                  {
+                    type: "string",
+                    name: "heading",
+                    label: "Heading",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "primaryLabel",
+                    label: "Primary Button Label",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "primaryHref",
+                    label: "Primary Button Link",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "secondaryLabel",
+                    label: "Secondary Button Label",
+                  },
+                  {
+                    type: "string",
+                    name: "secondaryHref",
+                    label: "Secondary Button Link",
+                  },
+                  {
+                    type: "string",
+                    name: "overlayOpacity",
+                    label: "Overlay Darkness",
+                    options: [
+                      { value: "light", label: "Light" },
+                      { value: "medium", label: "Medium" },
+                      { value: "heavy", label: "Heavy" },
+                    ],
+                  },
+                  {
+                    type: "string",
+                    name: "className",
+                    label: "Custom CSS Classes",
                   },
                 ],
               },

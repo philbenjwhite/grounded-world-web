@@ -63,3 +63,25 @@ TinaCMS configuration in `tina/config.ts` defines:
 - ESLint configuration uses Next.js and Storybook plugins
 - Built Storybook is served at `/storybook` in production
 - Design tokens should be used consistently across all components
+
+## Project Rules
+
+Before building or modifying any component, always check Storybook and the existing codebase first.
+
+### Component Usage
+- **Use existing components whenever possible.** Check Storybook for Atoms (Button, Heading, Text), Components (Carousel, HeroBanner, AccordionFAQ, etc.), and Layout primitives (Container, Grid, Section, Split) before creating anything new.
+- **Use existing layout and section patterns.** The project has Grid (Two Columns, Three Columns, Responsive Grid, Card Grid, etc.), Section (Default, With Container, Multiple Sections, As Div), and Split (various ratios, Image And Text, Reverse On Mobile) components — use these for page structure.
+- **If a new component is genuinely needed**, name it semantically and generically (e.g. `FeatureList` not `HomepageBlockThree`). Follow the naming conventions already established in Storybook.
+
+### Styling
+- **Use Tailwind utility classes** as the default approach.
+- **Check global CSS and existing design tokens** before writing new styles.
+- **No inline style tags.** Ever.
+- **Use CSS Modules only when Tailwind can't handle it** (complex animations, pseudo-element edge cases, etc.).
+- **Never duplicate styles** that already exist in global CSS or component-level stylesheets.
+
+### Workflow
+1. Look at Storybook and existing components first
+2. Reuse what exists — extend if needed
+3. Only create new components as a last resort
+4. Tailwind first → CSS Modules only if necessary

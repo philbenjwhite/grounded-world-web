@@ -3,19 +3,7 @@
 import React, { useState } from "react";
 import cn from "classnames";
 import Image from "next/image";
-import {
-  MagnifyingGlassIcon,
-  CompassIcon,
-  ChartLineUpIcon,
-  LightningIcon,
-  GlobeIcon,
-  UsersIcon,
-  MegaphoneIcon,
-  TargetIcon,
-  LightbulbIcon,
-  RocketIcon,
-  type IconProps,
-} from "@phosphor-icons/react";
+import { iconMap } from "@/lib/iconMap";
 import Button from "../../atoms/Button";
 import Heading from "../../atoms/Heading";
 import Text from "../../atoms/Text";
@@ -23,19 +11,6 @@ import Section from "../../layout/Section";
 import Container from "../../layout/Container";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import styles from "./ExpandingCardPanel.module.css";
-
-const iconMap: Record<string, React.ComponentType<IconProps>> = {
-  MagnifyingGlass: MagnifyingGlassIcon,
-  Compass: CompassIcon,
-  ChartLineUp: ChartLineUpIcon,
-  Lightning: LightningIcon,
-  Globe: GlobeIcon,
-  Users: UsersIcon,
-  Megaphone: MegaphoneIcon,
-  Target: TargetIcon,
-  Lightbulb: LightbulbIcon,
-  Rocket: RocketIcon,
-};
 
 /* ─── Types ──────────────────────────────────────────── */
 

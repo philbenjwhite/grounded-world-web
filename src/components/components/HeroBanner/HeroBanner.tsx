@@ -192,13 +192,15 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
         )}
       />
 
-      {/* ── Internal bottom fade (z-15) ── */}
-      <div
-        className={cn(
-          "absolute inset-x-0 bottom-0 z-[15] h-[35vh] pointer-events-none",
-          styles.canvasFade
-        )}
-      />
+      {/* ── Internal bottom fade (z-15) — canvas backgrounds only ── */}
+      {backgroundType === "canvas" && (
+        <div
+          className={cn(
+            "absolute inset-x-0 bottom-0 z-[15] h-[35vh] pointer-events-none",
+            styles.canvasFade
+          )}
+        />
+      )}
 
       {/* ── Content Layer (z-20) ──────────────────────── */}
       <div

@@ -1,29 +1,135 @@
 {
-  "title": "About",
+  "title": "About Us",
   "slug": "about",
   "sections": [
     {
-      "backgroundType": "image",
-      "title": "This is a headline",
-      "subtitle": "This is a subtitle",
-      "ctaLabel": "Get In Touch",
-      "ctaHref": "/contact",
+      "_template": "heroBanner",
+      "backgroundType": "vimeo",
+      "vimeoUrl": "https://vimeo.com/1001182665/5d97b5c38f",
+      "title": "Big Brand Muscle. Boutique Hustle.",
+      "subtitle": "B Corp certified, multi-award-winning boutique marketing agency activating purpose and accelerating impact.",
+      "ctaLabel": "Discovery Call",
+      "ctaHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
       "ctaVariant": "solid",
-      "secondaryCtaLabel": "Newsletter",
-      "secondaryCtaHref": "/newsletter",
-      "overlayOpacity": "light",
+      "secondaryCtaLabel": "Download Impact Report",
+      "secondaryCtaHref": "https://grounded.world/wp-content/uploads/2025/06/2024_grounded_impact_report_web.pdf",
+      "overlayOpacity": "medium",
       "contentAlign": "center",
       "minHeight": "large",
-      "_template": "heroBanner"
+      "bottomFade": false
     },
     {
+      "_template": "featureCards",
+      "sectionLabel": "What Sets Us Apart",
+      "heading": "Why Grounded?",
+      "columns": 3,
+      "items": [
+        {
+          "icon": "Trophy",
+          "color": "#00AEEF",
+          "title": "Multi-Award Winning",
+          "body": "Recognized globally for creative impact work \u2014 from Cannes Lions to The Webby Awards. We combine big-brand strategic thinking with the speed and agility of a boutique studio."
+        },
+        {
+          "icon": "Rocket",
+          "color": "#FFA603",
+          "title": "Exponential Organization",
+          "body": "Lean by design, scaling with purpose. Our network of specialists assembles the right team for every challenge \u2014 enterprise-level results without enterprise-level overhead."
+        },
+        {
+          "icon": "Leaf",
+          "color": "#1CC35B",
+          "title": "Certified B Corp",
+          "body": "Meeting the highest verified standards of social and environmental performance since 2018. We don\u2019t just help clients embed sustainability \u2014 we live it in every decision we make."
+        }
+      ]
+    },
+    {
+      "_template": "logoCarousel",
+      "speed": 40
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Our Leadership",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
       "left": [
         {
-          "body": "## This is a heading. \n\nThis is some test content. \n",
-          "_template": "richText"
+          "_template": "richText",
+          "body": {
+            "type": "root",
+            "children": [
+              {
+                "type": "h2",
+                "children": [{ "type": "text", "text": "Meet the Founders" }]
+              },
+              {
+                "type": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "We believe every business can drive exponential transformation when grounded in purpose and profit. Making money and making a difference aren\u2019t competing forces \u2014 by solving the world\u2019s biggest problems, we unlock its biggest opportunities."
+                  }
+                ]
+              },
+              {
+                "type": "p",
+                "children": [
+                  {
+                    "type": "text",
+                    "text": "So we left global agency life in 2018 and started our own social innovation and boutique marketing agency to do exactly that."
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Phil\u2019s LinkedIn",
+              "href": "https://www.linkedin.com/in/phil-white-03190514/",
+              "variant": "secondary",
+              "external": true
+            },
+            {
+              "label": "Heidi\u2019s LinkedIn",
+              "href": "https://www.linkedin.com/in/heidischoeneck/",
+              "variant": "secondary",
+              "external": true
+            }
+          ]
         }
       ],
-      "_template": "splitLayout"
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/about/founders.jpg",
+          "alt": "Phil and Heidi White, founders of Grounded",
+          "rounded": true
+        }
+      ]
+    },
+    {
+      "_template": "contactSection",
+      "heading": "Let\u2019s Talk",
+      "description": "Ready to activate purpose and accelerate impact? Book a discovery call or drop us a message.",
+      "bookingUrl": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "bookingLabel": "Book a Discovery Call",
+      "email": "getgrounded@grounded.world"
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
+      "backgroundAlt": "Stockholm metro station escalators",
+      "heading": "It\u2019s time to get grounded",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/about#contact",
+      "overlayOpacity": "medium",
+      "className": "px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
     }
   ]
 }
