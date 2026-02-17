@@ -102,8 +102,7 @@
       "heading": "It\u2019s time to get grounded",
       "primaryLabel": "Contact Us",
       "primaryHref": "/about#contact",
-      "overlayOpacity": "medium",
-      "className": "px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
+      "overlayOpacity": "medium"
     }
   ]
 }

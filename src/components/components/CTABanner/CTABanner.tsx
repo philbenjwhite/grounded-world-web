@@ -61,7 +61,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
   return (
     <section
       ref={ref}
-      className={cn("reveal-fade", className)}
+      className={cn("reveal-fade px-4 md:px-6 lg:px-8 pb-16 md:pb-24", className)}
     >
       <div className="relative overflow-hidden rounded-3xl min-h-[40vh] md:min-h-[50vh]">
         {/* Background image */}
