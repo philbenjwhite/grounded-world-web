@@ -14,10 +14,10 @@
       "ctaVariant": "solid",
       "secondaryCtaLabel": "Learn More",
       "secondaryCtaHref": "#our-process",
-      "overlayOpacity": "heavy",
+      "overlayOpacity": "medium",
       "contentAlign": "center",
-      "minHeight": "large",
-      "bottomFade": false
+      "minHeight": "condensed",
+      "bottomFade": true
     },
     {
       "_template": "introSection",

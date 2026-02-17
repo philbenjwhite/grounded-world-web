@@ -55,7 +55,7 @@ export interface HeroBannerProps {
   /** Content horizontal alignment */
   contentAlign?: "center" | "left";
   /** Minimum height of the hero section */
-  minHeight?: "full" | "large" | "medium";
+  minHeight?: "full" | "large" | "medium" | "condensed";
   /** Show a bottom gradient that bleeds into the next section */
   bottomFade?: boolean;
 }
@@ -86,9 +86,10 @@ const overlayClasses: Record<string, string> = {
 };
 
 const minHeightClasses: Record<string, string> = {
-  full: "min-h-screen md:min-h-screen",
-  large: "min-h-[70vh] md:min-h-[80vh]",
-  medium: "min-h-[60vh] md:min-h-[60vh]",
+  full: "h-[75dvh] md:h-[calc(100dvh-56px)]",
+  large: "h-[75dvh] md:h-[calc(100dvh-56px)]",
+  medium: "h-[60dvh] md:h-[70dvh]",
+  condensed: "h-[50dvh] md:h-[60dvh]",
 };
 
 /* ─── Component ──────────────────────────────────────── */
@@ -131,9 +132,10 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 
   return (
     <>
+    <div className="relative w-full p-4 md:p-6 bg-(--background)">
     <section
       className={cn(
-        "relative w-full overflow-hidden",
+        "relative w-full overflow-hidden rounded-3xl",
         minHeightClasses[minHeight]
       )}
     >
@@ -285,17 +287,17 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           )}
         </div>
       </div>
+      {/* ── Bottom gradient inside the hero — fades image to black at bottom ── */}
+      {bottomFade && (
+        <div
+          className={cn(
+            "absolute inset-x-0 bottom-0 z-[15] h-1/3 pointer-events-none",
+            styles.bottomFade
+          )}
+        />
+      )}
     </section>
-
-    {/* ── External bottom fade — sits outside overflow-hidden to eliminate seam ── */}
-    {bottomFade && (
-      <div
-        className={cn(
-          "relative z-10 -mt-40 h-40 pointer-events-none",
-          styles.bottomFade
-        )}
-      />
-    )}
+    </div>
     </>
   );
 };

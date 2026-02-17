@@ -53,11 +53,6 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({
     });
   };
 
-  /* Split items into two columns for desktop */
-  const mid = Math.ceil(items.length / 2);
-  const leftItems = items.slice(0, mid);
-  const rightItems = items.slice(mid);
-
   const renderItem = (item: FAQItem, index: number) => {
     const isOpen = openIndexes.has(index);
     return (
@@ -139,12 +134,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({
           ref={gridRef}
           className="grid grid-cols-1 lg:grid-cols-2 gap-3"
         >
-          <div className="flex flex-col gap-3">
-            {leftItems.map((item, i) => renderItem(item, i))}
-          </div>
-          <div className="flex flex-col gap-3">
-            {rightItems.map((item, i) => renderItem(item, mid + i))}
-          </div>
+          {items.map((item, i) => renderItem(item, i))}
         </div>
       </Container>
     </Section>

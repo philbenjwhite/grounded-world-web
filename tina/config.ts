@@ -672,6 +672,7 @@ export default defineConfig({
                       { value: "full", label: "Full Screen" },
                       { value: "large", label: "Large" },
                       { value: "medium", label: "Medium" },
+                      { value: "condensed", label: "Condensed" },
                     ],
                   },
                   {
@@ -1282,6 +1283,143 @@ export default defineConfig({
                     type: "string",
                     name: "email",
                     label: "Contact Email",
+                  },
+                ],
+              },
+              /* ── Content Tabs ──────────────────────────── */
+              {
+                name: "contentTabs",
+                label: "Content Tabs",
+                fields: [
+                  {
+                    type: "string",
+                    name: "sectionTitle",
+                    label: "Section Title",
+                  },
+                  {
+                    type: "string",
+                    name: "sectionSubtitle",
+                    label: "Section Subtitle",
+                  },
+                  {
+                    type: "number",
+                    name: "defaultActiveIndex",
+                    label: "Default Active Tab",
+                    description: "Index of the tab active on page load (0-based)",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Tabs",
+                    list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.title || "New Tab",
+                      }),
+                    },
+                    fields: [
+                      {
+                        type: "string",
+                        name: "title",
+                        label: "Tab Title",
+                      },
+                      {
+                        type: "string",
+                        name: "icon",
+                        label: "Icon",
+                        options: iconOptions,
+                      },
+                      {
+                        type: "string",
+                        name: "color",
+                        label: "Accent Color",
+                        required: true,
+                        ui: { component: "color" },
+                      },
+                      {
+                        type: "string",
+                        name: "subtitle",
+                        label: "Content Heading",
+                      },
+                      {
+                        type: "string",
+                        name: "body",
+                        label: "Body Text",
+                        description: "Use **bold** for emphasis. Separate paragraphs with blank lines. Start lines with 1. 2. etc. for numbered lists.",
+                        ui: { component: "textarea" },
+                      },
+                      {
+                        type: "string",
+                        name: "videoSrc",
+                        label: "Video URL",
+                        description: "Vimeo or YouTube URL to embed",
+                      },
+                      {
+                        type: "image",
+                        name: "imageSrc",
+                        label: "Image",
+                      },
+                      {
+                        type: "string",
+                        name: "imageAlt",
+                        label: "Image Alt Text",
+                      },
+                      {
+                        type: "string",
+                        name: "buttonLabel",
+                        label: "Button Label",
+                      },
+                      {
+                        type: "string",
+                        name: "buttonHref",
+                        label: "Button Link",
+                      },
+                      {
+                        type: "boolean",
+                        name: "buttonExternal",
+                        label: "Open Button in New Tab",
+                      },
+                      {
+                        type: "object",
+                        name: "subsections",
+                        label: "Subsections",
+                        list: true,
+                        ui: {
+                          itemProps: (item: Record<string, string>) => ({
+                            label: item?.heading || "New Subsection",
+                          }),
+                        },
+                        fields: [
+                          {
+                            type: "string",
+                            name: "heading",
+                            label: "Heading",
+                          },
+                          {
+                            type: "string",
+                            name: "body",
+                            label: "Body Text",
+                            ui: { component: "textarea" },
+                          },
+                          {
+                            type: "string",
+                            name: "videoSrc",
+                            label: "Video URL",
+                            description: "Vimeo or YouTube URL to embed",
+                          },
+                          {
+                            type: "image",
+                            name: "imageSrc",
+                            label: "Image",
+                          },
+                          {
+                            type: "string",
+                            name: "imageAlt",
+                            label: "Image Alt Text",
+                          },
+                        ],
+                      },
+                    ],
                   },
                 ],
               },

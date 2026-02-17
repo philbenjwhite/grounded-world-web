@@ -1,0 +1,189 @@
+{
+  "title": "Brand Strategy Agency",
+  "slug": "brand-strategy",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "image",
+      "imageSrc": "/images/services/strategy-hero-octopus.jpg",
+      "imageAlt": "Abstract dark background with organic texture",
+      "title": "Transform Purpose Into Profit",
+      "subtitle": "Connecting the 'why' of purpose to the 'way' of profit — to shape your identity, position your brand, tell your sustainability story, and drive innovation.",
+      "ctaLabel": "Book a Strategy Call",
+      "ctaHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "ctaVariant": "solid",
+      "secondaryCtaLabel": "Explore Our Approach",
+      "secondaryCtaHref": "#our-approach",
+      "overlayOpacity": "medium",
+      "contentAlign": "center",
+      "minHeight": "condensed",
+      "bottomFade": true
+    },
+    {
+      "_template": "introSection",
+      "heading": "Strategy That Grounds Purpose in Reality",
+      "paragraphs": [
+        "Purpose without strategy is just a poster on a wall. We build the frameworks that connect what you believe to how you operate — turning aspiration into positioning, values into voice, and sustainability commitments into competitive advantage.",
+        "Through three proven methodologies — the BPP, Brand Archetyping, and the 5Rs — we give your brand a strategic backbone that aligns leadership, differentiates in market, and drives measurable commercial outcomes."
+      ]
+    },
+    {
+      "_template": "featureCards",
+      "sectionLabel": "Our Approach",
+      "heading": "Three Frameworks. One Clear Strategy.",
+      "columns": 3,
+      "items": [
+        {
+          "icon": "Compass",
+          "color": "#4DD9FF",
+          "title": "The BPP",
+          "body": "A framework that connects the WHY of purpose to the WAY of profit. Think of it as a business strategy canvas that articulates your massive transformative purpose on a single page."
+        },
+        {
+          "icon": "Lightbulb",
+          "color": "#FF08CC",
+          "title": "Brand Archetyping",
+          "body": "Identity, messaging, and campaigns rooted in a character that intuitively positions and differentiates your brand. We use archetyping to reveal the right values, character, and tone of voice."
+        },
+        {
+          "icon": "Leaf",
+          "color": "#FFA603",
+          "title": "The 5Rs",
+          "body": "A team workshop that deconstructs your product or brand proposition — deciding what to re-use, reimagine, reduce, remove, or reinforce to differentiate and commercialise your sustainability goals."
+        }
+      ]
+    },
+    {
+      "_template": "contentTabs",
+      "sectionTitle": "Our Approach in Detail",
+      "sectionSubtitle": "Four proven frameworks that connect purpose to profit.",
+      "defaultActiveIndex": 0,
+      "items": [
+        {
+          "title": "The BPP",
+          "icon": "Compass",
+          "color": "#4DD9FF",
+          "subtitle": "Belief. Purpose. Pursuits.",
+          "body": "The BPP is a framework designed to help organisations and brands connect the WHY of purpose to the WAY of revenue. It's a business strategy canvas on a page — helping your company articulate its **massive transformative purpose**.\n\nPublished by the ANA Center for Brand Purpose as a best-in-class approach, the BPP distils your corporate, brand, and social purpose into a clear, actionable blueprint that links directly to commercial outcomes.\n\nFrom belief to pursuit, every element ladders up to a unified story that your leadership team, employees, and market can rally behind.",
+          "imageSrc": "/images/services/strategy-ana-badge.jpg",
+          "imageAlt": "ANA Center for Brand Purpose endorsement badge for the BPP framework",
+          "buttonLabel": "Download the Framework",
+          "buttonHref": "https://www.ana.net/content/show/id/brand-purpose-playbook",
+          "buttonExternal": true,
+          "subsections": [
+            {
+              "heading": "An Example: OneSight",
+              "videoSrc": "https://vimeo.com/334042907",
+              "imageSrc": "/images/services/strategy-onesite-case-study.png",
+              "imageAlt": "OneSight case study showing the BPP framework applied to eye care access",
+              "body": "**Belief**\n\nEveryone should have access to affordable eye care. It should no longer be a barrier to human achievement — because when the world sees better, the world is better.\n\n**Purpose**\n\nFuel people's potential by helping them see more clearly.\n\n**Pursuits**\n\n1. Provide funding, staff, equipment, and programming for pop-up clinics and self-sustaining vision centres in underserved communities around the world\n2. Engage and connect Essilor-Luxottica's employees with volunteer opportunities across 16+ partner organisations\n3. Be a positive force for social change by helping people appreciate how the power of sight can reduce inequality"
+            }
+          ]
+        },
+        {
+          "title": "Brand Archetyping",
+          "icon": "Lightbulb",
+          "color": "#FF08CC",
+          "subtitle": "Find Your Brand's Character",
+          "body": "Archetypes provide the narrative structure for activating the BPP and delivering your desired brand experience. They transcend time, space, and culture — helping to **position who you are, what you stand for, and how people feel** when they engage with you.\n\nArchetypes shift your brand from story 'say' to story 'do' — providing a paradigm for the experience people should have. With 52 archetypes to draw from, we'll find the one that authentically represents your brand's character and values.\n\nYour backstory and belief statement often provide the strongest archetypal indicator — we mine these for the authentic character that already exists within your organisation.",
+          "imageSrc": "/images/services/strategy-archetypes-grid.jpg",
+          "imageAlt": "Grid of brand archetype symbols and illustrations showing the archetyping framework",
+          "subsections": [
+            {
+              "heading": "Case Study: The Alchemist",
+              "imageSrc": "/images/services/strategy-alchemist-mandala.jpg",
+              "imageAlt": "The Alchemist archetype mandala symbol representing transformation and healing",
+              "body": "**Addiction Recovery Initiative**\n\nThe Alchemist archetype was selected to represent the transformative journey at the heart of addiction recovery — symbolising energy, compassion, healing, and the transformation between the material and spiritual worlds.\n\nThis archetype guided the entire brand experience: from visual identity and tone of voice to employee advocacy campaigns — creating an authentic, emotionally resonant narrative that stakeholders and communities could rally behind."
+            },
+            {
+              "heading": "From Archetype to Activation",
+              "imageSrc": "/images/services/strategy-employee-advocacy.jpg",
+              "imageAlt": "Employee advocacy campaign graphics built from the Alchemist archetype",
+              "body": "Once the archetype is defined, it becomes the creative engine for everything — from internal culture campaigns to external brand activations.\n\nEmployee advocacy is one of the most powerful expressions. When your people embody the archetype, your brand story moves from marketing collateral to lived experience.\n\nThe result: a unified, authentic brand presence that resonates internally and externally."
+            }
+          ]
+        },
+        {
+          "title": "The 5Rs",
+          "icon": "Leaf",
+          "color": "#FFA603",
+          "subtitle": "Deconstruct. Differentiate. Deliver.",
+          "body": "The 5Rs is run as a team workshop to deconstruct your product or brand proposition and decide what elements or assets to **re-use, reimagine, reduce, remove, or reinforce**.\n\nThe ultimate objective is to clearly differentiate your product or brand by identifying the unique and ownable functional elements, assets, or equities that can be used to commercialise your sustainability goals and commitments.\n\nIt's a structured, collaborative approach that turns sustainability from a cost centre into a genuine competitive advantage.",
+          "imageSrc": "/images/services/strategy-perrier-5rs.jpg",
+          "imageAlt": "Perrier bottle example showing the 5Rs framework applied to product innovation",
+          "buttonLabel": "Try the Workshop",
+          "buttonHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+          "buttonExternal": true
+        },
+        {
+          "title": "Validation",
+          "icon": "ChartLineUp",
+          "color": "#10B981",
+          "subtitle": "Test Before You Launch",
+          "body": "Using our fully licensed white-label testing platform, we quickly and efficiently validate which design elements, identities, positioning statements, concepts, or creative will resonate best.\n\nTests can be programmed in less than a day with results in 48 hours — streaming in real-time to an online dashboard so we can instantly see, analyse, and review results.\n\nTesting can be run using **global consumer panels** or **synthetically using AI-generated segments** — often best used to assist with internal decision making before committing to market.",
+          "imageSrc": "/images/services/strategy-testing-dashboard.jpg",
+          "imageAlt": "Real-time testing dashboard showing analytics and validation results"
+        }
+      ]
+    },
+    {
+      "_template": "accordionFAQ",
+      "sectionTitle": "Frequently Asked Questions",
+      "sectionSubtitle": "Everything you need to know about our brand strategy process.",
+      "items": [
+        {
+          "question": "What does a BPP framework include in practice?",
+          "answer": "It connects your belief, purpose, and pursuits into a clear blueprint that links brand purpose to profit. You'll walk away with a one-page strategic canvas that articulates your massive transformative purpose and the commercial pursuits that bring it to life."
+        },
+        {
+          "question": "How do you help leadership align on a single purpose statement?",
+          "answer": "Through facilitated workshops that surface values, tensions, and ambitions — then shape them into a unifying purpose, platform, and corporate narrative. We work iteratively with your leadership team to build genuine consensus, not just top-down mandates."
+        },
+        {
+          "question": "Do you run in-person workshops, virtual sessions, or both?",
+          "answer": "Both. We adapt to your team's needs and location. Our frameworks work equally well in-person or virtually, and we often run hybrid sessions for globally distributed teams."
+        },
+        {
+          "question": "What tangible outputs will we walk away with?",
+          "answer": "Clear articulation of your brand purpose, positioning, archetype, messaging strategy and pillars, and strategic go-to-market pursuits — usable across culture, brands, and campaigns."
+        },
+        {
+          "question": "How do you ensure purpose connects to profit, not just brand messaging?",
+          "answer": "We always align your purpose and sustainability commitments with the business strategy and the commercial drivers that create customer utility and value. Purpose without commercial grounding is just aspiration."
+        },
+        {
+          "question": "How do you adapt frameworks for campaigns vs. company-wide strategy?",
+          "answer": "The BPP can scale from company-wide positioning down to campaign-level messaging. We flex the depth and specificity to match whether you're setting enterprise direction or activating a single initiative."
+        },
+        {
+          "question": "Can you support internal communications and employee engagement around purpose?",
+          "answer": "Yes. We help embed purpose and values across organisational culture as well as external brand activations and initiatives. Internal alignment is often where the most impactful work happens."
+        },
+        {
+          "question": "How long does it typically take to articulate a brand purpose?",
+          "answer": "Typically 8–12 weeks, depending on scope and number of stakeholders involved. Focused single-brand engagements can move faster; multi-brand enterprise projects with extensive stakeholder mapping take the full timeline."
+        },
+        {
+          "question": "How do you prevent 'purpose-washing' and keep work credible?",
+          "answer": "By grounding everything in verifiable data and measurable impact. We don't write aspirational copy — we build strategic frameworks rooted in what your organisation can credibly deliver and measure."
+        },
+        {
+          "question": "Can you share case studies of how this approach has helped organisations?",
+          "answer": "Yes. Once we have a better understanding of the barriers and drivers within your category, we often share relevant case studies to help identify potential goals and build out the best roadmap and approach for your specific situation."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/services/strategy-ink-texture.jpg",
+      "backgroundAlt": "Abstract ink in water texture",
+      "heading": "It's time to get grounded",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/about#contact",
+      "secondaryLabel": "Book a Strategy Call",
+      "secondaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "overlayOpacity": "heavy",
+      "className": "px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
+    }
+  ]
+}

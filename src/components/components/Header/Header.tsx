@@ -79,7 +79,7 @@ const Header = ({ className, services = [] }: HeaderProps) => {
     <>
       <header
         className={cn(
-          "sticky top-0 z-[60] px-3 md:px-4 pt-3",
+          "sticky top-0 z-[60] px-[var(--layout-section-padding-x)] pt-3",
           className,
         )}
       >

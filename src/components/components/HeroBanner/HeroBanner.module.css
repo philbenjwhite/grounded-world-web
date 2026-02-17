@@ -45,11 +45,13 @@
   );
 }
 
-/* External fade that sits OUTSIDE overflow-hidden to eliminate hero/section seam */
+/* Gradient inside the hero — fades image to black at the bottom */
 .bottomFade {
   background: linear-gradient(
     to bottom,
-    #000000 0%,
-    transparent 100%
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.7) 60%,
+    #000000 100%
   );
 }

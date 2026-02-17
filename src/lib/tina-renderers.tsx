@@ -14,6 +14,7 @@ import VideoHero from "@/components/components/VideoHero";
 import FeatureCards from "@/components/components/FeatureCards";
 import ContactSection from "@/components/components/ContactSection";
 import CTABanner from "@/components/components/CTABanner";
+import ContentTabs from "@/components/components/ContentTabs";
 import Split from "@/components/layout/Split";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
@@ -107,6 +108,62 @@ export function renderSlotBlock(
 /* ─── Section renderer ────────────────────────────────── */
 
 export function renderSection(section: PageSections, index: number): React.ReactNode {
+  // ContentTabs — handled before switch until TinaCMS types are regenerated
+  if ((section as unknown as { _template?: string })._template === "contentTabs" ||
+      (section as unknown as { __typename?: string }).__typename === "PageSectionsContentTabs") {
+    const ct = section as unknown as {
+      sectionTitle?: string;
+      sectionSubtitle?: string;
+      defaultActiveIndex?: number;
+      items?: Array<{
+        title: string;
+        icon?: string;
+        color: string;
+        subtitle: string;
+        body: string;
+        imageSrc?: string;
+        imageAlt?: string;
+        buttonLabel?: string;
+        buttonHref?: string;
+        buttonExternal?: boolean;
+        subsections?: Array<{
+          heading: string;
+          body: string;
+          imageSrc?: string;
+          imageAlt?: string;
+        }>;
+      }>;
+    };
+    return (
+      <ContentTabs
+        key={index}
+        sectionTitle={ct.sectionTitle ?? undefined}
+        sectionSubtitle={ct.sectionSubtitle ?? undefined}
+        defaultActiveIndex={ct.defaultActiveIndex ?? undefined}
+        items={
+          (ct.items ?? []).filter(Boolean).map((item) => ({
+            title: item.title,
+            icon: item.icon ?? undefined,
+            color: item.color,
+            subtitle: item.subtitle,
+            body: item.body,
+            imageSrc: item.imageSrc ?? undefined,
+            imageAlt: item.imageAlt ?? undefined,
+            buttonLabel: item.buttonLabel ?? undefined,
+            buttonHref: item.buttonHref ?? undefined,
+            buttonExternal: item.buttonExternal ?? undefined,
+            subsections: item.subsections?.filter(Boolean).map((sub) => ({
+              heading: sub.heading,
+              body: sub.body,
+              imageSrc: sub.imageSrc ?? undefined,
+              imageAlt: sub.imageAlt ?? undefined,
+            })),
+          }))
+        }
+      />
+    );
+  }
+
   switch (section.__typename) {
     case "PageSectionsHeroBanner":
       return (
