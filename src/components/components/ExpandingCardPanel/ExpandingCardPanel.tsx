@@ -163,12 +163,13 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
                 onKeyDown={(e) => handleKeyDown(e, index)}
                 aria-expanded={isActive}
               >
-                {/* Glow overlay */}
+                {/* Glow overlay — reuses global blob shapes via work-card-glow */}
                 <div
                   className={cn(
                     styles.cardGlow,
-                    "absolute inset-0 rounded-3xl pointer-events-none"
+                    "work-card-glow absolute inset-0 rounded-3xl pointer-events-none"
                   )}
+                  style={{ "--glow-color": "var(--item-color)" } as React.CSSProperties}
                 />
 
                 {/* Always visible: icon + name */}

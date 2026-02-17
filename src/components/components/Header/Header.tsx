@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import cn from "classnames";
-import { CaretDownIcon, EnvelopeIcon } from "@phosphor-icons/react";
+import { CaretDownIcon, EnvelopeIcon, PaperPlaneTiltIcon } from "@phosphor-icons/react";
 import styles from "./Header.module.css";
 import { resourceLinks } from "./megaMenuData";
 import { mapCmsServices, type ServiceItem } from "../VideoHero/utils";
@@ -25,10 +25,9 @@ const Header = ({ className, services = [] }: HeaderProps) => {
   const serviceItems = mapCmsServices(services);
   const pathname = usePathname() ?? "/";
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [headerVisible, setHeaderVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const indicatorRef = useRef<HTMLSpanElement>(null);
-  const lastScrollY = useRef(0);
 
   /* Close mobile menu on navigation */
   useEffect(() => setMobileOpen(false), [pathname]);
@@ -41,23 +40,14 @@ const Header = ({ className, services = [] }: HeaderProps) => {
     };
   }, [mobileOpen]);
 
-  /* Scroll direction → show/hide header */
+  /* Scroll → toggle glass effect */
   useEffect(() => {
     const onScroll = () => {
-      if (mobileOpen) return;
-      const y = window.scrollY;
-      if (y < 20) {
-        setHeaderVisible(true);
-      } else if (y > lastScrollY.current + 5) {
-        setHeaderVisible(false);
-      } else if (y < lastScrollY.current - 5) {
-        setHeaderVisible(true);
-      }
-      lastScrollY.current = y;
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [mobileOpen]);
+  }, []);
 
   /* Desktop: slide active indicator to current nav link */
   useEffect(() => {
@@ -89,63 +79,69 @@ const Header = ({ className, services = [] }: HeaderProps) => {
     <>
       <header
         className={cn(
-          "sticky top-0 shrink-0 flex items-center justify-between px-5 md:px-8 lg:px-10 py-3 md:py-4 bg-(--background,#0a0a0a) z-[60]",
-          "transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
-          !headerVisible && !mobileOpen && "-translate-y-full",
+          "sticky top-0 z-[60] px-3 md:px-4 pt-3",
           className,
         )}
       >
-        {/* Logo */}
-        <Link href="/" className="shrink-0">
-          <Image
-            src="/grounded-logo-light.svg"
-            alt="Grounded World"
-            width={160}
-            height={56}
-            className="h-10 md:h-12 lg:h-14 w-auto"
-            priority
-          />
-        </Link>
-
-        {/* Mobile hamburger → X morph */}
-        <button
-          onClick={() => setMobileOpen((v) => !v)}
+        <div
           className={cn(
-            styles.toggleBtn,
-            "lg:hidden shrink-0 relative flex items-center justify-center rounded-full cursor-pointer w-11 h-11",
+            styles.headerBar,
+            scrolled && styles.headerScrolled,
+            "max-w-[1440px] mx-auto flex items-center justify-between px-5 md:px-6 lg:px-8 py-2.5 md:py-3 rounded-full",
           )}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
         >
-          <span
-            className={cn(
-              "absolute w-[18px] h-[1.5px] rounded-full bg-white/85 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
-              mobileOpen ? "translate-y-0 rotate-45" : "-translate-y-1.5",
-            )}
-          />
-          <span
-            className={cn(
-              "absolute w-[18px] h-[1.5px] rounded-full bg-white/85 transition-all duration-200",
-              mobileOpen ? "opacity-0 scale-x-0" : "opacity-100",
-            )}
-          />
-          <span
-            className={cn(
-              "absolute w-[18px] h-[1.5px] rounded-full bg-white/85 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
-              mobileOpen ? "translate-y-0 -rotate-45" : "translate-y-1.5",
-            )}
-          />
-        </button>
+          {/* Logo */}
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/grounded-logo-light.svg"
+              alt="Grounded World"
+              width={160}
+              height={56}
+              className="h-9 md:h-10 lg:h-12 w-auto"
+              priority
+            />
+          </Link>
 
-        {/* Desktop nav — always visible lg+ */}
-        <nav
-          ref={navRef}
-          className="hidden lg:flex items-center gap-1 relative"
-          aria-label="Main navigation"
-        >
-          <NavItems services={serviceItems} pathname={pathname} />
-          <span ref={indicatorRef} className={styles.activeIndicator} />
-        </nav>
+          {/* Mobile hamburger → X morph */}
+          <button
+            onClick={() => setMobileOpen((v) => !v)}
+            className={cn(
+              styles.toggleBtn,
+              "lg:hidden shrink-0 relative flex items-center justify-center cursor-pointer w-10 h-10",
+            )}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+          >
+            <span
+              className={cn(
+                "absolute w-6 h-[2px] rounded-full bg-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
+                mobileOpen ? "translate-y-0 rotate-45" : "-translate-y-[5px]",
+              )}
+            />
+            <span
+              className={cn(
+                "absolute w-6 h-[2px] rounded-full bg-white transition-all duration-200",
+                mobileOpen ? "opacity-0 scale-x-0" : "opacity-100",
+              )}
+            />
+            <span
+              className={cn(
+                "absolute w-6 h-[2px] rounded-full bg-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
+                mobileOpen ? "translate-y-0 -rotate-45" : "translate-y-[5px]",
+              )}
+            />
+          </button>
+
+          {/* Desktop nav — always visible lg+ */}
+          <nav
+            ref={navRef}
+            className="hidden lg:flex items-center gap-1 relative"
+            aria-label="Main navigation"
+          >
+            <NavItems services={serviceItems} pathname={pathname} />
+            <span ref={indicatorRef} className={styles.activeIndicator} />
+          </nav>
+        </div>
       </header>
 
       {/* ─── Mobile menu overlay ─── */}
@@ -222,16 +218,18 @@ const Header = ({ className, services = [] }: HeaderProps) => {
                         key={rt.label}
                         href={rt.href}
                         className={cn(
-                          styles.mobileResourceLink,
+                          styles.mobileServiceLink,
                           "flex items-center gap-3 px-3 py-2.5 rounded-xl no-underline transition-colors duration-200",
-                          pathname === rt.href ? "text-white" : "text-white/50 hover:text-white/80",
+                          pathname === rt.href ? "text-white bg-white/[0.04]" : "text-white/50 hover:text-white/80",
                         )}
                       >
                         <div
-                          className={cn(styles.mobileResourceBar, "w-1 h-6 rounded-full shrink-0")}
-                          style={{ "--accent": rt.accent } as React.CSSProperties}
-                        />
-                        <span className="text-[13px] font-medium">{rt.label}</span>
+                          className={cn(styles.mobileServiceOrb, "w-8 h-8 rounded-full shrink-0 flex items-center justify-center")}
+                          style={{ "--service-color": rt.color } as React.CSSProperties}
+                        >
+                          <rt.icon size={14} weight="bold" className={styles.mobileServiceIcon} />
+                        </div>
+                        <span className="text-[13px] font-semibold">{rt.label}</span>
                       </Link>
                     ))}
                   </div>
@@ -310,7 +308,7 @@ function NavItems({
         href="/"
         className={cn(
           styles.navLink,
-          "px-3 py-2 text-[11px] uppercase tracking-[0.12em] font-semibold no-underline",
+          "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap",
         )}
         {...(pathname === "/" && { "data-active": "" })}
       >
@@ -324,13 +322,13 @@ function NavItems({
             href="/services"
             className={cn(
               styles.navLink,
-              "px-3 py-2 text-[11px] uppercase tracking-[0.12em] font-semibold no-underline inline-flex items-center gap-1",
+              "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap inline-flex items-center gap-1",
             )}
             {...(isActivePath(pathname, "/services") && { "data-active": "" })}
           >
             Services
             <CaretDownIcon
-              size={10}
+              size={11}
               weight="bold"
               className={styles.chevron}
             />
@@ -396,7 +394,7 @@ function NavItems({
         href="/about"
         className={cn(
           styles.navLink,
-          "px-3 py-2 text-[11px] uppercase tracking-[0.12em] font-semibold no-underline",
+          "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap",
         )}
         {...(isActivePath(pathname, "/about") && { "data-active": "" })}
       >
@@ -408,7 +406,7 @@ function NavItems({
         href="/our-work"
         className={cn(
           styles.navLink,
-          "px-3 py-2 text-[11px] uppercase tracking-[0.12em] font-semibold no-underline",
+          "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap",
         )}
         {...(isActivePath(pathname, "/our-work") && { "data-active": "" })}
       >
@@ -421,13 +419,13 @@ function NavItems({
           href="/resources"
           className={cn(
             styles.navLink,
-            "px-3 py-2 text-[11px] uppercase tracking-[0.12em] font-semibold no-underline inline-flex items-center gap-1",
+            "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap inline-flex items-center gap-1",
           )}
           {...(isActivePath(pathname, "/resources") && { "data-active": "" })}
         >
           Resources
           <CaretDownIcon
-            size={10}
+            size={11}
             weight="bold"
             className={styles.chevron}
           />
@@ -453,44 +451,57 @@ function NavItems({
                 href={rt.href}
                 className={cn(
                   styles.dropdownLink,
-                  "flex items-center gap-2.5 rounded-xl p-3 no-underline",
+                  "flex items-center gap-3 rounded-xl p-3 no-underline",
                 )}
               >
                 <div
                   className={cn(
-                    styles.resourceBar,
-                    "w-1 h-5 rounded-full shrink-0",
+                    styles.serviceOrb,
+                    "w-8 h-8 rounded-full shrink-0 flex items-center justify-center",
                   )}
-                  style={{ "--accent": rt.accent } as React.CSSProperties}
-                />
-                <span className="text-xs font-medium">{rt.label}</span>
+                  style={{ "--service-color": rt.color } as React.CSSProperties}
+                >
+                  <rt.icon
+                    size={14}
+                    weight="bold"
+                    className={styles.serviceIcon}
+                  />
+                </div>
+                <span className="text-xs font-semibold">{rt.label}</span>
               </Link>
             ))}
           </div>
         </div>
       </div>
 
-      {/* SUBSCRIBE — secondary CTA */}
+      {/* SUBSCRIBE — icon only at lg, full text at xl+ */}
       <Link
         href="/newsletter"
         className={cn(
           styles.newsletterCta,
-          "ml-2 px-4 py-2 rounded-lg text-[11px] uppercase tracking-[0.12em] font-semibold no-underline inline-flex items-center gap-1.5",
+          "ml-2 rounded-full no-underline whitespace-nowrap inline-flex items-center justify-center overflow-hidden",
+          "w-10 h-10 xl:w-auto xl:h-auto xl:px-5 xl:py-2.5 xl:gap-2",
+          "text-[12px] font-semibold",
         )}
+        aria-label="Subscribe to newsletter"
       >
-        <EnvelopeIcon size={13} weight="bold" />
-        Subscribe
+        <EnvelopeIcon size={16} weight="bold" className="shrink-0" />
+        <span className="hidden xl:inline">Subscribe</span>
       </Link>
 
-      {/* CONTACT US — primary CTA */}
+      {/* CONTACT US — icon only at lg, full text at xl+ */}
       <Link
         href="/contact"
         className={cn(
           styles.ctaButton,
-          "ml-1 px-5 py-2 rounded-lg text-[11px] uppercase tracking-[0.12em] font-semibold no-underline",
+          "ml-1 rounded-full no-underline whitespace-nowrap inline-flex items-center justify-center overflow-hidden",
+          "w-10 h-10 xl:w-auto xl:h-auto xl:px-6 xl:py-2.5 xl:gap-2",
+          "text-[12px] font-semibold",
         )}
+        aria-label="Contact us"
       >
-        Contact Us
+        <PaperPlaneTiltIcon size={16} weight="bold" className="shrink-0" />
+        <span className="hidden xl:inline">Contact Us</span>
       </Link>
     </>
   );

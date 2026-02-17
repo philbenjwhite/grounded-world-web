@@ -30,15 +30,11 @@
   background-color: rgba(255, 255, 255, 0.04);
 }
 
-/* ── Card glow ──────────────────────────────────── */
+/* ── Card glow — dual irregular blobs for organic light ── */
 
 .cardGlow {
   opacity: 0;
-  background: radial-gradient(
-    ellipse at 50% 100%,
-    color-mix(in srgb, var(--item-color) 14%, transparent),
-    transparent 70%
-  );
+  overflow: hidden;
   transition: opacity var(--bento-duration) var(--bento-ease);
   will-change: opacity;
 }
@@ -92,13 +88,35 @@
 
 .mobileGlow {
   opacity: 0;
-  background: radial-gradient(
-    ellipse at 50% 100%,
-    color-mix(in srgb, var(--item-color) 14%, transparent),
-    transparent 70%
-  );
+  overflow: hidden;
   transition: opacity var(--bento-duration) var(--bento-ease);
   will-change: opacity;
+}
+
+.mobileGlow::before {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: -8%;
+  width: 60%;
+  height: 40px;
+  border-radius: 30% 70% 55% 45% / 55% 35% 65% 45%;
+  background: var(--item-color);
+  opacity: 0.2;
+  filter: blur(44px);
+}
+
+.mobileGlow::after {
+  content: "";
+  position: absolute;
+  bottom: -14px;
+  right: -5%;
+  width: 50%;
+  height: 32px;
+  border-radius: 65% 35% 45% 55% / 40% 60% 40% 60%;
+  background: var(--item-color);
+  opacity: 0.16;
+  filter: blur(50px);
 }
 
 .mobileCard[data-active="true"] .mobileGlow {

@@ -55,10 +55,10 @@ export const AllSizes: Story = {
   render: () => (
     <div className="flex flex-col gap-4">
       <Heading level={1} size="display">Display - Responsive hero scale</Heading>
-      <Heading level={1} size="h1">H1 Size - 64px</Heading>
-      <Heading level={2} size="h2">H2 Size - 56px</Heading>
-      <Heading level={3} size="h3">H3 Size - 48px</Heading>
-      <Heading level={4} size="h4">H4 Size - 32px</Heading>
+      <Heading level={1} size="h1">H1 Size - 80px</Heading>
+      <Heading level={2} size="h2">H2 Size - 48px</Heading>
+      <Heading level={3} size="h3">H3 Size - 32px</Heading>
+      <Heading level={4} size="h4">H4 Size - 24px</Heading>
     </div>
   ),
 };

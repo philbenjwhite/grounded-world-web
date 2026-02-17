@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import cn from "classnames";
+import styles from "./Button.module.css";
 
 export type ButtonVariant = "primary" | "secondary" | "outline";
 
@@ -25,46 +26,40 @@ export interface ButtonProps {
   variant?: ButtonVariant;
 }
 
-const baseStyles = "text-center no-underline cursor-pointer transition-colors";
+const baseStyles =
+  "inline-flex items-center justify-center gap-2 no-underline cursor-pointer rounded-full text-sm font-semibold transition-colors overflow-hidden";
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: `
-    inline-block font-medium text-[length:var(--size-16)]
-    px-[var(--size-16)] py-[var(--size-8)]
-    rounded-[var(--size-8)]
-    border border-[var(--comp-button-primary-stroke-default)]
-    bg-[var(--comp-button-primary-surface-hover)]
+    px-6 py-3
+    border border-(--comp-button-primary-stroke-default)
+    bg-(--comp-button-primary-surface-hover)
     text-[color:var(--comp-button-primary-text)]
-    hover:bg-[var(--comp-button-primary-surface-default)]
-    hover:border-[var(--comp-button-primary-stroke-hover)]
-    active:bg-[var(--comp-button-primary-surface-pressed)]
-    active:border-[var(--comp-button-primary-stroke-pressed)]
+    hover:bg-(--comp-button-primary-surface-default)
+    hover:border-(--comp-button-primary-stroke-hover)
+    active:bg-(--comp-button-primary-surface-pressed)
+    active:border-(--comp-button-primary-stroke-pressed)
   `,
   secondary: `
-    inline-block font-medium text-[length:var(--size-16)]
-    px-[var(--size-16)] py-[var(--size-8)]
-    rounded-[var(--size-8)]
-    border border-[var(--comp-button-primary-stroke-default)]
-    bg-[var(--comp-button-primary-surface-default)]
+    px-6 py-3
+    border border-(--comp-button-primary-stroke-default)
+    bg-(--comp-button-primary-surface-default)
     text-[color:var(--comp-button-primary-text)]
-    hover:bg-[var(--comp-button-primary-surface-hover)]
-    hover:border-[var(--comp-button-primary-stroke-hover)]
-    active:bg-[var(--comp-button-primary-surface-pressed)]
-    active:border-[var(--comp-button-primary-stroke-pressed)]
+    hover:bg-(--comp-button-primary-surface-hover)
+    hover:border-(--comp-button-primary-stroke-hover)
+    active:bg-(--comp-button-primary-surface-pressed)
+    active:border-(--comp-button-primary-stroke-pressed)
   `,
   outline: `
-    inline-flex items-center gap-2
-    rounded-lg border bg-transparent
-    px-5 py-2.5
-    text-sm font-semibold uppercase tracking-wider
-    duration-300
+    px-6 py-3
+    border bg-transparent
     hover:bg-white/[0.06]
   `,
 };
 
 const disabledStyles = `
-  bg-[var(--comp-button-primary-surface-disabled)]
-  border-[var(--comp-button-primary-stroke-disabled)]
+  bg-(--comp-button-primary-surface-disabled)
+  border-(--comp-button-primary-stroke-disabled)
   text-[color:var(--comp-button-primary-text-disabled)]
   cursor-not-allowed
   pointer-events-none
@@ -82,6 +77,7 @@ const Button = ({
   variant = "primary",
 }: ButtonProps) => {
   const combinedClassName = cn(
+    styles.button,
     baseStyles,
     variantStyles[variant],
     disabled && disabledStyles,

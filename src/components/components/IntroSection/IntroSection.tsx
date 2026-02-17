@@ -22,7 +22,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({
     <Section>
       <Container className="px-[var(--layout-section-padding-x)]">
         <div ref={ref} className="reveal-fade max-w-3xl mx-auto text-center">
-          <Heading level={2} size="h1" color="primary">
+          <Heading level={2} size="h2" color="primary">
             {heading}
           </Heading>
           <div className="mt-8 flex flex-col gap-6">

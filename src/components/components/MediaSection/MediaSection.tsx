@@ -81,7 +81,7 @@ const GridView = ({
   return (
     <section
       className={`
-        bg-[var(--comp-media-section-surface)]
+        bg-(--comp-media-section-surface)
         px-[var(--layout-section-padding-x)]
         py-[var(--layout-section-padding-y)]
         ${className ?? ''}
@@ -115,8 +115,8 @@ const GridView = ({
                   cursor-pointer
                   ${
                     activeCategory === category
-                      ? 'bg-[var(--comp-tab-surface-active)] border-[var(--comp-tab-stroke-active)] text-[color:var(--comp-tab-text-active)]'
-                      : 'bg-[var(--comp-tab-surface-default)] border-[var(--comp-tab-stroke-default)] text-[color:var(--comp-tab-text-default)] hover:bg-[var(--comp-tab-surface-hover)] hover:border-[var(--comp-tab-stroke-hover)]'
+                      ? 'bg-(--comp-tab-surface-active) border-(--comp-tab-stroke-active) text-[color:var(--comp-tab-text-active)]'
+                      : 'bg-(--comp-tab-surface-default) border-(--comp-tab-stroke-default) text-[color:var(--comp-tab-text-default)] hover:bg-(--comp-tab-surface-hover) hover:border-(--comp-tab-stroke-hover)'
                   }
                 `}
               >
@@ -137,10 +137,10 @@ const GridView = ({
                   className="
                     media-grid-item
                     rounded-[var(--comp-media-section-item-radius)]
-                    bg-[var(--comp-media-section-item-surface)]
+                    bg-(--comp-media-section-item-surface)
                     overflow-hidden
                     transition-colors
-                    hover:bg-[var(--color-magenta)]
+                    hover:bg-(--color-magenta)
                     cursor-pointer
                   "
                   style={placement}

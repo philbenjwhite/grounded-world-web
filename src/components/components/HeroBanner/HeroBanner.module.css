@@ -1,6 +1,13 @@
-/* Vimeo iframe needs pointer-events disabled so users can't interact with it */
+/* Vimeo iframe: cover the section like object-fit:cover */
 .vimeoIframe {
   pointer-events: none;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 aspect ratio */
+  min-height: 100%;
+  min-width: 177.78vh; /* 100 / 0.5625 */
+  transform: translate(-50%, -50%);
 }
 
 /* Stagger-in animations for content */

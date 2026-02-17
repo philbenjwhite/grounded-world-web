@@ -9,6 +9,7 @@ import ExpandingCardPanel from "@/components/components/ExpandingCardPanel";
 import type { ExpandingCardItem } from "@/components/components/ExpandingCardPanel";
 import WorkCarousel from "@/components/components/WorkCarousel";
 import type { WorkCarouselItem } from "@/components/components/WorkCarousel";
+import CTABanner from "@/components/components/CTABanner";
 
 interface HomeClientPageProps {
   query: string;
@@ -117,7 +118,7 @@ export default function HomeClientPage(props: HomeClientPageProps) {
 
   return (
     <>
-      <div className="h-[75dvh] md:h-[calc(100dvh-56px)]">
+      <div className="h-[65dvh] md:h-[calc(100dvh-56px)]">
         <VideoHero
           backgroundVideoUrl={videoHeroSection?.backgroundVideoUrl}
           vimeoId={videoHeroSection?.vimeoId}
@@ -151,6 +152,17 @@ export default function HomeClientPage(props: HomeClientPageProps) {
           className="py-16 md:py-24"
         />
       )}
+
+      <CTABanner
+        backgroundSrc="/images/stockholm-metro-station-escalators-dark-underground.jpg"
+        backgroundAlt="Stockholm metro station escalators"
+        heading="It's time to get grounded"
+        primaryLabel="Ask Gaia for help"
+        primaryHref="/gaia"
+        secondaryLabel="Contact Us"
+        secondaryHref="/contact"
+        className="px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
+      />
     </>
   );
 }

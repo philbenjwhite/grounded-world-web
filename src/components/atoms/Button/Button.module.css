@@ -1,0 +1,30 @@
+/* Icon hover animation — smooth continuous fade-up */
+
+@keyframes iconFadeUp {
+  0% {
+    transform: translateY(7px);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-7px);
+    opacity: 0;
+  }
+}
+
+.button:hover svg {
+  animation: iconFadeUp 1s ease-in-out infinite;
+}
+
+/* ---- Prefers reduced motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  .button:hover svg {
+    animation: none !important;
+  }
+}

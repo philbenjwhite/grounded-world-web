@@ -7,6 +7,7 @@ import cn from "classnames";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import Section from "../../layout/Section";
 import Container from "../../layout/Container";
+import Heading from "../../atoms/Heading";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import styles from "./WorkGrid.module.css";
 
@@ -32,6 +33,8 @@ export interface WorkItem {
 export interface WorkGridProps {
   /** Array of work items — already sorted */
   items: WorkItem[];
+  /** Optional section title rendered as h2 above the grid */
+  sectionTitle?: string;
 }
 
 /* ─── Constants ──────────────────────────────────────── */
@@ -46,7 +49,7 @@ const BENTO_PATTERN = [false, true, true, false, false, true];
 
 /* ─── Component ──────────────────────────────────────── */
 
-const WorkGrid: React.FC<WorkGridProps> = ({ items }) => {
+const WorkGrid: React.FC<WorkGridProps> = ({ items, sectionTitle }) => {
   const [activeFilter, setActiveFilter] = useState(ALL_FILTER);
   const gridRef = useScrollReveal(0.01);
 
@@ -67,6 +70,12 @@ const WorkGrid: React.FC<WorkGridProps> = ({ items }) => {
   return (
     <Section className="py-16 md:py-24">
       <Container className="px-[var(--layout-section-padding-x)]">
+        {sectionTitle && (
+          <Heading level={2} size="h2" color="primary" className="text-center mb-8 md:mb-12">
+            {sectionTitle}
+          </Heading>
+        )}
+
         {/* Filter pills */}
         <div className="mb-10 flex flex-wrap justify-center gap-3">
           {tags.map((tag) => (

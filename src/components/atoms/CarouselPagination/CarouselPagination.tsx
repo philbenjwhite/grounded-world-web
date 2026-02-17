@@ -40,7 +40,7 @@ const CarouselPagination = ({
             className={cn(
               styles.dot,
               "h-2 cursor-pointer border-0 p-0",
-              isActive ? "w-6" : "w-2 bg-[var(--color-gray-4)] hover:bg-[var(--color-gray-3)]",
+              isActive ? "w-6" : "w-2 bg-(--color-gray-4) hover:bg-(--color-gray-3)",
             )}
             data-active={isActive ? "" : undefined}
             onClick={() => onSelect?.(index)}

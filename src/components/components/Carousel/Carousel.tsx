@@ -31,7 +31,6 @@ export interface CarouselProps {
 
 const TWEEN_FACTOR = 0.3;
 const MIN_SCALE = 0.6;
-const MIN_OPACITY = 0.4;
 
 const Carousel = ({
   items,
@@ -48,6 +47,7 @@ const Carousel = ({
   });
 
   const slidesRef = useRef<HTMLDivElement[]>([]);
+  const overlaysRef = useRef<HTMLDivElement[]>([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -97,14 +97,16 @@ const Carousel = ({
 
       const tweenValue = 1 - Math.abs(diffToTarget * TWEEN_FACTOR);
       const scale = Math.max(MIN_SCALE, Math.min(1, tweenValue));
-      const opacity = MIN_OPACITY + ((scale - MIN_SCALE) / (1 - MIN_SCALE)) * (1 - MIN_OPACITY);
+      /* 0 = fully centered, 1 = fully off-screen */
+      const offCenter = 1 - (scale - MIN_SCALE) / (1 - MIN_SCALE);
 
       const slideNode = slidesRef.current[index];
       if (!slideNode) return;
       slideNode.style.transform = `scale(${scale})`;
 
-      const cardNode = slideNode.firstElementChild as HTMLElement | null;
-      if (cardNode) cardNode.style.opacity = String(opacity);
+      /* Glass overlay: blur + darken non-center cards */
+      const overlayNode = overlaysRef.current[index];
+      if (overlayNode) overlayNode.style.opacity = String(offCenter);
     });
   }, [emblaApi]);
 
@@ -153,8 +155,9 @@ const Carousel = ({
                   className={cn(
                     styles.card,
                     'work-card-hover',
+                    'relative',
                     'rounded-[var(--comp-work-card-radius)]',
-                    'bg-[var(--comp-work-card-surface)]',
+                    'bg-(--comp-work-card-surface)',
                     'overflow-hidden',
                     'aspect-video',
                     isCenter && 'cursor-pointer'
@@ -180,8 +183,14 @@ const Carousel = ({
                     <div className="absolute inset-0 w-full h-full" />
                   )}
 
+                  {/* Glass overlay — blurs + darkens non-center cards */}
+                  <div
+                    ref={(el) => { if (el) overlaysRef.current[index] = el; }}
+                    className={styles.glassOverlay}
+                  />
+
                   {/* Gradient scrim for text legibility */}
-                  <div className={cn(styles.cardScrim, 'absolute inset-0 z-[1] pointer-events-none bg-gradient-to-b from-transparent via-transparent to-black/80')} />
+                  <div className={cn(styles.cardScrim, 'absolute inset-0 z-[1] pointer-events-none')} />
 
                   {/* Amber glow overlay */}
                   <div className="work-card-glow" />
@@ -216,7 +225,7 @@ const Carousel = ({
               'absolute left-4 top-1/2 -translate-y-1/2 z-10',
               'w-[var(--size-40)] h-[var(--size-40)]',
               'rounded-full',
-              'bg-[var(--color-cyan)]',
+              'bg-(--color-cyan)',
               'flex items-center justify-center',
               'cursor-pointer',
               'transition-all',
@@ -249,7 +258,7 @@ const Carousel = ({
               'absolute right-4 top-1/2 -translate-y-1/2 z-10',
               'w-[var(--size-40)] h-[var(--size-40)]',
               'rounded-full',
-              'bg-[var(--color-cyan)]',
+              'bg-(--color-cyan)',
               'flex items-center justify-center',
               'cursor-pointer',
               'transition-all',

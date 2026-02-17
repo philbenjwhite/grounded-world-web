@@ -19,13 +19,13 @@ export interface TextProps {
 }
 
 const sizeClasses: Record<TextSize, string> = {
-  subtitle: 'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light tracking-tight',
-  'body-xl': 'text-[length:var(--font-size-body-xl)]',
-  'body-lg': 'text-[length:var(--font-size-body-lg)]',
-  'body-md': 'text-[length:var(--font-size-body-md)]',
-  'body-sm': 'text-[length:var(--font-size-body-sm)]',
-  'body-xs': 'text-[length:var(--font-size-body-xs)]',
-  caption: 'text-[length:var(--font-size-caption)]',
+  subtitle: 'text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light tracking-tight leading-[1.4]',
+  'body-xl': 'text-[length:var(--font-size-body-xl)] leading-[1.5]',
+  'body-lg': 'text-[length:var(--font-size-body-lg)] leading-[1.6]',
+  'body-md': 'text-[length:var(--font-size-body-md)] leading-[1.6]',
+  'body-sm': 'text-[length:var(--font-size-body-sm)] leading-[1.5]',
+  'body-xs': 'text-[length:var(--font-size-body-xs)] leading-[1.5]',
+  caption: 'text-[length:var(--font-size-caption)] leading-[1.5]',
 };
 
 const colorClasses: Record<TextColor, string> = {

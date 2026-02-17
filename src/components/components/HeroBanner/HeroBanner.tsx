@@ -172,7 +172,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
             src={iframeSrc}
             className={cn(
               styles.vimeoIframe,
-              "absolute inset-0 w-full h-full scale-[1.25] border-0 bg-black transition-opacity duration-1000 ease-in-out",
+              "absolute border-0 bg-black transition-opacity duration-1000 ease-in-out",
               iframeReady ? "opacity-100" : "opacity-0"
             )}
             allow="autoplay; fullscreen"
@@ -267,7 +267,6 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
                 <Button
                   href={ctaHref}
                   variant={ctaVariant === "outline" ? "secondary" : "primary"}
-                  className="uppercase tracking-widest text-sm"
                 >
                   {ctaLabel}
                 </Button>
@@ -276,7 +275,6 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
                 <Button
                   href={secondaryCtaHref}
                   variant="secondary"
-                  className="uppercase tracking-widest text-sm"
                 >
                   {secondaryCtaLabel}
                 </Button>

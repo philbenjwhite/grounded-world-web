@@ -1,0 +1,86 @@
+/* ─── Enter animations ─── */
+
+@keyframes backdropIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(24px);
+  }
+}
+
+@keyframes contentIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ─── Exit animations ─── */
+
+@keyframes backdropOut {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(24px);
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+}
+
+@keyframes contentOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+}
+
+/* ─── States ─── */
+
+.backdrop {
+  animation: backdropIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.backdropClosing {
+  animation: backdropOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.content {
+  animation: contentIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+.contentClosing {
+  animation: contentOut 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ─── Close button ─── */
+
+.closeButton {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.closeButton:hover {
+  transform: scale(1.05);
+}
+
+/* ─── Iframe loading state ─── */
+
+.iframeLoading {
+  opacity: 0;
+}
+
+.iframeReady {
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
