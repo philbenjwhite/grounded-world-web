@@ -192,7 +192,7 @@ export function renderSection(section: PageSections, index: number): React.React
       const sectionLabel = (section as unknown as { sectionLabel?: string }).sectionLabel;
       return (
         <Section key={index}>
-          <Container>
+          <Container className="px-[var(--layout-section-padding-x)]">
             <Split
               ratio={
                 (section.ratio as
