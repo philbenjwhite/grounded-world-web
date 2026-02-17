@@ -549,10 +549,13 @@ export function renderSection(section: PageSections, index: number): React.React
         backgroundSrc?: string;
         backgroundAlt?: string;
         heading?: string;
+        subtext?: string;
         primaryLabel?: string;
         primaryHref?: string;
+        primaryExternal?: boolean;
         secondaryLabel?: string;
         secondaryHref?: string;
+        secondaryExternal?: boolean;
         overlayOpacity?: string;
         className?: string;
       };
@@ -564,10 +567,13 @@ export function renderSection(section: PageSections, index: number): React.React
           backgroundSrc={s.backgroundSrc}
           backgroundAlt={s.backgroundAlt ?? undefined}
           heading={s.heading}
+          subtext={s.subtext ?? undefined}
           primaryLabel={s.primaryLabel}
           primaryHref={s.primaryHref}
+          primaryExternal={s.primaryExternal ?? false}
           secondaryLabel={s.secondaryLabel ?? undefined}
           secondaryHref={s.secondaryHref ?? undefined}
+          secondaryExternal={s.secondaryExternal ?? false}
           overlayOpacity={
             (s.overlayOpacity as "light" | "medium" | "heavy") ?? undefined
           }

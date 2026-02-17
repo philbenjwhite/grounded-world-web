@@ -1587,10 +1587,27 @@ export default defineConfig({
                   },
                   {
                     type: "string",
+                    name: "overlayOpacity",
+                    label: "Overlay Darkness",
+                    options: [
+                      { value: "light", label: "Light" },
+                      { value: "medium", label: "Medium" },
+                      { value: "heavy", label: "Heavy" },
+                    ],
+                  },
+                  {
+                    type: "string",
                     name: "heading",
                     label: "Heading",
                     required: true,
                   },
+                  {
+                    type: "string",
+                    name: "subtext",
+                    label: "Subtext (optional)",
+                    ui: { component: "textarea" },
+                  },
+                  /* ── Primary button ── */
                   {
                     type: "string",
                     name: "primaryLabel",
@@ -1601,27 +1618,31 @@ export default defineConfig({
                     type: "string",
                     name: "primaryHref",
                     label: "Primary Button Link",
+                    description: "Use /page-slug for internal pages, or https://... for external URLs",
                     required: true,
                   },
                   {
+                    type: "boolean",
+                    name: "primaryExternal",
+                    label: "Open primary link in a new tab",
+                  },
+                  /* ── Secondary button (optional — leave blank to show only one button) ── */
+                  {
                     type: "string",
                     name: "secondaryLabel",
-                    label: "Secondary Button Label",
+                    label: "Secondary Button Label (optional)",
+                    description: "Leave blank to show only one button",
                   },
                   {
                     type: "string",
                     name: "secondaryHref",
                     label: "Secondary Button Link",
+                    description: "Use /page-slug for internal pages, or https://... for external URLs",
                   },
                   {
-                    type: "string",
-                    name: "overlayOpacity",
-                    label: "Overlay Darkness",
-                    options: [
-                      { value: "light", label: "Light" },
-                      { value: "medium", label: "Medium" },
-                      { value: "heavy", label: "Heavy" },
-                    ],
+                    type: "boolean",
+                    name: "secondaryExternal",
+                    label: "Open secondary link in a new tab",
                   },
                   {
                     type: "string",
