@@ -1423,6 +1423,51 @@ export default defineConfig({
                   },
                 ],
               },
+              /* ── Testimonial Section ───────────────────── */
+              {
+                name: "testimonialSection",
+                label: "Testimonial Section",
+                fields: [
+                  {
+                    type: "string",
+                    name: "quote",
+                    label: "Quote",
+                    required: true,
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "string",
+                    name: "author",
+                    label: "Author Name",
+                  },
+                  {
+                    type: "string",
+                    name: "role",
+                    label: "Role / Title",
+                  },
+                  {
+                    type: "string",
+                    name: "company",
+                    label: "Company",
+                  },
+                  {
+                    type: "number",
+                    name: "rating",
+                    label: "Star Rating (1-5)",
+                    description: "Number of filled stars to display",
+                  },
+                  {
+                    type: "image",
+                    name: "imageSrc",
+                    label: "Image",
+                  },
+                  {
+                    type: "string",
+                    name: "imageAlt",
+                    label: "Image Alt Text",
+                  },
+                ],
+              },
               /* ── CTA Banner ────────────────────────────── */
               {
                 name: "ctaBanner",

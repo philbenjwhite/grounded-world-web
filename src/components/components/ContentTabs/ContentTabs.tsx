@@ -272,7 +272,7 @@ const ContentTabs: React.FC<ContentTabsProps> = ({
 
       if (!mobile && hasMedia) {
         return (
-          <div className="grid grid-cols-[1fr_1fr] gap-10 items-start">
+          <div className="grid grid-cols-[2fr_3fr] gap-10 items-start">
             <div>{renderMedia(item.imageSrc, item.imageAlt || item.title, imageSize, item.videoSrc)}</div>
             <div>
               {headerBlock}
@@ -319,7 +319,7 @@ const ContentTabs: React.FC<ContentTabsProps> = ({
 
     if (!mobile && hasSubMedia) {
       return (
-        <div className="grid grid-cols-[1fr_1fr] gap-10 items-start">
+        <div className="grid grid-cols-[2fr_3fr] gap-10 items-start">
           <div>{renderMedia(sub.imageSrc, sub.imageAlt || sub.heading, subImageSize, sub.videoSrc)}</div>
           <div>
             {headerBlock}

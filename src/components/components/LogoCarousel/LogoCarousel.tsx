@@ -50,7 +50,6 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({
         gradientColor="#0a0a0a"
         gradientWidth={120}
         autoFill
-        pauseOnHover
         className={cn("group", styles.marquee)}
       >
         {logos.map((logo) => (

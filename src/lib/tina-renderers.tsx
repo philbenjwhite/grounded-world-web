@@ -14,6 +14,7 @@ import VideoHero from "@/components/components/VideoHero";
 import FeatureCards from "@/components/components/FeatureCards";
 import ContactSection from "@/components/components/ContactSection";
 import CTABanner from "@/components/components/CTABanner";
+import TestimonialSection from "@/components/components/TestimonialSection";
 import ContentTabs from "@/components/components/ContentTabs";
 import Split from "@/components/layout/Split";
 import Section from "@/components/layout/Section";
@@ -443,6 +444,31 @@ export function renderSection(section: PageSections, index: number): React.React
           }
         />
       );
+
+    case "PageSectionsTestimonialSection": {
+      const t = section as unknown as {
+        quote?: string;
+        author?: string;
+        role?: string;
+        company?: string;
+        rating?: number;
+        imageSrc?: string;
+        imageAlt?: string;
+      };
+      if (!t.quote) return null;
+      return (
+        <TestimonialSection
+          key={index}
+          quote={t.quote}
+          author={t.author ?? undefined}
+          role={t.role ?? undefined}
+          company={t.company ?? undefined}
+          rating={t.rating ?? undefined}
+          imageSrc={t.imageSrc ?? undefined}
+          imageAlt={t.imageAlt ?? undefined}
+        />
+      );
+    }
 
     case "PageSectionsCtaBanner": {
       const s = section as unknown as {

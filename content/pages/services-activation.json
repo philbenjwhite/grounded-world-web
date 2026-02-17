@@ -1,0 +1,212 @@
+{
+  "title": "Brand Activation Agency",
+  "slug": "brand-activation",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "image",
+      "imageSrc": "/images/services/activation-hero-brand-purpose.jpg",
+      "imageAlt": "Creative team collaborating on brand activation strategy",
+      "title": "Activating Brand Purpose & Sustainability",
+      "subtitle": "Driving behaviour change and purchase intent at the moments that matter — for colleagues, customers, and consumers, especially at retail.",
+      "ctaLabel": "Book an Activation Workshop",
+      "ctaHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "ctaVariant": "solid",
+      "secondaryCtaLabel": "See Our Approach",
+      "secondaryCtaHref": "#our-approach",
+      "overlayOpacity": "medium",
+      "contentAlign": "center",
+      "minHeight": "condensed",
+      "bottomFade": true
+    },
+    {
+      "_template": "introSection",
+      "heading": "Sprint-Based Creative That Delivers at Speed",
+      "paragraphs": [
+        "We take a design-sprint based approach to creative development — enhancing co-creation and collaboration at every step. No protracted meetings, no rounds of revisions, no ivory tower conversations.",
+        "Whether it's packaging, visual identity, marketing campaigns, or retail activation, everything is delivered on brand, on budget, and at speed — powered by proprietary frameworks built on decades of work with the world's largest brand owners and retailers."
+      ]
+    },
+    {
+      "_template": "featureCards",
+      "sectionLabel": "What We Activate",
+      "heading": "Three Pillars of Brand Activation",
+      "columns": 3,
+      "items": [
+        {
+          "icon": "Lightbulb",
+          "color": "#4DD9FF",
+          "title": "Design & Identity",
+          "body": "Brand identity, packaging, visual identity systems, logos, websites, and marketing collateral — all grounded in purpose and built to differentiate at shelf and online."
+        },
+        {
+          "icon": "Megaphone",
+          "color": "#FF08CC",
+          "title": "Content & Campaigns",
+          "body": "Content creation, video production, advertising, integrated campaigns, events, and brand experiences designed to drive both cultural impact and commercial results."
+        },
+        {
+          "icon": "Target",
+          "color": "#FFA603",
+          "title": "Commerce & Activation",
+          "body": "Customer journey mapping, commercial selling stories, brand and retail activation, and tactical toolkits that make sustainable shopping accessible and rewarding at point of purchase."
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Our Approach",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## Brand Activation For Good\n\nOur playbooks, frameworks, tools, and ways of working are based on proprietary research, case studies, and decades of consultation with some of the world's largest brand owners and retailers.\n\nWe ensure that whether it's consumer activations, brand experiences, or retail campaigns — everything is always delivered on brand, on budget, and at speed."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Try the Workshop",
+              "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+              "variant": "primary",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/services/activation-brand-graphic.jpg",
+          "alt": "Brand activation sprint methodology diagram",
+          "rounded": true
+        }
+      ]
+    },
+    {
+      "_template": "logoCarousel"
+    },
+    {
+      "_template": "testimonialSection",
+      "quote": "Coupled with the testing, it really brought to light the challenges we are facing and helped define the most impactful way to reach our shoppers through packaging, design and retail activation.",
+      "rating": 5,
+      "imageSrc": "/images/services/activation-testimonial.jpg",
+      "imageAlt": "Brand activation project showcase"
+    },
+    {
+      "_template": "contentTabs",
+      "sectionTitle": "Our Activation Process",
+      "sectionSubtitle": "From sprint to launch — a proven process for high-impact brand activation.",
+      "defaultActiveIndex": 0,
+      "items": [
+        {
+          "title": "Discovery Sprint",
+          "icon": "MagnifyingGlass",
+          "color": "#4DD9FF",
+          "subtitle": "Identify the Gaps That Matter",
+          "body": "Every activation starts with understanding the **intention-action gap** — the disconnect between what consumers say they want and what they actually do at shelf.\n\nWe map the full purchase path, identify barriers and drivers, and prioritise the moments where activation can have the greatest commercial and sustainability impact.\n\nThis sprint combines cultural insights, shopper data, and our proprietary frameworks to build a clear picture of where to focus.",
+          "imageSrc": "/images/services/intention-action-gap-diagram.png",
+          "imageAlt": "Intention-action gap analysis framework showing purchase path barriers"
+        },
+        {
+          "title": "Creative Development",
+          "icon": "Lightbulb",
+          "color": "#FF08CC",
+          "subtitle": "Co-Create at Speed",
+          "body": "Using our design-sprint methodology, we rapidly develop a range of **designs, ideas, activations, and experiences** — all testable within a week.\n\nWhether you need packaging concepts, campaign creative, retail activations, or brand experiences, our collaborative sprints ensure faster iteration with stronger outcomes.\n\nWe work alongside your team to co-create, ensuring every concept is grounded in strategy and commercially viable.",
+          "imageSrc": "/images/services/activation-grove-bottle-1.jpg",
+          "imageAlt": "Grove Pick Your Bottle creative concept development",
+          "subsections": [
+            {
+              "heading": "Case Study: Grove — Pick Your Bottle",
+              "imageSrc": "/images/services/activation-grove-bottle-4.jpg",
+              "imageAlt": "Grove sustainable bottle designs in multiple colourways",
+              "body": "For Grove, we developed the **Pick Your Bottle** campaign — a retail activation that put sustainable packaging choice directly in shoppers' hands.\n\nFrom concept to shelf-ready creative in a single sprint cycle, the campaign drove engagement by making sustainability tangible, personal, and visually compelling at point of purchase."
+            }
+          ]
+        },
+        {
+          "title": "Testing & Validation",
+          "icon": "ChartLineUp",
+          "color": "#10B981",
+          "subtitle": "Validate Before You Launch",
+          "body": "Using our fully licensed **white-label testing platform**, we quickly validate which designs, concepts, or messaging will resonate best — before committing to production.\n\nTests can be programmed in less than a day with results in 48 hours, streaming in real-time to an online dashboard.\n\nTesting can be run using global consumer panels or synthetically using AI-generated segments — often best used to assist with internal decision-making.",
+          "imageSrc": "/images/services/strategy-testing-dashboard.jpg",
+          "imageAlt": "Real-time testing dashboard showing concept validation results"
+        },
+        {
+          "title": "Activation Toolkit",
+          "icon": "Rocket",
+          "color": "#FFA603",
+          "subtitle": "Everything You Need to Launch",
+          "body": "Every engagement delivers a comprehensive **activation toolkit** designed for immediate deployment:\n\n1. A Big Idea and activation strategy mapped to purpose and sustainability\n2. Commercial selling story and sell-in video for retail buyers\n3. Campaign assets, creative toolkits, and playbooks\n4. Robust tactical plan with timelines and KPIs\n5. Internal and retail team deployment guides\n\nEverything your team needs to activate with confidence — at retail, online, and across channels.",
+          "buttonLabel": "Book a Workshop",
+          "buttonHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+          "buttonExternal": true
+        }
+      ]
+    },
+    {
+      "_template": "accordionFAQ",
+      "sectionTitle": "Frequently Asked Questions",
+      "sectionSubtitle": "Everything you need to know about our brand activation process.",
+      "items": [
+        {
+          "question": "What kinds of campaigns do you typically design?",
+          "answer": "Omnichannel retail activations, partnerships, digital campaigns, and experiential programmes designed to drive both impact and sales. We work across B2B, retail, and direct-to-consumer categories and markets."
+        },
+        {
+          "question": "How do you ensure sustainability messaging is commercially effective?",
+          "answer": "We align sustainability commitments and claims with customer category strategy and shopper purchase drivers. This ensures messaging resonates at shelf and drives purchase intent — not just awareness."
+        },
+        {
+          "question": "Do you create campaign concepts from scratch or build on client ideas?",
+          "answer": "Both. We can originate fresh ideas or collaborate to evolve existing concepts or programmes. Our sprint methodology is designed to work with whatever starting point makes sense."
+        },
+        {
+          "question": "How do you integrate creative with cultural insights and sustainability frameworks?",
+          "answer": "By combining insights from our research practice with proven frameworks like the 5Rs workshop and flywheel of impact. Every creative decision is grounded in data and strategic rationale."
+        },
+        {
+          "question": "What deliverables are usually included?",
+          "answer": "Depending on scope: campaign toolkits, creative assets, selling stories, testing results, and playbooks for internal and retail teams to use and deploy. We generally don't handle ongoing campaign management and implementation."
+        },
+        {
+          "question": "How long does it take to develop an activation?",
+          "answer": "Typically 8-12 weeks, depending on complexity. Our sprint-based approach means you'll see tangible concepts and testable ideas within the first few weeks, not just at the end."
+        },
+        {
+          "question": "Do you test campaigns before launch?",
+          "answer": "Yes. We often run concept and claims testing using our own white-label testing platform to choose the best idea or refine messaging before we move to development or roll-out."
+        },
+        {
+          "question": "Can you help us design sustainability activations that drive purchase intent at retail?",
+          "answer": "Yes. Retail Activation for Good is a workshop specifically designed to make sustainable shopping more accessible, aspirational, and rewarding at point of purchase."
+        },
+        {
+          "question": "Do you collaborate with client agencies?",
+          "answer": "Both — we can lead activation programmes end-to-end or integrate with your existing agency partners. We're flexible and work best when we complement rather than compete."
+        },
+        {
+          "question": "How does the sprint approach differ from a traditional agency process?",
+          "answer": "Traditional agencies work in linear phases with multiple rounds of revisions. Our design sprints compress the timeline by co-creating with your team in real-time — meaning faster decisions, better alignment, and concepts that are tested and validated before you commit to production."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/services/strategy-ink-texture.jpg",
+      "backgroundAlt": "Abstract ink in water texture",
+      "heading": "It's time to get grounded",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/about#contact",
+      "secondaryLabel": "Book an Activation Workshop",
+      "secondaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "overlayOpacity": "heavy",
+      "className": "px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
+    }
+  ]
+}
