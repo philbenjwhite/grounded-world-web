@@ -681,6 +681,31 @@ export default defineConfig({
                     label: "Bottom Fade",
                     description: "Show a gradient that bleeds into the next section",
                   },
+                  {
+                    type: "image",
+                    name: "featureImageSrc",
+                    label: "Feature Image",
+                    description: "Decorative image shown on the right side of the hero",
+                  },
+                  {
+                    type: "string",
+                    name: "featureImageAlt",
+                    label: "Feature Image Alt Text",
+                  },
+                  {
+                    type: "string",
+                    name: "highlights",
+                    label: "Highlight Items",
+                    list: true,
+                    description: "Service items shown in a bordered box on the hero",
+                  },
+                  {
+                    type: "string",
+                    name: "highlightColor",
+                    label: "Highlight Border Color",
+                    ui: { component: "color" },
+                    description: "Accent color for the highlight box border (default: magenta)",
+                  },
                 ],
               },
               /* ── Showcase Grid ───────────────────────── */

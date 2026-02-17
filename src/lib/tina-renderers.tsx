@@ -197,6 +197,18 @@ export function renderSection(section: PageSections, index: number): React.React
             (section.minHeight as "full" | "large" | "medium") ?? undefined
           }
           bottomFade={section.bottomFade ?? undefined}
+          featureImageSrc={
+            (section as unknown as { featureImageSrc?: string }).featureImageSrc ?? undefined
+          }
+          featureImageAlt={
+            (section as unknown as { featureImageAlt?: string }).featureImageAlt ?? undefined
+          }
+          highlights={
+            ((section as unknown as { highlights?: string[] }).highlights?.filter(Boolean) as string[]) ?? undefined
+          }
+          highlightColor={
+            (section as unknown as { highlightColor?: string }).highlightColor ?? undefined
+          }
         />
       );
 

@@ -58,6 +58,15 @@ export interface HeroBannerProps {
   minHeight?: "full" | "large" | "medium" | "condensed";
   /** Show a bottom gradient that bleeds into the next section */
   bottomFade?: boolean;
+
+  /** Decorative image shown on the right side of the hero (forces left alignment) */
+  featureImageSrc?: string;
+  /** Alt text for the feature image */
+  featureImageAlt?: string;
+  /** Highlighted service items shown in a bordered box */
+  highlights?: string[];
+  /** Border/accent color for the highlights box */
+  highlightColor?: string;
 }
 
 /* ─── Helpers ────────────────────────────────────────── */
@@ -112,6 +121,10 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   contentAlign = "center",
   minHeight = "full",
   bottomFade = false,
+  featureImageSrc,
+  featureImageAlt = "",
+  highlights,
+  highlightColor,
 }) => {
   const PlexusBg = CanvasComponent ?? DefaultPlexusBackground;
   const [iframeReady, setIframeReady] = useState(false);
@@ -129,6 +142,13 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 
   const hasCta = ctaLabel && ctaHref;
   const hasSecondaryCta = secondaryCtaLabel && secondaryCtaHref;
+  const hasFeatureImage = !!featureImageSrc;
+  const hasHighlights = highlights && highlights.length > 0;
+
+  // When a feature image is present, force left alignment
+  const effectiveAlign = hasFeatureImage ? "left" : contentAlign;
+
+  const accentColor = highlightColor || "var(--color-magenta)";
 
   return (
     <>
@@ -210,79 +230,126 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
           "relative z-20 flex flex-col justify-center",
           "px-6 md:px-12 lg:px-24",
           minHeightClasses[minHeight],
-          contentAlign === "center"
+          effectiveAlign === "center"
             ? "items-center text-center"
             : "items-start text-left"
         )}
       >
-        {/* Title — unconstrained width so it stays on one line at desktop */}
-        <div className={styles.animateTitle}>
-          <Heading
-            level={1}
-            size="display"
-            color="primary"
-            className="lg:whitespace-nowrap"
-          >
-            {title}
-          </Heading>
-        </div>
-
-        {/* Subtitle + CTAs — max-width for readable line lengths */}
+        {/* Wrapper: when feature image present, use grid for side-by-side layout */}
         <div
           className={cn(
-            "max-w-4xl",
-            contentAlign === "center" && "mx-auto"
+            "w-full",
+            hasFeatureImage && "grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center"
           )}
         >
-          {subtitle && (
-            <div className={cn(styles.animateSubtitle, "mt-4 md:mt-6")}>
-              {isHtml ? (
-                <Text
-                  size="body-lg"
-                  color="secondary"
-                  className="leading-relaxed"
-                  as="div"
-                >
-                  <span dangerouslySetInnerHTML={{ __html: subtitle }} />
-                </Text>
-              ) : (
-                <Text
-                  size="body-lg"
-                  color="secondary"
-                  className="leading-relaxed"
-                >
-                  {subtitle}
-                </Text>
-              )}
+          {/* ── Text column ──────────────────────── */}
+          <div>
+            {/* Title */}
+            <div className={styles.animateTitle}>
+              <Heading
+                level={1}
+                size="display"
+                color="primary"
+                className={cn(!hasFeatureImage && "lg:whitespace-nowrap")}
+              >
+                {title}
+              </Heading>
             </div>
-          )}
 
-          {(hasCta || hasSecondaryCta) && (
+            {/* Subtitle + highlights + CTAs */}
             <div
               className={cn(
-                styles.animateCta,
-                "mt-8 md:mt-10 flex flex-wrap gap-4 items-center",
-                contentAlign === "center"
-                  ? "justify-center"
-                  : "justify-start"
+                "max-w-4xl",
+                effectiveAlign === "center" && "mx-auto"
               )}
             >
-              {hasCta && (
-                <Button
-                  href={ctaHref}
-                  variant={ctaVariant === "outline" ? "secondary" : "primary"}
-                >
-                  {ctaLabel}
-                </Button>
+              {subtitle && (
+                <div className={cn(styles.animateSubtitle, "mt-4 md:mt-6")}>
+                  {isHtml ? (
+                    <Text
+                      size="body-lg"
+                      color="secondary"
+                      className="leading-relaxed"
+                      as="div"
+                    >
+                      <span dangerouslySetInnerHTML={{ __html: subtitle }} />
+                    </Text>
+                  ) : (
+                    <Text
+                      size="body-lg"
+                      color="secondary"
+                      className="leading-relaxed"
+                    >
+                      {subtitle}
+                    </Text>
+                  )}
+                </div>
               )}
-              {hasSecondaryCta && (
-                <Button
-                  href={secondaryCtaHref}
-                  variant="secondary"
-                >
-                  {secondaryCtaLabel}
-                </Button>
+
+              {/* Highlights box */}
+              {hasHighlights && (
+                <div className={cn(styles.animateHighlights, "mt-6 md:mt-8")}>
+                  <ul
+                    className="rounded-xl bg-black/50 backdrop-blur-sm border px-5 py-4 flex flex-col gap-2"
+                    style={{ borderColor: accentColor } as React.CSSProperties}
+                  >
+                    {highlights.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span
+                          className="mt-2 h-1.5 w-1.5 rounded-full shrink-0"
+                          style={{ backgroundColor: accentColor } as React.CSSProperties}
+                          aria-hidden="true"
+                        />
+                        <Text size="body-md" color="primary" as="span">
+                          {item}
+                        </Text>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
+
+              {(hasCta || hasSecondaryCta) && (
+                <div
+                  className={cn(
+                    styles.animateCta,
+                    "mt-8 md:mt-10 flex flex-wrap gap-4 items-center",
+                    effectiveAlign === "center"
+                      ? "justify-center"
+                      : "justify-start"
+                  )}
+                >
+                  {hasCta && (
+                    <Button
+                      href={ctaHref}
+                      variant={ctaVariant === "outline" ? "secondary" : "primary"}
+                    >
+                      {ctaLabel}
+                    </Button>
+                  )}
+                  {hasSecondaryCta && (
+                    <Button
+                      href={secondaryCtaHref}
+                      variant="secondary"
+                    >
+                      {secondaryCtaLabel}
+                    </Button>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* ── Feature image column (desktop only) ── */}
+          {hasFeatureImage && (
+            <div className={cn(styles.animateFeatureImage, "hidden lg:block relative w-[280px] xl:w-[340px] shrink-0")}>
+              <Image
+                src={featureImageSrc}
+                alt={featureImageAlt}
+                width={340}
+                height={340}
+                className="w-full h-auto object-contain drop-shadow-2xl"
+              />
             </div>
           )}
         </div>

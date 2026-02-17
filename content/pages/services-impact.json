@@ -1,0 +1,190 @@
+{
+  "title": "Creative Impact Agency",
+  "slug": "creative-impact",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "image",
+      "imageSrc": "/images/services/impact-hero-articulate.jpg",
+      "imageAlt": "Abstract artistic composition representing creative impact",
+      "title": "An Impact Agency",
+      "subtitle": "That means business. Measuring impact, reporting on progress, and facilitating collaboration and partnerships at scale.",
+      "ctaLabel": "Try the Workshop",
+      "ctaHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "ctaVariant": "solid",
+      "secondaryCtaLabel": "Explore Our Approach",
+      "secondaryCtaHref": "#flywheel",
+      "overlayOpacity": "heavy",
+      "contentAlign": "left",
+      "minHeight": "condensed",
+      "bottomFade": true,
+      "featureImageSrc": "/images/services/impact-flywheel-graphic.png",
+      "featureImageAlt": "Flywheel of Impact framework diagram",
+      "highlights": [
+        "Sustainability & impact reporting",
+        "Commercial, non-profit, and pre-competitive partnerships",
+        "Collaboration training, action labs, design sprints, and thought leadership"
+      ],
+      "highlightColor": "#FF08CC"
+    },
+    {
+      "_template": "introSection",
+      "heading": "The Flywheel of Impact",
+      "paragraphs": [
+        "The Flywheel of Impact enables any brand, social enterprise, or non-profit to identify the right partners, facilitate collaboration, and then measure the biggest opportunity for triple bottom line impact — people, planet, and profit.",
+        "It's a framework for turning good intentions into scalable action — connecting mission to money, and purpose to measurable progress."
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "The Framework",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/services/impact-circle-chart.png",
+          "alt": "Flywheel of Impact circle chart showing the intersection of mission, money, and community",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## How the Flywheel Works\n\nThe framework maps the intersection of three forces: **mission** (what you stand for), **money** (the intention-action gap), and **magic** (cultural and community relevance).\n\nBy identifying where these forces converge, we design scalable ideas, campaigns, and partnerships that drive impact and commercial growth simultaneously.\n\nEvery engagement is grounded in evidence — combining behavioural science, cultural insights, and sustainability data to create strategies that move people and markets."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Book a Discovery Call",
+              "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+              "variant": "outline",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "featureCards",
+      "sectionLabel": "What We Do",
+      "heading": "Three Dimensions of Impact",
+      "columns": 3,
+      "items": [
+        {
+          "icon": "ChartLineUp",
+          "color": "#4DD9FF",
+          "title": "Measure & Report",
+          "body": "Sustainability and impact reporting that goes beyond compliance. We help you define meaningful KPIs, track financial, social, and environmental indicators, and build evidence-based cases for stakeholder buy-in."
+        },
+        {
+          "icon": "Users",
+          "color": "#FF08CC",
+          "title": "Partner & Collaborate",
+          "body": "We identify and facilitate commercial, non-profit, and pre-competitive partnerships — connecting you with mission-aligned organisations, B Corps, and collaborators who amplify your impact."
+        },
+        {
+          "icon": "Lightning",
+          "color": "#FFA603",
+          "title": "Train & Activate",
+          "body": "Collaboration training, action labs, design sprints, speaking engagements, and thought leadership programmes that build internal capability and drive culture change from within."
+        }
+      ]
+    },
+    {
+      "_template": "logoCarousel"
+    },
+    {
+      "_template": "contentTabs",
+      "sectionTitle": "Our Impact Process",
+      "sectionSubtitle": "From insight to scaled impact — a proven framework for triple bottom line growth.",
+      "defaultActiveIndex": 0,
+      "items": [
+        {
+          "title": "Discover",
+          "icon": "MagnifyingGlass",
+          "color": "#4DD9FF",
+          "subtitle": "Map the Opportunity",
+          "body": "Every engagement starts with understanding the landscape — your **belief, purpose, pursuits, barriers, and drivers** — to identify where strategic partnerships and impact initiatives can create the most value.\n\nWe analyse the intersection of mission, money, and cultural relevance to find the sweet spot where purpose drives profit.\n\nThis discovery phase combines stakeholder interviews, market analysis, and our proprietary frameworks to build a clear picture of your impact opportunity.",
+          "imageSrc": "/images/services/impact-circle-chart.png",
+          "imageAlt": "Flywheel of Impact framework showing discovery phase"
+        },
+        {
+          "title": "Design",
+          "icon": "Lightbulb",
+          "color": "#FF08CC",
+          "subtitle": "Create the Flywheel",
+          "body": "Using the Flywheel of Impact framework, we design the strategy that connects your **mission to money** — identifying the right partners, defining collaborative programmes, and building scalable impact initiatives.\n\nWhether it's a pre-competitive partnership, a non-profit collaboration, or a commercial alliance, we structure engagements that deliver measurable triple bottom line outcomes.\n\nEvery design sprint produces testable concepts, partnership blueprints, and impact measurement frameworks."
+        },
+        {
+          "title": "Scale",
+          "icon": "Rocket",
+          "color": "#10B981",
+          "subtitle": "From Pilot to Programme",
+          "body": "We help you move from pilot to scaled programme — typically in **3-6 months** depending on the number of partnerships and markets.\n\nThis includes defining KPIs that track impact alongside growth, building internal capability through training and action labs, and creating the measurement infrastructure to report on progress.\n\nOngoing consultancy, optimisation, and partnership facilitation ensure the flywheel keeps spinning.",
+          "buttonLabel": "Start a Conversation",
+          "buttonHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+          "buttonExternal": true
+        }
+      ]
+    },
+    {
+      "_template": "accordionFAQ",
+      "sectionTitle": "Frequently Asked Questions",
+      "sectionSubtitle": "Everything you need to know about our impact and partnership approach.",
+      "items": [
+        {
+          "question": "How do you identify the right partnerships or alliances for impact?",
+          "answer": "We analyse your belief, purpose, pursuits, barriers, and drivers to find strategic partners whose mission and capabilities complement yours. This goes beyond surface-level alignment — we look for partners who can genuinely amplify your impact."
+        },
+        {
+          "question": "Can you help us design a long-term sustainability or purpose roadmap?",
+          "answer": "Yes. The Flywheel framework supports both near-term activation and long-term strategic planning. We help you build a roadmap that connects immediate wins to sustained, measurable progress."
+        },
+        {
+          "question": "Do you facilitate introductions to non-profits, B Corps, or other collaborators?",
+          "answer": "Yes. We have a wide network of mission and values-driven partners and collaborators. We don't just make introductions — we structure the partnerships for mutual benefit and measurable outcomes."
+        },
+        {
+          "question": "What does a Flywheel of Impact engagement include?",
+          "answer": "A typical engagement includes discovery and landscape mapping, partnership identification and design, impact measurement framework development, stakeholder alignment workshops, and a scalable programme blueprint."
+        },
+        {
+          "question": "How do you help brands close the intention-action gap at scale?",
+          "answer": "By identifying the intersection of mission, money (the intention-action gap), and cultural or community relevance — then designing scalable ideas and campaigns that bridge the gap between what people say they want and what they actually do."
+        },
+        {
+          "question": "How long does it typically take to move from pilot to a scaled programme?",
+          "answer": "Often 3-6 months, depending on the number of partnerships and markets. We design programmes for scalability from the start, so the transition from pilot to full deployment is built into the framework."
+        },
+        {
+          "question": "What ongoing support do you provide after launch?",
+          "answer": "We offer ongoing consultancy, measurement, and optimisation. This includes regular reporting, partnership health checks, and strategic adjustments to keep the flywheel spinning effectively."
+        },
+        {
+          "question": "How do you help secure stakeholder buy-in (internal and external)?",
+          "answer": "Through evidence-based insights and co-created strategies that build alignment. We create compelling business cases that connect impact metrics to commercial outcomes, making it easy for stakeholders to see the value."
+        },
+        {
+          "question": "Can you help us design KPIs that track impact as well as growth?",
+          "answer": "Yes. We specialise in developing balanced scorecards that track financial, social, and environmental indicators — ensuring your impact work is measurable, reportable, and tied to business performance."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/services/strategy-ink-texture.jpg",
+      "backgroundAlt": "Abstract ink in water texture",
+      "heading": "It's time to get grounded",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/about#contact",
+      "secondaryLabel": "Try the Workshop",
+      "secondaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "overlayOpacity": "heavy",
+      "className": "px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
+    }
+  ]
+}
