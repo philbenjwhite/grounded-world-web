@@ -175,7 +175,7 @@
     --layout-column-gap-y: var(--size-0);
     --layout-nav-padding-x: var(--size-0);
     --layout-nav-padding-y: var(--size-0);
-    --layout-section-padding-x: var(--size-0);
+    --layout-section-padding-x: var(--size-16);
     --layout-section-padding-y: var(--size-0);
     --layout-section-gap: var(--size-0);
     --layout-card-padding-x: var(--size-0);
