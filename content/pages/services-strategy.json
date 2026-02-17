@@ -15,9 +15,19 @@
       "secondaryCtaLabel": "Explore Our Approach",
       "secondaryCtaHref": "#our-approach",
       "overlayOpacity": "medium",
-      "contentAlign": "center",
-      "minHeight": "condensed",
-      "bottomFade": true
+      "contentAlign": "left",
+      "minHeight": "fit",
+      "bottomFade": true,
+      "featureImageSrc": "/images/services/sustain-agility.png",
+      "featureImageAlt": "Sustainagility framework graphic",
+      "highlightsDescription": "Connecting the 'why' of purpose to the 'way' of profit — to shape your identity, position your brand, tell your sustainability story, and drive innovation.",
+      "highlights": [
+        "Corporate, brand and social purpose articulation",
+        "Sustainability strategy, marketing, corporate narrative, storytelling and innovation sprints",
+        "Brand positioning architecture & archetyping"
+      ],
+      "highlightColor": "var(--color-cyan)",
+      "highlightsInRight": true
     },
     {
       "_template": "introSection",

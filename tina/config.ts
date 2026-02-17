@@ -673,6 +673,7 @@ export default defineConfig({
                       { value: "large", label: "Large" },
                       { value: "medium", label: "Medium" },
                       { value: "condensed", label: "Condensed" },
+                      { value: "fit", label: "Fit Content" },
                     ],
                   },
                   {
@@ -694,6 +695,13 @@ export default defineConfig({
                   },
                   {
                     type: "string",
+                    name: "highlightsDescription",
+                    label: "Highlights Box Description",
+                    description: "Optional paragraph shown inside the highlights box above the bullet items",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "string",
                     name: "highlights",
                     label: "Highlight Items",
                     list: true,
@@ -703,8 +711,18 @@ export default defineConfig({
                     type: "string",
                     name: "highlightColor",
                     label: "Highlight Border Color",
-                    ui: { component: "color" },
-                    description: "Accent color for the highlight box border (default: magenta)",
+                    description: "Accent color for the highlight box border and bullet dots",
+                    options: [
+                      { value: "var(--color-magenta)", label: "Magenta" },
+                      { value: "var(--color-cyan)", label: "Cyan" },
+                      { value: "var(--color-gold)", label: "Gold" },
+                    ],
+                  },
+                  {
+                    type: "boolean",
+                    name: "highlightsInRight",
+                    label: "Highlights on Right",
+                    description: "Move the highlights box (and feature image) to a right column, keeping title/subtitle/CTA on the left",
                   },
                 ],
               },
@@ -1490,6 +1508,64 @@ export default defineConfig({
                     type: "string",
                     name: "imageAlt",
                     label: "Image Alt Text",
+                  },
+                ],
+              },
+              /* ── Image Carousel ────────────────────────── */
+              {
+                name: "imageCarousel",
+                label: "Image Carousel",
+                fields: [
+                  {
+                    type: "string",
+                    name: "sectionTitle",
+                    label: "Section Title",
+                  },
+                  {
+                    type: "string",
+                    name: "sectionSubtitle",
+                    label: "Section Subtitle",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Slides",
+                    list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.title || "New Slide",
+                      }),
+                    },
+                    fields: [
+                      {
+                        type: "string",
+                        name: "id",
+                        label: "ID",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "title",
+                        label: "Title",
+                      },
+                      {
+                        type: "string",
+                        name: "description",
+                        label: "Description",
+                        ui: { component: "textarea" },
+                      },
+                      {
+                        type: "image",
+                        name: "imageUrl",
+                        label: "Image",
+                      },
+                      {
+                        type: "string",
+                        name: "imageAlt",
+                        label: "Image Alt Text",
+                      },
+                    ],
                   },
                 ],
               },

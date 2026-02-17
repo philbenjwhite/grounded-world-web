@@ -1,6 +1,6 @@
 "use client";
 
-import { useTina } from "tinacms/dist/react";
+import { useTina, tinaField } from "tinacms/dist/react";
 import type { PageQuery, PageSections } from "../../../tina/__generated__/types";
 import { renderSection } from "@/lib/tina-renderers";
 
@@ -17,13 +17,16 @@ export default function ClientPage(props: ClientPageProps) {
     data: props.data,
   });
 
-  const sections = data.page.sections?.filter(Boolean) as
-    | PageSections[]
-    | undefined;
-
   return (
     <main>
-      {sections?.map((section, index) => renderSection(section, index))}
+      {data.page.sections?.map((section, index) => {
+        if (!section) return null;
+        return (
+          <div key={index} data-tina-field={tinaField(data.page, "sections", index)}>
+            {renderSection(section as PageSections, index)}
+          </div>
+        );
+      })}
     </main>
   );
 }

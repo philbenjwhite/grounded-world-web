@@ -1,4 +1,5 @@
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { tinaField } from "tinacms/dist/react";
 import type {
   PageSections,
   PageSectionsSplitLayoutLeft,
@@ -16,6 +17,7 @@ import ContactSection from "@/components/components/ContactSection";
 import CTABanner from "@/components/components/CTABanner";
 import TestimonialSection from "@/components/components/TestimonialSection";
 import ContentTabs from "@/components/components/ContentTabs";
+import SlideCarousel from "@/components/components/SlideCarousel";
 import Split from "@/components/layout/Split";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
@@ -165,6 +167,51 @@ export function renderSection(section: PageSections, index: number): React.React
     );
   }
 
+  // ImageCarousel
+  if ((section as unknown as { _template?: string })._template === "imageCarousel" ||
+      (section as unknown as { __typename?: string }).__typename === "PageSectionsImageCarousel") {
+    const ic = section as unknown as {
+      sectionTitle?: string;
+      sectionSubtitle?: string;
+      items?: Array<{
+        id: string;
+        title?: string;
+        description?: string;
+        imageUrl?: string;
+        imageAlt?: string;
+      }>;
+    };
+    return (
+      <Section key={index}>
+        <Container className="px-[var(--layout-section-padding-x)]">
+          {ic.sectionTitle && (
+            <div data-tina-field={tinaField(section as Record<string, unknown>, "sectionTitle")}>
+              <Heading level={2} size="h2" color="primary" className="text-center mb-4">
+                {ic.sectionTitle}
+              </Heading>
+            </div>
+          )}
+          {ic.sectionSubtitle && (
+            <div data-tina-field={tinaField(section as Record<string, unknown>, "sectionSubtitle")}>
+              <Text size="body-lg" color="secondary" className="text-center mb-8 md:mb-12 max-w-2xl mx-auto">
+                {ic.sectionSubtitle}
+              </Text>
+            </div>
+          )}
+          <SlideCarousel
+            items={(ic.items ?? []).filter(Boolean).map((item) => ({
+              id: item.id,
+              title: item.title ?? undefined,
+              description: item.description ?? undefined,
+              imageUrl: item.imageUrl ?? undefined,
+              imageAlt: item.imageAlt ?? undefined,
+            }))}
+          />
+        </Container>
+      </Section>
+    );
+  }
+
   switch (section.__typename) {
     case "PageSectionsHeroBanner":
       return (
@@ -194,7 +241,7 @@ export function renderSection(section: PageSections, index: number): React.React
             (section.contentAlign as "center" | "left") ?? undefined
           }
           minHeight={
-            (section.minHeight as "full" | "large" | "medium") ?? undefined
+            (section.minHeight as "full" | "large" | "medium" | "condensed" | "fit") ?? undefined
           }
           bottomFade={section.bottomFade ?? undefined}
           featureImageSrc={
@@ -203,12 +250,25 @@ export function renderSection(section: PageSections, index: number): React.React
           featureImageAlt={
             (section as unknown as { featureImageAlt?: string }).featureImageAlt ?? undefined
           }
+          highlightsDescription={
+            (section as unknown as { highlightsDescription?: string }).highlightsDescription ?? undefined
+          }
           highlights={
             ((section as unknown as { highlights?: string[] }).highlights?.filter(Boolean) as string[]) ?? undefined
           }
           highlightColor={
             (section as unknown as { highlightColor?: string }).highlightColor ?? undefined
           }
+          highlightsInRight={
+            (section as unknown as { highlightsInRight?: boolean }).highlightsInRight ?? undefined
+          }
+          tinaFields={{
+            title: tinaField(section as Record<string, unknown>, "title"),
+            subtitle: tinaField(section as Record<string, unknown>, "subtitle"),
+            highlights: tinaField(section as Record<string, unknown>, "highlights"),
+            highlightsDescription: tinaField(section as Record<string, unknown>, "highlightsDescription"),
+            ctaLabel: tinaField(section as Record<string, unknown>, "ctaLabel"),
+          }}
         />
       );
 
@@ -284,7 +344,9 @@ export function renderSection(section: PageSections, index: number): React.React
               left={
                 <>
                   {sectionLabel && (
-                    <SectionLabel className="mb-4">{sectionLabel}</SectionLabel>
+                    <div data-tina-field={tinaField(section as Record<string, unknown>, "sectionLabel")}>
+                      <SectionLabel className="mb-4">{sectionLabel}</SectionLabel>
+                    </div>
                   )}
                   {section.left
                     ?.filter(Boolean)

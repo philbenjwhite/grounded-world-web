@@ -15,9 +15,19 @@
       "secondaryCtaLabel": "Learn More",
       "secondaryCtaHref": "#our-process",
       "overlayOpacity": "medium",
-      "contentAlign": "center",
-      "minHeight": "condensed",
-      "bottomFade": true
+      "contentAlign": "left",
+      "minHeight": "fit",
+      "bottomFade": true,
+      "featureImageSrc": "/images/services/market-research-intention-badge.png",
+      "featureImageAlt": "Intention-Action Gap methodology badge",
+      "highlightsDescription": "If you're feeling a bit stuck or not seeing any business traction or commercial benefit from investments in sustainability, social impact or CSR — then the chances are that there's still an intention-action gap. This is how we can help you find, quantify and close it.",
+      "highlights": [
+        "Culture, category, competitor and consumer landscape assessments",
+        "Intent-to-action gap research and analysis",
+        "Ecosystem mapping, need states, category growth drivers & go to market strategy"
+      ],
+      "highlightColor": "var(--color-gold)",
+      "highlightsInRight": true
     },
     {
       "_template": "introSection",
