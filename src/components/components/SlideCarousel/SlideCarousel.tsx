@@ -89,6 +89,7 @@ const SlideCarousel: React.FC<SlideCarouselProps> = ({
 
   useEffect(() => {
     if (!emblaApi) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     onSelect();
     onScroll();
     emblaApi.on('select', onSelect);
