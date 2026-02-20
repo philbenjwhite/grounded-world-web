@@ -1,5 +1,6 @@
 import { promises as fs } from "fs";
 import path from "path";
+import { getAuthorName } from "@/lib/authors";
 import ArticlesClientPage from "./client-page";
 
 export const metadata = {
@@ -15,6 +16,7 @@ export interface ArticleItem {
   description?: string;
   featuredImage?: string;
   author?: string;
+  authorName?: string;
   categoryName?: string;
   categorySlug?: string;
 }
@@ -86,13 +88,15 @@ async function fetchPosts(): Promise<ArticleItem[]> {
         featuredImage = extractFirstImage(body);
       }
 
+      const authorSlug = get("author");
       articles.push({
         slug: file.replace(/\.md$/, ""),
         title,
         date: get("date") ?? "",
         description: get("description"),
         featuredImage,
-        author: get("author"),
+        author: authorSlug,
+        authorName: authorSlug ? getAuthorName(authorSlug) : undefined,
         categoryName: categorySlug
           ? (CATEGORY_NAMES[categorySlug] ?? categorySlug)
           : undefined,

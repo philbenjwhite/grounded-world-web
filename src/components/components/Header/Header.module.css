@@ -39,6 +39,25 @@
   opacity: 1;
 }
 
+/* ---- Content fade covering header area + below ---- */
+
+.headerFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -48px;
+  background: linear-gradient(
+    to bottom,
+    var(--background) 0%,
+    var(--background) 50%,
+    color-mix(in srgb, var(--background) 60%, transparent) 75%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
 /* ---- Service orb (themed per service) ---- */
 
 .serviceOrb {

@@ -1,39 +1,20 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { TocHeading } from "@/lib/extract-headings";
 
 interface ArticleTableOfContentsProps {
   headings: TocHeading[];
+  /** "sidebar" = desktop sticky column (hidden <lg), "mobile" = sticky collapsible (hidden lg+) */
+  variant?: "sidebar" | "mobile";
 }
 
 export default function ArticleTableOfContents({
   headings,
+  variant = "sidebar",
 }: ArticleTableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  const headingElementsRef = useRef<Map<string, IntersectionObserverEntry>>(
-    new Map()
-  );
-
-  const getActiveHeading = useCallback(() => {
-    // Find the heading closest to the top of the viewport
-    const entries = Array.from(headingElementsRef.current.values());
-    const visible = entries.filter((e) => e.isIntersecting);
-
-    if (visible.length > 0) {
-      // Pick the one closest to the top
-      visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      return visible[0].target.id;
-    }
-
-    // If none visible, find the last one that scrolled past the viewport top
-    const sorted = entries
-      .filter((e) => e.boundingClientRect.top < 100)
-      .sort((a, b) => b.boundingClientRect.top - a.boundingClientRect.top);
-
-    return sorted[0]?.target.id ?? "";
-  }, []);
+  const rafRef = useRef(0);
 
   useEffect(() => {
     const headingElements = headings
@@ -42,27 +23,30 @@ export default function ArticleTableOfContents({
 
     if (headingElements.length === 0) return;
 
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          headingElementsRef.current.set(entry.target.id, entry);
-        });
-        const active = getActiveHeading();
-        if (active) setActiveId(active);
-      },
-      {
-        rootMargin: "-80px 0px -40% 0px",
-        threshold: 0,
+    function updateActive() {
+      // Walk headings in document order; the last one above the threshold wins
+      let current = headings[0]?.id ?? "";
+      for (const el of headingElements) {
+        if (el.getBoundingClientRect().top <= 120) {
+          current = el.id;
+        }
       }
-    );
+      setActiveId(current);
+    }
 
-    headingElements.forEach((el) => observerRef.current?.observe(el));
+    function onScroll() {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(updateActive);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    updateActive();
 
     return () => {
-      observerRef.current?.disconnect();
-      headingElementsRef.current.clear();
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(rafRef.current);
     };
-  }, [headings, getActiveHeading]);
+  }, [headings]);
 
   if (headings.length === 0) return null;
 
@@ -91,23 +75,44 @@ export default function ArticleTableOfContents({
     </ul>
   );
 
+  if (variant === "mobile") {
+    return (
+      <nav
+        aria-label="Table of contents"
+        className="lg:hidden sticky top-[96px] z-40 mb-6 px-1"
+      >
+        <details className="rounded-2xl border border-white/[0.12] bg-white/[0.05] backdrop-blur-md px-5 py-3.5">
+          <summary className="cursor-pointer text-sm font-semibold text-[color:var(--font-color-primary)] select-none flex items-center gap-2.5">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              className="text-[var(--color-cyan)]"
+            >
+              <path
+                d="M2 4h12M2 8h8M2 12h10"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+            Table of Contents
+          </summary>
+          <div className="mt-3 max-h-[50vh] overflow-y-auto">{tocLinks}</div>
+        </details>
+      </nav>
+    );
+  }
+
   return (
-    <nav aria-label="Table of contents">
-      {/* Desktop: sticky sidebar that stays fixed while scrolling */}
-      <div className="hidden lg:block sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+    <nav aria-label="Table of contents" className="hidden lg:block">
+      <div className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
         <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--font-color-tertiary)] mb-4">
           Contents
         </p>
         {tocLinks}
       </div>
-
-      {/* Mobile: collapsible */}
-      <details className="lg:hidden border border-white/[0.08] rounded-xl p-4 mb-8">
-        <summary className="cursor-pointer text-sm font-semibold text-[color:var(--font-color-secondary)] select-none">
-          Table of Contents
-        </summary>
-        <div className="mt-4">{tocLinks}</div>
-      </details>
     </nav>
   );
 }

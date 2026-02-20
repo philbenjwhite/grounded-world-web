@@ -373,16 +373,19 @@ export default async function ArticleDetailPage({
           {/* Three-column layout: TOC | Content | Author sidebar */}
           {/* No items-start — columns stretch to full row height so sticky works */}
           <div className="xl:grid xl:grid-cols-[200px_1fr_260px] xl:gap-8 lg:grid lg:grid-cols-[200px_1fr] lg:gap-10">
-            {/* Left: TOC (sticky, desktop only) */}
+            {/* Left: TOC sidebar (desktop only) */}
             {hasHeadings ? (
-              <ArticleTableOfContents headings={headings} />
+              <ArticleTableOfContents headings={headings} variant="sidebar" />
             ) : (
               <div className="hidden lg:block" />
             )}
 
             {/* Center: Article body */}
             <div>
-              {/* Mobile TOC appears within article flow (handled inside TOC component) */}
+              {/* Mobile: sticky TOC inside article container so it has height to stick against */}
+              {hasHeadings && (
+                <ArticleTableOfContents headings={headings} variant="mobile" />
+              )}
               <article className="prose prose-invert prose-lg max-w-[65ch] prose-headings:text-[color:var(--font-color-primary)] prose-headings:font-bold prose-p:text-[color:var(--font-color-secondary)] prose-a:text-[color:var(--color-cyan)] prose-strong:text-[color:var(--font-color-primary)] prose-li:text-[color:var(--font-color-secondary)] prose-img:rounded-2xl">
                 <ReactMarkdown components={markdownComponents}>
                   {post.body}

@@ -203,6 +203,56 @@ export default defineConfig({
         ],
       },
       {
+        name: "author",
+        label: "Authors",
+        path: "content/authors",
+        format: "json",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return values?.name
+                ?.toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "");
+            },
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "name",
+            label: "Name",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "role",
+            label: "Role / Title",
+            required: true,
+          },
+          {
+            type: "string",
+            name: "bio",
+            label: "Bio",
+            required: true,
+            ui: { component: "textarea" },
+          },
+          {
+            type: "image",
+            name: "photoUrl",
+            label: "Photo",
+            description: "Headshot image for author bio sections",
+          },
+          {
+            type: "string",
+            name: "linkedinUrl",
+            label: "LinkedIn URL",
+          },
+        ],
+      },
+      {
         name: "category",
         label: "Categories",
         path: "content/categories",
@@ -504,6 +554,7 @@ export default defineConfig({
             if (slug === "home") return "/";
             if (slug === "our-work") return "/our-work";
             if (slug === "services") return "/services";
+            if (slug === "gaia") return "/gaia";
             if (slug.startsWith("resources-")) return `/${slug.replace("resources-", "resources/")}`;
             if (slug.startsWith("services-")) return `/${slug.replace("services-", "services/")}`;
             return `/${slug}`;

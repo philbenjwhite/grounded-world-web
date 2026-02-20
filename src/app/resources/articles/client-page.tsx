@@ -13,7 +13,6 @@ import Text from "@/components/atoms/Text";
 import Button from "@/components/atoms/Button";
 import FilterPills from "@/components/atoms/FilterPills";
 import FadeIn from "@/components/utils/FadeIn";
-import { getAuthorName } from "@/lib/authors";
 import cardStyles from "./articles.module.css";
 import type { ArticleItem } from "./page";
 
@@ -44,9 +43,7 @@ function formatDate(dateStr: string): string {
 }
 
 function ArticleCard({ article }: { article: ArticleItem }) {
-  const authorDisplay = article.author
-    ? getAuthorName(article.author)
-    : undefined;
+  const authorDisplay = article.authorName ?? article.author;
 
   return (
     <Link

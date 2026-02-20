@@ -4,12 +4,15 @@ import { useTina } from "tinacms/dist/react";
 import type { PageQuery } from "../../tina/__generated__/types";
 import VideoHero from "@/components/components/VideoHero";
 import LogoCarousel from "@/components/components/LogoCarousel";
-import IntroSection from "@/components/components/IntroSection";
+import Section from "@/components/layout/Section";
+import Container from "@/components/layout/Container";
+import Heading from "@/components/atoms/Heading";
+import Text from "@/components/atoms/Text";
 import ExpandingCardPanel from "@/components/components/ExpandingCardPanel";
 import type { ExpandingCardItem } from "@/components/components/ExpandingCardPanel";
 import WorkCarousel from "@/components/components/WorkCarousel";
 import type { WorkCarouselItem } from "@/components/components/WorkCarousel";
-import CTABanner from "@/components/components/CTABanner";
+import NewsletterCTA from "@/components/components/NewsletterCTA";
 
 interface HomeClientPageProps {
   query: string;
@@ -129,17 +132,38 @@ export default function HomeClientPage(props: HomeClientPageProps) {
 
       <LogoCarousel logos={logos} speed={logoSpeed} />
 
-      {introSection && (
-        <IntroSection
-          heading={introSection.heading ?? "Get Grounded"}
-          paragraphs={
-            (introSection.paragraphs?.filter(Boolean) as string[]) ?? []
-          }
-        />
-      )}
+      {(introSection || (services && services.length > 0)) && (
+        <Section className="relative z-20 py-16 md:py-24 lg:py-32">
+          <Container className="px-[var(--layout-section-padding-x)]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              {/* Left: Intro text — sticky on desktop */}
+              {introSection && (
+                <div className="lg:sticky lg:top-24">
+                  <Heading level={2} size="h2" color="primary">
+                    {introSection.heading ?? "Get Grounded"}
+                  </Heading>
+                  <div className="mt-6 flex flex-col gap-5">
+                    {(introSection.paragraphs?.filter(Boolean) as string[])?.map(
+                      (text, i) => (
+                        <Text key={i} size="body-lg" color="secondary">
+                          {text}
+                        </Text>
+                      )
+                    )}
+                  </div>
+                </div>
+              )}
 
-      {services && services.length > 0 && (
-        <ExpandingCardPanel items={services} />
+              {/* Right: Services as vertical accordions */}
+              {services && services.length > 0 && (
+                <ExpandingCardPanel
+                  items={services}
+                  renderMode="accordion-only"
+                />
+              )}
+            </div>
+          </Container>
+        </Section>
       )}
 
       {workCarouselItems.length > 0 && (
@@ -153,15 +177,9 @@ export default function HomeClientPage(props: HomeClientPageProps) {
         />
       )}
 
-      <CTABanner
+      <NewsletterCTA
         backgroundSrc="/images/stockholm-metro-station-escalators-dark-underground.jpg"
         backgroundAlt="Stockholm metro station escalators"
-        heading="It's time to get grounded"
-        primaryLabel="Ask Gaia for help"
-        primaryHref="/gaia"
-        secondaryLabel="Contact Us"
-        secondaryHref="/contact"
-        className="px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
       />
     </>
   );

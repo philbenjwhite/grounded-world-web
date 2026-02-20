@@ -83,6 +83,7 @@ const Header = ({ className, services = [] }: HeaderProps) => {
           className,
         )}
       >
+        <div className={styles.headerFade} aria-hidden="true" />
         <div
           className={cn(
             styles.headerBar,
@@ -233,6 +234,8 @@ const Header = ({ className, services = [] }: HeaderProps) => {
                       </Link>
                     ))}
                   </div>
+
+                  <MobileLink href="/gaia" label="Ask Gaia" active={isActivePath(pathname, "/gaia")} style={stagger()} />
                 </div>
 
                 {/* CTAs */}
@@ -473,6 +476,18 @@ function NavItems({
           </div>
         </div>
       </div>
+
+      {/* ASK GAIA */}
+      <Link
+        href="/gaia"
+        className={cn(
+          styles.navLink,
+          "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap",
+        )}
+        {...(isActivePath(pathname, "/gaia") && { "data-active": "" })}
+      >
+        Ask Gaia
+      </Link>
 
       {/* SUBSCRIBE — icon only at lg, full text at xl+ */}
       <Link

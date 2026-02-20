@@ -44,6 +44,11 @@ export interface ExpandingCardPanelProps {
   items: ExpandingCardItem[];
   /** Which card is expanded on load */
   defaultActiveIndex?: number;
+  /**
+   * "full" (default) — renders Section/Container + desktop expanding grid + mobile accordion.
+   * "accordion-only" — renders just the accordion list with no wrapper, for embedding in custom layouts.
+   */
+  renderMode?: "full" | "accordion-only";
 }
 
 /* ─── Component ──────────────────────────────────────── */
@@ -53,6 +58,7 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
   sectionSubtitle,
   items,
   defaultActiveIndex,
+  renderMode = "full",
 }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(
     defaultActiveIndex ?? 0
@@ -89,6 +95,103 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
       "--item-color": color,
       "--reveal-delay": `${0.1 + index * 0.1}s`,
     }) as React.CSSProperties;
+
+  /* ── Accordion-only mode: just the list, no wrapper ── */
+  if (renderMode === "accordion-only") {
+    return (
+      <div className="flex flex-col gap-3">
+        {items.map((item, index) => {
+          const isActive = activeIndex === index;
+          const IconComponent = item.icon ? iconMap[item.icon] : undefined;
+          return (
+            <div
+              key={item.name}
+              className={cn(
+                styles.mobileCard,
+                "relative rounded-2xl border border-white/[0.06] bg-white/[0.025] overflow-hidden"
+              )}
+              style={mobileCardVars(item.color, index)}
+              data-active={isActive}
+            >
+              <div
+                className={cn(
+                  styles.mobileGlow,
+                  "absolute inset-0 rounded-2xl pointer-events-none"
+                )}
+              />
+              <button
+                className="relative z-10 w-full text-left p-5 flex items-center justify-between gap-4 cursor-pointer"
+                onClick={() => handleToggle(index)}
+                aria-expanded={isActive}
+              >
+                <div className="min-w-0">
+                  <div className="flex items-center gap-3">
+                    {IconComponent && (
+                      <IconComponent
+                        size={24}
+                        weight="duotone"
+                        className={cn(styles.itemText, "shrink-0")}
+                      />
+                    )}
+                    <h3 className={cn(styles.itemText, "text-xl font-bold")}>
+                      {item.name}
+                    </h3>
+                  </div>
+                  {!isActive && (
+                    <p className="text-sm text-white/60 mt-1 line-clamp-1">
+                      {item.tagline}
+                    </p>
+                  )}
+                </div>
+                <span
+                  className={cn(
+                    "shrink-0 text-white/40 transition-transform duration-300",
+                    isActive && "rotate-45"
+                  )}
+                >
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M10 4v12M4 10h12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                </span>
+              </button>
+              <div className={cn(styles.accordionContent, isActive && styles.accordionOpen)}>
+                <div>
+                  <div className={cn(styles.accordionInner, "px-5 pb-5")}>
+                    <p className="font-semibold text-white text-sm leading-snug">
+                      {item.tagline}
+                    </p>
+                    <ul className="mt-4 space-y-2">
+                      {item.bullets.map((bullet) => (
+                        <li key={bullet} className="text-sm text-white/70 leading-relaxed flex gap-2">
+                          <span className={cn(styles.itemBullet, "shrink-0 mt-1.5 w-1 h-1 rounded-full opacity-50")} />
+                          {bullet}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-5 flex items-center gap-4">
+                      {item.imageSrc && (
+                        <div className="relative h-10 w-24 shrink-0">
+                          <Image
+                            src={item.imageSrc}
+                            alt={item.imageAlt || item.name}
+                            fill
+                            className="object-contain object-left"
+                          />
+                        </div>
+                      )}
+                      <Button href={item.ctaHref} variant="outline" className={styles.ctaLink}>
+                        {item.ctaLabel || "Find Out More"}
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
 
   return (
     <Section className="relative z-20 py-16 md:py-24 lg:py-32">
