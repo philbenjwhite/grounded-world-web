@@ -6,6 +6,7 @@ author: matt-deasy
 category: strategy
 tags:
   - Matt Deasy
+featuredImage: '/images/blog/Integrated-Marketing-Strategy-scaled.jpg'
 ---
 
 ## **Key Takeaways:**

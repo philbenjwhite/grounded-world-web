@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Screen-Shot-2025-06-30-at-12.45.41-PM.png'
 ---
 
 This June, something strange happened:

@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Back-to-School-Supplies-Where-Retail-Meets-Responsibility-scaled.jpg'
 ---
 
 ## **Key Takeaways:**

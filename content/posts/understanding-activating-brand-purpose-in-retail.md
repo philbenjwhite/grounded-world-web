@@ -6,6 +6,7 @@ author: phil-white
 category: brand-purpose
 tags:
   - Phil White
+featuredImage: '/images/blog/Activating-Brand-Purpose.jpg'
 ---
 
 ### **A Brand Purpose Agency Guide**

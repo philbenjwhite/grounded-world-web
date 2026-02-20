@@ -1,0 +1,5 @@
+/* Decorative dot pattern for article cards without featured images */
+.dotPattern {
+  background-image: radial-gradient(circle, white 1px, transparent 1px);
+  background-size: 24px 24px;
+}

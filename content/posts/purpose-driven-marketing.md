@@ -6,6 +6,7 @@ author: matt-deasy
 category: strategy
 tags:
   - Matt Deasy
+featuredImage: '/images/blog/purpose-driven-marketing-scaled.jpg'
 ---
 
 ## **Key Takeaways:**

@@ -1,0 +1,62 @@
+{
+  "title": "Podcast | It Shouldn't Be This Hard",
+  "slug": "resources/podcast",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "canvas",
+      "title": "Podcast",
+      "subtitle": "Lively, provocative discussions on why doing the right thing in business is harder than it should be.",
+      "overlayOpacity": "light",
+      "contentAlign": "center",
+      "minHeight": "condensed"
+    },
+    {
+      "_template": "splitLayout",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/resources-podcast-cover.jpg",
+          "alt": "It Shouldn't Be This Hard podcast cover",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## It Shouldn't Be This Hard\n\nThe podcast for people who know that responsible business is messy, meaningful, and probably much harder than it should be.\n\nCo-founders Heidi Schoeneck and Phil White sit down with founders, corporate change-makers, sustainability leaders, and social entrepreneurs for honest — sometimes radically transparent — conversations about power, profit, fear, and failure, along with the barriers that frustrate real progress."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Listen to the Podcast",
+              "href": "https://grounded.world/itshouldntbethishard",
+              "variant": "primary",
+              "external": true
+            },
+            {
+              "label": "Apply to be a Guest",
+              "href": "https://grounded.world/itshouldntbethishard",
+              "variant": "secondary",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/services/banner-bg.jpg",
+      "heading": "It's time to get grounded",
+      "subtext": "Ready to activate your brand purpose and accelerate your impact? Let's talk.",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/contact",
+      "overlayOpacity": "heavy"
+    }
+  ]
+}

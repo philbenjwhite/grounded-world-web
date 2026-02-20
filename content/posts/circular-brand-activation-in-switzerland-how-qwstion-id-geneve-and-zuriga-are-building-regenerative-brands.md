@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Screen-Shot-2025-11-12-at-12.11.53-PM.png'
 ---
 
 I just came back from Europe and my mind is still buzzing. Not from the espresso (though plenty of that), but from witnessing how a handful of Swiss brands are living circularity… not talking about it, not marketing it, but engineering it into the DNA of their business. I spent a week on the ground in Switzerland visiting some of the most forward-thinking circular brands in Europe. I met founders, walked through workshops, saw prototypes, fabrics, and machines being repaired by hand. 

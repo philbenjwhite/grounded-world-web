@@ -10,6 +10,7 @@ tags:
   - Social Impact
   - social justice
 featured: true
+featuredImage: '/images/blog/asj-2-awoken-from-the-national-center-for-civil-and-human-rights-600x540-1.png'
 ---
 
 ## **What is Social Justice?**

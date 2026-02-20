@@ -11,6 +11,7 @@ tags:
   - Retail
   - sustainability marketing
 featured: true
+featuredImage: /images/blog/23_EarthDayEveryDay-02.jpg
 ---
 
 Since 1970, [Earth Day ](https://www.earthday.org/history/)campaigns have led the collective fight for the health and wellbeing of our planet. The very first earth day campaign led to the [creation of the Environmental Protection Agency](https://www.epa.gov/history/epa-history-earth-day#:~:text=The%20First%20Earth%20Day%20in%20April%201970&text=Because%20there%20was%20no%20EPA,issue%20onto%20the%20national%20agenda.) and[ the Clean Water and Endangered Species Acts](https://www.epa.gov/archive/epa/aboutepa/earth-day-70-what-it-meant.html) here in the US and since then, Earth day campaigns have inspired decades of documentaries, books and activists including the indomitable [Greta Thumberg](https://www.instagram.com/gretathunberg/?hl=en).[![](/images/blog/2023-04-screen-shot-2023-04-25-at-10.51.29-am-300x168.png)](/images/blog/2023-04-screen-shot-2023-04-25-at-10.51.29-am.png)

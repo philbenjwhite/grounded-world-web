@@ -6,6 +6,7 @@ author: matt-deasy
 category: brand-purpose
 tags:
   - Matt Deasy
+featuredImage: '/images/blog/jess-morgan-xlqMNe90vPA-unsplash-scaled.jpg'
 ---
 
 Avoid greenwashing by resisting the urge to hop on the sustainability bandwagon without substance. In today’s world, misleading eco-claims can turn into a PR disaster overnight. 

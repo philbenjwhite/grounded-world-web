@@ -1,0 +1,80 @@
+{
+  "title": "Articles & Blogs | Grounded World",
+  "slug": "resources/articles",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "canvas",
+      "title": "Articles & Blogs",
+      "subtitle": "An ever-evolving library of insights, provocations, and points of view from the Grounded team.",
+      "overlayOpacity": "light",
+      "contentAlign": "center",
+      "minHeight": "condensed"
+    },
+    {
+      "_template": "mediaSection",
+      "title": "Articles & Blogs",
+      "categories": [
+        "Activating Brand Purpose and Sustainability",
+        "Sustainability Marketing",
+        "Social Impact",
+        "Brand Activism"
+      ],
+      "items": [
+        {
+          "id": "article-earth-day",
+          "title": "Making Earth Day Every Day Shouldn't Be This Hard | Kathleen Rogers",
+          "category": "Activating Brand Purpose and Sustainability",
+          "imageUrl": "/images/resources-article-earth-day-kathleen-rogers.png",
+          "imageAlt": "Kathleen Rogers — Earth Day episode cover",
+          "href": "/posts"
+        },
+        {
+          "id": "article-jennifer",
+          "title": "A Future Without Cigarettes Shouldn't Be This Hard | Jennifer Motles",
+          "category": "Sustainability Marketing",
+          "imageUrl": "/images/resources-article-jennifer-motles.png",
+          "imageAlt": "Jennifer Motles episode cover",
+          "href": "/posts"
+        },
+        {
+          "id": "article-coffee",
+          "title": "Fair Price for Coffee Shouldn't Be This Hard | Bob & Michelle Fish",
+          "category": "Social Impact",
+          "imageUrl": "/images/resources-article-bob-michelle-fish.png",
+          "imageAlt": "Bob and Michelle Fish episode cover",
+          "href": "/posts"
+        },
+        {
+          "id": "article-nov",
+          "title": "Circular Brand Activation in Switzerland",
+          "category": "Brand Activism",
+          "imageUrl": "/images/resources-article-nov-2025.png",
+          "imageAlt": "Circular Brand Activation article cover",
+          "href": "/posts"
+        },
+        {
+          "id": "article-green-friday",
+          "title": "Green Friday Brand Activation: Inspiring Sustainable Choices",
+          "category": "Activating Brand Purpose and Sustainability",
+          "href": "/posts"
+        },
+        {
+          "id": "article-circular-cities",
+          "title": "Circular Cities in Action: Urban Design Innovations from Switzerland",
+          "category": "Sustainability Marketing",
+          "href": "/posts"
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/services/banner-bg.jpg",
+      "heading": "It's time to get grounded",
+      "subtext": "Ready to activate your brand purpose and accelerate your impact? Let's talk.",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/contact",
+      "overlayOpacity": "heavy"
+    }
+  ]
+}

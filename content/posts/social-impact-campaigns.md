@@ -5,6 +5,7 @@ description: "Key Takeaways:"
 author: matt-deasy
 tags:
   - Matt Deasy
+featuredImage: '/images/blog/images-surferseo-art-4a001d62-18fc-4e7a-9dfe-4414ba5018bc.jpeg'
 ---
 
 ## ***Key Takeaways:***

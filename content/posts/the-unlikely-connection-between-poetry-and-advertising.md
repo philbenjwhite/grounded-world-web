@@ -9,6 +9,7 @@ tags:
   - Phil White
   - poetry
   - storytelling
+featuredImage: /images/blog/poetry-and-advertising.jpg
 ---
 
 # **The Unlikely Connection Between Poetry and Advertising **

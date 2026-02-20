@@ -8,6 +8,7 @@ import { ArrowUpRight } from "@phosphor-icons/react";
 import Section from "../../layout/Section";
 import Container from "../../layout/Container";
 import Heading from "../../atoms/Heading";
+import FilterPills from "../../atoms/FilterPills";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import styles from "./WorkGrid.module.css";
 
@@ -77,22 +78,12 @@ const WorkGrid: React.FC<WorkGridProps> = ({ items, sectionTitle }) => {
         )}
 
         {/* Filter pills */}
-        <div className="mb-10 flex flex-wrap justify-center gap-3">
-          {tags.map((tag) => (
-            <button
-              key={tag}
-              type="button"
-              onClick={() => setActiveFilter(tag)}
-              className={cn(
-                "rounded-full px-5 py-2 text-sm font-medium",
-                styles.filterPill,
-                activeFilter === tag && styles.filterPillActive
-              )}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
+        <FilterPills
+          items={tags}
+          active={activeFilter}
+          onChange={setActiveFilter}
+          className="mb-10"
+        />
 
         {/* Bento grid */}
         <div ref={gridRef} className={styles.bentoGrid}>

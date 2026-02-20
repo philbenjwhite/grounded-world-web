@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/EU-Green-Deal-Omnibus-Updates-e1741818814869.png'
 ---
 
 ***Co-Authored by Aimee Simpson, CEO of Sustainability Law & Strategies***

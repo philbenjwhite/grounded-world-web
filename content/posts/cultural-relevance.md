@@ -5,6 +5,7 @@ description: "Key Takeaways:"
 author: matt-deasy
 tags:
   - Matt Deasy
+featuredImage: /images/blog/balenciaga-hardcrocs.jpg
 ---
 
 ## **Key Takeaways:**

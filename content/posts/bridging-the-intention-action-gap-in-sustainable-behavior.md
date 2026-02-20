@@ -6,6 +6,7 @@ author: phil-white
 category: brand-purpose
 tags:
   - intention-action gap
+featuredImage: '/images/blog/Bridging-The-Intention-Action-Gap.jpeg'
 ---
 
 In the quest for sustainable living, a significant challenge looms large—the [gap between intention and action](https://grounded.world/closing-the-intention-action-gap-why-good-intentions-arent-always-enough-during-earth-month/). Reports published by [Globescan](https://globescan.com/2023/10/26/healthy-and-sustainable-living-report-2023/), [Kantar](https://www.kantar.com/campaigns/who-cares-who-does-in-the-fmcg-industry), [Nielsen](https://nielseniq.com/global/en/insights/report/2023/how-to-turn-green-consumer-intentions-into-sustainable-actions/) and [Mintel](https://www.mintel.com/consumer-market-news/consumer-attitudes-towards-sustainability/) over the last few months offer a deep understanding of this divide, shedding light on the complexities and [inspiring a blueprint](https://grounded.world/thought-leadership/sustainable-fashion) for closing the intention-action gap.

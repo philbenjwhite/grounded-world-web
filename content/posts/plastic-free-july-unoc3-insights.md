@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/PlasticFreeJulyUNOC3.jpg'
 ---
 
 For the past 15 years every July, millions around the world commit to refusing single-use plastics in honor of Plastic-Free July, a global movement inspiring individuals and businesses alike. But in 2025, Plastic-Free July takes on new urgency. Just weeks ago, world leaders gathered at the United Nations Ocean Conference (UNOC3) to sound the alarm on the escalating plastic pollution crisis and the private sector was firmly in the spotlight.

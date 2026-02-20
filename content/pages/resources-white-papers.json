@@ -1,0 +1,123 @@
+{
+  "title": "White Papers & Playbooks | Grounded World",
+  "slug": "resources/white-papers",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "canvas",
+      "title": "White Papers & Playbooks",
+      "subtitle": "In-depth research and frameworks for sustainable fashion, brand purpose, and retail activation.",
+      "overlayOpacity": "light",
+      "contentAlign": "center",
+      "minHeight": "condensed"
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Sustainable Fashion",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/resources-whitepaper-fashion.jpg",
+          "alt": "Mind the Gap: Policy to Profit in Fashion white paper cover",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## Mind the Gap: Policy to Profit in Fashion\n\n**How new rules can create commercial wins for fashion**\n\nGrounded's seminal white paper examines how evolving policy creates real commercial opportunity for fashion brands — featuring legal expertise and AI-powered recommendations via Gaia."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Download Now",
+              "href": "https://grounded.world/resources/",
+              "variant": "primary",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Brand Purpose",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## Articulating Brand Purpose: The BPP Framework\n\n**Connect the WHY of purpose to the WAY of profit**\n\nPublished by the ANA Center for Brand Purpose, this playbook is recognised globally as a best-in-class approach for articulating brand and corporate purpose."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Download Now",
+              "href": "https://www.ana.net/miccontent/show/id/kp-2023-07-grounded-media-articulating-brand-purpose",
+              "variant": "primary",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/resources-whitepaper-ana.png",
+          "alt": "ANA Brand Purpose Playbook cover",
+          "rounded": true
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Retail Activation",
+      "ratio": "50/50",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/resources-whitepaper-retail.jpg",
+          "alt": "Retail Activation for Good playbook cover",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## Excellence in Execution: Retail Activation for Good\n\n**Activate brand purpose and sustainability at the shelf**\n\nBuilt on three years of proprietary research and consultation with the world's largest brand owners and retailers — frameworks, tools, and case studies for retail activation."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Download Now",
+              "href": "https://grounded.world/resources/",
+              "variant": "primary",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/services/banner-bg.jpg",
+      "heading": "It's time to get grounded",
+      "subtext": "Ready to activate your brand purpose and accelerate your impact? Let's talk.",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/contact",
+      "overlayOpacity": "heavy"
+    }
+  ]
+}

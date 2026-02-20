@@ -9,6 +9,7 @@ tags:
   - fashion
   - sustainability marketing
 featured: true
+featuredImage: /images/blog/sustainable-t-shirt-leaves4.jpg
 ---
 
 The Fashion industry is responsible for 2.1 billion tonnes of greenhouse gas per year. That is more than all the international flights and shipping combined according to the Ellen MacArthur Foundation. The need for a [sustainable fashion](https://grounded.world/thought-leadership/sustainable-fashion) industry is more clear than ever. 

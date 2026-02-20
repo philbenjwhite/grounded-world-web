@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/holiday-trash-ghows-OH-34bc162c-9332-4880-bf70-30e849900a6a-c48814fc.webp'
 ---
 
 Let’s start here to imagine the scope of the materials used during the holidays. According to Stanford University, if every American family wrapped just 3 presents using reused materials, it would save enough paper to cover 45,000 football fields. That is *avoided* wrapping paper - we’re not even considering how many trees are cut down to create new boxes, wrapping paper and cards. Are you starting to get a sense of how much STUFF we are buying, wrapping, consuming and throwing “away” in this short period of time? 

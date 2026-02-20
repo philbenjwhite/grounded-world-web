@@ -1,32 +1,3 @@
-/* ── Filter pills ─────────────────────────────── */
-
-.filterPill {
-  cursor: pointer;
-  border: 1px solid var(--color-gray-4);
-  color: var(--color-gray-3);
-  transition:
-    background-color 300ms ease,
-    border-color 300ms ease,
-    color 300ms ease;
-}
-
-.filterPill:hover {
-  border-color: var(--color-gold);
-  color: var(--color-white);
-}
-
-.filterPillActive {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold);
-  color: var(--color-black);
-}
-
-.filterPillActive:hover {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold);
-  color: var(--color-black);
-}
-
 /* ── Bento grid ───────────────────────────────── */
 
 .bentoGrid {

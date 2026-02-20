@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/sustainability-gap-in-grocery-delivery-services.png'
 ---
 
 ## **Key Takeaways:**

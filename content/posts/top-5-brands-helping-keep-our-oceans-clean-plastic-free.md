@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Screen-Shot-2024-07-24-at-4.24.45-PM.png'
 ---
 
 You’ll never realize how much plastic you consume until you take the challenge to participate in Plastic-Free July. As we reach the midpoint of the year, it's an excellent time to reflect on our personal sustainability goals and prepare for a [lower waste lifestyle](https://grounded.world/sustainable-holiday-tips-reducing-waste-during-the-most-wonderful-excessive-time-of-the-year/) in 2025 that closes our own intention-action gaps. Just like Dry January or Sober October, Plastic-Free July is a period dedicated to making significant lifestyle changes. However, unlike these other challenges, the focus here is on reducing our greater plastic footprint—a critical issue given the current state of global plastic pollution across oceans all over the world. 

@@ -8,6 +8,7 @@ tags:
   - brand purpose
   - Phil White
 featured: true
+featuredImage: '/images/blog/craig-pattenaude-GjhjuMlHc_E-unsplash-scaled.jpg'
 ---
 
 ## **The Purpose of Brand Positioning vs. Positioning Brand Purpose**

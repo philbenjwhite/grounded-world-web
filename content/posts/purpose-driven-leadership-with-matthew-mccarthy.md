@@ -10,6 +10,7 @@ tags:
   - Paloma Jacome
   - purpose and profit
 featured: true
+featuredImage: '/images/blog/Matthew-McCarthy--e1725642263630.png'
 ---
 
 At Grounded, we had the unique privilege of delving into Matthew McCarthy's wealth of wisdom on the [essence of Brand Purpose](https://grounded.world/value-brand-authenticity/) and uncovering the profound nuances that redefine the landscape of leadership in today's dynamic business world. In this enlightening interview with former Ben and Jerry's CEO,[ Matthew McCarthy,](https://www.linkedin.com/in/matthew-mccarthy-001) our co-founder and Chief Strategy Officer,[ Phil White](https://www.linkedin.com/in/phil-white-03190514), we explore what Purpose-Driven Leadership really is and how 'Democratizing Courageous Leadership’ is essential for winning. 

@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Circular-Economy-in-Switzerland-Lausanne.jpg'
 ---
 
 Anyone working towards more responsible business, operating with purpose, has encountered the ideal of transforming the global marketplace into a circular economy, yet the underbelly of this circular economy many are building towards is elusive and even invisible. Creating a true circular economy that expands borders and designs out waste for good is inexplicably complex, as it requires undoing several decades of linearity that has created its own host of industries that have conquered the market. However, with resource scarcity presenting itself as humanity’s greatest threat (even past climate change according to some experts) there is no pragmatic way forward without a circular economy. Fortunately, circularity is not a completely new concept to commerce, it is simply just re-branded as planetary boundaries are being exceeded at unprecedented rates and a new system to service modern society is becoming more obviously necessary. 

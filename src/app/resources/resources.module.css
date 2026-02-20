@@ -1,0 +1,22 @@
+/* Dynamic-color styles that depend on --tile-color custom property */
+
+.navTile {
+  --glow-color: var(--tile-color);
+  --comp-work-card-stroke: color-mix(in srgb, var(--tile-color) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tile-color) 12%, transparent);
+}
+
+.navTileExplore {
+  color: var(--tile-color);
+}
+
+/* White paper card dynamic accent color */
+
+.whitePaperCard {
+  border-color: color-mix(in srgb, var(--accent-color) 15%, transparent);
+}
+
+.whitePaperBadge {
+  background: color-mix(in srgb, var(--accent-color) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 40%, transparent);
+}

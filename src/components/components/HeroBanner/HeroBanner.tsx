@@ -289,7 +289,6 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
                 level={1}
                 size="display"
                 color="primary"
-                className={cn(!hasRightColumn && "lg:whitespace-nowrap")}
               >
                 {title}
               </Heading>

@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Circular-Cities-in-Action-Onthe-Ground-Learnings-from-Switzerlands-Urban-Design-Innovations.png'
 ---
 
 I’ve spent years researching circularity, studying sustainability strategy, and helping brands close intention–action gaps. But nothing compares to being physically inside a circular system.

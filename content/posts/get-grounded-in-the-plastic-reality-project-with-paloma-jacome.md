@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Walking-Through-Waste-scaled.jpg'
 ---
 
 When I was asked, “hey Paloma, want to go to India?” I knew it would be a life-changing experience. The plastic waste crisis crosses my mind daily and greatly influences my consumption behavior, so I was certain about accepting rePurpose Global’s invitation to join their annual Plastic Reality Project in India. The [Plastic Reality Project](https://repurpose.global/tof/plastic-reality-project-2024) is a unique opportunity for business and sustainability leaders to see the plastic waste crisis and innovative solutions for a circular economy - up close and personal. In addition to Grounded, other attending organizations of The Plastic Reality Project 2024 in India included Thrive Market, Innersense Organic Beauty, Olyra Foods, Yumove Lintbells, Vahdam India, Great Eastern Sun- Miso Master, Andersen Corporation, Goodwin Legal, and GIZ.

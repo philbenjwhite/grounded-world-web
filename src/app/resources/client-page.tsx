@@ -16,6 +16,7 @@ import MediaSection from "@/components/components/MediaSection";
 import CTABanner from "@/components/components/CTABanner";
 import SectionLabel from "@/components/atoms/SectionLabel";
 import type { MediaItem } from "@/components/components/MediaSection";
+import styles from "./resources.module.css";
 
 /* ─── Data ───────────────────────────────────────────────── */
 
@@ -26,7 +27,7 @@ const NAV_TILES = [
     title: "Podcast",
     body: "Lively, provocative discussions on why doing the right thing in business is harder than it should be.",
     color: "var(--color-azure-1)",
-    href: "#podcast",
+    href: "/resources/podcast",
   },
   {
     id: "whitepapers",
@@ -34,7 +35,7 @@ const NAV_TILES = [
     title: "White Papers & Playbooks",
     body: "In-depth research and frameworks for sustainable fashion, brand purpose, and retail activation.",
     color: "var(--color-green)",
-    href: "#whitepapers",
+    href: "/resources/white-papers",
   },
   {
     id: "guides",
@@ -42,7 +43,7 @@ const NAV_TILES = [
     title: "How To Guides",
     body: "Step-by-step guides to activating brand purpose, sustainability marketing, and social impact.",
     color: "var(--color-magenta)",
-    href: "#guides",
+    href: "/resources/guides",
   },
   {
     id: "articles",
@@ -50,7 +51,7 @@ const NAV_TILES = [
     title: "Articles & Blogs",
     body: "An ever-evolving library of insights, provocations, and points of view from the Grounded team.",
     color: "var(--color-gold)",
-    href: "#articles",
+    href: "/resources/articles",
   },
 ];
 
@@ -191,14 +192,8 @@ function QuickNavTile({
   return (
     <a
       href={tile.href}
-      className="work-card-hover group block rounded-3xl bg-white/[0.03] backdrop-blur-xl p-8 h-full overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30"
-      style={
-        {
-          "--glow-color": tile.color,
-          "--comp-work-card-stroke": `color-mix(in srgb, ${tile.color} 30%, transparent)`,
-          border: `1px solid color-mix(in srgb, ${tile.color} 12%, transparent)`,
-        } as React.CSSProperties
-      }
+      className={`${styles.navTile} work-card-hover group block rounded-3xl bg-white/[0.03] backdrop-blur-xl p-8 h-full overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30`}
+      {...({ style: { "--tile-color": tile.color } } as React.HTMLAttributes<HTMLAnchorElement>)}
     >
       <div className="work-card-glow" />
       <div className="mb-5 w-12 h-12 relative">
@@ -216,10 +211,7 @@ function QuickNavTile({
       <Text size="body-md" color="secondary">
         {tile.body}
       </Text>
-      <div
-        className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors"
-        style={{ color: tile.color }}
-      >
+      <div className={`${styles.navTileExplore} mt-5 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors`}>
         Explore
         <svg
           width="14"
@@ -249,10 +241,8 @@ function WhitePaperCard({
   return (
     <FadeIn>
       <div
-        className="flex flex-col h-full rounded-3xl overflow-hidden border bg-white/[0.025]"
-        style={{
-          borderColor: `color-mix(in srgb, ${paper.accentColor} 15%, transparent)`,
-        }}
+        className={`${styles.whitePaperCard} flex flex-col h-full rounded-3xl overflow-hidden border bg-white/[0.025]`}
+        {...({ style: { "--accent-color": paper.accentColor } } as React.HTMLAttributes<HTMLDivElement>)}
       >
         {/* Cover image */}
         <div className="relative aspect-[4/3] overflow-hidden bg-white/5">
@@ -264,13 +254,7 @@ function WhitePaperCard({
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          <div
-            className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white"
-            style={{
-              background: `color-mix(in srgb, ${paper.accentColor} 30%, transparent)`,
-              border: `1px solid color-mix(in srgb, ${paper.accentColor} 40%, transparent)`,
-            }}
-          >
+          <div className={`${styles.whitePaperBadge} absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white`}>
             {paper.category}
           </div>
         </div>

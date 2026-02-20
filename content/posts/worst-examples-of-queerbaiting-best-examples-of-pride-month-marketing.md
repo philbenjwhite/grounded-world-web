@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-activism
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Screen-Shot-2024-06-20-at-4.14.58-PM.png'
 ---
 
 We all know pride season separates the professionals from the amateurs in marketing— only few are appropriately championing [brand purpose in alignment with Pride](http://grounded.world/pride-2025-beige-pride-pinkhushing-brand-activism-at-its-best/). This year’s Pride season in particular we experienced what culture is calling a ‘quiet pride’ with brands practicing ‘pride-hushing'. Amongst the [social justice](https://grounded.world/world-day-of-social-justice/) buzz words, one isn’t addressed nearly enough in the marketing world and that is ‘queerbaiting’.

@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/ISTH008_email-3.png'
 ---
 
 ## **Key Takeaways:**

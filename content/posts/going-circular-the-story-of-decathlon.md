@@ -4,6 +4,7 @@ date: 2023-10-24T20:51:17.000Z
 description: The shift to a circular economy is a big deal in France - like pretty much everywhere else. People are realizing that the old way of doing things, where we t...
 author: phil-white
 category: brand-purpose
+featuredImage: '/images/blog/Decathlon-Exterior-696x523-1.jpeg'
 ---
 
 The shift to a circular economy is a big deal in France - like pretty much everywhere else. People are realizing that the old way of doing things, where we take, make, use, and throw stuff away, is messing up our planet. In fact, a whopping 93% of the French people think our economic system needs a major facelift, if not a complete overhaul. We're talking about a different kind of economy - one that's all about [responsible consumption](https://grounded.world/what-is-circular-fashion-the-future-of-fashion/), products that last longer, and turning trash into resources. This isn't just about changing what we buy; it's a full-scale societal transformation, requiring new lifestyles and sustainable ways of producing and consuming. But getting this [circular economy](https://grounded.world/sustainability-buzzwords/) going is tricky.

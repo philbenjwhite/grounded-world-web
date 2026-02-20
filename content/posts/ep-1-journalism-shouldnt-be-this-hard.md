@@ -6,6 +6,7 @@ author: paloma-jacome
 category: social-impact
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/ISTH001_email.png'
 ---
 
 ## **Key Takeaways:**

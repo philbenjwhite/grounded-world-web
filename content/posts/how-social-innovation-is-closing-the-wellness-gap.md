@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: /images/blog/How-Social-Innovation-is-Closing-the-Wellness-Gap-scaled.jpg
 ---
 
 In an increasingly overstimulated world plagued by burnout, anxiety, and loneliness, accessing mental health care remains a privilege rather than a right. But what if the next breakthrough in wellness wasn’t a new drug or meditation app… but a socially intelligent AI companion designed to meet people exactly where they are?

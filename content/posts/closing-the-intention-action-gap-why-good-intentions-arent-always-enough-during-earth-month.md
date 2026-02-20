@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Intention-Action-Gap-Earth-Month-scaled-e1745340783127.jpg'
 ---
 
 Earth Month (commonly known as “April”) is often celebrated with sustainability pledges and green campaigns from both consumers and brands. More often than not these *positive intentions* don’t translate into anything of substance. This discrepancy between what we ***intend*** to do vs. what we ***actually do ***is what we like to call here at [grounded](https://grounded.world/about-us/), the** “Intention-Action Gap”**.

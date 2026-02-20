@@ -1,0 +1,59 @@
+{
+  "title": "How To Guides | Grounded World",
+  "slug": "resources/guides",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "canvas",
+      "title": "How To Guides",
+      "subtitle": "Step-by-step guides to activating brand purpose, sustainability marketing, and social impact.",
+      "overlayOpacity": "light",
+      "contentAlign": "center",
+      "minHeight": "condensed"
+    },
+    {
+      "_template": "imageCarousel",
+      "sectionTitle": "Get Grounded in the Fundamentals",
+      "sectionSubtitle": "Get grounded in the fundamentals of activating purpose, sustainability, and social impact.",
+      "items": [
+        {
+          "id": "guide-brand-purpose",
+          "title": "Activating Brand Purpose",
+          "description": "Close the intention-action gap and change consumer behaviour",
+          "imageUrl": "/images/resources-guide-activating-brand-purpose.jpg",
+          "imageAlt": "Activating Brand Purpose guide cover"
+        },
+        {
+          "id": "guide-sustainability",
+          "title": "Sustainability Marketing",
+          "description": "Unpack what sustainability marketing is, along with key challenges and case studies",
+          "imageUrl": "/images/resources-guide-sustainability-marketing.jpg",
+          "imageAlt": "Sustainability Marketing guide cover"
+        },
+        {
+          "id": "guide-social-impact",
+          "title": "Social Impact",
+          "description": "Discover what a social impact agency does and how to choose the right partner",
+          "imageUrl": "/images/resources-guide-social-impact.jpg",
+          "imageAlt": "Social Impact guide cover"
+        },
+        {
+          "id": "guide-brand-activism",
+          "title": "Brand Activism",
+          "description": "Learn how to take a stand and avoid the pitfalls of performative activism",
+          "imageUrl": "/images/resources-guide-brand-activism.jpg",
+          "imageAlt": "Brand Activism guide cover"
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/services/banner-bg.jpg",
+      "heading": "It's time to get grounded",
+      "subtext": "Ready to activate your brand purpose and accelerate your impact? Let's talk.",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/contact",
+      "overlayOpacity": "heavy"
+    }
+  ]
+}

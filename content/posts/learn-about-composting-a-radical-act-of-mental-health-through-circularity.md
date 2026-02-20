@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Screen-Shot-2024-05-28-at-11.13.58-AM.png'
 ---
 
 **Learn About Composting Day: Composting as a Radical Act of Mental Health Through Circularity**

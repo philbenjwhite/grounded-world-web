@@ -9,6 +9,7 @@ tags:
   - balancing purpose and profit
   - Phil White
 featured: true
+featuredImage: '/images/blog/lipstick-on-a-pig.gif'
 ---
 
 Balancing purpose with profit is a challenge that the more linear and profit-driven entities of yesteryear never really had to reconcile. Enterprises today either tend towards more lofty and ambitious environmental or socially driven ‘manifestos’ and then lose their agility due to lack of resources, revenue, funding and/or interpersonal deadlock and operational inefficiency - or conversely - they may put too much emphasis on how profit is achieved and reported, de-basing people and culture to mere machines, models or algorithms and/or exacerbating societal and environmental problems through decrepit governance and [invisible supply chains](https://grounded.world/avoid-greenwashing/).

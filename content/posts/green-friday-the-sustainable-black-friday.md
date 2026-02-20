@@ -11,6 +11,7 @@ tags:
   - retail activation for good
   - sustainability
 featured: true
+featuredImage: '/images/blog/Green-Friday.png'
 ---
 
 Updated by Matt Deasy, 2025.

@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/b-corp-gift.png'
 ---
 
 As holiday shopping kicks off, consider this B Corp gift guide for [Green Friday](https://grounded.world/thinking/green-friday-the-sustainable-black-friday/) and purchase with purpose this gift-giving season. Unlike Black Friday’s rush toward cheap, impulsive purchases, Green Friday encourages a conscious approach to spending by supporting certified B Corporations that prioritize sustainability, social impact, and ethical practices. When you shop B Corps, you're backing companies committed to reducing their carbon footprint, paying fair wages, and ensuring an ethical supply chain. Instead of gifting low-quality items destined to be discarded, invest in purpose-driven presents crafted with care for both people and the planet.

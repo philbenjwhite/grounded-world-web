@@ -8,6 +8,7 @@ tags:
   - claims
   - greenwashing
   - sustainability marketing
+featuredImage: '/images/blog/istockphoto-1239594426-170667a.jpeg'
 ---
 
 ## **How to Use (or Avoid) Sustainability Buzzwords**

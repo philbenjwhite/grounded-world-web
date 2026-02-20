@@ -10,6 +10,7 @@ tags:
   - Phil White
   - Social Impact
   - social justice
+featuredImage: '/images/blog/mi-pham-xtd3zYWxEs4-unsplash-scaled.jpg'
 ---
 
 October 11th marked the 10th anniversary of International Day of the Girl. It is the United Nations international observance day that builds awareness of the gender inequality faced by girls all around the world. Regardless of whether you celebrated #IDG2022 or not, it is important to support gender equality and gender equality campaigns even after the “official” day has passed. This blog will explain why girls need your support and give you 5 ways to join the fight.

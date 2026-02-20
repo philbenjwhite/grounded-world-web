@@ -8,6 +8,7 @@ tags:
   - B Corps
   - Phil White
 featured: true
+featuredImage: /images/blog/Screen-Shot-2023-03-01-at-3.33.14-PM.png
 ---
 
 Certified B Corporations like to proudly display their B Corp Certification by placing the “B” mark on storefront windows, websites, and packaging (to name a few places). But B Corp Certification is more than just a mark. It’s a global movement of people going beyond business as usual to make their company better for all people and the planet. 

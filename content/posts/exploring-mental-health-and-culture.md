@@ -6,6 +6,7 @@ author: paloma-jacome
 category: social-impact
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/Screen-Shot-2024-05-24-at-4.48.23-PM.png'
 ---
 
 **Exploring Mental Health and Culture**

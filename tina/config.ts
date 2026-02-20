@@ -406,6 +406,7 @@ export default defineConfig({
         path: "content/posts",
         format: "md",
         ui: {
+          router: ({ document }) => `/resources/articles/${document._sys.filename}`,
           filename: {
             readonly: false,
             slugify: (values) => {
@@ -503,6 +504,8 @@ export default defineConfig({
             if (slug === "home") return "/";
             if (slug === "our-work") return "/our-work";
             if (slug === "services") return "/services";
+            if (slug.startsWith("resources-")) return `/${slug.replace("resources-", "resources/")}`;
+            if (slug.startsWith("services-")) return `/${slug.replace("services-", "services/")}`;
             return `/${slug}`;
           },
           filename: {

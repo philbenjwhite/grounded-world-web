@@ -6,6 +6,7 @@ author: paloma-jacome
 category: brand-purpose
 tags:
   - Paloma Jacome
+featuredImage: '/images/blog/cancelled-vacation-2025-02-21-09-08-49-utc-scaled-e1763518413480.jpg'
 ---
 
 ## **Key Takeaways:**
