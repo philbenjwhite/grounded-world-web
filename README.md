@@ -1,4 +1,4 @@
-# Grounded World Web
+# Grounded World Website
 
 Next.js web application with TinaCMS for content management, Storybook for component development, and a custom design system built with Tailwind CSS.
 
