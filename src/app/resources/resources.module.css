@@ -1,22 +1,37 @@
 /* Dynamic-color styles that depend on --tile-color custom property */
 
-.navTile {
+.categoryCard {
   --glow-color: var(--tile-color);
   --comp-work-card-stroke: color-mix(in srgb, var(--tile-color) 30%, transparent);
-  border: 1px solid color-mix(in srgb, var(--tile-color) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tile-color) 10%, transparent);
+  transition: border-color 0.3s ease;
 }
 
-.navTileExplore {
+.categoryCard:hover {
+  border-color: color-mix(in srgb, var(--tile-color) 30%, transparent);
+}
+
+.categoryExplore {
   color: var(--tile-color);
 }
 
-/* White paper card dynamic accent color */
-
-.whitePaperCard {
-  border-color: color-mix(in srgb, var(--accent-color) 15%, transparent);
+.categoryIconWrap {
+  background: color-mix(in srgb, var(--tile-color) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tile-color) 15%, transparent);
 }
 
-.whitePaperBadge {
-  background: color-mix(in srgb, var(--accent-color) 30%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent-color) 40%, transparent);
+/* Featured card accent */
+
+.featuredCard {
+  border-color: color-mix(in srgb, var(--accent-color) 15%, transparent);
+  transition: border-color 0.3s ease;
+}
+
+.featuredCard:hover {
+  border-color: color-mix(in srgb, var(--accent-color) 30%, transparent);
+}
+
+.featuredBadge {
+  background: color-mix(in srgb, var(--accent-color) 20%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
 }

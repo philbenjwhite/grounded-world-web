@@ -35,15 +35,15 @@
           "buttons": [
             {
               "label": "Listen to the Podcast",
-              "href": "https://grounded.world/itshouldntbethishard",
+              "href": "/itshouldntbethishard",
               "variant": "primary",
-              "external": true
+              "external": false
             },
             {
               "label": "Apply to be a Guest",
-              "href": "https://grounded.world/itshouldntbethishard",
+              "href": "/itshouldntbethishard",
               "variant": "secondary",
-              "external": true
+              "external": false
             }
           ]
         }
