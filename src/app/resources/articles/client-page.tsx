@@ -3,6 +3,8 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTina } from "tinacms/dist/react";
+import type { PageQuery } from "../../../../tina/__generated__/types";
 import HeroBanner from "@/components/components/HeroBanner";
 import CTABanner from "@/components/components/CTABanner";
 import Section from "@/components/layout/Section";
@@ -139,11 +141,46 @@ function ArticleCard({ article }: { article: ArticleItem }) {
   );
 }
 
-export default function ArticlesClientPage({
-  articles,
-}: {
+interface ArticlesClientPageProps {
   articles: ArticleItem[];
-}) {
+  query: string;
+  variables: { relativePath: string };
+  data: { page: PageQuery["page"] };
+}
+
+export default function ArticlesClientPage(props: ArticlesClientPageProps) {
+  const { articles } = props;
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  });
+
+  /* Hero Banner */
+  const heroSection = data.page.sections?.find(
+    (s) => s?.__typename === "PageSectionsHeroBanner",
+  ) as {
+    title?: string;
+    subtitle?: string;
+    overlayOpacity?: string;
+    contentAlign?: string;
+    minHeight?: string;
+  } | undefined;
+
+  /* CTA Banner */
+  const ctaSection = data.page.sections?.find(
+    (s) => s?.__typename === "PageSectionsCtaBanner",
+  ) as {
+    backgroundSrc?: string;
+    backgroundAlt?: string;
+    heading?: string;
+    subtext?: string;
+    primaryLabel?: string;
+    primaryHref?: string;
+    primaryExternal?: boolean;
+    overlayOpacity?: string;
+  } | undefined;
+
   const [activeCategory, setActiveCategory] = useState("All");
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
 
@@ -187,11 +224,17 @@ export default function ArticlesClientPage({
       {/* Hero */}
       <HeroBanner
         backgroundType="canvas"
-        title="Articles & Blogs"
-        subtitle="An ever-evolving library of insights, provocations, and points of view from the Grounded team."
-        minHeight="condensed"
-        overlayOpacity="light"
-        contentAlign="center"
+        title={heroSection?.title ?? "Articles & Blogs"}
+        subtitle={heroSection?.subtitle ?? undefined}
+        minHeight={
+          (heroSection?.minHeight as "full" | "large" | "medium" | "condensed" | "fit") ?? "condensed"
+        }
+        overlayOpacity={
+          (heroSection?.overlayOpacity as "light" | "medium" | "heavy") ?? "light"
+        }
+        contentAlign={
+          (heroSection?.contentAlign as "center" | "left") ?? "center"
+        }
       />
 
       {/* Articles Grid */}
@@ -248,14 +291,20 @@ export default function ArticlesClientPage({
       </Section>
 
       {/* CTA */}
-      <CTABanner
-        backgroundSrc="/images/services/banner-bg.jpg"
-        heading="It's time to get grounded"
-        subtext="Ready to activate your brand purpose and accelerate your impact? Let's talk."
-        primaryLabel="Contact Us"
-        primaryHref="/contact"
-        overlayOpacity="heavy"
-      />
+      {ctaSection?.backgroundSrc && ctaSection?.heading && ctaSection?.primaryLabel && ctaSection?.primaryHref && (
+        <CTABanner
+          backgroundSrc={ctaSection.backgroundSrc}
+          backgroundAlt={ctaSection.backgroundAlt ?? undefined}
+          heading={ctaSection.heading}
+          subtext={ctaSection.subtext ?? undefined}
+          primaryLabel={ctaSection.primaryLabel}
+          primaryHref={ctaSection.primaryHref}
+          primaryExternal={ctaSection.primaryExternal ?? false}
+          overlayOpacity={
+            (ctaSection.overlayOpacity as "light" | "medium" | "heavy") ?? undefined
+          }
+        />
+      )}
     </div>
   );
 }

@@ -1,5 +1,88 @@
 {
   "title": "It Shouldn't Be This Hard Podcast",
   "slug": "itshouldntbethishard",
-  "sections": []
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "canvas",
+      "title": "It Shouldn't Be This Hard",
+      "subtitle": "The podcast for people who know that responsible business is messy, meaningful, and probably much harder than it should be.",
+      "overlayOpacity": "light",
+      "contentAlign": "center",
+      "minHeight": "condensed"
+    },
+    {
+      "_template": "splitLayout",
+      "ratio": "40/60",
+      "gap": "xl",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/resources-podcast-cover.jpg",
+          "alt": "It Shouldn't Be This Hard podcast cover",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## Honest conversations most people avoid\n\nIn each episode, Grounded co-founders Heidi Schoeneck and Phil White sit down with founders, corporate change-makers, sustainability leaders, social entrepreneurs, and thought leaders.\n\nTogether they explore impact, climate action, storytelling, and the systemic barriers that frustrate real progress \u2014 drawing on perspectives from behavioral science to spirituality."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Spotify",
+              "href": "https://open.spotify.com/show/5BFuPMuBbLqKDmq3sGqU3p",
+              "variant": "primary",
+              "external": true
+            },
+            {
+              "label": "Apple Podcasts",
+              "href": "https://podcasts.apple.com/us/podcast/it-shouldnt-be-this-hard/id1711519345",
+              "variant": "secondary",
+              "external": true
+            },
+            {
+              "label": "YouTube",
+              "href": "https://www.youtube.com/@groundedworld",
+              "variant": "secondary",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "cardGrid",
+      "sectionTitle": "Apply to Be a Guest",
+      "sectionSubtitle": "Maybe you've been there. You took the leap. You built the business. You challenged the status quo. And you've got the scars \u2014 and wisdom \u2014 to prove it.",
+      "columns": 3,
+      "items": [
+        {
+          "title": "Built It",
+          "body": "You founded a purpose-driven business, scaled it through the messy middle, and have the scars (and wisdom) to prove it."
+        },
+        {
+          "title": "Pushing for Change",
+          "body": "You're a corporate change-maker navigating legacy systems, internal politics, and the tension between profit and purpose."
+        },
+        {
+          "title": "Lived It",
+          "body": "Your personal story demonstrates why this work matters \u2014 and the urgency of getting it right."
+        }
+      ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/services/banner-bg.jpg",
+      "heading": "It's time to get grounded",
+      "subtext": "Ready to activate your brand purpose and accelerate your impact? Let's talk.",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/contact",
+      "overlayOpacity": "heavy"
+    }
+  ]
 }

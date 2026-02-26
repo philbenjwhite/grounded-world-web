@@ -1,6 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 import { getAuthorName } from "@/lib/authors";
+import serverClient from "../../../../tina/server-client";
 import ArticlesClientPage from "./client-page";
 
 export const metadata = {
@@ -116,6 +117,17 @@ async function fetchPosts(): Promise<ArticleItem[]> {
 }
 
 export default async function ArticlesPage() {
-  const articles = await fetchPosts();
-  return <ArticlesClientPage articles={articles} />;
+  const [articles, pageResult] = await Promise.all([
+    fetchPosts(),
+    serverClient.queries.page({ relativePath: "resources-articles.json" }),
+  ]);
+
+  return (
+    <ArticlesClientPage
+      articles={articles}
+      query={pageResult.query}
+      variables={pageResult.variables as { relativePath: string }}
+      data={pageResult.data}
+    />
+  );
 }

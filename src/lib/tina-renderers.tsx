@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
 import type {
@@ -18,15 +19,18 @@ import CTABanner from "@/components/components/CTABanner";
 import TestimonialSection from "@/components/components/TestimonialSection";
 import ContentTabs from "@/components/components/ContentTabs";
 import SlideCarousel from "@/components/components/SlideCarousel";
+import NewsletterCTA from "@/components/components/NewsletterCTA";
 import Split from "@/components/layout/Split";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
+import Grid from "@/components/layout/Grid";
 import ImageBlock from "@/components/atoms/Image";
 import Button from "@/components/atoms/Button";
 import Heading from "@/components/atoms/Heading";
 import Text from "@/components/atoms/Text";
 import SectionLabel from "@/components/atoms/SectionLabel";
 import type { HeadingLevel } from "@/components/atoms/Heading/Heading";
+import { iconMap } from "@/lib/iconMap";
 
 /* ─── Rich-text rendering components ─────────────────── */
 
@@ -579,6 +583,180 @@ export function renderSection(section: PageSections, index: number): React.React
           }
           className={s.className ?? undefined}
         />
+      );
+    }
+
+    case "PageSectionsNewsletterCta": {
+      const n = section as unknown as {
+        backgroundSrc?: string;
+        backgroundAlt?: string;
+        newsletterHeading?: string;
+        newsletterSubtext?: string;
+        overlayOpacity?: string;
+      };
+      return (
+        <NewsletterCTA
+          key={index}
+          backgroundSrc={n.backgroundSrc ?? "/images/stockholm-metro-station-escalators-dark-underground.jpg"}
+          backgroundAlt={n.backgroundAlt ?? undefined}
+          heading={n.newsletterHeading ?? undefined}
+          subtext={n.newsletterSubtext ?? undefined}
+          overlayOpacity={
+            (n.overlayOpacity as "light" | "medium" | "heavy") ?? undefined
+          }
+        />
+      );
+    }
+
+    case "PageSectionsEmbedSection": {
+      const e = section as unknown as {
+        embedHeading?: string;
+        embedDescription?: string;
+        embedMode?: string;
+        embedCode?: string;
+        embedMinHeight?: number;
+      };
+      const height = e.embedMinHeight ?? 600;
+      return (
+        <Section key={index}>
+          <Container className="px-[var(--layout-section-padding-x)]">
+            {e.embedHeading && (
+              <div className="max-w-3xl mx-auto text-center mb-12">
+                <Heading level={2} size="h3" color="primary">
+                  {e.embedHeading}
+                </Heading>
+                {e.embedDescription && (
+                  <Text size="body-lg" color="secondary" className="mt-4">
+                    {e.embedDescription}
+                  </Text>
+                )}
+              </div>
+            )}
+            <div className="max-w-4xl mx-auto">
+              {e.embedMode === "embed" && e.embedCode ? (
+                <div
+                  style={{ minHeight: `${height}px` }}
+                  dangerouslySetInnerHTML={{ __html: e.embedCode }}
+                />
+              ) : (
+                <div
+                  className="rounded-3xl border border-white/[0.08] bg-white/[0.025] flex items-center justify-center"
+                  style={{ minHeight: `${height}px` }}
+                >
+                  <div className="text-center px-6 py-12">
+                    <div className="w-16 h-16 rounded-full bg-[var(--color-cyan)]/20 flex items-center justify-center mx-auto mb-6">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="var(--color-cyan)"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                      </svg>
+                    </div>
+                    <Heading level={3} size="h4" color="primary">
+                      {e.embedHeading ?? "Coming Soon"}
+                    </Heading>
+                    <Text size="body-sm" color="tertiary" className="mt-2 max-w-md mx-auto">
+                      {e.embedDescription ?? "This section will be available soon."}
+                    </Text>
+                  </div>
+                </div>
+              )}
+            </div>
+          </Container>
+        </Section>
+      );
+    }
+
+    case "PageSectionsCardGrid": {
+      const cg = section as unknown as {
+        sectionTitle?: string;
+        sectionSubtitle?: string;
+        columns?: number;
+        items?: Array<{
+          icon?: string;
+          iconColor?: string;
+          title: string;
+          subtitle?: string;
+          body?: string;
+          href?: string;
+        }>;
+      };
+      const cols = (cg.columns ?? 2) as 2 | 3 | 4;
+      const items = (cg.items ?? []).filter(Boolean);
+      if (items.length === 0) return null;
+      return (
+        <Section key={index}>
+          <Container className="px-[var(--layout-section-padding-x)]">
+            {(cg.sectionTitle || cg.sectionSubtitle) && (
+              <div className="text-center mb-12 md:mb-16">
+                {cg.sectionTitle && (
+                  <Heading level={2} size="h2" color="primary" className="mb-4">
+                    {cg.sectionTitle}
+                  </Heading>
+                )}
+                {cg.sectionSubtitle && (
+                  <Text size="body-lg" color="secondary" className="max-w-2xl mx-auto leading-relaxed">
+                    {cg.sectionSubtitle}
+                  </Text>
+                )}
+              </div>
+            )}
+            <Grid
+              cols={cols}
+              colsTablet={cols > 2 ? 2 : cols}
+              colsMobile={1}
+              gap="lg"
+            >
+              {items.map((item, itemIndex) => {
+                const IconComponent = item.icon ? iconMap[item.icon] : null;
+                const card = (
+                  <div
+                    key={itemIndex}
+                    className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 md:p-8 h-full"
+                  >
+                    {IconComponent && (
+                      <div className="mb-6">
+                        <IconComponent
+                          size={24}
+                          weight="duotone"
+                          style={item.iconColor ? { color: item.iconColor } : undefined}
+                        />
+                      </div>
+                    )}
+                    <Heading level={3} size="h4" color="primary" className="mb-3">
+                      {item.title}
+                    </Heading>
+                    {item.subtitle && (
+                      <Text size="body-sm" color="tertiary" className="mb-4 font-medium">
+                        {item.subtitle}
+                      </Text>
+                    )}
+                    {item.body && (
+                      <Text size="body-sm" color="secondary" className="leading-relaxed">
+                        {item.body}
+                      </Text>
+                    )}
+                  </div>
+                );
+                if (item.href) {
+                  return (
+                    <Link key={itemIndex} href={item.href} className="block h-full no-underline group">
+                      {card}
+                    </Link>
+                  );
+                }
+                return card;
+              })}
+            </Grid>
+          </Container>
+        </Section>
       );
     }
 

@@ -108,6 +108,11 @@ const iconOptions = [
   { value: "Rocket", label: "Rocket" },
   { value: "Trophy", label: "Trophy" },
   { value: "Leaf", label: "Leaf" },
+  { value: "MicrophoneStage", label: "Microphone Stage" },
+  { value: "Article", label: "Article" },
+  { value: "BookOpenText", label: "Book Open Text" },
+  { value: "EnvelopeSimple", label: "Envelope" },
+  { value: "ChatCircleDots", label: "Chat Bubble" },
 ];
 
 export default defineConfig({
@@ -1703,6 +1708,156 @@ export default defineConfig({
                     type: "string",
                     name: "className",
                     label: "Custom CSS Classes",
+                  },
+                ],
+              },
+              /* ── Newsletter CTA ─────────────────────────── */
+              {
+                name: "newsletterCta",
+                label: "Newsletter CTA",
+                fields: [
+                  {
+                    type: "image",
+                    name: "backgroundSrc",
+                    label: "Background Image",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "backgroundAlt",
+                    label: "Background Alt Text",
+                  },
+                  {
+                    type: "string",
+                    name: "newsletterHeading",
+                    label: "Heading",
+                  },
+                  {
+                    type: "string",
+                    name: "newsletterSubtext",
+                    label: "Subtext",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "string",
+                    name: "overlayOpacity",
+                    label: "Overlay Darkness",
+                    options: [
+                      { value: "light", label: "Light" },
+                      { value: "medium", label: "Medium" },
+                      { value: "heavy", label: "Heavy" },
+                    ],
+                  },
+                ],
+              },
+              /* ── Embed Section ──────────────────────────── */
+              {
+                name: "embedSection",
+                label: "Embed Section",
+                fields: [
+                  {
+                    type: "string",
+                    name: "embedHeading",
+                    label: "Heading",
+                  },
+                  {
+                    type: "string",
+                    name: "embedDescription",
+                    label: "Description",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "string",
+                    name: "embedMode",
+                    label: "Mode",
+                    options: [
+                      { value: "placeholder", label: "Placeholder" },
+                      { value: "embed", label: "Embed Code" },
+                    ],
+                  },
+                  {
+                    type: "string",
+                    name: "embedCode",
+                    label: "Embed Code (HTML / Script)",
+                    description: "Paste an iframe or script tag. Only shown when Mode is 'Embed Code'.",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "number",
+                    name: "embedMinHeight",
+                    label: "Minimum Height (px)",
+                    description: "Minimum height of the embed area in pixels (default 600)",
+                  },
+                ],
+              },
+              /* ── Card Grid ─────────────────────────────── */
+              {
+                name: "cardGrid",
+                label: "Card Grid",
+                fields: [
+                  {
+                    type: "string",
+                    name: "sectionTitle",
+                    label: "Section Title",
+                  },
+                  {
+                    type: "string",
+                    name: "sectionSubtitle",
+                    label: "Section Subtitle",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "number",
+                    name: "columns",
+                    label: "Columns",
+                    description: "Number of columns (default: 2)",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Cards",
+                    list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.title || "New Card",
+                      }),
+                    },
+                    fields: [
+                      {
+                        type: "string",
+                        name: "icon",
+                        label: "Icon",
+                        options: iconOptions,
+                      },
+                      {
+                        type: "string",
+                        name: "iconColor",
+                        label: "Icon Color",
+                        description: "CSS color value (e.g. var(--color-azure-1), #FF08CC)",
+                      },
+                      {
+                        type: "string",
+                        name: "title",
+                        label: "Title",
+                      },
+                      {
+                        type: "string",
+                        name: "subtitle",
+                        label: "Subtitle",
+                      },
+                      {
+                        type: "string",
+                        name: "body",
+                        label: "Body Text",
+                        ui: { component: "textarea" },
+                      },
+                      {
+                        type: "string",
+                        name: "href",
+                        label: "Link",
+                        description: "URL the card links to (e.g. /resources/podcast)",
+                      },
+                    ],
                   },
                 ],
               },

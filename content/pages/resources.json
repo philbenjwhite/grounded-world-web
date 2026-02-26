@@ -1,0 +1,61 @@
+{
+  "title": "Resources",
+  "slug": "resources",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "canvas",
+      "title": "Resources",
+      "subtitle": "Ideas, frameworks, and tools to help you activate brand purpose, sustainability, and social impact.",
+      "overlayOpacity": "light",
+      "contentAlign": "center",
+      "minHeight": "condensed"
+    },
+    {
+      "_template": "cardGrid",
+      "columns": 2,
+      "items": [
+        {
+          "icon": "MicrophoneStage",
+          "iconColor": "var(--color-azure-1)",
+          "title": "Podcast",
+          "subtitle": "It Shouldn't Be This Hard",
+          "body": "Lively, provocative discussions on why doing the right thing in business is harder than it should be.",
+          "href": "/resources/podcast"
+        },
+        {
+          "icon": "Article",
+          "iconColor": "var(--color-gold)",
+          "title": "Articles & Blogs",
+          "subtitle": "Insights from the front lines",
+          "body": "An ever-evolving library of insights, provocations, and points of view from the Grounded team.",
+          "href": "/resources/articles"
+        },
+        {
+          "icon": "BookOpenText",
+          "iconColor": "var(--color-green)",
+          "title": "White Papers & Playbooks",
+          "subtitle": "Research & frameworks",
+          "body": "In-depth research and frameworks for sustainable fashion, brand purpose, and retail activation.",
+          "href": "/resources/white-papers"
+        },
+        {
+          "icon": "Compass",
+          "iconColor": "var(--color-magenta)",
+          "title": "How To Guides",
+          "subtitle": "Step-by-step strategies",
+          "body": "Step-by-step guides to activating brand purpose, sustainability marketing, and social impact.",
+          "href": "/resources/guides"
+        }
+      ]
+    },
+    {
+      "_template": "newsletterCta",
+      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
+      "backgroundAlt": "Stockholm metro station escalators",
+      "newsletterHeading": "Stay Grounded",
+      "newsletterSubtext": "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.",
+      "overlayOpacity": "heavy"
+    }
+  ]
+}

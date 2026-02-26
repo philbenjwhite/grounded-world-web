@@ -1,5 +1,22 @@
 {
   "title": "Ask Gaia",
   "slug": "gaia",
-  "sections": []
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "canvas",
+      "title": "Ask Gaia",
+      "subtitle": "Your AI-powered sustainability and purpose-driven marketing expert. Ask anything about brand purpose, sustainability strategy, impact reporting, and more.",
+      "overlayOpacity": "heavy",
+      "contentAlign": "center",
+      "minHeight": "condensed"
+    },
+    {
+      "_template": "embedSection",
+      "embedHeading": "How can Gaia help you?",
+      "embedDescription": "Gaia is trained on Grounded's expertise in sustainability marketing, brand purpose activation, and social impact strategy. Whether you're exploring circular economy principles, crafting a sustainability narrative, or looking for insights on purpose-driven marketing \u2014 Gaia is here to help.",
+      "embedMode": "placeholder",
+      "embedMinHeight": 600
+    }
+  ]
 }

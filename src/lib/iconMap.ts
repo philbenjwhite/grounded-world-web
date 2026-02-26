@@ -11,6 +11,11 @@ import {
   RocketIcon,
   TrophyIcon,
   LeafIcon,
+  MicrophoneStageIcon,
+  ArticleIcon,
+  BookOpenTextIcon,
+  EnvelopeSimpleIcon,
+  ChatCircleDotsIcon,
   type IconProps,
 } from "@phosphor-icons/react";
 
@@ -27,6 +32,11 @@ export const iconMap: Record<string, React.ComponentType<IconProps>> = {
   Rocket: RocketIcon,
   Trophy: TrophyIcon,
   Leaf: LeafIcon,
+  MicrophoneStage: MicrophoneStageIcon,
+  Article: ArticleIcon,
+  BookOpenText: BookOpenTextIcon,
+  EnvelopeSimple: EnvelopeSimpleIcon,
+  ChatCircleDots: ChatCircleDotsIcon,
 };
 
 /** Dropdown options for TinaCMS icon fields */
@@ -43,4 +53,9 @@ export const iconOptions = [
   { value: "Rocket", label: "Rocket" },
   { value: "Trophy", label: "Trophy" },
   { value: "Leaf", label: "Leaf" },
+  { value: "MicrophoneStage", label: "Microphone Stage" },
+  { value: "Article", label: "Article" },
+  { value: "BookOpenText", label: "Book Open Text" },
+  { value: "EnvelopeSimple", label: "Envelope" },
+  { value: "ChatCircleDots", label: "Chat Bubble" },
 ];

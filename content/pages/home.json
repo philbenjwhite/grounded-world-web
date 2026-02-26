@@ -183,6 +183,14 @@
         }
       ],
       "_template": "workCarousel"
+    },
+    {
+      "_template": "newsletterCta",
+      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
+      "backgroundAlt": "Stockholm metro station escalators",
+      "newsletterHeading": "Stay Grounded",
+      "newsletterSubtext": "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.",
+      "overlayOpacity": "heavy"
     }
   ]
 }

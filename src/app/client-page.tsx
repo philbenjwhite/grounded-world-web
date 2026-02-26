@@ -119,6 +119,17 @@ export default function HomeClientPage(props: HomeClientPageProps) {
     subheading?: string;
   } | undefined;
 
+  /* Newsletter CTA */
+  const newsletterSection = data.page.sections?.find(
+    (s) => (s as unknown as { __typename?: string })?.__typename === "PageSectionsNewsletterCta",
+  ) as {
+    backgroundSrc?: string;
+    backgroundAlt?: string;
+    newsletterHeading?: string;
+    newsletterSubtext?: string;
+    overlayOpacity?: string;
+  } | undefined;
+
   return (
     <>
       <div className="h-[65dvh] md:h-[calc(100dvh-56px)]">
@@ -178,8 +189,13 @@ export default function HomeClientPage(props: HomeClientPageProps) {
       )}
 
       <NewsletterCTA
-        backgroundSrc="/images/stockholm-metro-station-escalators-dark-underground.jpg"
-        backgroundAlt="Stockholm metro station escalators"
+        backgroundSrc={newsletterSection?.backgroundSrc ?? "/images/stockholm-metro-station-escalators-dark-underground.jpg"}
+        backgroundAlt={newsletterSection?.backgroundAlt ?? "Stockholm metro station escalators"}
+        heading={newsletterSection?.newsletterHeading ?? undefined}
+        subtext={newsletterSection?.newsletterSubtext ?? undefined}
+        overlayOpacity={
+          (newsletterSection?.overlayOpacity as "light" | "medium" | "heavy") ?? undefined
+        }
       />
     </>
   );

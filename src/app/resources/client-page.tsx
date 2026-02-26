@@ -2,97 +2,64 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  MicrophoneStageIcon,
-  ArticleIcon,
-  BookOpenTextIcon,
-  CompassIcon,
-  type IconProps,
-} from "@phosphor-icons/react";
+import { useTina } from "tinacms/dist/react";
+import type { PageQuery } from "../../../tina/__generated__/types";
 import HeroBanner from "@/components/components/HeroBanner";
+import NewsletterCTA from "@/components/components/NewsletterCTA";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import Heading from "@/components/atoms/Heading";
 import Text from "@/components/atoms/Text";
 import FadeIn from "@/components/utils/FadeIn";
-import NewsletterCTA from "@/components/components/NewsletterCTA";
+import { iconMap } from "@/lib/iconMap";
 import styles from "./resources.module.css";
 
-/* ─── Data ───────────────────────────────────────────────── */
+/* ─── Types ───────────────────────────────────────────────── */
 
-const CATEGORIES: {
-  id: string;
-  icon: React.ComponentType<IconProps>;
+interface CategoryItem {
+  icon?: string;
+  iconColor?: string;
   title: string;
-  subtitle: string;
-  body: string;
-  color: string;
-  href: string;
-}[] = [
-  {
-    id: "podcast",
-    icon: MicrophoneStageIcon,
-    title: "Podcast",
-    subtitle: "It Shouldn't Be This Hard",
-    body: "Lively, provocative discussions on why doing the right thing in business is harder than it should be.",
-    color: "var(--color-azure-1)",
-    href: "/resources/podcast",
-  },
-  {
-    id: "articles",
-    icon: ArticleIcon,
-    title: "Articles & Blogs",
-    subtitle: "Insights from the front lines",
-    body: "An ever-evolving library of insights, provocations, and points of view from the Grounded team.",
-    color: "var(--color-gold)",
-    href: "/resources/articles",
-  },
-  {
-    id: "whitepapers",
-    icon: BookOpenTextIcon,
-    title: "White Papers & Playbooks",
-    subtitle: "Research & frameworks",
-    body: "In-depth research and frameworks for sustainable fashion, brand purpose, and retail activation.",
-    color: "var(--color-green)",
-    href: "/resources/white-papers",
-  },
-  {
-    id: "guides",
-    icon: CompassIcon,
-    title: "How To Guides",
-    subtitle: "Step-by-step strategies",
-    body: "Step-by-step guides to activating brand purpose, sustainability marketing, and social impact.",
-    color: "var(--color-magenta)",
-    href: "/resources/guides",
-  },
-];
+  subtitle?: string;
+  body?: string;
+  href?: string;
+}
 
 /* ─── Sub-components ─────────────────────────────────────── */
 
-function CategoryCard({ item }: { item: (typeof CATEGORIES)[number] }) {
+function CategoryCard({ item }: { item: CategoryItem }) {
+  const IconComponent = item.icon ? iconMap[item.icon] : null;
+  const color = item.iconColor ?? "var(--color-cyan)";
+
   return (
     <Link
-      href={item.href}
+      href={item.href ?? "#"}
       className={`${styles.categoryCard} work-card-hover group block rounded-3xl bg-white/[0.03] backdrop-blur-xl p-8 md:p-10 h-full overflow-hidden no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/30`}
-      {...({ style: { "--tile-color": item.color } } as React.HTMLAttributes<HTMLAnchorElement>)}
+      {...({ style: { "--tile-color": color } } as React.HTMLAttributes<HTMLAnchorElement>)}
     >
       <div className="work-card-glow" />
 
       {/* Icon */}
-      <div className="mb-6">
-        <item.icon size={24} weight="duotone" className="text-[color:var(--tile-color)]" />
-      </div>
+      {IconComponent && (
+        <div className="mb-6">
+          <IconComponent size={24} weight="duotone" className="text-[color:var(--tile-color)]" />
+        </div>
+      )}
 
       {/* Content */}
       <Heading level={3} size="h3" color="primary" className="mb-1.5 group-hover:text-[color:var(--tile-color)] transition-colors">
         {item.title}
       </Heading>
-      <Text size="body-sm" color="tertiary" className="mb-4 font-medium">
-        {item.subtitle}
-      </Text>
-      <Text size="body-md" color="secondary" className="mb-6 leading-relaxed">
-        {item.body}
-      </Text>
+      {item.subtitle && (
+        <Text size="body-sm" color="tertiary" className="mb-4 font-medium">
+          {item.subtitle}
+        </Text>
+      )}
+      {item.body && (
+        <Text size="body-md" color="secondary" className="mb-6 leading-relaxed">
+          {item.body}
+        </Text>
+      )}
 
       {/* Footer */}
       <div className="flex items-center justify-end mt-auto">
@@ -121,37 +88,93 @@ function CategoryCard({ item }: { item: (typeof CATEGORIES)[number] }) {
 
 /* ─── Main Page ──────────────────────────────────────────── */
 
-export default function ResourcesClientPage() {
+interface ResourcesClientPageProps {
+  query: string;
+  variables: { relativePath: string };
+  data: { page: PageQuery["page"] };
+}
+
+export default function ResourcesClientPage(props: ResourcesClientPageProps) {
+  const { data } = useTina({
+    query: props.query,
+    variables: props.variables,
+    data: props.data,
+  });
+
+  /* Hero Banner */
+  const heroSection = data.page.sections?.find(
+    (s) => s?.__typename === "PageSectionsHeroBanner",
+  ) as {
+    title?: string;
+    subtitle?: string;
+    overlayOpacity?: string;
+    contentAlign?: string;
+    minHeight?: string;
+  } | undefined;
+
+  /* Card Grid (resource categories) */
+  const cardGridSection = data.page.sections?.find(
+    (s) => s?.__typename === "PageSectionsCardGrid",
+  ) as {
+    items?: CategoryItem[];
+  } | undefined;
+
+  const categories = (cardGridSection?.items ?? []).filter(Boolean);
+
+  /* Newsletter CTA */
+  const newsletterSection = data.page.sections?.find(
+    (s) => s?.__typename === "PageSectionsNewsletterCta",
+  ) as {
+    backgroundSrc?: string;
+    backgroundAlt?: string;
+    newsletterHeading?: string;
+    newsletterSubtext?: string;
+    overlayOpacity?: string;
+  } | undefined;
+
   return (
     <div className="min-h-screen bg-(--background) text-white">
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <HeroBanner
         backgroundType="canvas"
-        title="Resources"
-        subtitle="Ideas, frameworks, and tools to help you activate brand purpose, sustainability, and social impact."
-        minHeight="condensed"
-        overlayOpacity="light"
-        contentAlign="center"
+        title={heroSection?.title ?? "Resources"}
+        subtitle={heroSection?.subtitle ?? undefined}
+        minHeight={
+          (heroSection?.minHeight as "full" | "large" | "medium" | "condensed" | "fit") ?? "condensed"
+        }
+        overlayOpacity={
+          (heroSection?.overlayOpacity as "light" | "medium" | "heavy") ?? "light"
+        }
+        contentAlign={
+          (heroSection?.contentAlign as "center" | "left") ?? "center"
+        }
       />
 
       {/* ── Resource Categories ──────────────────────────── */}
-      <Section className="!pt-0 !pb-16 md:!pb-24">
-        <Container className="px-[var(--layout-section-padding-x)]">
-          <FadeIn>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-              {CATEGORIES.map((item) => (
-                <CategoryCard key={item.id} item={item} />
-              ))}
-            </div>
-          </FadeIn>
-        </Container>
-      </Section>
+      {categories.length > 0 && (
+        <Section className="!pt-0 !pb-16 md:!pb-24">
+          <Container className="px-[var(--layout-section-padding-x)]">
+            <FadeIn>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+                {categories.map((item, index) => (
+                  <CategoryCard key={item.title ?? index} item={item} />
+                ))}
+              </div>
+            </FadeIn>
+          </Container>
+        </Section>
+      )}
 
       {/* ── Newsletter ─────────────────────────────────── */}
       <NewsletterCTA
-        backgroundSrc="/images/stockholm-metro-station-escalators-dark-underground.jpg"
-        backgroundAlt="Stockholm metro station escalators"
+        backgroundSrc={newsletterSection?.backgroundSrc ?? "/images/stockholm-metro-station-escalators-dark-underground.jpg"}
+        backgroundAlt={newsletterSection?.backgroundAlt ?? "Stockholm metro station escalators"}
+        heading={newsletterSection?.newsletterHeading ?? undefined}
+        subtext={newsletterSection?.newsletterSubtext ?? undefined}
+        overlayOpacity={
+          (newsletterSection?.overlayOpacity as "light" | "medium" | "heavy") ?? undefined
+        }
       />
     </div>
   );
