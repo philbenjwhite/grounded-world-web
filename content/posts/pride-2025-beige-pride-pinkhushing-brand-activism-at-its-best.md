@@ -186,7 +186,7 @@ These brands stood out because they stayed in. They didn’t confuse Pride with 
 
 
 
-**Sephora **revived its Brave Spaces in 74 cities, giving LGBTQIA+ customers in-store support and resources. In collaboration with Lady Gaga’s Haus Labs and the Born This Way Foundation, the campaign emphasized emotional safety, joy, and expression, tying back into Sephora’s purpose to make beauty a vehicle for belonging. “At Sephora, we’re driven by our purpose to champion a world of inspiration and inclusion where everyone can celebrate their beauty,” said Deborah Yeh, global chief marketing officer of Sephora.
+**Sephora** revived its Brave Spaces in 74 cities, giving LGBTQIA+ customers in-store support and resources. In collaboration with Lady Gaga’s Haus Labs and the Born This Way Foundation, the campaign emphasized emotional safety, joy, and expression, tying back into Sephora’s purpose to make beauty a vehicle for belonging. “At Sephora, we’re driven by our purpose to champion a world of inspiration and inclusion where everyone can celebrate their beauty,” said Deborah Yeh, global chief marketing officer of Sephora.
 
 
 

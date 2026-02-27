@@ -79,11 +79,11 @@ After a week of train rides, factory floors, and espresso refills, I came home c
 
 It looks like this:
 
-- **Activation is built, not broadcast. **These brands don’t run sustainability campaigns; they redesign the system itself.
+- **Activation is built, not broadcast.** These brands don’t run sustainability campaigns; they redesign the system itself.
 
-- **Purpose is visible. **From banana fibre to solar steel, every choice leaves a trace — and that’s the point.
+- **Purpose is visible.** From banana fibre to solar steel, every choice leaves a trace — and that’s the point.
 
-- **Culture drives circularity. ** Switzerland’s precision isn’t just technical; it’s cultural. Circularity works here because it’s a shared value system.
+- **Culture drives circularity.**  Switzerland’s precision isn’t just technical; it’s cultural. Circularity works here because it’s a shared value system.
 
 ### From Zurich to Geneva, the Loop Is Alive
 

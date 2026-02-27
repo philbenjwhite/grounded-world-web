@@ -19,7 +19,7 @@ Tune into grounded’s latest episode of the Mind The Gap podcast where hosts, P
 
 
 
-## **Intention-Action Gap: The Business of Good Intentions**
+## Intention-Action Gap: The Business of Good Intentions
 
 The intention-action gap defines the disconnection between what we *say* we will do (or believe) and what we actually do. Often our intentions differ from our actual actions, this is especially true when price, convenience, habit, or peer pressure come into play.
 
@@ -31,7 +31,7 @@ We also have inherent biases that sometimes prevent us from making good decision
 
 It's crucial to understand and address the gap between intention and action because unfulfilled positive intentions won’t solve the urgent environmental issues we’re facing, especially as scientists warn we’ve already crossed six of the nine planetary boundaries! Before looking at solutions, let’s examine why this gap matters so much for brands and consumers alike, particularly during Earth Month.
 
-## **Closing the Intention-Action Gap around Earth Month**
+## Closing the Intention-Action Gap around Earth Month
 
 Earth Month puts sustainability in the spotlight, but it can also reveal the disconnect between awareness, engagement and action. Brands ramp up eco-themed ads, consumers share Earth Day posts, and organizations host events. 
 
@@ -49,7 +49,7 @@ Moreover, the intention-action gap reflects deeper issues in our society’s app
 
 Earth Month, with all its increasing visibility, can serve as a moment of accountability – a time for brands and consumers alike to ask, “Are we putting our money where our mouth is? What have we actually accomplished since last Earth Month?” It’s an opportunity to reflect on whether all the eco-commitments made are being kept, and to reinvigorate efforts to close the gap between saying you care and showing it.
 
-## **Behavioral Science: Nudging Sustainable Behavior**
+## Behavioral Science: Nudging Sustainable Behavior
 
 If knowledge and awareness alone were enough, we wouldn’t have an intention-action gap. But as we’ve seen, knowledge does not equate to action. Behavioral science research has shown that to change behavior at scale, you often have to make the desired action easier, more attractive, and a more established routine than the status quo. 
 
@@ -83,7 +83,7 @@ We are social creatures, and what we perceive others are doing affects our behav
 
 Community challenges, public pledges with progress tracking, or even friendly competition can motivate individuals to act in line with their intentions. During Earth Month, some companies publish leaderboards of which office or store saved the most energy or reduced the most waste, tapping into pride and competition to spur action. Social media can amplify this by celebrating people or brands who follow through on their commitments (and by calling out those who don’t, providing a layer of accountability). The social dimension is crucial because it transforms solitary intentions into a shared endeavor.
 
-## **Case Study: Procter & Gamble (Tide)’s  #TurnToCold Campaign**
+## Case Study: Procter & Gamble (Tide)’s  #TurnToCold Campaign
 
 Laundry might not scream “Earth Month,” but Tide found a way to significantly cut carbon emissions by changing consumer behavior. Many people intend to save energy, yet habits like washing clothes in hot water persist. Tide’s insight was that heating water accounts for the majority of energy in a laundry load – so getting millions of people to switch to cold wash is a high-impact action. In 2021, Tide set a bold goal for three out of four washes to be in cold water by 2030. To close the gap between consumers’ stated willingness to be eco-friendly and their actual laundry habits, Tide launched a multi-faceted campaign using behavioral nudges:
 
@@ -101,7 +101,7 @@ The campaign launched around Earth Day and ran for months via the “Turn to Col
 
 Tide’s case demonstrates how a company can bridge the intention-action gap by making the sustainable choice easy, desirable, and socially supported. Millions of consumers had intended to be more energy-efficient; Tide gave them the nudge and assurance to act on that intention.
 
-## **How to Close the Intention-Action Gap**
+## How to Close the Intention-Action Gap
 
 Closing the intention-action gap isn’t about making louder Earth Month pledges (or greenhushing neither), it’s about embedding sustainability into your brand’s DNA, day in and day out. The real work begins after the social posts and eco-campaigns wind down. To create lasting impact, businesses must clearly identify the specific gap they’re seeking to close. From there, meaningful progress comes by integrating sustainability strategy: aligning incentives, removing friction, tracking real impact, and designing for long-term behavioral change.
 
@@ -109,46 +109,42 @@ This is where tools like [grounded's for closing the intention-action gap](https
 
  
 
-## **Intention-Action Gap Analysis: Additional Questions To Consider**
+## Intention-Action Gap Analysis: Additional Questions To Consider
 
 
-### **What is the intention action gap and intention behavior gap in sustainable practices?**
+### What is the intention action gap and intention behavior gap in sustainable practices?
 
-**
 **The intention action gap (or intention behavior gap) is the observable disconnect between our intentions and the behavior we actually display. In sustainable practices, we see that even when individuals and brands express strong intentions, human behavior does not always align with planned behavior. Researchers in environmental psychology and behavioral medicine repeatedly assess the intention behavior gap to explain how intentions sometimes fail to transition into desired behavior.
 
 Examining the intention-action gap further, we note that studies such as an initial randomized controlled trial have delved deeply into why intention behavior often does not align with behavior. In these studies, the intention behavior relationship is explicitly measured to evaluate the degree to which intentions lead to pro environmental behavior. When considering sustainable food consumption, sustainable energy, and environmental sustainability overall, the intention behavior relationship is repeatedly cited as a necessary element for effective behavior change. Moreover, by emphasizing the intention behavior relationship in each experimental design, experts are able to illustrate how intention behavior, when influenced by factors such as perceived behavioral control.
 
 Lastly, the intention behavior relationship is understood to be a complex interplay influenced by numerous variables—such as negative feelings. In contexts ranging from promoting sustainable eating (a healthy diet and healthy eating) to encouraging physical activity, the intention behavior relationship is one of the most important frameworks to predict whether intentions ultimately yield desired behavior. In summary, a firm grasp of the intention behavior relationship, including every nuance of intention behavior, is essential for creating actionable plans in sustainable consumption.
 
-### **How does the behaviour gap impact sustainable food consumption and environmental behaviors?**
+### How does the behaviour gap impact sustainable food consumption and environmental behaviors?
 
-**
 **The behaviour gap refers to the disconnect between what people intend to do—boosted by intentions—and what they subsequently act upon. In the context of sustainable food consumption and environmental behaviors, this gap is deeply intertwined with the knowledge attitudes practice gap and the attitude behavior gap. 
 
 Human behavior often strays from the intended behavior because external factors, such as immediate gratification and perceived control issues, disrupt this intention behavior relationship. Studies in environmental psychology and behavioral medicine have evaluated how the intention behavior relationship impacts sustainable consumption decisions—even when consumers are motivated by an attitude.
 
 Lastly, the behaviour gap highlights the importance of rethinking how we encourage sustainable consumption habits. A recurring theme in research—often published in international journals—involves examining the intention behavior relationship to understand the role of external factors. Whether it’s determining if communities embed chlorine treated water in local community water source purification behavior or if consumers decide to buy sustainable dairy products, the intention behavior relationship is key in predicting when intention behavior will or will not ultimately act. Addressing the behaviour gap requires an interdisciplinary approach, with an in-depth study of the intention behavior relationship.
 
-### **In what ways do external factors and planned behavior contribute to the value action gap?**
+### In what ways do external factors and planned behavior contribute to the value action gap?
 
-**
 **External factors, such as market conditions, social norms, and even subjective norms, critically influence planned behavior and widen the value action gap. When people’s intentions fail to translate into action, the intention behavior relationship is affected—not just by individual choice, but by factors that disrupt perceived behavioral control. For instance, consumers may express intention behavior to adopt sustainable food consumption practices which have been proven by empirical evidence to aid losing weight; however, habit inertia or negative feelings related to immediate gratification can obstruct the intended behavior. This dynamic relationship, often reviewed under frameworks like reasoned action and action control, highlights that external factors play a substantial role in the intention behavior relationship.
 
 Planned behavior, when meticulously measured, often relies on the intention behavior relationship to analyze how external factors influence behavior. Researchers utilize controlled groups and take up experiments that assess whether intention behavior really results in subsequent behavior. In these instances, external factors and anticipated regret are evaluated alongside variables, ensuring that intention behavior translates into long term benefits. Consistent with international development studies and sociological reviews, the intention behavior relationship is key to explaining why planned behavior sometimes fails to produce pro environmental behavior.
 
 By systematically investigating these factors using tools established in behavioral science and behavioral medicine, experts are better equipped to guide future research. The deep dive into the intention behavior relationship provides invaluable insight into how intention behavior might subsequently act if external factors are adjusted. Thus, refining our understanding of these variables is essential for narrowing the existing value action gap.
 
-### **How can behavioral science help close the intention behavior gap and drive effective behavior change?**
+### How can behavioral science help close the intention behavior gap and drive effective behavior change?
 
-**
 **Behavioral science offers robust methodologies to examine and ultimately bridge the intention behavior gap. Studies in behavioral psychology and health psychology consistently focus on the intention behavior relationship to diagnose why positive intentions do not always lead to the desired behavior. By analyzing human behavior through an environmental psychology lens, experts emphasize that increasing perceived control and addressing factors—such as immediate gratification and negative feelings—can strengthen the intention behavior relationship and encourage intention behavior that results in sustainable consumption.
 
 Specifically, interventions in behavioral science—ranging from an initial randomized controlled trial to longitudinal studies—demonstrate that behavior led design and commitment devices can aid in aligning intention behavior with pro environmental behavior. Each successful strategy is measured against subsequent behavior and energy efficiency metrics, underscoring that intention behavior must be continuously refined to ensure long term benefits. Incorporating agricultural and environmental ethics into these strategies further strengthens the intention behavior relationship, making the desired behaviour more attainable.
 
 Beyond these applications, behavioral science also addresses the intention behavior relationship by focusing on subjective norms and self efficacy. Behavioral scientist Michael Kremer, among others, has repeatedly shown that by changing the intention behavior relationship, we can reduce the attitude behavior gap and knowledge attitudes practice gap. Ultimately, transforming intention behavior into measurable outcomes, whether it's preparing meals to eat healthier or by enabling communities to embed chlorine in new purification behavior, planned behavior transforms into successful pro environmental behavior. The iterative process of future research continues to solidify our understanding of the intention behavior relationship, encouraging intention behavior that leads to effective behavior change.
 
-### **How does**[ **Grounded**](http://grounded.world)** support brands in addressing the intention action gap and value action gap?**
+### How does[ **Grounded**](http://grounded.world)** support brands in addressing the intention action gap and value action gap?**
 
 At[ Grounded.World](http://grounded.world), we leverage our deep expertise in sustainable consumption and business ethics to help brands close the intention action gap. By embedding principles from behavioral science, we create tailored strategies that reinforce closing the intention-action gap across all brand touch points.
 

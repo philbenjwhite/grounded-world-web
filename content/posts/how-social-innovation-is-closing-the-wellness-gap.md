@@ -13,9 +13,9 @@ In an increasingly overstimulated world plagued by burnout, anxiety, and lonelin
 
 Meet [***SoulCare AI***](https://www.soulcareai.com/), the brainchild of social entrepreneur Otto Lehnert, a platform that aims to do something radical: close the global wellness gap by democratizing emotional intelligence.
 
-“I built SoulCare AI to tackle three of the biggest barriers to [mental wellness](https://grounded.world/mental-health-meets-marketing/): **cost, availability, **and **stigma**. “It’s completely free to use, accessible anytime, and most importantly, **no one has to know **you're using it…not even us.”
+“I built SoulCare AI to tackle three of the biggest barriers to [mental wellness](https://grounded.world/mental-health-meets-marketing/): **cost, availability,** and **stigma**. “It’s completely free to use, accessible anytime, and most importantly, **no one has to know** you're using it…not even us.”
 
-### **The Wellness Gap Is a Social Design Problem**
+### The Wellness Gap Is a Social Design Problem
 
 At the heart of SoulCare AI is a critical insight: access to mental wellness isn’t just about therapy, it’s about systemic design. In Portugal alone, a therapy session can cost €80. With the average salary around €700 per month, a single session eats up more than 10% of someone’s income. That’s simply not sustainable.
 
@@ -23,17 +23,17 @@ SoulCare AI reframes [mental health care](https://grounded.world/exploring-menta
 
 [![](/images/blog/2025-05-mentalh-health-is-not-a-luxury-its-a-need.png)](/images/blog/2025-05-mentalh-health-is-not-a-luxury-its-a-need.png)
 
-### **AI With Empathy: An Emotionally Intelligent Algorithm **
+### AI With Empathy: An Emotionally Intelligent Algorithm
 
 SoulCare AI is more than responsive, it’s emotionally aware. From the tone of its voice to the structure of its responses, everything has been curated with input from psychologists. Currently, SoulCare uses an empathetic tone based on feedback from users in Germany and Portugal. But the platform is developing a tone-personalization system where, after a few conversations, the AI can determine your ideal communication style (or let you choose it directly).
 
-### **Entrepreneurship That Listens**
+### Entrepreneurship That Listens
 
 As a startup, SoulCare AI is young, but it’s already piloting impact-driven collaborations. At NOVA Business School in Lisbon, the platform is being used to support international students navigating language barriers, homesickness, and cultural dislocation.
 
 “We’re seeing how this tool can help students who feel completely alone. Imagine moving to a new country, not speaking the language, and having no one to talk to. Now imagine a voice in your language checking in on you after class. That’s the power of SoulCare AI,” Otto shares.
 
-### **SoulCall: Your Daily Call *****In***
+### SoulCall: Your Daily Call***In***
 
 Perhaps the most innovative ~and intimate~ feature on SoulCare AI’s roadmap is **SoulCall**, a daily check-in feature that turns passive journaling into active emotional support.
 
@@ -45,7 +45,7 @@ But this isn’t just for comfort. A SoulCall will be able to track emotional pa
 
 [![](/images/blog/2025-05-mental-health-ai-scaled.jpg)](/images/blog/2025-05-mental-health-ai-scaled.jpg)
 
-### **AI, Ethics, and the Danger of Generalization**
+### AI, Ethics, and the Danger of Generalization
 
 In a candid moment, Otto speaks openly about the risks of unregulated AI in mental health…especially when users turn to generalized tools like ChatGPT for emotional support.
 
@@ -55,7 +55,7 @@ That’s why SoulCare AI isn’t just tech for tech’s sake– it’s domain-sp
 
 “This isn’t about replacing therapists,” Otto says. “It’s about designing systems that scale care where care doesn't exist.”
 
-### **Self-Love as a KPI**
+### Self-Love as a KPI
 
 At its best, social innovation meets people where they are – across cultures, time zones, pay grades, and emotional states. Otto’s vision for SoulCare AI is a testament to what happens when technology isn’t built just for performance, but for presence.
 

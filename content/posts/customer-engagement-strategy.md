@@ -8,7 +8,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - A strong customer engagement strategy goes beyond transactions—it builds long-term relationships that enhance customer loyalty and lifetime value.
 
@@ -138,7 +138,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Customer Engagement Strategies**
+### Frequently Asked Questions About Customer Engagement Strategies
 
 A customer engagement strategy defines how brands build meaningful relationships across the entire customer journey to increase loyalty, satisfaction, lifetime value and helping you retain customers.
 

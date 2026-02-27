@@ -13,7 +13,7 @@ featured: true
 featuredImage: '/images/blog/asj-2-awoken-from-the-national-center-for-civil-and-human-rights-600x540-1.png'
 ---
 
-## **What is Social Justice?**
+## What is Social Justice?
 
 
 
@@ -24,7 +24,7 @@ Social justice is the concept of fairness for all. Furthermore, it is the belief
 
 [Social justice](https://grounded.world/world-day-of-social-justice/) movements have emerged over time to promote social justice in various areas of society, including economic justice, health equity, criminal justice, and voting rights. These movements are grounded in the principles of fairness and equality, advocating for the protection of human rights regardless of race, gender, or [sexual orientation](https://grounded.world/worst-examples-of-queerbaiting-best-examples-of-pride-month-marketing/). Many religious perspectives have also embraced social justice as a moral imperative. By addressing systemic barriers and promoting inclusion, these efforts work collectively to create a society where opportunity and dignity are truly accessible to all.
 
-## **Defining Social Justice Issues**
+## Defining Social Justice Issues
 
 Social injustice is an act that violates one's rights based on factors out of their control. It's important that a term for this is oppression. As a result, these violations are labeled isms of the world (i.e. racism, sexism, ageism, classism, ableism, and heterosexism). Change-makers have done their best to fight this oppression by
 
@@ -39,7 +39,7 @@ Social injustice is an act that violates one's rights based on factors out of th
 
 but the long-lasting change falls on agencies who are responsible for public policies.
 
-## **4 Social Justice Principles**
+## 4 Social Justice Principles
 
 These four principles help define social justice:
 
@@ -77,10 +77,10 @@ In contrast, equity accounts for societal barriers. These barriers prevent some 
 
 Participation in social justice means everyone can voice an opinion about decisions that immediately affect them. Often, underprivileged groups present society with a problem and are then left out of the conversation when it comes to finding solutions. When the suffering community isn't involved in problem solving, the problem will get worse before it gets better. To prevent this, participation needs to be encouraged so that everyone can contribute.
 
-## **[![](/images/blog/2021-08-whatissocialjustice-scaled.jpg)](/images/blog/2021-08-whatissocialjustice-scaled.jpg)**
+## [![](/images/blog/2021-08-whatissocialjustice-scaled.jpg)](/images/blog/2021-08-whatissocialjustice-scaled.jpg)
 
 
-## **Current Social Justice Issues**
+## Current Social Justice Issues
 
 Social Justice is possible if we keep these 4 principles in mind. Now, depending on where we are in the world some of these principles may need to take president over others. However, most societies share the same types of social justice issues. Undoubtedly common themes are:
 
@@ -136,7 +136,7 @@ Issues related to sexual orientation intersect with systemic injustices in crimi
 
 
 
-## **What we owe to one another **
+## What we owe to one another
 
 A just society depends on people that are willing to uphold social justice. This society must be willing to maintain a social contract, where all human beings regardless of race, class, gender, or sexual orientation are guaranteed not only fair treatment, but meaningful involvement in shaping policies that impact their lives. Within this broader social context, issues such as racial equity, economic justice, and social equality are not just ideals but essential goals that demand attention.
 
@@ -146,7 +146,7 @@ True progress requires virtuous citizens who actively challenge injustice and up
 
 [![](/images/blog/2021-08-whatsocialjusticemeans-scaled.jpg)](/images/blog/2021-08-whatsocialjusticemeans-scaled.jpg)
 
-## **What Social Justice Means**
+## What Social Justice Means
 
 Institutions that are in the business of social justice have defined what it means for themselves and the work they do. Specifically, some definitions of social justice are:
 
@@ -161,7 +161,7 @@ Institutions that are in the business of social justice have defined what it mea
 
 Simply put, social justice is the belief that everyone should be protected and treated fairly. This isn't the solution to all of the world's problems. It also does not eliminate hate, and will not be achieved swiftly. Not all people will welcome it. Obstacles have been put in place to prevent people from living a comfortable life. Social justice is not a law. Rather, it is an idea. A concept. A dream we hope to achieve. It is a step in the right direction towards progress. There is no one way to get there. But it is there. You can see it, and if you need help along the way the 4 principles are there to point you home.
 
-## **Embedding Social Justice in Your Company's Mission**
+## Embedding Social Justice in Your Company's Mission
 
 Poetry has long been used as a tool for social justice. At Grounded, we recognize its powerful impact on movements such as The Harlem Renaissance and The Civil Rights Movement, as well as its ability to distill complex issues like gun violence or queer rights into something we can all understand. This deep-rooted literary tradition has played a role in nearly every revolution in history, used to inform the public, encourage empathy, and inspire change.
 

@@ -8,7 +8,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - **Shopper marketing** focuses on influencing consumer behavior at critical decision-making moments throughout the entire path to purchase, both in store and online
 
@@ -147,7 +147,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Shopper Marketing**
+### Frequently Asked Questions About Shopper Marketing
 
 Shopper marketing focuses specifically on influencing consumer behavior during the active shopping and purchase process, while retail marketing concentrates on driving traffic to stores and building overall category awareness. Shopper marketing operates at a more granular level, targeting specific moments in the path to purchase with tactics designed to influence buying decisions when shoppers are in decision-making mode. Retail marketing casts a wider net to build store preference and visitation.
 

@@ -9,19 +9,19 @@ tags:
 featuredImage: '/images/blog/ISTH007_email.png'
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
  
 
 - **Perfection is the enemy of progress.** In a world obsessed with certainty, Jennifer Motles reminds us that “nobody’s perfect” and that acknowledging imperfection is the foundation of real sustainability leadership. Complex problems can’t be solved from a place of denial or defensiveness.
 
-- **Transformation requires collaboration, not isolation. **No company (especially one in a legacy industry) can transform alone. Jennifer makes it clear that meaningful ESG progress comes from openness, humility, and cross-sector partnerships that challenge old narratives.
+- **Transformation requires collaboration, not isolation.** No company (especially one in a legacy industry) can transform alone. Jennifer makes it clear that meaningful ESG progress comes from openness, humility, and cross-sector partnerships that challenge old narratives.
 
-- **Intentionality matters more than optics. **Sustainability isn’t about looking good. It’s about *deciding* to move toward the discomfort, the tensions, contradictions, and systems that feel hardest to change.
+- **Intentionality matters more than optics.** Sustainability isn’t about looking good. It’s about *deciding* to move toward the discomfort, the tensions, contradictions, and systems that feel hardest to change.
 
-- **Honesty builds trust and trust builds change. **Jennifer’s approach centers transparency: telling the truth about challenges, limitations, and the long-term journey toward a smoke-free future. Because credibility isn't built on perfection but integrity.
+- **Honesty builds trust and trust builds change.** Jennifer’s approach centers transparency: telling the truth about challenges, limitations, and the long-term journey toward a smoke-free future. Because credibility isn't built on perfection but integrity.
 
-- **Leading inside tension is a skill and a responsibility. **Transformation in controversial sectors demands courage. Not performative courage, but the kind that moves you toward the problem rather than away from it. The kind that says: “This is hard. And necessary.”
+- **Leading inside tension is a skill and a responsibility.** Transformation in controversial sectors demands courage. Not performative courage, but the kind that moves you toward the problem rather than away from it. The kind that says: “This is hard. And necessary.”
 
 > 
 What happens when a sustainability leader steps into one of the world’s most controversial industries and decides to change it from the inside out?

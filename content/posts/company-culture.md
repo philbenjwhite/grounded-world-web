@@ -289,7 +289,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Company Culture**
+### Frequently Asked Questions About Company Culture
 
 Company culture encompasses the shared values, beliefs, behaviors, and practices that characterize how work gets done within an organization. It's more than stated values or office perks—it's the lived reality of daily experience. Culture matters because it directly impacts employee engagement, retention, productivity, innovation, and ultimately business performance. Research shows culture-focused companies deliver over three times higher stock returns than market averages, making culture a strategic asset rather than soft HR concept.
 

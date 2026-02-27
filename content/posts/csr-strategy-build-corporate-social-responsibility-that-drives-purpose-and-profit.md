@@ -7,7 +7,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - A robust CSR strategy integrates environmental responsibility, ethical responsibility, philanthropic responsibility, and economic responsibility into your core business model rather than treating them as separate initiatives
 
@@ -255,7 +255,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About CSR strategy**
+### Frequently Asked Questions About CSR strategy
 
 CSR strategy focuses on how your company fulfills social and environmental responsibilities through specific programs and initiatives. ESG (Environmental, Social, Governance) is a framework investors and rating agencies use to evaluate corporate performance across those three dimensions. Think of CSR as what you do—your philanthropic initiatives, environmental sustainability programs, ethical practices—while ESG measures and scores how well you do it. Strong CSR strategy improves your ESG ratings, which in turn affects investor perception and access to capital. At Grounded, we help brands develop CSR strategies that address material ESG factors while remaining authentic to organizational values rather than merely gaming rating systems.
 

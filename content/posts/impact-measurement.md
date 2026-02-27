@@ -7,7 +7,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - Impact measurement evaluates how your programs and initiatives create tangible change for communities, environment, and stakeholders—going beyond outputs to assess genuine outcomes
 
@@ -216,7 +216,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Impact Measurement**
+### Frequently Asked Questions About Impact Measurement
 
 Impact measurement refers to the process of collecting and analyzing data to understand the outcomes and effects of your programs or initiatives. Impact measurement and management (IMM) goes further—it's about using those insights to make strategic decisions, allocate resources, and continuously improve your approach. Measurement tells you what's happening; management is what you do with that knowledge to amplify positive effects and minimize unintended negative consequences.
 

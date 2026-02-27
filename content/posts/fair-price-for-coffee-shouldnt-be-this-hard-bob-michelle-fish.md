@@ -9,7 +9,7 @@ tags:
 featuredImage: '/images/blog/ISTH006_email.png'
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - 
 
@@ -44,7 +44,7 @@ OBIIS is building a *Farm Direct* model from the ground up — one that goes **b
 It’s business reimagined — where empathy is an economic strategy, and *profit becomes prosperity.*
 
 > 
-WATCH the full episode (with exclusive footage from OBIIS **[HERE](https://www.youtube.com/watch?v=PoXYFCmfPyA)**. Or listen on your preferred streaming service** [HERE. ](https://redcircle.com/shows/fd3f44cf-f0be-4957-ba0a-67739ca5ea8c/ep/260f5978-f68e-4e60-af98-2786c5315bcc) **
+WATCH the full episode (with exclusive footage from OBIIS **[HERE](https://www.youtube.com/watch?v=PoXYFCmfPyA)**. Or listen on your preferred streaming service** [HERE. ](https://redcircle.com/shows/fd3f44cf-f0be-4957-ba0a-67739ca5ea8c/ep/260f5978-f68e-4e60-af98-2786c5315bcc)**
 
 ### The True Cost of a Cheap Cup
 

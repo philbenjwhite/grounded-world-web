@@ -13,7 +13,7 @@ featuredImage: '/images/blog/Screen-Shot-2024-05-28-at-11.13.58-AM.png'
 
 It’s May 29th– which means it’s “Learn About Composting Day”, my latest favorite observance.  In honor of “Learn About Composting Day”, I’ve reflected on my own obsession with composting and realized that the process of is healing and satisfying. By taking the time and effort to go against the mainstream waste management style of just *throw throw throw *away- actively prioritizing organic waste for your own compost system is a radical act of resistance against contributing to landfills while also relieving psychological stress. Activities like gardening are known to provide [mental health benefits](https://grounded.world/mental-health-meets-marketing/), therefore composting is an activity that not only helps [mental health](https://grounded.world/exploring-mental-health-and-culture/) but is also a circular activity. The results of composting are fruitful— in exchange for your ‘TLC’ you receive nutrient rich soil and the power of transforming waste into new life. 
 
-**Composting 101 **
+**Composting 101** 
 
 The #1 reason why everyone doesn’t compost is because composting is not easy. Composting is also not always immediately accessible. Otherwise, we would all benefit from learning how to compost and lead our own circular lifestyles. Composting is an art that can only be learned through hands-on experience. 
 

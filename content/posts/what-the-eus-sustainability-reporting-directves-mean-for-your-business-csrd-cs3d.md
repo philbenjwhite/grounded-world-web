@@ -17,37 +17,37 @@ The EU is reshaping the corporate sustainability landscape with regulations that
 
 
 
-## **What is the CSRD (Corporate Sustainability Reporting Directive)?**
+## What is the CSRD (Corporate Sustainability Reporting Directive)?
 
 
 The **Corporate Sustainability Reporting Directive (CSRD)** is part of the EU’s broader sustainability agenda and mandates businesses to disclose detailed information about their environmental, social, and governance (ESG) practices.This framework significantly expands on the EU's previous Non-Financial Reporting Directive (NFRD), setting higher standards for transparency and reporting. 
 
 
-## **Why It Matters**
+## Why It Matters
 
 
 Entered into force on January 5, 2023, CSRD ensures that companies’ sustainability efforts are transparent and measurable. This not only promotes trust among stakeholders but also aligns businesses with long-term sustainability goals. It also makes companies more accountable in the eyes of investors, regulators, and consumers.
 
 
-## **Who Needs to Comply Under the Current Directive?**
+## Who Needs to Comply Under the Current Directive?
 
 
 CSRD designated four waves of compliance deadlines based on certain “undertaking” (a.k.a. business or company) categories and thresholds:
 
 
 
-- **First Wave: **Includes **large public-interest** **undertakings**, including subsidiaries of foreign parent companies. A “public interest entity” refers to a company or undertaking listed on a regulated EU stock exchange, insurance companies, credit institutions, or a member-state-designated public interest entity. A “large undertaking” means having an annual turnover (net revenue) of over €50 million or total assets exceeding €25 million, **and** more than 250 employees. Only undertakings with over 500 employees and already reporting under the Non-Financial Reporting Directive (NFRD) are considered “first wave” large undertakings and must report in 2025 for the previous financial year (2024).
+- **First Wave:** Includes **large public-interest** **undertakings**, including subsidiaries of foreign parent companies. A “public interest entity” refers to a company or undertaking listed on a regulated EU stock exchange, insurance companies, credit institutions, or a member-state-designated public interest entity. A “large undertaking” means having an annual turnover (net revenue) of over €50 million or total assets exceeding €25 million, **and** more than 250 employees. Only undertakings with over 500 employees and already reporting under the Non-Financial Reporting Directive (NFRD) are considered “first wave” large undertakings and must report in 2025 for the previous financial year (2024).
 
-- **Second Wave:** **Large undertakings **(see above) that are also **listed **with less than 500 employees (but above 250), and not previously reporting under the NFRD, are required to begin reporting in 2026. This may include non-EU listed companies and subsidiaries.
+- **Second Wave:** **Large undertakings** (see above) that are also **listed** with less than 500 employees (but above 250), and not previously reporting under the NFRD, are required to begin reporting in 2026. This may include non-EU listed companies and subsidiaries.
 
-- **Third Wave: Listed small and medium-sized enterprises (SMEs) **must report by 2027 with some opt-out potential until 2028**. **The requirement excludes micro-entities, which are those entities with less than 10 employees and either a net turnover of above €900 thousand or above €450 thousand in assets.
+- **Third Wave: Listed small and medium-sized enterprises (SMEs)** must report by 2027 with some opt-out potential until 2028**.** The requirement excludes micro-entities, which are those entities with less than 10 employees and either a net turnover of above €900 thousand or above €450 thousand in assets.
 
 - **Fourth Wave: Non-EU companies** with over €150 million in EU turnover for each of the last two consecutive years **and** an EU subsidiary that qualifies as a “large undertaking” (see first bullet) or an EU branch generating more than €40 million net turnover in the preceding financial year. This “fourth wave” must report in 2029.
 
 
 
 
-## **What Are the Key Reporting Requirements?**
+## What Are the Key Reporting Requirements?
 
 
 
@@ -72,7 +72,7 @@ How sustainability risks (like climate change or social issues) impact their bus
 
 
 
-## **What are the Key Changes to CSRD if the Omnibus is Finalized as Published?**
+## What are the Key Changes to CSRD if the Omnibus is Finalized as Published?
 
 
 
@@ -80,11 +80,11 @@ How sustainability risks (like climate change or social issues) impact their bus
 
 - **The value-chain cap would be expanded** beyond SMEs to those undertakings not required to report under the proposed thresholds. Both SMEs and those outside the updated CSRD would only need to voluntarily report under the to-be-adopted VSME.
 
-- **Sector-specific standards **and reporting would be** eliminated**.
+- **Sector-specific standards** and reporting would be** eliminated**.
 
 - Auditing requirements would **remain at limited assurance**.
 
-- A **two-year delay **on reporting for second and third wave undertakings would be enacted.
+- A **two-year delay** on reporting for second and third wave undertakings would be enacted.
 
 - **EU Taxonomy disclosure requirements would be reduced** to only companies or groups within the scope of CSRD and with a net turnover exceeding €450 million.
 
@@ -96,25 +96,25 @@ How sustainability risks (like climate change or social issues) impact their bus
  
 
 
-## **What is the Corporate Sustainability Due Diligence Directive (CS3D)?**
+## What is the Corporate Sustainability Due Diligence Directive (CS3D)?
 
 
 The EU’s **Corporate Sustainability Due Diligence Directive (CSDDD)** is a directive aimed at improving human rights and environmental protection in global supply chains. It mandates that companies identify, assess, prevent, and mitigate negative impacts on human rights and the environment across their value chains.
 
 
-## **Why It Matters**
+## Why It Matters
 
 
 The CS3D addresses global challenges like human rights abuses and environmental degradation, which are often overlooked in supply chains. It compels companies to take a proactive role in ensuring that their operations do not contribute to social or environmental harm.
 
 
-## **Who Needs to Comply?**
+## Who Needs to Comply?
 
 
 
-- **EU companies **and parent companies of groups that have more than 1000 employees and more than €450 million of net worldwide turnover. 
+- **EU companies** and parent companies of groups that have more than 1000 employees and more than €450 million of net worldwide turnover. 
 
-- **Non-EU companies **and parent companies of groups generating more than €450 net turnover in the EU during the preceding financial year.
+- **Non-EU companies** and parent companies of groups generating more than €450 net turnover in the EU during the preceding financial year.
 
 - **EU and non-EU franchising or licensing companies** (both parents and franchisees) with royalties of more than €22.5 million and individual or consolidated net worldwide turnover of more than €80 million.
 
@@ -124,7 +124,7 @@ The CS3D addresses global challenges like human rights abuses and environmental 
 Much like the CSRD, the initial compliance deadlines will take place in waves, beginning in 2027 with the largest companies. 
 
 
-## **What Are the Due Diligence Obligations? **
+## What Are the Due Diligence Obligations?
 
 
 Companies must develop systems of due diligence (taking into account their upstream and downstream partners’) that include:
@@ -148,7 +148,7 @@ Companies must develop systems of due diligence (taking into account their upstr
 
 
 
-## **What are the Key Changes to CS3D if the Omnibus is Finalized as Published?**
+## What are the Key Changes to CS3D if the Omnibus is Finalized as Published?
 
 
 
@@ -171,7 +171,7 @@ Companies must develop systems of due diligence (taking into account their upstr
 
 
 
-## **What Reporting Standard Should Our Company Use?**
+## What Reporting Standard Should Our Company Use?
 
 
 For **CSRD**, companies must apply the **European Sustainability Reporting Standards (ESRS)**. However, many longstanding voluntary reporting standards align with numerous components of the ESRS, offering valuable guidance as companies prepare to comply and adapt to potential changes.
@@ -202,13 +202,13 @@ These frameworks can provide a solid foundation for building **CSRD/ESRS** compl
 To ensure a seamless transition, it's crucial to reach out to these experts, speak with legal counsel, and collaborate with your primary suppliers and business partners to determine the reporting framework that best suits your company’s needs.
 
 
-## **How Do These Sustainability Reporting Regulations Present Commercial Opportunities for Businesses?**
+## How Do These Sustainability Reporting Regulations Present Commercial Opportunities for Businesses?
 
 
 Whether adhering to the current EU sustainability reporting directives or adapting to the proposed changes, new avenues for businesses to capitalize on sustainability-driven innovation and transparency lay ahead.
 
 
-## **Opportunities Include:**
+## Opportunities Include:
 
 
 
@@ -225,7 +225,7 @@ Whether adhering to the current EU sustainability reporting directives or adapti
 
 
 
-## **Seizing the Moment for Sustainability Success**
+## Seizing the Moment for Sustainability Success
 
 
 Even with potential amendments, the CSRD (+ ESRS) and CS3D represent a paradigm shift in how many businesses must operate and report on sustainability. Companies that align with these frameworks are not only staying ahead of regulatory compliance but also embracing opportunities that can drive long-term growth, innovation, and resilience.

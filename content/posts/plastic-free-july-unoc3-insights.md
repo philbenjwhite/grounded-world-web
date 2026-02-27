@@ -19,7 +19,7 @@ Because plastic-freedom isn’t simply about ditching straws or bags, it’s abo
 
 [![](/images/blog/2025-07-microplasticsinwater-scaled.jpg)](/images/blog/2025-07-microplasticsinwater-scaled.jpg)
 
-## **The Plastic Pollution Crisis: A Health, Environmental, and Business Risk**
+## The Plastic Pollution Crisis: A Health, Environmental, and Business Risk
 
 Plastic pollution is overflowing out of control and the tap must be turned off for good. The world produces over 350 million tons of plastic annually (with exponential growth expected in the next few years), yet less than 10% is recycled. By September 5, 2025 (Plastic Overshoot Day) humanity will have generated [more plastic waste than we can manage](https://grounded.world/get-grounded-in-the-plastic-reality-project-with-paloma-jacome/) sustainably this year, leaving over 30% of plastics destined for littering oceans, land, and communities.
 
@@ -27,7 +27,7 @@ More alarming for brands: microplastics are no longer an ocean-only issue. Studi
 
 Consumers, investors, and regulators are watching closely. A 2024 WWF/Ipsos poll found 85% of people globally support banning single-use plastics and 87% want overall plastic production reduced. Brand loyalty, compliance costs, and investor confidence are all at stake.
 
-## **UNOC3: Sounding the Alarm on the Plastic Pollution Crisis and Global Call for a Plastic Free Ocean **
+## UNOC3: Sounding the Alarm on the Plastic Pollution Crisis and Global Call for a Plastic Free Ocean
 
 The third United Nations Ocean Conference (UNOC3), held in Nice in June 2025, brought together 15,000+ participants including heads of state, scientists, NGOs, and business delegates to accelerate international action on ocean sustainability. Plastic pollution was high on UNOC3’s agenda. The conference concluded with the Nice Ocean Action Plan, a political declaration in which over 170 countries called for urgent measures to protect our ocean. Critically, UNOC3 became a platform to advance a Global Plastics Treaty. Representatives from more than 95 countries (including major plastic-producing and consuming nations)  issued the “Nice Call for an Ambitious Plastics Treaty,” a joint declaration outlining what an actionable agreement should include: 
 
@@ -48,7 +48,7 @@ The third United Nations Ocean Conference (UNOC3), held in Nice in June 2025, br
 
 Importantly for businesses, the political tide is turning against the once unquestioned proliferation of single-use plastics. Companies should anticipate that within a couple of years, there may be new international laws on plastics establishing targets and restrictions that filter down into national regulations. For the private sector, UNOC3 underscored that business as usual is no longer acceptable… by anyone. The Nice Ocean Action Plan explicitly “encourages the active and meaningful involvement” of the private sector. There was recognition that industries must be partners in solutions, not just sources of problems. Throughout UNOC3, world leaders emphasized that after decades of neglecting the plastic pollution crisis, companies, governments, and civil society now face an unprecedented urgency to collaborate like never before to stop the flow of plastics into nature. For brand executives, the takeaway from UNOC3 is a warning and an invitation: more regulation is coming, and those who innovate early will lead, whereas those clinging to disposable plastic models risk both reputational and regulatory backlash.
 
-## **Public Pressure and the Business Case for Going Plastic-Free**
+## Public Pressure and the Business Case for Going Plastic-Free
 
 It’s not only regulators and environmentalists sounding the alarm, consumer and investor sentiment is rapidly shifting against plastic waste. Perhaps most relevant to brands, an overwhelming majority believe companies should be mandated to invest in reuse and refill systems for their products. In other words, the public increasingly expects businesses to provide plastic-free options and sustainable packaging and is even willing to back government intervention to make that happen. The writing on the wall is that plastic pollution is a mainstream concern, not an esoteric issue.
 
@@ -58,7 +58,7 @@ Additionally, optimizing packaging can save costs in the long run: lightweight, 
 
 [![](/images/blog/2025-07-plastic-freegrocery-scaled.jpg)](/images/blog/2025-07-plastic-freegrocery-scaled.jpg)
 
-## **Strategies for Brands to Invest in This Plastic Free July **
+## Strategies for Brands to Invest in This Plastic Free July
 
 Given the context above, urgent global calls to action, shifting public sentiment, and a landscape of new solutions, how can a brand concretely move toward a single-use [plastic-free business model](https://grounded.world/top-5-brands-helping-keep-our-oceans-clean-plastic-free/) this Plastic-Free July and beyond? Here are several strategic steps and considerations for companies ready to fearlessly lead:
 
@@ -78,7 +78,7 @@ Given the context above, urgent global calls to action, shifting public sentimen
 
 **6. Monitor emerging science and adapt:** Keep an eye on the rapidly evolving science of plastics and health. If evidence mounts that certain plastic types or additives pose direct health risks (as is happening with PFAS in food packaging and apparel), be ready to phase those out proactively. Nothing will damage a brand faster than being caught on the wrong side of a health issue. By monitoring scientific advisories from bodies like the World Health Organization or national health agencies and having a precautionary approach, you can stay ahead. This is also part of future-proofing: a material considered safe today might be restricted tomorrow.
 
-## **Plastic-Free July Offers a Blueprint Brands Can’t Ignore**
+## Plastic-Free July Offers a Blueprint Brands Can’t Ignore
 
 Plastic Free July is finally gaining the momentum it deserves after 15 years of raising awareness of the detriments of our dysfunctional relationship with single-use plastics. It’s a reminder that we are currently losing the fight against plastic pollution. The recent UN Ocean Conference amplified that message to the highest levels of government and industry: business-as-usual is on borrowed time. The companies that thrive in the coming years will likely be those that heed this call and transform their relationship with plastics overall. Having attended UNOC3 this year as a Plastic-Free delegate I can personally attest to the momentum from policymakers, scientists, and the public around a shared aspiration: a world where we no longer depend on disposable plastics, and where the oceans and communities are free from plastic debris and toxins.
 

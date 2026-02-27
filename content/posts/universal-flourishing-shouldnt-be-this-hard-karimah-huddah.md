@@ -9,7 +9,7 @@ tags:
 featuredImage: '/images/blog/ISTH005_email.png'
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 ## 
 
@@ -85,7 +85,7 @@ Through her lens, business is no longer just an engine of profit but an instrume
 
 Karimah's overarching call to action is to reimagine how you lead. Whether you believe in “people and planet” or simply want to thrive in a fast-changing world, the invitation is the same: **Be unreasonable. Be untainted. Be the leader who chooses flourishing over fear.**
 
-🎧 **Tune in to hear the full conversation with Karimah Hudda **[**HERE**](https://youtu.be/MfJpvB8LM_s) — and don’t forget to subscribe for more *grounded* conversations on the future of business, impact, and leadership.
+🎧 **Tune in to hear the full conversation with Karimah Hudda** [**HERE**](https://youtu.be/MfJpvB8LM_s) — and don’t forget to subscribe for more *grounded* conversations on the future of business, impact, and leadership.
 
 ### 
 

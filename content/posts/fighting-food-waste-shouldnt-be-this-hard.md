@@ -9,7 +9,7 @@ tags:
 featuredImage: '/images/blog/ISTH002_email.png'
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 ## 
 
@@ -66,7 +66,7 @@ The stats will shock you:
 
 - **1/3 of all food in the U.S. goes to waste each year.**
 
-- That’s **25 million tons** of food = about **$1,500 per household **down the bin.
+- That’s **25 million tons** of food = about **$1,500 per household** down the bin.
 
 - Food waste contributes more to climate change than cars.
 

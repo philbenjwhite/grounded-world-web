@@ -27,13 +27,13 @@ To date, rePurpose Global has:
 
 ### 
 
-### **Let’s Talk Trash**
+### Let’s Talk Trash
 
 Whether we like it or not we are losing the war against waste… badly. Even IF all current commitments are met, plastic pollution still grows 147% by 2040. That’s including even the most ambitious of commitments that will not be easily attained in time. The social impact of the plastic waste crisis is equally as devastating– because of mismanaged waste ~0.5 to 1 million people in the developing world die annually.
 
-### **Impact of Plastic Waste**
+### Impact of Plastic Waste
 
-**Environment: **
+**Environment:**
 
 - 40% surface of oceans have plastic debris
 
@@ -57,7 +57,7 @@ Whether we like it or not we are losing the war against waste… badly. Even IF 
 
 [![Plastic pollution in Indian Himalayan Region.](/images/blog/2024-10-trash-dumped-in-the-forest-scaled.jpg)](/images/blog/2024-10-trash-dumped-in-the-forest-scaled.jpg) Plastic pollution in Indian Himalayan Region.
 
-### **Why is plastic a global problem?**
+### Why is plastic a global problem?
 
 Plastic is a valuable resource, but we’re wasting it. Plastic is actually an incredible material full of potential– it’s adaptable, durable, flexible, and most importantly, cheap! But the problem is the majority of plastic at retail is considered “Low Value Plastic” (LVP) that is not easily recyclable.
 
@@ -65,9 +65,9 @@ And it comes down to waste management systems. Most high-income countries achiev
 
 But, where does this collected waste go? It has to go somewhere. And more often than not,  waste from high-income countries like Germany, Japan and the U.S. is exported to low-income countries like India for a fee. Every year, the Global North exports millions of metric tonnes of its plastic waste to the Global South. With plastic production predicted to grow globally, so will its plastic waste trade. 
 
-### **Understanding the Waste Problem in India**
+### Understanding the Waste Problem in India
 
-#### **The Waste Crisis in India **
+#### The Waste Crisis in India
 
 - Most populous country in the world & 5th largest economy in the world
 
@@ -87,7 +87,7 @@ But, where does this collected waste go? It has to go somewhere. And more often 
 
 - Nearly 4 million informal waste pickers in India
 
-## **Dehradun, Uttrakhand: Foothills of Himalayas**
+## Dehradun, Uttrakhand: Foothills of Himalayas
 
 The beginning of our journey for The Plastic Reality Project would start in Dehradun, near the foothills of the Himalayas. The Uttarakhand Himalayas include a 320 km stretch of the mountains between the Kali River forming the Indo-Nepal border in the east. 
 
@@ -113,7 +113,7 @@ Given the Himalayas are remote and rural in nature, a proper waste management sy
 
 And the lack of formal infrastructure has resulted in an informal economy that perpetuates human rights violations. Marginalized informal waste workers collect waste for very low pay in very life-threatening conditions. This reality applies around the Global South and only further proves the urgency for a circular economy.
 
-### **Waste Site Visits**
+### Waste Site Visits
 
 Day 1 of the Plastic Reality Project took place in Dehradun, where we visited two waste sites, the first being a formal one and the second informal.
 
@@ -133,7 +133,7 @@ There are no formal regulations protecting these informal waste pickers. Often y
 
 The faces of the informal waste workers at this site were drastically different from those of the formalized waste workers we would later meet. Even though we were outdoors in the open air, the whole environment felt toxic. We were only allowed a few minutes at this informal waste site, but even that was enough time for the toxic stench to seep into every fiber of your clothing, your hair and leave soot on your skin. I can only imagine what working full days in the piping sun and choking humidity, amongst medical waste, sanitary waste, and much more hazardous materials does to a young person’s lifetime. In fact, most of these young men working in these informal waste sites do not live full lifespans, and it's very obvious why.
 
-### **Cleanup with Waste Warriors in the Himalayas**
+### Cleanup with Waste Warriors in the Himalayas
 
 Day 2 of the Plastic Reality Project started on a much more positive and enlightening note. We started the day at a sacred temple in the foothills of the Himalayas, near a river which we would be helping protect later on that day. 
 
@@ -153,7 +153,7 @@ It was beyond inspiring to see a women-led and operated team pioneering waste ma
 
 Under the leadership of each Sahki Waste Warrior, we broke off into small teams for the trash cleanup around the river. There was no shortage of plastic to pick. Every layer that we would pick would reveal further and furthermore waste buried. underneath that was further contaminated and certainly not recyclable anymore. We later learned that waste cleanups don't actually help to resolve the problem in the greater scheme, but are more a tool for awareness.
 
-### **rePurpose X Waste Warriors: Project Pavitra Parvat **
+### rePurpose X Waste Warriors: Project Pavitra Parvat
 
 Having experienced the emotional anguish of the problem, we were desperately looking forward to meeting more superheroes behind the solution at Project Pavitra Parvat!
 
@@ -191,13 +191,13 @@ Aligned with the rePurpose name, products such as bricks, bookcases and tables a
 
 After witnessing informal waste workers climb mountains of trash with no shoes, shirts nor masks on, visiting this first Materials Recovery Facility, demonstrated a drastic contrast to the normalized world of waste we’ve grown accustomed to. Sorting and separating trash myself on the conveyor belt, I was confronted with the reality that these waste workers go through tons and tons of the world's trash for hours and hours every week, every year. And there won’t be any shortage of supply anytime soon. 
 
-## **Kozhikode, Kerala: Shoreline of the Arabian Sea **
+## Kozhikode, Kerala: Shoreline of the Arabian Sea
 
 Kerala is often called “God’s Own Country” because it’s one of the richest biodiversity hotspots in India blessed with abundant nature’s bounty, year-round foliage, diverse wilderness, crystal clear beaches, and the magnificent landscapes of the Western Ghats.
 
 In Kerala, rural areas lack infrastructure, despite generating the majority of waste leading to ocean-bound plastic waste. Coastal litter in Kerala is 3 times the global average. 95% of low-value, soft, flexible plastics in Kerala are mismanaged: burning and dumping are the default. Only 21% of women in the state are employed, and have the highest gender pay gap in India.
 
-### **Waste Collection with Green Worms **
+### Waste Collection with Green Worms
 
 We had one powerful day in Kerala that started off with us going off in small groups on a waste collection route led by Haritha Karma Sena, women waste collectors organized through a local partnership with Green Worms. Green Worms is another impact partner of rePurpose scaling across Kerala. We joined alongside a few women waste collectors leading these regular waste pickup collections from household to household in remote jungle villages. On the side of the scenic route we noticed there were trash bags, which we realized were part of the collection service that we were shadowing. 
 
@@ -213,7 +213,7 @@ The cost of Green Worms’ waste collection service is affordable and thus impro
 
 It was apparent that the reason this system worked so well was because it was personable in nature. One is much more committed to separating at the source when one has a personal relationship with their waste collectors. By having these women waste collectors, Haritha Karma Sena, go door to door and collect personally, a strong bond is formed between households and their waste management system. It was incredible to witness, and in fact, I felt envious. I wished that I had that sort of relationship with my local waste collectors. I feel that if we had more community building around waste management as Western consumers, we would change our behavior and be dedicated to ensuring our waste is properly sorted and separated at the source. Thus, enabling circular solutions to be implemented at scale.
 
-### **rePurpose X Green Worms: Project Hara Kal **
+### rePurpose X Green Worms: Project Hara Kal
 
 A flagship for female empowerment in Kerala, Hara Kal was the most impressive project by rePurpose we visited.
 
@@ -255,11 +255,11 @@ Our visit to Project Hara Kal, was the ultimate exposure to a circular economy. 
 
 [![Paloma of Grounded taking a selfie with waste workers she bonded with at Project Hara Kal.](/images/blog/2024-10-img_9777-1.jpg)](/images/blog/2024-10-img_9777-1.jpg) Paloma of Grounded taking a selfie with waste workers she bonded with at Project Hara Kal.
 
-## **Closing the Intention-Action Gap **
+## Closing the Intention-Action Gap
 
 There’s a myriad of takeaways I brought home with me from The Plastic Reality Project. On a consumer level, we must take back our power in controlling how much plastic waste we produce. These are choices we make on a daily basis. 
 
-### **What Can We Do To Take Action on Plastic Waste?**
+### What Can We Do To Take Action on Plastic Waste?
 
 - Refuse single-use plastic products and packaging 
 
