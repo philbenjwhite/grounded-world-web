@@ -9,7 +9,7 @@ tags:
 featuredImage: '/images/blog/ISTH003_email.png'
 ---
 
-## **Key Takeaways:******
+## Key Takeaways:****
 
 ****
 

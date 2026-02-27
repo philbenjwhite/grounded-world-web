@@ -9,7 +9,7 @@ tags:
 featuredImage: '/images/blog/sustainability-gap-in-grocery-delivery-services.png'
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - **Convenience is seamless yet sustainability is invisible.** Instacart makes grocery delivery effortless, but eco-conscious shopping is nearly impossible. Green products, labels, and filters are buried or missing, leaving sustainability out of the user experience.
 
@@ -147,19 +147,19 @@ This finding aligns with behavioral research in sustainability: people don’t n
 
 To bridge the gap between sustainability and convenience, grocery delivery platforms must integrate eco-conscious choices into their core UX, logistics, and business models. Some actionable recommendations include:
 
-1. **Introduce Sustainability Filters: **Allow users to shop by eco-labels, reduce waste, or choose low-emission items.
+1. **Introduce Sustainability Filters:** Allow users to shop by eco-labels, reduce waste, or choose low-emission items.
 
-2.** Highlight Green Retailers: **Promote stores with verified environmental practices directly in the app.
+2.** Highlight Green Retailers:** Promote stores with verified environmental practices directly in the app.
 
-3. **Add**** a “Minimal Packaging Mode” at Checkout: **Let customers opt out of excess packaging and signal preferences to shoppers.
+3. **Add**** a “Minimal Packaging Mode” at Checkout:** Let customers opt out of excess packaging and signal preferences to shoppers.
 
-4.** Score Orders on Environmental Impact: **Provide feedback — e.g., “Your order avoided 3 plastic bags” or “Local produce reduced transport emissions.”
+4.** Score Orders on Environmental Impact:** Provide feedback — e.g., “Your order avoided 3 plastic bags” or “Local produce reduced transport emissions.”
 
-5. **Support and Incentivize Shoppers: **Provide reusable bag reimbursement, eco-training, and bonuses for green delivery practices.
+5. **Support and Incentivize Shoppers:** Provide reusable bag reimbursement, eco-training, and bonuses for green delivery practices.
 
-6.** Build Reuse Infrastructure: **Explore returnable bags, packaging loops, and community-based bundling models.
+6.** Build Reuse Infrastructure:** Explore returnable bags, packaging loops, and community-based bundling models.
 
-7. **Gamify**** the Experience: **Consider using ‘streaks’ and social proof (e.g. local leader boards) and reward shoppers for making better decisions
+7. **Gamify**** the Experience:** Consider using ‘streaks’ and social proof (e.g. local leader boards) and reward shoppers for making better decisions
 
 ### Sustainability Isn’t Inconvenient, It’s Just Invisible
 

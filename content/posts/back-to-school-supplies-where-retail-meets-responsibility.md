@@ -9,7 +9,7 @@ tags:
 featuredImage: '/images/blog/Back-to-School-Supplies-Where-Retail-Meets-Responsibility-scaled.jpg'
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 ****
 
@@ -53,7 +53,7 @@ Activating brand purpose during the back-to-school season can create ripple effe
 
 Don’t underestimate the influence of students and the next generation – our future is literally in their hands. The back-to-school season is a great chance to turn sustainability commitments into real, tangible choices in the marketplace and challenge a traditionally stale, outdated category to become culturally relevant again.
 
-## **A Retail Reality Check**
+## A Retail Reality Check
 
 Each fall, U.S. families purchase over 100 million notebooks, 15 million backpacks, and billions of pens, pencils, and accessories. Many families are looking for supplies that offer a good price and real value for their money, making affordability a key factor in their choices. But behind the seasonal surge lies a critical challenge for retailers: the bulk of these items are wrapped in unrecyclable plastic, made with harmful dyes, and designed for short-term, single-use. In short, disposability has been normalized. 
 
@@ -69,7 +69,7 @@ The back to school supply space remains a deeply unbalanced market. Families nee
 
 This is the intention-action gap in action: brands that claim to help kids learn while peddling products that only cost more in the long run (and add no educational or environmental value).
 
-## **Why Back to School is Your Brand’s Moment to Activate Purpose into Practice**
+## Why Back to School is Your Brand’s Moment to Activate Purpose into Practice
 
 For marketing teams, the back to school season presents an opportunity to contribute to the culture.
 
@@ -85,7 +85,7 @@ Here’s how companies can show up with purpose:
 
 At the same time, it’s important to remember that younger generations like Gen Z and Gen Alpha are already facing many intersecting challenges as they navigate their education, socializing and… life. You don’t need to poke fun at them or their struggles to connect with their parents. These digitally savvy, culture-driving consumers are more informed and engaged than ever before, shaping trends and values with every click and scroll. The real opportunity for brands lies in uplifting and inspiring these students (making school cool) through thoughtful products, platforms, and purpose-propelled experiences that resonate on a deeper level.
 
-## **A New Back-to-School Campaign Checklist**
+## A New Back-to-School Campaign Checklist
 
 If your team is getting ready to launch a back-to-school campaign, consider ditching the traditional playbook. The old checklist only scratches the surface. The new checklist asks better questions:
 
@@ -100,9 +100,8 @@ If your team is getting ready to launch a back-to-school campaign, consider ditc
 - *Are we scaling support for teachers, classrooms, and families? *
 
 Providing better back-to-school supplies isn’t about achieving 100% sustainability perfection. It’s about accelerating progress. Progress you can report, authentically market in an era of greenwashing, and celebrate all year round.
-**
 
-## Turn the Checklist Into a Challenge**
+## Turn the Checklist Into a Challenge
 
 Your product teams have an opportunity to redefine what "back to school supplies" really means:
 
@@ -136,7 +135,7 @@ Paloma was a core co-author of Grounded’s debut white paper [Policy to Profit:
 
 Staples is meeting families where they are— blending convenience, education, and sustainability into the shopping experience. That’s what successful, sustainable back-to-school retail looks like.
 
-## **How Brands Can Modernize Back to School Shopping**
+## How Brands Can Modernize Back to School Shopping
 
 The brands getting best-in-class for back-to-school season are those actively helping families navigate the overwhelm of endless options with confidence, clarity, and care. Today’s customers are more informed than ever and therefore want more than just products; they’re looking for quality, durability, affordability, sustainability and items that truly support student success.
 
@@ -154,9 +153,8 @@ Retailers can rise to the occasion by designing supply bundles with built-in sto
 
 By anticipating evolving consumer needs and meeting students where they already are (inside a culture of intention and routine) brands can transform the back-to-school experience from a chaotic checklist into a joyfully ritualized reset. One that prepares students for the school year ahead *and* a lifetime of empowered choices.
 
-**
 
-## Celebrating Teachers: The Unsung Heroes of Back to School**
+## Celebrating Teachers: The Unsung Heroes of Back to School
 
 Teachers have been stretched thin. Classrooms are overcrowded, wages are stagnant, digital learning has left unprecedented gaps, and now, rising prices mean teachers are paying *even more *out of pocket for the most basic back-to-school supplies.
 
@@ -170,7 +168,7 @@ Support them in ways that matter:
 
 When you back teachers, you back students. And when you back students, you build trust with families. 
 
-## **Case in Point: BIC's Back To School Supply Closet**
+## Case in Point: BIC's Back To School Supply Closet
 
 Another Best-in-class example of an impactful back-to-school campaign comes from BIC. BIC’s Back To School Supply Closet, a collaborative campaign in partnership with the Kids In Need Foundation and featured Abbott Elementary star Lisa Ann Walter who plays fan-favorite teacher Mrs. Schemmenti. In NYC, BIC hosted a school-themed pop-up where teachers could access free, high-quality back-to-school supplies. Educators who showed ID were granted access to a secret “teachers only” closet stocked with BIC’s best tools: refillable pens, break-resistant pencils, eco-friendly gel pens, and more.
 
@@ -180,9 +178,8 @@ And the impact extended far beyond the event:
 
 For every $1 donated to the Kids In Need Foundation, $24 worth of supplies were distributed to under-resourced schools, helping classrooms across the country thrive.
 
-**
 
-## How to Lead Back-to-School Campaigns That Inspire, Give Back, and Stick**
+## How to Lead Back-to-School Campaigns That Inspire, Give Back, and Stick
 
 Sustainable school supplies are just one piece of the puzzle. Modern families (and especially Gen Z and Gen Alpha) want to see brands show up as real stakeholders in education and community success. They care about more than what’s *in* their backpacks; they care about *who *put it there, *how*, and *why*.
 
@@ -202,7 +199,6 @@ Here’s how to make it matter:
 
 - **Reframe cause-marketing as ecosystem-building**: We’re past the point of just “raising awareness”. It’s more about growing long-term loyalty and creating value for every stakeholder particularly the next generation of changemakers. 
 
-**
 
  Grounded in Retail, Responsibility & Results**
 

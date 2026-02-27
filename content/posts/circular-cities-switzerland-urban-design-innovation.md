@@ -25,7 +25,7 @@ One of the most striking patterns across Switzerland is how natural (even ordina
 
 Below are the circular structures that shifted my understanding most.
 
-### **Freitag Tower** — Circular Architecture as Brand Philosophy
+### Freitag Tower — Circular Architecture as Brand Philosophy
 
 Built in 2006 from stacked, reclaimed shipping containers, the Freitag Tower rises several stories high… unapologetically raw, industrial, and upcycled. There is no attempt to disguise its origins. As an upcycled bags and accessory brand, Freitag’s flagship store is strategic:
 
@@ -37,11 +37,9 @@ Built in 2006 from stacked, reclaimed shipping containers, the Freitag Tower ris
 
 ![Article content](/images/blog/media-licdn-com-1765382920281)
 
-### ****
 
-### ****
 
-### **Viadukt** — A City’s Past Reimagined Into Its Future
+### Viadukt — A City’s Past Reimagined Into Its Future
 
 Walking through the Viadukt felt like being inside a case study of circular urbanism.
 
@@ -69,9 +67,8 @@ Circularity doesn’t erase history, it builds on top of it.
 
 ### 
 
-### ****
 
-### **K118** — “Form Follows Availability”
+### K118 — “Form Follows Availability”
 
 If there is a single building that redefined my understanding of circular architecture, it is K118 in Winterthur. This building achieved a 58.6% reduction in emissions compared to a conventional build *without increasing cost*.
 
@@ -93,7 +90,7 @@ At K118:
 
 The roof is intentionally “messy”: recycled concrete rubble layered to create microtopography where weeds, mosses, and pollinators establish themselves naturally. It is both ecological function and design choice.
 
-### **ETH Zürich** — Mapping Cities as Material Banks
+### ETH Zürich — Mapping Cities as Material Banks
 
 At ETH’s CEA Lab and the SWIRCULAR project, I saw the future of materials intelligence:
 
@@ -117,7 +114,7 @@ Buildings are no longer structures. They are temporary assemblies of materials a
 
 Circularity is not just structural, it is also social. And nowhere is this clearer than Switzerland’s cooperative housing models.
 
-### **Zollhaus** — Community is Core to Circular Infrastructure
+### Zollhaus — Community is Core to Circular Infrastructure
 
 Zollhaus is a living example of how design, policy, and culture intersect to create circular lifestyles. A shared living cooperative which spans from residential housing, childcare, food establishments to entire offices and communal spaces. 
 
@@ -151,7 +148,7 @@ Zollhaus exemplifies how circular living can be effortless and even more conveni
 
 Underground and in experimentation is where circularity lives.
 
-### **Zoo Zürich** — Circular Infrastructure at Ecosystem Scale
+### Zoo Zürich — Circular Infrastructure at Ecosystem Scale
 
 We were invited into the restricted engineering corridors beneath Zoo Zürich to experience the emulated ecosystems from around the world, all mimicked as regeneratively as possible.
 
@@ -191,7 +188,7 @@ Here’s what I walked through:
 
 - As Switzerland’s largest ice cream seller, the zoo pushed Nestlé to eliminate palm oil in specific product lines.
 
-### **Basel** — The Power of Localized Policy
+### Basel — The Power of Localized Policy
 
 Basel is one of the only cities where net zero is not aspirational but it is constitutional with their ambitious goal of being net zero by 2037.
 
@@ -207,7 +204,7 @@ Key components:
 
 - Design competitions requiring circular approaches
 
-### **Francke Areal** — The Invisible Circular Infrastructure of Material Storage
+### Francke Areal — The Invisible Circular Infrastructure of Material Storage
 
 One of the most important insights I gained at Francke Areal is that circularity depends on storage…a reality rarely discussed but crucial.
 
@@ -257,7 +254,7 @@ At Francke Areal, circular design manifests as:
 
 - Urine diverted for fertilizer production
 
-### **Velotunnels** — Circular Mobility Infrastructure
+### Velotunnels — Circular Mobility Infrastructure
 
 Circularity extends beyond buildings…it shapes how people move.
 
@@ -287,15 +284,13 @@ This is circular mobility: infrastructure cycling people instead of cars through
 
 ![Article content](/images/blog/media-licdn-com-1765382916210)
 
-### ****
 
-### ****
 
-## **Switzerland's Flywheel of Impact**
+## Switzerland's Flywheel of Impact
 
 ****
 
-Walking through Switzerland’s circular systems, I kept noticing a pattern that mirrors something we use at Grounded to understand how impact actually scales. Not a framework or a model, but a simple observation: systems accelerate when mission, resources, and lived experience move in alignment — what we often refer to as a [***flywheel of impact***](https://grounded.world/brand-marketing-agency-services/creative-impact-agency/)** **in our work. (It’s the same systems logic we apply in our work with partners, which you can explore [**here**](https://grounded.world/brand-marketing-agency-services/creative-impact-agency/).)
+Walking through Switzerland’s circular systems, I kept noticing a pattern that mirrors something we use at Grounded to understand how impact actually scales. Not a framework or a model, but a simple observation: systems accelerate when mission, resources, and lived experience move in alignment — what we often refer to as a [***flywheel of impact***](https://grounded.world/brand-marketing-agency-services/creative-impact-agency/)**** in our work. (It’s the same systems logic we apply in our work with partners, which you can explore [**here**](https://grounded.world/brand-marketing-agency-services/creative-impact-agency/).)
 
 In Switzerland, no single actor drives circularity. Architecture, policy, community governance, mobility, education, and culture all reinforce one another. Each intervention strengthens the next—much like a flywheel gaining momentum.
 

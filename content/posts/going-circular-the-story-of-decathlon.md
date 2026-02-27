@@ -25,7 +25,7 @@ In case you're not familiar with [Decathlon](https://sustainability.decathlon.co
 
 ![](/images/blog/2023-10-screen-shot-2023-10-24-at-6.19.54-pm-300x293.png)But switching to a circular model isn’t a walk in the park. It means shaking things up with their teams, their value chain partners and supporting start-ups, from designing stuff to making it to how it gets used and reused. Transforming their business also means measuring performance differently. At Decathlon, they have embraced the concept of « sustainable value creation ». It’s built on three pillars: sustainable sales (selling eco-friendly products and services), customer loyalty (keeping folks happy and coming back for more), and reducing their footprint, both environmentally and socially.
 
-**Be responsible, be brave, be humble **
+**Be responsible, be brave, be humble**
 
 So, Decathlon is really making moves in the circular economy to create products that last longer and are easier to fix, rent or recycle. It's a big deal, and [they're not just talking about it](https://grounded.world/avoid-greenwashing/); they're doing it. Here are three words of wisdom from « Decathlonians » involved in the transformation.
 

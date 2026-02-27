@@ -7,7 +7,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - Ethical sourcing ensures that raw materials, suppliers, and production processes **uphold human rights, fair wages, and environmental sustainability** across the entire supply chain.
 
@@ -19,7 +19,7 @@ tags:
 
 - **Partnering with a brand purpose agency** like [Grounded](http://www.grounded.world) helps translate ethical standards into clear messaging, creative storytelling, and governance frameworks that connect brand values to business impact.
 
-**Ethical sourcing is an approach to supply chain management that emphasizes obtaining products and services in a manner that upholds labour rights, safe working conditions, and business ethics throughout the entire supply chain. **
+**Ethical sourcing is an approach to supply chain management that emphasizes obtaining products and services in a manner that upholds labour rights, safe working conditions, and business ethics throughout the entire supply chain.**
 
 **It’s a company’s commitment to obtaining goods and services in an ethical manner that upholds ethical standards, minimizes environmental and social impacts, and contributes positively to local communities.**
 
@@ -218,6 +218,6 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Ethical Sourcing**
+### Frequently Asked Questions About Ethical Sourcing
 
 ## It's time to get grounded

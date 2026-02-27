@@ -9,7 +9,7 @@ tags:
 featuredImage: '/images/blog/cancelled-vacation-2025-02-21-09-08-49-utc-scaled-e1763518413480.jpg'
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - **Cancel culture is undermining climate progress.** Jenny Morgan’s book *Cancel Culture in Climate* reveals how public shaming, purity tests, and division are slowing down a movement that can’t afford delay — replacing real solutions with silence and inaction.
 

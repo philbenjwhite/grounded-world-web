@@ -8,7 +8,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways**
+## Key Takeaways
 
 - 
 
@@ -42,7 +42,7 @@ Yet most brands struggle to achieve this level of coherence. They have logos and
 > 
 At Grounded, we see this challenge repeatedly with purpose-driven organizations. A sustainability-focused retailer launches with eco-friendly packaging but generic brand design. A B Corp struggling to differentiate itself uses the same visual language as profit-maximizing competitors. A social enterprise with ground-breaking impact work can't communicate its value because its brand identity lacks clarity and distinction. These aren't just aesthetic problems—they're strategic barriers that prevent purpose from paying.
 
-## **What Brand Identity Really Means (And Why It Matters More Than Ever)**
+## What Brand Identity Really Means (And Why It Matters More Than Ever)
 
 Brand identity refers to the collection of all visual, verbal, and experiential elements that a company creates to portray its values, personality, and promise to its audience. According to the American Marketing Association, brand identity includes the visual and symbolic elements that represent a brand—name, logo, color scheme, typography, and design elements that together create a recognizable image consumers can identify and connect with.
 
@@ -70,9 +70,8 @@ But for purpose-driven brands, the stakes are even higher. Your brand identity m
 
 Your target audience increasingly expects this alignment. [McKinsey research shows](https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-consumer-demand-for-sustainable-products) that consumers, especially younger demographics, make purchasing decisions based on brand values and demonstrated commitment to social and environmental issues. If your brand identity doesn't authentically communicate those values, you're not just missing an aesthetic mark—you're losing market opportunity.
 
-## ****
 
-## **The Core Elements That Make Up Brand Identity**
+## The Core Elements That Make Up Brand Identity
 
 A successful brand identity isn't a single logo or clever tagline—it's an ecosystem of elements working together to create a cohesive brand experience.
 
@@ -112,7 +111,7 @@ This is where our purpose articulation services become especially valuable. We h
 
 ## 
 
-## **How to Build a Strong Brand Identity (A Strategic Process)**
+## How to Build a Strong Brand Identity (A Strategic Process)
 
 Creating effective brand identity requires more than hiring a graphic designer to make things look pretty. It demands strategic thinking about who you are, who you serve, and what makes you different.
 
@@ -152,9 +151,8 @@ Include logo usage rules, complete color palette with codes, typography specific
 
 ## 
 
-## ****
 
-## **Brand Identity in Practice: What Makes Great Brands Memorable**
+## Brand Identity in Practice: What Makes Great Brands Memorable
 
 Let's examine how leading brands—particularly those using business as a force for good—create brand identities that drive both recognition and value.
 
@@ -182,9 +180,8 @@ Building brand identity for purpose-driven organizations demands more than tradi
 
 ## 
 
-## ****
 
-## **Common Brand Identity Mistakes (And How to Avoid Them)**
+## Common Brand Identity Mistakes (And How to Avoid Them)
 
 Even organizations with good intentions create brand identities that undermine their goals. Here are the patterns we see most often:
 
@@ -214,11 +211,9 @@ Your external brand identity promises innovation and impact. But internally, you
 
 ## 
 
-## ****
 
-## ****
 
-## **Working with a Brand Purpose Agency: When to Bring in Expertise**
+## Working with a Brand Purpose Agency: When to Bring in Expertise
 
 When should you consider partnering with a brand purpose agency?
 
@@ -234,7 +229,7 @@ Ready to explore how this applies to your brand? Our [brand activation services]
 
  
 
-## **Building Brand Identity That Makes Purpose Visible**
+## Building Brand Identity That Makes Purpose Visible
 
 Your brand identity is more than visual decoration—it's the strategic expression of who you are and what you value. In a market where consumers increasingly choose brands based on purpose and impact, your brand's visual identity, verbal identity, and customer experience must credibly communicate your commitment.
 
@@ -257,7 +252,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Brand Identity**
+### Frequently Asked Questions About Brand Identity
 
 Brand identity is the collection of visual, verbal, and experiential elements that a company deliberately creates to express its personality, values, and promise. It includes your logo, color palette, typography, brand voice, messaging, and customer experience design. Brand identity matters because it shapes first impressions, influences purchase decisions, drives brand recognition, and determines whether audiences trust your claims. For purpose-driven organizations, brand identity is especially critical because it must credibly communicate not just what you sell but what you stand for. When done well, strong brand identity becomes a strategic asset that commands premium pricing, strengthens customer loyalty, and reduces customer acquisition costs.
 

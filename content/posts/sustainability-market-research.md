@@ -8,7 +8,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - Sustainability market research provides actionable insights that bridge the gap between consumer attitudes toward environmental responsibility and actual purchasing behavior
 
@@ -167,7 +167,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Sustainability Market Research**
+### Frequently Asked Questions About Sustainability Market Research
 
 Sustainability market research is the systematic study of consumer attitudes, behaviors, and preferences regarding environmental and social responsibility, combined with analysis of market dynamics, competitive landscapes, and regulatory contexts that shape sustainable business opportunities. It matters because it bridges the gap between sustainability commitments and commercial viability, revealing which environmental initiatives will resonate with consumers, command premium pricing, and drive competitive advantage versus which serve internal values without market traction.
 

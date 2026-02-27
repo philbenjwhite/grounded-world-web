@@ -7,7 +7,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 
 
@@ -526,7 +526,7 @@ Matt continues to explore how brand storytelling, partnerships, and strategy can
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
 
-### **Frequently Asked Questions About Cause Marketing**
+### Frequently Asked Questions About Cause Marketing
 
 
 

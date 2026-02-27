@@ -36,7 +36,7 @@ So the question isn’t whether brands should talk about [mental health](https:/
 
 
 
-### **The Cultural Shift (From: Stigma // To: Strategy)**
+### The Cultural Shift (From: Stigma // To: Strategy)
 
 
 Mental health awareness used to live on the fringes. Now, it’s driving consumer expectations, creative direction, and corporate responsibility.
@@ -78,7 +78,7 @@ So when brands enter this space, the bar is higher than ever. The question is no
 
 
 
-### **Brands That Are Doing It Differently**
+### Brands That Are Doing It Differently
 
 
 Some forward-thinking companies have made mental wellness a core part of their brand experience:
@@ -144,7 +144,7 @@ Some forward-thinking brands and retailers are reimagining the in-store experien
 ### 
 
 
-### **The Intention-Action Gap in Mental Wellness (The Wellness Gap)**
+### The Intention-Action Gap in Mental Wellness (The Wellness Gap)
 
 
 At [**grounded**](https://grounded.world/), we often talk about the [**intention-action gap**](https://grounded.world/activating-brand-purpose-agency/): The space between what brands *say they believe*… and what they *actually do*.
@@ -168,7 +168,7 @@ The [wellness gap](https://grounded.world/how-social-innovation-is-closing-the-w
 
 
 
-### **Grounded Case Study: Indivior – Making Recovery Humanly Possible**
+### Grounded Case Study: Indivior – Making Recovery Humanly Possible
 
 
 As a strategic partner to purpose-led brands, we’ve helped our clients navigate this exact tension:
@@ -220,7 +220,7 @@ And that’s the space we choose to build in every day.
 
 
 
-### **A Call to Do More - Mindfully**
+### A Call to Do More - Mindfully
 
 
 Mental Health Awareness Month isn’t the time to say “we care” without showing how. It’s the time to act with depth, with courage, and with a clear commitment to culture-shifting change.

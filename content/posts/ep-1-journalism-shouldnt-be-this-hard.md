@@ -9,11 +9,11 @@ tags:
 featuredImage: '/images/blog/ISTH001_email.png'
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 ## 
 
-- **DEI isn’t new; but the backlash is: **Kathy breaks down why DEI remains polarizing, why companies are retreating from their 2020 commitments, and what true inclusion actually demands from leaders today.
+- **DEI isn’t new; but the backlash is:** Kathy breaks down why DEI remains polarizing, why companies are retreating from their 2020 commitments, and what true inclusion actually demands from leaders today.
 
 - **Purpose has to be earned, not performed:** From her time leading Global Purpose at Nike, Kathy shares why brands can’t “PR” their way into credibility. Values must show up consistently in culture, hiring, leadership, and daily decisions.
 
@@ -23,7 +23,6 @@ featuredImage: '/images/blog/ISTH001_email.png'
 
 - **Consumers are more informed and more intentional than ever:**** Today’s buyers “vote at checkout,” scrutinizing ingredients, supply chains, and company values, even with tighter budgets and less time.**
 
-**
 
 Welcome to the VERY FIRST episode of *It Shouldn’t Be This Hard*!
 

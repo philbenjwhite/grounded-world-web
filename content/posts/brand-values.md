@@ -7,7 +7,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - Brand values are the foundational beliefs that define how your company operates, what it stands for, and why it exists beyond making money. These principles should inform every business decision from product sourcing to employee treatment to customer communications.
 
@@ -20,7 +20,6 @@ tags:
 - Establishing brand values requires honest assessment of what matters to your organization, identifying intention-action gaps, and creating systems that hold your business accountable to the principles you articulate.
 
 **When Patagonia restructured its entire ownership in 2022 to ensure profits would fight climate change rather than enrich shareholders, it wasn't performative activism. It was brand values meeting business reality. The outdoor retailer embedded environmental protection so deeply into its DNA that traditional corporate structure became incompatible with its core beliefs.**
-**
 
 Your brand faces a similar decision point, though perhaps less dramatic. 
 
@@ -28,7 +27,7 @@ Edelman's 2025 Trust Barometer reveals that[ 80% of people now trust the brands]
 
 This trust isn't given freely. It's earned through brand values that guide decision-making when profits and principles collide.
 
-## Understanding Brand Values: The Foundation of Brand Purpose**
+## Understanding Brand Values: The Foundation of Brand Purpose
 
 Brand values are the non-negotiable principles guiding how your company operates, makes decisions, and shows up in the world. They're distinct from your [mission](https://grounded.world/brand-purpose-agency/foundations/brand-mission) statement (what you aim to accomplish), your [vision](https://grounded.world/brand-purpose-agency/foundations/brand-vision) (where you're headed), or your value proposition (what you offer customers). Brand values define your character.
 
@@ -38,7 +37,7 @@ Think of brand values as the belief system underneath your [brand purpose](https
 
 Strong core values should pass three tests. They must be authentic enough that they guide difficult decisions when commercial pressure points the other way. They must be specific enough that employees can translate them into daily actions. And they must be observable enough that external stakeholders can verify whether you're living them or merely listing them.
 
-## **Why Brand Values Matter More Than Ever**
+## Why Brand Values Matter More Than Ever
 
 The commercial case for articulating strong brand values has never been clearer.[ According to research compiled by Harvard Business School](https://hbr.org/2024/02/maintaining-customer-loyalty-in-the-face-of-inflation), acquiring a new customer can cost five to twenty-five times more than retaining an existing one. When your brand values align with customer values, retention becomes significantly easier.
 
@@ -50,11 +49,11 @@ For B2B brands, values matter equally. When we guide organizations through our A
 
 Does your brand struggle to articulate what you stand for beyond product features? If your team can't clearly explain your core brand values, or if those values feel disconnected from daily decision-making, you're experiencing the classic values gap we help brands close.
 
-## **How Brand Values Drive Business Performance**
+## How Brand Values Drive Business Performance
 
 Strong brand values deliver tangible business outcomes across multiple dimensions. Let's examine how values create competitive advantage in today's market.
 
-### **Brand Loyalty and Customer Retention**
+### Brand Loyalty and Customer Retention
 
 When customers share your values, they become advocates rather than just buyers. This isn't aspirational thinking. It's market reality backed by research. Studies show that loyal customers generate up to[ 10 times more revenue](https://www.brandwatch.com/blog/brand-loyalty/) over their lifetime compared to first-time buyers.
 
@@ -62,7 +61,7 @@ At Grounded, we've observed this pattern repeatedly across client engagements. W
 
 This loyalty matters especially during challenging market conditions. Research from Harvard Business Review found that companies excelling at brand loyalty[ delivered significantly higher shareholder returns](https://hbr.org/2024/02/maintaining-customer-loyalty-in-the-face-of-inflation) during economic uncertainty. When your values create genuine connection, price becomes less decisive in purchase decisions.
 
-### **Employee Engagement and Talent Attraction**
+### Employee Engagement and Talent Attraction
 
 Your company values shape who wants to work for you and how effectively they perform once hired. This isn't soft HR philosophy. It's operational efficiency.
 
@@ -70,7 +69,7 @@ Your company values shape who wants to work for you and how effectively they per
 
 The talent market increasingly rewards values-driven employers. Younger professionals especially want more than paychecks. They're evaluating whether your company's core values align with their personal values before accepting offers. Strong brand values become a magnet for mission-aligned talent who'll champion your purpose internally and externally.
 
-### **Operational Clarity and Decision-Making**
+### Operational Clarity and Decision-Making
 
 Brand values serve a practical function beyond marketing appeal. They provide decision-making criteria when teams face competing priorities or ethical ambiguity.
 
@@ -80,11 +79,11 @@ In our work with startups and established brands alike, we've found that the mos
 
 This clarity accelerates execution. It reduces internal conflict. It protects brand reputation by preventing decisions that would later require apology or reversal. Your values become guardrails that enable speed while maintaining integrity.
 
-## **Establishing Your Brand's Core Values**
+## Establishing Your Brand's Core Values
 
 Defining authentic core values requires more than brainstorming aspirational concepts. It demands honest self-assessment, stakeholder input, and willingness to confront gaps between current reality and stated ideals.
 
-### **Start With Honest Assessment**
+### Start With Honest Assessment
 
 Your brand values should reflect what genuinely matters to your organization's leadership and culture, not what sounds impressive or tests well with focus groups. This is where working with a B Corp certified brand purpose agency makes the difference. We've developed assessment methodologies that surface the beliefs actually driving your business, not just the beliefs you wish were driving it.
 
@@ -102,7 +101,7 @@ Ask diagnostic questions that reveal authentic values:
 
 That last question matters most. At Grounded, our Belief, Purpose & Pursuits framework helps brands identify intention-action gaps before articulating new values. There's no point claiming to value transparency if your supply chain remains opaque. There's no point championing diversity if your leadership team lacks it.
 
-### **Involve Your Team and Stakeholders**
+### Involve Your Team and Stakeholders
 
 Brand values can't be created in executive isolation. They need input from people throughout your organization who'll be expected to embody them.
 
@@ -112,7 +111,7 @@ This collaborative approach serves two purposes. First, it generates values that
 
 Consider surveying customers as well. Are there pre-existing themes your customer base identifies with? What values do loyal customers say attracted them to your brand? This external perspective can reveal strengths you're undervaluing or gaps between perception and reality.
 
-### **Define 3-5 Core Values With Guiding Principles**
+### Define 3-5 Core Values With Guiding Principles
 
 Most successful brands articulate three to five core brand values. More than that becomes unwieldy. Fewer might not provide sufficient guidance across the range of decisions your business faces.
 
@@ -144,39 +143,39 @@ This specificity prevents your values from becoming meaningless corporate speak.
 
 Our Massive Transformative Purpose (MTP) approach, which we use with organizations seeking exponential impact, helps brands move from vague values to specific, measurable commitments that drive behavior change at moments that matter.
 
-## **Examples of Brand Values: Learning From Leading Brands**
+## Examples of Brand Values: Learning From Leading Brands
 
 Examining how established brands articulate and activate their own brand values provides valuable lessons for defining your own. Let's look at brand value[ examples that demonstrate the range and specificity effective values require](https://grounded.world/brand-purpose-agency/foundations/brand-purpose-examples).
 
-### **Patagonia: Environmental Activism as Business Model**
+### Patagonia: Environmental Activism as Business Model
 
 Patagonia's brand values center on environmental protection and sustainable business practices. But these aren't aspirational statements. They're operational commitments reflected in everything from product design to profit allocation.
 
 The company's values manifest in specific actions: donating 1% of sales to environmental groups, creating programs to repair rather than replace products, using renewable energy in facilities, and advocating publicly for environmental policy. When Patagonia restructured ownership to ensure profits fight climate change, it demonstrated how strong values can reshape even fundamental business structure.
 
-### **Starbucks: Creating Community Through Coffee**
+### Starbucks: Creating Community Through Coffee
 
 Starbucks articulates values around creating culture of warmth and belonging, acting with courage, being present with transparency and respect, and delivering their best in all they do. These values extend beyond customer service into company culture, supplier relationships, and community engagement.
 
 Former CEO Howard Schultz summarized their approach: "At Starbucks, we're not in the coffee business serving people, we're in the people business serving coffee." This positions their values as the actual product, with coffee as the vehicle for delivering it.
 
-### **LEGO: Play as Learning and Development**
+### LEGO: Play as Learning and Development
 
 LEGO's core values—fun, creativity, imagination, learning, caring, and quality—align directly with their products and business model. These aren't generic aspirational concepts. They're criteria the company uses to evaluate product development, partnerships, and strategic decisions.
 
 The simplicity and clarity of LEGO's values make them easy to communicate internally and externally. Employees can readily assess whether a proposed initiative aligns with these principles. Customers can see these values reflected in product design and brand communications.
 
-### **What These Examples Reveal**
+### What These Examples Reveal
 
 The most effective brand values share common characteristics. They're concise enough to be memorable. They're specific enough to guide decisions. They're authentic enough that the brand's actions validate them. And they're meaningful enough that stakeholders care whether the brand lives up to them.
 
 When we work with clients on establishing brand values, we study not just what values successful brands claim but how they activate those values across stakeholder touchpoints. This is exactly the type of challenge we help brands navigate at Grounded—moving from values as corporate wallpaper to values as operational reality.
 
-## **Activating Brand Values: From Statement to Strategy**
+## Activating Brand Values: From Statement to Strategy
 
 Articulating your core values is the beginning, not the destination. The real work involves embedding those values throughout your business operations and stakeholder relationships.
 
-### **Embed Values in Business Operations**
+### Embed Values in Business Operations
 
 Your company's brand values should touch every operational area. If sustainability is a core value, it should inform procurement decisions, facility management, packaging choices, and product design. If diversity is a core value, it should shape hiring practices, supplier selection, board composition, and marketing representation.
 
@@ -194,7 +193,7 @@ For example, if transparency is a brand value, you might:
 
 These operational commitments make your values observable. Stakeholders can verify whether you're living your principles or just listing them.
 
-### **Communicate Values Consistently**
+### Communicate Values Consistently
 
 Your target audience needs repeated exposure to understand what your brand stands for. This doesn't mean constantly preaching about your values. It means weaving them naturally into brand communications, customer interactions, and marketing touchpoints.
 
@@ -212,7 +211,7 @@ Consider how you communicate values across channels:
 
 At Grounded, we help brands develop brand storytelling strategies that make values feel authentic rather than promotional. Creating compelling content around your values requires understanding what resonates with your community and what proves you're serious about your commitments.
 
-### **Make Values Official Through Certification**
+### Make Values Official Through Certification
 
 Beyond informal commitment, consider making your values official through third-party certification.[ B Corporation certification from B Lab, for example, requires companies to meet verified standards of social and environmental performance, accountability, and transparency](https://www.bcorporation.net/en-us/certification/). Companies must score at least 80 points on the B Impact Assessment and legally commit to considering all stakeholders in decision-making.
 
@@ -230,7 +229,7 @@ Other certifications and commitments can formalize different values:
 
 These certifications make your values measurable and verifiable rather than merely aspirational.
 
-## **The Connection Between Brand Values and Brand Strategy**
+## The Connection Between Brand Values and Brand Strategy
 
 Your brand's core values shouldn't exist in isolation from your broader brand strategy. They should inform and integrate with your mission, vision, positioning, and value proposition.
 
@@ -240,7 +239,7 @@ In our four-phase approach at Grounded, values articulation sits within the broa
 
 This integrated approach ensures your values aren't just nice statements on your website. They become the foundation for a brand strategy that's both commercially sound and impact-driven.
 
-## **Moving From Values to Impact**
+## Moving From Values to Impact
 
 Brand values matter because they shape everything else your organization does. They influence which customers choose you, which employees want to work for you, which partners want to collaborate with you, and which investors want to fund you. They guide daily decisions and long-term strategy. They differentiate you in commoditized markets and create emotional connection in transactional categories.
 
@@ -265,7 +264,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Brand Values**
+### Frequently Asked Questions About Brand Values
 
 Brand values and company values are essentially the same thing—they're the foundational principles guiding how your organization operates and makes decisions. Some organizations use "brand values" to emphasize how these principles show up externally in customer relationships and market positioning, while "company values" emphasizes internal culture and operations. At Grounded, we believe the strongest brands align internal and external values completely, so the distinction becomes largely semantic.
 

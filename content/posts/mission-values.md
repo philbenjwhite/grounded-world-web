@@ -8,7 +8,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways**
+## Key Takeaways
 
 - Mission and vision statements serve distinct strategic functions: mission statements define what organizations do now and who they serve, while vision statements articulate aspirational future states and long-term direction that guides strategic planning
 
@@ -320,7 +320,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Mission & Values**
+### Frequently Asked Questions About Mission & Values
 
 Mission statements define what an organization does right now—its current purpose, whom it serves, and how it creates value. Vision statements describe the future state the organization aspires to create—the long-term impact and transformation it's working to achieve. Think of mission as "what we do today" and vision as "what we hope the world looks like tomorrow because of our work." Mission statements are action-oriented and grounded in present capabilities, while vision statements are aspirational and paint pictures of future success. Both serve strategic functions: mission guides daily operations and resource allocation, while vision focuses long-term planning and inspires stakeholder commitment to ambitious goals.
 

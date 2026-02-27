@@ -24,7 +24,7 @@ When asked what changes they were likely to make in order to combat climate chan
 
  
 
-## **Are Earth Day Campaigns Closing the Gap?**
+## Are Earth Day Campaigns Closing the Gap?
 
 The recent socio-cultural trend tracker from [Sustainable Brands,](https://sustainablebrands.com/) released to community members a few weeks before Earth day this year, finds that inflation and recession continue to make it difficult for consumers to make sustainable choices. Younger generations are also feeling the pinch and are less inclined to buy sustainably than previous years (with 2/3 agreeing that the economic landscape is making it difficult -  rising to 77% for Gen Z and 75% for millennials) and that intention is waning along with action. 
 
@@ -36,7 +36,7 @@ The beginning of 2023 saw a 47% drop in sustainability-related marketing message
 
 So, we decided to take a look at a few big brands and their [Earth Day campaigns](https://grounded.world/closing-the-intention-action-gap-why-good-intentions-arent-always-enough-during-earth-month/) from the past few years (as well as those that broke just last week) to see if any of this is filtering through and [influencing behavior change](https://grounded.world/bridging-the-intention-action-gap-in-sustainable-behavior/).
 
-## **A Round Up of Some Notable Earth Day Campaigns ** 
+## A Round Up of Some Notable Earth Day Campaigns 
 
 [Apple](https://www.linkedin.com/company/apple/): The technology giant has committed to using renewable energy in all of its operations, including its manufacturing and data centers, and is investing heavily in developing new clean-energy technologies. By 2030, Apple plans to be carbon-neutral across its entire supply chain and product lifecycle. See more about Apple’s plan and promise to make every product carbon neutral by 2030:
 
@@ -46,7 +46,7 @@ https://youtu.be/66XwG1CLHuU
 
 [Patagonia](https://www.linkedin.com/company/patagonia_2/): The outdoor clothing brand is a pioneer in sustainable fashion, using organic and recycled materials in its products, reducing water and energy use in its factories and partnering with grassroots groups to advocate for environmental protection. Their founder famously [donated the company](https://www.cnbc.com/2022/09/14/patagonia-founder-donates-entire-company-to-fight-climate-change.html) to help fight climate change in September 2022. This year they launched a new version of the [Footprint Chronicles](http://www.patagonia.com/web/us/footprint/index.jsp), the place where the company shares information on how and where their products are manufactured, what the environmental costs are, and how they think the process can be improved.
 
-## **The Non Fungible Earth Day Campaign**
+## The Non Fungible Earth Day Campaign
 
 Last year, [YouTube ](https://www.youtube.com/)launched the NFP or non fungible planet earth day campaign riding on the waves created by the [NFTs ](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq)(non fungible token) world that year to highlight a simple yet powerful message: our planet, Earth, is our most unique and valuable gem. 
 
@@ -63,7 +63,7 @@ https://youtu.be/zSONIFDlT94
 ## 
 
 
-## **Earth Day Campaigns 2023**
+## Earth Day Campaigns 2023
 
 Lundberg organic rice launched a new campaign that highlights its regenerative agriculture practices—with a special focus on its partnership with California Waterfowl to protect baby ducks discovered in its rice fields.The campaign kicked off with a full-page ad in The New York Times, announcing that “Every Ducking Day Is Earth Day.”[![](/images/blog/2023-04-screen-shot-2023-04-25-at-11.14.47-am-172x300.png)](/images/blog/2023-04-screen-shot-2023-04-25-at-11.14.47-am.png)
 
@@ -76,7 +76,7 @@ Lundberg organic rice launched a new campaign that highlights its regenerative a
 ## 
 
 
-## **An Activational Earth Day Campaign That Shifts Intention to Action**
+## An Activational Earth Day Campaign That Shifts Intention to Action
 
 Perhaps one of the most effective earth day activation campaigns came from the island of Palau in Thailand. Tourism is so vital to this island, and yet has had a negative impact on its pristine ecosystem. The Thai tourism board ran an earth day campaign called the The Palau Legacy Project.  An interactive app was created that gamified sustainability, allowing tourists to earn points by participating in sustainable activities on the island, and then they could use those points to enjoy unique experiences they simply would not have been able to access otherwise. 
 
@@ -85,7 +85,7 @@ https://youtu.be/xmWBxmNePKY
 ## 
 
 
-## **Earth Day Campaigns: Final Thoughts**
+## Earth Day Campaigns: Final Thoughts
 
 “In 2023 we must come together again in partnership for the planet. Businesses, governments, and civil society are equally responsible for taking action against the climate crisis and lighting the spark to accelerate change towards a green, prosperous, and equitable future. We must join together in our fight for the green revolution, and for the health of future generations. The time is now to Invest In Our Planet,” said Kathleen Rogers, President of [EARTHDAY.ORG](http://earthday.org/).
 

@@ -52,7 +52,7 @@ Some brands have already begun reimagining Black Friday in creative ways. These 
 
 
 
-### **FREITAG – "Don’t Shop, Swap"**
+### FREITAG – "Don’t Shop, Swap"
 
 
 Swiss bag maker FREITAG has become a beacon for circular economy innovation. For the seventh consecutive year, FREITAG refused to participate in Black Friday. Instead, they hosted their signature **S.W.A.P. event (Shopping Without Any Payment)**. Both their online store and in-store checkouts were closed on Black Friday. In their place, FREITAG invited customers to bring in their upcycled bags and swap them for another, completely free of charge.
@@ -71,7 +71,7 @@ This reuse-focused activation transforms a shopping day into a community celebra
 
 
 
-### **Rituals – Green Friday Through Refills and Responsibility**
+### Rituals – Green Friday Through Refills and Responsibility
 
 
 Beauty and lifestyle brand Rituals reimagined Black Friday 2024 as a chance to amplify their sustainability commitments. Instead of storewide discounts, Rituals launched a Green Friday campaign promoting refillable products, emphasizing their circularity initiatives and educating their customers on how they can participate. Each refill purchase contributed to tree planting programs, allowing customers to turn a transaction into an act of regeneration.

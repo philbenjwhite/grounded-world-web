@@ -8,7 +8,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways**
+## Key Takeaways
 
 - Corporate responsibility encompasses how organizations manage their social and environmental impact across business operations, moving beyond legal compliance to voluntary adoption of ethical behavior and sustainable practices that benefit stakeholders and society
 
@@ -295,7 +295,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Corporate Responsibility**
+### Frequently Asked Questions About Corporate Responsibility
 
 Corporate responsibility, also called corporate social responsibility or CSR, encompasses how organizations manage their social and environmental impact across business operations. It involves voluntary adoption of ethical behavior, environmental stewardship, community support, and responsible financial decisions that benefit stakeholders beyond just maximizing profits. Corporate responsibility matters because it builds trust with customers, attracts and retains talent, improves operational efficiency, mitigates risks, enhances brand reputation, and aligns with growing investor expectations around ESG criteria. Companies embracing CSR increasingly outperform peers on both impact and financial metrics.
 

@@ -17,11 +17,11 @@ It’s no secret that [plastic pollution is a significant threat](https://ground
 
  
 
-## **Top 5 Brands Helping Keep Our Oceans Plastic-Free**
+## Top 5 Brands Helping Keep Our Oceans Plastic-Free
 
  
 
-## **Grove Collaborative **
+## Grove Collaborative
 
 Grove Collaborative, the world’s first plastic neutral retailer, has long been vocal about its goal to be 100% plastic-free by 2025. Despite the challenges in achieving this goal, Grove remains dedicated to reducing plastic waste and promoting sustainability through its innovative initiatives and product offerings.Through innovative tools like the Beyond Plastic Impact Tracker, partnerships with organizations like rePurpose Global, and a wide range of plastic-reduced products, Grove is making significant contributions to keeping our oceans clean and plastic-free. By supporting brands like Grove, we can all take part in the journey towards a more sustainable and plastic-free world.
 
@@ -32,13 +32,13 @@ Grove Collaborative, the world’s first plastic neutral retailer, has long been
 
  	- **Beyond Plastic Badge:** Grove Collaborative offers a wide range of sustainable home products, from soap concentrates to shampoo bars and reusable sandwich bags. The company has made it easier for customers to choose reduced-plastic alternatives through its [Beyond Plastic](https://www.grove.co/beyondplastic/) digital badging system. 
 
- 	- **Plastic Neutrality with rePurpose: ** In partnership with rePurpose Global, Grove removes the same weight of ocean-bound plastic from nature for each ounce of plastic sold to customers. This initiative has led to the recovery of over 16 million pounds of plastic since 2020, highlighting Grove’s commitment to offsetting its plastic use and contributing to cleaner oceans.
+ 	- **Plastic Neutrality with rePurpose:**  In partnership with rePurpose Global, Grove removes the same weight of ocean-bound plastic from nature for each ounce of plastic sold to customers. This initiative has led to the recovery of over 16 million pounds of plastic since 2020, highlighting Grove’s commitment to offsetting its plastic use and contributing to cleaner oceans.
 
 
 
 [![](/images/blog/2024-07-screen-shot-2024-07-31-at-8.26.50-pm.png)](/images/blog/2024-07-screen-shot-2024-07-31-at-8.26.50-pm.png)
 
-## **Plastic-Free On Purpose **
+## Plastic-Free On Purpose
 
 
 ### A Grounded Conversation with Danielle Jezienicki 
@@ -51,15 +51,15 @@ Beyond Grove Collaborative's ambitious goals, the company has been a pioneer in 
 
 **Paloma:** I’m sure it was a major challenge striving for 95% plastic-free products. Can you share more about plastic neutrality as a strategy? 
 
-**Danielle: **Plastic neutrality is a great starting point because it helps you understand your impact. It's especially useful for companies in the food and beverage industry that don't have great single-use plastic alternatives. It allows you to take immediate action, recognize and communicate your impact to customers as well. However, it's important to also think long-term about moving away from single-use plastic entirely based on what better solutions are available. 
+**Danielle:** Plastic neutrality is a great starting point because it helps you understand your impact. It's especially useful for companies in the food and beverage industry that don't have great single-use plastic alternatives. It allows you to take immediate action, recognize and communicate your impact to customers as well. However, it's important to also think long-term about moving away from single-use plastic entirely based on what better solutions are available. 
 
-**Paloma: **As someone striving for plastic freedom in my own life, Grove is one of my favorite ecommerce sites because Grove makes it easier for consumers to move away from plastic with the Beyond Plastic badge. How successful has this badging system been in driving behavior change and closing the intention-action gap for customer choices toward more sustainable products
+**Paloma:** As someone striving for plastic freedom in my own life, Grove is one of my favorite ecommerce sites because Grove makes it easier for consumers to move away from plastic with the Beyond Plastic badge. How successful has this badging system been in driving behavior change and closing the intention-action gap for customer choices toward more sustainable products
 
-**Danielle: **In order to drive behavior change, brands need to make sustainable decisions a no-brainer for customers. Products need to work well and be cost-competitive (or offer a premium) before even mentioning sustainability. Grove’s Beyond Plastic badge helps customers easily find products that align with their values, knowing that the efficacy is intact. I firmly believe that sustainability shouldn't be presented to customers as a trade off. You can't ask them to prioritize sustainability over other things and sacrifice critical features - that won’t drive scalable, long-term change. 
+**Danielle:** In order to drive behavior change, brands need to make sustainable decisions a no-brainer for customers. Products need to work well and be cost-competitive (or offer a premium) before even mentioning sustainability. Grove’s Beyond Plastic badge helps customers easily find products that align with their values, knowing that the efficacy is intact. I firmly believe that sustainability shouldn't be presented to customers as a trade off. You can't ask them to prioritize sustainability over other things and sacrifice critical features - that won’t drive scalable, long-term change. 
 
-**Paloma: **I definitely have seen that with trying to close the intention action gap on actually purchasing more sustainably and driving that behavior change, that oftentimes sustainable products have to perform even better than their traditional counterparts, and that's where customer perception can get a little bit tricky. Part of driving consumer behavior change is sustainability storytelling as well, which Grove does an excellent job of highlighting their partnership with rePurpose Global and communicating how plastic neutrality is executed at Grove. How does Grove's partnership with rePurpose Global, the world’s first plastic credits platform, support Grove’s plastic neutrality, and what can we learn from this approach?
+**Paloma:** I definitely have seen that with trying to close the intention action gap on actually purchasing more sustainably and driving that behavior change, that oftentimes sustainable products have to perform even better than their traditional counterparts, and that's where customer perception can get a little bit tricky. Part of driving consumer behavior change is sustainability storytelling as well, which Grove does an excellent job of highlighting their partnership with rePurpose Global and communicating how plastic neutrality is executed at Grove. How does Grove's partnership with rePurpose Global, the world’s first plastic credits platform, support Grove’s plastic neutrality, and what can we learn from this approach?
 
-**Danielle: **Grove's was founded on the principle that we need to move away from plastic because recycling isn’t a true solution. For that reason it was important that we have a really meaningful partnership around both plastic neutrality in order to mitigate Grove’s impact, as well as a meaningful target for reduction. Grove's partnership with rePurpose Global focuses on collecting low-value plastic, which has a higher degree of additionality in that it won’t otherwise be collected because it is not recyclable or valuable. For example, waste collectors don’t typically collect multi-layer plastic wrappers because they are notoriously difficult to recycle and therefore do not generate income. However by paying for its collection, Grove makes a meaningful contribution to reducing plastic pollution by creating a new revenue stream for waste collectors. Overall, the partnership with rePurpose really allowed Grove to pivot to just focus on additionality and showcase how we’re working hard to combat plastic pollution, versus just doubling down on the broken system of recycling and continuing business as usual.
+**Danielle:** Grove's was founded on the principle that we need to move away from plastic because recycling isn’t a true solution. For that reason it was important that we have a really meaningful partnership around both plastic neutrality in order to mitigate Grove’s impact, as well as a meaningful target for reduction. Grove's partnership with rePurpose Global focuses on collecting low-value plastic, which has a higher degree of additionality in that it won’t otherwise be collected because it is not recyclable or valuable. For example, waste collectors don’t typically collect multi-layer plastic wrappers because they are notoriously difficult to recycle and therefore do not generate income. However by paying for its collection, Grove makes a meaningful contribution to reducing plastic pollution by creating a new revenue stream for waste collectors. Overall, the partnership with rePurpose really allowed Grove to pivot to just focus on additionality and showcase how we’re working hard to combat plastic pollution, versus just doubling down on the broken system of recycling and continuing business as usual.
 
 ## [![](/images/blog/2024-07-screen-shot-2024-07-31-at-8.29.37-pm.png)](/images/blog/2024-07-screen-shot-2024-07-31-at-8.29.37-pm.png)
 
@@ -67,14 +67,14 @@ Beyond Grove Collaborative's ambitious goals, the company has been a pioneer in 
 ## 
 
 
-## **Corona** 
+## Corona 
 
 Corona has made remarkable strides in sustainability by creating bottles from sand and achieving a net-zero plastic footprint. As the first global beverage brand to reach this milestone, Corona's efforts include extensive beach cleanup campaigns and innovative packaging solutions. Their ["Protect Our Beaches](https://www.coronausa.com/pages/protect-our-beaches)" initiative showcases their commitment to environmental conservation.
 
 
  	- **Net-Zero Plastic Footprint**: Corona has become the first global beverage brand to achieve a net-zero plastic footprint, meaning they recover more plastic than they produce. This milestone was achieved through a combination of reducing plastic use, recycling efforts, and beach cleanups.
 
- 	- **Corona's Plastic Fishing Tournament: **[Corona's Plastic Fishing Tournament](https://www.youtube.com/watch?v=KCuS0SPnUpc) tackles plastic pollution in the Pacific Ocean on a global scale. At a time when there’s nearly more plastic in our oceans than fish, fishers worldwide were invited to reel in the biggest "catch" of plastic waste and sell it to recycling companies. The more plastic they caught, the more money they made, and the cleaner the ocean became. This initiative underscores Corona's commitment to practical, community-driven solutions to ocean plastic pollution, accelerating social impact through sustainability. 
+ 	- **Corona's Plastic Fishing Tournament:** [Corona's Plastic Fishing Tournament](https://www.youtube.com/watch?v=KCuS0SPnUpc) tackles plastic pollution in the Pacific Ocean on a global scale. At a time when there’s nearly more plastic in our oceans than fish, fishers worldwide were invited to reel in the biggest "catch" of plastic waste and sell it to recycling companies. The more plastic they caught, the more money they made, and the cleaner the ocean became. This initiative underscores Corona's commitment to practical, community-driven solutions to ocean plastic pollution, accelerating social impact through sustainability. 
 
  	- **Corona Crusher**: With the [Corona Crusher](https://www.coronausa.com/pages/pob-chicago), you can watch your empty bottles turn instantly into sand which will be used to make new bottles, protecting our beaches and natural resources over the course of the program. This activation is part of Corona’s partnership with the [Glass Recycling Foundation (GRF)](https://www.glassrecyclingfoundation.org/) to provide education on recycling at bars and restaurants across the country and keep glass out of landfills.
 
@@ -85,13 +85,13 @@ Corona has made remarkable strides in sustainability by creating bottles from sa
 
 
 
-## **[![](/images/blog/2024-07-screen-shot-2024-07-31-at-8.34.11-pm.png)](/images/blog/2024-07-screen-shot-2024-07-31-at-8.34.11-pm.png)**
+## [![](/images/blog/2024-07-screen-shot-2024-07-31-at-8.34.11-pm.png)](/images/blog/2024-07-screen-shot-2024-07-31-at-8.34.11-pm.png)
 
 
 ## 
 
 
-## **BIC** 
+## BIC 
 
 BIC has embarked on an inspiring plastic transformation journey, turning recycled ocean-bound plastic into new, practical products. Their partnership with TerraCycle has facilitated the creation of pens from this recycled material, underscoring BIC's commitment to sustainability and innovation. Their efforts are not only transforming waste into valuable resources but also helping to keep our beaches and oceans clean by removing ocean-bound plastic and repurposing it into everyday items.
 
@@ -111,7 +111,7 @@ BIC has embarked on an inspiring plastic transformation journey, turning recycle
 ## 
 
 
-## **Adidas**
+## Adidas
 
 Adidas, in collaboration with Parley for the Oceans, has launched the "Run for the Oceans" campaign, where plastic bottles are collected based on the minutes run by participants worldwide. This initiative transforms collected plastic into high-performance sportswear, demonstrating Adidas's commitment to reducing plastic waste.
 
@@ -129,7 +129,7 @@ Adidas, in collaboration with Parley for the Oceans, has launched the "Run for t
 ## 
 
 
-## **Patagonia **
+## Patagonia
 
 Patagonia has partnered with [Bureo](https://bureo.co/) to turn abandoned fishing nets into skateboard decks and hat brims. This initiative addresses the significant issue of fishing nets, which make up 10% of ocean plastic, by transforming them into useful products. Patagonia's Worn Wear® program further emphasizes their commitment to circularity by promoting the repair, reuse, and trading of old gear.
 
@@ -140,7 +140,7 @@ Patagonia has partnered with [Bureo](https://bureo.co/) to turn abandoned fishin
 
  	- **Sourcing Recycled & Regenerative Materials**: Patagonia is [committed to using recycled polyester and nylon, reducing reliance on virgin petroleum](https://www.patagonia.com/why-plastics/), and lowering their environmental impact. By 2025, they plan to source 50% of their synthetic materials from secondary waste streams. Also by 2025, Patagonia plans to use other preferred materials such as regenerative, organic cotton and generally natural-fiber-based fabrics. 
 
- 	- **Addressing Their Plastic Problem– Microplastics: **For many years now, Patagonia has been [tackling the issue of microplastics](https://www.patagonia.com/stories/what-were-doing-about-our-plastic-problem/story-72799.html) by adopting innovative strategies to reduce plastic shedding from their products. They are using specialized filters in their washing machines to capture microfibers and developing textiles that release fewer microplastics. Patagonia also educates consumers on the environmental impact of microplastics and encourages the use of their Worn Wear® program to extend the life of their gear and minimize plastic pollution.
+ 	- **Addressing Their Plastic Problem– Microplastics:** For many years now, Patagonia has been [tackling the issue of microplastics](https://www.patagonia.com/stories/what-were-doing-about-our-plastic-problem/story-72799.html) by adopting innovative strategies to reduce plastic shedding from their products. They are using specialized filters in their washing machines to capture microfibers and developing textiles that release fewer microplastics. Patagonia also educates consumers on the environmental impact of microplastics and encourages the use of their Worn Wear® program to extend the life of their gear and minimize plastic pollution.
 
 
 

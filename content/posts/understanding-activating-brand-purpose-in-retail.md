@@ -9,7 +9,7 @@ tags:
 featuredImage: '/images/blog/Activating-Brand-Purpose.jpg'
 ---
 
-### **A Brand Purpose Agency Guide**
+### A Brand Purpose Agency Guide
 
 
 Learn how a brand purpose agency can help you close the intention-action gap by getting brands and retailers working more collaboratively to drive the right behavior change.
@@ -21,9 +21,9 @@ Welcome to our guide on activating brand purpose. This article and accompanying 
 
 - **What your brand stands for:**  Capture your brand’s purpose mission or core benefit
 
-- **What the world needs: **What are the social or environmental issues that matter most to your clients, audience, and the broader community?
+- **What the world needs:** What are the social or environmental issues that matter most to your clients, audience, and the broader community?
 
-- **Intention-action gap: **Understand and remove the biggest barrier preventing shoppers from taking action. , 
+- **Intention-action gap:** Understand and remove the biggest barrier preventing shoppers from taking action. , 
 
 
 
@@ -35,7 +35,7 @@ The intersection of these can deliver a triple bottom line win for people, plane
 
 *Marketing Sustainable Products in the Retail Sector*
 
-## **Step 1: Understanding Brand Purpose **
+## Step 1: Understanding Brand Purpose
 
 
 ****
@@ -63,7 +63,7 @@ A social impact or ambition that's bigger than the brand itself – how does  y
 
 A motive beyond simply making money – a recent Edelman Trust Barometer found that 71% of respondents said they'd lose trust in a brand if it put its profits over people!
 
-### **Why Brand Purpose Matters**
+### Why Brand Purpose Matters
 
 
 The eXo (Exponential Organization) community refers to Brand Purpose as an *MTP* or (Massive Transformative Purpose). If articulated well and embedded into the DNA of the brand or organization, the MTP scales impact, reduces costs, and gives purpose-driven companies a competitive advantage.
@@ -74,7 +74,7 @@ The eXo (Exponential Organization) community refers to Brand Purpose as an *MTP*
 
 *It is not a marketing slogan. Consider it your north star, but one that doesn't restrict your organization from changing direction. It might excite and scare you, and catch in your throat, it matters that much to you. You might never fully achieve it, yet it is still worth striving for. Generally speaking, a great MTP attracts the customers, community, partners, and resources you need to make a dent in the universe…”*
 
-### **Brand Purpose Examples from Leading Companies**
+### Brand Purpose Examples from Leading Companies
 
 
 Companies seeking to create a strong brand purpose should look to some of the world's biggest companies who have managed to articulate a compelling brand purpose effectively:
@@ -91,12 +91,11 @@ Similarly, Lego's is… *“Inspiring the builders of tomorrow.”*
 
 And here's the one for Tesla… *“To accelerate the world's transition to sustainable energy.”* 
 
-### **They all share a clearly defined brand purpose, yet they don’t mention phones, toy bricks, or electric cars! Find out more about [Brand Activation Marketing Service](https://grounded.world/brand-activation-marketing-services/%20)**
+### They all share a clearly defined brand purpose, yet they don’t mention phones, toy bricks, or electric cars! Find out more about [Brand Activation Marketing Service](https://grounded.world/brand-activation-marketing-services/%20)
 
 
-### ****
 
-## **Step 2: What is Brand Activation?**
+## Step 2: What is Brand Activation?
 
 
 Activating brand purpose requires far more focus and singularity than simply articulating it. 
@@ -104,7 +103,7 @@ Activating brand purpose requires far more focus and singularity than simply art
 
 Without access to both the "real estate" and consumer attention to tell your story, your brand purpose may not resonate—especially in a fast moving retail context.
 
-#### **The Challenge of Consumer Attention**
+#### The Challenge of Consumer Attention
 
 
 The biggest challenge is the shopper’s demand for convenience and short attention span while shopping, whether in physical stores or online. 
@@ -125,7 +124,7 @@ The biggest challenge is the shopper’s demand for convenience and short attent
 
 Without addressing this challenge, even the best intentions may fail to register with habit-driven or task-focused shoppers.  
 
-#### **Studying Shopping Behavior**
+#### Studying Shopping Behavior
 
 
 To succeed, brands must take the time to understand how their shoppers behave along the entire path to purchase. 
@@ -146,7 +145,7 @@ To succeed, brands must take the time to understand how their shoppers behave al
 
 By understanding these behaviors and barriers, brands can begin to address the gaps and motivate  better buying decisions
 
-#### **The Best Buying Decisions**
+#### The Best Buying Decisions
 
 
 The best buying decision often emerges at the intersection of those three critical factors we mentioned above:
@@ -164,19 +163,18 @@ The best buying decision often emerges at the intersection of those three critic
 
 These intersections provide opportunities to align brand purpose with meaningful behavior change at retail, because no matter how small they seem, at scale they are high stakes and can have a massive impact 
 
-#### **The Role of Commercial Partnerships**
+#### The Role of Commercial Partnerships
 
 
 These intersection points also allow companies, retailers, and non-profits to collaborate to create social enterprise-based partnerships that can drive financial benefits over time, and provide a model for driving a more circular and regenerative economy.
 
-### **Find out more about [Brand Activation Marketing Service](https://grounded.world/brand-activation-marketing-services/%20)**
+### Find out more about [Brand Activation Marketing Service](https://grounded.world/brand-activation-marketing-services/%20)
 
 
-### ****
 
-## **Step 3. How to Address Consumer Barriers Through Purpose-Driven Branding**
+## Step 3. How to Address Consumer Barriers Through Purpose-Driven Branding
 
-### **Overcoming Barriers to Sustainable Consumer Habits**
+### Overcoming Barriers to Sustainable Consumer Habits
 
 
 For many conscious consumers, the second most common challenge is not knowing where to start when forming sustainable buying habits. Brands and retailers can play a vital role in guiding consumers by  co-creating and collaborating around the following principles 
@@ -237,7 +235,7 @@ A shared plan of action provides clarity for all parties, ensuring:
 
 This collaborative approach builds alignment and equips everyone involved with the direction they need to bring the strategy to life effectively. It also strengthens partnerships and enhances the likelihood of achieving market share potential while promoting sustainable behaviors.
 
-### **Connecting the Category to the Need State**
+### Connecting the Category to the Need State
 
 
 Connecting your brand to the consumer’s ‘need state’ involves understanding what consumers truly want and finding ways to meet those needs while positively impacting society and the environment. This connection is essential for aligning sustainability goals with tangible outcomes.
@@ -264,17 +262,16 @@ For example, Tide’s #TurnToCold campaign linked its sustainability goal—redu
 
 This approach allowed Tide to connect sustainability goals with category drivers, resulting in a win-win for the brand and consumers.
 
-### **TASK**
+### TASK
 
 
 Our [Retail Activation for Good guidebook](https://sbbrandsforgood.com/2021-12/how-brands-can-change-shopper-behavior-for-good/), compiles a list of 10 guiding principles to help steer brands and retailers towards better collaboration in sustainable retail. Discover inspiring case studies along with the know-how to help activate your brand purpose. 
 
-### **Find out more about [Brand Activation Marketing Service](https://grounded.world/brand-activation-marketing-services/%20)**
+### Find out more about [Brand Activation Marketing Service](https://grounded.world/brand-activation-marketing-services/%20)
 
 
-### ****
 
-## **Step 4 Understanding the Intention-Action Gap**
+## Step 4 Understanding the Intention-Action Gap
 
 
 Once your brand identifies key benefits and aligns with what the world needs, the next step is to determine what prevents shoppers from making the best, most sustainable purchasing decisions.
@@ -286,11 +283,11 @@ The ultimate goal is to shift consumer behavior toward sustainable choices by ad
 
 
 
-- **Low relevance: **Shoppers may not see the product as relevant to their needs.
+- **Low relevance:** Shoppers may not see the product as relevant to their needs.
 
 - **Disbelief:** A lack of trust in claims about sustainability.
 
-- **Emotional disconnect: **Insufficient resonance with the consumer.
+- **Emotional disconnect:** Insufficient resonance with the consumer.
 
 
 
@@ -304,7 +301,7 @@ At a channel level, obstacles might include:
 
 
 
-#### **Complexity:** Confusion about category options and benefits.
+#### Complexity: Confusion about category options and benefits.
 
 **Deploying Resources Effectively**
 
@@ -324,7 +321,7 @@ Traditionally, the intention-action gap is described as the shift from “awaren
 
 By addressing these gaps, brands can ensure that shoppers' good intentions lead to action, fostering both category growth and sustainable impact.
 
-## **About Grounded**
+## About Grounded
 
 
 

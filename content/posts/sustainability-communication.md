@@ -8,7 +8,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - Sustainability communication is no longer optional: by the end of 2025, the **[European Union's new regulations](https://www.europarl.europa.eu/topics/en/article/20240111STO16722/stopping-greenwashing-how-the-eu-regulates-green-claims) will ban greenwashing and generic environmental claims**, requiring organizations to back sustainability commitments with verifiable data and transparent reporting
 
@@ -20,9 +20,9 @@ tags:
 
 - Strategic sustainability communication requires **aligning messages across different audiences** (investors, employees, customers, communities) while maintaining consistency in values and demonstrating your organization's commitment through measurable actions and transparent progress updates
 
-**When Patagonia published its 2023 environmental and social responsibility report, the company didn't hide behind vague sustainability commitments or optimistic projections. Instead, it detailed specific failures alongside successes: factory audits that revealed wage violations, supply chain emissions that increased despite reduction efforts, and the gap between sustainability goals and current performance. **
+**When Patagonia published its 2023 environmental and social responsibility report, the company didn't hide behind vague sustainability commitments or optimistic projections. Instead, it detailed specific failures alongside successes: factory audits that revealed wage violations, supply chain emissions that increased despite reduction efforts, and the gap between sustainability goals and current performance.**
 
-**The response from stakeholders wasn't outrage. It deepened trust. **
+**The response from stakeholders wasn't outrage. It deepened trust.**
 
 > 
 By treating sustainability communication as an honest dialogue rather than a marketing exercise, Patagonia demonstrated what research increasingly confirms: authenticity builds competitive advantage in an era where stakeholders can detect greenwashing instantly.
@@ -388,7 +388,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Sustainability Communications**
+### Frequently Asked Questions About Sustainability Communications
 
 Sustainability communication is the strategic process of transparently sharing an organization's environmental and social commitments, actions, and performance with stakeholders. It encompasses formal reporting through sustainability or ESG reports, regular updates via digital channels and social media, stakeholder dialogue and engagement, and integration of sustainability messaging throughout brand communications. Effective sustainability communication goes beyond marketing to provide honest, data-backed information about both achievements and ongoing challenges in the organization's sustainability journey, building stakeholder trust through transparency and authentic commitment to positive change.
 

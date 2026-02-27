@@ -9,7 +9,7 @@ tags:
 featuredImage: '/images/blog/ISTH008_email-3.png'
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 -  **People resist change — even when change is obviously needed.** Human behavior defaults to the status quo. Environmental progress isn’t blocked by technology or ideas as much as by our deep psychological tendency to avoid discomfort and stick with what we know.
 

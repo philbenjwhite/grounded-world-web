@@ -7,11 +7,11 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - 
 
-Organizations with strong ethical practices see **82% higher employee productivity **and **92% of workers now prioritize companies that value their well-being**, making ethics a competitive advantage in talent markets
+Organizations with strong ethical practices see **82% higher employee productivity** and **92% of workers now prioritize companies that value their well-being**, making ethics a competitive advantage in talent markets
 
 - 
 
@@ -374,7 +374,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Ethical Practices**
+### Frequently Asked Questions About Ethical Practices
 
 Ethical practices are the policies, behaviors, and decision-making frameworks organizations use to uphold ethical principles across operations and relationships. These include treating employees with respect and fairness, making transparent business decisions that consider stakeholder impacts, operating with integrity in all dealings, and maintaining accountability for actions and outcomes. Ethical practices move beyond legal compliance to encompass how organizations create value while respecting human dignity and contributing positively to society.
 

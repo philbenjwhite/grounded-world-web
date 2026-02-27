@@ -8,7 +8,7 @@ tags:
   - Matt Deasy
 ---
 
-## **Key Takeaways:**
+## Key Takeaways:
 
 - **Human centered marketing** prioritizes genuine relationships over transactions, creating lasting connections that drive sustainable business outcomes
 
@@ -23,7 +23,6 @@ tags:
 - Purpose-driven companies that align marketing strategies with core values create meaningful connections that resonate deeply with their target audience
 
 **A pharmaceutical executive once told me that after twenty years in marketing, he'd forgotten his customers were sick people, not prescribers.** 
-**
 
 His realization came during a patient listening session—not a focus group, a listening session—where he heard stories about fear, hope, and the exhausting burden of managing chronic illness. His company had spent millions optimizing the marketing funnel while missing the fundamental reality: their product existed to help human beings navigate suffering.
 
@@ -31,7 +30,7 @@ That moment of recognition captures the essence of human centered marketing. It'
 
 This matters now more than ever. As Mark Schaefer, a recognized thought leader in marketing, observes, we've entered an era where traditional marketing approaches struggle to break through not because they're poorly executed, but because people have developed sophisticated defenses against being marketed to. The average person encounters thousands of marketing messages daily, and most barely register. What does break through? Genuine human connection.
 
-## What Human Centered Marketing Actually Means**
+## What Human Centered Marketing Actually Means
 
 Human centered marketing is a marketing strategy that places real people—their experiences, needs, values, and contexts—at the center of every decision, from brand strategy to execution. Unlike traditional marketing that often starts with product features or business goals, human centric marketing begins with a fundamental question: What does this person actually need, and how can we meaningfully serve that need?
 
@@ -39,7 +38,7 @@ This isn't customer-centricity rebranded. Customer-centric approaches often focu
 
 The distinction shows up in how companies make decisions. A customer-centric company might use data to identify pain points in the buying process and remove friction. A human centered company uses that same data to understand what the friction reveals about unmet needs, then asks whether their product genuinely addresses those needs or if they're creating artificial demand for something people don't really want.
 
-## **The Business Case for Human Connection**
+## The Business Case for Human Connection
 
 Skeptics sometimes dismiss human centered marketing as soft thinking in a hard-nosed business world. The data tells a different story. Research from Deloitte shows that companies with a human-centric approach to business generate 60% higher profits than competitors. Harvard Business Review analysis demonstrates that emotionally connected customers have a 306% higher lifetime value, stay with brands for an average of 5.1 years versus 3.4 years, and recommend brands at a much higher rate.
 
@@ -49,7 +48,7 @@ The mechanism matters for marketers trying to justify investment. Human centric 
 
 For purpose-driven organizations, the business case extends further. When your marketing strategy authentically reflects your core values and commitment to positive impact, you attract customers who share those values. These aren't just any customers—they're often the most loyal, most vocal, and most aligned with your long-term vision. They become community members rather than merely consumers.
 
-## **Real World Examples of Human Centered Marketing**
+## Real World Examples of Human Centered Marketing
 
 Patagonia's "Don't Buy This Jacket" campaign remains a masterclass in human centered marketing. On Black Friday 2011, the outdoor apparel company took out a full-page New York Times ad discouraging people from buying their products unless they genuinely needed them. The message acknowledged what everyone knew but few brands admitted: overconsumption drives environmental destruction, and most purchases are unnecessary.
 
@@ -61,7 +60,7 @@ The complications came later, when research revealed that shoe donations could d
 
 Dove's "Real Beauty" campaign succeeded by challenging narrow beauty standards and featuring real people with diverse body types rather than models. The campaign resonated deeply because it acknowledged a painful truth many women experienced: the gap between how beauty is portrayed and how real human bodies actually look. By making that implicit frustration explicit and taking a stand against it, Dove created meaningful connections with millions of customers who felt seen and validated—creating the kind of memorable[ brand experiences](https://grounded.world/brand-activation/strategy/brand-experience-strategy) that transcend transactions.
 
-## **Building Your Human Centric Marketing Strategy**
+## Building Your Human Centric Marketing Strategy
 
 Creating effective human centered marketing starts with research, but not the kind most businesses typically conduct. Standard market research asks people what they want, how they perceive your brand, what features they value. Human centered research digs deeper: What are you trying to accomplish? What makes that hard? When you think about this problem, how does it make you feel? What would success look like in your life, not just with our product?
 
@@ -71,7 +70,7 @@ Once you understand the human reality, audit your existing marketing efforts aga
 
 The gap between what you're doing and what human centered marketing requires can be uncomfortable to acknowledge. That discomfort is useful. It reveals where business goals have overridden human connection, where efficiency has replaced empathy, where you've started treating your audience as means to an end rather than as the end itself.
 
-## **The Role of Empathy in Marketing Strategy**
+## The Role of Empathy in Marketing Strategy
 
 Empathy isn't weakness in marketing; it's precision. When you understand what customers truly care about, you stop wasting resources on messages that don't land and strategies that don't work. You develop the ability to resonate deeply not through manipulation, but through genuine alignment between what you offer and what people need.
 
@@ -81,7 +80,7 @@ This approach requires trusting that when you serve people well, business succes
 
 The process changes how marketing teams function. Instead of starting with campaign briefs that specify business objectives and asking creatives to make them compelling, you start with human insights and ask what kind of engagement would genuinely serve people while also advancing business goals. Sometimes the answer is content, sometimes community-building, sometimes simply getting out of the way and letting customers discover you when they're ready.
 
-## **Human Centered Marketing in the AI Era**
+## Human Centered Marketing in the AI Era
 
 The AI era makes human centered marketing more important, not less. As automation handles routine interactions and data processing, the distinctly human elements become competitive differentiators. People don't want to talk to chatbots because they're efficient; they tolerate chatbots when they work. What they actually want are interactions that make them feel understood, valued, and supported.
 
@@ -91,7 +90,7 @@ The AI era also intensifies people's hunger for authenticity. When anyone can ge
 
 This creates opportunities for brands willing to show up as humans rather than corporate entities. Share case studies that include failures and lessons learned, not just successes. Let employees explain the thinking behind decisions in their own voices. Create space for nuanced conversations about complex topics where you don't pretend to have all the answers. These strategies work because they treat your audience as people capable of handling complexity rather than as consumers who need everything simplified.
 
-## **Overcoming Obstacles to Human Centric Approaches**
+## Overcoming Obstacles to Human Centric Approaches
 
 The biggest obstacle to human centered marketing isn't lack of understanding—most marketers intuitively grasp the concept. The challenge lies in organizational structures, incentive systems, and metrics that prioritize short-term business outcomes over long-term relationship building.
 
@@ -101,7 +100,7 @@ Research from B Lab on purpose-driven companies suggests the solution lies in ex
 
 Start by identifying one initiative where you can demonstrate that human centered marketing delivers business results. Maybe it's rebuilding your social media strategy around genuine engagement rather than broadcasting. Maybe it's redesigning your onboarding to focus on customer success rather than upsell opportunities. Run the experiment, measure rigorously, and share results in terms leadership cares about.
 
-## **Putting Human Centered Marketing Into Practice**
+## Putting Human Centered Marketing Into Practice
 
 Implementation requires concrete changes to process, not just mindset shifts. Begin with your content strategy. Before creating any piece of marketing, ask: Would this be useful to someone even if they never become our customer? If the answer is no, reconsider whether it needs to exist. Marketing that serves only business goals rarely creates the kind of meaningful connections that drive loyalty.
 
@@ -111,7 +110,7 @@ Change your social media posts from brand broadcasting to community engagement. 
 
 Restructure customer feedback loops to prioritize learning over defending. When someone shares a negative experience, the human centered response isn't damage control—it's curiosity. What did we miss? What need went unmet? What assumptions did we make that reality contradicted? This posture transforms complaints from problems to fix into insights that improve your marketing strategy and your business.
 
-## **The Connection Between Purpose and Human Centered Marketing**
+## The Connection Between Purpose and Human Centered Marketing
 
 For purpose-driven organizations, human centered marketing isn't optional—it's definitional. You can't authentically pursue social and environmental impact while treating people as targets for extraction. The contradictions would be obvious to everyone, starting with employees who chose your company because of stated values.
 
@@ -121,7 +120,7 @@ The good news: when your marketing strategy aligns with genuine commitment to po
 
 The challenge comes when business pressures tempt you to compromise. When growth targets loom and human centered approaches feel too slow, the temptation to revert to traditional marketing tactics intensifies. Resist it. The companies that maintain commitment to human connection through difficult periods are the ones that emerge with strengthened brand perception and deeper customer loyalty. Shortcuts might deliver short-term results but corrode the trust that human centered marketing builds.
 
-## **Measuring What Matters**
+## Measuring What Matters
 
 Human centered marketing requires different metrics than traditional approaches. Conversion rates and cost per acquisition still matter, but they're incomplete measures of success. Expand your dashboard to include qualitative indicators of relationship health: customer sentiment, depth of engagement, unsolicited advocacy, employee satisfaction with customer interactions, and alignment between stated values and customer perception.
 
@@ -131,7 +130,7 @@ Track business outcomes at the relationship level, not just the transaction leve
 
 The most important measurement happens internally: Are your teams energized by the marketing work they do, or demoralized by feeling they're manipulating people? Human centered marketing should feel better to execute because it aligns with most people's intrinsic desire to help rather than exploit. If your team dreads creating marketing because it requires disconnecting from their values, that's data worth heeding.
 
-## **The Path Forward**
+## The Path Forward
 
 Human centered marketing represents more than a strategy shift—it's a recognition that marketing works best when it serves rather than sells, when it connects rather than converts, when it treats people as humans rather than as resources to optimize. This isn't soft thinking. It's clear-eyed acknowledgment that in an age of infinite choice and limited attention, genuine connection is the only sustainable competitive advantage.
 
@@ -153,7 +152,7 @@ Finally, as lead of Grounded Expeditions, Matt designs immersive, impact-driven 
 Matt continues to explore how brand storytelling, partnerships, and strategy can accelerate the transition to an economy where purpose and profit reinforce each other.
 
 [LinkedIn](https://www.linkedin.com/in/matt-deasy/) | [matt@grounded.world](http://matt@grounded.world)
-### **Frequently Asked Questions About Human Centered Marketing**
+### Frequently Asked Questions About Human Centered Marketing
 
 Human centered marketing goes beyond customer-centricity by questioning fundamental business assumptions and treating people as whole humans with complex lives and values, not just as customers to serve efficiently. Customer-centric marketing optimizes existing processes around customer needs; human centered marketing asks whether those processes should exist at all and whether your offering genuinely serves people's deeper goals and values, and creates a deep connection.
 

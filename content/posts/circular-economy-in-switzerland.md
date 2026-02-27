@@ -21,7 +21,7 @@ As a sustainability delegate, I had the privilege of participating in a week-lon
 
 - True innovation comes as a result from government rather than industry. Government has the power to define the parameters that facilitate groundbreaking innovation from industry by challenging the status quo of business practices that do not necessarily provide value to societal welfare at large (people + planet).
 
-- Circularity does not equate to recycling. Recycling should be lower in priority in the circular hierarchy as it does not present as a viable solution to many materials, particularly as the recycling industry scales slowly or even loses traction. Instead pillars such as **Refuse**, **Reduce** or **Repair **should take on higher priority first and blending these pillars together to optimize for material lifetime. 
+- Circularity does not equate to recycling. Recycling should be lower in priority in the circular hierarchy as it does not present as a viable solution to many materials, particularly as the recycling industry scales slowly or even loses traction. Instead pillars such as **Refuse**, **Reduce** or **Repair** should take on higher priority first and blending these pillars together to optimize for material lifetime. 
 
 - A bottom-up approach that engages every stakeholder will advance a circular economy at the speed planetary boundaries require. This means that from governmental institutions to average citizens, all must favor and prioritize the circular economy at the core of society. Circular thinking must become engrained at a cultural level for a fully functioning circular economy. This cultural transition may be addressed by legislation and policy but also introduced by industry and education to ensure circular consumption is mass adopted and understood by consumers. 
 
@@ -124,7 +124,7 @@ Together, these innovators demonstrate a truth at the heart of Switzerland’s c
 ### 
 Day 3 – Basel: Where Policy Meets Purpose
 
-The third day took us to** **Basel, a city turning policy into planetary action.
+The third day took us to**** Basel, a city turning policy into planetary action.
 
 ### 
 Netto-Null Basel 2037
