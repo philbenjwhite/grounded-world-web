@@ -55,15 +55,15 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({
           className={cn("group", styles.marquee)}
         >
           {logos.map((logo) => (
-            <div key={logo.alt} className="mx-5 md:mx-8 flex items-center">
+            <div key={logo.alt} className="mx-8 md:mx-12 flex items-center">
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={160}
-                height={60}
+                width={480}
+                height={180}
                 className={cn(
                   styles.logo,
-                  "h-[60px] md:h-[80px] w-auto object-contain opacity-50 transition-opacity duration-300 ease-out group-hover:opacity-30 hover:!opacity-80",
+                  "h-30 md:h-40 w-auto object-contain opacity-50 transition-opacity duration-300 ease-out group-hover:opacity-30 hover:!opacity-80",
                 )}
               />
             </div>
