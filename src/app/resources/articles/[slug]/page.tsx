@@ -386,7 +386,7 @@ export default async function ArticleDetailPage({
               {hasHeadings && (
                 <ArticleTableOfContents headings={headings} variant="mobile" />
               )}
-              <article className="prose prose-invert prose-lg max-w-[65ch] prose-headings:text-[color:var(--font-color-primary)] prose-headings:font-bold prose-p:text-[color:var(--font-color-secondary)] prose-a:text-[color:var(--color-cyan)] prose-strong:text-[color:var(--font-color-primary)] prose-li:text-[color:var(--font-color-secondary)] prose-img:rounded-2xl">
+              <article className="prose prose-invert prose-lg max-w-[65ch] prose-headings:text-[color:var(--font-color-primary)] prose-headings:font-bold prose-headings:scroll-mt-28 prose-p:text-[color:var(--font-color-secondary)] prose-a:text-[color:var(--color-cyan)] prose-strong:text-[color:var(--font-color-primary)] prose-li:text-[color:var(--font-color-secondary)] prose-img:rounded-2xl">
                 <ReactMarkdown components={markdownComponents}>
                   {post.body}
                 </ReactMarkdown>

@@ -69,8 +69,17 @@ function ArticleCard({ article }: { article: ArticleItem }) {
                 CATEGORY_GRADIENTS[article.categorySlug ?? ""] ?? DEFAULT_GRADIENT
               }`}
             />
-            {/* Decorative dot pattern */}
             <div className={`absolute inset-0 opacity-[0.03] ${cardStyles.dotPattern}`} />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                src="/grounded-logo-light.svg"
+                alt=""
+                width={160}
+                height={50}
+                className="opacity-[0.07] select-none"
+                aria-hidden="true"
+              />
+            </div>
           </>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
