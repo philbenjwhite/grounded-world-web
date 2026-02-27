@@ -61,7 +61,7 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
   renderMode = "full",
 }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(
-    defaultActiveIndex ?? 0
+    defaultActiveIndex ?? (renderMode === "accordion-only" ? null : 0)
   );
   const gridRef = useScrollReveal();
   const mobileRef = useScrollReveal();

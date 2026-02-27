@@ -100,7 +100,7 @@
       "_template": "expandingCardPanel",
       "items": [
         {
-          "name": "Research",
+          "name": "Discover",
           "color": "#00AEEF",
           "icon": "MagnifyingGlass",
           "tagline": "Assessing culture and the competitive landscape to find the intention-action gaps.",
@@ -114,7 +114,7 @@
           "imageAlt": "Intention Action Gap"
         },
         {
-          "name": "Strategy",
+          "name": "Articulate",
           "color": "#FFA603",
           "icon": "Compass",
           "tagline": "Connecting the \u2018why\u2019 of purpose to the \u2018way\u2019 of profit to tell your sustainability story and drive innovation.",
@@ -128,7 +128,7 @@
           "imageAlt": "Sustain-Agility"
         },
         {
-          "name": "Activation",
+          "name": "Activate",
           "color": "#FF08CC",
           "icon": "Lightning",
           "tagline": "Driving behavior change and intent at the moments that matter for colleagues, customers and consumers.",
@@ -142,7 +142,7 @@
           "imageAlt": "Brand Activation For Good"
         },
         {
-          "name": "Impact",
+          "name": "Accelerate",
           "color": "#1CC35B",
           "icon": "ChartLineUp",
           "tagline": "Measuring impact, reporting on progress sparking engagement and facilitating collaboration and partnerships at scale.",
