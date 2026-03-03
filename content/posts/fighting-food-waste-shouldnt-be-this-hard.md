@@ -2,8 +2,8 @@
 title: Fighting Food Waste Shouldn’t Be This Hard
 date: 2025-11-18T20:36:57.000Z
 description: "Key Takeaways:"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/ISTH002_email.png'

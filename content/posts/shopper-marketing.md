@@ -2,8 +2,8 @@
 title: "Shopper Marketing: Turn Retail Moments Into Lasting Impact"
 date: 2025-12-22T06:53:31.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: retail-shopper
+author: content/team-members/matt-deasy.json
+category: content/categories/retail-shopper.json
 tags:
   - Matt Deasy
 ---

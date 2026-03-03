@@ -2,8 +2,8 @@
 title: "Making Earth Day Every Day Shouldn’t Be This Hard | Kathleen Rogers"
 date: 2025-12-03T16:54:10.000Z
 description: "Key Takeaways:"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/ISTH008_email-3.png'

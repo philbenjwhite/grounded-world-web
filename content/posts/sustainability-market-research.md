@@ -2,8 +2,8 @@
 title: "Sustainability Market Research: Turn Purpose Into Performance"
 date: 2025-12-22T08:06:43.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: retail-shopper
+author: content/team-members/matt-deasy.json
+category: content/categories/retail-shopper.json
 tags:
   - Matt Deasy
 ---

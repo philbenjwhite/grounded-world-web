@@ -2,7 +2,7 @@
 title: "CSR Strategy: Build Corporate Social Responsibility That Drives Purpose and Profit"
 date: 2025-12-08T07:37:21.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

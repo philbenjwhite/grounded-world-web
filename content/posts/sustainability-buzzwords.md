@@ -2,8 +2,8 @@
 title: Sustainability Buzzwords
 date: 2023-03-01T16:22:58.000Z
 description: "How to Use (or Avoid) Sustainability Buzzwords  Is your new bottle made of 100% recycled plastic? Has your travel company announced a commitment to be carbo..."
-author: andrew-yates
-category: sustainability
+author: content/team-members/andrew-yates.json
+category: content/categories/sustainability.json
 tags:
   - claims
   - greenwashing

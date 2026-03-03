@@ -2,8 +2,8 @@
 title: Articulating Brand Purpose
 date: 2023-01-26T06:32:01.000Z
 description: The Purpose of Brand Positioning vs. Positioning Brand Purpose  ‘Marketers are afflicted by a lack of self-confidence and pride, and one of the main symptom...
-author: phil-white
-category: brand-purpose
+author: content/team-members/phil-white.json
+category: content/categories/brand-purpose.json
 tags:
   - brand purpose
   - Phil White

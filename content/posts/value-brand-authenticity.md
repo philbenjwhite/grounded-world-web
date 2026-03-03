@@ -2,8 +2,8 @@
 title: The Value of Brand Authenticity
 date: 2019-05-07T16:36:39.000Z
 description: Balancing purpose with profit is a challenge that the more linear and profit-driven entities of yesteryear never really had to reconcile. Enterprises today e...
-author: phil-white
-category: brand-purpose
+author: content/team-members/phil-white.json
+category: content/categories/brand-purpose.json
 tags:
   - activating brand purpose
   - balancing purpose and profit

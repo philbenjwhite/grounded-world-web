@@ -2,8 +2,8 @@
 title: "What is Circular Fashion? The Future of Fashion"
 date: 2025-02-19T16:04:01.000Z
 description: As the fashion industry grapples with urgent climate-related concerns, circular fashion emerges as a transformative solution that prioritizes sustainability...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Screen-Shot-2025-02-19-at-12.51.46-PM.png'

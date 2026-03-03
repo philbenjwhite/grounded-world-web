@@ -2,7 +2,7 @@
 title: "Understanding Brand Values: The Foundation of a Successful Business"
 date: 2025-11-22T10:16:39.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

@@ -2,8 +2,8 @@
 title: What Social Justice Means
 date: 2021-08-19T13:09:03.000Z
 description: "What is Social Justice?"
-author: phil-white
-category: brand-activism
+author: content/team-members/phil-white.json
+category: content/categories/brand-activism.json
 tags:
   - brand activism
   - Phil White

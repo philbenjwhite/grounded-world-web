@@ -2,8 +2,8 @@
 title: "Gender Equality: 5 Ways Brands Can Take Action"
 date: 2022-11-29T17:05:06.000Z
 description: October 11th marked the 10th anniversary of International Day of the Girl. It is the United Nations international observance day that builds awareness of the...
-author: phil-white
-category: brand-purpose
+author: content/team-members/phil-white.json
+category: content/categories/brand-purpose.json
 tags:
   - activating brand purpose
   - brand activism

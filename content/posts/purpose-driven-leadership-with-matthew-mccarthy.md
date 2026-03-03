@@ -2,8 +2,8 @@
 title: Purpose-Driven Leadership with Matthew McCarthy
 date: 2023-11-30T08:45:52.000Z
 description: At Grounded, we had the unique privilege of delving into Matthew McCarthy's wealth of wisdom on the essence of Brand Purpose and uncovering the profound nuan...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - all
   - brand purpose

@@ -2,8 +2,8 @@
 title: Building a Customer Engagement Strategy That Activates Your Brand
 date: 2025-12-15T08:42:00.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: strategy
+author: content/team-members/matt-deasy.json
+category: content/categories/strategy.json
 tags:
   - Matt Deasy
 ---

@@ -2,7 +2,7 @@
 title: "Social Impact Campaigns: Turning Audience Energy into Lasting Change"
 date: 2025-12-08T07:48:15.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 featuredImage: '/images/blog/images-surferseo-art-4a001d62-18fc-4e7a-9dfe-4414ba5018bc.jpeg'

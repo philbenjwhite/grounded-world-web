@@ -2,8 +2,8 @@
 title: "Understanding & Activating Brand Purpose in Retail"
 date: 2025-02-26T11:55:24.000Z
 description: A Brand Purpose Agency Guide
-author: phil-white
-category: brand-purpose
+author: content/team-members/phil-white.json
+category: content/categories/brand-purpose.json
 tags:
   - Phil White
 featuredImage: '/images/blog/Activating-Brand-Purpose.jpg'

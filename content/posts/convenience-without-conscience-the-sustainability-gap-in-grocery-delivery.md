@@ -2,8 +2,8 @@
 title: "Convenience Without Conscience? The Sustainability Gap in Grocery Delivery"
 date: 2025-11-19T13:11:50.000Z
 description: "Key Takeaways:"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/sustainability-gap-in-grocery-delivery-services.png'

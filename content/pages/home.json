@@ -1,13 +1,13 @@
 {
-  "title": "Welcome to Grounded World",
+  "title": "Home",
   "slug": "home",
   "sections": [
     {
-      "_template": "videoHero",
       "backgroundVideoUrl": "https://player.vimeo.com/progressive_redirect/playback/1161946524/rendition/720p/file.mp4%20%28720p%29.mp4?loc=external&log_user=0&signature=ff985305bacd44ceec1d96f384a10daa44f54d5055afc72a0b9ec4ab171053ab",
       "vimeoId": "1153662802",
       "heading": "Activating Purpose",
-      "subheading": "Accelerating Impact"
+      "subheading": "Accelerating Impact",
+      "_template": "videoHero"
     },
     {
       "speed": 40,
@@ -88,74 +88,101 @@
       "_template": "logoCarousel"
     },
     {
-      "_template": "introSection",
-      "heading": "Get Grounded",
-      "paragraphs": [
-        "Grounded is a multi-award-winning, B Corp certified brand activation agency \u2014 thriving at the intersection of brand experience, commercial innovation, sustainability and social impact.",
-        "We work with brands, retailers, startups and nonprofits all over the world \u2014 helping them transform purpose into profit, commercialize sustainability and drive behavior change at scale.",
-        "No hushing. No Washing. No tweaking around the edges."
-      ]
-    },
-    {
-      "_template": "expandingCardPanel",
-      "items": [
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "stickyLeft": true,
+      "left": [
         {
-          "name": "Discover",
-          "color": "#00AEEF",
-          "icon": "MagnifyingGlass",
-          "tagline": "Assessing culture and the competitive landscape to find the intention-action gaps.",
-          "bullets": [
-            "Culture, category, competitor and consumer landscape assessments",
-            "Intent-to-action gap research and analysis",
-            "Ecosystem mapping, need states, category growth drivers & go to market strategy"
-          ],
-          "ctaHref": "/services/research",
-          "imageSrc": "/images/services/intention-action-gap.png",
-          "imageAlt": "Intention Action Gap"
-        },
-        {
-          "name": "Articulate",
-          "color": "#FFA603",
-          "icon": "Compass",
-          "tagline": "Connecting the \u2018why\u2019 of purpose to the \u2018way\u2019 of profit to tell your sustainability story and drive innovation.",
-          "bullets": [
-            "Corporate, brand and social purpose articulation",
-            "Sustainability strategy, marketing, corporate narrative, storytelling and innovation sprints",
-            "Brand positioning architecture & archetyping"
-          ],
-          "ctaHref": "/services/strategy",
-          "imageSrc": "/images/services/sustain-agility.png",
-          "imageAlt": "Sustain-Agility"
-        },
-        {
-          "name": "Activate",
-          "color": "#FF08CC",
-          "icon": "Lightning",
-          "tagline": "Driving behavior change and intent at the moments that matter for colleagues, customers and consumers.",
-          "bullets": [
-            "Brand identity, packaging, websites & design",
-            "Content, video, advertising, campaigns, events and experiences",
-            "Commerce (customer journeys, selling stories, brand and retail activation and tactical toolkits)"
-          ],
-          "ctaHref": "/services/activation",
-          "imageSrc": "/images/services/brand-activation-for-good.png",
-          "imageAlt": "Brand Activation For Good"
-        },
-        {
-          "name": "Accelerate",
-          "color": "#1CC35B",
-          "icon": "ChartLineUp",
-          "tagline": "Measuring impact, reporting on progress sparking engagement and facilitating collaboration and partnerships at scale.",
-          "bullets": [
-            "Sustainability & impact reporting",
-            "Commercial, non-profit and pre-competitive partnerships",
-            "Collaboration training, action labs, design sprints, speaking engagements and thought leadership"
-          ],
-          "ctaHref": "/services/impact",
-          "imageSrc": "/images/services/flywheel-of-impact.png",
-          "imageAlt": "Flywheel of Impact"
+          "_template": "richText",
+          "body": {
+            "type": "root",
+            "children": [
+              {
+                "type": "h2",
+                "children": [{ "type": "text", "text": "Get Grounded" }]
+              },
+              {
+                "type": "p",
+                "children": [{ "type": "text", "text": "Grounded is a multi-award-winning, B Corp certified brand activation agency \u2014 thriving at the intersection of brand experience, commercial innovation, sustainability and social impact." }]
+              },
+              {
+                "type": "p",
+                "children": [{ "type": "text", "text": "We work with brands, retailers, startups and nonprofits all over the world \u2014 helping them transform purpose into profit, commercialize sustainability and drive behavior change at scale." }]
+              },
+              {
+                "type": "p",
+                "children": [{ "type": "text", "text": "No hushing. No Washing. No tweaking around the edges." }]
+              }
+            ]
+          }
         }
-      ]
+      ],
+      "right": [
+        {
+          "_template": "expandingCards",
+          "items": [
+            {
+              "name": "Discover",
+              "color": "#00AEEF",
+              "icon": "MagnifyingGlass",
+              "tagline": "Assessing culture and the competitive landscape to find the intention-action gaps.",
+              "bullets": [
+                "Culture, category, competitor and consumer landscape assessments",
+                "Intent-to-action gap research and analysis",
+                "Ecosystem mapping, need states, category growth drivers & go to market strategy"
+              ],
+              "ctaHref": "/services/research",
+              "imageSrc": "/images/services/intention-action-gap.png",
+              "imageAlt": "Intention Action Gap"
+            },
+            {
+              "name": "Articulate",
+              "color": "#FFA603",
+              "icon": "Compass",
+              "tagline": "Connecting the ‘why’ of purpose to the ‘way’ of profit to tell your sustainability story and drive innovation.",
+              "bullets": [
+                "Corporate, brand and social purpose articulation",
+                "Sustainability strategy, marketing, corporate narrative, storytelling and innovation sprints",
+                "Brand positioning architecture & archetyping"
+              ],
+              "ctaHref": "/services/strategy",
+              "imageSrc": "/images/services/sustain-agility.png",
+              "imageAlt": "Sustain-Agility"
+            },
+            {
+              "name": "Activate",
+              "color": "#FF08CC",
+              "icon": "Lightning",
+              "tagline": "Driving behavior change and intent at the moments that matter for colleagues, customers and consumers.",
+              "bullets": [
+                "Brand identity, packaging, websites & design",
+                "Content, video, advertising, campaigns, events and experiences",
+                "Commerce (customer journeys, selling stories, brand and retail activation and tactical toolkits)"
+              ],
+              "ctaHref": "/services/activation",
+              "imageSrc": "/images/services/brand-activation-for-good.png",
+              "imageAlt": "Brand Activation For Good"
+            },
+            {
+              "name": "Accelerate",
+              "color": "#1CC35B",
+              "icon": "ChartLineUp",
+              "tagline": "Measuring impact, reporting on progress sparking engagement and facilitating collaboration and partnerships at scale.",
+              "bullets": [
+                "Sustainability & impact reporting",
+                "Commercial, non-profit and pre-competitive partnerships",
+                "Collaboration training, action labs, design sprints, speaking engagements and thought leadership"
+              ],
+              "ctaHref": "/services/impact",
+              "imageSrc": "/images/services/flywheel-of-impact.png",
+              "imageAlt": "Flywheel of Impact"
+            }
+          ]
+        }
+      ],
+      "_template": "splitLayout"
     },
     {
       "sectionTitle": "Our Work",
@@ -185,12 +212,12 @@
       "_template": "workCarousel"
     },
     {
-      "_template": "newsletterCta",
       "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
       "backgroundAlt": "Stockholm metro station escalators",
       "newsletterHeading": "Stay Grounded",
       "newsletterSubtext": "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.",
-      "overlayOpacity": "heavy"
+      "overlayOpacity": "heavy",
+      "_template": "newsletterCta"
     }
   ]
 }

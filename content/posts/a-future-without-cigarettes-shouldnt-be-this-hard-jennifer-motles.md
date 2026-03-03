@@ -2,8 +2,8 @@
 title: "A Future Without Cigarettes Shouldn’t Be This Hard | Jennifer Motles"
 date: 2025-11-25T15:36:29.000Z
 description: "Key Takeaways:"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/ISTH007_email.png'

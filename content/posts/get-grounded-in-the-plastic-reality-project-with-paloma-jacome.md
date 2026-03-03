@@ -2,8 +2,8 @@
 title: Get Grounded in the Plastic Reality Project with Paloma Jacome
 date: 2024-10-30T14:38:20.000Z
 description: "When I was asked, “hey Paloma, want to go to India?” I knew it would be a life-changing experience. The plastic waste crisis crosses my mind daily and greatl..."
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Walking-Through-Waste-scaled.jpg'

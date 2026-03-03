@@ -115,6 +115,85 @@ const iconOptions = [
   { value: "ChatCircleDots", label: "Chat Bubble" },
 ];
 
+const innerExpandingCardsTemplate = {
+  name: "expandingCards" as const,
+  label: "Expanding Cards",
+  fields: [
+    {
+      type: "number" as const,
+      name: "defaultActiveIndex",
+      label: "Default Expanded Card",
+      description: "Index of the card expanded on page load (0-based)",
+    },
+    {
+      type: "object" as const,
+      name: "items",
+      label: "Card Items",
+      list: true,
+      ui: {
+        itemProps: (item: Record<string, string>) => ({
+          label: item?.name || "New Item",
+        }),
+      },
+      fields: [
+        {
+          type: "string" as const,
+          name: "name",
+          label: "Name",
+          required: true,
+        },
+        {
+          type: "string" as const,
+          name: "color",
+          label: "Color",
+          required: true,
+          ui: { component: "color" as const },
+        },
+        {
+          type: "string" as const,
+          name: "icon",
+          label: "Icon",
+          options: iconOptions,
+        },
+        {
+          type: "string" as const,
+          name: "tagline",
+          label: "Tagline",
+          required: true,
+        },
+        {
+          type: "string" as const,
+          name: "bullets",
+          label: "Bullet Points",
+          list: true,
+        },
+        {
+          type: "string" as const,
+          name: "ctaHref",
+          label: "CTA Link",
+          required: true,
+        },
+        {
+          type: "string" as const,
+          name: "ctaLabel",
+          label: "CTA Text",
+          description: "Default: 'Find Out More'",
+        },
+        {
+          type: "image" as const,
+          name: "imageSrc",
+          label: "Image",
+        },
+        {
+          type: "string" as const,
+          name: "imageAlt",
+          label: "Image Alt Text",
+        },
+      ],
+    },
+  ],
+};
+
 export default defineConfig({
   // Use local content API when running locally
   contentApiUrlOverride: isLocal ? "/api/tina/gql" : undefined,
@@ -208,11 +287,14 @@ export default defineConfig({
         ],
       },
       {
-        name: "author",
-        label: "Authors",
-        path: "content/authors",
+        name: "teamMember",
+        label: "Team Members",
+        path: "content/team-members",
         format: "json",
         ui: {
+          router: ({ document }) => {
+            return `/about-us/${document._sys.filename}`;
+          },
           filename: {
             readonly: false,
             slugify: (values) => {
@@ -239,21 +321,39 @@ export default defineConfig({
           },
           {
             type: "string",
-            name: "bio",
-            label: "Bio",
-            required: true,
+            name: "shortBio",
+            label: "Short Bio",
+            description: "Brief bio shown in article sidebars (1-2 sentences)",
             ui: { component: "textarea" },
+          },
+          {
+            type: "rich-text",
+            name: "bio",
+            label: "Full Bio",
+            description: "Full biography shown on the team member profile page",
           },
           {
             type: "image",
             name: "photoUrl",
             label: "Photo",
-            description: "Headshot image for author bio sections",
+            description: "Headshot image for team member and author bio sections",
           },
           {
             type: "string",
             name: "linkedinUrl",
             label: "LinkedIn URL",
+          },
+          {
+            type: "number",
+            name: "displayOrder",
+            label: "Display Order",
+            description: "Order in team listings (lower numbers appear first)",
+          },
+          {
+            type: "boolean",
+            name: "active",
+            label: "Active",
+            description: "Show this team member on the site",
           },
         ],
       },
@@ -509,15 +609,10 @@ export default defineConfig({
             description: "Main image displayed in post listings and social sharing",
           },
           {
-            type: "string",
+            type: "reference",
             name: "author",
             label: "Author",
-            options: [
-              { value: "phil-white", label: "Phil White" },
-              { value: "matt-deasy", label: "Matt Deasy" },
-              { value: "paloma-jacome", label: "Paloma Jacome" },
-              { value: "andrew-yates", label: "Andrew Yates" },
-            ],
+            collections: ["teamMember"],
           },
           {
             type: "reference",
@@ -545,6 +640,170 @@ export default defineConfig({
             name: "body",
             label: "Body",
             isBody: true,
+            templates: [
+              {
+                name: "ctaBanner",
+                label: "CTA Banner",
+                fields: [
+                  {
+                    type: "image" as const,
+                    name: "backgroundSrc",
+                    label: "Background Image",
+                    required: true,
+                  },
+                  {
+                    type: "string" as const,
+                    name: "heading",
+                    label: "Heading",
+                    required: true,
+                  },
+                  {
+                    type: "string" as const,
+                    name: "subtext",
+                    label: "Subtext",
+                  },
+                  {
+                    type: "string" as const,
+                    name: "primaryLabel",
+                    label: "Button Label",
+                    required: true,
+                  },
+                  {
+                    type: "string" as const,
+                    name: "primaryHref",
+                    label: "Button Link",
+                    required: true,
+                  },
+                  {
+                    type: "boolean" as const,
+                    name: "primaryExternal",
+                    label: "Open in New Tab",
+                  },
+                  {
+                    type: "string" as const,
+                    name: "overlayOpacity",
+                    label: "Overlay Opacity",
+                    options: ["light", "medium", "heavy"],
+                  },
+                ],
+              },
+              {
+                name: "splitLayout",
+                label: "Split Layout",
+                fields: [
+                  {
+                    type: "image" as const,
+                    name: "imageSrc",
+                    label: "Image",
+                    required: true,
+                  },
+                  {
+                    type: "string" as const,
+                    name: "imageAlt",
+                    label: "Image Alt Text",
+                  },
+                  {
+                    type: "rich-text" as const,
+                    name: "content",
+                    label: "Content",
+                  },
+                  {
+                    type: "string" as const,
+                    name: "imagePosition",
+                    label: "Image Position",
+                    options: [
+                      { value: "left", label: "Left" },
+                      { value: "right", label: "Right" },
+                    ],
+                  },
+                  {
+                    type: "string" as const,
+                    name: "ratio",
+                    label: "Column Ratio",
+                    options: [
+                      { value: "50/50", label: "50 / 50" },
+                      { value: "40/60", label: "40 / 60" },
+                      { value: "60/40", label: "60 / 40" },
+                    ],
+                  },
+                ],
+              },
+              {
+                name: "imageGallery",
+                label: "Image Gallery",
+                fields: [
+                  {
+                    type: "string" as const,
+                    name: "layout",
+                    label: "Layout",
+                    options: [
+                      { value: "grid-2", label: "2 Columns" },
+                      { value: "grid-3", label: "3 Columns" },
+                    ],
+                  },
+                  {
+                    type: "object" as const,
+                    name: "images",
+                    label: "Images",
+                    list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.alt || item?.caption || "Image",
+                      }),
+                    },
+                    fields: [
+                      {
+                        type: "image" as const,
+                        name: "src",
+                        label: "Image",
+                        required: true,
+                      },
+                      {
+                        type: "string" as const,
+                        name: "alt",
+                        label: "Alt Text",
+                      },
+                      {
+                        type: "string" as const,
+                        name: "caption",
+                        label: "Caption",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                name: "pullQuote",
+                label: "Pull Quote",
+                fields: [
+                  {
+                    type: "string" as const,
+                    name: "quote",
+                    label: "Quote Text",
+                    required: true,
+                    ui: {
+                      component: "textarea",
+                    },
+                  },
+                  {
+                    type: "string" as const,
+                    name: "attribution",
+                    label: "Attribution",
+                    description: "Who said this (optional)",
+                  },
+                  {
+                    type: "string" as const,
+                    name: "style",
+                    label: "Style",
+                    options: [
+                      { value: "default", label: "Default" },
+                      { value: "highlight", label: "Highlight" },
+                      { value: "bordered", label: "Bordered" },
+                    ],
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
@@ -1278,18 +1537,24 @@ export default defineConfig({
                     label: "Reverse on Mobile",
                   },
                   {
+                    type: "boolean",
+                    name: "stickyLeft",
+                    label: "Sticky Left Column",
+                    description: "Make the left column sticky on desktop scroll",
+                  },
+                  {
                     type: "object",
                     name: "left",
                     label: "Left Column",
                     list: true,
-                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate],
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate],
                   },
                   {
                     type: "object",
                     name: "right",
                     label: "Right Column",
                     list: true,
-                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate],
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate],
                   },
                 ],
               },

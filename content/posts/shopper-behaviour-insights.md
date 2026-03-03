@@ -2,8 +2,8 @@
 title: "Shopper Behaviour Insights: How the Path to Purchase Transforms Brand Strategy"
 date: 2026-01-05T07:43:43.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: retail-shopper
+author: content/team-members/matt-deasy.json
+category: content/categories/retail-shopper.json
 tags:
   - Matt Deasy
 ---

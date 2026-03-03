@@ -2,8 +2,8 @@
 title: "Brand Marketing Campaigns: Building Impact Through Strategic Creativity"
 date: 2025-11-27T12:13:17.000Z
 description: Brand marketing campaigns focus on building long-term brand identity and emotional connection rather than solely driving immediate sales, creating cultural r...
-author: matt-deasy
-category: brand-purpose
+author: content/team-members/matt-deasy.json
+category: content/categories/brand-purpose.json
 tags:
   - Matt Deasy
 ---

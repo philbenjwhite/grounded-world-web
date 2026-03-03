@@ -2,7 +2,7 @@
 title: "Ethical Sourcing: How To Build Integrity into Supply Chains"
 date: 2025-12-03T23:51:54.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

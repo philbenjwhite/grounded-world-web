@@ -2,8 +2,8 @@
 title: "Composting Day: When Circularity Improves Mental Health"
 date: 2024-05-28T12:31:29.000Z
 description: "Learn About Composting Day: Composting as a Radical Act of Mental Health Through Circularity  It’s May 29th– which means it’s “Learn About Composting Day”,..."
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Screen-Shot-2024-05-28-at-11.13.58-AM.png'

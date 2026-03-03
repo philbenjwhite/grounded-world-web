@@ -2,8 +2,8 @@
 title: "When Mental Health Awareness Meets Marketing… We get a Moment or a Movement?"
 date: 2025-05-22T18:38:42.000Z
 description: "When Mental Health Awareness Meets Marketing... We get a Moment or a Movement?"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: 'https://media.licdn.com/dms/image/v2/D5612AQGq4nqndivtjw/article-inline_image-shrink_1500_2232/B56ZbVgC2GH0AY-/0/1747338673264?e=1753315200&amp;v=beta&amp;t=K9GW8ZO7TOYPgAG22drvpAvnzQt1wiw8i21GeagvHRs'

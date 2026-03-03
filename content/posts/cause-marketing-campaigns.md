@@ -2,8 +2,8 @@
 title: "Cause Marketing Campaigns: Strategic Frameworks That Unite Purpose With Performance"
 date: 2026-01-05T09:59:25.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: partnerships
+author: content/team-members/matt-deasy.json
+category: content/categories/partnerships.json
 tags:
   - Matt Deasy
 ---

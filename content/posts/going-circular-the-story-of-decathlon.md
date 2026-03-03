@@ -2,8 +2,8 @@
 title: "Going Circular: The Story of Decathlon"
 date: 2023-10-24T20:51:17.000Z
 description: The shift to a circular economy is a big deal in France - like pretty much everywhere else. People are realizing that the old way of doing things, where we t...
-author: phil-white
-category: brand-purpose
+author: content/team-members/phil-white.json
+category: content/categories/brand-purpose.json
 featuredImage: '/images/blog/Decathlon-Exterior-696x523-1.jpeg'
 ---
 

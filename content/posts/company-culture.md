@@ -2,8 +2,8 @@
 title: "Company Culture: Building Workplace Environments That Drive Impact and Performance"
 date: 2025-11-27T12:00:13.000Z
 description: Company culture represents the shared values, behaviors, and practices that define how work gets done—serving as the foundation for employee engagement, inno...
-author: matt-deasy
-category: brand-purpose
+author: content/team-members/matt-deasy.json
+category: content/categories/brand-purpose.json
 tags:
   - Matt Deasy
 ---

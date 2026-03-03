@@ -2,83 +2,33 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { promises as fsPromises } from "fs";
 import path from "path";
-import Image from "next/image";
-import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import Section from "@/components/layout/Section";
-import Container from "@/components/layout/Container";
-import Heading from "@/components/atoms/Heading";
-import Text from "@/components/atoms/Text";
-import CTABanner from "@/components/components/CTABanner";
-import ScrollProgressBar from "@/components/components/ScrollProgressBar";
-import ArticleTableOfContents from "@/components/components/ArticleTableOfContents";
-import AuthorBio from "@/components/components/AuthorBio";
-import RelatedArticles from "@/components/components/RelatedArticles";
+import serverClient from "../../../../../tina/server-client";
+import ArticleDetailClientPage from "./client-page";
 import type { RelatedArticleItem } from "@/components/components/RelatedArticles/RelatedArticles";
-import { getAuthor } from "@/lib/authors";
+import type { AuthorData } from "@/lib/authors";
 import { calculateReadingTime } from "@/lib/reading-time";
-import { extractHeadings, extractText, slugify } from "@/lib/extract-headings";
+import { extractHeadingsFromTinaContent } from "@/lib/extract-headings";
 
 interface PageParams {
   slug: string;
 }
 
-interface PostData {
-  title: string;
-  date: string;
-  description?: string;
-  featuredImage?: string;
-  author?: string;
-  category?: string;
-  body: string;
+/** Recursively extract plain text from TinaCMS rich-text JSON AST */
+function extractPlainText(node: { type?: string; text?: string; children?: unknown[] }): string {
+  if (node.text) return node.text;
+  if (!node.children) return "";
+  return (node.children as { type?: string; text?: string; children?: unknown[] }[])
+    .map(extractPlainText)
+    .join("");
 }
 
-/**
- * Read a post directly from the filesystem.
- * This bypasses TinaCMS GraphQL which can fail on category reference resolution.
- */
-async function getPost(slug: string): Promise<PostData | null> {
-  try {
-    const filePath = path.join(
-      process.cwd(),
-      "content",
-      "posts",
-      `${slug}.md`
-    );
-    const raw = await fsPromises.readFile(filePath, "utf-8");
-
-    // Parse frontmatter
-    const fmEnd = raw.indexOf("---", 3);
-    if (fmEnd === -1) return null;
-    const frontmatter = raw.slice(3, fmEnd).trim();
-    const body = raw.slice(fmEnd + 3).trim();
-
-    const get = (key: string): string | undefined => {
-      const match = frontmatter.match(
-        new RegExp(`^${key}:\\s*['"]?(.+?)['"]?\\s*$`, "m")
-      );
-      return match?.[1] ?? undefined;
-    };
-
-    // Handle quoted titles (may span special chars)
-    const titleMatch = frontmatter.match(
-      /^title:\s*(?:"([^"]+)"|'([^']+)'|(.+))$/m
-    );
-    const title =
-      titleMatch?.[1] ?? titleMatch?.[2] ?? titleMatch?.[3] ?? slug;
-
-    return {
-      title,
-      date: get("date") ?? "",
-      description: get("description"),
-      featuredImage: get("featuredImage"),
-      author: get("author"),
-      category: get("category"),
-      body,
-    };
-  } catch {
-    return null;
-  }
+function bodyToPlainText(body: unknown): string {
+  if (!body) return "";
+  const node = body as { children?: unknown[] };
+  if (!node.children) return "";
+  return (node.children as { type?: string; text?: string; children?: unknown[] }[])
+    .map(extractPlainText)
+    .join(" ");
 }
 
 type PostSummary = RelatedArticleItem & { category?: string };
@@ -118,13 +68,19 @@ async function loadAllPostSummaries(): Promise<PostSummary[]> {
           /^title:\s*(?:"([^"]+)"|'([^']+)'|(.+))$/m
         );
 
+        // Category may be a TinaCMS reference path — normalize to slug
+        const categoryRaw = get("category");
+        const categorySlug = categoryRaw
+          ?.replace(/^content\/categories\//, "")
+          .replace(/\.json$/, "");
+
         posts.push({
           slug: file.replace(/\.md$/, ""),
           title:
             titleMatch?.[1] ?? titleMatch?.[2] ?? titleMatch?.[3] ?? file,
           date: get("date") ?? "",
           featuredImage: get("featuredImage"),
-          category: get("category"),
+          category: categorySlug,
         });
       } catch {
         continue;
@@ -140,9 +96,14 @@ async function loadAllPostSummaries(): Promise<PostSummary[]> {
 /** Get related articles: same category (excluding current), fallback to recent */
 async function getRelatedArticles(
   currentSlug: string,
-  category?: string
+  categoryPath?: string
 ): Promise<RelatedArticleItem[]> {
   const allPosts = await getAllPostSummaries();
+
+  // Extract category slug from reference path (e.g. "content/categories/brand-purpose.json" → "brand-purpose")
+  const categorySlug = categoryPath
+    ?.replace(/^content\/categories\//, "")
+    .replace(/\.json$/, "");
 
   // Exclude current article and sort by date (newest first)
   const others = allPosts
@@ -154,12 +115,15 @@ async function getRelatedArticles(
   );
 
   // Try same category first
-  if (category) {
-    const sameCategory = others.filter((p) => p.category === category);
+  if (categorySlug) {
+    const sameCategory = others.filter(
+      (p) => p.category === categorySlug
+    );
     if (sameCategory.length >= 3) return sameCategory.slice(0, 3);
     if (sameCategory.length > 0) {
-      // Fill remaining with recent articles from other categories
-      const remaining = others.filter((p) => p.category !== category);
+      const remaining = others.filter(
+        (p) => p.category !== categorySlug
+      );
       return [...sameCategory, ...remaining].slice(0, 3);
     }
   }
@@ -170,11 +134,14 @@ async function getRelatedArticles(
 
 export async function generateStaticParams() {
   try {
-    const dir = path.join(process.cwd(), "content", "posts");
-    const files = await fsPromises.readdir(dir);
-    return files
-      .filter((f) => f.endsWith(".md"))
-      .map((f) => ({ slug: f.replace(/\.md$/, "") }));
+    const response = await serverClient.queries.postConnection();
+    return (
+      response.data.postConnection.edges
+        ?.map((edge) => ({
+          slug: edge?.node?._sys.filename,
+        }))
+        .filter((p) => p.slug) ?? []
+    );
   } catch {
     return [];
   }
@@ -186,52 +153,38 @@ export async function generateMetadata({
   params: Promise<PageParams>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPost(slug);
-  if (!post) return {};
 
-  const readingTime = calculateReadingTime(post.body);
+  try {
+    const response = await serverClient.queries.post({
+      relativePath: `${slug}.md`,
+    });
+    const post = response.data.post;
+    const plainText = bodyToPlainText(post.body);
+    const readingTime = calculateReadingTime(plainText);
 
-  return {
-    title: `${post.title} | Grounded World`,
-    description: post.description ?? undefined,
-    openGraph: {
-      title: post.title,
+    return {
+      title: `${post.title} | Grounded World`,
       description: post.description ?? undefined,
-      type: "article",
-      publishedTime: post.date || undefined,
-      authors: post.author
-        ? [getAuthor(post.author)?.name ?? post.author]
-        : undefined,
-      images: post.featuredImage ? [post.featuredImage] : undefined,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.description ?? `${readingTime} min read`,
-    },
-  };
+      openGraph: {
+        title: post.title,
+        description: post.description ?? undefined,
+        type: "article",
+        publishedTime: post.date || undefined,
+        authors: post.author?.name
+          ? [post.author.name]
+          : undefined,
+        images: post.featuredImage ? [post.featuredImage] : undefined,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.description ?? `${readingTime} min read`,
+      },
+    };
+  } catch {
+    return {};
+  }
 }
-
-/* Custom heading renderers that add id attributes for TOC anchor links */
-function createHeadingRenderer(level: number) {
-  const HeadingRenderer = ({
-    children,
-  }: {
-    children?: React.ReactNode;
-  }) => {
-    const text = extractText(children);
-    const id = slugify(text);
-    const Tag = `h${level}` as keyof React.JSX.IntrinsicElements;
-    return <Tag id={id}>{children}</Tag>;
-  };
-  HeadingRenderer.displayName = `H${level}Renderer`;
-  return HeadingRenderer;
-}
-
-const markdownComponents = {
-  h2: createHeadingRenderer(2),
-  h3: createHeadingRenderer(3),
-};
 
 export default async function ArticleDetailPage({
   params,
@@ -239,25 +192,37 @@ export default async function ArticleDetailPage({
   params: Promise<PageParams>;
 }) {
   const { slug } = await params;
-  const post = await getPost(slug);
-  if (!post) notFound();
 
-  const authorData = post.author ? getAuthor(post.author) : undefined;
-  const authorName = authorData?.name ?? post.author;
-  const readingTime = calculateReadingTime(post.body);
-  const headings = extractHeadings(post.body);
-  const relatedArticles = await getRelatedArticles(slug, post.category);
-  const hasHeadings = headings.length > 0;
+  let result;
+  try {
+    result = await serverClient.queries.post({
+      relativePath: `${slug}.md`,
+    });
+  } catch {
+    notFound();
+  }
 
-  const formattedDate = post.date
-    ? new Date(post.date).toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      })
+  const post = result.data.post;
+  const authorData: AuthorData | undefined = post.author
+    ? {
+        slug: post.author._sys.filename,
+        name: post.author.name,
+        role: post.author.role ?? "",
+        bio: post.author.shortBio ?? "",
+        photoUrl: post.author.photoUrl ?? "",
+        linkedinUrl: post.author.linkedinUrl ?? undefined,
+      }
     : undefined;
+  const plainText = bodyToPlainText(post.body);
+  const readingTime = calculateReadingTime(plainText);
+  const headings = extractHeadingsFromTinaContent(post.body);
+
+  // Category slug for related articles matching
+  const categoryRef = post.category?._sys?.relativePath;
+  const relatedArticles = await getRelatedArticles(slug, categoryRef);
 
   // JSON-LD structured data
+  const wordCount = plainText.trim().split(/\s+/).length;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -284,154 +249,21 @@ export default async function ArticleDetailPage({
       "@type": "WebPage",
       "@id": `https://grounded.world/resources/articles/${slug}`,
     },
-    wordCount: post.body.trim().split(/\s+/).length,
+    wordCount,
     timeRequired: `PT${readingTime}M`,
   };
 
   return (
-    <>
-      <ScrollProgressBar />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      {/* Hero area — contained with rounded corners, matching HeroBanner pattern */}
-      {post.featuredImage && (
-        <div className="relative w-full p-4 md:p-6 xl:p-8">
-          <div className="relative overflow-hidden rounded-3xl h-[40vh] min-h-[320px] max-h-[480px]">
-            <Image
-              src={post.featuredImage}
-              alt={post.title}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 768px) 100vw, 1280px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-          </div>
-        </div>
-      )}
-
-      {/* Article content */}
-      <Section>
-        <Container className="px-[var(--layout-section-padding-x)] max-w-[1200px]">
-          {/* Breadcrumb */}
-          <nav className="mb-8">
-            <Link
-              href="/resources/articles"
-              className="text-sm text-[color:var(--font-color-tertiary)] hover:text-[color:var(--color-cyan)] transition-colors"
-            >
-              &larr; Back to Articles
-            </Link>
-          </nav>
-
-          {/* Header */}
-          <header className="mb-12 max-w-[800px]">
-            <Heading level={1} size="h1" color="primary" className="mb-6">
-              {post.title}
-            </Heading>
-
-            <div className="flex flex-wrap items-center gap-3">
-              {formattedDate && (
-                <Text size="body-sm" color="tertiary">
-                  {formattedDate}
-                </Text>
-              )}
-              {formattedDate && authorName && (
-                <span className="text-[color:var(--font-color-tertiary)]">
-                  &middot;
-                </span>
-              )}
-              {authorName && (
-                <Text size="body-sm" color="tertiary">
-                  {authorName}
-                </Text>
-              )}
-              {(formattedDate || authorName) && (
-                <span className="text-[color:var(--font-color-tertiary)]">
-                  &middot;
-                </span>
-              )}
-              <Text size="body-sm" color="tertiary">
-                {readingTime} min read
-              </Text>
-            </div>
-
-            {post.description && (
-              <Text
-                size="body-lg"
-                color="secondary"
-                className="mt-6 leading-relaxed"
-              >
-                {post.description}
-              </Text>
-            )}
-          </header>
-
-          {/* Three-column layout: TOC | Content | Author sidebar */}
-          {/* No items-start — columns stretch to full row height so sticky works */}
-          <div className="xl:grid xl:grid-cols-[200px_1fr_260px] xl:gap-8 lg:grid lg:grid-cols-[200px_1fr] lg:gap-10">
-            {/* Left: TOC sidebar (desktop only) */}
-            {hasHeadings ? (
-              <ArticleTableOfContents headings={headings} variant="sidebar" />
-            ) : (
-              <div className="hidden lg:block" />
-            )}
-
-            {/* Center: Article body */}
-            <div>
-              {/* Mobile: sticky TOC inside article container so it has height to stick against */}
-              {hasHeadings && (
-                <ArticleTableOfContents headings={headings} variant="mobile" />
-              )}
-              <article className="prose prose-invert prose-lg max-w-[65ch] prose-headings:text-[color:var(--font-color-primary)] prose-headings:font-bold prose-headings:scroll-mt-28 prose-p:text-[color:var(--font-color-secondary)] prose-a:text-[color:var(--color-cyan)] prose-strong:text-[color:var(--font-color-primary)] prose-li:text-[color:var(--font-color-secondary)] prose-img:rounded-2xl">
-                <ReactMarkdown components={markdownComponents}>
-                  {post.body}
-                </ReactMarkdown>
-              </article>
-            </div>
-
-            {/* Right: Author bio sidebar (sticky on xl, below article on smaller) */}
-            {authorData && (
-              <aside className="mt-12 xl:mt-0">
-                <div className="xl:sticky xl:top-24">
-                  <AuthorBio author={authorData} />
-                </div>
-              </aside>
-            )}
-          </div>
-
-          {/* Author bio for non-xl screens (when no sidebar) — shown below article */}
-          {authorData && (
-            <div className="xl:hidden mt-12 pt-8 border-t border-white/[0.08]">
-              <div className="max-w-[65ch]">
-                <AuthorBio author={authorData} />
-              </div>
-            </div>
-          )}
-        </Container>
-      </Section>
-
-      {/* Related articles */}
-      {relatedArticles.length > 0 && (
-        <Section>
-          <Container className="px-[var(--layout-section-padding-x)]">
-            <RelatedArticles articles={relatedArticles} />
-          </Container>
-        </Section>
-      )}
-
-      {/* CTA */}
-      <CTABanner
-        backgroundSrc="/images/services/banner-bg.jpg"
-        heading="It's time to get grounded"
-        subtext="Ready to activate your brand purpose and accelerate your impact? Let's talk."
-        primaryLabel="Contact Us"
-        primaryHref="/contact"
-        overlayOpacity="heavy"
-      />
-    </>
+    <ArticleDetailClientPage
+      query={result.query}
+      variables={result.variables as { relativePath: string }}
+      data={result.data}
+      headings={headings}
+      authorData={authorData}
+      readingTime={readingTime}
+      relatedArticles={relatedArticles}
+      slug={slug}
+      jsonLd={jsonLd}
+    />
   );
 }

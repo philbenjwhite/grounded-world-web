@@ -13,6 +13,7 @@ export interface RelatedArticleItem {
 
 interface RelatedArticlesProps {
   articles: RelatedArticleItem[];
+  heading?: string;
 }
 
 function formatDate(dateStr: string): string {
@@ -27,13 +28,13 @@ function formatDate(dateStr: string): string {
   }
 }
 
-export default function RelatedArticles({ articles }: RelatedArticlesProps) {
+export default function RelatedArticles({ articles, heading = "Related Articles" }: RelatedArticlesProps) {
   if (articles.length === 0) return null;
 
   return (
     <div>
       <Heading level={2} size="h3" color="primary" className="mb-8">
-        Related Articles
+        {heading}
       </Heading>
 
       <Grid cols={3} colsTablet={2} colsMobile={1} gap="lg">

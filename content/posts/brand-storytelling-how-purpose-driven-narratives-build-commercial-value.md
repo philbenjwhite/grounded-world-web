@@ -2,7 +2,7 @@
 title: "Brand Storytelling: How Purpose-Driven Narratives Build Commercial Value"
 date: 2025-12-06T11:37:57.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

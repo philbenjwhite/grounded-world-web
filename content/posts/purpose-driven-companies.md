@@ -2,8 +2,8 @@
 title: "PURPOSE DRIVEN COMPANIES: How Clear Purpose Fuels Growth"
 date: 2025-11-30T06:28:21.000Z
 description: Key Takeaways
-author: matt-deasy
-category: brand-purpose
+author: content/team-members/matt-deasy.json
+category: content/categories/brand-purpose.json
 tags:
   - Matt Deasy
 ---

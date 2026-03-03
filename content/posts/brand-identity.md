@@ -2,8 +2,8 @@
 title: "Brand Identity: How a Clearly Defined Brand Identity Builds Trust"
 date: 2025-12-01T10:30:07.000Z
 description: Key Takeaways
-author: matt-deasy
-category: brand-purpose
+author: content/team-members/matt-deasy.json
+category: content/categories/brand-purpose.json
 tags:
   - Matt Deasy
 ---

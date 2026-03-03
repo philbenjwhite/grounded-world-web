@@ -2,8 +2,8 @@
 title: "Integrated Marketing Strategy: The Key to Brand Activation"
 date: 2025-12-16T04:15:49.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: strategy
+author: content/team-members/matt-deasy.json
+category: content/categories/strategy.json
 tags:
   - Matt Deasy
 featuredImage: '/images/blog/Integrated-Marketing-Strategy-scaled.jpg'

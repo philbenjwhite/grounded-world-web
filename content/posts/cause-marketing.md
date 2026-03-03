@@ -2,7 +2,7 @@
 title: "Cause Marketing: Building Brand Value Through Purpose-Driven Partnerships"
 date: 2025-12-06T11:27:19.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

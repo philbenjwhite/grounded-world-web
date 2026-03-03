@@ -2,7 +2,7 @@
 title: "Sustainability Initiatives: A Strategic Guide to Building Authentic Environmental Impact"
 date: 2025-12-03T08:07:24.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

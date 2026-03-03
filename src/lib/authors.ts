@@ -10,8 +10,8 @@ export interface AuthorData {
   linkedinUrl?: string;
 }
 
-/** Directory where TinaCMS author JSON files live */
-const AUTHORS_DIR = path.join(process.cwd(), "content", "authors");
+/** Directory where TinaCMS team member JSON files live */
+const AUTHORS_DIR = path.join(process.cwd(), "content", "team-members");
 
 /** Module-level cache so we only read from disk once per build/request */
 let cachedAuthors: Record<string, AuthorData> | null = null;
@@ -36,7 +36,7 @@ function loadAuthors(): Record<string, AuthorData> {
           slug,
           name: data.name ?? slug,
           role: data.role ?? "",
-          bio: data.bio ?? "",
+          bio: data.shortBio ?? data.bio ?? "",
           photoUrl: data.photoUrl ?? "",
           linkedinUrl: data.linkedinUrl ?? undefined,
         };
@@ -52,10 +52,18 @@ function loadAuthors(): Record<string, AuthorData> {
   return authors;
 }
 
+/** Normalize a TinaCMS reference path or plain slug to just the slug */
+function normalizeSlug(input: string): string {
+  return input
+    .replace(/^content\/team-members\//, "")
+    .replace(/\.json$/, "");
+}
+
 export function getAuthor(slug: string): AuthorData | undefined {
-  return loadAuthors()[slug];
+  return loadAuthors()[normalizeSlug(slug)];
 }
 
 export function getAuthorName(slug: string): string {
-  return loadAuthors()[slug]?.name ?? slug;
+  const normalized = normalizeSlug(slug);
+  return loadAuthors()[normalized]?.name ?? normalized;
 }

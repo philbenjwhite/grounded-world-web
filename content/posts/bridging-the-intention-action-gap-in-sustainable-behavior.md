@@ -2,8 +2,8 @@
 title: "Bridging the Intention-Action Gap in Sustainable Behavior: Insights from Global Consumer Research"
 date: 2023-12-01T13:25:36.000Z
 description: Full info
-author: phil-white
-category: brand-purpose
+author: content/team-members/phil-white.json
+category: content/categories/brand-purpose.json
 tags:
   - intention-action gap
 featuredImage: '/images/blog/Bridging-The-Intention-Action-Gap.jpeg'

@@ -2,8 +2,8 @@
 title: "Cause Related Marketing: How Purpose-Driven Partnerships Create Shared Value"
 date: 2026-01-05T09:12:37.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: partnerships
+author: content/team-members/matt-deasy.json
+category: content/categories/partnerships.json
 tags:
   - Matt Deasy
 ---

@@ -2,8 +2,8 @@
 title: "Sustainable Holiday Tips: Cut Waste This Festive Season"
 date: 2024-11-25T12:18:59.000Z
 description: Let’s start here to imagine the scope of the materials used during the holidays. According to Stanford University, if every American family wrapped just 3 pr...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/holiday-trash-ghows-OH-34bc162c-9332-4880-bf70-30e849900a6a-c48814fc.webp'

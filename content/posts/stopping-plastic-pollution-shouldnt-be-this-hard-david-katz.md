@@ -2,8 +2,8 @@
 title: "Stopping Plastic Pollution Shouldn't Be This Hard | David Katz"
 date: 2025-11-18T21:09:12.000Z
 description: "Key Takeaways:****"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/ISTH003_email.png'

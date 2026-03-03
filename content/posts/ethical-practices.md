@@ -2,7 +2,7 @@
 title: "Ethical Practices: Build Trust Through Leadership & Action"
 date: 2025-12-04T00:04:20.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

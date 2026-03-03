@@ -2,8 +2,8 @@
 title: "Intention-Action Gap: Earth Month Intentions Aren’t Enough"
 date: 2025-04-22T11:55:45.000Z
 description: Earth Month (commonly known as “April”) is often celebrated with sustainability pledges and green campaigns from both consumers and brands. More often than n...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Intention-Action-Gap-Earth-Month-scaled-e1745340783127.jpg'

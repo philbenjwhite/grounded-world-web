@@ -1,7 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(git checkout -b fix/clean-up-bold-markdown-in-posts)",
+      "Bash(git checkout main)",
+      "Bash(git checkout -b update/home-page-feedback)",
+      "Bash(nvm use)",
+      "Bash(npx eslint src/app/client-page.tsx src/lib/tina-renderers.tsx)",
+      "Bash(for slug in brand-purpose strategy retail-shopper partnerships brand-activism sustainability social-impact)",
+      "Bash(do echo -n \"$slug -> \")",
+      "Bash(test -f \"/Users/mark/www/active/work/grounded-world-web/content/categories/$slug.json\")",
+      "Bash(TINA_PUBLIC_IS_LOCAL=true npm run dev)",
+      "Bash(export PATH=\"$HOME/.nvm/versions/node/v22.17.1/bin:$PATH\")"
+    ],
+    "additionalDirectories": [
+      "/Users/mark/www/active/work/grounded-world-web/content/authors"
     ]
   }
 }

@@ -2,7 +2,7 @@
 title: "Impact Measurement: The Brand Purpose Agency’s Guide to Proving What Matters"
 date: 2025-12-06T11:50:28.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

@@ -2,8 +2,8 @@
 title: "Retail Marketing Campaigns: How Purpose-Driven Brands Win in Physical and Digital Spaces"
 date: 2026-01-05T07:22:02.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: retail-shopper
+author: content/team-members/matt-deasy.json
+category: content/categories/retail-shopper.json
 tags:
   - Matt Deasy
 ---

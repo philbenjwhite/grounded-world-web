@@ -2,8 +2,8 @@
 title: "Pride & Purpose: Queerbaiting and Pride Month Marketing"
 date: 2024-06-24T12:15:01.000Z
 description: We all know pride season separates the professionals from the amateurs in marketing— only few are appropriately championing brand purpose in alignment with P...
-author: paloma-jacome
-category: brand-activism
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-activism.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Screen-Shot-2024-06-20-at-4.14.58-PM.png'

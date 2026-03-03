@@ -2,8 +2,8 @@
 title: "Pride 2025: Beige Pride, Pinkhushing & Brand Activism at its Best"
 date: 2025-07-03T11:22:13.000Z
 description: "This June, something strange happened:"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Screen-Shot-2025-06-30-at-12.45.41-PM.png'

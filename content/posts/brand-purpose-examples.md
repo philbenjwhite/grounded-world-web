@@ -2,7 +2,7 @@
 title: "Brand Purpose Examples: How Top Brands Drive Impact"
 date: 2025-11-10T05:42:09.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

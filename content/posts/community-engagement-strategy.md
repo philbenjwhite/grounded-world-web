@@ -2,8 +2,8 @@
 title: "Community Engagement Strategy: Building Authentic Relationships That Drive Lasting Impact"
 date: 2026-01-05T09:42:30.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: partnerships
+author: content/team-members/matt-deasy.json
+category: content/categories/partnerships.json
 tags:
   - Matt Deasy
 ---

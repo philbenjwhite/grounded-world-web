@@ -2,8 +2,8 @@
 title: "Circular Economy in Switzerland: A Week Inside the World’s Most Circular Nation"
 date: 2025-11-19T16:22:53.000Z
 description: Anyone working towards more responsible business, operating with purpose, has encountered the ideal of transforming the global marketplace into a circular ec...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Circular-Economy-in-Switzerland-Lausanne.jpg'

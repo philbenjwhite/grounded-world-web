@@ -2,8 +2,8 @@
 title: "Universal Flourishing Shouldn’t Be This Hard | Karimah Huddah"
 date: 2025-11-19T15:02:58.000Z
 description: "Key Takeaways:"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/ISTH005_email.png'

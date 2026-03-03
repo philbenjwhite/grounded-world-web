@@ -2,7 +2,7 @@
 title: "Employee Satisfaction: The Hidden Engine of Purpose-Driven Growth"
 date: 2025-12-06T10:53:30.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

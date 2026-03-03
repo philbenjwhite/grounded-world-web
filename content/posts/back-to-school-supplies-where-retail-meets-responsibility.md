@@ -2,8 +2,8 @@
 title: "Back to School Supplies: Where Retail Meets Responsibility"
 date: 2025-11-18T17:45:30.000Z
 description: "Key Takeaways:"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Back-to-School-Supplies-Where-Retail-Meets-Responsibility-scaled.jpg'

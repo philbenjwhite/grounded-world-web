@@ -2,8 +2,8 @@
 title: "Plastic Free July: Insights from UNOC3 Brands Can’t Afford to Ignore"
 date: 2025-07-07T16:37:22.000Z
 description: For the past 15 years every July, millions around the world commit to refusing single-use plastics in honor of Plastic-Free July, a global movement inspiring...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/PlasticFreeJulyUNOC3.jpg'

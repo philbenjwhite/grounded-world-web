@@ -8,7 +8,20 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "assets.tina.io",
       },
+      {
+        protocol: "https",
+        hostname: "media.licdn.com",
+      },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/about-us',
+        destination: '/about',
+        permanent: true,
+      },
+    ];
   },
   async rewrites() {
     return {

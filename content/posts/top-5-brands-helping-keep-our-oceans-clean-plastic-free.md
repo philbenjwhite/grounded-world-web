@@ -2,8 +2,8 @@
 title: The Top 5 Brands Keeping Our Oceans Plastic-Free
 date: 2024-07-31T22:51:12.000Z
 description: You’ll never realize how much plastic you consume until you take the challenge to participate in Plastic-Free July. As we reach the midpoint of the year, it'...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Screen-Shot-2024-07-24-at-4.24.45-PM.png'

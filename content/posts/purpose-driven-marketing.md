@@ -2,8 +2,8 @@
 title: "Purpose-Driven Marketing: The New Standard for Brand Activation"
 date: 2025-12-16T04:26:42.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: strategy
+author: content/team-members/matt-deasy.json
+category: content/categories/strategy.json
 tags:
   - Matt Deasy
 featuredImage: '/images/blog/purpose-driven-marketing-scaled.jpg'

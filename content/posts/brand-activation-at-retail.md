@@ -2,8 +2,8 @@
 title: "Brand Activation at Retail: Transforming Store Spaces Into Purpose-Driven Experiences"
 date: 2026-01-05T07:57:07.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: retail-shopper
+author: content/team-members/matt-deasy.json
+category: content/categories/retail-shopper.json
 tags:
   - Matt Deasy
 ---

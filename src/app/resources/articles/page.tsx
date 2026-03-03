@@ -81,7 +81,12 @@ async function fetchPosts(): Promise<ArticleItem[]> {
       const title =
         titleMatch?.[1] ?? titleMatch?.[2] ?? titleMatch?.[3] ?? file;
 
-      const categorySlug = get("category");
+      const categoryRaw = get("category");
+      // Category may be a TinaCMS reference path (content/categories/brand-purpose.json)
+      // or a plain slug (brand-purpose) — normalize to just the slug
+      const categorySlug = categoryRaw
+        ?.replace(/^content\/categories\//, "")
+        .replace(/\.json$/, "");
       let featuredImage = get("featuredImage");
 
       // Fallback: extract first image from markdown body

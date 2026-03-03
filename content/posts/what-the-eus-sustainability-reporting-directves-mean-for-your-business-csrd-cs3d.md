@@ -2,8 +2,8 @@
 title: "What the EU’s Sustainability Reporting Directives and Potential Changes Mean for Your Business: CSRD, CS3D, and the Proposed Omnibus Simplification Package"
 date: 2025-02-28T13:00:23.000Z
 description: "Co-Authored by Aimee Simpson, CEO of Sustainability Law & Strategies"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/EU-Green-Deal-Omnibus-Updates-e1741818814869.png'

@@ -2,7 +2,7 @@
 title: "Brand Activation Strategy: Transform Purpose Into Profit Through Meaningful Engagement"
 date: 2025-12-08T07:30:11.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

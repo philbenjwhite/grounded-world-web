@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Text from "@/components/atoms/Text";
 import type { AuthorData } from "@/lib/authors";
 
@@ -75,6 +76,28 @@ export default function AuthorBio({ author }: AuthorBioProps) {
             LinkedIn
           </a>
         )}
+        <Link
+          href={`/about-us/${author.slug}`}
+          className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-[color:var(--color-cyan)] hover:underline"
+        >
+          View Profile
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 16 16"
+            fill="none"
+            className="transition-transform group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            <path
+              d="M6 4L10 8L6 12"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
       </div>
     </div>
   );

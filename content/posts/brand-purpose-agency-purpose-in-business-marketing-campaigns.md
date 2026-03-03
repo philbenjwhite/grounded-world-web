@@ -2,8 +2,8 @@
 title: "Brand Marketing Campaigns: Building Purpose-Driven Impact Through Strategic Creativity"
 date: 2026-01-05T06:52:26.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: brand-purpose
+author: content/team-members/matt-deasy.json
+category: content/categories/brand-purpose.json
 tags:
   - Matt Deasy
 ---

@@ -2,8 +2,8 @@
 title: "Corporate Responsibility: Building Business Strategy Around Impact and Accountability"
 date: 2025-12-01T10:47:20.000Z
 description: Key Takeaways
-author: matt-deasy
-category: brand-purpose
+author: content/team-members/matt-deasy.json
+category: content/categories/brand-purpose.json
 tags:
   - Matt Deasy
 ---

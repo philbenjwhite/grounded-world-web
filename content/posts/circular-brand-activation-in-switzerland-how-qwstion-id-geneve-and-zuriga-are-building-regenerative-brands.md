@@ -2,8 +2,8 @@
 title: "Circular Brand Activation in Switzerland: How QWSTION, ID Genève, and Zuriga Are Building Regenerative Brands"
 date: 2025-11-25T15:22:24.000Z
 description: I just came back from Europe and my mind is still buzzing. Not from the espresso (though plenty of that), but from witnessing how a handful of Swiss brands a...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Screen-Shot-2025-11-12-at-12.11.53-PM.png'

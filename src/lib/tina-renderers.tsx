@@ -107,6 +107,47 @@ export function renderSlotBlock(
       );
     }
 
+    case "PageSectionsSplitLayoutLeftExpandingCards":
+    case "PageSectionsSplitLayoutRightExpandingCards": {
+      const ec = block as unknown as {
+        defaultActiveIndex?: number;
+        items?: Array<{
+          name: string;
+          color: string;
+          icon?: string | null;
+          tagline: string;
+          bullets?: (string | null)[] | null;
+          ctaHref: string;
+          ctaLabel?: string | null;
+          imageSrc?: string | null;
+          imageAlt?: string | null;
+        }>;
+      };
+      const cardItems =
+        ec.items
+          ?.filter(Boolean)
+          .map((item) => ({
+            name: item.name,
+            color: item.color,
+            icon: item.icon ?? undefined,
+            tagline: item.tagline,
+            bullets: (item.bullets?.filter(Boolean) as string[]) ?? [],
+            ctaHref: item.ctaHref,
+            ctaLabel: item.ctaLabel ?? undefined,
+            imageSrc: item.imageSrc ?? undefined,
+            imageAlt: item.imageAlt ?? undefined,
+          })) ?? [];
+      if (cardItems.length === 0) return null;
+      return (
+        <ExpandingCardPanel
+          key={index}
+          items={cardItems}
+          defaultActiveIndex={ec.defaultActiveIndex ?? undefined}
+          renderMode="accordion-only"
+        />
+      );
+    }
+
     default:
       return null;
   }
@@ -324,9 +365,24 @@ export function renderSection(section: PageSections, index: number): React.React
 
     case "PageSectionsSplitLayout": {
       const sectionLabel = (section as unknown as { sectionLabel?: string }).sectionLabel;
+      const stickyLeft = (section as unknown as { stickyLeft?: boolean }).stickyLeft;
+      const leftContent = (
+        <>
+          {sectionLabel && (
+            <div data-tina-field={tinaField(section as Record<string, unknown>, "sectionLabel")}>
+              <SectionLabel className="mb-4">{sectionLabel}</SectionLabel>
+            </div>
+          )}
+          {section.left
+            ?.filter(Boolean)
+            .map((block, blockIndex) =>
+              renderSlotBlock(block!, blockIndex),
+            )}
+        </>
+      );
       return (
         <Section key={index}>
-          <Container className="px-[var(--layout-section-padding-x)]">
+          <Container className="px-(--layout-section-padding-x)">
             <Split
               ratio={
                 (section.ratio as
@@ -346,18 +402,11 @@ export function renderSection(section: PageSections, index: number): React.React
               }
               reverseOnMobile={section.reverseOnMobile ?? false}
               left={
-                <>
-                  {sectionLabel && (
-                    <div data-tina-field={tinaField(section as Record<string, unknown>, "sectionLabel")}>
-                      <SectionLabel className="mb-4">{sectionLabel}</SectionLabel>
-                    </div>
-                  )}
-                  {section.left
-                    ?.filter(Boolean)
-                    .map((block, blockIndex) =>
-                      renderSlotBlock(block!, blockIndex),
-                    )}
-                </>
+                stickyLeft ? (
+                  <div className="lg:sticky lg:top-24">{leftContent}</div>
+                ) : (
+                  leftContent
+                )
               }
               right={
                 <>

@@ -2,8 +2,8 @@
 title: "Retail Activation: Transform your Store Into an Experience"
 date: 2025-12-22T07:42:00.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: retail-shopper
+author: content/team-members/matt-deasy.json
+category: content/categories/retail-shopper.json
 tags:
   - Matt Deasy
 ---

@@ -2,8 +2,8 @@
 title: "Avoid Greenwashing: When Misleading Claims Ruin Brands"
 date: 2025-05-15T09:56:40.000Z
 description: Avoid greenwashing by resisting the urge to hop on the sustainability bandwagon without substance. In today’s world, misleading eco-claims can turn into a PR...
-author: matt-deasy
-category: brand-purpose
+author: content/team-members/matt-deasy.json
+category: content/categories/brand-purpose.json
 tags:
   - Matt Deasy
 featuredImage: '/images/blog/jess-morgan-xlqMNe90vPA-unsplash-scaled.jpg'

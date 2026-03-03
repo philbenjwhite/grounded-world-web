@@ -2,8 +2,8 @@
 title: "Sustainability Communication: Building Trust Through Authentic Storytelling"
 date: 2025-12-06T11:08:14.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: brand-purpose
+author: content/team-members/matt-deasy.json
+category: content/categories/brand-purpose.json
 tags:
   - Matt Deasy
 ---

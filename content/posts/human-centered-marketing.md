@@ -2,8 +2,8 @@
 title: "Human Centered Marketing: Why People First Drives Growth"
 date: 2025-12-16T05:56:28.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: strategy
+author: content/team-members/matt-deasy.json
+category: content/categories/strategy.json
 tags:
   - Matt Deasy
 ---

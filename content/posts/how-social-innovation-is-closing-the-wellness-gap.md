@@ -2,8 +2,8 @@
 title: How Social Innovation Is Closing the Wellness Gap
 date: 2025-05-28T11:48:44.000Z
 description: In an increasingly overstimulated world plagued by burnout, anxiety, and loneliness, accessing mental health care remains a privilege rather than a right. Bu...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: /images/blog/How-Social-Innovation-is-Closing-the-Wellness-Gap-scaled.jpg

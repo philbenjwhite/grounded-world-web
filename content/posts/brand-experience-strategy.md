@@ -2,8 +2,8 @@
 title: "Brand Experience Strategy: How You Turn Touchpoints Into Trust"
 date: 2025-12-16T05:40:41.000Z
 description: "Key Takeaways:"
-author: matt-deasy
-category: strategy
+author: content/team-members/matt-deasy.json
+category: content/categories/strategy.json
 tags:
   - Matt Deasy
 ---

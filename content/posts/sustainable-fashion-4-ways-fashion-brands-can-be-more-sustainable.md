@@ -2,8 +2,8 @@
 title: 4 Ways Fashion Brands Can Be More Sustainable
 date: 2023-03-28T10:22:00.000Z
 description: The Fashion industry is responsible for 2.1 billion tonnes of greenhouse gas per year. That is more than all the international flights and shipping combined...
-author: phil-white
-category: sustainability
+author: content/team-members/phil-white.json
+category: content/categories/sustainability.json
 tags:
   - circularity
   - fashion

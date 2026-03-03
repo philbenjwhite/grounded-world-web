@@ -2,8 +2,8 @@
 title: "What is Green Friday? Black Friday Alternative (2025)"
 date: 2022-12-01T14:47:36.000Z
 description: Updated by Matt Deasy, 2025.
-author: phil-white
-category: brand-purpose
+author: content/team-members/phil-white.json
+category: content/categories/brand-purpose.json
 tags:
   - activating brand purpose
   - Phil White

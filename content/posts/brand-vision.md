@@ -2,7 +2,7 @@
 title: "Brand Vision: How a Clear Future Direction Drives Strategy and Growth"
 date: 2025-11-23T06:33:03.000Z
 description: Brand vision defines the aspirational future state your organization aims to create, typically looking 5-20 years ahead. It answers where your brand is going...
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

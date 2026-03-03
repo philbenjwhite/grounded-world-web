@@ -2,7 +2,7 @@
 title: "z Impact Measurement: test"
 date: 2025-11-21T05:30:58.000Z
 description: "Key Takeaways:"
-author: andrew-yates
+author: content/team-members/andrew-yates.json
 ---
 
 ## Key Takeaways:

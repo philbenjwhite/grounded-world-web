@@ -2,8 +2,8 @@
 title: "Circular Cities in Action: On-the-Ground Learnings from Switzerland’s Urban Design Innovations"
 date: 2025-12-10T11:26:30.000Z
 description: I’ve spent years researching circularity, studying sustainability strategy, and helping brands close intention–action gaps. But nothing compares to being phy...
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/Circular-Cities-in-Action-Onthe-Ground-Learnings-from-Switzerlands-Urban-Design-Innovations.png'

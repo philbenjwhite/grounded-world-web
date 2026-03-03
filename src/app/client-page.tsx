@@ -1,15 +1,10 @@
 "use client";
 
 import { useTina } from "tinacms/dist/react";
-import type { PageQuery } from "../../tina/__generated__/types";
+import type { PageQuery, PageSections } from "../../tina/__generated__/types";
+import { renderSection } from "@/lib/tina-renderers";
 import VideoHero from "@/components/components/VideoHero";
 import LogoCarousel from "@/components/components/LogoCarousel";
-import Section from "@/components/layout/Section";
-import Container from "@/components/layout/Container";
-import Heading from "@/components/atoms/Heading";
-import Text from "@/components/atoms/Text";
-import ExpandingCardPanel from "@/components/components/ExpandingCardPanel";
-import type { ExpandingCardItem } from "@/components/components/ExpandingCardPanel";
 import WorkCarousel from "@/components/components/WorkCarousel";
 import type { WorkCarouselItem } from "@/components/components/WorkCarousel";
 import NewsletterCTA from "@/components/components/NewsletterCTA";
@@ -39,43 +34,6 @@ export default function HomeClientPage(props: HomeClientPageProps) {
     (l): l is { src: string; alt: string } => Boolean(l?.src && l?.alt),
   );
   const logoSpeed = logoSection?.speed as number | undefined;
-
-  /* Intro Section */
-  const introSection = data.page.sections?.find(
-    (s) => s?.__typename === "PageSectionsIntroSection",
-  ) as { heading?: string; paragraphs?: string[] } | undefined;
-
-  /* Expanding Card Panel */
-  const expandingCardSection = data.page.sections?.find(
-    (s) => s?.__typename === "PageSectionsExpandingCardPanel",
-  ) as {
-    sectionTitle?: string;
-    items?: Array<{
-      name: string;
-      color: string;
-      icon?: string | null;
-      tagline: string;
-      bullets?: (string | null)[] | null;
-      ctaHref: string;
-      ctaLabel?: string | null;
-      imageSrc?: string | null;
-      imageAlt?: string | null;
-    }>;
-  } | undefined;
-
-  const services: ExpandingCardItem[] | undefined = expandingCardSection?.items
-    ?.filter(Boolean)
-    .map((item) => ({
-      name: item.name,
-      color: item.color,
-      icon: item.icon ?? undefined,
-      tagline: item.tagline,
-      bullets: (item.bullets?.filter(Boolean) as string[]) ?? [],
-      ctaHref: item.ctaHref,
-      ctaLabel: item.ctaLabel ?? undefined,
-      imageSrc: item.imageSrc ?? undefined,
-      imageAlt: item.imageAlt ?? undefined,
-    }));
 
   /* Work Carousel — items are already resolved via GraphQL reference */
   const workCarouselSection = data.page.sections?.find(
@@ -143,39 +101,9 @@ export default function HomeClientPage(props: HomeClientPageProps) {
 
       <LogoCarousel logos={logos} speed={logoSpeed} />
 
-      {(introSection || (services && services.length > 0)) && (
-        <Section className="relative z-20 py-16 md:py-24 lg:py-32">
-          <Container className="px-[var(--layout-section-padding-x)]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              {/* Left: Intro text — sticky on desktop */}
-              {introSection && (
-                <div className="lg:sticky lg:top-24">
-                  <Heading level={2} size="h2" color="primary">
-                    {introSection.heading ?? "Get Grounded"}
-                  </Heading>
-                  <div className="mt-6 flex flex-col gap-5">
-                    {(introSection.paragraphs?.filter(Boolean) as string[])?.map(
-                      (text, i) => (
-                        <Text key={i} size="body-lg" color="secondary">
-                          {text}
-                        </Text>
-                      )
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* Right: Services as vertical accordions */}
-              {services && services.length > 0 && (
-                <ExpandingCardPanel
-                  items={services}
-                  renderMode="accordion-only"
-                />
-              )}
-            </div>
-          </Container>
-        </Section>
-      )}
+      {data.page.sections
+        ?.filter((s) => s?.__typename === "PageSectionsSplitLayout")
+        .map((section, index) => renderSection(section as PageSections, index))}
 
       {workCarouselItems.length > 0 && (
         <WorkCarousel

@@ -2,7 +2,7 @@
 title: "Purpose-Driven Brands: Why Consumer Demand for Values Is Reshaping Business Strategy"
 date: 2025-11-22T10:48:11.000Z
 description: "Key Takeaways:"
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

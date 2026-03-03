@@ -2,7 +2,7 @@
 title: "Why Your Brand Mission Matters More Than Ever: A Strategic Guide for Purpose-Led Leaders"
 date: 2025-11-23T06:45:22.000Z
 description: A strong brand mission articulates what your organization does, how it operates, and why it exists—serving as both compass and credential in markets where au...
-author: matt-deasy
+author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy
 ---

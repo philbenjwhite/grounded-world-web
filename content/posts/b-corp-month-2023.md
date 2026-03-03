@@ -2,8 +2,8 @@
 title: B Corp Month
 date: 2023-03-02T19:44:12.000Z
 description: Certified B Corporations like to proudly display their B Corp Certification by placing the “B” mark on storefront windows, websites, and packaging (to name a...
-author: phil-white
-category: brand-purpose
+author: content/team-members/phil-white.json
+category: content/categories/brand-purpose.json
 tags:
   - B Corps
   - Phil White

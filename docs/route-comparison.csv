@@ -1,0 +1,145 @@
+WordPress Path,WordPress Title,WordPress Type,New Site Path,Status,Notes
+/,HOME PAGE,page,/,Exists,Homepage
+/about-us/,ABOUT US,page,/about,Exists,Path changed from /about-us/ to /about
+/about-us/matt-deasy/,MATT DEASY,page,,Missing,Team bio page - no equivalent route in new site
+/about-us/paloma-jacome/,PALOMA JACOME,page,,Missing,Team bio page - no equivalent route in new site
+/about-us/phil-white/,PHIL WHITE,page,,Missing,Team bio page - no equivalent route in new site
+/activating-brand-purpose-agency/,How To Page -- Activating Brand Purpose Agency,page,,Missing,SEO/How-To landing page - no equivalent in new site
+/brand-activism-agency-new/,How To Page -- Brand Activism Agency,page,,Missing,SEO/How-To landing page - no equivalent in new site
+/brand-activism-agency/,OUR THINKING_How To Guide_Brand Activism,page,,Missing,SEO/How-To landing page - no equivalent in new site
+/brand-marketing-agency-services/,SERVICES,page,/services,Exists,Path changed from /brand-marketing-agency-services/ to /services
+/brand-marketing-agency-services__trashed/brand-activation-agency/,Activation,page,/services/activation,Exists,Deeply nested trashed parent - redirect to /services/activation
+/brand-marketing-agency-services__trashed/brand-strategy-agency/,Strategy,page,/services/strategy,Exists,Deeply nested trashed parent - redirect to /services/strategy
+/brand-marketing-agency-services__trashed/creative-impact-agency/,Impact,page,/services/impact,Exists,Deeply nested trashed parent - redirect to /services/impact
+/brand-marketing-agency-services__trashed/market-research-agency/,Research,page,/services/research,Exists,Deeply nested trashed parent - redirect to /services/research
+/contact-us/,CONTACT US,page,/contact,Exists,Path changed from /contact-us/ to /contact
+/gaia/,Gaia,page,/gaia,Exists,Same path
+/grounded-sizzle-video/,SIZZLE REEL,page,,Missing,Sizzle reel video page - no equivalent in new site
+/itshouldntbethishard/,PODCAST,page,/itshouldntbethishard,Exists,Same path (also accessible at /resources/podcast)
+/newsletter-sign-up/,NEWSLETTER SIGN UP,page,/newsletter,Redirect candidate,Path changed - redirect to /newsletter
+/newsletter/,NEWSLETTER,page,/newsletter,Exists,Same path
+/non-profit-marketing-services/,Non-profit marketing,page,,Missing,SEO/service landing page - no equivalent in new site
+/nonprofit-branding-agency/,OUR THINKING_How To Guide_Nonprofits Branding and Marketing,page,,Missing,SEO/How-To landing page - no equivalent in new site
+/our-work/,OUR WORK,page,/our-work,Exists,Same path
+/our-work/our-work-_mule-men/,Mule Men: Relief Delivered,page,/our-work/mule-men,Exists,Slug simplified
+/our-work/our-work-_slumberland-ergo-smart-base/,Slumberland + Ergo Smart Base,page,/our-work/slumberland-ergo-smart-base,Exists,Slug simplified
+/our-work/our-work-_slumberland-tsi/,Slumberland + TSI: Shopaphobia,page,/our-work/slumberland-tsi,Exists,Slug simplified
+/our-work/our-work-_tempur-sealy-ashley-furniture/,Tempur Sealy + Ashley Furniture,page,/our-work/tempur-sealy-ashley-furniture,Exists,Slug simplified
+/our-work/our-work-fresh-air-fund/,Fresh Air Fund,page,/our-work/fresh-air-fund,Exists,Slug simplified
+/our-work/our-work-interdesign/,iDesign: Nature's Order,page,/our-work/interdesign,Exists,Slug simplified
+/our-work/our-work-lycra/,The LYCRA Company: EcoMade,page,/our-work/lycra,Exists,Slug simplified
+/our-work/our-work-marys-center/,Mary's Center,page,/our-work/marys-center,Exists,Slug simplified
+/our-work/our-work-network-of-executive-women/,Network of Executive Women,page,/our-work/network-of-executive-women,Exists,Slug simplified
+/our-work/our-work-onesight/,OneSight: Brand Purpose,page,/our-work/onesight,Exists,Slug simplified
+/our-work/our-work-plan-x-unsplash/,Plan USA: Girls vs The Machine,page,/our-work/plan-x-unsplash,Exists,Slug simplified
+/our-work/our-work-points4purpose/,Points4Purpose,page,/our-work/points4purpose,Exists,Slug simplified
+/our-work/our-work-safeground/,UNMAS: Turning Minefields into Playing Fields,page,/our-work/safeground,Exists,Slug simplified
+/our-work/our-work-she-should-run/,She Should Run,page,/our-work/she-should-run,Exists,Slug simplified
+/our-work/our-work-tree-free/,Tree Free Greetings,page,/our-work/tree-free,Exists,Slug simplified
+/our-work/our-work-tribes-on-the-edge/,Tribes On The Edge,page,/our-work/tribes-on-the-edge,Exists,Slug simplified
+/our-work/our-work-whistlepig/,Whistlepig Whiskey,page,/our-work/whistlepig,Exists,Slug simplified
+/our-work/our-work_lycra_qira-farm-to-fiber-vr-tour/,LYCRA + QIRA: Farm to Fiber VR Tour,page,/our-work/lycra-qira-farm-to-fiber-vr-tour,Exists,Slug simplified
+/our-work/our-work_lycra_qira-farm-to-fiber/,LYCRA + QIRA: Farm to Fiber,page,/our-work/lycra-qira-farm-to-fiber,Exists,Slug simplified
+/our-work/our-work_lycra_qira-farmer-docuseries/,LYCRA + QIRA: Farmer Docuseries,page,/our-work/lycra-qira-farmer-docuseries,Exists,Slug simplified
+/our-work/our-work_lycra_qira-transforming-field-corn-to-fiber/,LYCRA + QIRA: Transforming Field Corn to Fiber,page,/our-work/lycra-qira-transforming-field-corn-to-fiber,Exists,Slug simplified
+/our-work/our-work_qira/,QIRA: QIRA vs Fossil Fuel,page,/our-work/qira,Exists,Slug simplified
+/our-work/our-work_the-lycra-company/,The Lycra Company: Keep in the Loop,page,/our-work/the-lycra-company,Exists,Slug simplified
+/our-work/our-work_wasu/,Wasu: The Wasu Story,page,/our-work/wasu,Exists,Slug simplified
+/our-work/our-work_whistlepig-pit-viper/,Whistlepig + Pit Viper,page,/our-work/whistlepig-pit-viper,Exists,Slug simplified
+/our-work/regeneration-sustainability-marketing-case-study-grounded-world/,Regeneration: Turning Cans into Pans,page,/our-work/regeneration-sustainability-marketing-case-study-grounded-world,Exists,Same slug
+/our-work/unbeelievables-sustainability-case-study-grounded-world/,Delhaize: UnBEElieveables,page,/our-work/unbeelievables-sustainability-case-study-grounded-world,Exists,Same slug
+/privacy-policy-its-time-to-get-grounded/,PRIVACY POLICY,page,,Missing,Privacy policy page - no equivalent in new site
+/resources/,RESOURCES,page,/resources,Exists,Same path
+/social-impact-agency/,How To Page -- Social Impact Agency,page,,Missing,SEO/How-To landing page - no equivalent in new site
+/start-up-branding-agency/,OUR THINKING_How To Guide_Branding for Startups,page,,Missing,SEO/How-To landing page - no equivalent in new site
+/sustainability-marketing-agency/,How To Page -- Sustainability Marketing Agency,page,,Missing,SEO/How-To landing page - no equivalent in new site
+/sustainable-fashion/,SUSTAINABLE FASHION,page,,Missing,Standalone topic page - no equivalent in new site
+/terms/,TERMS & CONDITIONS,page,,Missing,Terms page - no equivalent in new site
+/thank-you/,THANK YOU,page,,Missing,Form submission thank you page
+/update/,z Maintenance Mode,page,,Skip,Maintenance mode page - not needed
+/activating-brand-purpose-and-sustainability/61-b-corp-gift-ideas-for-green-friday/,61 B Corp Gift Ideas for Green Friday,post,/resources/articles/61-b-corp-gift-ideas-for-green-friday,Exists,Category prefix removed - now under /resources/articles/
+/activating-brand-purpose-and-sustainability/a-future-without-cigarettes-shouldnt-be-this-hard-jennifer-motles/,A Future Without Cigarettes Shouldn't Be This Hard,post,/resources/articles/a-future-without-cigarettes-shouldnt-be-this-hard-jennifer-motles,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/avoid-greenwashing/,Avoid Greenwashing,post,/resources/articles/avoid-greenwashing,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/bridging-the-intention-action-gap-in-sustainable-behavior/,Bridging the Intention-Action Gap,post,/resources/articles/bridging-the-intention-action-gap-in-sustainable-behavior,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/cancel-culture-in-climate/,Cancel Culture in Climate,post,/resources/articles/cancel-culture-in-climate,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/circular-brand-activation-in-switzerland-how-qwstion-id-geneve-and-zuriga-are-building-regenerative-brands/,Circular Brand Activation in Switzerland,post,/resources/articles/circular-brand-activation-in-switzerland-how-qwstion-id-geneve-and-zuriga-are-building-regenerative-brands,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/circular-cities-switzerland-urban-design-innovation/,Circular Cities in Action,post,/resources/articles/circular-cities-switzerland-urban-design-innovation,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/circular-economy-in-switzerland/,Circular Economy in Switzerland,post,/resources/articles/circular-economy-in-switzerland,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/closing-the-intention-action-gap-why-good-intentions-arent-always-enough-during-earth-month/,Intention-Action Gap: Earth Month,post,/resources/articles/closing-the-intention-action-gap-why-good-intentions-arent-always-enough-during-earth-month,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/fair-price-for-coffee-shouldnt-be-this-hard-bob-michelle-fish/,Fair Price for Coffee Shouldn't Be This Hard,post,/resources/articles/fair-price-for-coffee-shouldnt-be-this-hard-bob-michelle-fish,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/gender-equality-5-ways-brands-can-take-action/,Gender Equality: 5 Ways Brands Can Take Action,post,/resources/articles/gender-equality-5-ways-brands-can-take-action,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/going-circular-the-story-of-decathlon/,Going Circular: The Story of Decathlon,post,/resources/articles/going-circular-the-story-of-decathlon,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/green-friday-brand-activation-inspiring-sustainable-choices-instead-of-black-friday/,Green Friday Brand Activation,post,/resources/articles/green-friday-brand-activation-inspiring-sustainable-choices-instead-of-black-friday,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/how-social-innovation-is-closing-the-wellness-gap/,How Social Innovation Is Closing the Wellness Gap,post,/resources/articles/how-social-innovation-is-closing-the-wellness-gap,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/making-earth-day-every-day-shouldnt-be-this-hard-kathleen-rogers/,Making Earth Day Every Day Shouldn't Be This Hard,post,/resources/articles/making-earth-day-every-day-shouldnt-be-this-hard-kathleen-rogers,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/mental-health-meets-marketing/,When Mental Health Awareness Meets Marketing,post,/resources/articles/mental-health-meets-marketing,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/plastic-free-july-unoc3-insights/,Plastic Free July: Insights from UNOC3,post,/resources/articles/plastic-free-july-unoc3-insights,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/pride-2025-beige-pride-pinkhushing-brand-activism-at-its-best/,Pride 2025: Beige Pride Pinkhushing & Brand Activism,post,/resources/articles/pride-2025-beige-pride-pinkhushing-brand-activism-at-its-best,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/sustainable-holiday-tips-reducing-waste-during-the-most-wonderful-excessive-time-of-the-year/,Sustainable Holiday Tips,post,/resources/articles/sustainable-holiday-tips-reducing-waste-during-the-most-wonderful-excessive-time-of-the-year,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/understanding-activating-brand-purpose-in-retail/,Understanding & Activating Brand Purpose in Retail,post,/resources/articles/understanding-activating-brand-purpose-in-retail,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/universal-flourishing-shouldnt-be-this-hard-karimah-huddah/,Universal Flourishing Shouldn't Be This Hard,post,/resources/articles/universal-flourishing-shouldnt-be-this-hard-karimah-huddah,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/what-is-circular-fashion-the-future-of-fashion/,What is Circular Fashion?,post,/resources/articles/what-is-circular-fashion-the-future-of-fashion,Exists,Category prefix removed
+/activating-brand-purpose-and-sustainability/what-the-eus-sustainability-reporting-directves-mean-for-your-business-csrd-cs3d/,EU Sustainability Reporting Directives,post,/resources/articles/what-the-eus-sustainability-reporting-directves-mean-for-your-business-csrd-cs3d,Exists,Category prefix removed
+/brand-activation/partnerships-community/cause-marketing-campaigns/,Cause Marketing Campaigns,post,/resources/articles/cause-marketing-campaigns,Exists,Category prefix removed
+/brand-activation/partnerships-community/cause-related-marketing/,Cause Related Marketing,post,/resources/articles/cause-related-marketing,Exists,Category prefix removed
+/brand-activation/partnerships-community/community-engagement-strategy/,Community Engagement Strategy,post,/resources/articles/community-engagement-strategy,Exists,Category prefix removed
+/brand-activation/partnerships-community/stakeholder-engagement-strategy/,Stakeholder Engagement Strategy,post,/resources/articles/stakeholder-engagement-strategy,Exists,Category prefix removed
+/brand-activation/retail-shopper/brand-activation-at-retail/,Brand Activation at Retail,post,/resources/articles/brand-activation-at-retail,Exists,Category prefix removed
+/brand-activation/retail-shopper/retail-activation/,Retail Activation,post,/resources/articles/retail-activation,Exists,Category prefix removed
+/brand-activation/retail-shopper/retail-marketing-campaigns/,Retail Marketing Campaigns,post,/resources/articles/retail-marketing-campaigns,Exists,Category prefix removed
+/brand-activation/retail-shopper/shopper-behaviour-insights/,Shopper Behaviour Insights,post,/resources/articles/shopper-behaviour-insights,Exists,Category prefix removed
+/brand-activation/retail-shopper/shopper-marketing/,Shopper Marketing,post,/resources/articles/shopper-marketing,Exists,Category prefix removed
+/brand-activation/retail-shopper/sustainability-market-research/,Sustainability Market Research,post,/resources/articles/sustainability-market-research,Exists,Category prefix removed
+/brand-activation/strategy/brand-activation-strategy/,Brand Activation Strategy,post,/resources/articles/brand-activation-strategy,Exists,Category prefix removed
+/brand-activation/strategy/brand-experience-strategy/,Brand Experience Strategy,post,/resources/articles/brand-experience-strategy,Exists,Category prefix removed
+/brand-activation/strategy/customer-engagement-strategy/,Customer Engagement Strategy,post,/resources/articles/customer-engagement-strategy,Exists,Category prefix removed
+/brand-activation/strategy/human-centered-marketing/,Human Centered Marketing,post,/resources/articles/human-centered-marketing,Exists,Category prefix removed
+/brand-activation/strategy/integrated-marketing-strategy/,Integrated Marketing Strategy,post,/resources/articles/integrated-marketing-strategy,Exists,Category prefix removed
+/brand-activation/strategy/purpose-driven-marketing/,Purpose Driven Marketing,post,/resources/articles/purpose-driven-marketing,Exists,Category prefix removed
+/brand-purpose-agency/foundations/brand-mission/,Brand Mission,post,/resources/articles/brand-mission,Exists,Category prefix removed
+/brand-purpose-agency/foundations/brand-purpose-examples/,Brand Purpose Examples,post,/resources/articles/brand-purpose-examples,Exists,Category prefix removed
+/brand-purpose-agency/foundations/brand-values/,Brand Values,post,/resources/articles/brand-values,Exists,Category prefix removed
+/brand-purpose-agency/foundations/brand-vision/,Brand Vision,post,/resources/articles/brand-vision,Exists,Category prefix removed
+/brand-purpose-agency/foundations/purpose-driven-brands-why-consumer-demand-for-values-is-reshaping-business-strategy/,Purpose Driven Brands,post,/resources/articles/purpose-driven-brands-why-consumer-demand-for-values-is-reshaping-business-strategy,Exists,Category prefix removed
+/brand-purpose-agency/foundations/understanding-brand-purpose/,Understanding Brand Purpose,post,/resources/articles/understanding-brand-purpose,Exists,Category prefix removed
+/brand-purpose-agency/foundations/z-impact-measurement-test/,z Impact Measurement Test,post,/resources/articles/z-impact-measurement-test,Exists,Test post - consider removing
+/brand-purpose-agency/people-and-planet/cultural-relevance/,Cultural Relevance,post,/resources/articles/cultural-relevance,Exists,Category prefix removed
+/brand-purpose-agency/people-and-planet/employee-satisfaction/,Employee Satisfaction,post,/resources/articles/employee-satisfaction,Exists,Category prefix removed
+/brand-purpose-agency/people-and-planet/ethical-practices/,Ethical Practices,post,/resources/articles/ethical-practices,Exists,Category prefix removed
+/brand-purpose-agency/people-and-planet/ethical-sourcing/,Ethical Sourcing,post,/resources/articles/ethical-sourcing,Exists,Category prefix removed
+/brand-purpose-agency/people-and-planet/sustainability-initiatives/,Sustainability Initiatives,post,/resources/articles/sustainability-initiatives,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-action/brand-activation-strategy-transform-purpose-into-profit-through-meaningful-engagement/,Brand Activation Strategy: Transform Purpose into Profit,post,/resources/articles/brand-activation-strategy-transform-purpose-into-profit-through-meaningful-engagement,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-action/cause-marketing/,Cause Marketing,post,/resources/articles/cause-marketing,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-action/csr-strategy-build-corporate-social-responsibility-that-drives-purpose-and-profit/,CSR Strategy,post,/resources/articles/csr-strategy-build-corporate-social-responsibility-that-drives-purpose-and-profit,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-action/impact-measurement/,Impact Measurement,post,/resources/articles/impact-measurement,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-action/social-impact-campaigns/,Social Impact Campaigns,post,/resources/articles/social-impact-campaigns,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-business/brand-identity/,Brand Identity,post,/resources/articles/brand-identity,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-business/brand-purpose-agency-purpose-in-business-brand-identity/,Brand Purpose Agency - Brand Identity,post,/resources/articles/brand-purpose-agency-purpose-in-business-brand-identity,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-business/brand-purpose-agency-purpose-in-business-marketing-campaigns/,Brand Purpose Agency - Marketing Campaigns,post,/resources/articles/brand-purpose-agency-purpose-in-business-marketing-campaigns,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-business/company-culture/,Company Culture,post,/resources/articles/company-culture,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-business/corporate-responsibility/,Corporate Responsibility,post,/resources/articles/corporate-responsibility,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-business/marketing-campaigns/,Marketing Campaigns,post,/resources/articles/marketing-campaigns,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-business/mission-values/,Mission Values,post,/resources/articles/mission-values,Exists,Category prefix removed
+/brand-purpose-agency/purpose-in-business/purpose-driven-companies/,Purpose Driven Companies,post,/resources/articles/purpose-driven-companies,Exists,Category prefix removed
+/brand-purpose-agency/sustainability-communication/sustainability-communication/,Sustainability Communication,post,/resources/articles/sustainability-communication,Exists,Category prefix removed
+/activism/worst-examples-of-queerbaiting-best-examples-of-pride-month-marketing/,Pride & Purpose: Queerbaiting and Pride Month Marketing,post,/resources/articles/worst-examples-of-queerbaiting-best-examples-of-pride-month-marketing,Exists,Category prefix removed
+/brand-activism-and-storytelling/the-unlikely-connection-between-poetry-and-advertising/,The Power of Brand Poetry in Advertising,post,/resources/articles/the-unlikely-connection-between-poetry-and-advertising,Exists,Category prefix removed
+/featured/articulating_brand_purpose_statements/,Articulating Brand Purpose,post,/resources/articles/articulating_brand_purpose_statements,Exists,Category prefix removed
+/featured/b-corp-month-2023/,B Corp Month,post,/resources/articles/b-corp-month-2023,Exists,Category prefix removed
+/featured/earth-day-campaigns/,Earth Day Campaigns,post,/resources/articles/earth-day-campaigns,Exists,Category prefix removed
+/featured/green-friday-the-sustainable-black-friday/,What is Green Friday?,post,/resources/articles/green-friday-the-sustainable-black-friday,Exists,Category prefix removed
+/featured/purpose-driven-leadership-with-matthew-mccarthy/,Purpose-Driven Leadership with Matthew McCarthy,post,/resources/articles/purpose-driven-leadership-with-matthew-mccarthy,Exists,Category prefix removed
+/featured/sustainable-fashion-4-ways-fashion-brands-can-be-more-sustainable/,4 Ways Fashion Brands Can Be More Sustainable,post,/resources/articles/sustainable-fashion-4-ways-fashion-brands-can-be-more-sustainable,Exists,Category prefix removed
+/featured/value-brand-authenticity/,The Value of Brand Authenticity,post,/resources/articles/value-brand-authenticity,Exists,Category prefix removed
+/featured/what-social-justice-means/,What Social Justice Means,post,/resources/articles/what-social-justice-means,Exists,Category prefix removed
+/social-impact/ep-1-journalism-shouldnt-be-this-hard/,Ep.1 of 'It Shouldn't Be This Hard' Out Now!,post,/resources/articles/ep-1-journalism-shouldnt-be-this-hard,Exists,Category prefix removed
+/social-impact/exploring-mental-health-and-culture/,Exploring Mental Health and Culture,post,/resources/articles/exploring-mental-health-and-culture,Exists,Category prefix removed
+/sustainability-marketing/back-to-school-supplies-where-retail-meets-responsibility/,Back to School Supplies: Where Retail Meets Responsibility,post,/resources/articles/back-to-school-supplies-where-retail-meets-responsibility,Exists,Category prefix removed
+/sustainability-marketing/convenience-without-conscience-the-sustainability-gap-in-grocery-delivery/,Convenience Without Conscience,post,/resources/articles/convenience-without-conscience-the-sustainability-gap-in-grocery-delivery,Exists,Category prefix removed
+/sustainability-marketing/fighting-food-waste-shouldnt-be-this-hard/,Fighting Food Waste Shouldn't Be This Hard,post,/resources/articles/fighting-food-waste-shouldnt-be-this-hard,Exists,Category prefix removed
+/sustainability-marketing/get-grounded-in-the-plastic-reality-project-with-paloma-jacome/,Plastic Reality Project with Paloma Jacome,post,/resources/articles/get-grounded-in-the-plastic-reality-project-with-paloma-jacome,Exists,Category prefix removed
+/sustainability-marketing/learn-about-composting-a-radical-act-of-mental-health-through-circularity/,Learn About Composting,post,/resources/articles/learn-about-composting-a-radical-act-of-mental-health-through-circularity,Exists,Category prefix removed
+/sustainability-marketing/stopping-plastic-pollution-shouldnt-be-this-hard-david-katz/,Stopping Plastic Pollution Shouldn't Be This Hard,post,/resources/articles/stopping-plastic-pollution-shouldnt-be-this-hard-david-katz,Exists,Category prefix removed
+/sustainability-marketing/sustainability-buzzwords/,Sustainability Buzzwords,post,/resources/articles/sustainability-buzzwords,Exists,Category prefix removed
+/sustainability/top-5-brands-helping-keep-our-oceans-clean-plastic-free/,Top 5 Brands Helping Keep Our Oceans Clean,post,/resources/articles/top-5-brands-helping-keep-our-oceans-clean-plastic-free,Exists,Category prefix removed
+/template/brand-storytelling-how-purpose-driven-narratives-build-commercial-value/,Brand Storytelling: Purpose-Driven Narratives,post,/resources/articles/brand-storytelling-how-purpose-driven-narratives-build-commercial-value,Exists,Category prefix removed - was under /template/ category

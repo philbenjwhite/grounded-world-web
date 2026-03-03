@@ -2,8 +2,8 @@
 title: "Fair Price for Coffee Shouldn’t Be This Hard | Bob & Michelle Fish"
 date: 2025-11-19T16:45:39.000Z
 description: "Key Takeaways:"
-author: paloma-jacome
-category: brand-purpose
+author: content/team-members/paloma-jacome.json
+category: content/categories/brand-purpose.json
 tags:
   - Paloma Jacome
 featuredImage: '/images/blog/ISTH006_email.png'
