@@ -95,33 +95,12 @@
       "stickyLeft": true,
       "left": [
         {
-          "_template": "richText",
-          "body": {
-            "type": "root",
-            "children": [
-              {
-                "type": "h2",
-                "children": [{ "type": "text", "text": "Get Grounded" }]
-              },
-              {
-                "type": "p",
-                "children": [{ "type": "text", "text": "Grounded is a multi-award-winning, B Corp certified brand activation agency \u2014 thriving at the intersection of brand experience, commercial innovation, sustainability and social impact." }]
-              },
-              {
-                "type": "p",
-                "children": [{ "type": "text", "text": "We work with brands, retailers, startups and nonprofits all over the world \u2014 helping them transform purpose into profit, commercialize sustainability and drive behavior change at scale." }]
-              },
-              {
-                "type": "p",
-                "children": [{ "type": "text", "text": "No hushing. No Washing. No tweaking around the edges." }]
-              }
-            ]
-          }
+          "body": "## Get Grounded\n\nGrounded is a multi-award-winning, B Corp certified brand activation agency — thriving at the intersection of brand experience, commercial innovation, sustainability and social impact.\n\nWe work with brands, retailers, startups and nonprofits all over the world — helping them transform purpose into profit, commercialize sustainability and drive behavior change at scale.\n\nNo hushing. No Washing. No tweaking around the edges.\n",
+          "_template": "richText"
         }
       ],
       "right": [
         {
-          "_template": "expandingCards",
           "items": [
             {
               "name": "Discover",
@@ -179,7 +158,8 @@
               "imageSrc": "/images/services/flywheel-of-impact.png",
               "imageAlt": "Flywheel of Impact"
             }
-          ]
+          ],
+          "_template": "expandingCards"
         }
       ],
       "_template": "splitLayout"
