@@ -340,7 +340,8 @@ export default function ArticleDetailClientPage(
                 {post.body && (
                   <TinaMarkdown
                     content={post.body}
-                    components={tinaMarkdownComponents}
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    components={tinaMarkdownComponents as any}
                   />
                 )}
               </article>
