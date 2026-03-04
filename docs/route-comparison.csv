@@ -1,9 +1,9 @@
 WordPress Path,WordPress Title,WordPress Type,New Site Path,Status,Notes
 /,HOME PAGE,page,/,Exists,Homepage
 /about-us/,ABOUT US,page,/about,Exists,Path changed from /about-us/ to /about
-/about-us/matt-deasy/,MATT DEASY,page,,Missing,Team bio page - no equivalent route in new site
-/about-us/paloma-jacome/,PALOMA JACOME,page,,Missing,Team bio page - no equivalent route in new site
-/about-us/phil-white/,PHIL WHITE,page,,Missing,Team bio page - no equivalent route in new site
+/about-us/matt-deasy/,MATT DEASY,page,/about-us/matt-deasy,Exists,Same path
+/about-us/paloma-jacome/,PALOMA JACOME,page,/about-us/paloma-jacome,Exists,Same path
+/about-us/phil-white/,PHIL WHITE,page,/about-us/phil-white,Exists,Same path
 /activating-brand-purpose-agency/,How To Page -- Activating Brand Purpose Agency,page,,Missing,SEO/How-To landing page - no equivalent in new site
 /brand-activism-agency-new/,How To Page -- Brand Activism Agency,page,,Missing,SEO/How-To landing page - no equivalent in new site
 /brand-activism-agency/,OUR THINKING_How To Guide_Brand Activism,page,,Missing,SEO/How-To landing page - no equivalent in new site

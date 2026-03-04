@@ -7,9 +7,9 @@
 | WordPress published pages | 58 |
 | WordPress published posts | 86 |
 | **Total WordPress routes** | **144** |
-| New site routes | 133 |
-| Routes that exist (with or without path change) | 127 |
-| Routes missing from new site | 16 |
+| New site routes | 136 |
+| Routes that exist (with or without path change) | 130 |
+| Routes missing from new site | 13 |
 | Routes to skip (maintenance page) | 1 |
 
 ---
@@ -91,9 +91,6 @@ These WordPress pages have NO equivalent in the new site. The client needs to de
 
 | WordPress Path | Title | Suggested Action |
 |---------------|-------|-----------------|
-| `/about-us/matt-deasy/` | Matt Deasy (bio) | Redirect to `/about` or recreate as section |
-| `/about-us/paloma-jacome/` | Paloma Jacome (bio) | Redirect to `/about` or recreate as section |
-| `/about-us/phil-white/` | Phil White (bio) | Redirect to `/about` or recreate as section |
 | `/activating-brand-purpose-agency/` | How To: Activating Brand Purpose | Redirect to `/services` or `/resources/articles` |
 | `/brand-activism-agency-new/` | How To: Brand Activism Agency | Redirect to `/services` or `/resources/articles` |
 | `/brand-activism-agency/` | How To: Brand Activism | Redirect to `/services` or `/resources/articles` |
