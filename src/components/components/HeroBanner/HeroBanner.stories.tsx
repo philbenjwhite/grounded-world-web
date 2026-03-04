@@ -67,7 +67,7 @@ export const ImageBackground: Story = {
     subtitle:
       "We\u2019re a B Corp certified boutique agency at the intersection of brand purpose, commercial strategy, and social impact.",
     ctaLabel: "Meet the Team",
-    ctaHref: "/about#team",
+    ctaHref: "/about-us#team",
     ctaVariant: "solid",
     overlayOpacity: "heavy",
     contentAlign: "center",

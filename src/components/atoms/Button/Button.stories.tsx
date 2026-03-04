@@ -140,7 +140,7 @@ export const AllVariants: Story = {
       </div>
       <div>
         <p className="text-gray-400 text-sm mb-2">Primary (link)</p>
-        <Button href="/about">Internal Link</Button>
+        <Button href="/about-us">Internal Link</Button>
       </div>
       <div>
         <p className="text-gray-400 text-sm mb-2">Primary (external link)</p>

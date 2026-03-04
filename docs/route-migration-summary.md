@@ -22,7 +22,7 @@ Every WordPress route that maps to a new site route with a different path needs 
 
 | Old Path | New Path |
 |----------|----------|
-| `/about-us/` | `/about` |
+| `/about-us/` | `/about-us` |
 | `/brand-marketing-agency-services/` | `/services` |
 | `/brand-marketing-agency-services__trashed/brand-activation-agency/` | `/services/activation` |
 | `/brand-marketing-agency-services__trashed/brand-strategy-agency/` | `/services/strategy` |
@@ -94,7 +94,7 @@ These WordPress pages have NO equivalent in the new site. The client needs to de
 | `/activating-brand-purpose-agency/` | How To: Activating Brand Purpose | Redirect to `/services` or `/resources/articles` |
 | `/brand-activism-agency-new/` | How To: Brand Activism Agency | Redirect to `/services` or `/resources/articles` |
 | `/brand-activism-agency/` | How To: Brand Activism | Redirect to `/services` or `/resources/articles` |
-| `/grounded-sizzle-video/` | Sizzle Reel | Redirect to `/` or `/about` |
+| `/grounded-sizzle-video/` | Sizzle Reel | Redirect to `/` or `/about-us` |
 | `/non-profit-marketing-services/` | Non-profit Marketing | Redirect to `/services` |
 | `/nonprofit-branding-agency/` | How To: Nonprofits Branding | Redirect to `/services` or `/resources/articles` |
 | `/privacy-policy-its-time-to-get-grounded/` | Privacy Policy | Recreate or redirect to footer link |

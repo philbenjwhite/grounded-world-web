@@ -64,7 +64,7 @@ export default function TeamMemberClientPage(
           {/* Breadcrumb */}
           <nav className="mb-8">
             <Link
-              href="/about"
+              href="/about-us"
               className="text-sm text-[color:var(--font-color-tertiary)] hover:text-[color:var(--color-cyan)] transition-colors"
             >
               &larr; Back to About

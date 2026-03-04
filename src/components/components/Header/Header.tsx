@@ -206,7 +206,7 @@ const Header = ({ className, services = [] }: HeaderProps) => {
                     </>
                   )}
 
-                  <MobileLink href="/about" label="About Us" active={isActivePath(pathname, "/about")} style={stagger()} />
+                  <MobileLink href="/about-us" label="About Us" active={isActivePath(pathname, "/about-us")} style={stagger()} />
                   <MobileLink href="/our-work" label="Our Work" active={isActivePath(pathname, "/our-work")} style={stagger()} />
 
                   <MobileLink href="/resources" label="Resources" active={isActivePath(pathname, "/resources")} style={stagger()} />
@@ -394,12 +394,12 @@ function NavItems({
 
       {/* ABOUT US */}
       <Link
-        href="/about"
+        href="/about-us"
         className={cn(
           styles.navLink,
           "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap",
         )}
-        {...(isActivePath(pathname, "/about") && { "data-active": "" })}
+        {...(isActivePath(pathname, "/about-us") && { "data-active": "" })}
       >
         About Us
       </Link>
