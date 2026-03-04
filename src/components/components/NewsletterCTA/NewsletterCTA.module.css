@@ -1,0 +1,119 @@
+/* ─── MailerLite form reset ─── */
+
+.formEmbed {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.formEmbed .ml-form-embedWrapper {
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  display: block !important;
+  padding: 0 !important;
+}
+
+.formEmbed .ml-form-embedBody {
+  padding: 0 !important;
+}
+
+.formEmbed .ml-form-embedContent {
+  display: none !important;
+}
+
+.formEmbed .ml-form-successBody {
+  display: none !important;
+}
+
+/* ─── Pill-shaped inline form row ─── */
+
+.formRow {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0 !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 9999px !important;
+  padding: 6px 6px 6px 20px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  transition: border-color 0.2s ease;
+}
+
+.formRow:focus-within {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.formRow .ml-form-fieldRow {
+  flex: 1 !important;
+  margin: 0 !important;
+}
+
+.formRow .ml-field-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.emailInput {
+  flex: 1 !important;
+  background: transparent !important;
+  border: none !important;
+  color: #fff !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.emailInput::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.formRow .ml-form-embedSubmit {
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+  width: auto !important;
+  float: none !important;
+}
+
+.submitButton {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  white-space: nowrap !important;
+  background: var(--color-magenta) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  color: #fff !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease;
+  width: auto !important;
+}
+
+.submitButton:hover {
+  background: var(--comp-button-primary-surface-hover) !important;
+}
+
+/* Error state */
+.formEmbed .ml-error input {
+  border-color: transparent !important;
+}
+
+.formRow:has(.ml-error) {
+  border-color: #ef4444 !important;
+}

@@ -131,9 +131,9 @@
   width: 100% !important;
   padding: 12px 24px !important;
   margin-top: 12px !important;
-  background: var(--color-primary) !important;
+  background: var(--color-magenta) !important;
   border: none !important;
-  border-radius: 12px !important;
+  border-radius: 9999px !important;
   color: #fff !important;
   font-family: inherit !important;
   font-size: 15px !important;
@@ -143,12 +143,12 @@
 }
 
 .submitButton:hover {
-  background: var(--color-primary-hover) !important;
+  background: var(--comp-button-primary-surface-hover) !important;
   transform: translateY(-1px);
 }
 
 .submitButton:active {
-  background: var(--color-primary-active) !important;
+  background: var(--color-magenta) !important;
   transform: translateY(0);
 }
 

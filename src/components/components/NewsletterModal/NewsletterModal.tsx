@@ -5,33 +5,14 @@ import { createPortal } from "react-dom";
 import { X } from "@phosphor-icons/react";
 import cn from "classnames";
 import styles from "./NewsletterModal.module.css";
+import { MAILERLITE_FORM_ID, MAILERLITE_FORM_CODE, loadMailerLiteScript } from "@/lib/mailerlite";
 
 interface NewsletterModalProps {
   open: boolean;
   onClose: () => void;
 }
 
-const MAILERLITE_FORM_ID = "6122054";
-const MAILERLITE_FORM_CODE = "u8g2z9";
-const MAILERLITE_SCRIPT_URL =
-  "https://static.mailerlite.com/js/w/webforms.min.js?vd4de52e171e8eb9c47c0c20caf367ddf";
-
 const EXIT_DURATION = 300;
-
-function loadMailerLiteScript(): Promise<void> {
-  return new Promise((resolve, reject) => {
-    if (document.querySelector(`script[src="${MAILERLITE_SCRIPT_URL}"]`)) {
-      resolve();
-      return;
-    }
-    const script = document.createElement("script");
-    script.src = MAILERLITE_SCRIPT_URL;
-    script.async = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error("Failed to load MailerLite script"));
-    document.body.appendChild(script);
-  });
-}
 
 const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
   const [closing, setClosing] = useState(false);
