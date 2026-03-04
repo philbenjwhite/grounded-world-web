@@ -19,8 +19,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Grounded World",
-  description: "A Next.js website powered by TinaCMS and styled with Tailwind CSS",
+  title: {
+    default: "Brand Purpose & Sustainability Agency | Grounded World",
+    template: "%s | Grounded World",
+  },
+  description:
+    "Grounded World is a B Corp certified agency at the intersection of brand purpose, commercial strategy, and social impact.",
 };
 
 function loadServicesFromFiles(): Service[] {
