@@ -5,7 +5,7 @@
   margin: 0 !important;
 }
 
-.formEmbed .ml-form-embedWrapper {
+.formEmbed :global(.ml-form-embedWrapper) {
   background: transparent !important;
   border: none !important;
   width: 100% !important;
@@ -13,15 +13,15 @@
   padding: 0 !important;
 }
 
-.formEmbed .ml-form-embedBody {
+.formEmbed :global(.ml-form-embedBody) {
   padding: 0 !important;
 }
 
-.formEmbed .ml-form-embedContent {
+.formEmbed :global(.ml-form-embedContent) {
   display: none !important;
 }
 
-.formEmbed .ml-form-successBody {
+.formEmbed :global(.ml-form-successBody) {
   display: none !important;
 }
 
@@ -29,14 +29,19 @@
 
 .formRow {
   display: flex !important;
+  flex-direction: row !important;
   align-items: center !important;
+  flex-wrap: nowrap !important;
   gap: 0 !important;
+  float: none !important;
+  height: auto !important;
   background: rgba(255, 255, 255, 0.06) !important;
   border: 1px solid rgba(255, 255, 255, 0.12) !important;
   border-radius: 9999px !important;
   padding: 6px 6px 6px 20px !important;
   margin: 0 !important;
   width: 100% !important;
+  box-sizing: border-box !important;
   transition: border-color 0.2s ease;
 }
 
@@ -44,15 +49,19 @@
   border-color: rgba(255, 255, 255, 0.25) !important;
 }
 
-.formRow .ml-form-fieldRow {
+.formRow :global(.ml-form-fieldRow) {
   flex: 1 !important;
   margin: 0 !important;
+  width: auto !important;
+  float: none !important;
 }
 
-.formRow .ml-field-group {
-  position: relative;
-  display: flex;
-  align-items: center;
+.formRow :global(.ml-field-group) {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: 100% !important;
 }
 
 .inputIcon {
@@ -80,7 +89,7 @@
   color: rgba(255, 255, 255, 0.4) !important;
 }
 
-.formRow .ml-form-embedSubmit {
+.formRow :global(.ml-form-embedSubmit) {
   flex-shrink: 0 !important;
   margin: 0 !important;
   width: auto !important;
@@ -110,10 +119,10 @@
 }
 
 /* Error state */
-.formEmbed .ml-error input {
+.formEmbed :global(.ml-error) input {
   border-color: transparent !important;
 }
 
-.formRow:has(.ml-error) {
+.formRow:has(:global(.ml-error)) {
   border-color: #ef4444 !important;
 }

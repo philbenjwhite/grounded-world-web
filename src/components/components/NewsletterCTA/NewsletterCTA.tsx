@@ -113,9 +113,9 @@ const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
           )}
 
           {/* Inline MailerLite form */}
-          <div className="mt-8 md:mt-10 w-full max-w-md">
+          <div className="mt-8 md:mt-10 w-full max-w-md min-h-14">
             {submitted ? (
-              <div className="flex items-center justify-center gap-3 py-4">
+              <div className="flex items-center justify-center gap-3 h-14">
                 <CheckCircle size={24} weight="fill" className="text-(--color-cyan)" />
                 <Text size="body-lg" color="primary" className="font-semibold">
                   You&rsquo;re now Grounded!
