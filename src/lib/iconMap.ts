@@ -16,6 +16,8 @@ import {
   BookOpenTextIcon,
   EnvelopeSimpleIcon,
   ChatCircleDotsIcon,
+  HandshakeIcon,
+  ShoppingBagIcon,
   type IconProps,
 } from "@phosphor-icons/react";
 
@@ -37,6 +39,8 @@ export const iconMap: Record<string, React.ComponentType<IconProps>> = {
   BookOpenText: BookOpenTextIcon,
   EnvelopeSimple: EnvelopeSimpleIcon,
   ChatCircleDots: ChatCircleDotsIcon,
+  Handshake: HandshakeIcon,
+  ShoppingBag: ShoppingBagIcon,
 };
 
 /** Dropdown options for TinaCMS icon fields */
@@ -58,4 +62,6 @@ export const iconOptions = [
   { value: "BookOpenText", label: "Book Open Text" },
   { value: "EnvelopeSimple", label: "Envelope" },
   { value: "ChatCircleDots", label: "Chat Bubble" },
+  { value: "Handshake", label: "Handshake" },
+  { value: "ShoppingBag", label: "Shopping Bag" },
 ];

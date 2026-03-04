@@ -6,6 +6,36 @@ import serverClient from "../../../../tina/server-client";
 import TeamMemberClientPage from "./client-page";
 import type { RelatedArticleItem } from "@/components/components/RelatedArticles/RelatedArticles";
 
+/* Category slug → display name mapping */
+const CATEGORY_NAMES: Record<string, string> = {
+  "brand-purpose": "Brand Purpose",
+  "brand-activism": "Brand Activism",
+  "social-impact": "Social Impact",
+  partnerships: "Partnerships",
+  "retail-shopper": "Retail & Shopper",
+  strategy: "Strategy",
+  sustainability: "Sustainability",
+};
+
+/** Cache of category JSON data keyed by slug */
+const categoryDataCache = new Map<string, { icon?: string; placeholderColor?: string }>();
+
+async function getCategoryData(slug: string): Promise<{ icon?: string; placeholderColor?: string }> {
+  if (categoryDataCache.has(slug)) return categoryDataCache.get(slug)!;
+  try {
+    const filePath = path.join(process.cwd(), "content", "categories", `${slug}.json`);
+    const raw = await fs.readFile(filePath, "utf-8");
+    const data = JSON.parse(raw) as { icon?: string; placeholderColor?: string };
+    const result = { icon: data.icon, placeholderColor: data.placeholderColor };
+    categoryDataCache.set(slug, result);
+    return result;
+  } catch {
+    const empty = {};
+    categoryDataCache.set(slug, empty);
+    return empty;
+  }
+}
+
 interface PageParams {
   slug: string;
 }
@@ -94,6 +124,13 @@ async function getArticlesByAuthor(
         const imageMatch = frontmatter.match(
           /^featuredImage:\s*['"]?(.+?)['"]?\s*$/m,
         );
+        const categoryMatch = frontmatter.match(
+          /^category:\s*['"]?(.+?)['"]?\s*$/m,
+        );
+        const categorySlug = categoryMatch?.[1]
+          ?.replace(/^content\/categories\//, "")
+          .replace(/\.json$/, "");
+        const catData = categorySlug ? await getCategoryData(categorySlug) : undefined;
 
         articles.push({
           slug: file.replace(/\.md$/, ""),
@@ -101,6 +138,12 @@ async function getArticlesByAuthor(
             titleMatch?.[1] ?? titleMatch?.[2] ?? titleMatch?.[3] ?? file,
           date: dateMatch?.[1] ?? "",
           featuredImage: imageMatch?.[1],
+          categorySlug,
+          categoryName: categorySlug
+            ? (CATEGORY_NAMES[categorySlug] ?? categorySlug)
+            : undefined,
+          categoryIcon: catData?.icon,
+          categoryColor: catData?.placeholderColor,
         });
       } catch {
         continue;

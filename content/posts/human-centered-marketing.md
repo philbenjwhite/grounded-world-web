@@ -1,7 +1,7 @@
 ---
 title: "Human Centered Marketing: Why People First Drives Growth"
 date: 2025-12-16T05:56:28.000Z
-description: "Key Takeaways:"
+description: "A pharmaceutical executive once told me that after twenty years in marketing, he'd forgotten his customers were sick people, not prescribers."
 author: content/team-members/matt-deasy.json
 category: content/categories/strategy.json
 tags:

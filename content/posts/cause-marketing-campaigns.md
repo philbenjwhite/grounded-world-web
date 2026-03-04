@@ -1,7 +1,7 @@
 ---
 title: "Cause Marketing Campaigns: Strategic Frameworks That Unite Purpose With Performance"
 date: 2026-01-05T09:59:25.000Z
-description: "Key Takeaways:"
+description: "When TOMS Shoes launched their \"One for One\" model in 2006, donating a pair of shoes for every purchase, they didn't just create a marketing campaign—they..."
 author: content/team-members/matt-deasy.json
 category: content/categories/partnerships.json
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Making Earth Day Every Day Shouldn’t Be This Hard | Kathleen Rogers"
 date: 2025-12-03T16:54:10.000Z
-description: "Key Takeaways:"
+description: "In this episode of It Shouldn’t Be This Hard, we dig deep into the world's most renowned environmental day of awareness - Earth Day. Not just the event, but..."
 author: content/team-members/paloma-jacome.json
 category: content/categories/brand-purpose.json
 tags:

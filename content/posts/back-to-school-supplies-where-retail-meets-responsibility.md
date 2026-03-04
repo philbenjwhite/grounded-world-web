@@ -1,7 +1,7 @@
 ---
 title: "Back to School Supplies: Where Retail Meets Responsibility"
 date: 2025-11-18T17:45:30.000Z
-description: "Key Takeaways:"
+description: "Back-to-school is a rare, high-impact moment for purpose activation. With millions of families aligned in action, the season gives brands an authentic..."
 author: content/team-members/paloma-jacome.json
 category: content/categories/brand-purpose.json
 tags:

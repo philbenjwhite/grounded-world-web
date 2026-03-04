@@ -1,7 +1,7 @@
 ---
 title: "Cancel Culture in Climate: Why Division Is Derailing Progress"
 date: 2025-11-19T00:31:05.000Z
-description: "Key Takeaways:"
+description: "The climate crisis has never been more dire. And yet the movement built to fight it is losing momentum. No commitments are even close to being met. Instead..."
 author: content/team-members/paloma-jacome.json
 category: content/categories/brand-purpose.json
 tags:

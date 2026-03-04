@@ -1,7 +1,7 @@
 ---
 title: "z Impact Measurement: test"
 date: 2025-11-21T05:30:58.000Z
-description: "Key Takeaways:"
+description: "In 2019, 181 CEOs signed the Business Roundtable's statement redefining corporate purpose beyond shareholder primacy. Five years later, we're still..."
 author: content/team-members/andrew-yates.json
 ---
 

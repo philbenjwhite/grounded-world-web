@@ -1,7 +1,7 @@
 ---
 title: "Brand Identity: How a Clearly Defined Brand Identity Builds Trust"
 date: 2025-12-01T10:30:07.000Z
-description: Key Takeaways
+description: "Brand identity encompasses all visual, verbal, and experiential elements that shape how audiences perceive your organization—from your logo and color..."
 author: content/team-members/matt-deasy.json
 category: content/categories/brand-purpose.json
 tags:

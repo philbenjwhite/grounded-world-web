@@ -1,7 +1,7 @@
 ---
 title: "Stakeholder Engagement Strategy: Building Relationships That Drive Purpose and Performance"
 date: 2026-01-05T09:27:52.000Z
-description: "Key Takeaways:"
+description: "A European fashion brand spent eighteen months developing a groundbreaking circular economy initiative—garments designed for disassembly, material recovery..."
 author: content/team-members/matt-deasy.json
 category: content/categories/partnerships.json
 tags:

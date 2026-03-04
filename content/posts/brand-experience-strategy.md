@@ -1,7 +1,7 @@
 ---
 title: "Brand Experience Strategy: How You Turn Touchpoints Into Trust"
 date: 2025-12-16T05:40:41.000Z
-description: "Key Takeaways:"
+description: "The average person encounters between 4,000 and 10,000 brand messages daily, according to research from the American Marketing Association. Yet most of us..."
 author: content/team-members/matt-deasy.json
 category: content/categories/strategy.json
 tags:

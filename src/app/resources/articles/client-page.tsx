@@ -3,6 +3,8 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArticleIcon } from "@phosphor-icons/react";
+import { iconMap } from "@/lib/iconMap";
 import { useTina } from "tinacms/dist/react";
 import type { PageQuery } from "../../../../tina/__generated__/types";
 import HeroBanner from "@/components/components/HeroBanner";
@@ -20,17 +22,19 @@ import type { ArticleItem } from "./page";
 
 const ITEMS_PER_PAGE = 12;
 
-/** Category-based gradient palette for cards without images */
-const CATEGORY_GRADIENTS: Record<string, string> = {
-  "brand-purpose": "from-[#0077B5]/30 via-[#4DD9FF]/10 to-transparent",
-  "brand-activism": "from-[#FF08CC]/25 via-[#FF08CC]/5 to-transparent",
-  "social-impact": "from-[#1CC35B]/25 via-[#1CC35B]/5 to-transparent",
-  partnerships: "from-[#FFA603]/25 via-[#FFA603]/5 to-transparent",
-  "retail-shopper": "from-[#4DD9FF]/25 via-[#0077B5]/10 to-transparent",
-  strategy: "from-[#00AEEF]/25 via-[#00AEEF]/5 to-transparent",
-  sustainability: "from-[#1CC35B]/20 via-[#00AEEF]/10 to-transparent",
+/** Fallback config used when a category has no CMS-driven icon/color */
+const FALLBACK_CONFIG: Record<string, { icon: string; color: string }> = {
+  "brand-purpose": { icon: "Compass", color: "#00AEEF" },
+  "brand-activism": { icon: "Megaphone", color: "#FF08CC" },
+  "social-impact": { icon: "Users", color: "#1CC35B" },
+  partnerships: { icon: "Handshake", color: "#FFA603" },
+  "retail-shopper": { icon: "ShoppingBag", color: "#E85DC7" },
+  strategy: { icon: "Target", color: "#F0C040" },
+  sustainability: { icon: "Leaf", color: "#40D8A0" },
 };
-const DEFAULT_GRADIENT = "from-white/[0.08] via-white/[0.02] to-transparent";
+
+const DEFAULT_ICON_COLOR = "#888888";
+const DefaultIcon = ArticleIcon;
 
 function formatDate(dateStr: string): string {
   try {
@@ -63,24 +67,29 @@ function ArticleCard({ article }: { article: ArticleItem }) {
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           />
         ) : (
-          <>
-            <div
-              className={`absolute inset-0 bg-gradient-to-br ${
-                CATEGORY_GRADIENTS[article.categorySlug ?? ""] ?? DEFAULT_GRADIENT
-              }`}
-            />
-            <div className={`absolute inset-0 opacity-[0.03] ${cardStyles.dotPattern}`} />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Image
-                src="/grounded-logo-light.svg"
-                alt=""
-                width={160}
-                height={50}
-                className="opacity-[0.07] select-none"
-                aria-hidden="true"
-              />
-            </div>
-          </>
+          (() => {
+            const fallback = FALLBACK_CONFIG[article.categorySlug ?? ""];
+            const iconKey = article.categoryIcon ?? fallback?.icon;
+            const color = article.categoryColor ?? fallback?.color ?? DEFAULT_ICON_COLOR;
+            const IconComp = (iconKey ? iconMap[iconKey] : null) ?? DefaultIcon;
+            return (
+              <div
+                className="absolute inset-0"
+                style={{ "--card-accent": color } as React.CSSProperties}
+              >
+                <div className={`absolute inset-0 ${cardStyles.cardGradient}`} />
+                <div className={`absolute inset-0 opacity-[0.04] ${cardStyles.dotPattern}`} />
+                <div
+                  className="absolute inset-0 flex items-center justify-center text-[color:var(--card-accent)]"
+                  aria-hidden="true"
+                >
+                  <div className="opacity-60 drop-shadow-[0_0_20px_currentColor]">
+                    <IconComp size={80} weight="light" />
+                  </div>
+                </div>
+              </div>
+            );
+          })()
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
         {article.categoryName && (

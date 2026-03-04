@@ -1,7 +1,7 @@
 ---
 title: "Ethical Practices: Build Trust Through Leadership & Action"
 date: 2025-12-04T00:04:20.000Z
-description: "Key Takeaways:"
+description: "Organizations with strong ethical practices see 82% higher employee productivity and 92% of workers now prioritize companies that value their well-being,..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

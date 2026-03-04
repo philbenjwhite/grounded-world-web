@@ -1,5 +1,6 @@
 {
   "name": "Retail Shopper",
   "slug": "retail-shopper",
-  "parent": "content/categories/brand-activation.json"
+  "icon": "ShoppingBag",
+  "placeholderColor": "#E85DC7"
 }

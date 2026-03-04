@@ -1,7 +1,7 @@
 ---
 title: "CSR Strategy: Build Corporate Social Responsibility That Drives Purpose and Profit"
 date: 2025-12-08T07:37:21.000Z
-description: "Key Takeaways:"
+description: "Seventy-one percent of U.S. customers want to buy from socially responsible companies, yet most corporate social responsibility programs fail to create..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

@@ -1,7 +1,7 @@
 ---
 title: "Shopper Behaviour Insights: How the Path to Purchase Transforms Brand Strategy"
 date: 2026-01-05T07:43:43.000Z
-description: "Key Takeaways:"
+description: "A grocery chain analyzing checkout data noticed something puzzling: their premium organic produce had strong sales growth except for one demographic segment..."
 author: content/team-members/matt-deasy.json
 category: content/categories/retail-shopper.json
 tags:

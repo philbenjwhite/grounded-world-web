@@ -14,6 +14,7 @@ export default function ArticleTableOfContents({
   variant = "sidebar",
 }: ArticleTableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
+  const [isOpen, setIsOpen] = useState(variant === "mobile" ? false : false);
   const rafRef = useRef(0);
 
   useEffect(() => {
@@ -81,8 +82,13 @@ export default function ArticleTableOfContents({
         aria-label="Table of contents"
         className="lg:hidden sticky top-[96px] z-40 mb-6 px-1"
       >
-        <details className="rounded-2xl border border-white/[0.12] bg-white/[0.05] backdrop-blur-md px-5 py-3.5">
-          <summary className="cursor-pointer text-sm font-semibold text-[color:var(--font-color-primary)] select-none flex items-center gap-2.5">
+        <div className="rounded-2xl border border-white/[0.12] bg-white/[0.05] backdrop-blur-md px-5 py-3.5">
+          <button
+            type="button"
+            onClick={() => setIsOpen((o) => !o)}
+            className="w-full cursor-pointer text-sm font-semibold text-[color:var(--font-color-primary)] select-none flex items-center gap-2.5"
+            aria-expanded={isOpen}
+          >
             <svg
               width="16"
               height="16"
@@ -98,20 +104,54 @@ export default function ArticleTableOfContents({
               />
             </svg>
             Table of Contents
-          </summary>
-          <div className="mt-3 max-h-[50vh] overflow-y-auto">{tocLinks}</div>
-        </details>
+          </button>
+          <div
+            className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+          >
+            <div className="overflow-hidden">
+              <div className="mt-3 max-h-[50vh] overflow-y-auto">{tocLinks}</div>
+            </div>
+          </div>
+        </div>
       </nav>
     );
   }
 
   return (
-    <nav aria-label="Table of contents" className="hidden lg:block">
-      <div className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
-        <p className="text-xs font-semibold uppercase tracking-wider text-[color:var(--font-color-tertiary)] mb-4">
+    <nav aria-label="Table of contents" className="rounded-2xl border border-white/[0.08] bg-white/[0.025] p-5">
+      <button
+        type="button"
+        onClick={() => setIsOpen((o) => !o)}
+        className="w-full cursor-pointer select-none flex items-center justify-between gap-2"
+        aria-expanded={isOpen}
+      >
+        <span className="text-xs font-semibold uppercase tracking-wider text-[color:var(--font-color-tertiary)]">
           Contents
-        </p>
-        {tocLinks}
+        </span>
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 16 16"
+          fill="none"
+          className={`text-[color:var(--font-color-tertiary)] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+        >
+          <path
+            d="M4 6L8 10L12 6"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+      <div
+        className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+      >
+        <div className="overflow-hidden">
+          <div className="mt-4 max-h-[50vh] overflow-y-auto">
+            {tocLinks}
+          </div>
+        </div>
       </div>
     </nav>
   );

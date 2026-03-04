@@ -1,7 +1,7 @@
 ---
 title: "A Future Without Cigarettes Shouldn’t Be This Hard | Jennifer Motles"
 date: 2025-11-25T15:36:29.000Z
-description: "Key Takeaways:"
+description: "What happens when a sustainability leader steps into one of the world’s most controversial industries and decides to change it from the inside out?"
 author: content/team-members/paloma-jacome.json
 category: content/categories/brand-purpose.json
 tags:

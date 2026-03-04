@@ -1,7 +1,7 @@
 ---
 title: "Sustainability Initiatives: A Strategic Guide to Building Authentic Environmental Impact"
 date: 2025-12-03T08:07:24.000Z
-description: "Key Takeaways:"
+description: "In 2023, global greenhouse gas emissions reached a critical threshold, with annual emissions increasing by 50% over the past three decades. Yet..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

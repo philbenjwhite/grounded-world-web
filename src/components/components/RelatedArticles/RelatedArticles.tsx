@@ -1,15 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArticleIcon } from "@phosphor-icons/react";
+import { iconMap } from "@/lib/iconMap";
 import Heading from "@/components/atoms/Heading";
 import Text from "@/components/atoms/Text";
 import Grid from "@/components/layout/Grid";
+import styles from "./RelatedArticles.module.css";
 
 export interface RelatedArticleItem {
   slug: string;
   title: string;
   date: string;
   featuredImage?: string;
+  categorySlug?: string;
+  categoryName?: string;
+  categoryIcon?: string;
+  categoryColor?: string;
 }
+
+/** Fallback config used when a category has no CMS-driven icon/color */
+const FALLBACK_CONFIG: Record<string, { icon: string; color: string }> = {
+  "brand-purpose": { icon: "Compass", color: "#00AEEF" },
+  "brand-activism": { icon: "Megaphone", color: "#FF08CC" },
+  "social-impact": { icon: "Users", color: "#1CC35B" },
+  partnerships: { icon: "Handshake", color: "#FFA603" },
+  "retail-shopper": { icon: "ShoppingBag", color: "#E85DC7" },
+  strategy: { icon: "Target", color: "#F0C040" },
+  sustainability: { icon: "Leaf", color: "#40D8A0" },
+};
+
+const DEFAULT_ICON_COLOR = "#888888";
 
 interface RelatedArticlesProps {
   articles: RelatedArticleItem[];
@@ -44,8 +64,8 @@ export default function RelatedArticles({ articles, heading = "Related Articles"
             href={`/resources/articles/${article.slug}`}
             className="group flex flex-col rounded-2xl overflow-hidden border border-white/[0.06] bg-white/[0.025] transition-colors hover:border-white/[0.12]"
           >
-            {article.featuredImage && (
-              <div className="relative aspect-[16/10] overflow-hidden bg-white/5">
+            <div className="relative aspect-[16/10] overflow-hidden bg-white/5">
+              {article.featuredImage ? (
                 <Image
                   src={article.featuredImage}
                   alt={article.title}
@@ -53,8 +73,38 @@ export default function RelatedArticles({ articles, heading = "Related Articles"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                 />
-              </div>
-            )}
+              ) : (
+                (() => {
+                  const fallback = FALLBACK_CONFIG[article.categorySlug ?? ""];
+                  const iconKey = article.categoryIcon ?? fallback?.icon;
+                  const color = article.categoryColor ?? fallback?.color ?? DEFAULT_ICON_COLOR;
+                  const IconComp = (iconKey ? iconMap[iconKey] : null) ?? ArticleIcon;
+                  return (
+                    <div
+                      className="absolute inset-0"
+                      style={{ "--card-accent": color } as React.CSSProperties}
+                    >
+                      <div className={`absolute inset-0 ${styles.cardGradient}`} />
+                      <div className={`absolute inset-0 opacity-[0.04] ${styles.dotPattern}`} />
+                      <div
+                        className="absolute inset-0 flex items-center justify-center text-[color:var(--card-accent)]"
+                        aria-hidden="true"
+                      >
+                        <div className="opacity-60 drop-shadow-[0_0_20px_currentColor]">
+                          <IconComp size={80} weight="light" />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })()
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              {article.categoryName && (
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white bg-white/15 border border-white/20 backdrop-blur-sm">
+                  {article.categoryName}
+                </span>
+              )}
+            </div>
 
             <div className="flex flex-col flex-1 p-5 gap-2">
               <Heading

@@ -1,7 +1,7 @@
 ---
 title: "Ep.1 of ‘It Shouldn’t Be This Hard’ Out Now! Journalism Shouldn’t Be This Hard"
 date: 2025-11-18T17:10:19.000Z
-description: "Key Takeaways:"
+description: "Welcome to the VERY FIRST episode of It Shouldn’t Be This Hard!"
 author: content/team-members/paloma-jacome.json
 category: content/categories/social-impact.json
 tags:

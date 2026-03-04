@@ -1,7 +1,7 @@
 ---
 title: "Shopper Marketing: Turn Retail Moments Into Lasting Impact"
 date: 2025-12-22T06:53:31.000Z
-description: "Key Takeaways:"
+description: "Walk into any grocery store and watch what happens in the yogurt aisle. Shoppers stand motionless, scanning dozens of nearly identical containers. They pick..."
 author: content/team-members/matt-deasy.json
 category: content/categories/retail-shopper.json
 tags:

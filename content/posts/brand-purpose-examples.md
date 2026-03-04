@@ -1,7 +1,7 @@
 ---
 title: "Brand Purpose Examples: How Top Brands Drive Impact"
 date: 2025-11-10T05:42:09.000Z
-description: "Key Takeaways:"
+description: "Research from Harvard Business Review and EY shows that companies operating with a clear and driving sense of purpose beyond just making money outperformed..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

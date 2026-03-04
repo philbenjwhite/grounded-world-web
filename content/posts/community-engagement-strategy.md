@@ -1,7 +1,7 @@
 ---
 title: "Community Engagement Strategy: Building Authentic Relationships That Drive Lasting Impact"
 date: 2026-01-05T09:42:30.000Z
-description: "Key Takeaways:"
+description: "A multinational food company announced plans to build a processing facility in a rural community, promising jobs and economic development."
 author: content/team-members/matt-deasy.json
 category: content/categories/partnerships.json
 tags:

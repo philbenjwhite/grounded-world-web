@@ -1,7 +1,7 @@
 ---
 title: "Brand Marketing Campaigns: Building Purpose-Driven Impact Through Strategic Creativity"
 date: 2026-01-05T06:52:26.000Z
-description: "Key Takeaways:"
+description: "When Dove launched \"Real Beauty\" in 2004, the campaign broke every rule of beauty advertising. Instead of showcasing impossibly perfect models, the brand..."
 author: content/team-members/matt-deasy.json
 category: content/categories/brand-purpose.json
 tags:

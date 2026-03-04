@@ -1,4 +1,6 @@
 {
   "name": "Partnerships",
-  "slug": "partnerships"
+  "slug": "partnerships",
+  "icon": "Handshake",
+  "placeholderColor": "#FFA603"
 }

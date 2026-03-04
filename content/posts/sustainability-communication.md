@@ -1,7 +1,7 @@
 ---
 title: "Sustainability Communication: Building Trust Through Authentic Storytelling"
 date: 2025-12-06T11:08:14.000Z
-description: "Key Takeaways:"
+description: "When Patagonia published its 2023 environmental and social responsibility report, the company didn't hide behind vague sustainability commitments or..."
 author: content/team-members/matt-deasy.json
 category: content/categories/brand-purpose.json
 tags:

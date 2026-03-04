@@ -1,4 +1,6 @@
 {
   "name": "Brand Activism",
-  "slug": "brand-activism"
+  "slug": "brand-activism",
+  "icon": "Megaphone",
+  "placeholderColor": "#FF08CC"
 }

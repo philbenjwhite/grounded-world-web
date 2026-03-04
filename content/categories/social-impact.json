@@ -1,4 +1,6 @@
 {
   "name": "Social Impact",
-  "slug": "social-impact"
+  "slug": "social-impact",
+  "icon": "Users",
+  "placeholderColor": "#1CC35B"
 }

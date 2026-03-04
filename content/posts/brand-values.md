@@ -1,7 +1,7 @@
 ---
 title: "Understanding Brand Values: The Foundation of a Successful Business"
 date: 2025-11-22T10:16:39.000Z
-description: "Key Takeaways:"
+description: "When Patagonia restructured its entire ownership in 2022 to ensure profits would fight climate change rather than enrich shareholders, it wasn't..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

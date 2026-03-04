@@ -1,7 +1,7 @@
 ---
 title: "BRAND IDENTITY: How a Clearly Defined Identity Builds Trust"
 date: 2026-01-13T11:19:00.000Z
-description: "Key Takeaways:"
+description: "A brand identity is how a company expresses itself visually, verbally, and emotionally to the world. It’s the sum of its brand elements—logo, typography,..."
 author: content/team-members/matt-deasy.json
 category: content/categories/brand-purpose.json
 tags:

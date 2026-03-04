@@ -1,7 +1,7 @@
 ---
 title: "Fair Price for Coffee Shouldn’t Be This Hard | Bob & Michelle Fish"
 date: 2025-11-19T16:45:39.000Z
-description: "Key Takeaways:"
+description: "The coffee industry is built on broken economics. Most farmers are paid less than the cost of production, forcing families off their land and trapping..."
 author: content/team-members/paloma-jacome.json
 category: content/categories/brand-purpose.json
 tags:

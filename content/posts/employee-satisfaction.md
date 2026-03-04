@@ -1,7 +1,7 @@
 ---
 title: "Employee Satisfaction: The Hidden Engine of Purpose-Driven Growth"
 date: 2025-12-06T10:53:30.000Z
-description: "Key Takeaways:"
+description: "When Salesforce implemented regular employee feedback loops and acted on the insights gathered, the company didn't just see improved employee morale. The..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

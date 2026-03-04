@@ -1,7 +1,7 @@
 ---
 title: Fighting Food Waste Shouldn’t Be This Hard
 date: 2025-11-18T20:36:57.000Z
-description: "Key Takeaways:"
+description: "Food waste is a hidden climate driver and a solvable one. Hilary breaks down why wasted food contributes more to climate change than cars and why this issue..."
 author: content/team-members/paloma-jacome.json
 category: content/categories/brand-purpose.json
 tags:

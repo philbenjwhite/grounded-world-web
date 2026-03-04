@@ -1,7 +1,7 @@
 ---
 title: "Convenience Without Conscience? The Sustainability Gap in Grocery Delivery"
 date: 2025-11-19T13:11:50.000Z
-description: "Key Takeaways:"
+description: "In the digital age, convenience has transformed from luxury to expectation. Platforms like Instacart, Amazon Fresh, and Uber Eats Grocery have redefined how..."
 author: content/team-members/paloma-jacome.json
 category: content/categories/brand-purpose.json
 tags:

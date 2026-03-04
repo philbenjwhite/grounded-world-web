@@ -1,7 +1,7 @@
 ---
 title: "Sustainability Market Research: Turn Purpose Into Performance"
 date: 2025-12-22T08:06:43.000Z
-description: "Key Takeaways:"
+description: "A global beverage company spent eighteen months developing what they believed would be revolutionary sustainable packaging: plant-based bottles that..."
 author: content/team-members/matt-deasy.json
 category: content/categories/retail-shopper.json
 tags:

@@ -20,6 +20,7 @@ import ScrollProgressBar from "@/components/components/ScrollProgressBar";
 import ArticleTableOfContents from "@/components/components/ArticleTableOfContents";
 import AuthorBio from "@/components/components/AuthorBio";
 import RelatedArticles from "@/components/components/RelatedArticles";
+import detailStyles from "./article-detail.module.css";
 
 /* Custom heading component that adds id attributes for TOC anchor links */
 function createHeadingComponent(level: number) {
@@ -268,75 +269,87 @@ export default function ArticleDetailClientPage(
       {/* Article content */}
       <Section>
         <Container className="px-[var(--layout-section-padding-x)] max-w-[1200px]">
-          {/* Breadcrumb */}
-          <nav className="mb-8">
+          {/* Breadcrumb + Category */}
+          <nav className="mb-8 flex flex-wrap items-center gap-3">
             <Link
               href="/resources/articles"
-              className="text-sm text-[color:var(--font-color-tertiary)] hover:text-[color:var(--color-cyan)] transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-[color:var(--font-color-tertiary)] border border-white/[0.12] rounded-full px-4 py-1.5 hover:border-[var(--color-cyan)] hover:text-[color:var(--color-cyan)] transition-colors"
             >
-              &larr; Back to Articles
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0">
+                <path d="M10 4L6 8L10 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              All Articles
             </Link>
+            {post.category?.name && (
+              <span className="inline-flex items-center text-xs font-medium uppercase tracking-wider text-[color:var(--color-cyan)] border border-[var(--color-cyan)]/20 bg-[var(--color-cyan)]/[0.06] rounded-full px-3.5 py-1.5">
+                {post.category.name}
+              </span>
+            )}
           </nav>
 
           {/* Header */}
           <header className="mb-12 max-w-[800px]">
-            <Heading level={1} size="h1" color="primary" className="mb-6">
+            <Heading level={1} size="h2" color="primary" className="mb-4">
               {post.title}
             </Heading>
 
-            <div className="flex flex-wrap items-center gap-3">
-              {formattedDate && (
-                <Text size="body-sm" color="tertiary">
-                  {formattedDate}
-                </Text>
-              )}
-              {formattedDate && authorName && (
-                <span className="text-[color:var(--font-color-tertiary)]">
-                  &middot;
-                </span>
-              )}
+            <div className="flex flex-wrap items-center gap-4 text-sm text-[color:var(--font-color-tertiary)]">
               {authorName && (
-                <Text size="body-sm" color="tertiary">
+                <span className="inline-flex items-center gap-2">
+                  {authorData?.photoUrl ? (
+                    <Image
+                      src={authorData.photoUrl}
+                      alt={authorName}
+                      width={24}
+                      height={24}
+                      className="rounded-full object-cover"
+                    />
+                  ) : (
+                    <span className="w-6 h-6 rounded-full bg-[var(--color-cyan)]/20 flex items-center justify-center text-[10px] font-bold text-[color:var(--color-cyan)]">
+                      {authorName.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2)}
+                    </span>
+                  )}
                   {authorName}
-                </Text>
-              )}
-              {(formattedDate || authorName) && (
-                <span className="text-[color:var(--font-color-tertiary)]">
-                  &middot;
                 </span>
               )}
-              <Text size="body-sm" color="tertiary">
+              {formattedDate && (
+                <span className="inline-flex items-center gap-1.5">
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0 opacity-60">
+                    <rect x="2" y="3" width="12" height="11" rx="1.5" stroke="currentColor" strokeWidth="1.25" />
+                    <path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+                  </svg>
+                  {formattedDate}
+                </span>
+              )}
+              <span className="inline-flex items-center gap-1.5">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0 opacity-60">
+                  <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.25" />
+                  <path d="M8 5v3.5l2.5 1.5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
                 {readingTime} min read
-              </Text>
+              </span>
             </div>
 
             {post.description && (
               <Text
                 size="body-lg"
                 color="secondary"
-                className="mt-6 leading-relaxed"
+                className="mt-5 leading-relaxed"
               >
                 {post.description}
               </Text>
             )}
           </header>
 
-          {/* Three-column layout: TOC | Content | Author sidebar */}
-          <div className="xl:grid xl:grid-cols-[200px_1fr_260px] xl:gap-8 lg:grid lg:grid-cols-[200px_1fr] lg:gap-10">
-            {/* Left: TOC sidebar (desktop only) */}
-            {hasHeadings ? (
-              <ArticleTableOfContents headings={headings} variant="sidebar" />
-            ) : (
-              <div className="hidden lg:block" />
-            )}
-
-            {/* Center: Article body */}
+          {/* Two-column layout: Content | Sidebar (author + TOC) */}
+          <div className="lg:grid lg:grid-cols-[1fr_260px] lg:gap-12">
+            {/* Left: Article body */}
             <div>
               {/* Mobile: sticky TOC inside article container */}
               {hasHeadings && (
                 <ArticleTableOfContents headings={headings} variant="mobile" />
               )}
-              <article className="prose prose-invert prose-lg max-w-[65ch] prose-headings:text-[color:var(--font-color-primary)] prose-headings:font-bold prose-headings:scroll-mt-28 prose-p:text-[color:var(--font-color-secondary)] prose-a:text-[color:var(--color-cyan)] prose-strong:text-[color:var(--font-color-primary)] prose-li:text-[color:var(--font-color-secondary)] prose-img:rounded-2xl">
+              <article className={`prose prose-invert prose-lg max-w-prose prose-headings:text-[color:var(--font-color-primary)] prose-headings:font-bold prose-headings:scroll-mt-28 prose-p:text-[color:var(--font-color-secondary)] prose-a:text-[color:var(--color-cyan)] prose-a:no-underline prose-strong:text-[color:var(--font-color-primary)] prose-li:text-[color:var(--font-color-secondary)] prose-img:rounded-2xl prose-pre:whitespace-pre-wrap prose-pre:break-words prose-pre:font-sans prose-pre:text-base prose-pre:bg-transparent prose-pre:p-0 prose-pre:border-0 ${detailStyles.proseLinks}`}>
                 {post.body && (
                   <TinaMarkdown
                     content={post.body}
@@ -347,22 +360,21 @@ export default function ArticleDetailClientPage(
               </article>
             </div>
 
-            {/* Right: Author bio sidebar (sticky on xl, below article on smaller) */}
-            {authorData && (
-              <aside className="mt-12 xl:mt-0">
-                <div className="xl:sticky xl:top-24">
-                  <AuthorBio author={authorData} />
-                </div>
-              </aside>
-            )}
+            {/* Right sidebar: TOC + Author (sticky) */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-24 space-y-8">
+                {hasHeadings && (
+                  <ArticleTableOfContents headings={headings} variant="sidebar" />
+                )}
+                {authorData && <AuthorBio author={authorData} />}
+              </div>
+            </aside>
           </div>
 
-          {/* Author bio for non-xl screens (when no sidebar) — shown below article */}
+          {/* Author bio below article on mobile/tablet */}
           {authorData && (
-            <div className="xl:hidden mt-12 pt-8 border-t border-white/[0.08]">
-              <div className="max-w-[65ch]">
-                <AuthorBio author={authorData} />
-              </div>
+            <div className="lg:hidden mt-12 pt-8 border-t border-white/[0.08]">
+              <AuthorBio author={authorData} />
             </div>
           )}
         </Container>

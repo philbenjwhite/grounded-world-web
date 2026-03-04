@@ -20,6 +20,8 @@ export interface ArticleItem {
   authorName?: string;
   categoryName?: string;
   categorySlug?: string;
+  categoryIcon?: string;
+  categoryColor?: string;
 }
 
 /* Category slug → display name mapping */
@@ -38,6 +40,25 @@ const MD_IMAGE_RE = /!\[[^\]]*\]\(([^)]+)\)/;
 function extractFirstImage(markdown: string): string | undefined {
   const match = markdown.match(MD_IMAGE_RE);
   return match?.[1] ?? undefined;
+}
+
+/** Cache of category JSON data keyed by slug */
+const categoryDataCache = new Map<string, { icon?: string; placeholderColor?: string }>();
+
+async function getCategoryData(slug: string): Promise<{ icon?: string; placeholderColor?: string }> {
+  if (categoryDataCache.has(slug)) return categoryDataCache.get(slug)!;
+  try {
+    const filePath = path.join(process.cwd(), "content", "categories", `${slug}.json`);
+    const raw = await fs.readFile(filePath, "utf-8");
+    const data = JSON.parse(raw) as { icon?: string; placeholderColor?: string };
+    const result = { icon: data.icon, placeholderColor: data.placeholderColor };
+    categoryDataCache.set(slug, result);
+    return result;
+  } catch {
+    const empty = {};
+    categoryDataCache.set(slug, empty);
+    return empty;
+  }
 }
 
 /**
@@ -95,6 +116,7 @@ async function fetchPosts(): Promise<ArticleItem[]> {
       }
 
       const authorSlug = get("author");
+      const catData = categorySlug ? await getCategoryData(categorySlug) : undefined;
       articles.push({
         slug: file.replace(/\.md$/, ""),
         title,
@@ -107,6 +129,8 @@ async function fetchPosts(): Promise<ArticleItem[]> {
           ? (CATEGORY_NAMES[categorySlug] ?? categorySlug)
           : undefined,
         categorySlug: categorySlug ?? undefined,
+        categoryIcon: catData?.icon,
+        categoryColor: catData?.placeholderColor,
       });
     } catch {
       continue;

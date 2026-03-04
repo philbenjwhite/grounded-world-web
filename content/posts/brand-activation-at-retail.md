@@ -1,7 +1,7 @@
 ---
 title: "Brand Activation at Retail: Transforming Store Spaces Into Purpose-Driven Experiences"
 date: 2026-01-05T07:57:07.000Z
-description: "Key Takeaways:"
+description: "Last spring, a sustainable sneaker brand transformed a corner of a Brooklyn retail store into something unexpected: a mini urban garden where customers..."
 author: content/team-members/matt-deasy.json
 category: content/categories/retail-shopper.json
 tags:

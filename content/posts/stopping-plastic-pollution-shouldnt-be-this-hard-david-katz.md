@@ -1,7 +1,7 @@
 ---
 title: "Stopping Plastic Pollution Shouldn't Be This Hard | David Katz"
 date: 2025-11-18T21:09:12.000Z
-description: "Key Takeaways:****"
+description: "In this episode of It Shouldn't Be This Hard, we had the privilege of having David Katz, Founder and CEO of Plastic Bank on the show — a social entrepreneur..."
 author: content/team-members/paloma-jacome.json
 category: content/categories/brand-purpose.json
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Ethical Sourcing: How To Build Integrity into Supply Chains"
 date: 2025-12-03T23:51:54.000Z
-description: "Key Takeaways:"
+description: "Ethical sourcing is an approach to supply chain management that emphasizes obtaining products and services in a manner that upholds labour rights, safe..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

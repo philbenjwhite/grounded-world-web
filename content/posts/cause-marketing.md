@@ -1,7 +1,7 @@
 ---
 title: "Cause Marketing: Building Brand Value Through Purpose-Driven Partnerships"
 date: 2025-12-06T11:27:19.000Z
-description: "Key Takeaways:"
+description: "When American Express coined the term \"cause marketing\" in 1983 to describe its campaign restoring the Statue of Liberty, the company discovered something..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

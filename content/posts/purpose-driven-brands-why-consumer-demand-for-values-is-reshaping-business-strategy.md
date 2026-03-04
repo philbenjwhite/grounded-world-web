@@ -1,7 +1,7 @@
 ---
 title: "Purpose-Driven Brands: Why Consumer Demand for Values Is Reshaping Business Strategy"
 date: 2025-11-22T10:48:11.000Z
-description: "Key Takeaways:"
+description: "In 2022, Patagonia founder Yvon Chouinard transferred ownership of the $3 billion outdoor retailer to a trust and nonprofit dedicated to fighting climate..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

@@ -1,4 +1,6 @@
 {
   "name": "Sustainability",
-  "slug": "sustainability"
+  "slug": "sustainability",
+  "icon": "Leaf",
+  "placeholderColor": "#40D8A0"
 }

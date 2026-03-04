@@ -1,4 +1,6 @@
 {
   "name": "Brand Purpose",
-  "slug": "brand-purpose"
+  "slug": "brand-purpose",
+  "icon": "Compass",
+  "placeholderColor": "#00AEEF"
 }

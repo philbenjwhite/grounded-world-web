@@ -1,7 +1,7 @@
 ---
 title: "PURPOSE DRIVEN COMPANIES: How Clear Purpose Fuels Growth"
 date: 2025-11-30T06:28:21.000Z
-description: Key Takeaways
+description: "When Patagonia transferred ownership to a trust and nonprofit in 2022, founder Yvon Chouinard didn't sell out, he doubled down."
 author: content/team-members/matt-deasy.json
 category: content/categories/brand-purpose.json
 tags:

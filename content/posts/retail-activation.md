@@ -1,7 +1,7 @@
 ---
 title: "Retail Activation: Transform your Store Into an Experience"
 date: 2025-12-22T07:42:00.000Z
-description: "Key Takeaways:"
+description: "In a Brooklyn grocery store last spring, shoppers encountered something unexpected between the organic produce and dairy aisle: a living wall of herbs..."
 author: content/team-members/matt-deasy.json
 category: content/categories/retail-shopper.json
 tags:

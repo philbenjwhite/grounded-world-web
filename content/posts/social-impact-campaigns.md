@@ -1,7 +1,7 @@
 ---
 title: "Social Impact Campaigns: Turning Audience Energy into Lasting Change"
 date: 2025-12-08T07:48:15.000Z
-description: "Key Takeaways:"
+description: "Social impact campaigns work best when they blend credible evidence with human stories and invite communities to participate across social media channels..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

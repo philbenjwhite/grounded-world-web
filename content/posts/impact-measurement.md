@@ -1,7 +1,7 @@
 ---
 title: "Impact Measurement: The Brand Purpose Agency’s Guide to Proving What Matters"
 date: 2025-12-06T11:50:28.000Z
-description: "Key Takeaways:"
+description: "In 2019, 181 CEOs signed the Business Roundtable's statement redefining corporate purpose beyond shareholder primacy. Five years later, we're still..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

@@ -1,0 +1,18 @@
+/* Animated underline-to-highlight for prose links */
+.proseLinks a {
+  text-decoration: none;
+  background-image: linear-gradient(
+    var(--color-cyan),
+    var(--color-cyan)
+  );
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  padding-bottom: 2px;
+  transition: background-size 0.3s ease, color 0.3s ease;
+}
+
+.proseLinks a:hover {
+  background-size: 100% 100%;
+  color: var(--background);
+}

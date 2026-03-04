@@ -1,7 +1,7 @@
 ---
 title: "Cultural Relevance: How Purpose-Led Brands Stay Connected"
 date: 2025-12-03T07:59:52.000Z
-description: "Key Takeaways:"
+description: "When Crocs - once ridiculed as fashion's punchline - partnered with Balenciaga in 2017, the collaboration sold out within hours. The unlikely pairing..."
 author: content/team-members/matt-deasy.json
 tags:
   - Matt Deasy

@@ -1,7 +1,7 @@
 ---
 title: "Retail Marketing Campaigns: How Purpose-Driven Brands Win in Physical and Digital Spaces"
 date: 2026-01-05T07:22:02.000Z
-description: "Key Takeaways:"
+description: "During the 2025 holiday season, a small outdoor apparel retailer in Vermont did something that seemed commercially suicidal: they ran retail marketing..."
 author: content/team-members/matt-deasy.json
 category: content/categories/retail-shopper.json
 tags:

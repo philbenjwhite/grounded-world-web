@@ -1,7 +1,7 @@
 ---
 title: "Universal Flourishing Shouldn’t Be This Hard | Karimah Huddah"
 date: 2025-11-19T15:02:58.000Z
-description: "Key Takeaways:"
+description: "Impact can’t be an afterthought anymore. Karimah argues that business, leadership, and sustainability must converge (not operate in silos) if we want to..."
 author: content/team-members/paloma-jacome.json
 category: content/categories/brand-purpose.json
 tags:

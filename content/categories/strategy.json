@@ -1,5 +1,6 @@
 {
   "name": "Strategy",
   "slug": "strategy",
-  "parent": "content/categories/brand-activation.json"
+  "icon": "Target",
+  "placeholderColor": "#F0C040"
 }
