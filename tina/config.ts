@@ -873,6 +873,15 @@ export default defineConfig({
                   },
                   {
                     type: "string",
+                    name: "canvasVariant",
+                    label: "Canvas Variant",
+                    description: "Optional custom canvas background (leave empty for default plexus)",
+                    options: [
+                      { value: "podcastWaves", label: "Podcast Waves (Cyan & Magenta)" },
+                    ],
+                  },
+                  {
+                    type: "string",
                     name: "vimeoUrl",
                     label: "Vimeo URL",
                     description: "Full Vimeo URL (standard or unlisted)",

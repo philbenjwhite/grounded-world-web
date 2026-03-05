@@ -239,7 +239,7 @@ At Grounded, we've spent years helping organizations navigate this challenge. Ou
 
 Whether you're building brand identity from scratch or evolving an existing system to better reflect your purpose, the work demands both creative excellence and strategic rigor. It requires understanding not just what makes brands memorable but what makes them meaningful—and how to close the gap between the identity you project and the experience you deliver.
 
-Ready to build a brand identity that makes your purpose impossible to ignore? Explore our [brand purpose articulation services](https://grounded.world/services) or [reach out to discuss](https://grounded.world/contact) how we can help your organization create visual and verbal identity that drives behavior change at the moments that matter most.
+Ready to build a brand identity that makes your purpose impossible to ignore? Explore our [brand purpose articulation services](https://grounded.world/services) or [reach out to discuss](https://grounded.world/contact-us) how we can help your organization create visual and verbal identity that drives behavior change at the moments that matter most.
 *Author:*
 
 #### Matt Deasy

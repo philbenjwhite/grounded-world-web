@@ -249,7 +249,7 @@ At Grounded, this intersection is where we thrive. As a multi-award-winning, [B 
 
 Whether you're establishing brand values for the first time, refining existing principles that feel disconnected from operations, or looking to embed strong core values more deeply throughout your business, we can help. Our Belief, Purpose & Pursuits framework helps brands define the 'why' behind their purpose and connect it to the 'way' of profit. Our expertise in closing intention-action gaps means we help you identify where your stated values diverge from actual practice—and create plans to bring them into alignment.
 
-Ready to explore how authentic brand values can strengthen your competitive position while driving positive impact?[ Learn more about our purpose articulation services](https://grounded.world/brand-marketing-agency-services/) or[ connect with our team](https://grounded.world/contact/) to discuss your specific challenges. You can also[ ask Gaia](https://grounded.world/), our resident AI assistant, about getting started with values articulation for your organization.
+Ready to explore how authentic brand values can strengthen your competitive position while driving positive impact?[ Learn more about our purpose articulation services](https://grounded.world/brand-marketing-agency-services/) or[ connect with our team](https://grounded.world/contact-us/) to discuss your specific challenges. You can also[ ask Gaia](https://grounded.world/), our resident AI assistant, about getting started with values articulation for your organization.
 
 Because it's not just about doing the right thing. It's about doing the right things. And doing them damn well.
 *Author:*

@@ -38,14 +38,19 @@ interface FormState {
 }
 
 const INTEREST_OPTIONS = [
-  "General Inquiry",
-  "Research & Insights",
-  "Strategy & Purpose",
-  "Brand Activation & Design",
-  "Sustainability Marketing",
-  "Impact Reporting",
-  "Partnerships",
-  "Speaking Engagement",
+  "Culture, Category, Competitor & Consumer Assessments",
+  "Intent-to-Action Gap Research & Analysis",
+  "Good Growth Drivers & Go-to-Market Strategy",
+  "Corporate, Brand & Social Purpose",
+  "Sustainability Strategy, Marketing & Storytelling",
+  "Brand Positioning, Architecture & Archetyping",
+  "Brand Identity, Packaging & Design",
+  "Campaigns, Events, Experiences & Stakeholder Engagement",
+  "Retail Activation & Omnichannel Toolkits",
+  "Sustainability & Impact Reporting",
+  "Commercial & Non-Profit Partnerships",
+  "Collaboration Training, Action Labs & Speaking Engagements",
+  "Something Else",
 ];
 
 const INITIAL_FORM: FormState = {
@@ -72,7 +77,7 @@ const inputBase = [
 
 const ContactSection: React.FC<ContactSectionProps> = ({
   heading = "Let\u2019s Talk",
-  description = "Ready to activate purpose and accelerate impact? Book a discovery call or drop us a message.",
+  description = "For a specific request, submit a contact form. A member of the team will get back to you within 24 hours.",
   bookingUrl = "https://calendly.com/phil-grounded/getting-grounded-30-mins",
   bookingLabel = "Book a Discovery Call",
   email = "getgrounded@grounded.world",
@@ -136,7 +141,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   color="tertiary"
                   className="mt-6"
                 >
-                  Or email us at{" "}
+                  For any other questions, media enquiries or if you&apos;re interested in joining the team, email us at{" "}
                   <a
                     href={`mailto:${email}`}
                     className="text-[color:var(--font-color-link)] hover:underline"

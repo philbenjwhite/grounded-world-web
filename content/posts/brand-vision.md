@@ -295,7 +295,7 @@ Our approach starts with honest assessment of where you are now. We identify the
 
 Whether you're defining vision for the first time, refining existing statements that feel disconnected from strategy, or struggling to translate leadership aspiration into operational clarity, we can help. Our four-phase approach breaks vision development and activation into manageable steps with defined budgets and timeframes.
 
-Ready to develop brand vision that actually guides strategy and drives growth?[ Learn more about our services](https://grounded.world/brand-marketing-agency-services/) or[ connect with our team](https://grounded.world/contact/) to discuss your specific challenges. You can also[ ask Gaia](https://grounded.world/), our resident AI assistant, about getting started with vision articulation for your organization.
+Ready to develop brand vision that actually guides strategy and drives growth?[ Learn more about our services](https://grounded.world/brand-marketing-agency-services/) or[ connect with our team](https://grounded.world/contact-us/) to discuss your specific challenges. You can also[ ask Gaia](https://grounded.world/), our resident AI assistant, about getting started with vision articulation for your organization.
 
 Because it's not just about knowing where you're going. It's about ensuring every decision, every initiative, and every stakeholder interaction moves you toward that destination. And doing it damn well.
 *Author:*

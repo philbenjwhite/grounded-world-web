@@ -233,7 +233,7 @@ At Grounded, we thrive at the intersection of brand experience, commercial innov
 
 Our approach unites the 'why' of purpose with the 'way' of profit. We assess intention-action gaps, develop frameworks that connect beliefs to business model innovation, and activate purpose in ways that drive behavior change at moments that matter. This isn't just about doing the right thing—it's about doing the right things profitably.
 
-Ready to explore how purpose can strengthen your competitive position while driving positive impact?[ Learn more about our services](https://grounded.world/brand-marketing-agency-services/) or[ connect with our team](https://grounded.world/contact/) to discuss your specific challenges. You can also[ ask Gaia](https://grounded.world/), our resident AI assistant, about getting started with purpose articulation for your organization.
+Ready to explore how purpose can strengthen your competitive position while driving positive impact?[ Learn more about our services](https://grounded.world/brand-marketing-agency-services/) or[ connect with our team](https://grounded.world/contact-us/) to discuss your specific challenges. You can also[ ask Gaia](https://grounded.world/), our resident AI assistant, about getting started with purpose articulation for your organization.
 
 Because making money and making a positive social impact aren't competing forces. And doing both damn well is what separates brands that matter from brands that merely exist.
 *Author:*

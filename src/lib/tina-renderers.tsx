@@ -20,6 +20,7 @@ import TestimonialSection from "@/components/components/TestimonialSection";
 import ContentTabs from "@/components/components/ContentTabs";
 import SlideCarousel from "@/components/components/SlideCarousel";
 import NewsletterCTA from "@/components/components/NewsletterCTA";
+import PodcastWaveBackground from "@/components/components/PodcastWaveBackground";
 import Split from "@/components/layout/Split";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
@@ -258,13 +259,19 @@ export function renderSection(section: PageSections, index: number): React.React
   }
 
   switch (section.__typename) {
-    case "PageSectionsHeroBanner":
+    case "PageSectionsHeroBanner": {
+      const canvasVariantMap: Record<string, React.ComponentType> = {
+        podcastWaves: PodcastWaveBackground,
+      };
+      const variantKey = (section as unknown as { canvasVariant?: string }).canvasVariant;
+      const customCanvas = variantKey ? canvasVariantMap[variantKey] : undefined;
       return (
         <HeroBanner
           key={index}
           backgroundType={
             (section.backgroundType as "vimeo" | "image" | "canvas") ?? "image"
           }
+          canvasComponent={customCanvas}
           vimeoUrl={section.vimeoUrl ?? undefined}
           posterSrc={section.posterSrc ?? undefined}
           imageSrc={section.imageSrc ?? undefined}
@@ -316,6 +323,7 @@ export function renderSection(section: PageSections, index: number): React.React
           }}
         />
       );
+    }
 
     case "PageSectionsShowcaseGrid":
       return (

@@ -17,7 +17,7 @@ export interface FooterProps {
 const COMPANY_LINKS = [
   { label: "About Us", href: "/about-us" },
   { label: "Our Work", href: "/our-work" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/contact-us" },
 ];
 
 const footerLinkClass =

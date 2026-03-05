@@ -395,7 +395,7 @@ export default function ArticleDetailClientPage(
         heading="It's time to get grounded"
         subtext="Ready to activate your brand purpose and accelerate your impact? Let's talk."
         primaryLabel="Contact Us"
-        primaryHref="/contact"
+        primaryHref="/contact-us"
         overlayOpacity="heavy"
       />
     </>

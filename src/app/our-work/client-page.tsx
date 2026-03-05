@@ -127,7 +127,7 @@ export default function OurWorkClientPage(props: ClientPageProps) {
         backgroundAlt="Stockholm metro station escalators"
         heading="It's time to get grounded"
         primaryLabel="Contact Us"
-        primaryHref="/contact"
+        primaryHref="/contact-us"
         className="px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
       />
     </div>

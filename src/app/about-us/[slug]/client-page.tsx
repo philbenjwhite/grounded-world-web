@@ -79,12 +79,12 @@ export default function TeamMemberClientPage(
             left={
               <div className="flex flex-col items-center gap-6">
                 {member.photoUrl ? (
-                  <div className="relative w-full max-w-[300px] aspect-[3/4] overflow-hidden rounded-2xl">
+                  <div className="relative w-full max-w-[300px] aspect-square overflow-hidden rounded-2xl">
                     <Image
                       src={member.photoUrl}
                       alt={member.name}
                       fill
-                      className="object-cover"
+                      className="object-cover object-top"
                       priority
                       sizes="(max-width: 768px) 280px, 300px"
                     />
@@ -179,7 +179,7 @@ export default function TeamMemberClientPage(
         heading="It's time to get grounded"
         subtext="Ready to activate your brand purpose and accelerate your impact? Let's talk."
         primaryLabel="Contact Us"
-        primaryHref="/contact"
+        primaryHref="/contact-us"
         overlayOpacity="heavy"
       />
     </>

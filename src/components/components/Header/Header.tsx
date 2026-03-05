@@ -249,7 +249,7 @@ const Header = ({ className, services = [] }: HeaderProps) => {
                     Subscribe to Newsletter
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/contact-us"
                     className={cn(styles.ctaButton, styles.mobileItem, "px-5 py-3.5 rounded-xl text-sm font-semibold no-underline text-center")}
                     style={stagger()}
                   >
@@ -506,7 +506,7 @@ function NavItems({
 
       {/* CONTACT US — icon only at lg, full text at xl+ */}
       <Link
-        href="/contact"
+        href="/contact-us"
         className={cn(
           styles.ctaButton,
           "ml-1 rounded-full no-underline whitespace-nowrap inline-flex items-center justify-center overflow-hidden",

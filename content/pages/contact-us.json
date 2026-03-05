@@ -1,0 +1,26 @@
+{
+  "title": "Contact",
+  "slug": "contact-us",
+  "sections": [
+    {
+      "backgroundType": "vimeo",
+      "vimeoUrl": "https://player.vimeo.com/video/1001182598?h=d5feb8929b&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&controls=0",
+      "title": "Get Grounded",
+      "subtitle": "For potential projects or engagements, feel free to schedule a call.",
+      "ctaLabel": "Discovery Call",
+      "ctaHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "overlayOpacity": "medium",
+      "contentAlign": "center",
+      "minHeight": "large",
+      "_template": "heroBanner"
+    },
+    {
+      "heading": "Let\u2019s Talk",
+      "description": "For a specific request, submit a contact form. A member of the team will get back to you within 24 hours.",
+      "bookingUrl": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "bookingLabel": "Book a Discovery Call",
+      "email": "getgrounded@grounded.world",
+      "_template": "contactSection"
+    }
+  ]
+}
