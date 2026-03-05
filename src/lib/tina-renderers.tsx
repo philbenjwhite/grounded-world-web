@@ -21,6 +21,7 @@ import ContentTabs from "@/components/components/ContentTabs";
 import SlideCarousel from "@/components/components/SlideCarousel";
 import NewsletterCTA from "@/components/components/NewsletterCTA";
 import PodcastWaveBackground from "@/components/components/PodcastWaveBackground";
+import { GaiaChat } from "@/components/components/GaiaChat";
 import Split from "@/components/layout/Split";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
@@ -677,7 +678,8 @@ export function renderSection(section: PageSections, index: number): React.React
       return (
         <Section key={index}>
           <Container className="px-[var(--layout-section-padding-x)]">
-            {e.embedHeading && (
+            {/* Skip heading/description when gaiaChat mode — the chat UI is self-contained */}
+            {e.embedMode !== "gaiaChat" && e.embedHeading && (
               <div className="max-w-3xl mx-auto text-center mb-12">
                 <Heading level={2} size="h3" color="primary">
                   {e.embedHeading}
@@ -690,7 +692,14 @@ export function renderSection(section: PageSections, index: number): React.React
               </div>
             )}
             <div className="max-w-4xl mx-auto">
-              {e.embedMode === "embed" && e.embedCode ? (
+              {e.embedMode === "gaiaChat" ? (
+                /* PLACEHOLDER: This GaiaChat component is a static UI mockup.
+                   It will be replaced with the production Gaia chat iframe/embed
+                   once the backend API is ready. The component source lives in
+                   src/components/components/GaiaChat/ with separate .tsx and
+                   .module.css files for the engineer handoff. */
+                <GaiaChat />
+              ) : e.embedMode === "embed" && e.embedCode ? (
                 <div
                   style={{ minHeight: `${height}px` }}
                   dangerouslySetInnerHTML={{ __html: e.embedCode }}

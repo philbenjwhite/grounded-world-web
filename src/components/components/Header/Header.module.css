@@ -261,42 +261,20 @@
   background: var(--background);
 }
 
-/* ---- Mobile sub-section card ---- */
+/* ---- Mobile active link gradient ---- */
 
-.mobileSubCard {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  transition: border-color 300ms;
+.mobileActiveLink {
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* ---- Mobile service orb ---- */
 
-.mobileServiceOrb {
-  background-color: color-mix(in srgb, var(--service-color) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--service-color) 18%, transparent);
-  transition: background-color 200ms, border-color 200ms;
-}
+/* ---- Mobile fixed bottom bar ---- */
 
-.mobileServiceLink:active .mobileServiceOrb {
-  background-color: color-mix(in srgb, var(--service-color) 22%, transparent);
-  border-color: color-mix(in srgb, var(--service-color) 35%, transparent);
-}
-
-.mobileServiceIcon {
-  color: color-mix(in srgb, var(--service-color) 70%, white);
-}
-
-/* ---- Mobile resource accent bar ---- */
-
-.mobileResourceBar {
-  background-color: var(--accent);
-  opacity: 0.5;
-  transition: opacity 200ms;
-}
-
-.mobileResourceLink:active .mobileResourceBar {
-  opacity: 1;
+.mobileBottomBar {
+  background: linear-gradient(to top, var(--background) 60%, transparent);
 }
 
 /* ---- Toggle button (hamburger / close) ---- */
@@ -326,9 +304,7 @@
   .ctaButton,
   .newsletterCta,
   .activeIndicator,
-  .mobileSubCard,
-  .mobileServiceOrb,
-  .mobileResourceBar {
+  .mobileBottomBar {
     transition: none !important;
   }
 

@@ -86,17 +86,20 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
   return createPortal(
     <div
       className={cn(
-        "fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl",
+        "fixed inset-0 z-50 flex items-end md:items-center justify-center bg-black/90 backdrop-blur-xl",
         closing ? styles.backdropClosing : styles.backdrop,
       )}
       onClick={handleClose}
     >
       <div
-        className="relative w-full max-w-md mx-4"
+        className={cn(
+          "relative w-full max-w-md md:mx-4",
+          closing ? styles.contentClosing : styles.content,
+        )}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close button */}
-        <div className="flex justify-end mb-3">
+        {/* Close button — above card on desktop, inside on mobile */}
+        <div className="hidden md:flex justify-end mb-3">
           <button
             className={cn(
               styles.closeButton,
@@ -114,12 +117,21 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
 
         {/* Form card */}
         <div
-          className={cn(
-            "relative w-full rounded-2xl overflow-hidden bg-(--surface-primary) border border-white/8 p-8",
-            closing ? styles.contentClosing : styles.content,
-          )}
+          className="relative w-full rounded-t-2xl md:rounded-2xl overflow-hidden bg-(--surface-primary) border border-white/8 p-8"
           ref={formContainerRef}
         >
+          {/* Mobile drag handle + close */}
+          <div className="flex md:hidden items-center justify-between mb-4">
+            <div className="w-10 h-1 rounded-full bg-white/20 mx-auto absolute left-1/2 -translate-x-1/2 top-3" />
+            <div className="flex-1" />
+            <button
+              className="flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-white/70 hover:text-white cursor-pointer"
+              onClick={handleClose}
+              aria-label="Close newsletter signup"
+            >
+              <X size={16} weight="bold" />
+            </button>
+          </div>
           {submitted ? (
             /* ── Success state ── */
             <div className="text-center py-4">
@@ -148,7 +160,7 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
                 <div className="ml-form-align-center">
                   <div className="ml-form-embedWrapper embedForm">
                     <div className="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                      <div className="ml-form-embedContent" style={{ marginBottom: 0 }} />
+                      <div className="ml-form-embedContent mb-0" />
                       <form
                         className="ml-block-form"
                         action={`https://static.mailerlite.com/webforms/submit/${MAILERLITE_FORM_CODE}`}
@@ -179,9 +191,8 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
                           </button>
                           <button
                             disabled
-                            style={{ display: "none" }}
                             type="button"
-                            className="loading"
+                            className="loading hidden"
                           >
                             <div className="ml-form-embedSubmitLoad" />
                             <span className="sr-only">Loading...</span>
@@ -190,7 +201,7 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
                         <input type="hidden" name="anticsrf" value="true" />
                       </form>
                     </div>
-                    <div className="ml-form-successBody row-success" style={{ display: "none" }}>
+                    <div className="ml-form-successBody row-success hidden">
                       <div className="ml-form-successContent">
                         <h4>Thank you!</h4>
                         <p>You&rsquo;re now Grounded.</p>

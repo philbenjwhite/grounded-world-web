@@ -35,13 +35,13 @@
           "buttons": [
             {
               "label": "Listen to the Podcast",
-              "href": "/itshouldntbethishard",
+              "href": "/resources/podcast",
               "variant": "primary",
               "external": false
             },
             {
               "label": "Apply to be a Guest",
-              "href": "/itshouldntbethishard",
+              "href": "/resources/podcast",
               "variant": "secondary",
               "external": false
             }

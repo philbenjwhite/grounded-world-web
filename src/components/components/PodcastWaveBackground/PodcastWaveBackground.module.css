@@ -12,8 +12,8 @@
 
 /* Every path draws in via stroke-dasharray animation */
 .path {
-  stroke-dasharray: 3200;
-  stroke-dashoffset: 3200;
+  stroke-dasharray: 6000;
+  stroke-dashoffset: 6000;
   stroke-linecap: round;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -21,12 +21,12 @@
 }
 
 /* Staggered durations for organic feel */
-.d2s { animation-duration: 2s; animation-delay: 0.1s; }
-.d2_2s { animation-duration: 2.2s; animation-delay: 0.3s; }
-.d2_5s { animation-duration: 2.5s; animation-delay: 0.5s; }
-.d2_8s { animation-duration: 2.8s; animation-delay: 0.6s; }
-.d3s { animation-duration: 3s; animation-delay: 0.8s; }
-.d3_2s { animation-duration: 3.2s; animation-delay: 0.9s; }
+.d1 { animation-duration: 1.8s; animation-delay: 0s; }
+.d2 { animation-duration: 2s; animation-delay: 0.15s; }
+.d3 { animation-duration: 2.2s; animation-delay: 0.3s; }
+.d4 { animation-duration: 2.5s; animation-delay: 0.45s; }
+.d5 { animation-duration: 2.8s; animation-delay: 0.6s; }
+.d6 { animation-duration: 3s; animation-delay: 0.75s; }
 
 @keyframes drawIn {
   to {

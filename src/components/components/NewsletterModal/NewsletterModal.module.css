@@ -1,49 +1,35 @@
 /* ─── Enter animations ─── */
 
 @keyframes backdropIn {
-  from {
-    opacity: 0;
-    backdrop-filter: blur(0);
-  }
-  to {
-    opacity: 1;
-    backdrop-filter: blur(24px);
-  }
+  from { opacity: 0; backdrop-filter: blur(0); }
+  to { opacity: 1; backdrop-filter: blur(24px); }
 }
 
-@keyframes contentIn {
-  from {
-    opacity: 0;
-    transform: scale(0.92) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+@keyframes contentScaleIn {
+  from { opacity: 0; transform: scale(0.92) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes contentSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 
 /* ─── Exit animations ─── */
 
 @keyframes backdropOut {
-  from {
-    opacity: 1;
-    backdrop-filter: blur(24px);
-  }
-  to {
-    opacity: 0;
-    backdrop-filter: blur(0);
-  }
+  from { opacity: 1; backdrop-filter: blur(24px); }
+  to { opacity: 0; backdrop-filter: blur(0); }
 }
 
-@keyframes contentOut {
-  from {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0.92) translateY(20px);
-  }
+@keyframes contentScaleOut {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to { opacity: 0; transform: scale(0.92) translateY(20px); }
+}
+
+@keyframes contentSlideDown {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
 }
 
 /* ─── States ─── */
@@ -56,12 +42,24 @@
   animation: backdropOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* Mobile: slide up from bottom */
 .content {
-  animation: contentIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  animation: contentSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .contentClosing {
-  animation: contentOut 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation: contentSlideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Desktop: centered scale */
+@media (min-width: 768px) {
+  .content {
+    animation: contentScaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+  }
+
+  .contentClosing {
+    animation: contentScaleOut 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
 }
 
 /* ─── Close button ─── */

@@ -1,164 +1,233 @@
 "use client";
 
-import styles from "./PodcastWaveBackground.module.css";
+import { useEffect, useRef } from "react";
 
 /**
- * Animated flowing wave background matching the "It Shouldn't Be This Hard"
- * podcast cover art — thin cyan and magenta light trails on black with subtle glow.
+ * Animated neon light-trail background for the podcast hero.
+ * Bottom-left: organic blob/loop shape in thick cyan + magenta/white accents.
+ * Top-right: straight diagonal slash lines in cyan/magenta/white.
+ * Draw-in animation on load, then gentle organic sway.
  */
 export default function PodcastWaveBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const rafRef = useRef<number>(0);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let w = 0;
+    let h = 0;
+    let sx = 1;
+    let sy = 1;
+    const startTime = performance.now();
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio, 2);
+      w = canvas!.offsetWidth;
+      h = canvas!.offsetHeight;
+      canvas!.width = w * dpr;
+      canvas!.height = h * dpr;
+      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
+      sx = w / 1920;
+      sy = h / 1080;
+    }
+
+    // Organic sway per point
+    function animatePoint(
+      x: number, y: number, i: number, time: number, seed: number
+    ): [number, number] {
+      const phase = seed + i * 0.7;
+      const dx = Math.sin(time * 0.4 + phase) * 6 + Math.sin(time * 0.7 + phase * 1.3) * 3;
+      const dy = Math.cos(time * 0.35 + phase * 0.9) * 5 + Math.cos(time * 0.6 + phase * 1.1) * 2;
+      return [x + dx, y + dy];
+    }
+
+    // Calculate total path length for draw-in
+    function pathLength(path: [number, number][]): number {
+      let len = 0;
+      for (let i = 1; i < path.length; i++) {
+        const dx = (path[i][0] - path[i - 1][0]) * sx;
+        const dy = (path[i][1] - path[i - 1][1]) * sy;
+        len += Math.sqrt(dx * dx + dy * dy);
+      }
+      return len;
+    }
+
+    function drawNeonStroke(
+      basePath: [number, number][],
+      color: string,
+      coreWidth: number,
+      glowColor: string,
+      glowWidth: number,
+      time: number,
+      seed: number,
+      progress: number, // 0→1 draw-in
+    ) {
+      if (progress <= 0) return;
+
+      // Animate each point
+      const path = basePath.map(([x, y], i) => animatePoint(x, y, i, time, seed));
+      const totalLen = pathLength(path);
+      const dashLen = totalLen * progress;
+
+      ctx!.save();
+      ctx!.lineCap = "round";
+      ctx!.lineJoin = "round";
+
+      function tracePath() {
+        ctx!.beginPath();
+        const [x0, y0] = path[0];
+        ctx!.moveTo(x0 * sx, y0 * sy);
+
+        for (let i = 1; i < path.length - 1; i++) {
+          const [cx, cy] = path[i];
+          const [nx, ny] = path[i + 1];
+          const midX = (cx * sx + nx * sx) / 2;
+          const midY = (cy * sy + ny * sy) / 2;
+          ctx!.quadraticCurveTo(cx * sx, cy * sy, midX, midY);
+        }
+        const [lx, ly] = path[path.length - 1];
+        ctx!.lineTo(lx * sx, ly * sy);
+      }
+
+      // Use dash to reveal progressively
+      const dash = progress < 1 ? [dashLen, totalLen * 2] : [];
+
+      // Outer glow
+      tracePath();
+      ctx!.setLineDash(dash);
+      ctx!.strokeStyle = glowColor;
+      ctx!.lineWidth = glowWidth * 3 * sx;
+      ctx!.globalAlpha = 0.15;
+      ctx!.filter = `blur(${20 * sx}px)`;
+      ctx!.stroke();
+
+      // Mid glow
+      tracePath();
+      ctx!.setLineDash(dash);
+      ctx!.strokeStyle = glowColor;
+      ctx!.lineWidth = glowWidth * 1.5 * sx;
+      ctx!.globalAlpha = 0.3;
+      ctx!.filter = `blur(${8 * sx}px)`;
+      ctx!.stroke();
+
+      // Inner glow
+      tracePath();
+      ctx!.setLineDash(dash);
+      ctx!.strokeStyle = color;
+      ctx!.lineWidth = glowWidth * sx;
+      ctx!.globalAlpha = 0.7;
+      ctx!.filter = `blur(${3 * sx}px)`;
+      ctx!.stroke();
+
+      // Core
+      tracePath();
+      ctx!.setLineDash(dash);
+      ctx!.strokeStyle = color;
+      ctx!.lineWidth = coreWidth * sx;
+      ctx!.globalAlpha = 0.95;
+      ctx!.filter = "none";
+      ctx!.stroke();
+
+      // White-hot center
+      tracePath();
+      ctx!.setLineDash(dash);
+      ctx!.strokeStyle = "#FFFFFF";
+      ctx!.lineWidth = (coreWidth * 0.4) * sx;
+      ctx!.globalAlpha = 0.8;
+      ctx!.filter = "none";
+      ctx!.stroke();
+
+      ctx!.restore();
+    }
+
+    // ── Stroke definitions ──
+    // Paths in 1920×1080 coordinate space
+
+    const strokes: {
+      path: [number, number][];
+      color: string;
+      core: number;
+      glow: string;
+      glowW: number;
+      seed: number;
+      drawDelay: number;  // seconds delay before draw-in starts
+      drawDuration: number; // seconds for full draw-in
+    }[] = [
+      // ═══ BOTTOM-LEFT CORNER — organic blob/loop ═══
+      // BL thick cyan blob (the main organic rounded shape)
+      { path: [[-30,500],[-20,560],[-10,630],[0,700],[5,760],[0,810],[-10,860],[10,910],[50,950],[100,980],[160,1000],[230,1010],[300,1000],[350,970],[370,920],[360,860],[330,810],[280,780],[220,770],[160,790],[120,830],[100,880],[110,940],[150,990],[210,1030],[290,1060],[380,1080],[470,1095]],
+        color: "#00E5FF", core: 10, glow: "#0088CC", glowW: 22, seed: 0, drawDelay: 0, drawDuration: 2.0 },
+      // BL thinner cyan companion (follows blob loosely)
+      { path: [[-50,480],[-40,550],[-30,620],[-20,690],[-15,750],[-25,810],[-5,870],[30,920],[80,960],[140,985],[210,995],[280,985],[330,955],[350,910],[340,855],[310,810],[260,785],[200,780],[150,805],[120,850],[115,910],[140,970],[190,1020],[260,1055],[340,1075],[430,1090]],
+        color: "#00CFFF", core: 4, glow: "#006699", glowW: 10, seed: 2.1, drawDelay: 0.2, drawDuration: 2.0 },
+      // BL magenta (straighter, running alongside blob)
+      { path: [[-60,520],[-50,590],[-35,660],[-20,730],[-10,800],[10,870],[45,930],[95,975],[160,1010],[240,1035],[330,1050],[420,1060],[510,1070]],
+        color: "#FF20DD", core: 3.5, glow: "#990066", glowW: 10, seed: 1.5, drawDelay: 0.3, drawDuration: 1.8 },
+      // BL thin magenta
+      { path: [[-75,540],[-65,610],[-50,680],[-35,750],[-20,820],[5,885],[40,940],[90,985],[155,1020],[235,1045],[325,1060],[415,1070]],
+        color: "#FF08CC", core: 1.5, glow: "#660044", glowW: 4, seed: 3.7, drawDelay: 0.5, drawDuration: 1.6 },
+      // BL white accent
+      { path: [[-40,510],[-30,575],[-15,645],[0,715],[10,785],[20,850],[50,910],[95,960],[155,1000],[230,1030],[315,1050],[405,1065]],
+        color: "#FFFFFF", core: 0.8, glow: "#444444", glowW: 1.5, seed: 5.2, drawDelay: 0.4, drawDuration: 1.5 },
+
+      // ═══ TOP-RIGHT CORNER — straight diagonal slashes ═══
+      // TR thick cyan main (diagonal from upper-center-right to right edge)
+      { path: [[1150,-60],[1250,-20],[1350,20],[1450,60],[1550,100],[1650,140],[1750,180],[1850,230],[1950,290]],
+        color: "#00E5FF", core: 10, glow: "#0088CC", glowW: 22, seed: 6.0, drawDelay: 0.1, drawDuration: 1.8 },
+      // TR thinner cyan companion
+      { path: [[1200,-80],[1300,-40],[1400,0],[1500,40],[1600,80],[1700,120],[1800,165],[1900,220],[2000,280]],
+        color: "#00CFFF", core: 4, glow: "#006699", glowW: 10, seed: 8.1, drawDelay: 0.3, drawDuration: 1.8 },
+      // TR magenta (diagonal slash)
+      { path: [[1250,-50],[1350,-5],[1450,40],[1550,85],[1650,130],[1750,175],[1850,225],[1960,290]],
+        color: "#FF20DD", core: 3.5, glow: "#990066", glowW: 10, seed: 7.5, drawDelay: 0.4, drawDuration: 1.6 },
+      // TR thin magenta
+      { path: [[1300,-70],[1400,-25],[1500,20],[1600,65],[1700,110],[1800,160],[1900,215],[2010,280]],
+        color: "#FF08CC", core: 1.5, glow: "#660044", glowW: 4, seed: 9.7, drawDelay: 0.6, drawDuration: 1.5 },
+      // TR white accent
+      { path: [[1180,-90],[1280,-45],[1380,0],[1480,45],[1580,90],[1680,135],[1780,185],[1880,240],[1980,300]],
+        color: "#FFFFFF", core: 0.8, glow: "#444444", glowW: 1.5, seed: 11.2, drawDelay: 0.5, drawDuration: 1.5 },
+    ];
+
+    function frame(t: number) {
+      const elapsed = (t - startTime) * 0.001; // seconds since mount
+      const time = t * 0.001;
+
+      ctx!.clearRect(0, 0, w, h);
+      ctx!.fillStyle = "#000";
+      ctx!.fillRect(0, 0, w, h);
+
+      for (const s of strokes) {
+        // Draw-in progress: 0 before delay, ramps 0→1 over duration
+        const drawElapsed = elapsed - s.drawDelay;
+        const progress = Math.min(1, Math.max(0, drawElapsed / s.drawDuration));
+        // Ease-out for natural lightning feel
+        const eased = 1 - Math.pow(1 - progress, 2.5);
+
+        drawNeonStroke(s.path, s.color, s.core, s.glow, s.glowW, time, s.seed, eased);
+      }
+
+      rafRef.current = requestAnimationFrame(frame);
+    }
+
+    resize();
+    rafRef.current = requestAnimationFrame(frame);
+    window.addEventListener("resize", resize);
+
+    return () => {
+      cancelAnimationFrame(rafRef.current);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+
   return (
-    <div className={styles.wrapper}>
-      <svg
-        viewBox="0 0 1920 1080"
-        preserveAspectRatio="xMidYMid slice"
-        className={styles.svg}
-        aria-hidden="true"
-      >
-        <defs>
-          {/* Subtle glow — just enough to give light trail feel */}
-          <filter id="pw-glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b1" />
-            <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b2" />
-            <feMerge>
-              <feMergeNode in="b1" />
-              <feMergeNode in="b2" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          <filter id="pw-glow-wide" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="12" />
-          </filter>
-        </defs>
-
-        {/* ── CYAN WAVE 1 — main trail, enters bottom-left, organic S-curve
-            with a loop/undulation in the middle, exits upper-right ── */}
-
-        {/* Soft wide glow behind */}
-        <path
-          className={`${styles.path} ${styles.d2s}`}
-          d="M-80,1020 C60,940 200,820 380,720 C500,650 580,520 660,440
-             C740,360 840,320 920,350 C1000,380 1060,440 1140,400
-             C1220,360 1340,240 1480,170 C1620,100 1780,50 2020,0"
-          stroke="#00AEEF"
-          strokeWidth="6"
-          fill="none"
-          opacity="0.15"
-          filter="url(#pw-glow-wide)"
-        />
-        {/* Main visible line */}
-        <path
-          className={`${styles.path} ${styles.d2s}`}
-          d="M-80,1020 C60,940 200,820 380,720 C500,650 580,520 660,440
-             C740,360 840,320 920,350 C1000,380 1060,440 1140,400
-             C1220,360 1340,240 1480,170 C1620,100 1780,50 2020,0"
-          stroke="#00AEEF"
-          strokeWidth="2"
-          fill="none"
-          opacity="0.7"
-          filter="url(#pw-glow)"
-        />
-        {/* Bright core */}
-        <path
-          className={`${styles.path} ${styles.d2s}`}
-          d="M-80,1020 C60,940 200,820 380,720 C500,650 580,520 660,440
-             C740,360 840,320 920,350 C1000,380 1060,440 1140,400
-             C1220,360 1340,240 1480,170 C1620,100 1780,50 2020,0"
-          stroke="#80DFFF"
-          strokeWidth="0.8"
-          fill="none"
-          opacity="0.9"
-        />
-
-        {/* ── CYAN WAVE 2 — thinner companion, offset path ── */}
-        <path
-          className={`${styles.path} ${styles.d2_5s}`}
-          d="M-40,1060 C100,980 260,860 420,760 C540,690 620,560 700,480
-             C780,400 880,360 960,380 C1040,400 1100,460 1180,420
-             C1260,380 1380,260 1520,190 C1660,120 1820,70 2040,20"
-          stroke="#00AEEF"
-          strokeWidth="1"
-          fill="none"
-          opacity="0.35"
-          filter="url(#pw-glow)"
-        />
-
-        {/* ── CYAN WAVE 3 — thin wispy accent ── */}
-        <path
-          className={`${styles.path} ${styles.d3s}`}
-          d="M-120,960 C20,900 160,780 340,680 C460,610 540,480 620,400
-             C700,320 800,290 880,310 C960,330 1020,400 1100,360
-             C1180,320 1300,200 1440,130 C1580,60 1740,20 1980,-30"
-          stroke="#00AEEF"
-          strokeWidth="0.5"
-          fill="none"
-          opacity="0.25"
-        />
-
-        {/* ── MAGENTA WAVE 1 — main trail, enters upper-left area,
-            sweeps diagonally with gentle curves, exits lower-right ── */}
-
-        {/* Soft wide glow */}
-        <path
-          className={`${styles.path} ${styles.d2_2s}`}
-          d="M-60,80 C80,130 240,240 400,320 C560,400 680,360 800,420
-             C920,480 1020,580 1140,660 C1260,740 1400,800 1560,870
-             C1720,940 1860,980 2040,1040"
-          stroke="#FF08CC"
-          strokeWidth="5"
-          fill="none"
-          opacity="0.12"
-          filter="url(#pw-glow-wide)"
-        />
-        {/* Main visible line */}
-        <path
-          className={`${styles.path} ${styles.d2_2s}`}
-          d="M-60,80 C80,130 240,240 400,320 C560,400 680,360 800,420
-             C920,480 1020,580 1140,660 C1260,740 1400,800 1560,870
-             C1720,940 1860,980 2040,1040"
-          stroke="#FF08CC"
-          strokeWidth="1.5"
-          fill="none"
-          opacity="0.6"
-          filter="url(#pw-glow)"
-        />
-        {/* Bright core */}
-        <path
-          className={`${styles.path} ${styles.d2_2s}`}
-          d="M-60,80 C80,130 240,240 400,320 C560,400 680,360 800,420
-             C920,480 1020,580 1140,660 C1260,740 1400,800 1560,870
-             C1720,940 1860,980 2040,1040"
-          stroke="#FF80E5"
-          strokeWidth="0.6"
-          fill="none"
-          opacity="0.8"
-        />
-
-        {/* ── MAGENTA WAVE 2 — thinner companion ── */}
-        <path
-          className={`${styles.path} ${styles.d2_8s}`}
-          d="M-20,40 C120,90 280,200 440,280 C600,360 720,320 840,380
-             C960,440 1060,540 1180,620 C1300,700 1440,760 1600,830
-             C1760,900 1900,940 2060,1000"
-          stroke="#FF08CC"
-          strokeWidth="0.8"
-          fill="none"
-          opacity="0.3"
-          filter="url(#pw-glow)"
-        />
-
-        {/* ── MAGENTA WAVE 3 — thin wispy accent ── */}
-        <path
-          className={`${styles.path} ${styles.d3_2s}`}
-          d="M-100,120 C40,170 200,280 360,360 C520,440 640,400 760,460
-             C880,520 980,620 1100,700 C1220,780 1360,840 1520,910
-             C1680,980 1820,1020 2000,1080"
-          stroke="#FF08CC"
-          strokeWidth="0.4"
-          fill="none"
-          opacity="0.2"
-        />
-      </svg>
-    </div>
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full bg-black"
+    />
   );
 }

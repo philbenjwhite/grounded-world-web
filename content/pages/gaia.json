@@ -15,7 +15,7 @@
       "_template": "embedSection",
       "embedHeading": "How can Gaia help you?",
       "embedDescription": "Gaia is trained on Grounded's expertise in sustainability marketing, brand purpose activation, and social impact strategy. Whether you're exploring circular economy principles, crafting a sustainability narrative, or looking for insights on purpose-driven marketing \u2014 Gaia is here to help.",
-      "embedMode": "placeholder",
+      "embedMode": "gaiaChat",
       "embedMinHeight": 600
     }
   ]

@@ -785,7 +785,7 @@ export default defineConfig({
             if (slug === "our-work") return "/our-work";
             if (slug === "services") return "/services";
             if (slug === "gaia") return "/gaia";
-            if (slug === "itshouldntbethishard") return "/itshouldntbethishard";
+            if (slug === "itshouldntbethishard") return "/resources/podcast";
             if (slug.startsWith("resources-")) return `/${slug.replace("resources-", "resources/")}`;
             if (slug.startsWith("services-")) return `/${slug.replace("services-", "services/")}`;
             return `/${slug}`;
@@ -2013,6 +2013,7 @@ export default defineConfig({
                     options: [
                       { value: "placeholder", label: "Placeholder" },
                       { value: "embed", label: "Embed Code" },
+                      { value: "gaiaChat", label: "Gaia Chat" },
                     ],
                   },
                   {

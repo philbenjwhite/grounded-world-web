@@ -10,6 +10,7 @@ import styles from "./Header.module.css";
 import { resourceLinks } from "./megaMenuData";
 import { mapCmsServices, type ServiceItem } from "../VideoHero/utils";
 import type { Service } from "../../../../tina/__generated__/types";
+import NewsletterModal from "../NewsletterModal/NewsletterModal";
 
 export interface HeaderProps {
   className?: string;
@@ -26,6 +27,7 @@ const Header = ({ className, services = [] }: HeaderProps) => {
   const pathname = usePathname() ?? "/";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [newsletterOpen, setNewsletterOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const indicatorRef = useRef<HTMLSpanElement>(null);
 
@@ -139,7 +141,7 @@ const Header = ({ className, services = [] }: HeaderProps) => {
             className="hidden lg:flex items-center gap-1 relative"
             aria-label="Main navigation"
           >
-            <NavItems services={serviceItems} pathname={pathname} />
+            <NavItems services={serviceItems} pathname={pathname} onSubscribeClick={() => setNewsletterOpen(true)} />
             <span ref={indicatorRef} className={styles.activeIndicator} />
           </nav>
         </div>
@@ -157,117 +159,94 @@ const Header = ({ className, services = [] }: HeaderProps) => {
         <div className={cn(styles.mobileOverlay, "absolute inset-0")} />
 
         {/* key forces remount so CSS animations replay on each open */}
-        <div key={mobileOpen ? "open" : "closed"} className="relative z-10 pt-20 px-6 pb-8 h-full overflow-y-auto">
+        <div key={mobileOpen ? "open" : "closed"} className="relative z-10 pt-24 px-6 pb-[calc(env(safe-area-inset-bottom)+80px)] h-full overflow-y-auto flex items-center">
           {(() => {
             let idx = 0;
             const stagger = () => ({ "--stagger": `${50 + 35 * idx++}ms` } as React.CSSProperties);
             return (
-              <>
-                <div className="flex flex-col gap-0.5">
-                  <MobileLink href="/" label="Home" active={pathname === "/"} style={stagger()} />
+              <nav className="flex flex-col w-full text-center">
+                <MobileNavLink href="/" label="Home" active={pathname === "/"} style={stagger()} />
 
-                  {serviceItems.length > 0 && (
-                    <>
-                      <MobileLink
-                        href="/services"
-                        label="Services"
-                        active={isActivePath(pathname, "/services")}
-                        style={stagger()}
-                      />
-                      <div
-                        className={cn(styles.mobileSubCard, styles.mobileItem, "ml-1 mb-2 p-2 flex flex-col gap-0.5")}
-                        style={stagger()}
-                      >
-                        {serviceItems.map((svc) => (
-                          <Link
-                            key={svc.id}
-                            href={svc.url}
-                            className={cn(
-                              styles.mobileServiceLink,
-                              "flex items-center gap-3 px-3 py-2.5 rounded-xl no-underline transition-colors duration-200",
-                              pathname === svc.url ? "text-white bg-white/[0.04]" : "text-white/50 hover:text-white/80",
-                            )}
-                          >
-                            <div
-                              className={cn(styles.mobileServiceOrb, "w-8 h-8 rounded-full shrink-0 flex items-center justify-center")}
-                              style={{ "--service-color": svc.color } as React.CSSProperties}
-                            >
-                              <svc.icon size={14} weight="bold" className={styles.mobileServiceIcon} />
-                            </div>
-                            <div className="min-w-0">
-                              <span className="text-[13px] font-semibold block leading-tight">{svc.label}</span>
-                              {svc.description && (
-                                <span className="text-[10px] text-white/30 block mt-0.5 leading-snug">{svc.description}</span>
-                              )}
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </>
-                  )}
-
-                  <MobileLink href="/about-us" label="About Us" active={isActivePath(pathname, "/about-us")} style={stagger()} />
-                  <MobileLink href="/our-work" label="Our Work" active={isActivePath(pathname, "/our-work")} style={stagger()} />
-
-                  <MobileLink href="/resources" label="Resources" active={isActivePath(pathname, "/resources")} style={stagger()} />
-                  <div
-                    className={cn(styles.mobileSubCard, styles.mobileItem, "ml-1 mb-2 p-2 flex flex-col gap-0.5")}
-                    style={stagger()}
-                  >
-                    {resourceLinks.map((rt) => (
+                <MobileNavLink
+                  href="/services"
+                  label="Services"
+                  active={isActivePath(pathname, "/services")}
+                  style={stagger()}
+                />
+                {serviceItems.length > 0 && (
+                  <div className={cn(styles.mobileItem, "flex flex-wrap justify-center gap-x-4 gap-y-1 mb-2")} style={stagger()}>
+                    {serviceItems.map((svc) => (
                       <Link
-                        key={rt.label}
-                        href={rt.href}
+                        key={svc.id}
+                        href={svc.url}
                         className={cn(
-                          styles.mobileServiceLink,
-                          "flex items-center gap-3 px-3 py-2.5 rounded-xl no-underline transition-colors duration-200",
-                          pathname === rt.href ? "text-white bg-white/[0.04]" : "text-white/50 hover:text-white/80",
+                          "py-1 no-underline text-[13px] transition-colors duration-150",
+                          pathname === svc.url ? "text-white/70 font-medium" : "text-white/25 hover:text-white/50",
                         )}
                       >
-                        <div
-                          className={cn(styles.mobileServiceOrb, "w-8 h-8 rounded-full shrink-0 flex items-center justify-center")}
-                          style={{ "--service-color": rt.color } as React.CSSProperties}
-                        >
-                          <rt.icon size={14} weight="bold" className={styles.mobileServiceIcon} />
-                        </div>
-                        <span className="text-[13px] font-semibold">{rt.label}</span>
+                        {svc.label}
                       </Link>
                     ))}
                   </div>
+                )}
 
-                  <MobileLink href="/gaia" label="Ask Gaia" active={isActivePath(pathname, "/gaia")} style={stagger()} />
+                <MobileNavLink href="/about-us" label="About Us" active={isActivePath(pathname, "/about-us")} style={stagger()} />
+                <MobileNavLink href="/our-work" label="Our Work" active={isActivePath(pathname, "/our-work")} style={stagger()} />
+
+                <MobileNavLink
+                  href="/resources"
+                  label="Resources"
+                  active={isActivePath(pathname, "/resources")}
+                  style={stagger()}
+                />
+                <div className={cn(styles.mobileItem, "flex flex-wrap justify-center gap-x-4 gap-y-1 mb-2")} style={stagger()}>
+                  {resourceLinks.map((rt) => (
+                    <Link
+                      key={rt.label}
+                      href={rt.href}
+                      className={cn(
+                        "py-1 no-underline text-[13px] transition-colors duration-150",
+                        pathname === rt.href ? "text-white/70 font-medium" : "text-white/25 hover:text-white/50",
+                      )}
+                    >
+                      {rt.label}
+                    </Link>
+                  ))}
                 </div>
 
-                {/* CTAs */}
-                <div className="mt-8 flex flex-col gap-3">
-                  <Link
-                    href="/newsletter"
-                    className={cn(styles.newsletterCta, styles.mobileItem, "px-5 py-3.5 rounded-xl text-sm font-semibold no-underline flex items-center justify-center gap-2")}
-                    style={stagger()}
-                  >
-                    <EnvelopeIcon size={16} weight="bold" />
-                    Subscribe to Newsletter
-                  </Link>
-                  <Link
-                    href="/contact-us"
-                    className={cn(styles.ctaButton, styles.mobileItem, "px-5 py-3.5 rounded-xl text-sm font-semibold no-underline text-center")}
-                    style={stagger()}
-                  >
-                    Contact Us
-                  </Link>
-                </div>
-              </>
+                <MobileNavLink href="/gaia" label="Ask Gaia" active={isActivePath(pathname, "/gaia")} style={stagger()} />
+              </nav>
             );
           })()}
         </div>
+
+        {/* ── Fixed bottom CTAs ── */}
+        <div className={cn(styles.mobileBottomBar, "absolute bottom-0 left-0 right-0 z-20 px-6 pb-[calc(env(safe-area-inset-bottom)+12px)] pt-5 flex gap-3")}>
+          <button
+            type="button"
+            onClick={() => { setMobileOpen(false); setNewsletterOpen(true); }}
+            className={cn(styles.newsletterCta, "flex-1 py-3.5 rounded-full text-[13px] font-semibold flex items-center justify-center gap-2 cursor-pointer")}
+          >
+            <EnvelopeIcon size={14} weight="bold" />
+            Subscribe
+          </button>
+          <Link
+            href="/contact-us"
+            className={cn(styles.ctaButton, "flex-1 py-3.5 rounded-full text-[13px] font-bold no-underline flex items-center justify-center")}
+          >
+            Contact Us
+          </Link>
+        </div>
       </div>
+
+      <NewsletterModal open={newsletterOpen} onClose={() => setNewsletterOpen(false)} />
     </>
   );
 };
 
 /* ─── Mobile nav helpers ─── */
 
-function MobileLink({
+function MobileNavLink({
   href,
   label,
   active,
@@ -283,10 +262,8 @@ function MobileLink({
       href={href}
       className={cn(
         styles.mobileItem,
-        "block px-4 py-3 rounded-xl text-[15px] font-semibold no-underline transition-colors duration-200",
-        active
-          ? "text-white bg-white/[0.05]"
-          : "text-white/50 hover:text-white hover:bg-white/[0.03]",
+        "block py-2.5 no-underline text-[28px] font-bold tracking-[-0.02em] transition-colors duration-150",
+        active ? styles.mobileActiveLink : "text-white/20 hover:text-white/45",
       )}
       style={style}
     >
@@ -300,9 +277,11 @@ function MobileLink({
 function NavItems({
   services,
   pathname,
+  onSubscribeClick,
 }: {
   services: ServiceItem[];
   pathname: string;
+  onSubscribeClick: () => void;
 }) {
   return (
     <>
@@ -490,11 +469,12 @@ function NavItems({
       </Link>
 
       {/* SUBSCRIBE — icon only at lg, full text at xl+ */}
-      <Link
-        href="/newsletter"
+      <button
+        type="button"
+        onClick={onSubscribeClick}
         className={cn(
           styles.newsletterCta,
-          "ml-2 rounded-full no-underline whitespace-nowrap inline-flex items-center justify-center overflow-hidden",
+          "ml-2 rounded-full whitespace-nowrap inline-flex items-center justify-center overflow-hidden cursor-pointer",
           "w-10 h-10 xl:w-auto xl:h-auto xl:px-5 xl:py-2.5 xl:gap-2",
           "text-[12px] font-semibold",
         )}
@@ -502,7 +482,7 @@ function NavItems({
       >
         <EnvelopeIcon size={16} weight="bold" className="shrink-0" />
         <span className="hidden xl:inline">Subscribe</span>
-      </Link>
+      </button>
 
       {/* CONTACT US — icon only at lg, full text at xl+ */}
       <Link
