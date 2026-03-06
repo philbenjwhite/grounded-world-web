@@ -13,6 +13,7 @@ import React, { useState, useRef, useCallback, useEffect } from "react";
 import cn from "classnames";
 import {
   ArrowUpIcon,
+  DotsThreeIcon,
 } from "@phosphor-icons/react";
 import styles from "./GaiaChat.module.css";
 
@@ -99,6 +100,19 @@ const GaiaChat: React.FC = () => {
   return (
     <div className={cn(styles.chatShell, "w-full h-[min(70vh,600px)] md:h-[min(80vh,750px)]")}>
       <div className="flex flex-col flex-1 overflow-hidden">
+        {/* More options */}
+        <div className={cn(styles.staggerIn, "flex justify-end px-6 md:px-10 pt-4 pb-1 shrink-0")} style={{ animationDelay: "0.2s" }}>
+          <button
+            className={cn(
+              styles.moreBtn,
+              "w-8 h-8 rounded-full flex items-center justify-center bg-white/[0.06] border border-white/[0.08] text-white/40 hover:text-white/70 hover:bg-white/[0.1] transition-all duration-200 cursor-pointer",
+            )}
+            aria-label="More options"
+          >
+            <DotsThreeIcon size={18} weight="bold" />
+          </button>
+        </div>
+
         {/* Messages */}
         <div className={styles.messagesWrap}>
           <div
