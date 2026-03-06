@@ -3,36 +3,44 @@
   ============================================================
   GAIA CHAT UI — Engineer Handoff (Standalone Preview)
   ============================================================
-  PLACEHOLDER: This file is a static HTML preview of the GaiaChat
-  React component. It mirrors the structure and classes used in
-  GaiaChat.tsx + GaiaChat.module.css so engineers can preview the
-  UI in a browser without running the Next.js dev server.
-
-  This will be replaced with the production Gaia chat iframe/embed
-  once the backend API is integrated.
+  This file is a static HTML preview of the GaiaChat React
+  component. It mirrors the structure and classes used in
+  GaiaChat.tsx + GaiaChat.module.css so engineers can preview
+  the UI in a browser and use it as a reference for the
+  iframe/embed integration.
 
   FILES
   -----
-  - GaiaChat.tsx          — React component (production)
-  - GaiaChat.module.css   — CSS Modules styles (production)
-  - gaia-chat-handoff.html — THIS FILE (preview only, not deployed)
-  - gaia-chat-handoff.css  — Standalone CSS for this preview
+  - GaiaChat.tsx            — React component (production)
+  - GaiaChat.module.css     — CSS Modules styles (production)
+  - gaia-chat-handoff.html  — THIS FILE (reference for iframe)
+  - gaia-chat-handoff.css   — Standalone CSS for this reference
+
+  DESIGN
+  ------
+  - Dark background (#0B0A0A), seamless with host page
+  - iOS-style frosted glass bubbles (backdrop-filter blur)
+  - Gaia avatar (28px circle) + "Gaia" label on bot messages
+  - User messages: blue-tinted glass, right-aligned, no avatar
+  - Input: glass pill with cyan focus ring
+  - Hidden scrollbar, top/bottom fade overlays on messages
 
   INTEGRATION NOTES
   -----------------
-  1. Replace the avatar panel placeholder with the final Gaia
-     portrait asset from the design team.
+  1. The avatar image src (/images/gaia-ai.png) should point
+     to the actual hosted asset URL in the iframe context.
 
-  2. The stub JS at the bottom (send/appendBot/appendUser) should
-     be replaced with the actual API call to the Gaia backend.
+  2. The stub JS at the bottom (send/appendBot/appendUser)
+     should be replaced with the actual Gaia backend API call.
 
-  3. Design tokens in gaia-chat-handoff.css map to globals.css
-     custom properties already in the codebase.
+  3. The send button uses an inline SVG (Phosphor ArrowUp).
+     If using Phosphor Icons library, replace with the component.
 
-  4. The kebab menu (three dots) has no dropdown wired — connect
-     to your existing popover/dropdown component.
+  4. Backdrop-filter requires a transparent/semi-transparent
+     parent background to be visible. The dark bg + glass
+     bubbles create the frosted effect.
 
-  5. The sound toggle button is cosmetic — wire to TTS/audio API.
+  5. The disclaimer footer text can be customized as needed.
   ============================================================
 -->
 <html lang="en">
@@ -44,105 +52,52 @@
 </head>
 <body>
 
-  <div class="card-shell">
-    <!-- Ambient gold glow — CSS only -->
-    <div class="card-glow" aria-hidden="true"></div>
+  <div class="chat-shell">
+    <div style="display:flex;flex-direction:column;flex:1;overflow:hidden">
 
-    <div class="card-inner">
-      <!-- 2px gold gradient stripe -->
-      <div class="top-stripe" aria-hidden="true"></div>
+      <!-- Messages area -->
+      <div class="messages-wrap">
+        <div class="messages" id="messages" role="log" aria-live="polite" aria-label="Chat messages">
 
-      <!-- Body: chat column + avatar panel -->
-      <div class="body-row">
-
-        <!-- Kebab / overflow menu -->
-        <div class="kebab-wrap">
-          <button class="kebab" aria-label="More options" aria-haspopup="true">
-            <!-- Phosphor DotsThree icon (bold) -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 256 256">
-              <path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z"/>
-            </svg>
-          </button>
-        </div>
-
-        <!-- ── CHAT COLUMN ── -->
-        <div class="chat-col">
-
-          <!-- Greeting — hidden after first message -->
-          <h1 class="gaia-greeting" id="greeting">Hello, I'm Gaia.</h1>
-
-          <!-- Message thread — wrapped with top/bottom fade overlays -->
-          <div class="messages-wrap">
-            <div class="messages" id="messages" role="log" aria-live="polite" aria-label="Chat messages">
-
-              <!-- Initial bot message -->
-              <div class="msg-row bot">
-                <div class="msg-avatar bot" aria-label="Gaia">
-                  <!-- Phosphor Sparkle icon (fill) -->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1a0f00" viewBox="0 0 256 256">
-                    <path d="M197.58,129.06l-51.61-19.68L126.3,57.81a14,14,0,0,0-26.6,0L80.05,109.38,28.42,129.06a14,14,0,0,0,0,26.61l51.63,19.68L99.7,226.91a14,14,0,0,0,26.6,0l19.64-51.56,51.64-19.68a14,14,0,0,0,0-26.61Z"/>
-                  </svg>
-                </div>
-                <div class="msg-bubble">
-                  What would you like to know?
-                </div>
+          <!-- Initial bot message -->
+          <div class="msg-row bot">
+            <div class="msg-sender">
+              <div class="msg-avatar">
+                <img src="/images/gaia-ai.png" alt="Gaia" width="28" height="28"/>
               </div>
-
+              <span class="msg-sender-name">Gaia</span>
             </div>
-          </div>
-
-          <!-- Input bar -->
-          <div class="input-area">
-            <div class="input-row">
-              <input
-                class="msg-input"
-                id="msgInput"
-                type="text"
-                placeholder="Your message"
-                autocomplete="off"
-                aria-label="Type a message"
-              />
-              <button class="send-btn" id="sendBtn" aria-label="Send message">
-                <!-- Phosphor PaperPlaneTilt icon (fill) -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
-                  <path d="M231.4,44.34s0,0,0,0a12,12,0,0,0-12.18-3.07l-.09,0L24.14,106.74a12,12,0,0,0,1.25,22.86l.23.07L88,149.8V200a12,12,0,0,0,7.29,11.06A12.18,12.18,0,0,0,100,212a12,12,0,0,0,9.47-4.64l29.06-36.49L183,190.06a12.1,12.1,0,0,0,7.71,2.8,12.31,12.31,0,0,0,3.78-.6,12.07,12.07,0,0,0,8-9.07L234.5,56.13A12,12,0,0,0,231.4,44.34Z"/>
-                </svg>
-              </button>
+            <div class="msg-bubble">
+              What would you like to know?
             </div>
           </div>
 
         </div>
+      </div>
 
-        <!-- ── AVATAR PANEL (right side, desktop only) ── -->
-        <div class="avatar-panel">
-          <!-- PLACEHOLDER: Replace with final Gaia portrait asset -->
-          <div class="avatar-placeholder">
-            <!-- Phosphor Sparkle icon (fill) as placeholder -->
-            <div class="avatar-placeholder-orb">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="rgba(255,166,3,0.6)" viewBox="0 0 256 256">
-                <path d="M197.58,129.06l-51.61-19.68L126.3,57.81a14,14,0,0,0-26.6,0L80.05,109.38,28.42,129.06a14,14,0,0,0,0,26.61l51.63,19.68L99.7,226.91a14,14,0,0,0,26.6,0l19.64-51.56,51.64-19.68a14,14,0,0,0,0-26.61Z"/>
-              </svg>
-            </div>
-          </div>
-
-          <!-- Sound toggle -->
-          <button class="mic-btn" id="micBtn" aria-label="Toggle sound" aria-pressed="false">
-            <!-- Phosphor SpeakerHigh icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" id="soundIcon" viewBox="0 0 256 256">
-              <path d="M155.51,24.81a8,8,0,0,0-8.42.88L77.25,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V32A8,8,0,0,0,155.51,24.81ZM32,96H72v64H32ZM144,204.57,88,162.13V93.87l56-43.44ZM212,128a84.08,84.08,0,0,1-31.4,65.39,8,8,0,1,1-10-12.53A67.94,67.94,0,0,0,196,128a67.94,67.94,0,0,0-25.42-52.86,8,8,0,1,1,10-12.53A84.08,84.08,0,0,1,212,128Zm-40,0a44,44,0,0,1-16.41,34.3,8,8,0,0,1-10-12.52A28,28,0,0,0,156,128a28,28,0,0,0-10.43-21.78,8,8,0,0,1,10-12.52A44,44,0,0,1,172,128Z"/>
+      <!-- Input bar -->
+      <div class="input-area">
+        <div class="input-row">
+          <input
+            class="msg-input"
+            id="msgInput"
+            type="text"
+            placeholder="Ask Gaia anything..."
+            autocomplete="off"
+            aria-label="Type a message"
+          />
+          <button class="send-btn" id="sendBtn" aria-label="Send message">
+            <!-- Phosphor ArrowUp icon (bold) -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 256 256">
+              <path d="M208.49,152.49a12,12,0,0,1-17,0L140,101v99a12,12,0,0,1-24,0V101L64.49,152.49a12,12,0,0,1-17-17l80-80a12,12,0,0,1,17,0l80,80A12,12,0,0,1,208.49,152.49Z"/>
             </svg>
           </button>
         </div>
-
       </div>
 
       <!-- Footer disclaimer -->
       <footer class="footer-disclaimer">
-        <p>
-          The information provided by GAIA is for general informational purposes only
-          and should not be construed as legal advice. You should consult with an
-          attorney licensed in your jurisdiction before making any legal decisions.
-        </p>
+        <p>Gaia may make mistakes. Verify important information.</p>
       </footer>
 
     </div>
@@ -154,31 +109,14 @@
     Replace setTimeout in send() with actual API call in production.
   -->
   <script>
-    /* Sound toggle */
-    const micBtn = document.getElementById('micBtn');
-    const soundIcon = document.getElementById('soundIcon');
-    let muted = false;
-
-    /* Phosphor SpeakerHigh path */
-    const speakerOnPath = 'M155.51,24.81a8,8,0,0,0-8.42.88L77.25,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V32A8,8,0,0,0,155.51,24.81ZM32,96H72v64H32ZM144,204.57,88,162.13V93.87l56-43.44ZM212,128a84.08,84.08,0,0,1-31.4,65.39,8,8,0,1,1-10-12.53A67.94,67.94,0,0,0,196,128a67.94,67.94,0,0,0-25.42-52.86,8,8,0,1,1,10-12.53A84.08,84.08,0,0,1,212,128Zm-40,0a44,44,0,0,1-16.41,34.3,8,8,0,0,1-10-12.52A28,28,0,0,0,156,128a28,28,0,0,0-10.43-21.78,8,8,0,0,1,10-12.52A44,44,0,0,1,172,128Z';
-
-    /* Phosphor SpeakerSlash path */
-    const speakerOffPath = 'M53.92,34.62A8,8,0,1,0,42.08,45.38L73.55,80H32A16,16,0,0,0,16,96v64a16,16,0,0,0,16,16H77.25l69.84,54.31A8,8,0,0,0,160,224V175.07l46.08,51.31a8,8,0,1,0,11.84-10.76Zm90.08,173.95L88,162.13V93.87l-.07-.08L144,118.68ZM32,160V96H72v64ZM155.51,24.81a8,8,0,0,0-8.42.88l-44.1,34.3a8,8,0,1,0,9.9,12.59L144,44.56V92.82a8,8,0,0,0,16,0V32A8,8,0,0,0,155.51,24.81ZM212,128a83.38,83.38,0,0,1-8.74,37.09,8,8,0,1,1-14.2-7.37A67.59,67.59,0,0,0,196,128a67.94,67.94,0,0,0-25.42-52.86,8,8,0,1,1,10-12.53A84.08,84.08,0,0,1,212,128Zm-40,0a43.7,43.7,0,0,1-3.26,16.51,8,8,0,0,1-14.79-6.05A27.8,27.8,0,0,0,156,128a28,28,0,0,0-10.43-21.78,8,8,0,0,1,10-12.52A44,44,0,0,1,172,128Z';
-
-    micBtn.addEventListener('click', function() {
-      muted = !muted;
-      micBtn.classList.toggle('muted', muted);
-      micBtn.setAttribute('aria-pressed', muted);
-      soundIcon.querySelector('path').setAttribute('d', muted ? speakerOffPath : speakerOnPath);
-    });
-
-
-    /* Chat */
     const msgs = document.getElementById('messages');
     const input = document.getElementById('msgInput');
     const sendBtn = document.getElementById('sendBtn');
-    const greeting = document.getElementById('greeting');
-    let greetingGone = false;
+
+    /* Toggle send button active state based on input */
+    input.addEventListener('input', function() {
+      sendBtn.classList.toggle('active', input.value.trim().length > 0);
+    });
 
     sendBtn.addEventListener('click', send);
     input.addEventListener('keydown', function(e) { if (e.key === 'Enter') send(); });
@@ -187,12 +125,7 @@
       var txt = input.value.trim();
       if (!txt) return;
       input.value = '';
-
-      if (!greetingGone && greeting) {
-        greetingGone = true;
-        greeting.classList.add('hide');
-        setTimeout(function() { greeting.remove(); }, 300);
-      }
+      sendBtn.classList.remove('active');
 
       appendUser(txt);
 
@@ -200,10 +133,11 @@
       var thinkEl = document.createElement('div');
       thinkEl.className = 'msg-thinking';
       thinkEl.innerHTML =
-        '<div class="msg-avatar bot" aria-hidden="true">' +
-          '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#1a0f00" viewBox="0 0 256 256">' +
-            '<path d="M197.58,129.06l-51.61-19.68L126.3,57.81a14,14,0,0,0-26.6,0L80.05,109.38,28.42,129.06a14,14,0,0,0,0,26.61l51.63,19.68L99.7,226.91a14,14,0,0,0,26.6,0l19.64-51.56,51.64-19.68a14,14,0,0,0,0-26.61Z"/>' +
-          '</svg>' +
+        '<div class="msg-sender">' +
+          '<div class="msg-avatar">' +
+            '<img src="/images/gaia-ai.png" alt="" width="28" height="28"/>' +
+          '</div>' +
+          '<span class="msg-sender-name">Gaia</span>' +
         '</div>' +
         '<div class="think-dots" aria-label="Gaia is typing">' +
           '<span></span><span></span><span></span>' +
@@ -233,24 +167,21 @@
       var row = document.createElement('div');
       row.className = 'msg-row bot';
       row.innerHTML =
-        '<div class="msg-avatar bot" aria-label="Gaia">' +
-          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#1a0f00" viewBox="0 0 256 256">' +
-            '<path d="M197.58,129.06l-51.61-19.68L126.3,57.81a14,14,0,0,0-26.6,0L80.05,109.38,28.42,129.06a14,14,0,0,0,0,26.61l51.63,19.68L99.7,226.91a14,14,0,0,0,26.6,0l19.64-51.56,51.64-19.68a14,14,0,0,0,0-26.61Z"/>' +
-          '</svg>' +
+        '<div class="msg-sender">' +
+          '<div class="msg-avatar">' +
+            '<img src="/images/gaia-ai.png" alt="Gaia" width="28" height="28"/>' +
+          '</div>' +
+          '<span class="msg-sender-name">Gaia</span>' +
         '</div>' +
         '<div class="msg-bubble">' + esc(text) + '</div>';
       msgs.appendChild(row);
+      msgs.scrollTop = msgs.scrollHeight;
     }
 
     function appendUser(text) {
       var row = document.createElement('div');
       row.className = 'msg-row user';
       row.innerHTML =
-        '<div class="msg-avatar user" aria-label="You">' +
-          '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgba(255,255,255,0.85)" viewBox="0 0 256 256">' +
-            '<path d="M230.93,220a8,8,0,0,1-6.93,4H32a8,8,0,0,1-6.92-12c15.23-26.33,38.7-45.21,66.09-54.16a72,72,0,1,1,73.66,0C192.23,166.81,215.7,185.69,230.93,212A8,8,0,0,1,230.93,220Z"/>' +
-          '</svg>' +
-        '</div>' +
         '<div class="msg-bubble">' + esc(text) + '</div>';
       msgs.appendChild(row);
       msgs.scrollTop = msgs.scrollHeight;
