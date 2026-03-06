@@ -104,12 +104,12 @@
 .emailInput {
   width: 100% !important;
   padding: 12px 16px !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 12px !important;
   color: var(--font-color-primary) !important;
   font-family: inherit !important;
-  font-size: 15px !important;
+  font-size: 14px !important;
   line-height: 1.5 !important;
   outline: none !important;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -117,12 +117,12 @@
 }
 
 .emailInput::placeholder {
-  color: var(--font-color-tertiary) !important;
+  color: rgba(255, 255, 255, 0.25) !important;
 }
 
 .emailInput:focus {
-  border-color: var(--color-cyan) !important;
-  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: none !important;
 }
 
 .submitButton {

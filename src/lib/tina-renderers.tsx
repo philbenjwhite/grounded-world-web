@@ -682,16 +682,15 @@ export function renderSection(section: PageSections, index: number): React.React
         return (
           <GaiaVideoIntro
             key={index}
-            vimeoUrl="https://vimeo.com/1170838207/689cdb83cc"
-            videoDuration={30}
+            videoSrc="https://player.vimeo.com/progressive_redirect/playback/1170838207/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&log_user=0&signature=dababe1b7a5c81dbc97d2df303830f9ed07c21f518cd4bf732c6798f6da32403"
           >
-            <Section>
+            <div className="py-[var(--layout-section-padding-y)]">
               <Container className="px-[var(--layout-section-padding-x)]">
                 <div className="max-w-4xl mx-auto">
                   <GaiaChat />
                 </div>
               </Container>
-            </Section>
+            </div>
           </GaiaVideoIntro>
         );
       }

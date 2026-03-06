@@ -1,245 +1,508 @@
-/* ─── Container ─── */
+/* ─── Intro — overlays on top of the chat ─── */
 
 .introWrap {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
   min-height: 100dvh;
   overflow: hidden;
-  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 1.4s ease-out;
 }
 
-.introWrap.faded {
+.introWrap.introDone {
+  opacity: 0;
   pointer-events: none;
 }
 
-/* ─── Particles canvas — full bleed behind everything ─── */
+/* ─── Shared fade-out ─── */
+
+.fadeOut {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+/* ─── Particles canvas — persistent background ─── */
 
 .particlesCanvas {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.particlesCanvas.hidden {
-  opacity: 0;
+/* Fade overlay — dissolves particles at bottom */
+.particlesFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--background, #0B0A0A) 100%
+  );
 }
 
-/* ─── Centered video area ─── */
+/* ─── Title overlay ─── */
 
-.videoCenter {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.videoFrame {
-  position: relative;
-  width: min(720px, 80vw);
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #0a0a0a;
-  transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.videoFrame.hidden {
-  opacity: 0;
-}
-
-/* ─── Vimeo iframe inside the frame ─── */
-
-.vimeoIframe {
+.titleOverlay {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  opacity: 0;
-  transition: opacity 0.8s ease-in;
-}
-
-.vimeoIframe.iframeVisible {
-  opacity: 1;
-}
-
-/* ─── Loader text — "Meet Gaia..." shown before video loads ─── */
-
-.loaderText {
-  position: absolute;
-  inset: 0;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
-  opacity: 1;
-  transition: opacity 0.6s ease-out;
 }
 
-.loaderText.loaderTextHide {
+.titleOverlay.titleVisible {
+  opacity: 1;
+}
+
+/* Exit: elegant blur + expand + fade */
+.titleOverlay.titleExiting {
+  animation: titleExit 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes titleExit {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(16px);
+    transform: scale(1.08);
+  }
+}
+
+/* ─── Title content container ─── */
+
+.titleContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2rem, 4vh, 3.5rem);
+}
+
+/* ─── Title text ─── */
+
+.meetTitle {
+  font-size: clamp(2.8rem, 10vw, 8rem);
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+
+/* ─── Per-character reveal ─── */
+
+.char {
+  display: inline-block;
   opacity: 0;
+  filter: blur(10px);
+  transform: translateY(6px);
+  transition:
+    opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.char.charRevealed {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+}
+
+/* "AI" characters — bright white with subtle glow */
+.char.aiChar {
+  color: #fff;
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.15);
+  animation: aiPulse 4s ease-in-out infinite;
+}
+
+@keyframes aiPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.06);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* ─── Play / CTA button ─── */
+
+.playBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(77, 168, 255, 0.25);
+  background: rgba(77, 168, 255, 0.08);
+  backdrop-filter: blur(16px);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s,
+    background 0.3s,
+    box-shadow 0.3s;
   pointer-events: none;
 }
 
-/* ─── Radial vignette on all edges of the video ─── */
+@media (min-width: 768px) {
+  .playBtn {
+    gap: 10px;
+    padding: 14px 32px;
+    font-size: 15px;
+  }
+}
+
+.playBtn.playBtnVisible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.playBtn:hover {
+  border-color: rgba(77, 168, 255, 0.5);
+  background: rgba(77, 168, 255, 0.14);
+  box-shadow:
+    0 0 24px rgba(77, 168, 255, 0.12),
+    0 0 48px rgba(77, 168, 255, 0.06);
+}
+
+.playBtn:active {
+  transform: scale(0.97);
+}
+
+.playIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(77, 168, 255, 0.2);
+  color: #4da8ff;
+  flex-shrink: 0;
+}
+
+/* ─── Audio hint ─── */
+
+.audioHint {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s,
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+  pointer-events: none;
+}
+
+.audioHint.audioHintVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Video layer ─── */
+
+.videoLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5%;
+  opacity: 0;
+  transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 768px) {
+  .videoLayer {
+    padding-bottom: 8%;
+  }
+}
+
+.videoLayer.videoVisible {
+  opacity: 1;
+}
+
+/* Video — no overflow hidden so vignette can bleed */
+.videoFrame {
+  position: relative;
+  width: min(900px, 90vw);
+  aspect-ratio: 16 / 9;
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  .videoFrame {
+    width: min(900px, 75vw);
+  }
+}
+
+@media (min-width: 1280px) {
+  .videoFrame {
+    width: min(1000px, 70vw);
+  }
+}
+
+.videoEl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+
+/* ─── Edge masks — four directional gradients that dissolve each side ─── */
 
 .vignette {
   position: absolute;
-  inset: 0;
   z-index: 4;
   pointer-events: none;
-  border-radius: inherit;
-  /* Heavy vignette that fades all edges into the black bg */
-  background:
-    radial-gradient(
-      ellipse 80% 70% at center,
-      transparent 40%,
-      rgba(0, 0, 0, 0.5) 70%,
-      rgba(0, 0, 0, 0.85) 90%,
-      #000 100%
-    );
-  /* Edge shadows on all four sides */
-  box-shadow:
-    inset 0 0 60px 30px rgba(0, 0, 0, 0.6),
-    inset 0 40px 40px -20px rgba(0, 0, 0, 0.4),
-    inset 0 -40px 40px -20px rgba(0, 0, 0, 0.5);
 }
 
-/* ─── "Meet Gaia..." below the video ─── */
-
-.textBelow {
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s;
+.vignetteTop,
+.vignetteBottom,
+.vignetteLeft,
+.vignetteRight {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
 }
 
-.textBelow.textBelowVisible {
-  opacity: 1;
-  transform: translateY(0);
+.vignetteTop {
+  top: -2px;
+  left: -20%;
+  right: -20%;
+  height: 30%;
+  background: linear-gradient(
+    to bottom,
+    var(--background, #0B0A0A) 0%,
+    rgba(11, 10, 10, 0.5) 40%,
+    transparent 100%
+  );
 }
 
-.textBelow.hidden {
-  opacity: 0;
-  transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+.vignetteBottom {
+  bottom: -2px;
+  left: -20%;
+  right: -20%;
+  height: 30%;
+  background: linear-gradient(
+    to top,
+    var(--background, #0B0A0A) 0%,
+    rgba(11, 10, 10, 0.5) 40%,
+    transparent 100%
+  );
 }
 
-/* ─── "Meet Gaia..." title ─── */
-
-.meetTitle {
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  text-align: center;
+.vignetteLeft {
+  left: -2px;
+  top: -20%;
+  bottom: -20%;
+  width: 50%;
+  background: linear-gradient(
+    to right,
+    var(--background, #0B0A0A) 0%,
+    rgba(11, 10, 10, 0.9) 20%,
+    rgba(11, 10, 10, 0.5) 50%,
+    rgba(11, 10, 10, 0.15) 75%,
+    transparent 100%
+  );
 }
 
-.aiSpan {
-  display: inline-block;
-  position: relative;
+.vignetteRight {
+  right: -2px;
+  top: -20%;
+  bottom: -20%;
+  width: 50%;
+  background: linear-gradient(
+    to left,
+    var(--background, #0B0A0A) 0%,
+    rgba(11, 10, 10, 0.9) 20%,
+    rgba(11, 10, 10, 0.5) 50%,
+    rgba(11, 10, 10, 0.15) 75%,
+    transparent 100%
+  );
 }
 
-/* Twinkling blue effect on "ai" */
-.aiSpan::after {
-  content: "ai";
+/* ─── Video controls overlay — clickable to mute ─── */
+
+.videoControls {
   position: absolute;
   inset: 0;
-  color: #4da8ff;
-  animation: aiTwinkle 3s ease-in-out infinite;
+  z-index: 5;
+  cursor: pointer;
+}
+
+/* ─── Captions ─── */
+
+.captionBar {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(700px, 85vw);
+  text-align: center;
   pointer-events: none;
 }
 
-@keyframes aiTwinkle {
-  0%, 100% {
-    opacity: 0.4;
-    text-shadow: 0 0 6px rgba(77, 168, 255, 0.3);
-  }
-  25% {
-    opacity: 1;
-    text-shadow:
-      0 0 12px rgba(77, 168, 255, 0.6),
-      0 0 24px rgba(77, 168, 255, 0.3);
-  }
-  50% {
-    opacity: 0.5;
-    text-shadow: 0 0 8px rgba(77, 168, 255, 0.25);
-  }
-  75% {
-    opacity: 0.9;
-    text-shadow:
-      0 0 16px rgba(77, 168, 255, 0.5),
-      0 0 32px rgba(77, 168, 255, 0.2);
+@media (min-width: 768px) {
+  .captionBar {
+    bottom: 15%;
   }
 }
 
-/* ─── Chat section reveal ─── */
+.captionText {
+  display: inline;
+  padding: 6px 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+@media (min-width: 768px) {
+  .captionText {
+    font-size: 15px;
+    padding: 6px 16px;
+  }
+}
+
+/* ─── Mute button — frosted circle, top-right of video ─── */
+
+.muteBtn {
+  position: absolute;
+  z-index: 6;
+  /* Center vertically like videoLayer, then offset to top-right of video frame */
+  top: calc(50% - 5% - min(900px, 90vw) * 9 / 32 + 12px);
+  right: calc(50% - min(900px, 90vw) / 2 + 12px);
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .muteBtn {
+    top: calc(50% - 8% - min(900px, 75vw) * 9 / 32 + 16px);
+    right: calc(50% - min(900px, 75vw) / 2 + 16px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .muteBtn {
+    top: calc(50% - 8% - min(1000px, 70vw) * 9 / 32 + 16px);
+    right: calc(50% - min(1000px, 70vw) / 2 + 16px);
+  }
+}
+
+.muteBtnInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: rgba(255, 255, 255, 0.85);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+@media (min-width: 768px) {
+  .muteBtnInner {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.muteBtn:hover .muteBtnInner {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: scale(1.08);
+}
+
+.muteBtn:active .muteBtnInner {
+  transform: scale(0.92);
+}
+
+/* ─── Chat section — in place, intro covers it ─── */
 
 .chatSection {
+  position: relative;
+  z-index: 4;
+  min-height: 80dvh;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  transform: translateY(20px);
+  transition:
+    opacity 2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
 }
 
-.chatSection.visible {
+.chatSection.chatVisible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ─── Skip button ─── */
-
-.skipBtn {
-  position: absolute;
-  bottom: clamp(1.5rem, 4vh, 2.5rem);
-  right: clamp(1.5rem, 3vw, 3rem);
-  z-index: 10;
-  padding: 8px 20px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px);
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s, opacity 1.6s;
-}
-
-.skipBtn:hover {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.skipBtn.hidden {
-  opacity: 0;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 /* ─── Reduced motion ─── */
 
 @media (prefers-reduced-motion: reduce) {
-  .loaderText,
-  .textBelow {
-    animation: none;
+  .char {
+    transition-duration: 0.01ms !important;
     opacity: 1;
+    filter: none;
     transform: none;
   }
-  .aiSpan::after {
+  .titleOverlay.titleExiting {
     animation: none;
-    opacity: 0.7;
+    opacity: 0;
   }
-  .videoFrame,
-  .particlesCanvas,
-  .chatSection,
-  .skipBtn {
+  .aiChar {
+    animation: none;
+  }
+  .playBtn {
+    transition-duration: 0.01ms !important;
+  }
+  .introWrap,
+  .videoLayer,
+  .particlesCanvas {
     transition-duration: 0.01ms !important;
   }
 }

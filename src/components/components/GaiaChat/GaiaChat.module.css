@@ -1,88 +1,10 @@
-/* ─── Card shell ─── */
+/* ─── Chat shell — seamless, no borders ─── */
 
-.cardShell {
+.chatShell {
   position: relative;
-  background: var(--comp-work-card-surface);
-  border-radius: var(--comp-work-card-radius);
-  border: 1px solid var(--comp-work-card-stroke);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.cardShell:hover {
-  border-color: #6b5120;
-}
-
-/* Overlay border prevents glow bleeding */
-.cardShell::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 50;
-  border-radius: inherit;
-  border: 1px solid transparent;
-  pointer-events: none;
-  transition: border-color 0.4s ease;
-}
-
-.cardShell:hover::after {
-  border-color: rgba(63, 49, 28, 0.55);
-}
-
-/* ─── Ambient gold glow ─── */
-
-.cardGlow {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: inherit;
-  overflow: hidden;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.cardShell:hover .cardGlow {
-  opacity: 1;
-}
-
-.cardGlow::before {
-  content: "";
-  position: absolute;
-  bottom: -30px;
-  left: -4%;
-  width: 55%;
-  height: 70px;
-  border-radius: 40% 60%;
-  background: var(--color-gold);
-  opacity: 0.15;
-  filter: blur(72px);
-}
-
-.cardGlow::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  right: -2%;
-  width: 42%;
-  height: 55px;
-  border-radius: 60% 40%;
-  background: var(--color-gold);
-  opacity: 0.10;
-  filter: blur(80px);
-}
-
-/* ─── Top stripe ─── */
-
-.topStripe {
-  position: relative;
-  z-index: 51; /* Above the ::after overlay border (z-50) */
-  height: 2px;
-  flex-shrink: 0;
-  background: linear-gradient(90deg, var(--color-gold) 0%, transparent 55%);
-  opacity: 0.55;
 }
 
 /* ─── Message area fade overlays ─── */
@@ -94,95 +16,92 @@
   overflow: hidden;
 }
 
-/* Top fade — content scrolls under this */
 .messagesWrap::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 32px;
+  height: 40px;
   background: linear-gradient(
     to bottom,
-    var(--comp-work-card-surface) 0%,
+    var(--background, #0B0A0A) 0%,
     transparent 100%
   );
   z-index: 2;
   pointer-events: none;
 }
 
-/* Bottom fade — content scrolls under this */
 .messagesWrap::after {
   content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 32px;
+  height: 40px;
   background: linear-gradient(
     to top,
-    var(--comp-work-card-surface) 0%,
+    var(--background, #0B0A0A) 0%,
     transparent 100%
   );
   z-index: 2;
   pointer-events: none;
 }
 
-/* ─── Greeting ─── */
-
-.greeting {
-  opacity: 0;
-  animation: fadeUp 0.5s 0.1s ease-out forwards;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.greetingHide {
-  opacity: 0;
-  transform: translateY(-6px);
-  pointer-events: none;
-}
-
-/* ─── Messages scrollbar ─── */
+/* ─── Scrollbar ─── */
 
 .messages {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.06) transparent;
+  scrollbar-width: none;
 }
 
 .messages::-webkit-scrollbar {
-  width: 3px;
+  display: none;
 }
 
-.messages::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 3px;
-}
-
-/* ─── Chat bubbles ─── */
+/* ─── Message rows ─── */
 
 .msgRow {
   opacity: 0;
-  animation: fadeUp 0.3s ease-out forwards;
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* ─── Bubbles ─── */
+
+.bubble {
+  padding: 10px 16px;
+  border-radius: 18px;
 }
 
 .botBubble {
-  background: #1f1e1e;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-bottom-left-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px 18px 18px 4px;
+  backdrop-filter: blur(40px) saturate(1.6);
+  -webkit-backdrop-filter: blur(40px) saturate(1.6);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .userBubble {
-  background: #2a2118;
-  border: 1px solid rgba(255, 166, 3, 0.18);
-  border-bottom-right-radius: 4px;
+  background: rgba(77, 168, 255, 0.08);
+  border: 1px solid rgba(77, 168, 255, 0.12);
+  border-radius: 18px 18px 4px 18px;
+  backdrop-filter: blur(40px) saturate(1.6);
+  -webkit-backdrop-filter: blur(40px) saturate(1.6);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(77, 168, 255, 0.06);
 }
 
 /* ─── Typing indicator ─── */
 
 .thinkDots {
-  background: #1f1e1e;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-bottom-left-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px 18px 18px 4px;
+  backdrop-filter: blur(40px) saturate(1.6);
+  -webkit-backdrop-filter: blur(40px) saturate(1.6);
 }
 
 .thinkDot {
@@ -192,40 +111,36 @@
 .thinkDot:nth-child(2) { animation-delay: 0.2s; }
 .thinkDot:nth-child(3) { animation-delay: 0.4s; }
 
-/* ─── Input focus ring ─── */
+/* ─── Input ─── */
 
 .inputRow {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .inputRow:focus-within {
-  border-color: rgba(255, 166, 3, 0.25);
-  box-shadow: 0 0 0 3px rgba(255, 166, 3, 0.06);
+  border-color: rgba(0, 174, 239, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.1);
 }
 
-/* ─── Sound toggle ─── */
+/* ─── Send button ─── */
 
-.micBtn {
-  transition: border-color 0.2s, background 0.2s, color 0.2s;
+.sendBtn {
+  transition: background 0.15s, color 0.15s;
 }
 
-.micBtn:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-  background: rgba(28, 28, 28, 0.95);
-  color: var(--color-white);
-}
+/* ─── Staggered entrance for chat elements ─── */
 
-.micMuted {
-  border-color: rgba(255, 8, 204, 0.3);
-  color: var(--color-gray-4);
+.staggerIn {
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* ─── Keyframes ─── */
 
-@keyframes fadeUp {
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
@@ -235,19 +150,18 @@
 
 @keyframes dotPulse {
   0%, 80%, 100% {
-    transform: scale(0.7);
-    opacity: 0.3;
+    transform: scale(0.6);
+    opacity: 0.25;
   }
   40% {
     transform: scale(1);
-    opacity: 1;
+    opacity: 0.8;
   }
 }
 
 /* ─── Reduced motion ─── */
 
 @media (prefers-reduced-motion: reduce) {
-  .greeting,
   .msgRow,
   .thinkDot {
     animation: none !important;

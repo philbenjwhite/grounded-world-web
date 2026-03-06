@@ -264,10 +264,7 @@
 /* ---- Mobile active link gradient ---- */
 
 .mobileActiveLink {
-  background: linear-gradient(90deg, var(--color-cyan), var(--color-magenta));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-magenta);
 }
 
 

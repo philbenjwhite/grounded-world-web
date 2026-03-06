@@ -12,12 +12,7 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import cn from "classnames";
 import {
-  SparkleIcon,
-  UserIcon,
-  PaperPlaneTiltIcon,
-  SpeakerHighIcon,
-  SpeakerSlashIcon,
-  DotsThreeIcon,
+  ArrowUpIcon,
 } from "@phosphor-icons/react";
 import styles from "./GaiaChat.module.css";
 
@@ -50,9 +45,6 @@ const GaiaChat: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
   const [input, setInput] = useState("");
   const [thinking, setThinking] = useState(false);
-  const [greetingVisible, setGreetingVisible] = useState(true);
-  const [greetingMounted, setGreetingMounted] = useState(true);
-  const [muted, setMuted] = useState(false);
   const messagesRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const idCounter = useRef(1);
@@ -69,12 +61,6 @@ const GaiaChat: React.FC = () => {
     const txt = input.trim();
     if (!txt || thinking) return;
     setInput("");
-
-    // Hide greeting on first user message
-    if (greetingVisible) {
-      setGreetingVisible(false);
-      setTimeout(() => setGreetingMounted(false), 300);
-    }
 
     const userMsg: Message = {
       id: `msg-${idCounter.current++}`,
@@ -96,7 +82,7 @@ const GaiaChat: React.FC = () => {
       setThinking(false);
       scrollToBottom();
     }, 1800);
-  }, [input, thinking, greetingVisible, scrollToBottom]);
+  }, [input, thinking, scrollToBottom]);
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
@@ -111,185 +97,136 @@ const GaiaChat: React.FC = () => {
   }, [messages, thinking, scrollToBottom]);
 
   return (
-    <div className={cn(styles.cardShell, "w-full h-[min(75vh,700px)]")}>
-      {/* Ambient gold glow */}
-      <div className={styles.cardGlow} aria-hidden="true" />
-
-      <div className="relative z-[2] flex flex-col flex-1 overflow-hidden">
-        {/* Top stripe */}
-        <div className={styles.topStripe} aria-hidden="true" />
-
-        {/* Body row: chat + avatar */}
-        <div className="flex flex-1 overflow-hidden relative min-h-0">
-          {/* Kebab menu */}
-          <div className="absolute top-4 right-4 z-30">
-            <button
-              className="bg-transparent border-none text-[var(--color-gray-4)] text-[22px] cursor-pointer px-2 py-1 rounded hover:text-white transition-colors duration-200"
-              aria-label="More options"
-              aria-haspopup="true"
-            >
-              <DotsThreeIcon size={22} weight="bold" />
-            </button>
-          </div>
-
-          {/* Chat column */}
-          <div className="flex-1 flex flex-col overflow-hidden px-8 min-w-0">
-            {/* Greeting */}
-            {greetingMounted && (
-              <h1
-                className={cn(
-                  styles.greeting,
-                  "text-[28px] md:text-[38px] font-bold text-white tracking-[-0.02em] leading-[1.1] mt-9 shrink-0",
-                  !greetingVisible && styles.greetingHide,
-                )}
-              >
-                Hello, I&rsquo;m Gaia.
-              </h1>
+    <div className={cn(styles.chatShell, "w-full h-[min(70vh,600px)] md:h-[min(80vh,750px)]")}>
+      <div className="flex flex-col flex-1 overflow-hidden">
+        {/* Messages */}
+        <div className={styles.messagesWrap}>
+          <div
+            ref={messagesRef}
+            className={cn(
+              styles.messages,
+              "h-full overflow-y-auto py-6 px-6 md:px-10 flex flex-col gap-5",
             )}
-
-            {/* Messages — wrapped with top/bottom fade overlays */}
-            <div className={styles.messagesWrap}>
+            role="log"
+            aria-live="polite"
+            aria-label="Chat messages"
+          >
+            {messages.map((msg, idx) => (
               <div
-                ref={messagesRef}
+                key={msg.id}
                 className={cn(
-                  styles.messages,
-                  "h-full overflow-y-auto py-5 flex flex-col gap-3",
+                  styles.msgRow,
+                  "flex flex-col max-w-[85%] md:max-w-[70%]",
+                  msg.role === "bot" ? "self-start" : "self-end items-end",
                 )}
-                role="log"
-                aria-live="polite"
-                aria-label="Chat messages"
+                style={idx === 0 ? { animationDelay: "0.15s" } : undefined}
               >
-                {messages.map((msg) => (
-                  <div
-                    key={msg.id}
-                    className={cn(
-                      styles.msgRow,
-                      "flex items-end gap-2 max-w-[78%]",
-                      msg.role === "bot"
-                        ? "self-start flex-row"
-                        : "self-end flex-row-reverse",
-                    )}
-                  >
-                    {/* Avatar */}
-                    <div
-                      className={cn(
-                        "w-8 h-8 rounded-full flex items-center justify-center shrink-0",
-                        msg.role === "bot"
-                          ? "bg-[var(--color-gold)]"
-                          : "bg-gradient-to-br from-[#d94f47] to-[#b02c2c]",
-                      )}
-                      aria-label={msg.role === "bot" ? "Gaia" : "You"}
-                    >
-                      {msg.role === "bot" ? (
-                        <SparkleIcon size={16} weight="fill" className="text-[#1a0f00]" />
-                      ) : (
-                        <UserIcon size={16} weight="fill" className="text-white/85" />
-                      )}
+                {/* Sender label */}
+                {msg.role === "bot" && (
+                  <div className="flex items-center gap-2 mb-1.5">
+                    <div className="w-7 h-7 rounded-full overflow-hidden shrink-0">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/images/gaia-ai.png"
+                        alt="Gaia"
+                        width={28}
+                        height={28}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
+                    <span className="text-[12px] font-medium text-white/50">
+                      Gaia
+                    </span>
+                  </div>
+                )}
 
-                    {/* Bubble */}
-                    <div
-                      className={cn(
-                        "py-[11px] px-[15px] rounded-[18px] text-[15px] leading-[1.6] max-w-full break-words",
-                        msg.role === "bot"
-                          ? cn(styles.botBubble, "text-[#ededed]")
-                          : cn(styles.userBubble, "text-white"),
-                      )}
-                      dangerouslySetInnerHTML={{ __html: escapeHtml(msg.text) }}
+                {/* Bubble */}
+                <div
+                  className={cn(
+                    styles.bubble,
+                    "text-[14px] leading-[1.7] break-words",
+                    msg.role === "bot"
+                      ? cn(styles.botBubble, "text-white/80")
+                      : cn(styles.userBubble, "text-white/90"),
+                  )}
+                  dangerouslySetInnerHTML={{ __html: escapeHtml(msg.text) }}
+                />
+              </div>
+            ))}
+
+            {/* Typing indicator */}
+            {thinking && (
+              <div className={cn(styles.msgRow, "self-start flex flex-col")}>
+                <div className="flex items-center gap-2 mb-1.5">
+                  <div className="w-7 h-7 rounded-full overflow-hidden shrink-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/images/gaia-ai.png"
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                ))}
-
-                {/* Typing indicator */}
-                {thinking && (
-                  <div className={cn(styles.msgRow, "self-start flex items-center gap-2 py-1")}>
-                    <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 bg-[var(--color-gold)]"
-                      aria-hidden="true"
-                    >
-                      <SparkleIcon size={14} weight="fill" className="text-[#1a0f00]" />
-                    </div>
-                    <div
-                      className={cn(
-                        styles.thinkDots,
-                        "flex gap-1 items-center rounded-[18px] py-[10px] px-[14px]",
-                      )}
-                      aria-label="Gaia is typing"
-                    >
-                      <span className={cn(styles.thinkDot, "w-1.5 h-1.5 rounded-full bg-[var(--color-gold)] opacity-50")} />
-                      <span className={cn(styles.thinkDot, "w-1.5 h-1.5 rounded-full bg-[var(--color-gold)] opacity-50")} />
-                      <span className={cn(styles.thinkDot, "w-1.5 h-1.5 rounded-full bg-[var(--color-gold)] opacity-50")} />
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Input bar */}
-            <div className="py-[10px] pb-[18px] shrink-0">
-              <div
-                className={cn(
-                  styles.inputRow,
-                  "flex items-center bg-[#1e1d1d] border border-white/[0.08] rounded-3xl overflow-hidden",
-                )}
-              >
-                <input
-                  ref={inputRef}
-                  type="text"
-                  className="flex-1 bg-transparent border-none outline-none py-3.5 px-[18px] text-[15px] font-[Arial,Helvetica,sans-serif] text-white placeholder:text-[var(--color-gray-4)]"
-                  placeholder="Your message"
-                  autoComplete="off"
-                  aria-label="Type a message"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={handleKeyDown}
-                />
-                <button
-                  className="bg-transparent border-none py-3 px-4 cursor-pointer text-[var(--color-gray-4)] flex items-center shrink-0 transition-colors duration-200 hover:text-[var(--color-gold)] active:scale-90"
-                  aria-label="Send message"
-                  onClick={send}
+                  <span className="text-[12px] font-medium text-white/50">
+                    Gaia
+                  </span>
+                </div>
+                <div
+                  className={cn(
+                    styles.thinkDots,
+                    "flex gap-[5px] items-center py-3 px-4",
+                  )}
+                  aria-label="Gaia is typing"
                 >
-                  <PaperPlaneTiltIcon size={20} weight="fill" />
-                </button>
+                  <span className={cn(styles.thinkDot, "w-[5px] h-[5px] rounded-full bg-white/40")} />
+                  <span className={cn(styles.thinkDot, "w-[5px] h-[5px] rounded-full bg-white/40")} />
+                  <span className={cn(styles.thinkDot, "w-[5px] h-[5px] rounded-full bg-white/40")} />
+                </div>
               </div>
-            </div>
+            )}
           </div>
+        </div>
 
-          {/* Avatar panel — hidden on mobile */}
-          <div className="hidden lg:block w-[320px] shrink-0 relative overflow-hidden">
-            {/* Placeholder portrait — replace with final Gaia asset */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1a1510] to-[#0d0b08] flex items-center justify-center">
-              <div className="w-24 h-24 rounded-full bg-[var(--color-gold)]/10 border border-[var(--color-gold)]/20 flex items-center justify-center">
-                <SparkleIcon size={40} weight="fill" className="text-[var(--color-gold)]/60" />
-              </div>
-            </div>
-
-            {/* Sound toggle */}
+        {/* Input bar */}
+        <div className={cn(styles.staggerIn, "py-3 pb-5 px-6 md:px-10 shrink-0")} style={{ animationDelay: "0.4s" }}>
+          <div
+            className={cn(
+              styles.inputRow,
+              "flex items-center gap-2 bg-white/[0.06] rounded-2xl border border-white/[0.1] backdrop-blur-[40px] saturate-[1.6] shadow-[0_1px_3px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.04)]",
+            )}
+          >
+            <input
+              ref={inputRef}
+              type="text"
+              className="flex-1 bg-transparent border-none outline-none py-3 px-4 text-[14px] text-white/90 placeholder:text-white/25"
+              placeholder="Ask Gaia anything..."
+              autoComplete="off"
+              aria-label="Type a message"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+            />
             <button
               className={cn(
-                styles.micBtn,
-                "absolute bottom-[72px] left-3.5 w-11 h-11 bg-[rgba(15,15,15,0.85)] border border-white/[0.14] rounded-[10px] flex items-center justify-center cursor-pointer z-10 text-[var(--color-gray-3)]",
-                muted && styles.micMuted,
+                styles.sendBtn,
+                "w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mr-2 transition-all duration-200",
+                input.trim()
+                  ? "bg-white/15 text-white cursor-pointer hover:bg-white/25"
+                  : "bg-transparent text-white/20 cursor-default",
               )}
-              aria-label="Toggle sound"
-              aria-pressed={muted}
-              onClick={() => setMuted((v) => !v)}
+              aria-label="Send message"
+              onClick={send}
             >
-              {muted ? (
-                <SpeakerSlashIcon size={20} weight="regular" />
-              ) : (
-                <SpeakerHighIcon size={20} weight="regular" />
-              )}
+              <ArrowUpIcon size={16} weight="bold" />
             </button>
           </div>
         </div>
 
         {/* Footer disclaimer */}
-        <footer className="shrink-0 px-8 py-[9px] pb-[13px] border-t border-white/[0.04]">
-          <p className="text-[11px] leading-[1.6] text-[var(--color-gray-4)]">
-            The information provided by GAIA is for general informational purposes only
-            and should not be construed as legal advice. You should consult with an
-            attorney licensed in your jurisdiction before making any legal decisions.
+        <footer className={cn(styles.staggerIn, "shrink-0 px-6 md:px-10 pb-3")} style={{ animationDelay: "0.6s" }}>
+          <p className="text-[11px] leading-[1.5] text-white/15 text-center">
+            Gaia may make mistakes. Verify important information.
           </p>
         </footer>
       </div>
