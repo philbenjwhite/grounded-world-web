@@ -5,6 +5,7 @@ import Image from "next/image";
 import type { PageQuery, PageSections } from "../../../tina/__generated__/types";
 import HeroBanner from "@/components/components/HeroBanner";
 import { renderSection as renderSharedSection } from "@/lib/tina-renderers";
+import LogoGrid from "@/components/components/LogoGrid";
 
 /* ─── About-page section renderer ─────────────────────── */
 
@@ -56,6 +57,11 @@ function renderSection(section: PageSections, index: number) {
         </div>
       </div>
     );
+  }
+
+  /* Replace LogoCarousel with static LogoGrid on about page */
+  if (section.__typename === "PageSectionsLogoCarousel") {
+    return <LogoGrid key={index} />;
   }
 
   /* All other sections use the shared renderer */
