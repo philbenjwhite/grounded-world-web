@@ -1,3 +1,15 @@
+/* ─── Wrapper — locks to viewport on mobile ─── */
+
+@media (max-width: 767px) {
+  .wrapper {
+    position: fixed;
+    inset: 0;
+    top: 70px;
+    z-index: 10;
+    background: var(--background, #0B0A0A);
+  }
+}
+
 /* ─── Intro — overlays on top of the chat ─── */
 
 .introWrap {
@@ -10,6 +22,13 @@
   align-items: center;
   justify-content: center;
   transition: opacity 1.4s ease-out;
+}
+
+@media (max-width: 767px) {
+  .introWrap {
+    align-items: flex-start;
+    padding-top: 18dvh;
+  }
 }
 
 .introWrap.introDone {
@@ -237,7 +256,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 5%;
+  padding-bottom: 30%;
   opacity: 0;
   transition: opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -255,7 +274,7 @@
 /* Video — no overflow hidden so vignette can bleed */
 .videoFrame {
   position: relative;
-  width: min(900px, 90vw);
+  width: 100vw;
   aspect-ratio: 16 / 9;
   background: transparent;
 }
@@ -367,10 +386,10 @@
 
 .captionBar {
   position: absolute;
-  bottom: 10%;
+  bottom: 18%;
   left: 50%;
   transform: translateX(-50%);
-  max-width: min(700px, 85vw);
+  max-width: min(700px, 90vw);
   text-align: center;
   pointer-events: none;
 }
@@ -384,7 +403,7 @@
 .captionText {
   display: inline;
   padding: 6px 14px;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
   background: rgba(0, 0, 0, 0.45);
@@ -406,9 +425,9 @@
 .muteBtn {
   position: absolute;
   z-index: 6;
-  /* Center vertically like videoLayer, then offset to top-right of video frame */
-  top: calc(50% - 5% - min(900px, 90vw) * 9 / 32 + 12px);
-  right: calc(50% - min(900px, 90vw) / 2 + 12px);
+  /* Offset to top-right of video frame (mobile: centered with padding-bottom 30%) */
+  top: calc(50% - 15% - 100vw * 9 / 32 + 12px);
+  right: 12px;
   border: none;
   background: none;
   padding: 0;
@@ -473,6 +492,14 @@
     opacity 2s cubic-bezier(0.16, 1, 0.3, 1),
     transform 2s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .chatSection {
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
 }
 
 .chatSection.chatVisible {

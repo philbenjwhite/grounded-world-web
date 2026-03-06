@@ -98,8 +98,8 @@ const GaiaChat: React.FC = () => {
   }, [messages, thinking, scrollToBottom]);
 
   return (
-    <div className={cn(styles.chatShell, "w-full h-[min(70vh,600px)] md:h-[min(80vh,750px)]")}>
-      <div className="flex flex-col flex-1 overflow-hidden">
+    <div className={cn(styles.chatShell, "w-full md:h-[min(80vh,750px)] flex flex-col overflow-hidden")}>
+      <div className="flex flex-col flex-1 min-h-0">
         {/* More options */}
         <div className={cn(styles.staggerIn, "flex justify-end px-6 md:px-10 pt-4 pb-1 shrink-0")} style={{ animationDelay: "0.2s" }}>
           <button

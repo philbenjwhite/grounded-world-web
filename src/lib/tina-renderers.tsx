@@ -684,9 +684,9 @@ export function renderSection(section: PageSections, index: number): React.React
             key={index}
             videoSrc="https://player.vimeo.com/progressive_redirect/playback/1170838207/rendition/2160p/file.mp4%20%282160p%29.mp4?loc=external&log_user=0&signature=dababe1b7a5c81dbc97d2df303830f9ed07c21f518cd4bf732c6798f6da32403"
           >
-            <div className="py-[var(--layout-section-padding-y)]">
-              <Container className="px-[var(--layout-section-padding-x)]">
-                <div className="max-w-4xl mx-auto">
+            <div className="h-full md:h-auto md:py-[var(--layout-section-padding-y)]">
+              <Container className="h-full md:h-auto md:px-[var(--layout-section-padding-x)]">
+                <div className="h-full md:h-auto max-w-4xl mx-auto">
                   <GaiaChat />
                 </div>
               </Container>

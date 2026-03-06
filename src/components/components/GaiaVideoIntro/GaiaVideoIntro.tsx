@@ -50,6 +50,29 @@ const GaiaVideoIntro: React.FC<GaiaVideoIntroProps> = ({
     phaseRef.current = phase;
   }, [phase]);
 
+  /* ── iOS keyboard: resize fixed wrapper to visual viewport ── */
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv || !wrapperRef.current) return;
+    const isMobile = window.innerWidth < 768;
+    if (!isMobile) return;
+
+    const update = () => {
+      const el = wrapperRef.current;
+      if (!el) return;
+      // visualViewport.height excludes the keyboard
+      el.style.height = `${vv.height - 70}px`;
+      el.style.top = `${vv.offsetTop + 70}px`;
+    };
+
+    vv.addEventListener("resize", update);
+    vv.addEventListener("scroll", update);
+    return () => {
+      vv.removeEventListener("resize", update);
+      vv.removeEventListener("scroll", update);
+    };
+  }, []);
+
   const finishIntro = useCallback(() => {
     if (phaseRef.current === "done") return;
     setPhase("done");
@@ -373,7 +396,7 @@ const GaiaVideoIntro: React.FC<GaiaVideoIntroProps> = ({
   }, []);
 
   return (
-    <div ref={wrapperRef} className="relative overflow-hidden">
+    <div ref={wrapperRef} className={cn("relative overflow-hidden", styles.wrapper)}>
       {/* ── Persistent particle background ── */}
       <canvas
         ref={canvasRef}
@@ -397,7 +420,7 @@ const GaiaVideoIntro: React.FC<GaiaVideoIntroProps> = ({
             preload="auto"
             onEnded={finishIntro}
           >
-            <track kind="captions" src="/captions/gaia-intro.vtt" srcLang="en" label="English" default />
+            <track kind="captions" src="/captions/gaia-intro.vtt" srcLang="en" label="English" />
           </video>
           <div className={cn(styles.vignette, styles.vignetteTop)} aria-hidden="true" />
           <div className={cn(styles.vignette, styles.vignetteBottom)} aria-hidden="true" />
