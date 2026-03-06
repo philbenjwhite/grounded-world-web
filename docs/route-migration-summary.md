@@ -24,10 +24,10 @@ Every WordPress route that maps to a new site route with a different path needs 
 |----------|----------|
 | `/about-us/` | `/about-us` |
 | `/brand-marketing-agency-services/` | `/services` |
-| `/brand-marketing-agency-services__trashed/brand-activation-agency/` | `/services/activation` |
-| `/brand-marketing-agency-services__trashed/brand-strategy-agency/` | `/services/strategy` |
-| `/brand-marketing-agency-services__trashed/creative-impact-agency/` | `/services/impact` |
-| `/brand-marketing-agency-services__trashed/market-research-agency/` | `/services/research` |
+| `/brand-marketing-agency-services__trashed/brand-activation-agency/` | `/services/activate` |
+| `/brand-marketing-agency-services__trashed/brand-strategy-agency/` | `/services/articulate` |
+| `/brand-marketing-agency-services__trashed/creative-impact-agency/` | `/services/accelerate` |
+| `/brand-marketing-agency-services__trashed/market-research-agency/` | `/services/discover` |
 | `/contact-us/` | `/contact` |
 | `/newsletter-sign-up/` | `/newsletter` |
 

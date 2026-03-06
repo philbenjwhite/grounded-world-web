@@ -112,7 +112,7 @@
                 "Intent-to-action gap research and analysis",
                 "Ecosystem mapping, need states, category growth drivers & go to market strategy"
               ],
-              "ctaHref": "/services/research",
+              "ctaHref": "/services/discover",
               "imageSrc": "/images/services/intention-action-gap.png",
               "imageAlt": "Intention Action Gap"
             },
@@ -126,7 +126,7 @@
                 "Sustainability strategy, marketing, corporate narrative, storytelling and innovation sprints",
                 "Brand positioning architecture & archetyping"
               ],
-              "ctaHref": "/services/strategy",
+              "ctaHref": "/services/articulate",
               "imageSrc": "/images/services/sustain-agility.png",
               "imageAlt": "Sustain-Agility"
             },
@@ -140,7 +140,7 @@
                 "Content, video, advertising, campaigns, events and experiences",
                 "Commerce (customer journeys, selling stories, brand and retail activation and tactical toolkits)"
               ],
-              "ctaHref": "/services/activation",
+              "ctaHref": "/services/activate",
               "imageSrc": "/images/services/brand-activation-for-good.png",
               "imageAlt": "Brand Activation For Good"
             },
@@ -154,7 +154,7 @@
                 "Commercial, non-profit and pre-competitive partnerships",
                 "Collaboration training, action labs, design sprints, speaking engagements and thought leadership"
               ],
-              "ctaHref": "/services/impact",
+              "ctaHref": "/services/accelerate",
               "imageSrc": "/images/services/flywheel-of-impact.png",
               "imageAlt": "Flywheel of Impact"
             }

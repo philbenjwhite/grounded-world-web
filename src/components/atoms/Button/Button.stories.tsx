@@ -113,7 +113,7 @@ export const OutlineAsLink: Story = {
   args: {
     children: 'Find Out More',
     variant: 'outline',
-    href: '/services/research',
+    href: '/services/discover',
   },
   decorators: [
     (Story) => (

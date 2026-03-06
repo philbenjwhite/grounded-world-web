@@ -20,7 +20,7 @@
       "sectionTitle": "How We Move the Needle",
       "items": [
         {
-          "name": "Research",
+          "name": "Discover",
           "color": "#00AEEF",
           "icon": "MagnifyingGlass",
           "tagline": "Assessing culture and the competitive landscape to find the intention-action gaps.",
@@ -29,12 +29,12 @@
             "Intent-to-action gap research and analysis",
             "Ecosystem mapping, need states, category growth drivers & go to market strategy"
           ],
-          "ctaHref": "/services/research",
+          "ctaHref": "/services/discover",
           "imageSrc": "/images/services/intention-action-gap.png",
           "imageAlt": "Intention Action Gap"
         },
         {
-          "name": "Strategy",
+          "name": "Articulate",
           "color": "#FFA603",
           "icon": "Compass",
           "tagline": "Connecting the \u2018why\u2019 of purpose to the \u2018way\u2019 of profit to tell your sustainability story and drive innovation.",
@@ -43,12 +43,12 @@
             "Sustainability strategy, marketing, corporate narrative, storytelling and innovation sprints",
             "Brand positioning architecture & archetyping"
           ],
-          "ctaHref": "/services/strategy",
+          "ctaHref": "/services/articulate",
           "imageSrc": "/images/services/sustain-agility.png",
           "imageAlt": "Sustain-Agility"
         },
         {
-          "name": "Activation",
+          "name": "Activate",
           "color": "#FF08CC",
           "icon": "Lightning",
           "tagline": "Driving behavior change and intent at the moments that matter for colleagues, customers and consumers.",
@@ -57,12 +57,12 @@
             "Content, video, advertising, campaigns, events and experiences",
             "Commerce (customer journeys, selling stories, brand and retail activation and tactical toolkits)"
           ],
-          "ctaHref": "/services/activation",
+          "ctaHref": "/services/activate",
           "imageSrc": "/images/services/brand-activation-for-good.png",
           "imageAlt": "Brand Activation For Good"
         },
         {
-          "name": "Impact",
+          "name": "Accelerate",
           "color": "#1CC35B",
           "icon": "ChartLineUp",
           "tagline": "Measuring impact, reporting on progress sparking engagement and facilitating collaboration and partnerships at scale.",
@@ -71,7 +71,7 @@
             "Commercial, non-profit and pre-competitive partnerships",
             "Collaboration training, action labs, design sprints, speaking engagements and thought leadership"
           ],
-          "ctaHref": "/services/impact",
+          "ctaHref": "/services/accelerate",
           "imageSrc": "/images/services/flywheel-of-impact.png",
           "imageAlt": "Flywheel of Impact"
         }

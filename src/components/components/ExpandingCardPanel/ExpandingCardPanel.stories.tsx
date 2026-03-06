@@ -4,7 +4,7 @@ import type { ExpandingCardItem } from "./ExpandingCardPanel";
 
 const cardData: ExpandingCardItem[] = [
   {
-    name: "Research",
+    name: "Discover",
     color: "#00AEEF",
     icon: "MagnifyingGlass",
     tagline:
@@ -14,10 +14,10 @@ const cardData: ExpandingCardItem[] = [
       "Intent-to-action gap research and analysis",
       "Ecosystem mapping, need states, category growth drivers & go to market strategy",
     ],
-    ctaHref: "/services/research",
+    ctaHref: "/services/discover",
   },
   {
-    name: "Strategy",
+    name: "Articulate",
     color: "#FFA603",
     icon: "Compass",
     tagline:
@@ -27,10 +27,10 @@ const cardData: ExpandingCardItem[] = [
       "Sustainability strategy, marketing, corporate narrative, storytelling and innovation sprints",
       "Brand positioning architecture & archetyping",
     ],
-    ctaHref: "/services/strategy",
+    ctaHref: "/services/articulate",
   },
   {
-    name: "Impact",
+    name: "Accelerate",
     color: "#1CC35B",
     icon: "ChartLineUp",
     tagline:
@@ -40,10 +40,10 @@ const cardData: ExpandingCardItem[] = [
       "Commercial, non-profit and pre-competitive partnerships",
       "Collaboration training, action labs, design sprints, speaking engagements and thought leadership",
     ],
-    ctaHref: "/services/impact",
+    ctaHref: "/services/accelerate",
   },
   {
-    name: "Activation",
+    name: "Activate",
     color: "#FF08CC",
     icon: "Lightning",
     tagline:
@@ -53,7 +53,7 @@ const cardData: ExpandingCardItem[] = [
       "Content, video, advertising, campaigns, events and experiences",
       "Commerce (customer journeys, selling stories, brand and retail activation and tactical toolkits)",
     ],
-    ctaHref: "/services/activation",
+    ctaHref: "/services/activate",
   },
 ];
 

@@ -8,10 +8,10 @@ WordPress Path,WordPress Title,WordPress Type,New Site Path,Status,Notes
 /brand-activism-agency-new/,How To Page -- Brand Activism Agency,page,,Missing,SEO/How-To landing page - no equivalent in new site
 /brand-activism-agency/,OUR THINKING_How To Guide_Brand Activism,page,,Missing,SEO/How-To landing page - no equivalent in new site
 /brand-marketing-agency-services/,SERVICES,page,/services,Exists,Path changed from /brand-marketing-agency-services/ to /services
-/brand-marketing-agency-services__trashed/brand-activation-agency/,Activation,page,/services/activation,Exists,Deeply nested trashed parent - redirect to /services/activation
-/brand-marketing-agency-services__trashed/brand-strategy-agency/,Strategy,page,/services/strategy,Exists,Deeply nested trashed parent - redirect to /services/strategy
-/brand-marketing-agency-services__trashed/creative-impact-agency/,Impact,page,/services/impact,Exists,Deeply nested trashed parent - redirect to /services/impact
-/brand-marketing-agency-services__trashed/market-research-agency/,Research,page,/services/research,Exists,Deeply nested trashed parent - redirect to /services/research
+/brand-marketing-agency-services__trashed/brand-activation-agency/,Activate,page,/services/activate,Exists,Deeply nested trashed parent - redirect to /services/activate
+/brand-marketing-agency-services__trashed/brand-strategy-agency/,Articulate,page,/services/articulate,Exists,Deeply nested trashed parent - redirect to /services/articulate
+/brand-marketing-agency-services__trashed/creative-impact-agency/,Accelerate,page,/services/accelerate,Exists,Deeply nested trashed parent - redirect to /services/accelerate
+/brand-marketing-agency-services__trashed/market-research-agency/,Discover,page,/services/discover,Exists,Deeply nested trashed parent - redirect to /services/discover
 /contact-us/,CONTACT US,page,/contact,Exists,Path changed from /contact-us/ to /contact
 /gaia/,Gaia,page,/gaia,Exists,Same path
 /grounded-sizzle-video/,SIZZLE REEL,page,,Missing,Sizzle reel video page - no equivalent in new site

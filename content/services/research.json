@@ -1,9 +1,9 @@
 {
-  "label": "Research",
-  "serviceId": "research",
+  "label": "Discover",
+  "serviceId": "discover",
   "color": "#00AEEF",
-  "description": "User needs & behavioral insights",
-  "url": "/services/research",
+  "description": "Assessing culture and the competitive landscape to find the intention-action gaps",
+  "url": "/services/discover",
   "icon": "MagnifyingGlass",
   "order": 0
 }

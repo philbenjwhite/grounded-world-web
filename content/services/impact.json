@@ -1,9 +1,9 @@
 {
-  "label": "Impact",
-  "serviceId": "impact",
+  "label": "Accelerate",
+  "serviceId": "accelerate",
   "color": "#1CC35B",
-  "description": "Analytics & optimization",
-  "url": "/services/impact",
+  "description": "Measuring impact, reporting on progress, sparking engagement and facilitating collaboration and partnerships at scale",
+  "url": "/services/accelerate",
   "icon": "ChartLineUp",
   "order": 3
 }

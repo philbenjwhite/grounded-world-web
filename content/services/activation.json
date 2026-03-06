@@ -1,9 +1,9 @@
 {
-  "label": "Activation",
-  "serviceId": "activation",
+  "label": "Activate",
+  "serviceId": "activate",
   "color": "#FF08CC",
-  "description": "Design systems & interfaces",
-  "url": "/services/activation",
+  "description": "Driving behavior change and intent at the moments that matter for colleagues, customers and consumers",
+  "url": "/services/activate",
   "icon": "Lightning",
   "order": 2
 }
