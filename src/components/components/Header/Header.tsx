@@ -316,50 +316,38 @@ function NavItems({
             />
           </Link>
 
-          <div className={cn(styles.dropdown, "min-w-[320px] p-4")}>
-            <div className="grid grid-cols-1 gap-1">
-              <Link
-                href="/services"
-                className={cn(
-                  styles.dropdownLink,
-                  "flex items-center gap-3 rounded-xl p-3 no-underline",
-                )}
-              >
-                <span className="text-xs font-semibold text-[color:var(--color-white)]">
-                  Overview
-                </span>
-              </Link>
-
+          <div className={cn(styles.dropdown, "w-[640px] p-4")}>
+            <div className="grid grid-cols-2 gap-1">
               {services.map((svc) => (
                 <Link
                   key={svc.id}
                   href={svc.url}
                   className={cn(
                     styles.dropdownLink,
-                    "flex items-center gap-3 rounded-xl p-3 no-underline",
+                    "flex items-start gap-3.5 rounded-xl p-4 no-underline",
                   )}
                 >
                   <div
                     className={cn(
                       styles.serviceOrb,
-                      "w-8 h-8 rounded-full shrink-0 flex items-center justify-center",
+                      "w-10 h-10 rounded-full shrink-0 flex items-center justify-center",
                     )}
                     style={
                       { "--service-color": svc.color } as React.CSSProperties
                     }
                   >
                     <svc.icon
-                      size={14}
+                      size={18}
                       weight="bold"
                       className={styles.serviceIcon}
                     />
                   </div>
                   <div className="min-w-0">
-                    <span className="text-xs font-semibold block">
+                    <span className="text-[13px] font-bold block text-white">
                       {svc.label}
                     </span>
                     {svc.description && (
-                      <span className="text-[10px] text-[color:var(--color-gray-4)] block mt-0.5">
+                      <span className="text-[11px] text-white/40 block mt-0.5 leading-snug line-clamp-2">
                         {svc.description}
                       </span>
                     )}
