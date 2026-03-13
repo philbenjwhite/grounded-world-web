@@ -41,12 +41,20 @@ const VimeoModal: React.FC<VimeoModalProps> = ({ open, onClose, vimeoId }) => {
       onClick={onClose}
     >
       <div className="relative w-full max-w-5xl mx-4" onClick={(e) => e.stopPropagation()}>
-        {/* Close button above video */}
-        <div className="flex justify-end mb-3">
+        <div className={cn(styles.modalContent, "relative w-full aspect-video")}>
+          <iframe
+            src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
+            className="absolute inset-0 w-full h-full rounded-xl"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="Video player"
+          />
+
+          {/* Close button — pinned top-right, always visible */}
           <button
             className={cn(
               styles.modalClose,
-              "flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/70 hover:text-white cursor-pointer",
+              "absolute top-3 right-3 z-10 flex items-center gap-2 px-4 py-2 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 text-white/70 hover:text-white cursor-pointer",
             )}
             onClick={onClose}
             aria-label="Close video"
@@ -56,17 +64,6 @@ const VimeoModal: React.FC<VimeoModalProps> = ({ open, onClose, vimeoId }) => {
             </span>
             <XIcon size={16} weight="bold" />
           </button>
-        </div>
-
-        {/* Video */}
-        <div className={cn(styles.modalContent, "relative w-full aspect-video")}>
-          <iframe
-            src={`https://player.vimeo.com/video/${vimeoId}?autoplay=1&title=0&byline=0&portrait=0`}
-            className="absolute inset-0 w-full h-full rounded-xl"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            title="Video player"
-          />
         </div>
       </div>
     </div>,

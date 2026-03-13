@@ -16,10 +16,18 @@ export interface FooterProps {
   className?: string;
 }
 
+const SERVICE_LINKS = [
+  { label: "Discover", href: "/services/discover" },
+  { label: "Articulate", href: "/services/articulate" },
+  { label: "Activate", href: "/services/activate" },
+  { label: "Accelerate", href: "/services/accelerate" },
+];
+
 const COMPANY_LINKS = [
   { label: "About Us", href: "/about-us" },
   { label: "Our Work", href: "/our-work" },
-  { label: "Contact", href: "/contact-us" },
+  { label: "Ask Gaia", href: "/gaia" },
+  { label: "Contact Us", href: "/contact-us" },
 ];
 
 const footerLinkClass =
@@ -175,14 +183,13 @@ const Footer = ({ className }: FooterProps) => {
                 Services
               </Text>
               <ul className="flex flex-col gap-2.5">
-                <li>
-                  <Link
-                    href="/services"
-                    className={footerLinkClass}
-                  >
-                    All Services
-                  </Link>
-                </li>
+                {SERVICE_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className={footerLinkClass}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
 
