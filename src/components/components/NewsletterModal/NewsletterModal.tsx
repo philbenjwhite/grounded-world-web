@@ -2,10 +2,12 @@
 
 import React, { useEffect, useCallback, useState, useRef } from "react";
 import { createPortal } from "react-dom";
-import { X } from "@phosphor-icons/react";
+import { X, EnvelopeSimple, PaperPlaneTilt } from "@phosphor-icons/react";
 import cn from "classnames";
 import styles from "./NewsletterModal.module.css";
 import { MAILERLITE_FORM_ID, MAILERLITE_FORM_CODE, loadMailerLiteScript } from "@/lib/mailerlite";
+import Heading from "../../atoms/Heading";
+import Text from "../../atoms/Text";
 
 interface NewsletterModalProps {
   open: boolean;
@@ -93,7 +95,7 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
     >
       <div
         className={cn(
-          "relative w-full max-w-md md:mx-4",
+          "relative w-full max-w-lg md:mx-4",
           closing ? styles.contentClosing : styles.content,
         )}
         onClick={(e) => e.stopPropagation()}
@@ -136,22 +138,22 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
             /* ── Success state ── */
             <div className="text-center py-4">
               <div className="text-4xl mb-4">&#10003;</div>
-              <h3 className="text-xl font-bold text-(--font-color-primary) mb-2">
+              <Heading level={3} size="h3" color="primary" className="mb-2">
                 You&rsquo;re now Grounded
-              </h3>
-              <p className="text-(--font-color-secondary) text-sm leading-relaxed">
+              </Heading>
+              <Text size="body-lg" color="secondary" className="leading-relaxed">
                 We&rsquo;ll deliver inspiration and updates straight to your inbox.
-              </p>
+              </Text>
             </div>
           ) : (
             /* ── Form ── */
             <>
-              <h3 className="text-xl font-bold text-(--font-color-primary) mb-2">
+              <Heading level={3} size="h3" color="primary" className="mb-2">
                 Stay Grounded
-              </h3>
-              <p className="text-sm text-(--font-color-secondary) mb-6 leading-relaxed">
-                Subscribe for insights on brand purpose, sustainability, and social impact.
-              </p>
+              </Heading>
+              <Text size="body-lg" color="secondary" className="mb-6 leading-relaxed">
+                Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.
+              </Text>
 
               <div
                 id={`mlb2-${MAILERLITE_FORM_ID}`}
@@ -160,7 +162,7 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
                 <div className="ml-form-align-center">
                   <div className="ml-form-embedWrapper embedForm">
                     <div className="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                      <div className="ml-form-embedContent mb-0" />
+                      <div className="ml-form-embedContent" style={{ marginBottom: 0 }} />
                       <form
                         className="ml-block-form"
                         action={`https://static.mailerlite.com/webforms/submit/${MAILERLITE_FORM_CODE}`}
@@ -168,9 +170,14 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
                         method="post"
                         target="_blank"
                       >
-                        <div className="ml-form-formContent">
+                        <div className={cn("ml-form-formContent", styles.formRow)}>
                           <div className="ml-form-fieldRow ml-last-item">
                             <div className="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                              <EnvelopeSimple
+                                size={20}
+                                weight="regular"
+                                className={styles.inputIcon}
+                              />
                               <input
                                 aria-label="email"
                                 aria-required="true"
@@ -178,30 +185,32 @@ const NewsletterModal: React.FC<NewsletterModalProps> = ({ open, onClose }) => {
                                 className={cn("form-control", styles.emailInput)}
                                 data-inputmask=""
                                 name="fields[email]"
-                                placeholder="Your email address"
+                                placeholder="Enter your email"
                                 autoComplete="email"
                               />
                             </div>
                           </div>
+                          <div className="ml-form-embedSubmit">
+                            <button type="submit" className={cn("primary", styles.submitButton)}>
+                              Subscribe
+                              <PaperPlaneTilt size={16} weight="bold" />
+                            </button>
+                            <button
+                              disabled
+                              style={{ display: "none" }}
+                              type="button"
+                              className="loading"
+                            >
+                              <div className="ml-form-embedSubmitLoad" />
+                              <span className="sr-only">Loading...</span>
+                            </button>
+                          </div>
                         </div>
                         <input type="hidden" name="ml-submit" value="1" />
-                        <div className="ml-form-embedSubmit">
-                          <button type="submit" className={cn("primary", styles.submitButton)}>
-                            Subscribe
-                          </button>
-                          <button
-                            disabled
-                            type="button"
-                            className="loading hidden"
-                          >
-                            <div className="ml-form-embedSubmitLoad" />
-                            <span className="sr-only">Loading...</span>
-                          </button>
-                        </div>
                         <input type="hidden" name="anticsrf" value="true" />
                       </form>
                     </div>
-                    <div className="ml-form-successBody row-success hidden">
+                    <div className="ml-form-successBody row-success" style={{ display: "none" }}>
                       <div className="ml-form-successContent">
                         <h4>Thank you!</h4>
                         <p>You&rsquo;re now Grounded.</p>
