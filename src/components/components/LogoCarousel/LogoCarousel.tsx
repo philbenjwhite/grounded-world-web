@@ -23,8 +23,6 @@ const DEFAULT_LOGOS: LogoItem[] = [
   { src: "/images/client-logos/02-points4purpose-logo-white.png", alt: "Points4Purpose" },
   { src: "/images/client-logos/03-innerwill-leadership-institute-logo-white.png", alt: "InnerWill Leadership Institute" },
   { src: "/images/client-logos/04-limavady-irish-whiskey-logo-white.png", alt: "Limavady Irish Whiskey" },
-  { src: "/images/client-logos/05-onesight-logo-white.png", alt: "OneSight" },
-  { src: "/images/client-logos/06-golden-1-credit-union-logo-white.png", alt: "Golden 1 Credit Union" },
   { src: "/images/client-logos/07-brita-logo-white.png", alt: "Brita" },
   { src: "/images/client-logos/08-ford-logo-white.png", alt: "Ford" },
   { src: "/images/client-logos/09-nestle-logo-white.png", alt: "Nestlé" },
@@ -41,7 +39,7 @@ const DEFAULT_LOGOS: LogoItem[] = [
 
 const LogoCarousel: React.FC<LogoCarouselProps> = ({
   logos = DEFAULT_LOGOS,
-  speed = 40,
+  speed = 80,
 }) => {
   return (
     <Section className="!py-12 md:!py-16">

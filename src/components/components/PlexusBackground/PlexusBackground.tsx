@@ -10,45 +10,40 @@ const MOBILE_NUM_POINTS = 120;
 const CONFIG = {
   SPACE_W: 100,
   SPACE_H: 65,
-  SPACE_D: 50,
+  SPACE_D: 35,
   CONNECTION_DIST: 12,
   TRIANGLE_DIST: 10,
-  BASE_SPEED: 0.005,
-  MOUSE_BRIGHTEN_RADIUS: 24,
-  FOG_NEAR: 30,
-  FOG_FAR: 110,
+  BASE_SPEED: 0.008,
+  CURSOR_RADIUS: 26,
+  FOG_NEAR: 35,
+  FOG_FAR: 100,
   DUST_LAYERS: [
-    { count: 30, zRange: [-35, -20] as [number, number], bright: 0.2, size: 0.5, speed: 0.3 },
-    { count: 40, zRange: [-15, 5] as [number, number], bright: 0.35, size: 0.8, speed: 0.6 },
-    { count: 40, zRange: [8, 25] as [number, number], bright: 0.55, size: 1.2, speed: 1.0 },
+    { count: 30, zRange: [-25, -12] as [number, number], bright: 0.25, size: 0.5, speed: 0.3 },
+    { count: 40, zRange: [-10, 5] as [number, number], bright: 0.4, size: 0.8, speed: 0.6 },
+    { count: 40, zRange: [5, 18] as [number, number], bright: 0.6, size: 1.2, speed: 1.0 },
   ],
 } as const;
 
-// ── Color palettes (jewel tones, brighter base) ──
+// ── Color palettes ──
 const PALETTES: [number, number, number][] = [
-  [0.85, 0.75, 0.48], [0.55, 0.8, 0.45], [0.72, 0.75, 0.5], [0.3, 0.75, 0.47],
-  [0.12, 0.7, 0.52], [0.0, 0.75, 0.48], [0.6, 0.8, 0.45], [0.42, 0.75, 0.5], [0.95, 0.75, 0.48],
+  [0.85, 0.75, 0.52], [0.55, 0.8, 0.5], [0.72, 0.75, 0.52], [0.3, 0.75, 0.5],
+  [0.12, 0.7, 0.55], [0.0, 0.75, 0.52], [0.6, 0.8, 0.5], [0.42, 0.75, 0.52], [0.95, 0.75, 0.52],
 ];
 
 function randomColor(): THREE.Color {
   const c = new THREE.Color();
   const p = PALETTES[Math.floor(Math.random() * PALETTES.length)];
-  c.setHSL(
-    p[0] + (Math.random() - 0.5) * 0.06,
-    p[1] + (Math.random() - 0.5) * 0.1,
-    p[2] + (Math.random() - 0.5) * 0.06
-  );
+  c.setHSL(p[0] + (Math.random() - 0.5) * 0.06, p[1] + (Math.random() - 0.5) * 0.1, p[2] + (Math.random() - 0.5) * 0.06);
   return c;
 }
 
 function depthFog(z: number): number {
   const dist = 75 - z;
   if (dist < CONFIG.FOG_NEAR) return 1;
-  if (dist > CONFIG.FOG_FAR) return 0.18;
-  return 1 - ((dist - CONFIG.FOG_NEAR) / (CONFIG.FOG_FAR - CONFIG.FOG_NEAR)) * 0.82;
+  if (dist > CONFIG.FOG_FAR) return 0.35;
+  return 1 - ((dist - CONFIG.FOG_NEAR) / (CONFIG.FOG_FAR - CONFIG.FOG_NEAR)) * 0.65;
 }
 
-// ── Point data structure ──
 interface PlexusPoint {
   pos: THREE.Vector3;
   vel: THREE.Vector3;
@@ -85,10 +80,9 @@ export default function PlexusBackground() {
     const bgCtx = bgCanvas.getContext("2d")!;
     const isMobile = window.innerWidth < 768;
     const NUM_POINTS = isMobile ? MOBILE_NUM_POINTS : BASE_NUM_POINTS;
-    const { SPACE_W, SPACE_H, SPACE_D, CONNECTION_DIST, TRIANGLE_DIST, BASE_SPEED, MOUSE_BRIGHTEN_RADIUS } = CONFIG;
+    const { SPACE_W, SPACE_H, SPACE_D, CONNECTION_DIST, TRIANGLE_DIST, BASE_SPEED, CURSOR_RADIUS } = CONFIG;
     const halfW = SPACE_W / 2, halfH = SPACE_H / 2, halfD = SPACE_D / 2;
 
-    // ── Three.js setup ──
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 300);
     camera.position.z = 75;
@@ -97,7 +91,6 @@ export default function PlexusBackground() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // ── Resize ──
     function resize() {
       bgCanvas.width = window.innerWidth;
       bgCanvas.height = window.innerHeight;
@@ -127,7 +120,7 @@ export default function PlexusBackground() {
         if (b.x < -200 || b.x > bgCanvas.width + 200) b.vx *= -1;
         if (b.y < -200 || b.y > bgCanvas.height + 200) b.vy *= -1;
         const pulse = 0.5 + 0.5 * Math.sin(time * b.pulseFreq + b.pulsePhase);
-        const opacity = 0.04 + pulse * 0.04;
+        const opacity = 0.05 + pulse * 0.05;
         const g = bgCtx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.radius);
         g.addColorStop(0, `hsla(${b.hue},50%,20%,${opacity})`);
         g.addColorStop(0.5, `hsla(${b.hue},40%,12%,${opacity * 0.4})`);
@@ -159,13 +152,13 @@ export default function PlexusBackground() {
       const col = randomColor();
       points.push({
         pos: new THREE.Vector3((Math.random() - 0.5) * SPACE_W, (Math.random() - 0.5) * SPACE_H, (Math.random() - 0.5) * SPACE_D),
-        vel: new THREE.Vector3((Math.random() - 0.5) * BASE_SPEED, (Math.random() - 0.5) * BASE_SPEED, (Math.random() - 0.5) * BASE_SPEED * 0.2),
+        vel: new THREE.Vector3((Math.random() - 0.5) * BASE_SPEED, (Math.random() - 0.5) * BASE_SPEED, (Math.random() - 0.5) * BASE_SPEED * 0.3),
         baseColor: col.clone(), displayColor: col.clone(),
-        size: 1.5 + Math.random() * 2, baseSize: 1.5 + Math.random() * 2,
+        size: 1.8 + Math.random() * 2.2, baseSize: 1.8 + Math.random() * 2.2,
         brightness: 0,
         phX: Math.random() * Math.PI * 2, phY: Math.random() * Math.PI * 2,
-        frX: 0.15 + Math.random() * 0.25, frY: 0.12 + Math.random() * 0.2,
-        ampX: 0.001 + Math.random() * 0.002, ampY: 0.001 + Math.random() * 0.0015,
+        frX: 0.2 + Math.random() * 0.3, frY: 0.15 + Math.random() * 0.25,
+        ampX: 0.002 + Math.random() * 0.003, ampY: 0.002 + Math.random() * 0.002,
         hueOffset: 0, hueCycleSpeed: (Math.random() - 0.5) * 0.003,
       });
     }
@@ -183,8 +176,8 @@ export default function PlexusBackground() {
         void main(){vColor=color;vec4 mv=modelViewMatrix*vec4(position,1.0);
         gl_PointSize=size*(220.0/-mv.z);gl_Position=projectionMatrix*mv;}`,
       fragmentShader: `varying vec3 vColor;void main(){float d=length(gl_PointCoord-0.5);if(d>0.5)discard;
-        float core=smoothstep(0.12,0.0,d);float glow=smoothstep(0.5,0.0,d)*0.45;
-        gl_FragColor=vec4(vColor*(0.6+core*1.0),core+glow);}`,
+        float core=smoothstep(0.12,0.0,d);float glow=smoothstep(0.5,0.0,d)*0.5;
+        gl_FragColor=vec4(vColor*(0.7+core*1.0),core+glow);}`,
       transparent: true, blending: THREE.AdditiveBlending, depthWrite: false,
     })));
 
@@ -200,7 +193,7 @@ export default function PlexusBackground() {
       vertexColors: true, transparent: true, opacity: 0.45, blending: THREE.AdditiveBlending, depthWrite: false,
     })));
 
-    // ── Triangles ──
+    // ── Triangles (NormalBlending fill + AdditiveBlending glow — same as prod) ──
     const MAX_TRIS = 2500;
     function makeTriGeom() {
       const g = new THREE.BufferGeometry();
@@ -265,14 +258,24 @@ export default function PlexusBackground() {
     });
     for (const dl of dustLayers) scene.add(new THREE.Points(dl.geom, dustMat));
 
-    // ── Mouse ──
+    // ── Mouse & virtual cursor (for mobile) ──
     const mouseScreen = { x: -999, y: -999 };
     const mouse3D = new THREE.Vector3(999, 999, 0);
+    const cursorPos = new THREE.Vector3(0, 0, 0);
     const mouseNDC = new THREE.Vector2();
     const raycaster = new THREE.Raycaster();
     const zPlane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
     const planeHit = new THREE.Vector3();
     let mouseActive = false;
+
+    const effectiveRadius = isMobile ? CURSOR_RADIUS * 1.5 : CURSOR_RADIUS;
+    const virtualCursor = {
+      x: 0, y: 0,
+      targetX: (Math.random() - 0.5) * SPACE_W * 0.6,
+      targetY: (Math.random() - 0.5) * SPACE_H * 0.6,
+      timer: 0,
+      interval: 4 + Math.random() * 3,
+    };
 
     function updateMouse3D() {
       raycaster.setFromCamera(mouseNDC, camera);
@@ -300,13 +303,32 @@ export default function PlexusBackground() {
       drawBackground(mouseScreen.x, mouseScreen.y, time);
       if (mouseActive) updateMouse3D();
 
+      // Virtual cursor drift (always runs, provides ambient life on mobile)
+      virtualCursor.timer += 0.016;
+      if (virtualCursor.timer > virtualCursor.interval) {
+        virtualCursor.timer = 0;
+        virtualCursor.interval = 4 + Math.random() * 3;
+        virtualCursor.targetX = (Math.random() - 0.5) * SPACE_W * 0.6;
+        virtualCursor.targetY = (Math.random() - 0.5) * SPACE_H * 0.6;
+      }
+      virtualCursor.x += (virtualCursor.targetX - virtualCursor.x) * 0.008;
+      virtualCursor.y += (virtualCursor.targetY - virtualCursor.y) * 0.008;
+
+      if (mouseActive) {
+        cursorPos.lerp(mouse3D, 0.12);
+      } else {
+        cursorPos.x += (virtualCursor.x - cursorPos.x) * 0.01;
+        cursorPos.y += (virtualCursor.y - cursorPos.y) * 0.01;
+        cursorPos.z = 0;
+      }
+
       // Move points
       for (const p of points) {
         p.phX += p.frX * 0.016; p.phY += p.frY * 0.016;
         p.vel.x += Math.sin(p.phX) * p.ampX;
         p.vel.y += Math.cos(p.phY) * p.ampY;
         const speed = p.vel.length();
-        if (speed > BASE_SPEED * 1.8) p.vel.multiplyScalar(BASE_SPEED * 1.8 / speed);
+        if (speed > BASE_SPEED * 2) p.vel.multiplyScalar(BASE_SPEED * 2 / speed);
         p.pos.add(p.vel);
 
         if (p.pos.x > halfW) p.vel.x -= (p.pos.x - halfW) * 0.025;
@@ -316,11 +338,12 @@ export default function PlexusBackground() {
         if (p.pos.z > halfD) p.vel.z -= (p.pos.z - halfD) * 0.025;
         if (p.pos.z < -halfD) p.vel.z -= (p.pos.z + halfD) * 0.025;
 
-        if (mouseActive) {
-          const md = p.pos.distanceTo(mouse3D);
-          if (md < MOUSE_BRIGHTEN_RADIUS) {
-            p.brightness = Math.min(1, p.brightness + (1 - md / MOUSE_BRIGHTEN_RADIUS) * 0.1);
-          }
+        // Cursor proximity
+        const dx = p.pos.x - cursorPos.x;
+        const dy = p.pos.y - cursorPos.y;
+        const dist2D = Math.sqrt(dx * dx + dy * dy);
+        if (dist2D < effectiveRadius) {
+          p.brightness = Math.min(1, p.brightness + (1 - dist2D / effectiveRadius) * 0.1);
         }
         p.brightness *= 0.94;
 
@@ -332,7 +355,7 @@ export default function PlexusBackground() {
         brightCol.setHSL(
           (hsl.h + p.hueOffset) % 1,
           Math.min(1, (hsl.s + b * 0.2) * fog),
-          Math.min(0.7, (hsl.l + b * 0.35) * fog)
+          Math.min(0.75, (hsl.l + b * 0.35) * fog)
         );
         p.displayColor.copy(brightCol);
         p.size = p.baseSize * (0.5 + fog * 0.5) * (1 + b * 0.5);
@@ -406,7 +429,7 @@ export default function PlexusBackground() {
               const avgBright = (points[i].brightness + points[ja].brightness + points[jb].brightness) / 3;
               const avgFog = (depthFog(points[i].pos.z) + depthFog(points[ja].pos.z) + depthFog(points[jb].pos.z)) / 3;
 
-              const alpha = (0.2 + 0.25 * closeness) * (0.3 + avgFog * 0.7) * (1 + avgBright * 0.7);
+              const alpha = (0.22 + 0.25 * closeness) * (0.35 + avgFog * 0.65) * (1 + avgBright * 0.7);
               const glowAlpha = (0.03 + avgBright * 0.08) * closeness * avgFog;
 
               const t9 = triCt * 9, t12 = triCt * 12;
@@ -435,7 +458,7 @@ export default function PlexusBackground() {
       glowGeom.attributes.position.needsUpdate = true;
       glowGeom.attributes.color.needsUpdate = true;
 
-      const t = time * 0.3;
+      const t = time * 0.2;
       camera.position.x = Math.sin(t * 0.12) * 3.5;
       camera.position.y = Math.cos(t * 0.08) * 2;
       camera.lookAt(0, 0, 0);
@@ -444,7 +467,6 @@ export default function PlexusBackground() {
 
     animate();
 
-    // Cleanup
     return () => {
       cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener("mousemove", onMouseMove);
@@ -467,14 +489,8 @@ export default function PlexusBackground() {
 
   return (
     <>
-      <canvas
-        ref={bgCanvasRef}
-        className="absolute inset-0 z-0 w-full h-full"
-      />
-      <canvas
-        ref={mainCanvasRef}
-        className="absolute inset-0 z-[1] w-full h-full"
-      />
+      <canvas ref={bgCanvasRef} className="absolute inset-0 z-0 w-full h-full" />
+      <canvas ref={mainCanvasRef} className="absolute inset-0 z-[1] w-full h-full" />
     </>
   );
 }

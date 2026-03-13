@@ -263,7 +263,7 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
                   styles.contentPanel,
                   styles.contentPanelActive,
                   "flex-1 min-w-0 rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl",
-                  "overflow-hidden relative flex flex-col p-8 xl:p-10"
+                  "overflow-hidden relative flex flex-col p-8 xl:p-10 min-h-[340px]"
                 )}
                 style={cardVars(item.color, activeIndex)}
                 data-active="true"
