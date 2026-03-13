@@ -86,9 +86,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
             <div className="mb-12 aspect-video overflow-hidden rounded-2xl bg-white/[0.03]">
               {work.videoUrl.includes("vimeo.com") ? (
                 <iframe
-                  src={`https://player.vimeo.com/video/${extractVimeoId(
-                    work.videoUrl,
-                  )}`}
+                  src={buildVimeoEmbedUrl(work.videoUrl)}
                   className="h-full w-full"
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
@@ -118,11 +116,16 @@ export default async function WorkPage({ params }: WorkPageProps) {
 }
 
 /**
- * Extract the Vimeo video ID from a URL like:
+ * Build the Vimeo player embed URL from a URL like:
  * - https://vimeo.com/312643378
- * - https://vimeo.com/1108243115/53c512ba12
+ * - https://vimeo.com/1086078015/3f4c1a88bf (unlisted with hash token)
  */
-function extractVimeoId(url: string): string {
-  const match = url.match(/vimeo\.com\/(\d+)/);
-  return match ? match[1] : "";
+function buildVimeoEmbedUrl(url: string): string {
+  const match = url.match(/vimeo\.com\/(\d+)(?:\/([a-f0-9]+))?/);
+  if (!match) return "";
+  const videoId = match[1];
+  const hashToken = match[2];
+  return hashToken
+    ? `https://player.vimeo.com/video/${videoId}?h=${hashToken}`
+    : `https://player.vimeo.com/video/${videoId}`;
 }
