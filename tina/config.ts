@@ -409,6 +409,285 @@ export default defineConfig({
         ],
       },
       {
+        name: "project",
+        label: "Projects",
+        path: "content/projects",
+        format: "json",
+        ui: {
+          filename: {
+            readonly: false,
+            slugify: (values) => {
+              return values?.title
+                ?.toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/^-+|-+$/g, "")
+                .substring(0, 100);
+            },
+          },
+        },
+        defaultItem: () => ({
+          date: new Date().toISOString(),
+        }),
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true,
+            description:
+              "Heading displayed on the carousel card and project page",
+          },
+          {
+            type: "string",
+            name: "client",
+            label: "Client",
+            required: true,
+            description: "Client or brand name (e.g. 'Plan International')",
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+            description: "Brief project description / excerpt (1-2 sentences)",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "image",
+            name: "featuredImage",
+            label: "Featured Image",
+            description:
+              "Background image displayed on carousel cards and social sharing",
+          },
+          {
+            type: "image",
+            name: "logoImage",
+            label: "Logo Image",
+            description:
+              "Client logo displayed on carousel cards (white/transparent PNG recommended)",
+          },
+          {
+            type: "string",
+            name: "videoUrl",
+            label: "Video URL",
+            description: "Vimeo or YouTube embed URL",
+          },
+          {
+            type: "datetime",
+            name: "date",
+            label: "Date",
+            ui: {
+              dateFormat: "MMMM D, YYYY",
+            },
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            list: true,
+            ui: {
+              component: "tags",
+            },
+          },
+          {
+            type: "string",
+            name: "seoTitle",
+            label: "SEO Title",
+          },
+          {
+            type: "string",
+            name: "seoDescription",
+            label: "SEO Description",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "object",
+            name: "sections",
+            label: "Page Sections",
+            list: true,
+            templates: [
+              {
+                name: "heroImage",
+                label: "Hero Image",
+                fields: [
+                  {
+                    type: "image",
+                    name: "src",
+                    label: "Image",
+                  },
+                  {
+                    type: "string",
+                    name: "alt",
+                    label: "Alt Text",
+                  },
+                ],
+              },
+              {
+                name: "richText",
+                label: "Rich Text",
+                fields: [
+                  {
+                    type: "rich-text",
+                    name: "body",
+                    label: "Content",
+                  },
+                ],
+              },
+              {
+                name: "image",
+                label: "Image",
+                fields: [
+                  {
+                    type: "image",
+                    name: "src",
+                    label: "Image",
+                  },
+                  {
+                    type: "string",
+                    name: "alt",
+                    label: "Alt Text",
+                  },
+                  {
+                    type: "string",
+                    name: "caption",
+                    label: "Caption",
+                  },
+                ],
+              },
+              {
+                name: "video",
+                label: "Video Embed",
+                fields: [
+                  {
+                    type: "string",
+                    name: "videoUrl",
+                    label: "Video URL",
+                    description: "Vimeo or YouTube URL",
+                  },
+                ],
+              },
+              {
+                name: "splitLayout",
+                label: "Split Layout",
+                fields: [
+                  {
+                    type: "string",
+                    name: "ratio",
+                    label: "Column Ratio",
+                    options: ["50/50", "40/60", "60/40", "30/70", "70/30"],
+                  },
+                  {
+                    type: "string",
+                    name: "gap",
+                    label: "Gap",
+                    options: ["none", "sm", "md", "lg", "xl"],
+                  },
+                  {
+                    type: "string",
+                    name: "verticalAlign",
+                    label: "Vertical Alignment",
+                    options: ["start", "center", "end", "stretch"],
+                  },
+                  {
+                    type: "boolean",
+                    name: "reverseOnMobile",
+                    label: "Reverse on Mobile",
+                  },
+                  {
+                    type: "object",
+                    name: "left",
+                    label: "Left Column",
+                    list: true,
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate],
+                  },
+                  {
+                    type: "object",
+                    name: "right",
+                    label: "Right Column",
+                    list: true,
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate],
+                  },
+                ],
+              },
+              {
+                name: "ctaBanner",
+                label: "CTA Banner",
+                fields: [
+                  {
+                    type: "image",
+                    name: "backgroundSrc",
+                    label: "Background Image",
+                  },
+                  {
+                    type: "string",
+                    name: "heading",
+                    label: "Heading",
+                  },
+                  {
+                    type: "string",
+                    name: "buttonText",
+                    label: "Button Text",
+                  },
+                  {
+                    type: "string",
+                    name: "buttonUrl",
+                    label: "Button URL",
+                  },
+                ],
+              },
+              {
+                name: "linkCards",
+                label: "Link Cards",
+                fields: [
+                  {
+                    type: "object",
+                    name: "cards",
+                    label: "Cards",
+                    list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => ({
+                        label: item?.heading || "New Card",
+                      }),
+                    },
+                    fields: [
+                      {
+                        type: "string",
+                        name: "heading",
+                        label: "Heading",
+                      },
+                      {
+                        type: "string",
+                        name: "buttonLabel",
+                        label: "Button Label",
+                      },
+                      {
+                        type: "string",
+                        name: "href",
+                        label: "URL",
+                      },
+                      {
+                        type: "boolean",
+                        name: "external",
+                        label: "Open in New Tab",
+                      },
+                      {
+                        type: "image",
+                        name: "backgroundSrc",
+                        label: "Background Image",
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
         name: "work",
         label: "Work",
         path: "content/work",
@@ -1329,6 +1608,65 @@ export default defineConfig({
                         type: "string",
                         name: "imageAlt",
                         label: "Image Alt Text",
+                      },
+                    ],
+                  },
+                ],
+              },
+              /* ── Project Carousel ─────────────────────── */
+              {
+                name: "projectCarousel",
+                label: "Project Carousel",
+                fields: [
+                  {
+                    type: "string",
+                    name: "sectionTitle",
+                    label: "Section Title",
+                  },
+                  {
+                    type: "boolean",
+                    name: "loop",
+                    label: "Loop",
+                  },
+                  {
+                    type: "boolean",
+                    name: "showArrows",
+                    label: "Show Navigation Arrows",
+                  },
+                  {
+                    type: "boolean",
+                    name: "showDots",
+                    label: "Show Dot Indicators",
+                  },
+                  {
+                    type: "object",
+                    name: "items",
+                    label: "Project Items",
+                    list: true,
+                    ui: {
+                      itemProps: (item: Record<string, string>) => {
+                        const ref = item?.project;
+                        if (!ref) return { label: "Select a project" };
+                        const name = ref
+                          .replace(/^content\/projects\//, "")
+                          .replace(/\.(md|json)$/, "")
+                          .replace(/-/g, " ");
+                        const label = name
+                          .split(" ")
+                          .map(
+                            (w: string) =>
+                              w.charAt(0).toUpperCase() + w.slice(1)
+                          )
+                          .join(" ");
+                        return { label };
+                      },
+                    },
+                    fields: [
+                      {
+                        type: "reference",
+                        name: "project",
+                        label: "Project",
+                        collections: ["project"],
                       },
                     ],
                   },

@@ -171,25 +171,13 @@
       "showDots": true,
       "items": [
         {
-          "work": "content/work/lycra-qira-farm-to-fiber.md"
+          "project": "content/projects/plan-international.json"
         },
         {
-          "work": "content/work/lycra.md"
-        },
-        {
-          "work": "content/work/tribes-on-the-edge.md"
-        },
-        {
-          "work": "content/work/onesight.md"
-        },
-        {
-          "work": "content/work/fresh-air-fund.md"
-        },
-        {
-          "work": "content/work/interdesign.md"
+          "project": "content/projects/totes-social-impact.json"
         }
       ],
-      "_template": "workCarousel"
+      "_template": "projectCarousel"
     },
     {
       "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",

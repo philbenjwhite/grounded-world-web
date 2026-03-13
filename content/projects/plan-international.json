@@ -1,0 +1,96 @@
+{
+  "title": "Helping girls fight stereotypes - one photo at a time",
+  "client": "Plan International",
+  "description": "Partnering Plan USA with Unsplash to reframe the way girls are represented in media around the world.",
+  "featuredImage": "/images/projects/plan-international/mi-pham-bottom.jpg",
+  "logoImage": "/images/client-logos/plan-international-logo-white.png",
+  "date": "2023-02-01T12:00:00.000Z",
+  "tags": ["Non Profit Marketing"],
+  "seoTitle": "Plan International #WeAreTheGirls Campaign | Grounded World",
+  "seoDescription": "See how Grounded World partnered Plan USA with Unsplash to reframe the way girls are represented in media around the world.",
+  "sections": [
+    {
+      "_template": "heroImage",
+      "src": "/images/projects/plan-international/hero-wearethegirls.jpg",
+      "alt": "Plan International #WeAreTheGirls campaign"
+    },
+    {
+      "_template": "richText",
+      "body": "#### Non Profit Marketing\n\n## Helping girls fight stereotypes \u2013 one photo at a time"
+    },
+    {
+      "_template": "richText",
+      "body": "### Background:\n\nDid you know that \"Sexy girl\" is the number 1 searched term on image banks? This is closely followed by \"hot girl\". Companies, artists and individuals around the world go to image banks every day to find photography for their ad campaigns, presentations, storyboards and creative expressions. These images perpetuate biases, which perpetuates inequality. And when those images are tagged with words like \"hot\" and \"sexy,\" these images train algorithms to fuel those biases even further."
+    },
+    {
+      "_template": "image",
+      "src": "/images/projects/plan-international/campaign-3xads.jpg",
+      "alt": "#WeAreTheGirls campaign ads"
+    },
+    {
+      "_template": "splitLayout",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "### Everything Plan International USA does is focused on one simple belief, \"when girls lead the way, they can change the world.\"\n\nPlan strives to achieve this by partnering with adolescent girls, children and young women to overcome oppression and gender inequality. But, gender equality is a noisy issue, so it's hard to cut through and engage supporters. Though brands, businesses and individuals want to take a stance they often don't know where to start, what to do and who to align with. And of course no one wants to get it wrong."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/projects/plan-international/take-the-pledge.jpg",
+          "alt": "#WeAreTheGirls Take The Pledge"
+        }
+      ]
+    },
+    {
+      "_template": "video",
+      "videoUrl": "https://vimeo.com/762011647"
+    },
+    {
+      "_template": "splitLayout",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "### So, we partnered PLAN USA with Unsplash, the internet's source of freely usable visuals, to reframe the way girls are represented in media all around the world.\n\nBecause, if we can change the way the world sees girls, we can also change the way girls see themselves."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/projects/plan-international/plan-circle.png",
+          "alt": "Plan International circle graphic"
+        }
+      ]
+    },
+    {
+      "_template": "image",
+      "src": "/images/projects/plan-international/horizontal-banner.png",
+      "alt": "#WeAreTheGirls horizontal banner"
+    },
+    {
+      "_template": "richText",
+      "body": "### What We Did:\n\n* Plan USA assembled a group of adolescent girls to create a brief for Unsplash on the types of images and key words that they found more representative of adolescent girls.\n* Unsplash challenged their community of photographers around the world to flood their image bank with new photos aligned with the brief the girls submitted.\n* Unsplash reset their algorithm to associate search terms that are more accurate depictions of how the girls want to be perceived.\n* The panel of girls voted and selected the winning top 10 photos from the photographer submissions.\n* The winning photographs were announced online, through Unsplash and Plan PR efforts.\n* Girls, parents & supporters were invited to share the winning images and utilize the full bank of images to help perpetuate the evolution.\n* Supporters and girls were invited to join #WeAreTheGirls by taking the Pledge at WeAreTheGirls.org and to sign up/follow for other activations & initiatives happening within the community."
+    },
+    {
+      "_template": "linkCards",
+      "cards": [
+        {
+          "heading": "Read more about it",
+          "buttonLabel": "Click Here",
+          "href": "https://unsplash.com/blog/girls-vs-stereotypes/",
+          "external": true,
+          "backgroundSrc": "/images/projects/plan-international/mi-pham-bottom.jpg"
+        }
+      ]
+    }
+  ]
+}

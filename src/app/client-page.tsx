@@ -7,6 +7,8 @@ import VideoHero from "@/components/components/VideoHero";
 import LogoCarousel from "@/components/components/LogoCarousel";
 import WorkCarousel from "@/components/components/WorkCarousel";
 import type { WorkCarouselItem } from "@/components/components/WorkCarousel";
+import ProjectCarousel from "@/components/components/ProjectCarousel";
+import type { ProjectCarouselItem } from "@/components/components/ProjectCarousel";
 import NewsletterCTA from "@/components/components/NewsletterCTA";
 
 interface HomeClientPageProps {
@@ -67,6 +69,40 @@ export default function HomeClientPage(props: HomeClientPageProps) {
         description: work!.description ?? undefined,
       })) ?? [];
 
+  /* Project Carousel — items are resolved via GraphQL reference */
+  const projectCarouselSection = data.page.sections?.find(
+    (s) => s?.__typename === "PageSectionsProjectCarousel",
+  ) as {
+    sectionTitle?: string;
+    loop?: boolean;
+    showArrows?: boolean;
+    showDots?: boolean;
+    items?: Array<{
+      project?: {
+        _sys: { filename: string };
+        title: string;
+        client: string;
+        featuredImage?: string | null;
+        logoImage?: string | null;
+        description?: string | null;
+      } | null;
+    } | null> | null;
+  } | undefined;
+
+  const projectCarouselItems: ProjectCarouselItem[] =
+    projectCarouselSection?.items
+      ?.filter(Boolean)
+      .map((item) => item!.project)
+      .filter(Boolean)
+      .map((project) => ({
+        slug: project!._sys.filename,
+        title: project!.title,
+        client: project!.client,
+        featuredImage: project!.featuredImage ?? undefined,
+        logoImage: project!.logoImage ?? undefined,
+        description: project!.description ?? undefined,
+      })) ?? [];
+
   /* Video Hero */
   const videoHeroSection = data.page.sections?.find(
     (s) => s?.__typename === "PageSectionsVideoHero",
@@ -104,6 +140,17 @@ export default function HomeClientPage(props: HomeClientPageProps) {
       {data.page.sections
         ?.filter((s) => s?.__typename === "PageSectionsSplitLayout")
         .map((section, index) => renderSection(section as PageSections, index))}
+
+      {projectCarouselItems.length > 0 && (
+        <ProjectCarousel
+          sectionTitle={projectCarouselSection?.sectionTitle}
+          items={projectCarouselItems}
+          loop={projectCarouselSection?.loop ?? true}
+          showArrows={projectCarouselSection?.showArrows ?? true}
+          showDots={projectCarouselSection?.showDots ?? true}
+          className="py-16 md:py-24"
+        />
+      )}
 
       {workCarouselItems.length > 0 && (
         <WorkCarousel

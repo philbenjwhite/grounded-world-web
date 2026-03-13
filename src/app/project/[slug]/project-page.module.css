@@ -1,0 +1,158 @@
+/* ── Scroll-triggered reveals ── */
+
+/* Initial hidden states */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealLeft {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealRight {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.revealScale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.splitImage {
+  opacity: 0;
+  transform: translateY(48px) scale(0.97);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.15s;
+}
+
+/* Stagger children — initial state */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Visible states (compound selectors to beat specificity) ── */
+
+.reveal.revealVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.revealLeft.revealVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.revealRight.revealVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.revealScale.revealVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.splitImage.revealVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.stagger.revealVisible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+.stagger.revealVisible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.08s; }
+.stagger.revealVisible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.14s; }
+.stagger.revealVisible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.stagger.revealVisible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.26s; }
+.stagger.revealVisible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.32s; }
+.stagger.revealVisible > *:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.38s; }
+
+/* ── Mosaic grid items — random stagger ── */
+.mosaicItem {
+  opacity: 0;
+  transform: scale(0.92) translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mosaicItem.revealVisible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Random delays via custom property */
+.mosaicItem:nth-child(1)  { transition-delay: 0.05s; }
+.mosaicItem:nth-child(2)  { transition-delay: 0.25s; }
+.mosaicItem:nth-child(3)  { transition-delay: 0.12s; }
+.mosaicItem:nth-child(4)  { transition-delay: 0.35s; }
+.mosaicItem:nth-child(5)  { transition-delay: 0.08s; }
+.mosaicItem:nth-child(6)  { transition-delay: 0.3s; }
+.mosaicItem:nth-child(7)  { transition-delay: 0.18s; }
+.mosaicItem:nth-child(8)  { transition-delay: 0.4s; }
+.mosaicItem:nth-child(9)  { transition-delay: 0.15s; }
+.mosaicItem:nth-child(10) { transition-delay: 0.28s; }
+.mosaicItem:nth-child(11) { transition-delay: 0.1s; }
+.mosaicItem:nth-child(12) { transition-delay: 0.32s; }
+.mosaicItem:nth-child(13) { transition-delay: 0.2s; }
+.mosaicItem:nth-child(14) { transition-delay: 0.38s; }
+.mosaicItem:nth-child(15) { transition-delay: 0.06s; }
+.mosaicItem:nth-child(16) { transition-delay: 0.22s; }
+.mosaicItem:nth-child(17) { transition-delay: 0.14s; }
+.mosaicItem:nth-child(18) { transition-delay: 0.34s; }
+.mosaicItem:nth-child(19) { transition-delay: 0.09s; }
+
+/* ── Mosaic grid — explicit areas, edge-to-edge ── */
+.mosaicGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, minmax(100px, 14vw));
+  gap: 3px;
+  grid-template-areas:
+    "a a b b c d"
+    "a a e f c g"
+    "h i j f k k"
+    "l m j n k k"
+    "o o p q r r";
+}
+
+@media (max-width: 640px) {
+  .mosaicGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 22vw);
+    grid-template-areas:
+      "a a b c"
+      "a a d e"
+      "f g g h"
+      "i j j k"
+      "l m n n";
+  }
+
+  /* Hide overflow tiles on mobile */
+  .mosaicGrid > :nth-child(n+16) {
+    display: none;
+  }
+}
+
+/* ── Hover lift for cards ── */
+.cardLift {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cardLift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.4);
+}

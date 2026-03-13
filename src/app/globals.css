@@ -114,7 +114,7 @@
   --layout-nav-padding-x: var(--size-0);
   --layout-nav-padding-y: var(--size-0);
   --layout-section-padding-x: var(--size-40);
-  --layout-section-padding-y: var(--size-64);
+  --layout-section-padding-y: var(--size-40);
   --layout-section-gap: var(--size-32);
   --layout-card-padding-x: var(--size-0);
   --layout-card-padding-y: var(--size-0);
@@ -169,7 +169,7 @@
 @media (max-width: 1023px) {
   :root {
     --layout-section-padding-x: var(--size-32);
-    --layout-section-padding-y: var(--size-64);
+    --layout-section-padding-y: var(--size-40);
   }
 }
 
@@ -179,7 +179,7 @@
 @media (max-width: 767px) {
   :root {
     --layout-section-padding-x: var(--size-24);
-    --layout-section-padding-y: var(--size-48);
+    --layout-section-padding-y: var(--size-32);
   }
 }
 
@@ -190,7 +190,7 @@
   :root {
     --layout-breakpoint: 390px;
     --layout-section-padding-x: var(--size-16);
-    --layout-section-padding-y: var(--size-32);
+    --layout-section-padding-y: var(--size-24);
   }
 }
 

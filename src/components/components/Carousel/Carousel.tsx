@@ -12,6 +12,7 @@ export interface CarouselItem {
   title?: string;
   imageUrl?: string;
   imageAlt?: string;
+  logoUrl?: string;
 }
 
 export interface CarouselProps {
@@ -196,19 +197,42 @@ const Carousel = ({
                   {/* Amber glow overlay */}
                   <div className="work-card-glow" />
 
-                  {/* Title text — bottom left */}
-                  {item.title && (
-                    <div className={cn(styles.cardTitle, 'absolute bottom-5 left-5 z-10')}>
-                      <h3 className="text-lg font-bold leading-snug text-[var(--font-color-primary)]">
-                        {item.title}
-                      </h3>
+                  {/* Logo + centered title layout (for project cards with logos) */}
+                  {item.logoUrl ? (
+                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-8 gap-4">
+                      <img
+                        src={item.logoUrl}
+                        alt=""
+                        className="h-12 md:h-16 w-auto object-contain"
+                      />
+                      {item.title && (
+                        <h3 className="text-xl md:text-3xl font-bold leading-snug text-[var(--font-color-primary)] max-w-lg">
+                          {item.title}
+                        </h3>
+                      )}
+                      <span className="inline-block mt-2 rounded-sm bg-[var(--color-primary)] px-6 py-2.5 text-xs font-semibold uppercase tracking-widest text-white">
+                        See Case Study
+                      </span>
                     </div>
+                  ) : (
+                    <>
+                      {/* Title text — bottom left */}
+                      {item.title && (
+                        <div className={cn(styles.cardTitle, 'absolute bottom-5 left-5 z-10')}>
+                          <h3 className="text-lg font-bold leading-snug text-[var(--font-color-primary)]">
+                            {item.title}
+                          </h3>
+                        </div>
+                      )}
+                    </>
                   )}
 
-                  {/* Arrow icon — top right */}
-                  <span className="work-card-arrow absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm">
-                    <ArrowUpRight size={18} weight="bold" />
-                  </span>
+                  {/* Arrow icon — top right (hide when logo layout is used) */}
+                  {!item.logoUrl && (
+                    <span className="work-card-arrow absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm">
+                      <ArrowUpRight size={18} weight="bold" />
+                    </span>
+                  )}
                 </div>
               </div>
             );

@@ -8,7 +8,6 @@ import React, {
   useCallback,
 } from "react";
 import cn from "classnames";
-import Image from "next/image";
 import { PlayIcon } from "@phosphor-icons/react";
 import Heading from "../../atoms/Heading";
 import Text from "../../atoms/Text";
@@ -175,29 +174,6 @@ const VideoHero: React.FC<VideoHeroProps> = ({
               {subheading}
             </Text>
           </div>
-        </div>
-
-        {/* B Corp — bottom right */}
-        <div
-          className={cn(
-            styles.animateBcorp,
-            "absolute bottom-0 right-0 flex flex-col gap-1 p-8 md:p-10 lg:p-12",
-          )}
-        >
-          <Text
-            size="body-xs"
-            color="secondary"
-            className="font-semibold uppercase tracking-wider"
-          >
-            Bcorp
-          </Text>
-          <Image
-            src="/bcorp-logo.svg"
-            alt="Certified B Corporation"
-            width={80}
-            height={80}
-            className={cn(styles.bCorpLogo, "h-14 md:h-16 lg:h-20 w-auto")}
-          />
         </div>
 
         {/* Floating play reel — touch / mobile devices */}

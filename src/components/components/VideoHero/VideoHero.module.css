@@ -46,16 +46,6 @@
   animation: fadeInUp 0.8s ease-out 0.5s forwards;
 }
 
-.animateBcorp {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.7s forwards;
-}
-
-.bCorpLogo {
-  opacity: 0.5;
-  filter: brightness(10);
-}
-
 /* ─── Custom play cursor ─── */
 
 @keyframes ringRotate {
