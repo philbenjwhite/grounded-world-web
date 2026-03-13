@@ -1,0 +1,94 @@
+{
+  "title": "Using one little fiber to help change the fashion industry",
+  "client": "The LYCRA Company",
+  "description": "Launching the 'Keep in the Loop with LYCRA®' sustainability campaign to drive circularity across the apparel industry.",
+  "featuredImage": "/images/work/lycra/hero-top.jpg",
+  "logoImage": "/images/client-logos/lycra-logo-white.png",
+  "date": "2023-01-24T12:00:00.000Z",
+  "tags": ["Sustainability Marketing"],
+  "seoTitle": "LYCRA Sustainability Campaign | Grounded World",
+  "seoDescription": "See how Grounded World launched the Keep in the Loop with LYCRA sustainability campaign to drive circularity across the apparel industry.",
+  "sections": [
+    {
+      "_template": "heroImage",
+      "src": "/images/work/lycra/hero-top.jpg",
+      "alt": "LYCRA sustainability campaign hero"
+    },
+    {
+      "_template": "richText",
+      "body": "#### Sustainability Marketing\n\n## Using one little fiber to help change the fashion industry"
+    },
+    {
+      "_template": "richText",
+      "body": "### Background:\n\nThe LYCRA Company has been revolutionizing the textiles industry for over 60 years. Now they're doing it again — this time for the planet. Their three-part approach: create more resilient fibers that use fewer resources and extend garment wear; share thought-leadership on circularity across the industry; and reduce landfill waste while conserving finite resources."
+    },
+    {
+      "_template": "image",
+      "src": "/images/work/lycra/banner-animation.gif",
+      "alt": "Keep in the Loop with LYCRA banner"
+    },
+    {
+      "_template": "splitLayout",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "### Approach:\n\nThe LYCRA Company knows a thing or two about loops. After all, their fibers are in the loops of almost every knitted and woven fabric on the planet. Now they're leveraging that expertise to help close another big loop — circularity — through education, innovation and collaboration across the entire apparel industry."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/work/lycra/loop.jpg",
+          "alt": "LYCRA circularity loop"
+        }
+      ]
+    },
+    {
+      "_template": "video",
+      "videoUrl": "/images/work/lycra/keep-in-the-loop.mp4"
+    },
+    {
+      "_template": "splitLayout",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/work/lycra/wave-clothes.jpg",
+          "alt": "Sustainable fashion textiles"
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "### Idea:\n\n\"Keep in the Loop with LYCRA®\" is an invitation for the apparel industry to collaborate, educate, and innovate for people and the planet. It goes beyond celebrating achievements — it's about driving systemic change across the entire supply chain."
+        }
+      ]
+    },
+    {
+      "_template": "image",
+      "src": "/images/work/lycra/textile-waste-ad.png",
+      "alt": "LYCRA textile waste reduction campaign ad"
+    },
+    {
+      "_template": "image",
+      "src": "/images/work/lycra/additional-campaigns.jpg",
+      "alt": "LYCRA additional sustainability campaigns"
+    },
+    {
+      "_template": "richText",
+      "body": "### What We Did:\n\n* Launched the campaign with a dedicated website, trade media, PR, and marketing communications\n* Created a registration pathway for brand and retailer partnerships\n* Developed a nine-month series of global thought-leadership panels featuring industry experts\n* Launched COOLMAX® and THERMOLITE® products made from 100% textile waste\n* Announced a collaboration with Qore® LLC for renewable LYCRA® fiber from QIRA®\n* Participated in the UN's Fashion Conscious & Lifestyle network summit"
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/work/lycra/gymnastics.png",
+      "heading": "This campaign is still live and scaling. Results are impressive, but confidential."
+    }
+  ]
+}

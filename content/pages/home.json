@@ -175,6 +175,12 @@
         },
         {
           "project": "content/projects/totes-social-impact.json"
+        },
+        {
+          "project": "content/projects/whistlepig-packaging-design.json"
+        },
+        {
+          "project": "content/projects/lycra-sustainability.json"
         }
       ],
       "_template": "projectCarousel"

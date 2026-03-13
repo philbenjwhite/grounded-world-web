@@ -71,18 +71,6 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
     setActiveIndex((prev) => (prev === index ? null : index));
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      handleToggle(index);
-    }
-  };
-
-  /* Build grid-template-columns: active card gets 2.5fr, others 1fr */
-  const gridCols = items
-    .map((_, i) => (i === activeIndex ? "2.5fr" : "1fr"))
-    .join(" ");
-
   /* CSS variable bag — only dynamic custom props, no visual inline styles */
   const cardVars = (color: string, index: number) =>
     ({
@@ -194,7 +182,7 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
   }
 
   return (
-    <Section className="relative z-20 py-16 md:py-24 lg:py-32">
+    <Section className="relative z-20 py-12 md:py-16 lg:py-20">
       <Container className="px-[var(--layout-section-padding-x)]">
         {/* Section heading — fades in when scrolled into view */}
         {(sectionTitle || sectionSubtitle) && (
@@ -212,78 +200,93 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
           </div>
         )}
 
-        {/* ── Desktop expanding cards (lg+) ──────────── */}
+        {/* ── Desktop vertical accordion (lg+) ──────────── */}
         <div
           ref={gridRef}
-          className={cn(styles.grid, "hidden lg:grid gap-3")}
-          style={{ "--grid-cols": gridCols } as React.CSSProperties}
+          className="hidden lg:flex gap-10 relative"
         >
-          {items.map((item, index) => {
-            const isActive = activeIndex === index;
-            const IconComponent = item.icon
-              ? iconMap[item.icon]
-              : undefined;
+          {/* Left: minimal text nav */}
+          <div className="flex flex-col gap-1 w-[220px] shrink-0 pt-2">
+            {items.map((item, index) => {
+              const isActive = activeIndex === index;
+              const IconComponent = item.icon
+                ? iconMap[item.icon]
+                : undefined;
+              return (
+                <button
+                  key={item.name}
+                  className={cn(
+                    "reveal-card relative cursor-pointer text-left px-4 py-3 rounded-xl",
+                    "transition-all duration-300",
+                    "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40",
+                    isActive
+                      ? "bg-white/[0.06]"
+                      : "hover:bg-white/[0.03]"
+                  )}
+                  style={cardVars(item.color, index)}
+                  data-active={isActive}
+                  onClick={() => setActiveIndex(index)}
+                  aria-expanded={isActive}
+                >
+                  <div className="flex items-center gap-3">
+                    {IconComponent && (
+                      <IconComponent
+                        size={20}
+                        weight="duotone"
+                        className={cn(
+                          "shrink-0 transition-colors duration-300",
+                          isActive ? styles.itemText : "text-white/40"
+                        )}
+                      />
+                    )}
+                    <span
+                      className={cn(
+                        "text-base font-semibold transition-colors duration-300",
+                        isActive ? "text-white" : "text-white/50"
+                      )}
+                    >
+                      {item.name}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right: content panel */}
+          {activeIndex !== null && (() => {
+            const item = items[activeIndex];
             return (
               <div
                 key={item.name}
                 className={cn(
-                  "reveal-card",
-                  styles.card,
-                  "relative rounded-3xl border border-white/[0.06] bg-white/[0.025] backdrop-blur-xl",
-                  "overflow-hidden cursor-pointer flex flex-col p-6 xl:p-8",
-                  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
+                  styles.contentPanel,
+                  styles.contentPanelActive,
+                  "flex-1 min-w-0 rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl",
+                  "overflow-hidden relative flex flex-col p-8 xl:p-10"
                 )}
-                style={cardVars(item.color, index)}
-                data-active={isActive}
-                role="button"
-                tabIndex={0}
-                onClick={() => handleToggle(index)}
-                onKeyDown={(e) => handleKeyDown(e, index)}
-                aria-expanded={isActive}
+                style={cardVars(item.color, activeIndex)}
+                data-active="true"
               >
-                {/* Glow overlay — reuses global blob shapes via work-card-glow */}
                 <div
                   className={cn(
                     styles.cardGlow,
-                    "work-card-glow absolute inset-0 rounded-3xl pointer-events-none"
+                    "work-card-glow absolute inset-0 rounded-2xl pointer-events-none"
                   )}
-                  style={{ "--glow-color": "var(--item-color)" } as React.CSSProperties}
                 />
 
-                {/* Always visible: icon + name */}
-                <div className="relative z-10 flex items-center gap-3">
-                  {IconComponent && (
-                    <IconComponent
-                      size={28}
-                      weight="duotone"
-                      className={cn(styles.itemText, "shrink-0")}
-                    />
-                  )}
-                  <h3
-                    className={cn(
-                      styles.itemText,
-                      "text-xl xl:text-2xl font-bold"
-                    )}
-                  >
+                <div className="relative z-10 flex flex-col flex-1">
+                  <h3 className={cn(styles.itemText, "text-xl font-bold mb-1")}>
                     {item.name}
                   </h3>
-                </div>
-
-                {/* Expanded: tagline + bullets + image + CTA */}
-                <div
-                  className={cn(
-                    styles.expandedDetails,
-                    "relative z-10 flex flex-col flex-1 mt-4"
-                  )}
-                >
-                  <p className="text-sm text-white/70 leading-relaxed mb-4">
+                  <p className="text-sm text-white/70 leading-relaxed mb-5">
                     {item.tagline}
                   </p>
-                  <ul className="space-y-2.5">
+                  <ul className="space-y-2">
                     {item.bullets.map((bullet) => (
                       <li
                         key={bullet}
-                        className="text-sm text-white/70 leading-relaxed flex gap-2"
+                        className="text-sm text-white/60 leading-relaxed flex gap-2"
                       >
                         <span
                           className={cn(
@@ -310,7 +313,6 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
                     <Button
                       href={item.ctaHref}
                       variant="outline"
-                      onClick={(e) => e.stopPropagation()}
                       className={cn(styles.ctaLink, "shrink-0 ml-auto")}
                     >
                       {item.ctaLabel || "Find Out More"}
@@ -319,13 +321,13 @@ const ExpandingCardPanel: React.FC<ExpandingCardPanelProps> = ({
                 </div>
               </div>
             );
-          })}
+          })()}
         </div>
 
         {/* ── Mobile/Tablet accordion (below lg) ────── */}
         <div
           ref={mobileRef}
-          className={cn(styles.mobileList, "lg:hidden flex flex-col gap-3")}
+          className="lg:hidden flex flex-col gap-3"
         >
           {items.map((item, index) => {
             const isActive = activeIndex === index;

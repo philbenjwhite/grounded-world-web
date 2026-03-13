@@ -11,7 +11,6 @@ import type {
   ProjectSectionsSplitLayoutRight,
 } from "../../../../tina/__generated__/types";
 import { richTextComponents } from "@/lib/tina-renderers";
-import Container from "@/components/layout/Container";
 import Heading from "@/components/atoms/Heading";
 import ImageBlock from "@/components/atoms/Image";
 import Button from "@/components/atoms/Button";
@@ -341,7 +340,7 @@ function renderProjectSection(
     /* ─── IMAGE ─── */
     case "ProjectSectionsImage": {
       return (
-        <div key={index} className="py-6 md:py-10 px-[var(--layout-section-padding-x)]">
+        <div key={index} className="py-6 md:py-10 px-[var(--layout-section-padding-x)] -mb-px">
           <div data-reveal className={styles.revealScale}>
             <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden">
               {section.src && (
@@ -361,16 +360,25 @@ function renderProjectSection(
     /* ─── VIDEO ─── */
     case "ProjectSectionsVideo": {
       const vimeoMatch = section.videoUrl?.match(/vimeo\.com\/(\d+)/);
+      const isLocalVideo = section.videoUrl?.match(/\.(mp4|webm|ogg)$/i);
       return (
         <div key={index}>
-          <div className={`${styles.revealScale}`} data-reveal>
+          <div data-reveal>
             <div className="aspect-video overflow-hidden">
               {vimeoMatch ? (
                 <iframe
                   src={`https://player.vimeo.com/video/${vimeoMatch[1]}`}
-                  className="h-full w-full"
+                  className="h-full w-full border-0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
+                />
+              ) : isLocalVideo ? (
+                <video
+                  src={`${section.videoUrl}#t=1`}
+                  className="h-full w-full object-cover"
+                  controls
+                  playsInline
+                  preload="auto"
                 />
               ) : (
                 <a
@@ -390,26 +398,23 @@ function renderProjectSection(
 
     /* ─── SPLIT LAYOUT ─── */
     case "ProjectSectionsSplitLayout": {
-      return (
-        <div key={index} className="py-16 md:py-24 px-[var(--layout-section-padding-x)] bg-[#131313]">
-          <Container className="max-w-2xl">
-            <div className="flex flex-col items-center gap-8">
-              {/* Centered image */}
-              <div
-                data-reveal
-                className={styles.revealScale}
-              >
-                <div className="max-w-[240px] mx-auto">
-                  {section.right?.filter(Boolean).map((block, i) =>
-                    renderProjectBlock(block!, i)
-                  )}
-                </div>
-              </div>
+      /* Parse ratio for grid columns */
+      const ratioMap: Record<string, string> = {
+        "50/50": "md:grid-cols-2",
+        "60/40": "md:grid-cols-[3fr_2fr]",
+        "40/60": "md:grid-cols-[2fr_3fr]",
+      };
+      const gridCols = ratioMap[section.ratio ?? "50/50"] ?? "md:grid-cols-2";
+      const reversed = section.reverseOnMobile;
 
-              {/* Text below */}
+      return (
+        <div key={index} className="py-12 md:py-20 px-[var(--layout-section-padding-x)] bg-[#131313]">
+          <div className="max-w-5xl mx-auto">
+            <div className={`grid grid-cols-1 ${gridCols} gap-8 md:gap-12 items-center`}>
+              {/* Left column */}
               <div
                 data-reveal
-                className={`${styles.reveal} text-center max-w-xl mx-auto`}
+                className={`${styles.reveal} ${reversed ? "order-2 md:order-1" : ""} max-w-sm md:max-w-none mx-auto md:mx-0`}
               >
                 <div className="flex flex-col gap-5">
                   {section.left?.filter(Boolean).map((block, i) =>
@@ -417,8 +422,20 @@ function renderProjectSection(
                   )}
                 </div>
               </div>
+
+              {/* Right column */}
+              <div
+                data-reveal
+                className={`${styles.revealScale} ${reversed ? "order-1 md:order-2" : ""} max-w-sm md:max-w-none mx-auto md:mx-0`}
+              >
+                <div className="flex flex-col gap-5">
+                  {section.right?.filter(Boolean).map((block, i) =>
+                    renderProjectBlock(block!, i)
+                  )}
+                </div>
+              </div>
             </div>
-          </Container>
+          </div>
         </div>
       );
     }
@@ -431,30 +448,31 @@ function renderProjectSection(
     /* ─── CTA BANNER ─── */
     case "ProjectSectionsCtaBanner": {
       return (
-        <div key={index} className="py-10 md:py-16 px-[var(--layout-section-padding-x)]">
-          <div className={`max-w-5xl mx-auto ${styles.revealScale}`} data-reveal>
-            <div className="relative w-full overflow-hidden rounded-2xl py-20 md:py-28">
-              {section.backgroundSrc && (
-                <Image src={section.backgroundSrc} alt="" fill className="object-cover" />
+        <div key={index} className="px-4 md:px-6 lg:px-8 pt-16 md:pt-24 pb-16 md:pb-24">
+          <div data-reveal className={`relative overflow-hidden rounded-3xl min-h-[40vh] md:min-h-[50vh] ${styles.revealScale}`}>
+            {section.backgroundSrc && (
+              <div className="absolute inset-0 z-0">
+                <Image src={section.backgroundSrc} alt="" fill className="object-cover" sizes="(max-width: 768px) 100vw, 1280px" />
+              </div>
+            )}
+            <div className="absolute inset-0 z-10 bg-black/55" />
+            <div className="relative z-20 flex flex-col items-center justify-center text-center px-8 md:px-16 py-20 md:py-28 lg:py-32 min-h-[40vh] md:min-h-[50vh]">
+              {section.heading && (
+                <Heading level={2} size="h3" color="primary" className="max-w-2xl">
+                  {section.heading}
+                </Heading>
               )}
-              <div className="absolute inset-0 bg-gradient-to-r from-[var(--background)]/90 via-[var(--background)]/50 to-transparent" />
-              <div className="relative z-10 px-10 md:px-16 max-w-lg">
-                {section.heading && (
-                  <Heading level={3} size="h2" color="primary" className="mb-8">
-                    {section.heading}
-                  </Heading>
-                )}
-                {section.buttonUrl && (
-                  <a
+              {section.buttonUrl && (
+                <div className="mt-8 md:mt-10">
+                  <Button
                     href={section.buttonUrl}
+                    variant="primary"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 rounded-full bg-[var(--color-magenta)] hover:bg-[var(--color-magenta)]/80 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white transition-colors"
                   >
                     {section.buttonText ?? "Learn More"}
-                  </a>
-                )}
-              </div>
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </div>

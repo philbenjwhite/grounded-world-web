@@ -185,6 +185,9 @@ const Carousel = ({
                     <div className="absolute inset-0 w-full h-full" />
                   )}
 
+                  {/* Base dark overlay for text legibility on light images */}
+                  <div className="absolute inset-0 z-[0] bg-black/10 pointer-events-none" />
+
                   {/* Glass overlay — blurs + darkens non-center cards */}
                   <div
                     ref={(el) => { if (el) overlaysRef.current[index] = el; }}
@@ -227,12 +230,10 @@ const Carousel = ({
                     </>
                   )}
 
-                  {/* Arrow icon — top right (hide when logo layout is used) */}
-                  {!item.logoUrl && (
-                    <span className="work-card-arrow absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm">
-                      <ArrowUpRight size={18} weight="bold" />
-                    </span>
-                  )}
+                  {/* Arrow icon — top right, visible on hover */}
+                  <span className="work-card-arrow absolute top-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm">
+                    <ArrowUpRight size={18} weight="bold" />
+                  </span>
                 </div>
               </div>
             );

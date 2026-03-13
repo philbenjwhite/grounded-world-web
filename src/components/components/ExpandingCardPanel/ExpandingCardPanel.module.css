@@ -4,43 +4,31 @@
   --bento-duration: 500ms;
 }
 
-/* ── Desktop grid ──────────────────────────────── */
+/* ── Desktop tab nav ──────────────────────────── */
 
-.grid {
-  grid-template-columns: var(--grid-cols, repeat(4, 1fr));
-  grid-auto-rows: 28rem;
-  transition: grid-template-columns var(--bento-duration) var(--bento-ease);
-}
+/* ── Content panel (right side) ───────────────── */
 
-/* ── Card ──────────────────────────────────────── */
-
-.card {
+.contentPanel {
   transition:
     background-color var(--bento-duration) var(--bento-ease),
     border-color var(--bento-duration) var(--bento-ease);
 }
 
-.card:hover {
-  background-color: rgba(255, 255, 255, 0.045);
-  border-color: color-mix(in srgb, var(--item-color) 15%, transparent);
-}
-
-.card[data-active="true"] {
+.contentPanelActive {
   border-color: color-mix(in srgb, var(--item-color) 25%, transparent);
-  background-color: rgba(255, 255, 255, 0.04);
 }
 
 /* ── Card glow — dual irregular blobs for organic light ── */
 
 .cardGlow {
+  --glow-color: var(--item-color);
   opacity: 0;
   overflow: hidden;
   transition: opacity var(--bento-duration) var(--bento-ease);
   will-change: opacity;
 }
 
-.card:hover .cardGlow,
-.card[data-active="true"] .cardGlow {
+.contentPanel[data-active="true"] .cardGlow {
   opacity: 1;
 }
 
@@ -57,20 +45,6 @@
 .ctaLink {
   color: var(--item-color);
   border-color: var(--item-color);
-}
-
-/* ── Expanded details (tagline + bullets + footer) ── */
-
-.expandedDetails {
-  opacity: 0;
-  transition: opacity 400ms var(--bento-ease);
-  pointer-events: none;
-}
-
-.card[data-active="true"] .expandedDetails {
-  opacity: 1;
-  transition-delay: 200ms;
-  pointer-events: auto;
 }
 
 /* ── Mobile accordion ──────────────────────────── */

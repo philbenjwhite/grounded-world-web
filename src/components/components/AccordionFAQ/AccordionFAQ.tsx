@@ -111,7 +111,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = ({
   };
 
   return (
-    <Section className="py-16 md:py-24 lg:py-32">
+    <Section className="py-12 md:py-16 lg:py-20">
       <Container className="px-[var(--layout-section-padding-x)]">
         {/* Section heading */}
         {(sectionTitle || sectionSubtitle) && (

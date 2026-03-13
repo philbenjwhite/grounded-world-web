@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import cn from "classnames";
-import { LinkedinLogo } from "@phosphor-icons/react";
+import { LinkedinLogo, EnvelopeSimple, PaperPlaneTilt, CheckCircle } from "@phosphor-icons/react";
 import Text from "../../atoms/Text";
-import Button from "../../atoms/Button";
+import Heading from "../../atoms/Heading";
 import NewsletterModal from "../NewsletterModal";
 import { resourceLinks } from "../Header/megaMenuData";
+import { MAILERLITE_FORM_ID, MAILERLITE_FORM_CODE, loadMailerLiteScript } from "@/lib/mailerlite";
+import nlStyles from "../NewsletterCTA/NewsletterCTA.module.css";
 
 export interface FooterProps {
   className?: string;
@@ -26,6 +28,21 @@ const footerLinkClass =
 const Footer = ({ className }: FooterProps) => {
   const currentYear = new Date().getFullYear();
   const [modalOpen, setModalOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    loadMailerLiteScript().catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    const key = `ml_webform_success_${MAILERLITE_FORM_ID}`;
+    (window as unknown as Record<string, unknown>)[key] = () => {
+      setSubmitted(true);
+    };
+    return () => {
+      delete (window as unknown as Record<string, unknown>)[key];
+    };
+  }, []);
 
   return (
     <>
@@ -38,25 +55,88 @@ const Footer = ({ className }: FooterProps) => {
         <div className="max-w-[1440px] mx-auto px-6 md:px-12">
           {/* Newsletter CTA */}
           <div className="py-10 md:py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div>
-              <Text
-                size="body-lg"
-                color="primary"
-                as="p"
-                className="font-semibold"
-              >
-                Stay grounded
-              </Text>
-              <Text size="body-sm" color="secondary" as="p" className="mt-1">
-                Subscribe for sustainability insights, guides, and updates.
+            <div className="shrink-0">
+              <Heading level={3} size="h4" color="primary">
+                Stay Grounded
+              </Heading>
+              <Text size="body-md" color="secondary" as="p" className="mt-2 max-w-sm">
+                Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.
               </Text>
             </div>
-            <Button
-              variant="primary"
-              onClick={() => setModalOpen(true)}
-            >
-              Subscribe to Newsletter
-            </Button>
+
+            <div className="w-full max-w-md min-h-14">
+              {submitted ? (
+                <div className="flex items-center justify-center gap-3 h-14">
+                  <CheckCircle size={24} weight="fill" className="text-(--color-cyan)" />
+                  <Text size="body-lg" color="primary" className="font-semibold">
+                    You&rsquo;re now Grounded!
+                  </Text>
+                </div>
+              ) : (
+                <div
+                  id={`mlb2-footer-${MAILERLITE_FORM_ID}`}
+                  className={cn(
+                    "ml-form-embedContainer ml-subscribe-form",
+                    `ml-subscribe-form-${MAILERLITE_FORM_ID}`,
+                    nlStyles.formEmbed,
+                  )}
+                >
+                  <div className="ml-form-align-center">
+                    <div className="ml-form-embedWrapper embedForm">
+                      <div className="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                        <div className="ml-form-embedContent" style={{ marginBottom: 0 }} />
+                        <form
+                          className="ml-block-form"
+                          action={`https://static.mailerlite.com/webforms/submit/${MAILERLITE_FORM_CODE}`}
+                          data-code={MAILERLITE_FORM_CODE}
+                          method="post"
+                          target="_blank"
+                        >
+                          <div className={cn("ml-form-formContent", nlStyles.formRow)}>
+                            <div className="ml-form-fieldRow ml-last-item">
+                              <div className="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                                <EnvelopeSimple
+                                  size={20}
+                                  weight="regular"
+                                  className={nlStyles.inputIcon}
+                                />
+                                <input
+                                  aria-label="email"
+                                  aria-required="true"
+                                  type="email"
+                                  className={cn("form-control", nlStyles.emailInput)}
+                                  data-inputmask=""
+                                  name="fields[email]"
+                                  placeholder="Enter your email"
+                                  autoComplete="email"
+                                />
+                              </div>
+                            </div>
+                            <div className="ml-form-embedSubmit">
+                              <button type="submit" className={cn("primary", nlStyles.submitButton)}>
+                                Subscribe
+                                <PaperPlaneTilt size={16} weight="bold" />
+                              </button>
+                              <button
+                                disabled
+                                style={{ display: "none" }}
+                                type="button"
+                                className="loading"
+                              >
+                                <div className="ml-form-embedSubmitLoad" />
+                                <span className="sr-only">Loading...</span>
+                              </button>
+                            </div>
+                          </div>
+                          <input type="hidden" name="ml-submit" value="1" />
+                          <input type="hidden" name="anticsrf" value="true" />
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Divider */}

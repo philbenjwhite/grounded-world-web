@@ -1,9 +1,9 @@
 {
-  "title": "Helping girls fight stereotypes - one photo at a time",
-  "client": "Plan International",
+  "title": "Using a documentary to help protect the tribes of the Amazon",
+  "client": "Tribes on the Edge",
   "description": "Turning Céline Cousteau's Tribes on the Edge documentary into a grassroots social impact movement across the US.",
-  "featuredImage": "/images/projects/plan-international/mi-pham-bottom.jpg",
-  "logoImage": "/images/client-logos/plan-international-logo-white.png",
+  "featuredImage": "/images/work/totes/camera-crew.jpg",
+  "logoImage": "/images/client-logos/tribes-on-the-edge-logo-white.png",
   "date": "2023-01-27T12:38:58.000Z",
   "tags": ["Social Impact"],
   "seoTitle": "TOTES Social Impact Campaign | Grounded World",
@@ -16,7 +16,11 @@
     },
     {
       "_template": "richText",
-      "body": "## Background:\n\nThe Amazon is burning. And the indigenous people who live there are under threat, too. These tribes are the guardians of all of us. They protect the land that creates 20% of the oxygen we breathe. That's every 5th breath. If the people of the Amazon disappear, so might the rainforest. And so might we all.\n\nCéline Cousteau, granddaughter of the legendary Jaque Cousteau, is an activist and filmmaker. Her grandfather opened her eyes and heart to the Amazon and the indigenous tribes who live there when she was a young girl. And she spent years studying and earning the trust of these important people. Because of this trust, she was able to create a documentary to bring their story to the world. Tribes on the Edge is a documentary and a vehicle to give voice to the struggling tribes of the amazon rainforest."
+      "body": "#### Social Impact\n\n## Using a documentary to help protect the tribes of the Amazon"
+    },
+    {
+      "_template": "richText",
+      "body": "### Background:\n\nThe Amazon is burning. And the indigenous people who live there are under threat, too. These tribes are the guardians of all of us. They protect the land that creates 20% of the oxygen we breathe. That's every 5th breath. If the people of the Amazon disappear, so might the rainforest. And so might we all.\n\nCéline Cousteau, granddaughter of the legendary Jaque Cousteau, is an activist and filmmaker. Her grandfather opened her eyes and heart to the Amazon and the indigenous tribes who live there when she was a young girl. And she spent years studying and earning the trust of these important people. Because of this trust, she was able to create a documentary to bring their story to the world. Tribes on the Edge is a documentary and a vehicle to give voice to the struggling tribes of the amazon rainforest."
     },
     {
       "_template": "image",

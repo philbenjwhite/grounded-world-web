@@ -47,7 +47,7 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
   const gridRef = useScrollReveal();
 
   return (
-    <Section className="py-16 md:py-24 lg:py-32">
+    <Section className="py-12 md:py-16 lg:py-20">
       <Container className="px-[var(--layout-section-padding-x)]">
         {/* Section header */}
         <div className="mb-10 md:mb-14 text-center">
@@ -92,7 +92,7 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                   }
                 >
                   {/* Full-bleed image */}
-                  <div className="relative aspect-[4/5] md:aspect-[3/4]">
+                  <div className="relative aspect-[4/3] md:aspect-[5/4]">
                     <Image
                       src={item.imageSrc}
                       alt={item.imageAlt}

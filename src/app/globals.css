@@ -395,3 +395,18 @@ body {
 .work-card-hover:hover .work-card-arrow {
   opacity: 1;
 }
+
+/* ── Hide MailerLite injected popup/overlay forms ── */
+body > .ml-form-embedContainer:not([id]),
+body > div[class*="ml-"],
+.ml-form-successBody {
+  display: none !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Prevent MailerLite from expanding the footer embed */
+footer .ml-form-embedContainer .ml-form-embedWrapper {
+  max-height: 60px !important;
+  overflow: hidden !important;
+}

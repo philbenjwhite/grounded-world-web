@@ -15,19 +15,19 @@ const CONFIG = {
   TRIANGLE_DIST: 10,
   BASE_SPEED: 0.005,
   MOUSE_BRIGHTEN_RADIUS: 24,
-  FOG_NEAR: 40,
-  FOG_FAR: 95,
+  FOG_NEAR: 30,
+  FOG_FAR: 110,
   DUST_LAYERS: [
-    { count: 30, zRange: [-35, -20] as [number, number], bright: 0.1, size: 0.5, speed: 0.3 },
-    { count: 40, zRange: [-15, 5] as [number, number], bright: 0.2, size: 0.8, speed: 0.6 },
-    { count: 40, zRange: [8, 25] as [number, number], bright: 0.35, size: 1.2, speed: 1.0 },
+    { count: 30, zRange: [-35, -20] as [number, number], bright: 0.2, size: 0.5, speed: 0.3 },
+    { count: 40, zRange: [-15, 5] as [number, number], bright: 0.35, size: 0.8, speed: 0.6 },
+    { count: 40, zRange: [8, 25] as [number, number], bright: 0.55, size: 1.2, speed: 1.0 },
   ],
 } as const;
 
-// ── Color palettes (jewel tones, duller base) ──
+// ── Color palettes (jewel tones, brighter base) ──
 const PALETTES: [number, number, number][] = [
-  [0.85, 0.7, 0.28], [0.55, 0.75, 0.25], [0.72, 0.7, 0.3], [0.3, 0.7, 0.27],
-  [0.12, 0.65, 0.32], [0.0, 0.7, 0.28], [0.6, 0.75, 0.25], [0.42, 0.7, 0.3], [0.95, 0.7, 0.28],
+  [0.85, 0.75, 0.48], [0.55, 0.8, 0.45], [0.72, 0.75, 0.5], [0.3, 0.75, 0.47],
+  [0.12, 0.7, 0.52], [0.0, 0.75, 0.48], [0.6, 0.8, 0.45], [0.42, 0.75, 0.5], [0.95, 0.75, 0.48],
 ];
 
 function randomColor(): THREE.Color {
@@ -44,8 +44,8 @@ function randomColor(): THREE.Color {
 function depthFog(z: number): number {
   const dist = 75 - z;
   if (dist < CONFIG.FOG_NEAR) return 1;
-  if (dist > CONFIG.FOG_FAR) return 0.08;
-  return 1 - ((dist - CONFIG.FOG_NEAR) / (CONFIG.FOG_FAR - CONFIG.FOG_NEAR)) * 0.92;
+  if (dist > CONFIG.FOG_FAR) return 0.18;
+  return 1 - ((dist - CONFIG.FOG_NEAR) / (CONFIG.FOG_FAR - CONFIG.FOG_NEAR)) * 0.82;
 }
 
 // ── Point data structure ──
@@ -127,7 +127,7 @@ export default function PlexusBackground() {
         if (b.x < -200 || b.x > bgCanvas.width + 200) b.vx *= -1;
         if (b.y < -200 || b.y > bgCanvas.height + 200) b.vy *= -1;
         const pulse = 0.5 + 0.5 * Math.sin(time * b.pulseFreq + b.pulsePhase);
-        const opacity = 0.025 + pulse * 0.025;
+        const opacity = 0.04 + pulse * 0.04;
         const g = bgCtx.createRadialGradient(b.x, b.y, 0, b.x, b.y, b.radius);
         g.addColorStop(0, `hsla(${b.hue},50%,20%,${opacity})`);
         g.addColorStop(0.5, `hsla(${b.hue},40%,12%,${opacity * 0.4})`);
@@ -197,7 +197,7 @@ export default function PlexusBackground() {
     lineGeom.setAttribute("color", new THREE.BufferAttribute(lineCol, 3));
     lineGeom.setDrawRange(0, 0);
     scene.add(new THREE.LineSegments(lineGeom, new THREE.LineBasicMaterial({
-      vertexColors: true, transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false,
+      vertexColors: true, transparent: true, opacity: 0.45, blending: THREE.AdditiveBlending, depthWrite: false,
     })));
 
     // ── Triangles ──
