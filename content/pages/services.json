@@ -30,7 +30,7 @@
             "Ecosystem mapping, need states, category growth drivers & go to market strategy"
           ],
           "ctaHref": "/services/discover",
-          "imageSrc": "/images/services/intention-action-gap.png",
+          "imageSrc": "/images/services/intention-action-gap.svg",
           "imageAlt": "Intention Action Gap"
         },
         {
@@ -44,7 +44,7 @@
             "Brand positioning architecture & archetyping"
           ],
           "ctaHref": "/services/articulate",
-          "imageSrc": "/images/services/sustain-agility.png",
+          "imageSrc": "/images/services/sustain-agility.svg",
           "imageAlt": "Sustain-Agility"
         },
         {
@@ -58,7 +58,7 @@
             "Commerce (customer journeys, selling stories, brand and retail activation and tactical toolkits)"
           ],
           "ctaHref": "/services/activate",
-          "imageSrc": "/images/services/brand-activation-for-good.png",
+          "imageSrc": "/images/services/brand-activation-for-good.svg",
           "imageAlt": "Brand Activation For Good"
         },
         {
@@ -72,7 +72,7 @@
             "Collaboration training, action labs, design sprints, speaking engagements and thought leadership"
           ],
           "ctaHref": "/services/accelerate",
-          "imageSrc": "/images/services/flywheel-of-impact.png",
+          "imageSrc": "/images/services/flywheel-of-impact.svg",
           "imageAlt": "Flywheel of Impact"
         }
       ]
