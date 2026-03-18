@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Link from "next/link";
 import cn from "classnames";
 import styles from "./Button.module.css";
+
+type CalendlyApi = { initPopupWidget: (opts: { url: string }) => void };
+type CalendlyWindow = { Calendly?: CalendlyApi };
+
+function isCalendlyUrl(url?: string): boolean {
+  return !!url && url.includes("calendly.com");
+}
+
+function openCalendlyPopup(url: string) {
+  const calendly = (window as unknown as CalendlyWindow).Calendly;
+  if (!calendly) {
+    window.open(url, "_blank");
+    return;
+  }
+  const separator = url.includes("?") ? "&" : "?";
+  const fullUrl = url.includes("hide_gdpr_banner") ? url : `${url}${separator}hide_gdpr_banner=1`;
+  calendly.initPopupWidget({ url: fullUrl });
+}
 
 export type ButtonVariant = "primary" | "secondary" | "outline";
 
@@ -76,6 +94,20 @@ const Button = ({
   className,
   variant = "primary",
 }: ButtonProps) => {
+  const calendly = isCalendlyUrl(href);
+
+  const handleClick = useCallback(
+    (e: React.MouseEvent) => {
+      if (calendly && href) {
+        e.preventDefault();
+        openCalendlyPopup(href);
+        return;
+      }
+      onClick?.(e);
+    },
+    [calendly, href, onClick],
+  );
+
   const combinedClassName = cn(
     styles.button,
     baseStyles,
@@ -83,6 +115,20 @@ const Button = ({
     disabled && disabledStyles,
     className
   );
+
+  // Calendly links render as a button (no navigation)
+  if (calendly) {
+    return (
+      <button
+        type="button"
+        className={combinedClassName}
+        onClick={disabled ? undefined : handleClick}
+        disabled={disabled}
+      >
+        {children}
+      </button>
+    );
+  }
 
   if (href) {
     const isExternal = target === "_blank" || href.startsWith("http");

@@ -83,6 +83,18 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        {/* Calendly popup widget — preloaded globally for instant open */}
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
+        <script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          type="text/javascript"
+          async
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >

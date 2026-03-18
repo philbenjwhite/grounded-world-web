@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -8,46 +8,6 @@ import Heading from "../../atoms/Heading";
 import Text from "../../atoms/Text";
 import Button from "../../atoms/Button";
 import styles from "./HeroBanner.module.css";
-
-function isCalendlyUrl(url?: string): boolean {
-  return !!url && url.includes("calendly.com");
-}
-
-type CalendlyWindow = { Calendly?: { initPopupWidget: (opts: { url: string }) => void } };
-
-let calendlyLoading = false;
-let calendlyReady = false;
-const calendlyCallbacks: (() => void)[] = [];
-
-function ensureCalendlyLoaded(onReady?: () => void) {
-  if (calendlyReady) {
-    onReady?.();
-    return;
-  }
-  if (onReady) calendlyCallbacks.push(onReady);
-  if (calendlyLoading) return;
-  calendlyLoading = true;
-
-  const link = document.createElement("link");
-  link.rel = "stylesheet";
-  link.href = "https://assets.calendly.com/assets/external/widget.css";
-  document.head.appendChild(link);
-
-  const script = document.createElement("script");
-  script.src = "https://assets.calendly.com/assets/external/widget.js";
-  script.onload = () => {
-    calendlyReady = true;
-    calendlyCallbacks.forEach((cb) => cb());
-    calendlyCallbacks.length = 0;
-  };
-  document.head.appendChild(script);
-}
-
-function openCalendlyPopup(url: string) {
-  ensureCalendlyLoaded(() => {
-    (window as unknown as CalendlyWindow).Calendly?.initPopupWidget({ url });
-  });
-}
 
 const DefaultPlexusBackground = dynamic(
   () => import("../PlexusBackground/PlexusBackground"),
@@ -198,26 +158,6 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   const isHtml = subtitle ? /<[a-z][\s\S]*>/i.test(subtitle) : false;
 
   const hasCta = ctaLabel && ctaHref;
-  const ctaIsCalendly = isCalendlyUrl(ctaHref);
-  const [calendlyLoading, setCalendlyLoading] = useState(false);
-
-  const handleCalendlyHover = useCallback(() => {
-    if (ctaIsCalendly) ensureCalendlyLoaded();
-  }, [ctaIsCalendly]);
-
-  const handleCalendlyClick = useCallback(
-    (e: React.MouseEvent) => {
-      if (ctaIsCalendly && ctaHref) {
-        e.preventDefault();
-        setCalendlyLoading(true);
-        ensureCalendlyLoaded(() => {
-          setCalendlyLoading(false);
-          (window as unknown as CalendlyWindow).Calendly?.initPopupWidget({ url: ctaHref });
-        });
-      }
-    },
-    [ctaIsCalendly, ctaHref],
-  );
   const hasSecondaryCta = secondaryCtaLabel && secondaryCtaHref;
   const hasFeatureImage = !!featureImageSrc;
   const hasHighlights = highlights && highlights.length > 0;
@@ -426,17 +366,12 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
                   )}
                 >
                   {hasCta && (
-                    <div
-                      data-tina-field={tinaFields?.ctaLabel}
-                      onMouseEnter={ctaIsCalendly ? handleCalendlyHover : undefined}
-                    >
+                    <div data-tina-field={tinaFields?.ctaLabel}>
                       <Button
-                        href={ctaIsCalendly ? undefined : ctaHref}
-                        onClick={ctaIsCalendly ? handleCalendlyClick : undefined}
+                        href={ctaHref}
                         variant={ctaVariant === "outline" ? "secondary" : "primary"}
-                        disabled={calendlyLoading}
                       >
-                        {calendlyLoading ? "Loading…" : ctaLabel}
+                        {ctaLabel}
                       </Button>
                     </div>
                   )}

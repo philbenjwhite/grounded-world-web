@@ -410,3 +410,27 @@ footer .ml-form-embedContainer .ml-form-embedWrapper {
   max-height: 60px !important;
   overflow: hidden !important;
 }
+
+/* ── Calendly popup overrides ────────────────── */
+
+/* Hide the floating badge button — we trigger the popup from our own CTA */
+.calendly-badge-widget {
+  display: none !important;
+}
+
+/* Overlay: ensure it sits above our header/nav, add blurred backdrop */
+.calendly-overlay {
+  z-index: 999999 !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* Scale down iframe so calendar + times show side-by-side */
+.calendly-overlay .calendly-popup iframe {
+  transform: scale(0.82) !important;
+  transform-origin: top center !important;
+  width: 122% !important;
+  height: 122% !important;
+  margin-left: -11% !important;
+}
