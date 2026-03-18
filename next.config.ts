@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  staticPageGenerationTimeout: 180,
+  staticPageGenerationTimeout: 300,
   images: {
     remotePatterns: [
       {

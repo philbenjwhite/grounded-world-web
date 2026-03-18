@@ -36,36 +36,46 @@ export interface RelatedWorkItem {
   featuredImage?: string;
 }
 
-async function getRelatedWork(currentSlug: string, currentTags?: (string | null)[]): Promise<RelatedWorkItem[]> {
+// Cache work list at module level so it's fetched once during build
+let cachedWorkList: { slug: string; title: string; client: string; featuredImage?: string; tags?: (string | null)[] }[] | null = null;
+
+async function getAllWork() {
+  if (cachedWorkList) return cachedWorkList;
   try {
     const response = await client.queries.workConnection({
       sort: "date",
       first: 100,
     });
-    const allWork = (response.data.workConnection.edges ?? [])
+    cachedWorkList = (response.data.workConnection.edges ?? [])
       .map((edge) => edge?.node)
       .filter(Boolean)
-      .filter((node) => node!._sys.filename !== currentSlug);
-
-    const currentTag = currentTags?.find(Boolean);
-
-    // Prefer items with the same tag, then recent
-    const sameTag = currentTag
-      ? allWork.filter((node) => node!.tags?.includes(currentTag))
-      : [];
-    const others = currentTag
-      ? allWork.filter((node) => !node!.tags?.includes(currentTag))
-      : allWork;
-
-    return [...sameTag, ...others].slice(0, 9).map((node) => ({
-      slug: node!._sys.filename,
-      title: node!.title,
-      client: node!.client,
-      featuredImage: node!.featuredImage ?? undefined,
-    }));
+      .map((node) => ({
+        slug: node!._sys.filename,
+        title: node!.title,
+        client: node!.client,
+        featuredImage: node!.featuredImage ?? undefined,
+        tags: node!.tags ?? undefined,
+      }));
+    return cachedWorkList;
   } catch {
     return [];
   }
+}
+
+async function getRelatedWork(currentSlug: string, currentTags?: (string | null)[]): Promise<RelatedWorkItem[]> {
+  const allWork = (await getAllWork()).filter((w) => w.slug !== currentSlug);
+  const currentTag = currentTags?.find(Boolean);
+
+  const sameTag = currentTag
+    ? allWork.filter((w) => w.tags?.includes(currentTag))
+    : [];
+  const others = currentTag
+    ? allWork.filter((w) => !w.tags?.includes(currentTag))
+    : allWork;
+
+  return [...sameTag, ...others].slice(0, 9).map(({ slug, title, client: c, featuredImage }) => ({
+    slug, title, client: c, featuredImage,
+  }));
 }
 
 export default async function WorkPage({ params }: WorkPageProps) {
