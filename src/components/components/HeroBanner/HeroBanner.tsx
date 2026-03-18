@@ -13,23 +13,40 @@ function isCalendlyUrl(url?: string): boolean {
   return !!url && url.includes("calendly.com");
 }
 
-function openCalendlyPopup(url: string) {
-  // Load Calendly widget script if not already loaded
-  if (!(window as unknown as Record<string, unknown>).Calendly) {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.onload = () => {
-      (window as unknown as { Calendly: { initPopupWidget: (opts: { url: string }) => void } }).Calendly.initPopupWidget({ url });
-    };
-    document.head.appendChild(script);
+type CalendlyWindow = { Calendly?: { initPopupWidget: (opts: { url: string }) => void } };
 
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://assets.calendly.com/assets/external/widget.css";
-    document.head.appendChild(link);
-  } else {
-    (window as unknown as { Calendly: { initPopupWidget: (opts: { url: string }) => void } }).Calendly.initPopupWidget({ url });
+let calendlyLoading = false;
+let calendlyReady = false;
+const calendlyCallbacks: (() => void)[] = [];
+
+function ensureCalendlyLoaded(onReady?: () => void) {
+  if (calendlyReady) {
+    onReady?.();
+    return;
   }
+  if (onReady) calendlyCallbacks.push(onReady);
+  if (calendlyLoading) return;
+  calendlyLoading = true;
+
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "https://assets.calendly.com/assets/external/widget.css";
+  document.head.appendChild(link);
+
+  const script = document.createElement("script");
+  script.src = "https://assets.calendly.com/assets/external/widget.js";
+  script.onload = () => {
+    calendlyReady = true;
+    calendlyCallbacks.forEach((cb) => cb());
+    calendlyCallbacks.length = 0;
+  };
+  document.head.appendChild(script);
+}
+
+function openCalendlyPopup(url: string) {
+  ensureCalendlyLoaded(() => {
+    (window as unknown as CalendlyWindow).Calendly?.initPopupWidget({ url });
+  });
 }
 
 const DefaultPlexusBackground = dynamic(
@@ -182,11 +199,21 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 
   const hasCta = ctaLabel && ctaHref;
   const ctaIsCalendly = isCalendlyUrl(ctaHref);
+  const [calendlyLoading, setCalendlyLoading] = useState(false);
+
+  const handleCalendlyHover = useCallback(() => {
+    if (ctaIsCalendly) ensureCalendlyLoaded();
+  }, [ctaIsCalendly]);
+
   const handleCalendlyClick = useCallback(
     (e: React.MouseEvent) => {
       if (ctaIsCalendly && ctaHref) {
         e.preventDefault();
-        openCalendlyPopup(ctaHref);
+        setCalendlyLoading(true);
+        ensureCalendlyLoaded(() => {
+          setCalendlyLoading(false);
+          (window as unknown as CalendlyWindow).Calendly?.initPopupWidget({ url: ctaHref });
+        });
       }
     },
     [ctaIsCalendly, ctaHref],
@@ -399,13 +426,17 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
                   )}
                 >
                   {hasCta && (
-                    <div data-tina-field={tinaFields?.ctaLabel}>
+                    <div
+                      data-tina-field={tinaFields?.ctaLabel}
+                      onMouseEnter={ctaIsCalendly ? handleCalendlyHover : undefined}
+                    >
                       <Button
                         href={ctaIsCalendly ? undefined : ctaHref}
                         onClick={ctaIsCalendly ? handleCalendlyClick : undefined}
                         variant={ctaVariant === "outline" ? "secondary" : "primary"}
+                        disabled={calendlyLoading}
                       >
-                        {ctaLabel}
+                        {calendlyLoading ? "Loading…" : ctaLabel}
                       </Button>
                     </div>
                   )}
