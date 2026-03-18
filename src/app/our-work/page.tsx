@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import serverClient from "../../../tina/server-client";
 import { getPageMetadata } from "@/lib/page-metadata";
@@ -51,11 +52,13 @@ export default async function OurWorkPage() {
   }
 
   return (
-    <OurWorkClientPage
-      query={pageResult.query}
-      variables={pageResult.variables as { relativePath: string }}
-      data={pageResult.data}
-      workItems={workItems}
-    />
+    <Suspense>
+      <OurWorkClientPage
+        query={pageResult.query}
+        variables={pageResult.variables as { relativePath: string }}
+        data={pageResult.data}
+        workItems={workItems}
+      />
+    </Suspense>
   );
 }
