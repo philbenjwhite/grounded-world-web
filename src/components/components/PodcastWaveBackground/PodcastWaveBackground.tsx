@@ -24,6 +24,14 @@ export default function PodcastWaveBackground() {
     let sx = 1;
     let sy = 1;
     const startTime = performance.now();
+    let isVisible = true;
+
+    // Pause animation when scrolled out of view
+    const visObserver = new IntersectionObserver(
+      ([entry]) => { isVisible = entry.isIntersecting; },
+      { threshold: 0 }
+    );
+    visObserver.observe(canvas);
 
     function resize() {
       const dpr = Math.min(window.devicePixelRatio, 2);
@@ -194,6 +202,9 @@ export default function PodcastWaveBackground() {
     ];
 
     function frame(t: number) {
+      rafRef.current = requestAnimationFrame(frame);
+      if (!isVisible) return;
+
       const elapsed = (t - startTime) * 0.001; // seconds since mount
       const time = t * 0.001;
 
@@ -211,7 +222,6 @@ export default function PodcastWaveBackground() {
         drawNeonStroke(s.path, s.color, s.core, s.glow, s.glowW, time, s.seed, eased);
       }
 
-      rafRef.current = requestAnimationFrame(frame);
     }
 
     resize();
@@ -221,6 +231,7 @@ export default function PodcastWaveBackground() {
     return () => {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener("resize", resize);
+      visObserver.disconnect();
     };
   }, []);
 

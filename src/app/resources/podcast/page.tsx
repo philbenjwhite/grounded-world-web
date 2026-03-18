@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import serverClient from "../../../../tina/server-client";
 import { getPageMetadata } from "@/lib/page-metadata";
-import ClientPage from "../../[slug]/client-page";
+import PodcastClientPage from "./client-page";
 
 export async function generateMetadata(): Promise<Metadata> {
   return getPageMetadata(
@@ -11,16 +10,6 @@ export async function generateMetadata(): Promise<Metadata> {
   );
 }
 
-export default async function PodcastPage() {
-  const result = await serverClient.queries.page({
-    relativePath: "itshouldntbethishard.json",
-  });
-
-  return (
-    <ClientPage
-      query={result.query}
-      variables={result.variables as { relativePath: string }}
-      data={result.data}
-    />
-  );
+export default function PodcastPage() {
+  return <PodcastClientPage />;
 }

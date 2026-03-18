@@ -1,0 +1,31 @@
+.prose {
+  max-width: none;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--font-color-secondary);
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    color: var(--font-color-primary);
+    font-weight: bold;
+  }
+
+  :where(p) {
+    color: var(--font-color-secondary);
+  }
+
+  :where(a) {
+    color: var(--color-cyan);
+  }
+
+  :where(strong) {
+    color: var(--font-color-primary);
+  }
+
+  :where(li) {
+    color: var(--font-color-secondary);
+  }
+
+  :where(img) {
+    border-radius: var(--size-16, 1rem);
+  }
+}

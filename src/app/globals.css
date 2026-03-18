@@ -29,8 +29,8 @@
   --font-family-arial: 'Arial', sans-serif;
 
   /* Font/Size (Desktop ≥1024px — clear hierarchy with ~1.3–1.7× ratios) */
-  --font-size-h1: var(--size-80);
-  --font-size-h2: var(--size-48);
+  --font-size-h1: var(--size-56);
+  --font-size-h2: var(--size-40);
   --font-size-h3: var(--size-32);
   --font-size-h4: var(--size-24);
   --font-size-body-xl: var(--size-20);
@@ -114,7 +114,7 @@
   --layout-nav-padding-x: var(--size-0);
   --layout-nav-padding-y: var(--size-0);
   --layout-section-padding-x: var(--size-40);
-  --layout-section-padding-y: var(--size-40);
+  --layout-section-padding-y: var(--size-32);
   --layout-section-gap: var(--size-32);
   --layout-card-padding-x: var(--size-0);
   --layout-card-padding-y: var(--size-0);
@@ -136,17 +136,17 @@
 /* Tablet (≤1023px) */
 @media (max-width: 1023px) {
   :root {
-    --font-size-h1: var(--size-56);
-    --font-size-h2: var(--size-40);
-    --font-size-h3: var(--size-32);
-    --font-size-h4: var(--size-24);
+    --font-size-h1: var(--size-48);
+    --font-size-h2: var(--size-32);
+    --font-size-h3: var(--size-24);
+    --font-size-h4: var(--size-20);
   }
 }
 
 /* Mobile (≤767px) */
 @media (max-width: 767px) {
   :root {
-    --font-size-h1: var(--size-48);
+    --font-size-h1: var(--size-40);
     --font-size-h2: var(--size-32);
     --font-size-h3: var(--size-24);
     --font-size-h4: var(--size-20);
@@ -156,10 +156,10 @@
 /* Small mobile (≤390px) */
 @media (max-width: 390px) {
   :root {
-    --font-size-h1: var(--size-40);
-    --font-size-h2: var(--size-32);
-    --font-size-h3: var(--size-24);
-    --font-size-h4: var(--size-20);
+    --font-size-h1: var(--size-32);
+    --font-size-h2: var(--size-24);
+    --font-size-h3: var(--size-20);
+    --font-size-h4: var(--size-18);
   }
 }
 

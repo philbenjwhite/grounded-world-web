@@ -6,6 +6,9 @@ import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import Heading from "@/components/atoms/Heading";
 import Text from "@/components/atoms/Text";
+import Button from "@/components/atoms/Button";
+import RelatedWorkCarousel from "./related-work-carousel";
+import styles from "./page.module.css";
 
 interface WorkPageProps {
   params: Promise<{
@@ -26,6 +29,45 @@ export async function generateStaticParams() {
   }
 }
 
+export interface RelatedWorkItem {
+  slug: string;
+  title: string;
+  client: string;
+  featuredImage?: string;
+}
+
+async function getRelatedWork(currentSlug: string, currentTags?: (string | null)[]): Promise<RelatedWorkItem[]> {
+  try {
+    const response = await client.queries.workConnection({
+      sort: "date",
+      first: 100,
+    });
+    const allWork = (response.data.workConnection.edges ?? [])
+      .map((edge) => edge?.node)
+      .filter(Boolean)
+      .filter((node) => node!._sys.filename !== currentSlug);
+
+    const currentTag = currentTags?.find(Boolean);
+
+    // Prefer items with the same tag, then recent
+    const sameTag = currentTag
+      ? allWork.filter((node) => node!.tags?.includes(currentTag))
+      : [];
+    const others = currentTag
+      ? allWork.filter((node) => !node!.tags?.includes(currentTag))
+      : allWork;
+
+    return [...sameTag, ...others].slice(0, 9).map((node) => ({
+      slug: node!._sys.filename,
+      title: node!.title,
+      client: node!.client,
+      featuredImage: node!.featuredImage ?? undefined,
+    }));
+  } catch {
+    return [];
+  }
+}
+
 export default async function WorkPage({ params }: WorkPageProps) {
   const { slug } = await params;
 
@@ -39,28 +81,32 @@ export default async function WorkPage({ params }: WorkPageProps) {
     notFound();
   }
 
+  const relatedWork = await getRelatedWork(slug, work.tags ?? undefined);
+
+  const primaryTag = work.tags?.find(Boolean);
+  const viewAllHref = primaryTag
+    ? `/our-work?filter=${encodeURIComponent(primaryTag)}#work`
+    : "/our-work#work";
+
   return (
     <div className="min-h-screen bg-(--background) text-white">
       <Section>
         <Container className="px-[var(--layout-section-padding-x)] max-w-4xl">
-          <nav className="mb-8">
+          <div className="flex items-center justify-between mb-6">
             <Link
               href="/our-work"
-              className="text-sm text-[color:var(--font-color-tertiary)] hover:text-[color:var(--color-cyan)] transition-colors"
+              className="text-sm text-[color:var(--font-color-tertiary)] hover:text-white transition-colors"
             >
               &larr; Back to Our Work
             </Link>
-          </nav>
-
-          <header className="mb-12">
             {work.tags && work.tags.length > 0 && (
-              <div className="mb-4 flex gap-2">
+              <div className="flex gap-2">
                 {work.tags.map(
                   (tag) =>
                     tag && (
                       <span
                         key={tag}
-                        className="rounded-full bg-white/[0.06] border border-white/[0.08] px-3 py-1 text-xs text-[color:var(--font-color-tertiary)]"
+                        className="rounded-full bg-white/[0.06] border border-white/10 px-3 py-1 text-xs text-[color:var(--font-color-tertiary)]"
                       >
                         {tag}
                       </span>
@@ -68,12 +114,12 @@ export default async function WorkPage({ params }: WorkPageProps) {
                 )}
               </div>
             )}
-            <Heading level={1} size="h1" color="primary" className="mb-4">
+          </div>
+
+          <header className="mb-12">
+            <Heading level={1} size="h1" color="primary">
               {work.title}
             </Heading>
-            <Text size="body-lg" color="tertiary">
-              {work.client}
-            </Text>
           </header>
 
           {work.description && (
@@ -105,12 +151,29 @@ export default async function WorkPage({ params }: WorkPageProps) {
           )}
 
           {work.body && (
-            <div className="prose prose-invert prose-lg max-w-none prose-headings:text-[color:var(--font-color-primary)] prose-headings:font-bold prose-p:text-[color:var(--font-color-secondary)] prose-a:text-[color:var(--color-cyan)] prose-strong:text-[color:var(--font-color-primary)] prose-li:text-[color:var(--font-color-secondary)] prose-img:rounded-2xl">
+            <div className={`prose prose-invert prose-lg ${styles.prose}`}>
               <TinaMarkdown content={work.body} />
             </div>
           )}
         </Container>
       </Section>
+
+      {/* Related Work */}
+      {relatedWork.length > 0 && (
+        <Section className="!pt-0">
+          <Container className="px-[var(--layout-section-padding-x)]">
+            <div className="flex items-center justify-between mb-8">
+              <Heading level={2} size="h3" color="primary">
+                More Case Studies
+              </Heading>
+              <Button href={viewAllHref} variant="outline">
+                View All Work
+              </Button>
+            </div>
+            <RelatedWorkCarousel items={relatedWork} />
+          </Container>
+        </Section>
+      )}
     </div>
   );
 }

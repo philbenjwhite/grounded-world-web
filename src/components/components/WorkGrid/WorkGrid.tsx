@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useMemo, useRef } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import cn from "classnames";
@@ -43,10 +44,9 @@ export interface WorkGridProps {
 const ALL_FILTER = "All";
 
 /**
- * Bento pattern that repeats every 6 items.
- * true = card spans 2 columns on desktop.
+ * All cards are single-column — 3 equal cards per row on desktop.
  */
-const BENTO_PATTERN = [false, true, true, false, false, true];
+const BENTO_PATTERN = [false];
 
 /* ─── WorkCard ───────────────────────────────────────── */
 
@@ -136,7 +136,11 @@ const WorkCard: React.FC<WorkCardProps> = ({ item, index, tabletOrder }) => {
 /* ─── WorkGrid ───────────────────────────────────────── */
 
 const WorkGrid: React.FC<WorkGridProps> = ({ items, sectionTitle }) => {
-  const [activeFilter, setActiveFilter] = useState(ALL_FILTER);
+  const searchParams = useSearchParams();
+  const [activeFilter, setActiveFilter] = useState(() => {
+    const param = searchParams.get("filter");
+    return param ?? ALL_FILTER;
+  });
   const gridRef = useScrollReveal(0.01);
 
   /* Derive unique tags from items */
@@ -187,7 +191,7 @@ const WorkGrid: React.FC<WorkGridProps> = ({ items, sectionTitle }) => {
   }, [filteredItems]);
 
   return (
-    <Section className="py-16 md:py-24">
+    <Section id="work" className="py-16 md:py-24">
       <Container className="px-[var(--layout-section-padding-x)]">
         {sectionTitle && (
           <Heading level={2} size="h2" color="primary" className="text-center mb-8 md:mb-12">

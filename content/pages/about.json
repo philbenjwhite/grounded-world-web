@@ -14,9 +14,7 @@
       "overlayOpacity": "medium",
       "contentAlign": "center",
       "minHeight": "large",
-      "bottomFade": false,
-      "badgeSrc": "/bcorp-logo.svg",
-      "badgeAlt": "Certified B Corporation"
+      "bottomFade": false
     },
     {
       "_template": "featureCards",

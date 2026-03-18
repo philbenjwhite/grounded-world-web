@@ -78,7 +78,7 @@ const inputBase = [
 const ContactSection: React.FC<ContactSectionProps> = ({
   heading = "Let\u2019s Talk",
   description = "For a specific request, submit a contact form. A member of the team will get back to you within 24 hours.",
-  bookingUrl = "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+  bookingUrl,
   bookingLabel = "Book a Discovery Call",
   email = "getgrounded@grounded.world",
   className,
@@ -133,9 +133,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 <Text size="body-lg" color="secondary" className="mb-8">
                   {description}
                 </Text>
-                <Button href={bookingUrl} target="_blank" variant="primary">
-                  {bookingLabel}
-                </Button>
+                {bookingUrl && (
+                  <Button href={bookingUrl} target="_blank" variant="primary">
+                    {bookingLabel}
+                  </Button>
+                )}
                 <Text
                   size="body-sm"
                   color="tertiary"

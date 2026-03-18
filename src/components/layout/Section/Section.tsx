@@ -8,15 +8,18 @@ export interface SectionProps {
   className?: string;
   /** HTML element to render as (default: section) */
   as?: "section" | "div" | "article" | "aside";
+  /** Optional id for anchor linking */
+  id?: string;
 }
 
 const Section = ({
   children,
   className,
   as: Component = "section",
+  id,
 }: SectionProps) => {
   return (
-    <Component className={cn("py-[var(--layout-section-padding-y)] bg-(--background)", className)}>
+    <Component id={id} className={cn("py-[var(--layout-section-padding-y)] bg-(--background)", className)}>
       {children}
     </Component>
   );

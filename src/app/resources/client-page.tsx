@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useTina } from "tinacms/dist/react";
 import type { PageQuery } from "../../../tina/__generated__/types";
 import HeroBanner from "@/components/components/HeroBanner";
-import NewsletterCTA from "@/components/components/NewsletterCTA";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
 import Heading from "@/components/atoms/Heading";
@@ -121,17 +120,6 @@ export default function ResourcesClientPage(props: ResourcesClientPageProps) {
 
   const categories = (cardGridSection?.items ?? []).filter(Boolean);
 
-  /* Newsletter CTA */
-  const newsletterSection = data.page.sections?.find(
-    (s) => s?.__typename === "PageSectionsNewsletterCta",
-  ) as {
-    backgroundSrc?: string;
-    backgroundAlt?: string;
-    newsletterHeading?: string;
-    newsletterSubtext?: string;
-    overlayOpacity?: string;
-  } | undefined;
-
   return (
     <div className="min-h-screen bg-(--background) text-white">
 
@@ -166,16 +154,6 @@ export default function ResourcesClientPage(props: ResourcesClientPageProps) {
         </Section>
       )}
 
-      {/* ── Newsletter ─────────────────────────────────── */}
-      <NewsletterCTA
-        backgroundSrc={newsletterSection?.backgroundSrc ?? "/images/stockholm-metro-station-escalators-dark-underground.jpg"}
-        backgroundAlt={newsletterSection?.backgroundAlt ?? "Stockholm metro station escalators"}
-        heading={newsletterSection?.newsletterHeading ?? undefined}
-        subtext={newsletterSection?.newsletterSubtext ?? undefined}
-        overlayOpacity={
-          (newsletterSection?.overlayOpacity as "light" | "medium" | "heavy") ?? undefined
-        }
-      />
     </div>
   );
 }

@@ -22,6 +22,8 @@ import ContentTabs from "@/components/components/ContentTabs";
 import SlideCarousel from "@/components/components/SlideCarousel";
 import NewsletterCTA from "@/components/components/NewsletterCTA";
 import PodcastWaveBackground from "@/components/components/PodcastWaveBackground";
+import PodcastApplySection from "@/components/components/PodcastApplySection/PodcastApplySection";
+import PodcastHero from "@/components/components/PodcastHero/PodcastHero";
 import { GaiaChat } from "@/components/components/GaiaChat";
 import { GaiaVideoIntro } from "@/components/components/GaiaVideoIntro";
 import Split from "@/components/layout/Split";
@@ -152,6 +154,19 @@ export function renderSlotBlock(
       );
     }
 
+    case "PageSectionsSplitLayoutLeftEmbed":
+    case "PageSectionsSplitLayoutRightEmbed": {
+      const embed = block as unknown as { code?: string };
+      if (!embed.code) return null;
+      return (
+        <div
+          key={index}
+          className="w-full [&>iframe]:w-full [&>iframe]:rounded-2xl"
+          dangerouslySetInnerHTML={{ __html: embed.code }}
+        />
+      );
+    }
+
     default:
       return null;
   }
@@ -160,6 +175,43 @@ export function renderSlotBlock(
 /* ─── Section renderer ────────────────────────────────── */
 
 export function renderSection(section: PageSections, index: number): React.ReactNode {
+  // PodcastHero — handled before switch until TinaCMS types are regenerated
+  if ((section as unknown as { _template?: string })._template === "podcastHero" ||
+      (section as unknown as { __typename?: string }).__typename === "PageSectionsPodcastHero") {
+    const ph = section as unknown as {
+      podcastLabel?: string;
+      podcastTitle?: string;
+      podcastSubtitle?: string;
+      podcastThumbnail?: string;
+      podcastThumbnailAlt?: string;
+      podcastYoutubeId?: string;
+    };
+    return (
+      <PodcastHero
+        key={index}
+        label={ph.podcastLabel ?? "Podcast"}
+        title={ph.podcastTitle ?? ""}
+        subtitle={ph.podcastSubtitle ?? undefined}
+        thumbnailSrc={ph.podcastThumbnail ?? ""}
+        thumbnailAlt={ph.podcastThumbnailAlt ?? undefined}
+        youtubeId={ph.podcastYoutubeId ?? "tPaXVOrq_YY"}
+      />
+    );
+  }
+
+  // PodcastApply — handled before switch until TinaCMS types are regenerated
+  if ((section as unknown as { _template?: string })._template === "podcastApply" ||
+      (section as unknown as { __typename?: string }).__typename === "PageSectionsPodcastApply") {
+    const pa = section as unknown as { applyHeading?: string; applyDescription?: string };
+    return (
+      <PodcastApplySection
+        key={index}
+        heading={pa.applyHeading ?? undefined}
+        description={pa.applyDescription ?? undefined}
+      />
+    );
+  }
+
   // ContentTabs — handled before switch until TinaCMS types are regenerated
   if ((section as unknown as { _template?: string })._template === "contentTabs" ||
       (section as unknown as { __typename?: string }).__typename === "PageSectionsContentTabs") {
@@ -454,22 +506,23 @@ export function renderSection(section: PageSections, index: number): React.React
         />
       );
 
-    case "PageSectionsIntroSection":
+    case "PageSectionsIntroSection": {
+      const intro = section as unknown as {
+        heading?: string;
+        paragraphs?: string[];
+        imageSrc?: string;
+        imageAlt?: string;
+      };
       return (
         <IntroSection
           key={index}
-          heading={
-            (section as unknown as { heading?: string }).heading ?? ""
-          }
-          paragraphs={
-            (
-              (
-                section as unknown as { paragraphs?: string[] }
-              ).paragraphs?.filter(Boolean) as string[]
-            ) ?? []
-          }
+          heading={intro.heading ?? ""}
+          paragraphs={(intro.paragraphs?.filter(Boolean) as string[]) ?? []}
+          imageSrc={intro.imageSrc ?? undefined}
+          imageAlt={intro.imageAlt ?? undefined}
         />
       );
+    }
 
     case "PageSectionsAccordionFAQ":
       return (

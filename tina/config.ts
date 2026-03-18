@@ -51,6 +51,19 @@ const innerImageTemplate = {
   ],
 };
 
+const innerEmbedTemplate = {
+  name: "embed" as const,
+  label: "Embed (iframe)",
+  fields: [
+    {
+      type: "string" as const,
+      name: "code",
+      label: "Embed Code (HTML)",
+      ui: { component: "textarea" as const },
+    },
+  ],
+};
+
 const innerButtonGroupTemplate = {
   name: "buttonGroup" as const,
   label: "Button Group",
@@ -1795,6 +1808,16 @@ export default defineConfig({
                       component: "textarea",
                     },
                   },
+                  {
+                    type: "image",
+                    name: "imageSrc",
+                    label: "Image",
+                  },
+                  {
+                    type: "string",
+                    name: "imageAlt",
+                    label: "Image Alt Text",
+                  },
                 ],
               },
               /* ── Accordion FAQ ────────────────────────── */
@@ -1903,14 +1926,14 @@ export default defineConfig({
                     name: "left",
                     label: "Left Column",
                     list: true,
-                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate],
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate, innerEmbedTemplate],
                   },
                   {
                     type: "object",
                     name: "right",
                     label: "Right Column",
                     list: true,
-                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate],
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate, innerEmbedTemplate],
                   },
                 ],
               },
@@ -1973,6 +1996,63 @@ export default defineConfig({
                         ui: { component: "textarea" },
                       },
                     ],
+                  },
+                ],
+              },
+              /* ── Podcast Hero ──────────────────────────── */
+              {
+                name: "podcastHero",
+                label: "Podcast Hero",
+                fields: [
+                  {
+                    type: "string",
+                    name: "podcastLabel",
+                    label: "Label",
+                  },
+                  {
+                    type: "string",
+                    name: "podcastTitle",
+                    label: "Title",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "podcastSubtitle",
+                    label: "Subtitle",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "image",
+                    name: "podcastThumbnail",
+                    label: "Thumbnail Image",
+                  },
+                  {
+                    type: "string",
+                    name: "podcastThumbnailAlt",
+                    label: "Thumbnail Alt Text",
+                  },
+                  {
+                    type: "string",
+                    name: "podcastYoutubeId",
+                    label: "YouTube Video ID",
+                  },
+                ],
+              },
+              /* ── Podcast Apply Section ─────────────────── */
+              {
+                name: "podcastApply",
+                label: "Podcast Apply Section",
+                fields: [
+                  {
+                    type: "string",
+                    name: "applyHeading",
+                    label: "Heading",
+                  },
+                  {
+                    type: "string",
+                    name: "applyDescription",
+                    label: "Description",
+                    ui: { component: "textarea" },
                   },
                 ],
               },

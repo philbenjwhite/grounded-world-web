@@ -100,7 +100,7 @@ export default function RelatedArticles({ articles, heading = "Related Articles"
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               {article.categoryName && (
-                <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white bg-white/15 border border-white/20 backdrop-blur-sm">
+                <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-white bg-white/15 border border-white/10 backdrop-blur-sm">
                   {article.categoryName}
                 </span>
               )}

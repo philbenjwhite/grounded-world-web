@@ -64,7 +64,7 @@ export default function TeamMemberClientPage(
           <nav className="mb-8">
             <Link
               href="/about-us"
-              className="inline-flex items-center gap-2 text-sm text-[color:var(--font-color-tertiary)] border border-white/[0.12] rounded-full px-4 py-1.5 hover:border-[var(--color-cyan)] hover:text-[color:var(--color-cyan)] transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-[color:var(--font-color-tertiary)] border border-white/10 rounded-full px-4 py-1.5 hover:border-[var(--color-cyan)] hover:text-[color:var(--color-cyan)] transition-colors"
             >
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="shrink-0">
                 <path d="M10 4L6 8L10 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

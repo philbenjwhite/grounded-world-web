@@ -9,7 +9,7 @@
       "title": "Make a Creative Impact",
       "overlayOpacity": "medium",
       "contentAlign": "center",
-      "minHeight": "large",
+      "minHeight": "condensed",
       "bottomFade": true
     },
     {
@@ -20,10 +20,6 @@
         "And we like making them BIG, GOOD, FAST! Big ideas that change behavior and drive good growth – delivered at speed.",
         "So, if you feel the urgency to act and you can imagine a better world, then join us. Because we’re hellbent on creating one."
       ]
-    },
-    {
-      "_template": "logoCarousel",
-      "speed": 40
     }
   ]
 }

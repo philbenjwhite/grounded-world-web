@@ -93,11 +93,11 @@ export default function OurWorkClientPage(props: ClientPageProps) {
 
       {/* Two-column intro — data from TinaCMS introSection */}
       {introSection && (
-        <Section className="!py-16 md:!py-24 !pb-4 md:!pb-8">
+        <Section className="!py-8 md:!py-16 !pb-4 md:!pb-8">
           <Container className="px-[var(--layout-section-padding-x)]">
             <Split
               ratio="50/50"
-              gap="xl"
+              gap="lg"
               align="start"
               left={
                 <Heading level={2} size="h2" color="primary">
@@ -105,7 +105,7 @@ export default function OurWorkClientPage(props: ClientPageProps) {
                 </Heading>
               }
               right={
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                   {introParagraphs.map((text, i) => (
                     <Text key={i} size="body-lg" color="secondary">
                       {text}
@@ -118,9 +118,7 @@ export default function OurWorkClientPage(props: ClientPageProps) {
         </Section>
       )}
 
-      <LogoCarousel logos={logos} speed={logoSpeed} />
-
-      <WorkGrid items={props.workItems} sectionTitle="Projects" />
+      <WorkGrid items={props.workItems} sectionTitle="We Create Work that Works" />
 
       {/* Render remaining CMS sections (e.g. ctaBanner) */}
       {data.page.sections
