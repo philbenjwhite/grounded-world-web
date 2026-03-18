@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import cn from "classnames";
 import dynamic from "next/dynamic";
 import Image from "next/image";
@@ -8,6 +8,29 @@ import Heading from "../../atoms/Heading";
 import Text from "../../atoms/Text";
 import Button from "../../atoms/Button";
 import styles from "./HeroBanner.module.css";
+
+function isCalendlyUrl(url?: string): boolean {
+  return !!url && url.includes("calendly.com");
+}
+
+function openCalendlyPopup(url: string) {
+  // Load Calendly widget script if not already loaded
+  if (!(window as unknown as Record<string, unknown>).Calendly) {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.onload = () => {
+      (window as unknown as { Calendly: { initPopupWidget: (opts: { url: string }) => void } }).Calendly.initPopupWidget({ url });
+    };
+    document.head.appendChild(script);
+
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://assets.calendly.com/assets/external/widget.css";
+    document.head.appendChild(link);
+  } else {
+    (window as unknown as { Calendly: { initPopupWidget: (opts: { url: string }) => void } }).Calendly.initPopupWidget({ url });
+  }
+}
 
 const DefaultPlexusBackground = dynamic(
   () => import("../PlexusBackground/PlexusBackground"),
@@ -158,6 +181,16 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
   const isHtml = subtitle ? /<[a-z][\s\S]*>/i.test(subtitle) : false;
 
   const hasCta = ctaLabel && ctaHref;
+  const ctaIsCalendly = isCalendlyUrl(ctaHref);
+  const handleCalendlyClick = useCallback(
+    (e: React.MouseEvent) => {
+      if (ctaIsCalendly && ctaHref) {
+        e.preventDefault();
+        openCalendlyPopup(ctaHref);
+      }
+    },
+    [ctaIsCalendly, ctaHref],
+  );
   const hasSecondaryCta = secondaryCtaLabel && secondaryCtaHref;
   const hasFeatureImage = !!featureImageSrc;
   const hasHighlights = highlights && highlights.length > 0;
@@ -368,7 +401,8 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
                   {hasCta && (
                     <div data-tina-field={tinaFields?.ctaLabel}>
                       <Button
-                        href={ctaHref}
+                        href={ctaIsCalendly ? undefined : ctaHref}
+                        onClick={ctaIsCalendly ? handleCalendlyClick : undefined}
                         variant={ctaVariant === "outline" ? "secondary" : "primary"}
                       >
                         {ctaLabel}
