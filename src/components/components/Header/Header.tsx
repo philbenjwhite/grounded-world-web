@@ -173,22 +173,6 @@ const Header = ({ className, services = [] }: HeaderProps) => {
                   active={isActivePath(pathname, "/services")}
                   style={stagger()}
                 />
-                {serviceItems.length > 0 && (
-                  <div className={cn(styles.mobileItem, "flex flex-wrap justify-center gap-x-4 gap-y-1 mb-2")} style={stagger()}>
-                    {serviceItems.map((svc) => (
-                      <Link
-                        key={svc.id}
-                        href={svc.url}
-                        className={cn(
-                          "py-1 no-underline text-[13px] transition-colors duration-150",
-                          pathname === svc.url ? "text-white/70 font-medium" : "text-white/25 hover:text-white/50",
-                        )}
-                      >
-                        {svc.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
 
                 <MobileNavLink href="/about-us" label="About Us" active={isActivePath(pathname, "/about-us")} style={stagger()} />
                 <MobileNavLink href="/our-work" label="Our Work" active={isActivePath(pathname, "/our-work")} style={stagger()} />
@@ -199,20 +183,6 @@ const Header = ({ className, services = [] }: HeaderProps) => {
                   active={isActivePath(pathname, "/resources")}
                   style={stagger()}
                 />
-                <div className={cn(styles.mobileItem, "flex flex-wrap justify-center gap-x-4 gap-y-1 mb-2")} style={stagger()}>
-                  {resourceLinks.map((rt) => (
-                    <Link
-                      key={rt.label}
-                      href={rt.href}
-                      className={cn(
-                        "py-1 no-underline text-[13px] transition-colors duration-150",
-                        pathname === rt.href ? "text-white/70 font-medium" : "text-white/25 hover:text-white/50",
-                      )}
-                    >
-                      {rt.label}
-                    </Link>
-                  ))}
-                </div>
 
                 <MobileNavLink href="/gaia" label="Ask Gaia" active={isActivePath(pathname, "/gaia")} style={stagger()} />
               </nav>
