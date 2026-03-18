@@ -16,13 +16,6 @@ export interface GlobalSettings {
     heading?: string;
     body?: string;
   };
-  articleCta?: {
-    backgroundSrc?: string;
-    heading?: string;
-    subtext?: string;
-    primaryLabel?: string;
-    primaryHref?: string;
-  };
 }
 
 /** Read global settings from filesystem (fallback when TinaCMS is not available) */

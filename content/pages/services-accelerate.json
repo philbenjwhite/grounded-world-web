@@ -101,18 +101,6 @@
           "answer": "Yes. We specialise in developing balanced scorecards that track financial, social, and environmental indicators — ensuring your impact work is measurable, reportable, and tied to business performance."
         }
       ]
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/services/strategy-ink-texture.jpg",
-      "backgroundAlt": "Abstract ink in water texture",
-      "heading": "It's time to get grounded",
-      "primaryLabel": "Contact Us",
-      "primaryHref": "/about-us#contact",
-      "secondaryLabel": "Try the Workshop",
-      "secondaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
-      "secondaryExternal": true,
-      "overlayOpacity": "heavy"
     }
   ]
 }

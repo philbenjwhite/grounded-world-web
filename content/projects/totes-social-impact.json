@@ -5,7 +5,9 @@
   "featuredImage": "/images/work/totes/camera-crew.jpg",
   "logoImage": "/images/client-logos/tribes-on-the-edge-logo-white.png",
   "date": "2023-01-27T12:38:58.000Z",
-  "tags": ["Social Impact"],
+  "tags": [
+    "Social Impact"
+  ],
   "seoTitle": "TOTES Social Impact Campaign | Grounded World",
   "seoDescription": "See how Grounded World helped turn Céline Cousteau's Tribes on the Edge documentary into a grassroots social impact movement across the US.",
   "sections": [
@@ -110,13 +112,6 @@
           "body": "Beyond the 5th breath exercise, audiences were given ways in which they could support Tribes on the Edge by donating to the cause, sharing the documentary, and by advocating for educational programming for their local schools. They even were shown how their shopping habits, knowing which products to buy or not, could make an impact in protecting the land and its people."
         }
       ]
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/work/totes/mila-young.jpg",
-      "heading": "A website, outbound e-CRM and PR helped activate the tour and campaign",
-      "buttonText": "Watch the film on Amazon",
-      "buttonUrl": "https://www.amazon.com/Tribes-Edge-C%C3%A9line-Cousteau/dp/B08NMNY1FS"
     }
   ]
 }

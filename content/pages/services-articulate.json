@@ -182,18 +182,6 @@
           "answer": "Yes. Once we have a better understanding of the barriers and drivers within your category, we often share relevant case studies to help identify potential goals and build out the best roadmap and approach for your specific situation."
         }
       ]
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/services/strategy-ink-texture.jpg",
-      "backgroundAlt": "Abstract ink in water texture",
-      "heading": "It's time to get grounded",
-      "primaryLabel": "Contact Us",
-      "primaryHref": "/about-us#contact",
-      "secondaryLabel": "Book a Strategy Call",
-      "secondaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
-      "secondaryExternal": true,
-      "overlayOpacity": "heavy"
     }
   ]
 }

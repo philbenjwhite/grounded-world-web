@@ -204,14 +204,6 @@ const tinaMarkdownComponents = {
   pullQuote: EmbeddedPullQuote,
 };
 
-export interface ArticleCtaData {
-  backgroundSrc?: string;
-  heading?: string;
-  subtext?: string;
-  primaryLabel?: string;
-  primaryHref?: string;
-}
-
 interface ArticleDetailClientPageProps {
   query: string;
   variables: { relativePath: string };
@@ -222,13 +214,12 @@ interface ArticleDetailClientPageProps {
   relatedArticles: RelatedArticleItem[];
   slug: string;
   jsonLd: Record<string, unknown>;
-  articleCta?: ArticleCtaData;
 }
 
 export default function ArticleDetailClientPage(
   props: ArticleDetailClientPageProps,
 ) {
-  const { headings, authorData, readingTime, relatedArticles, slug, jsonLd, articleCta } =
+  const { headings, authorData, readingTime, relatedArticles, slug, jsonLd } =
     props;
 
   const { data } = useTina({
@@ -398,15 +389,6 @@ export default function ArticleDetailClientPage(
         </Section>
       )}
 
-      {/* CTA */}
-      <CTABanner
-        backgroundSrc={articleCta?.backgroundSrc || "/images/services/banner-bg.jpg"}
-        heading={articleCta?.heading || "It's time to get grounded"}
-        subtext={articleCta?.subtext || "Ready to activate your brand purpose and accelerate your impact? Let's talk."}
-        primaryLabel={articleCta?.primaryLabel || "Contact Us"}
-        primaryHref={articleCta?.primaryHref || "/contact-us"}
-        overlayOpacity="heavy"
-      />
     </>
   );
 }

@@ -2604,41 +2604,6 @@ export default defineConfig({
               },
             ],
           },
-          {
-            type: "object",
-            name: "articleCta",
-            label: "Article CTA Banner",
-            description:
-              "Default call-to-action banner shown at the bottom of blog articles",
-            fields: [
-              {
-                type: "image",
-                name: "backgroundSrc",
-                label: "Background Image",
-              },
-              {
-                type: "string",
-                name: "heading",
-                label: "Heading",
-              },
-              {
-                type: "string",
-                name: "subtext",
-                label: "Subtext",
-                ui: { component: "textarea" },
-              },
-              {
-                type: "string",
-                name: "primaryLabel",
-                label: "Button Label",
-              },
-              {
-                type: "string",
-                name: "primaryHref",
-                label: "Button Link",
-              },
-            ],
-          },
         ],
       },
     ],

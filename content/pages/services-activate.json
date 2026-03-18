@@ -185,18 +185,6 @@
           "answer": "Both — we can lead or integrate with your existing agency partners."
         }
       ]
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/services/strategy-ink-texture.jpg",
-      "backgroundAlt": "Abstract ink in water texture",
-      "heading": "It's time to get grounded",
-      "primaryLabel": "Contact Us",
-      "primaryHref": "/about-us#contact",
-      "secondaryLabel": "Try the Workshop",
-      "secondaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
-      "secondaryExternal": true,
-      "overlayOpacity": "heavy"
     }
   ]
 }

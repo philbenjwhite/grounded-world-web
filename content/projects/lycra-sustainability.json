@@ -5,7 +5,9 @@
   "featuredImage": "/images/work/lycra/hero-top.jpg",
   "logoImage": "/images/client-logos/lycra-logo-white.png",
   "date": "2023-01-24T12:00:00.000Z",
-  "tags": ["Sustainability Marketing"],
+  "tags": [
+    "Sustainability Marketing"
+  ],
   "seoTitle": "LYCRA Sustainability Campaign | Grounded World",
   "seoDescription": "See how Grounded World launched the Keep in the Loop with LYCRA sustainability campaign to drive circularity across the apparel industry.",
   "sections": [
@@ -84,11 +86,6 @@
     {
       "_template": "richText",
       "body": "### What We Did:\n\n* Launched the campaign with a dedicated website, trade media, PR, and marketing communications\n* Created a registration pathway for brand and retailer partnerships\n* Developed a nine-month series of global thought-leadership panels featuring industry experts\n* Launched COOLMAX® and THERMOLITE® products made from 100% textile waste\n* Announced a collaboration with Qore® LLC for renewable LYCRA® fiber from QIRA®\n* Participated in the UN's Fashion Conscious & Lifestyle network summit"
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/work/lycra/gymnastics.png",
-      "heading": "This campaign is still live and scaling. Results are impressive, but confidential."
     }
   ]
 }

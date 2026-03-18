@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { promises as fsPromises } from "fs";
 import path from "path";
 import serverClient from "../../../../../tina/server-client";
-import { getGlobalSettings } from "@/lib/global-settings";
 import ArticleDetailClientPage from "./client-page";
 import type { RelatedArticleItem } from "@/components/components/RelatedArticles/RelatedArticles";
 import type { AuthorData } from "@/lib/authors";
@@ -279,10 +278,6 @@ export default async function ArticleDetailPage({
     timeRequired: `PT${readingTime}M`,
   };
 
-  // Fetch global article CTA settings
-  const globalSettings = await getGlobalSettings();
-  const articleCta = globalSettings?.articleCta ?? undefined;
-
   return (
     <ArticleDetailClientPage
       query={result.query}
@@ -294,7 +289,6 @@ export default async function ArticleDetailPage({
       relatedArticles={relatedArticles}
       slug={slug}
       jsonLd={jsonLd}
-      articleCta={articleCta}
     />
   );
 }

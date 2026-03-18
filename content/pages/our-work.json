@@ -16,22 +16,14 @@
       "_template": "introSection",
       "heading": "We are an award-winning creative agency",
       "paragraphs": [
-        "What does a multi-award winning creative impact agency do, exactly? Well, we use the power of storytelling and ideas to change the world \u2013 because they\u2019re the only things that ever have.",
-        "And we like making them BIG, GOOD, FAST! Big ideas that change behavior and drive good growth \u2013 delivered at speed.",
-        "So, if you feel the urgency to act and you can imagine a better world, then join us. Because we\u2019re hellbent on creating one."
+        "What does a multi-award winning creative impact agency do, exactly? Well, we use the power of storytelling and ideas to change the world – because they’re the only things that ever have.",
+        "And we like making them BIG, GOOD, FAST! Big ideas that change behavior and drive good growth – delivered at speed.",
+        "So, if you feel the urgency to act and you can imagine a better world, then join us. Because we’re hellbent on creating one."
       ]
     },
     {
       "_template": "logoCarousel",
       "speed": 40
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
-      "backgroundAlt": "Stockholm metro station escalators",
-      "heading": "It's time to get grounded",
-      "primaryLabel": "Contact Us",
-      "primaryHref": "/contact-us"
     }
   ]
 }

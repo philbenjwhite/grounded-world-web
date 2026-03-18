@@ -30,19 +30,19 @@
           "icon": "Trophy",
           "color": "#00AEEF",
           "title": "Multi-Award Winning",
-          "body": "Recognized globally for creative impact work \u2014 from Cannes Lions to The Webby Awards. We combine big-brand strategic thinking with the speed and agility of a boutique studio."
+          "body": "Recognized globally for creative impact work — from Cannes Lions to The Webby Awards. We combine big-brand strategic thinking with the speed and agility of a boutique studio."
         },
         {
           "icon": "Rocket",
           "color": "#FFA603",
           "title": "Exponential Organization",
-          "body": "Lean by design, scaling with purpose. Our network of specialists assembles the right team for every challenge \u2014 enterprise-level results without enterprise-level overhead."
+          "body": "Lean by design, scaling with purpose. Our network of specialists assembles the right team for every challenge — enterprise-level results without enterprise-level overhead."
         },
         {
           "icon": "Leaf",
           "color": "#1CC35B",
           "title": "Certified B Corp",
-          "body": "Meeting the highest verified standards of social and environmental performance since 2018. We don\u2019t just help clients embed sustainability \u2014 we live it in every decision we make."
+          "body": "Meeting the highest verified standards of social and environmental performance since 2018. We don’t just help clients embed sustainability — we live it in every decision we make."
         }
       ]
     },
@@ -91,19 +91,19 @@
       "left": [
         {
           "_template": "richText",
-          "body": "## Meet the Founders\n\nWe believe every business can drive exponential transformation when grounded in purpose and profit. Making money and making a difference aren\u2019t competing forces \u2014 by solving the world\u2019s biggest problems, we unlock its biggest opportunities.\n\nSo we left global agency life in 2018 and started our own social innovation and boutique marketing agency to do exactly that."
+          "body": "## Meet the Founders\n\nWe believe every business can drive exponential transformation when grounded in purpose and profit. Making money and making a difference aren’t competing forces — by solving the world’s biggest problems, we unlock its biggest opportunities.\n\nSo we left global agency life in 2018 and started our own social innovation and boutique marketing agency to do exactly that."
         },
         {
           "_template": "buttonGroup",
           "buttons": [
             {
-              "label": "Phil\u2019s LinkedIn",
+              "label": "Phil’s LinkedIn",
               "href": "https://www.linkedin.com/in/phil-white-03190514/",
               "variant": "secondary",
               "external": true
             },
             {
-              "label": "Heidi\u2019s LinkedIn",
+              "label": "Heidi’s LinkedIn",
               "href": "https://www.linkedin.com/in/heidischoeneck/",
               "variant": "secondary",
               "external": true
@@ -122,20 +122,11 @@
     },
     {
       "_template": "contactSection",
-      "heading": "Let\u2019s Talk",
+      "heading": "Let’s Talk",
       "description": "Ready to activate purpose and accelerate impact? Book a discovery call or drop us a message.",
       "bookingUrl": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
       "bookingLabel": "Book a Discovery Call",
       "email": "getgrounded@grounded.world"
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
-      "backgroundAlt": "Stockholm metro station escalators",
-      "heading": "It\u2019s time to get grounded",
-      "primaryLabel": "Contact Us",
-      "primaryHref": "/about-us#contact",
-      "overlayOpacity": "medium"
     }
   ]
 }

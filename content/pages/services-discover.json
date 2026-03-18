@@ -189,18 +189,6 @@
           "answer": "IAT is a well-established behavioural science methodology used in academic research for decades. We apply it in a commercial context to measure unconscious associations and biases that traditional surveys miss. Results are statistically validated and triangulated against our qualitative findings for maximum reliability."
         }
       ]
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
-      "backgroundAlt": "Stockholm metro station with atmospheric escalators",
-      "heading": "It's time to get grounded",
-      "primaryLabel": "Contact Us",
-      "primaryHref": "/about-us#contact",
-      "secondaryLabel": "Book a Discovery Call",
-      "secondaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
-      "secondaryExternal": true,
-      "overlayOpacity": "heavy"
     }
   ]
 }

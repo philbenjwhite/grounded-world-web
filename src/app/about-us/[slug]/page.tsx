@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { promises as fs } from "fs";
 import path from "path";
 import serverClient from "../../../../tina/server-client";
-import { getGlobalSettings } from "@/lib/global-settings";
 import TeamMemberClientPage from "./client-page";
 import type { RelatedArticleItem } from "@/components/components/RelatedArticles/RelatedArticles";
 
@@ -164,10 +163,7 @@ export default async function TeamMemberPage({
     notFound();
   }
 
-  const [articles, globalSettings] = await Promise.all([
-    getArticlesByAuthor(slug),
-    getGlobalSettings(),
-  ]);
+  const articles = await getArticlesByAuthor(slug);
 
   return (
     <TeamMemberClientPage
@@ -176,7 +172,6 @@ export default async function TeamMemberPage({
       data={result.data}
       articles={articles}
       slug={slug}
-      articleCta={globalSettings?.articleCta ?? undefined}
     />
   );
 }

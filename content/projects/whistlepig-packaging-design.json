@@ -5,7 +5,9 @@
   "featuredImage": "/images/work/whistlepig/pour-drink-hero.jpg",
   "logoImage": "/images/client-logos/whistlepig-logo-white.jpg",
   "date": "2023-01-27T12:00:00.000Z",
-  "tags": ["Packaging Design"],
+  "tags": [
+    "Packaging Design"
+  ],
   "seoTitle": "WhistlePig Packaging Design | Grounded World",
   "seoDescription": "See how Grounded World created award-winning packaging design for WhistlePig Whiskey's limited-edition Berkshire Pig decanter.",
   "sections": [
@@ -85,7 +87,7 @@
       "left": [
         {
           "_template": "richText",
-          "body": "### Idea:\n\nIn conjunction, WhistlePig auctioned an original 19th-century, antique Berkshire Bitter Pig filled with 20-year-old Rye Whiskey \u2013 10 years for the first decade, 10 for the next \u2013 at an auction hosted by Christie's in June 2022. The lot closed for $125,000 by winning bidder Rally 2 Give, with all proceeds benefiting the next generation of world citizens via the Gumball 3000 Foundation."
+          "body": "### Idea:\n\nIn conjunction, WhistlePig auctioned an original 19th-century, antique Berkshire Bitter Pig filled with 20-year-old Rye Whiskey – 10 years for the first decade, 10 for the next – at an auction hosted by Christie's in June 2022. The lot closed for $125,000 by winning bidder Rally 2 Give, with all proceeds benefiting the next generation of world citizens via the Gumball 3000 Foundation."
         }
       ],
       "right": [
@@ -99,11 +101,6 @@
     {
       "_template": "richText",
       "body": "### What We Did:\n\n* Deemed as one of the 15 Most Exciting Bourbons and Whiskeys of 2022\n* Became an instant collectors item with Berkshire Pigs bottle changing hands for $800 (if you could get close enough for a butt sniff)\n* Generated $125,000 for charity"
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/work/whistlepig/piggybank-bottom.jpg",
-      "heading": "Now that's a bottle design you can bank on."
     }
   ]
 }
