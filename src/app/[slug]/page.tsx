@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import serverClient from "../../../tina/server-client";
+import { getPageMetadata } from "@/lib/page-metadata";
 import ClientPage from "./client-page";
 
 interface PageParams {
@@ -14,6 +16,15 @@ async function fetchPage(slug: string) {
   } catch {
     return null;
   }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<PageParams>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  return getPageMetadata(`${slug}.json`, slug);
 }
 
 export default async function DynamicPage({

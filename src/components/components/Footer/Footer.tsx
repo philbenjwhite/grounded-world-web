@@ -14,6 +14,13 @@ import nlStyles from "../NewsletterCTA/NewsletterCTA.module.css";
 
 export interface FooterProps {
   className?: string;
+  newsletter?: {
+    heading?: string;
+    body?: string;
+  };
+  social?: {
+    linkedin?: string;
+  };
 }
 
 const SERVICE_LINKS = [
@@ -33,7 +40,7 @@ const COMPANY_LINKS = [
 const footerLinkClass =
   "text-[length:var(--font-size-body-sm)] text-[color:var(--font-color-secondary)] hover:text-[color:var(--font-color-primary)] transition-colors";
 
-const Footer = ({ className }: FooterProps) => {
+const Footer = ({ className, newsletter, social }: FooterProps) => {
   const currentYear = new Date().getFullYear();
   const [modalOpen, setModalOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -65,10 +72,10 @@ const Footer = ({ className }: FooterProps) => {
           <div className="py-10 md:py-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="shrink-0">
               <Heading level={3} size="h4" color="primary">
-                Stay Grounded
+                {newsletter?.heading || "Stay Grounded"}
               </Heading>
               <Text size="body-md" color="secondary" as="p" className="mt-2 max-w-sm">
-                Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.
+                {newsletter?.body || "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands."}
               </Text>
             </div>
 
@@ -252,7 +259,7 @@ const Footer = ({ className }: FooterProps) => {
             </Text>
 
             <a
-              href="https://www.linkedin.com/company/groundedworld/"
+              href={social?.linkedin || "https://www.linkedin.com/company/groundedworld/"}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[color:var(--font-color-tertiary)] hover:text-[color:var(--font-color-primary)] transition-colors"

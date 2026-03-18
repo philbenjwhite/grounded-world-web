@@ -1,14 +1,18 @@
+import type { Metadata } from "next";
 import { promises as fs } from "fs";
 import path from "path";
 import { getAuthorName } from "@/lib/authors";
+import { getPageMetadata } from "@/lib/page-metadata";
 import serverClient from "../../../../tina/server-client";
 import ArticlesClientPage from "./client-page";
 
-export const metadata = {
-  title: "Articles & Blogs | Grounded World",
-  description:
+export async function generateMetadata(): Promise<Metadata> {
+  return getPageMetadata(
+    "resources-articles.json",
+    "Articles & Blogs | Grounded World",
     "An ever-evolving library of insights, provocations, and points of view from the Grounded team on brand purpose, sustainability, and social impact.",
-};
+  );
+}
 
 export interface ArticleItem {
   slug: string;
@@ -24,17 +28,6 @@ export interface ArticleItem {
   categoryColor?: string;
 }
 
-/* Category slug → display name mapping */
-const CATEGORY_NAMES: Record<string, string> = {
-  "brand-purpose": "Brand Purpose",
-  "brand-activism": "Brand Activism",
-  "social-impact": "Social Impact",
-  partnerships: "Partnerships",
-  "retail-shopper": "Retail & Shopper",
-  strategy: "Strategy",
-  sustainability: "Sustainability",
-};
-
 /** Extract the first image path from markdown body content */
 const MD_IMAGE_RE = /!\[[^\]]*\]\(([^)]+)\)/;
 function extractFirstImage(markdown: string): string | undefined {
@@ -43,15 +36,15 @@ function extractFirstImage(markdown: string): string | undefined {
 }
 
 /** Cache of category JSON data keyed by slug */
-const categoryDataCache = new Map<string, { icon?: string; placeholderColor?: string }>();
+const categoryDataCache = new Map<string, { name?: string; icon?: string; placeholderColor?: string }>();
 
-async function getCategoryData(slug: string): Promise<{ icon?: string; placeholderColor?: string }> {
+async function getCategoryData(slug: string): Promise<{ name?: string; icon?: string; placeholderColor?: string }> {
   if (categoryDataCache.has(slug)) return categoryDataCache.get(slug)!;
   try {
     const filePath = path.join(process.cwd(), "content", "categories", `${slug}.json`);
     const raw = await fs.readFile(filePath, "utf-8");
-    const data = JSON.parse(raw) as { icon?: string; placeholderColor?: string };
-    const result = { icon: data.icon, placeholderColor: data.placeholderColor };
+    const data = JSON.parse(raw) as { name?: string; icon?: string; placeholderColor?: string };
+    const result = { name: data.name, icon: data.icon, placeholderColor: data.placeholderColor };
     categoryDataCache.set(slug, result);
     return result;
   } catch {
@@ -125,9 +118,7 @@ async function fetchPosts(): Promise<ArticleItem[]> {
         featuredImage,
         author: authorSlug,
         authorName: authorSlug ? getAuthorName(authorSlug) : undefined,
-        categoryName: categorySlug
-          ? (CATEGORY_NAMES[categorySlug] ?? categorySlug)
-          : undefined,
+        categoryName: catData?.name ?? categorySlug ?? undefined,
         categorySlug: categorySlug ?? undefined,
         categoryIcon: catData?.icon,
         categoryColor: catData?.placeholderColor,

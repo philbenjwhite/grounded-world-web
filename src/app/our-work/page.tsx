@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import serverClient from "../../../tina/server-client";
+import { getPageMetadata } from "@/lib/page-metadata";
 import type { WorkItem } from "@/components/components/WorkGrid";
 import OurWorkClientPage from "./client-page";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return getPageMetadata(
+    "our-work.json",
+    "Our Work | Grounded World",
+    "Explore the projects and case studies from Grounded World — activating purpose and accelerating impact for brands worldwide.",
+  );
+}
 
 export default async function OurWorkPage() {
   /* Fetch page content (heroBanner config) from TinaCMS */

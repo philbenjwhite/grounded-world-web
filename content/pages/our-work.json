@@ -24,6 +24,14 @@
     {
       "_template": "logoCarousel",
       "speed": 40
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
+      "backgroundAlt": "Stockholm metro station escalators",
+      "heading": "It's time to get grounded",
+      "primaryLabel": "Contact Us",
+      "primaryHref": "/contact-us"
     }
   ]
 }

@@ -14,18 +14,27 @@ import Text from "@/components/atoms/Text";
 import RelatedArticles from "@/components/components/RelatedArticles";
 import CTABanner from "@/components/components/CTABanner";
 
+interface ArticleCtaData {
+  backgroundSrc?: string;
+  heading?: string;
+  subtext?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+}
+
 interface TeamMemberClientPageProps {
   query: string;
   variables: { relativePath: string };
   data: { teamMember: TeamMemberQuery["teamMember"] };
   articles: RelatedArticleItem[];
   slug: string;
+  articleCta?: ArticleCtaData;
 }
 
 export default function TeamMemberClientPage(
   props: TeamMemberClientPageProps,
 ) {
-  const { articles, slug } = props;
+  const { articles, slug, articleCta } = props;
 
   const { data } = useTina({
     query: props.query,
@@ -175,11 +184,11 @@ export default function TeamMemberClientPage(
 
       {/* CTA */}
       <CTABanner
-        backgroundSrc="/images/services/banner-bg.jpg"
-        heading="It's time to get grounded"
-        subtext="Ready to activate your brand purpose and accelerate your impact? Let's talk."
-        primaryLabel="Contact Us"
-        primaryHref="/contact-us"
+        backgroundSrc={articleCta?.backgroundSrc || "/images/services/banner-bg.jpg"}
+        heading={articleCta?.heading || "It's time to get grounded"}
+        subtext={articleCta?.subtext || "Ready to activate your brand purpose and accelerate your impact? Let's talk."}
+        primaryLabel={articleCta?.primaryLabel || "Contact Us"}
+        primaryHref={articleCta?.primaryHref || "/contact-us"}
         overlayOpacity="heavy"
       />
     </>

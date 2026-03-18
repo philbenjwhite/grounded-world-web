@@ -3,30 +3,20 @@ import type { Metadata } from "next";
 import { promises as fs } from "fs";
 import path from "path";
 import serverClient from "../../../../tina/server-client";
+import { getGlobalSettings } from "@/lib/global-settings";
 import TeamMemberClientPage from "./client-page";
 import type { RelatedArticleItem } from "@/components/components/RelatedArticles/RelatedArticles";
 
-/* Category slug → display name mapping */
-const CATEGORY_NAMES: Record<string, string> = {
-  "brand-purpose": "Brand Purpose",
-  "brand-activism": "Brand Activism",
-  "social-impact": "Social Impact",
-  partnerships: "Partnerships",
-  "retail-shopper": "Retail & Shopper",
-  strategy: "Strategy",
-  sustainability: "Sustainability",
-};
-
 /** Cache of category JSON data keyed by slug */
-const categoryDataCache = new Map<string, { icon?: string; placeholderColor?: string }>();
+const categoryDataCache = new Map<string, { name?: string; icon?: string; placeholderColor?: string }>();
 
-async function getCategoryData(slug: string): Promise<{ icon?: string; placeholderColor?: string }> {
+async function getCategoryData(slug: string): Promise<{ name?: string; icon?: string; placeholderColor?: string }> {
   if (categoryDataCache.has(slug)) return categoryDataCache.get(slug)!;
   try {
     const filePath = path.join(process.cwd(), "content", "categories", `${slug}.json`);
     const raw = await fs.readFile(filePath, "utf-8");
-    const data = JSON.parse(raw) as { icon?: string; placeholderColor?: string };
-    const result = { icon: data.icon, placeholderColor: data.placeholderColor };
+    const data = JSON.parse(raw) as { name?: string; icon?: string; placeholderColor?: string };
+    const result = { name: data.name, icon: data.icon, placeholderColor: data.placeholderColor };
     categoryDataCache.set(slug, result);
     return result;
   } catch {
@@ -139,9 +129,7 @@ async function getArticlesByAuthor(
           date: dateMatch?.[1] ?? "",
           featuredImage: imageMatch?.[1],
           categorySlug,
-          categoryName: categorySlug
-            ? (CATEGORY_NAMES[categorySlug] ?? categorySlug)
-            : undefined,
+          categoryName: catData?.name ?? categorySlug ?? undefined,
           categoryIcon: catData?.icon,
           categoryColor: catData?.placeholderColor,
         });
@@ -176,7 +164,10 @@ export default async function TeamMemberPage({
     notFound();
   }
 
-  const articles = await getArticlesByAuthor(slug);
+  const [articles, globalSettings] = await Promise.all([
+    getArticlesByAuthor(slug),
+    getGlobalSettings(),
+  ]);
 
   return (
     <TeamMemberClientPage
@@ -185,6 +176,7 @@ export default async function TeamMemberPage({
       data={result.data}
       articles={articles}
       slug={slug}
+      articleCta={globalSettings?.articleCta ?? undefined}
     />
   );
 }

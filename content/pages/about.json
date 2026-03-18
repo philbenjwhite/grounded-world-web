@@ -16,7 +16,9 @@
       "overlayOpacity": "medium",
       "contentAlign": "center",
       "minHeight": "large",
-      "bottomFade": false
+      "bottomFade": false,
+      "badgeSrc": "/bcorp-logo.svg",
+      "badgeAlt": "Certified B Corporation"
     },
     {
       "_template": "featureCards",
@@ -45,8 +47,39 @@
       ]
     },
     {
-      "_template": "logoCarousel",
-      "speed": 40
+      "_template": "logoGrid",
+      "logos": [
+        {
+          "src": "/images/badges/B-Corp-Logo-White-RGB.png",
+          "alt": "Certified B Corporation",
+          "href": "https://www.bcorporation.net/en-us/certification/"
+        },
+        {
+          "src": "/images/badges/RealLeaders_TopImpactCompanies-port-white.png",
+          "alt": "Real Leaders Top Impact Companies",
+          "href": "https://real-leaders.com/top-impact-companies-2025/"
+        },
+        {
+          "src": "/images/badges/1-planet.png",
+          "alt": "1% for the Planet",
+          "href": "https://www.onepercentfortheplanet.org/"
+        },
+        {
+          "src": "/images/badges/sbt.png",
+          "alt": "Science Based Targets",
+          "href": "https://sciencebasedtargets.org/"
+        },
+        {
+          "src": "/images/badges/ANA-300px.png",
+          "alt": "ANA",
+          "href": "https://www.ana.net/brandpurpose"
+        },
+        {
+          "src": "/images/badges/eea-logo-white.png",
+          "alt": "Creatives for Climate",
+          "href": "https://www.creativesforclimate.co/partner"
+        }
+      ]
     },
     {
       "_template": "splitLayout",

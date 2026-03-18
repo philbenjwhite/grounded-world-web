@@ -1095,6 +1095,37 @@ export default defineConfig({
             description: "URL path for this page (e.g. 'about', 'services')",
           },
           {
+            type: "string",
+            name: "seoTitle",
+            label: "SEO Title",
+            description:
+              "Custom title for search engines (defaults to page title if empty)",
+          },
+          {
+            type: "string",
+            name: "seoDescription",
+            label: "SEO Description",
+            description:
+              "Custom meta description for search engines (max 160 characters)",
+            ui: {
+              component: "textarea",
+            },
+          },
+          {
+            type: "image",
+            name: "seoImage",
+            label: "Social Share Image",
+            description:
+              "Image shown when this page is shared on social media (recommended 1200x630px)",
+          },
+          {
+            type: "boolean",
+            name: "noIndex",
+            label: "Hide from Search Engines",
+            description:
+              "When enabled, this page will not be indexed by search engines",
+          },
+          {
             type: "object",
             name: "sections",
             label: "Page Sections",
@@ -1265,6 +1296,18 @@ export default defineConfig({
                     type: "string",
                     name: "featureImageAlt",
                     label: "Feature Image Alt Text",
+                  },
+                  {
+                    type: "image",
+                    name: "badgeSrc",
+                    label: "Badge Image",
+                    description:
+                      "Small overlay badge shown in the bottom-left corner of the hero (e.g. B Corp logo)",
+                  },
+                  {
+                    type: "string",
+                    name: "badgeAlt",
+                    label: "Badge Alt Text",
                   },
                   {
                     type: "string",
@@ -2369,6 +2412,39 @@ export default defineConfig({
                   },
                 ],
               },
+              /* ── Logo Grid ─────────────────────────────── */
+              {
+                name: "logoGrid",
+                label: "Logo Grid",
+                fields: [
+                  {
+                    type: "object",
+                    name: "logos",
+                    label: "Logos",
+                    list: true,
+                    fields: [
+                      {
+                        type: "image",
+                        name: "src",
+                        label: "Logo Image",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "alt",
+                        label: "Alt Text",
+                        required: true,
+                      },
+                      {
+                        type: "string",
+                        name: "href",
+                        label: "Link URL",
+                        description: "Optional link when the logo is clicked",
+                      },
+                    ],
+                  },
+                ],
+              },
               /* ── Card Grid ─────────────────────────────── */
               {
                 name: "cardGrid",
@@ -2439,6 +2515,127 @@ export default defineConfig({
                     ],
                   },
                 ],
+              },
+            ],
+          },
+        ],
+      },
+      /* ── Global Settings (singleton) ───────────────────── */
+      {
+        name: "global",
+        label: "Global Settings",
+        path: "content/global",
+        format: "json",
+        ui: {
+          global: true,
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        match: {
+          include: "index",
+        },
+        fields: [
+          {
+            type: "string",
+            name: "siteTitle",
+            label: "Default Site Title",
+            description:
+              "Used when a page doesn't set its own SEO title",
+          },
+          {
+            type: "string",
+            name: "siteDescription",
+            label: "Default Site Description",
+            ui: { component: "textarea" },
+          },
+          {
+            type: "string",
+            name: "titleTemplate",
+            label: "Title Template",
+            description:
+              "Pattern for page titles, e.g. '%s | Grounded World'",
+          },
+          {
+            type: "image",
+            name: "defaultOgImage",
+            label: "Default Social Share Image",
+            description:
+              "Fallback image for social sharing when a page doesn't set its own (recommended 1200x630px)",
+          },
+          {
+            type: "object",
+            name: "social",
+            label: "Social Links",
+            fields: [
+              {
+                type: "string",
+                name: "linkedin",
+                label: "LinkedIn URL",
+              },
+              {
+                type: "string",
+                name: "instagram",
+                label: "Instagram URL",
+              },
+              {
+                type: "string",
+                name: "twitter",
+                label: "Twitter / X URL",
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "newsletter",
+            label: "Newsletter",
+            fields: [
+              {
+                type: "string",
+                name: "heading",
+                label: "Heading",
+              },
+              {
+                type: "string",
+                name: "body",
+                label: "Body Copy",
+                ui: { component: "textarea" },
+              },
+            ],
+          },
+          {
+            type: "object",
+            name: "articleCta",
+            label: "Article CTA Banner",
+            description:
+              "Default call-to-action banner shown at the bottom of blog articles",
+            fields: [
+              {
+                type: "image",
+                name: "backgroundSrc",
+                label: "Background Image",
+              },
+              {
+                type: "string",
+                name: "heading",
+                label: "Heading",
+              },
+              {
+                type: "string",
+                name: "subtext",
+                label: "Subtext",
+                ui: { component: "textarea" },
+              },
+              {
+                type: "string",
+                name: "primaryLabel",
+                label: "Button Label",
+              },
+              {
+                type: "string",
+                name: "primaryHref",
+                label: "Button Link",
               },
             ],
           },

@@ -5,7 +5,6 @@ import Image from "next/image";
 import type { PageQuery, PageSections } from "../../../tina/__generated__/types";
 import HeroBanner from "@/components/components/HeroBanner";
 import { renderSection as renderSharedSection } from "@/lib/tina-renderers";
-import LogoGrid from "@/components/components/LogoGrid";
 
 /* ─── About-page section renderer ─────────────────────── */
 
@@ -44,24 +43,21 @@ function renderSection(section: PageSections, index: number) {
             bottomFade={section.bottomFade ?? false}
           />
 
-          {/* B Corp badge — bottom-left of hero (about-page specific) */}
-          <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12 z-30 flex items-center gap-3">
-            <Image
-              src="/bcorp-logo.svg"
-              alt="Certified B Corporation"
-              width={120}
-              height={120}
-              className="h-16 md:h-20 lg:h-24 w-auto opacity-60 brightness-[10]"
-            />
-          </div>
+          {/* Badge overlay — bottom-left of hero (e.g. B Corp logo) */}
+          {typeof (section as Record<string, unknown>).badgeSrc === "string" && (
+            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12 z-30 flex items-center gap-3">
+              <Image
+                src={(section as Record<string, unknown>).badgeSrc as string}
+                alt={((section as Record<string, unknown>).badgeAlt as string) || ""}
+                width={120}
+                height={120}
+                className="h-16 md:h-20 lg:h-24 w-auto opacity-60 brightness-[10]"
+              />
+            </div>
+          )}
         </div>
       </div>
     );
-  }
-
-  /* Replace LogoCarousel with static LogoGrid on about page */
-  if (section.__typename === "PageSectionsLogoCarousel") {
-    return <LogoGrid key={index} />;
   }
 
   /* All other sections use the shared renderer */

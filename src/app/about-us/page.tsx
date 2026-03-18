@@ -1,11 +1,15 @@
+import type { Metadata } from "next";
 import serverClient from "../../../tina/server-client";
+import { getPageMetadata } from "@/lib/page-metadata";
 import AboutClientPage from "./client-page";
 
-export const metadata = {
-  title: "About Us | Grounded World",
-  description:
+export async function generateMetadata(): Promise<Metadata> {
+  return getPageMetadata(
+    "about.json",
+    "About Us | Grounded World",
     "Grounded is a B Corp certified, multi-award-winning boutique marketing agency activating purpose and accelerating impact.",
-};
+  );
+}
 
 export default async function AboutPage() {
   const result = await serverClient.queries.page({

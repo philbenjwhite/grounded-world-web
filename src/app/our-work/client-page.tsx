@@ -11,7 +11,7 @@ import Heading from "@/components/atoms/Heading";
 import Text from "@/components/atoms/Text";
 import WorkGrid from "@/components/components/WorkGrid";
 import type { WorkItem } from "@/components/components/WorkGrid";
-import CTABanner from "@/components/components/CTABanner";
+import { renderSection } from "@/lib/tina-renderers";
 
 interface ClientPageProps {
   query: string;
@@ -122,14 +122,17 @@ export default function OurWorkClientPage(props: ClientPageProps) {
 
       <WorkGrid items={props.workItems} sectionTitle="Projects" />
 
-      <CTABanner
-        backgroundSrc="/images/stockholm-metro-station-escalators-dark-underground.jpg"
-        backgroundAlt="Stockholm metro station escalators"
-        heading="It's time to get grounded"
-        primaryLabel="Contact Us"
-        primaryHref="/contact-us"
-        className="px-4 md:px-6 lg:px-8 pb-16 md:pb-24"
-      />
+      {/* Render remaining CMS sections (e.g. ctaBanner) */}
+      {data.page.sections
+        ?.filter(
+          (s) =>
+            s?.__typename !== "PageSectionsHeroBanner" &&
+            s?.__typename !== "PageSectionsIntroSection" &&
+            s?.__typename !== "PageSectionsLogoCarousel",
+        )
+        .map((section, i) =>
+          section ? renderSection(section as PageSections, i) : null,
+        )}
     </div>
   );
 }

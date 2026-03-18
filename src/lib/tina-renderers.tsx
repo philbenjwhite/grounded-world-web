@@ -10,6 +10,7 @@ import HeroBanner from "@/components/components/HeroBanner";
 import ShowcaseGrid from "@/components/components/ShowcaseGrid";
 import ExpandingCardPanel from "@/components/components/ExpandingCardPanel";
 import LogoCarousel from "@/components/components/LogoCarousel";
+import LogoGrid from "@/components/components/LogoGrid";
 import IntroSection from "@/components/components/IntroSection";
 import AccordionFAQ from "@/components/components/AccordionFAQ";
 import VideoHero from "@/components/components/VideoHero";
@@ -750,6 +751,17 @@ export function renderSection(section: PageSections, index: number): React.React
           </Container>
         </Section>
       );
+    }
+
+    case "PageSectionsLogoGrid": {
+      const lg = section as unknown as {
+        logos?: Array<{ src?: string; alt?: string; href?: string }>;
+      };
+      const logos = lg.logos
+        ?.filter((l): l is { src: string; alt: string; href?: string } =>
+          Boolean(l?.src && l?.alt),
+        );
+      return <LogoGrid key={index} logos={logos} />;
     }
 
     case "PageSectionsCardGrid": {

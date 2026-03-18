@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/components/Header";
 import Footer from "@/components/components/Footer";
 import client from "../../tina/__generated__/client";
+import { getGlobalSettings } from "@/lib/global-settings";
 import type { Service } from "../../tina/__generated__/types";
 
 const geistSans = Geist({
@@ -22,14 +23,34 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export const metadata: Metadata = {
-  title: {
-    default: "Brand Purpose & Sustainability Agency | Grounded World",
-    template: "%s | Grounded World",
-  },
-  description:
-    "Grounded World is a B Corp certified agency at the intersection of brand purpose, commercial strategy, and social impact.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const global = await getGlobalSettings();
+  const description =
+    global?.siteDescription ||
+    "Grounded World is a B Corp certified agency at the intersection of brand purpose, commercial strategy, and social impact.";
+
+  return {
+    metadataBase: new URL("https://grounded.world"),
+    title: {
+      default:
+        global?.siteTitle ||
+        "Brand Purpose & Sustainability Agency | Grounded World",
+      template:
+        global?.titleTemplate || "%s | Grounded World",
+    },
+    description,
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      siteName: "Grounded World",
+      description,
+      ...(global?.defaultOgImage ? { images: [global.defaultOgImage] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+    },
+  };
+}
 
 function loadServicesFromFiles(): Service[] {
   const dir = path.join(process.cwd(), "content/services");
@@ -58,6 +79,8 @@ export default async function RootLayout({
     services = loadServicesFromFiles() as Service[];
   }
 
+  const global = await getGlobalSettings();
+
   return (
     <html lang="en">
       <body
@@ -65,7 +88,15 @@ export default async function RootLayout({
       >
         <Header services={services} />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <Footer
+          newsletter={{
+            heading: global?.newsletter?.heading ?? undefined,
+            body: global?.newsletter?.body ?? undefined,
+          }}
+          social={{
+            linkedin: global?.social?.linkedin ?? undefined,
+          }}
+        />
       </body>
     </html>
   );

@@ -3,33 +3,23 @@ import type { Metadata } from "next";
 import { promises as fsPromises } from "fs";
 import path from "path";
 import serverClient from "../../../../../tina/server-client";
+import { getGlobalSettings } from "@/lib/global-settings";
 import ArticleDetailClientPage from "./client-page";
 import type { RelatedArticleItem } from "@/components/components/RelatedArticles/RelatedArticles";
 import type { AuthorData } from "@/lib/authors";
 import { calculateReadingTime } from "@/lib/reading-time";
 import { extractHeadingsFromTinaContent } from "@/lib/extract-headings";
 
-/* Category slug → display name mapping */
-const CATEGORY_NAMES: Record<string, string> = {
-  "brand-purpose": "Brand Purpose",
-  "brand-activism": "Brand Activism",
-  "social-impact": "Social Impact",
-  partnerships: "Partnerships",
-  "retail-shopper": "Retail & Shopper",
-  strategy: "Strategy",
-  sustainability: "Sustainability",
-};
-
 /** Cache of category JSON data keyed by slug */
-const categoryDataCache = new Map<string, { icon?: string; placeholderColor?: string }>();
+const categoryDataCache = new Map<string, { name?: string; icon?: string; placeholderColor?: string }>();
 
-async function getCategoryData(slug: string): Promise<{ icon?: string; placeholderColor?: string }> {
+async function getCategoryData(slug: string): Promise<{ name?: string; icon?: string; placeholderColor?: string }> {
   if (categoryDataCache.has(slug)) return categoryDataCache.get(slug)!;
   try {
     const filePath = path.join(process.cwd(), "content", "categories", `${slug}.json`);
     const raw = await fsPromises.readFile(filePath, "utf-8");
-    const data = JSON.parse(raw) as { icon?: string; placeholderColor?: string };
-    const result = { icon: data.icon, placeholderColor: data.placeholderColor };
+    const data = JSON.parse(raw) as { name?: string; icon?: string; placeholderColor?: string };
+    const result = { name: data.name, icon: data.icon, placeholderColor: data.placeholderColor };
     categoryDataCache.set(slug, result);
     return result;
   } catch {
@@ -114,9 +104,7 @@ async function loadAllPostSummaries(): Promise<PostSummary[]> {
           featuredImage: get("featuredImage"),
           category: categorySlug,
           categorySlug,
-          categoryName: categorySlug
-            ? (CATEGORY_NAMES[categorySlug] ?? categorySlug)
-            : undefined,
+          categoryName: catData?.name ?? categorySlug ?? undefined,
           categoryIcon: catData?.icon,
           categoryColor: catData?.placeholderColor,
         });
@@ -291,6 +279,10 @@ export default async function ArticleDetailPage({
     timeRequired: `PT${readingTime}M`,
   };
 
+  // Fetch global article CTA settings
+  const globalSettings = await getGlobalSettings();
+  const articleCta = globalSettings?.articleCta ?? undefined;
+
   return (
     <ArticleDetailClientPage
       query={result.query}
@@ -302,6 +294,7 @@ export default async function ArticleDetailPage({
       relatedArticles={relatedArticles}
       slug={slug}
       jsonLd={jsonLd}
+      articleCta={articleCta}
     />
   );
 }
