@@ -10,16 +10,32 @@ export interface SectionProps {
   as?: "section" | "div" | "article" | "aside";
   /** Optional id for anchor linking */
   id?: string;
+  /** Background variant for visual separation between sections */
+  variant?: "default" | "alt" | "dark";
 }
+
+const variantClasses: Record<string, string> = {
+  default: "bg-(--background)",
+  alt: "bg-[#1A1A1A]",
+  dark: "bg-[#0C0C0C]",
+};
 
 const Section = ({
   children,
   className,
   as: Component = "section",
   id,
+  variant = "default",
 }: SectionProps) => {
   return (
-    <Component id={id} className={cn("py-[var(--layout-section-padding-y)] bg-(--background)", className)}>
+    <Component
+      id={id}
+      className={cn(
+        "py-[var(--layout-section-padding-y)]",
+        variantClasses[variant] ?? variantClasses.default,
+        className,
+      )}
+    >
       {children}
     </Component>
   );
