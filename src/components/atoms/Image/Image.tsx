@@ -10,6 +10,10 @@ export interface ImageBlockProps {
   caption?: string;
   /** Apply rounded corners */
   rounded?: boolean;
+  /** Constrain the max width (e.g. "320px", "24rem"). Defaults to full column width. */
+  maxWidth?: string;
+  /** Use object-contain instead of object-cover (better for logos/diagrams) */
+  contain?: boolean;
 }
 
 const ImageBlock: React.FC<ImageBlockProps> = ({
@@ -17,20 +21,26 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
   alt = "",
   caption,
   rounded = false,
+  maxWidth,
+  contain = false,
 }) => {
   return (
-    <figure className="m-0">
+    <figure className={cn("my-0", maxWidth ? "mx-auto" : "mx-0")}>
       <div
         className={cn("relative w-full overflow-hidden", {
           "rounded-xl": rounded,
         })}
+        style={maxWidth ? { maxWidth } : undefined}
       >
         <NextImage
           src={src}
           alt={alt}
           width={1200}
           height={800}
-          className="h-auto w-full object-cover"
+          className={cn(
+            "h-auto w-full",
+            contain ? "object-contain" : "object-cover",
+          )}
           sizes="(max-width: 768px) 100vw, 50vw"
         />
       </div>

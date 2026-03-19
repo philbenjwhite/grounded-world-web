@@ -12,37 +12,38 @@
       "minHeight": "condensed"
     },
     {
-      "_template": "imageCarousel",
+      "_template": "showcaseGrid",
       "sectionTitle": "Get Grounded in the Fundamentals",
-      "sectionSubtitle": "Get grounded in the fundamentals of activating purpose, sustainability, and social impact.",
+      "columns": 2,
+      "variant": "stacked",
       "items": [
         {
-          "id": "guide-brand-purpose",
           "title": "Activating Brand Purpose",
-          "description": "Close the intention-action gap and change consumer behaviour",
-          "imageUrl": "/images/resources-guide-activating-brand-purpose.jpg",
-          "imageAlt": "Activating Brand Purpose guide cover"
+          "description": "Close the intention-action gap and change consumer behaviour. A practical framework for translating your brand's purpose into measurable action.",
+          "imageSrc": "/images/guides/activating-brand-purpose-hero.jpg",
+          "imageAlt": "Activating Brand Purpose guide cover",
+          "href": "/resources/guides/activating-brand-purpose"
         },
         {
-          "id": "guide-sustainability",
           "title": "Sustainability Marketing",
-          "description": "Unpack what sustainability marketing is, along with key challenges and case studies",
-          "imageUrl": "/images/resources-guide-sustainability-marketing.jpg",
-          "imageAlt": "Sustainability Marketing guide cover"
+          "description": "Unpack what sustainability marketing is, along with key challenges, proven strategies, and real-world case studies from leading brands.",
+          "imageSrc": "/images/resources-guide-sustainability-marketing.jpg",
+          "imageAlt": "Sustainability Marketing guide cover",
+          "href": "/resources/guides/sustainability-marketing"
         },
         {
-          "id": "guide-social-impact",
           "title": "Social Impact",
-          "description": "Discover what a social impact agency does and how to choose the right partner",
-          "imageUrl": "/images/resources-guide-social-impact.jpg",
-          "imageAlt": "Social Impact guide cover"
+          "description": "Discover what a social impact agency does, how to choose the right partner, and how to design campaigns that create lasting change.",
+          "imageSrc": "/images/resources-guide-social-impact.jpg",
+          "imageAlt": "Social Impact guide cover",
+          "href": "/resources/guides/social-impact"
         },
         {
-          "id": "guide-brand-activism",
           "title": "Brand Activism",
-          "description": "Learn how to take a stand and avoid the pitfalls of performative activism",
-          "imageUrl": "/images/resources-guide-brand-activism.jpg",
-          "imageAlt": "Brand Activism guide cover"
+          "description": "Learn how to take a meaningful stand on the issues that matter — and how to avoid the pitfalls of performative activism.",
+          "imageSrc": "/images/resources-guide-brand-activism.jpg",
+          "imageAlt": "Brand Activism guide cover",
+          "href": "/resources/guides/brand-activism"
         }
       ]
     }

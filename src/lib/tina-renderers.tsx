@@ -1,6 +1,8 @@
 import Link from "next/link";
+import NextImage from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { tinaField } from "tinacms/dist/react";
+import cn from "classnames";
 import type {
   PageSections,
   PageSectionsSplitLayoutLeft,
@@ -24,8 +26,8 @@ import NewsletterCTA from "@/components/components/NewsletterCTA";
 import PodcastWaveBackground from "@/components/components/PodcastWaveBackground";
 import PodcastApplySection from "@/components/components/PodcastApplySection/PodcastApplySection";
 import PodcastHero from "@/components/components/PodcastHero/PodcastHero";
-import { GaiaChat } from "@/components/components/GaiaChat";
 import { GaiaVideoIntro } from "@/components/components/GaiaVideoIntro";
+import { GaiaChat } from "@/components/components/GaiaChat";
 import Split from "@/components/layout/Split";
 import Section from "@/components/layout/Section";
 import Container from "@/components/layout/Container";
@@ -36,6 +38,7 @@ import Heading from "@/components/atoms/Heading";
 import Text from "@/components/atoms/Text";
 import SectionLabel from "@/components/atoms/SectionLabel";
 import type { HeadingLevel } from "@/components/atoms/Heading/Heading";
+import { CollapsibleText } from "@/components/atoms/CollapsibleText";
 import { iconMap } from "@/lib/iconMap";
 
 /* ─── Rich-text rendering components ─────────────────── */
@@ -54,6 +57,25 @@ export const richTextComponents = {
       {props.children}
     </Text>
   ),
+  blockquote: (props: { children?: React.ReactNode }) => (
+    <blockquote className="rounded-2xl bg-[var(--color-magenta)] px-7 py-6 md:px-9 md:py-8 my-4">
+      <div className="text-white text-[length:var(--font-size-body-lg)] md:text-[length:var(--font-size-h4)] font-bold leading-[1.35]">
+        {props.children}
+      </div>
+    </blockquote>
+  ),
+  ul: (props: { children?: React.ReactNode }) => (
+    <ul className="mb-4 space-y-3 list-none pl-0">{props.children}</ul>
+  ),
+  li: (props: { children?: React.ReactNode }) => {
+    const CheckIcon = iconMap.CheckCircle;
+    return (
+      <li className="flex items-start gap-3">
+        <CheckIcon size={22} weight="fill" className="shrink-0 mt-0.5 text-emerald-400" />
+        <Text size="body-lg" color="secondary" as="span">{props.children}</Text>
+      </li>
+    );
+  },
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } as any;
 
@@ -68,21 +90,30 @@ export function renderSlotBlock(
     case "PageSectionsSplitLayoutRightRichText":
       return block.body ? (
         <div key={index}>
-          <TinaMarkdown content={block.body} components={richTextComponents} />
+          <CollapsibleText>
+            <TinaMarkdown content={block.body} components={richTextComponents} />
+          </CollapsibleText>
         </div>
       ) : null;
 
     case "PageSectionsSplitLayoutLeftImage":
-    case "PageSectionsSplitLayoutRightImage":
-      return block.src ? (
+    case "PageSectionsSplitLayoutRightImage": {
+      const imgBlock = block as unknown as {
+        src?: string; alt?: string; caption?: string; rounded?: boolean;
+        maxWidth?: string; contain?: boolean;
+      };
+      return imgBlock.src ? (
         <ImageBlock
           key={index}
-          src={block.src}
-          alt={block.alt ?? ""}
-          caption={block.caption ?? undefined}
-          rounded={block.rounded ?? false}
+          src={imgBlock.src}
+          alt={imgBlock.alt ?? ""}
+          caption={imgBlock.caption ?? undefined}
+          rounded={imgBlock.rounded ?? false}
+          maxWidth={imgBlock.maxWidth ?? undefined}
+          contain={imgBlock.contain ?? false}
         />
       ) : null;
+    }
 
     case "PageSectionsSplitLayoutLeftButtonGroup":
     case "PageSectionsSplitLayoutRightButtonGroup": {
@@ -380,12 +411,18 @@ export function renderSection(section: PageSections, index: number): React.React
       );
     }
 
-    case "PageSectionsShowcaseGrid":
+    case "PageSectionsShowcaseGrid": {
+      const sgColumns = (section as unknown as { columns?: number }).columns;
+      const sgVariant = (section as unknown as { variant?: string }).variant;
+      const sgSectionVariant = (section as unknown as { sectionVariant?: string }).sectionVariant;
       return (
         <ShowcaseGrid
           key={index}
           sectionTitle={section.sectionTitle ?? undefined}
           sectionSubtitle={section.sectionSubtitle ?? undefined}
+          columns={(sgColumns as 2 | 3 | 4) ?? 3}
+          variant={(sgVariant as "overlay" | "stacked") ?? "overlay"}
+          sectionVariant={(sgSectionVariant as "default" | "alt" | "dark") ?? "default"}
           items={
             section.items
               ?.filter(Boolean)
@@ -400,6 +437,7 @@ export function renderSection(section: PageSections, index: number): React.React
           }
         />
       );
+    }
 
     case "PageSectionsExpandingCardPanel":
       return (
@@ -429,22 +467,79 @@ export function renderSection(section: PageSections, index: number): React.React
     case "PageSectionsSplitLayout": {
       const sectionLabel = (section as unknown as { sectionLabel?: string }).sectionLabel;
       const stickyLeft = (section as unknown as { stickyLeft?: boolean }).stickyLeft;
+      const fullBleedImage = (section as unknown as { fullBleedImage?: boolean }).fullBleedImage;
+      const sectionVariant = (section as unknown as { sectionVariant?: string }).sectionVariant as "default" | "alt" | undefined;
+      const leftHasText = section.left?.some(
+        (b) =>
+          b?.__typename === "PageSectionsSplitLayoutLeftRichText" ||
+          b?.__typename === "PageSectionsSplitLayoutLeftExpandingCards",
+      );
+
+      const labelElement = sectionLabel ? (
+        <div data-tina-field={tinaField(section as Record<string, unknown>, "sectionLabel")}>
+          <SectionLabel className="mb-4">{sectionLabel}</SectionLabel>
+        </div>
+      ) : null;
+
       const leftContent = (
-        <>
-          {sectionLabel && (
-            <div data-tina-field={tinaField(section as Record<string, unknown>, "sectionLabel")}>
-              <SectionLabel className="mb-4">{sectionLabel}</SectionLabel>
-            </div>
-          )}
+        <div className="flex flex-col gap-6">
+          {leftHasText && labelElement}
           {section.left
             ?.filter(Boolean)
             .map((block, blockIndex) =>
               renderSlotBlock(block!, blockIndex),
             )}
-        </>
+        </div>
       );
+
+      /* ── Full-bleed image variant ── */
+      if (fullBleedImage) {
+        // Find the image block in right slot
+        const rightBlocks = section.right?.filter(Boolean) ?? [];
+        const imageBlock = rightBlocks.find(
+          (b) =>
+            b?.__typename === "PageSectionsSplitLayoutRightImage",
+        ) as unknown as { src?: string; alt?: string } | undefined;
+
+        const ratioMap: Record<string, string> = {
+          "50/50": "lg:grid-cols-[1fr_1fr]",
+          "40/60": "lg:grid-cols-[2fr_3fr]",
+          "60/40": "lg:grid-cols-[3fr_2fr]",
+          "30/70": "lg:grid-cols-[3fr_7fr]",
+          "70/30": "lg:grid-cols-[7fr_3fr]",
+        };
+        const ratio = (section.ratio as string) ?? "60/40";
+
+        return (
+          <section key={index} className="relative overflow-hidden bg-(--background)">
+            <div className={cn("grid grid-cols-1 items-center", ratioMap[ratio])}>
+              {/* Text side with padding */}
+              <div className="py-[var(--layout-section-padding-y)] px-[var(--layout-section-padding-x)]">
+                {stickyLeft ? (
+                  <div className="lg:sticky lg:top-24 max-w-[700px] ml-auto">{leftContent}</div>
+                ) : (
+                  <div className="max-w-[700px] ml-auto">{leftContent}</div>
+                )}
+              </div>
+              {/* Full-bleed image side */}
+              <div className="relative min-h-[400px] lg:min-h-[500px] h-full">
+                {imageBlock?.src && (
+                  <NextImage
+                    src={imageBlock.src}
+                    alt={imageBlock.alt ?? ""}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
+                )}
+              </div>
+            </div>
+          </section>
+        );
+      }
+
       return (
-        <Section key={index}>
+        <Section key={index} variant={sectionVariant ?? "default"}>
           <Container className="px-(--layout-section-padding-x)">
             <Split
               ratio={
@@ -472,13 +567,14 @@ export function renderSection(section: PageSections, index: number): React.React
                 )
               }
               right={
-                <>
+                <div className="flex flex-col gap-6">
+                  {!leftHasText && labelElement}
                   {section.right
                     ?.filter(Boolean)
                     .map((block, blockIndex) =>
                       renderSlotBlock(block!, blockIndex),
                     )}
-                </>
+                </div>
               }
             />
           </Container>
