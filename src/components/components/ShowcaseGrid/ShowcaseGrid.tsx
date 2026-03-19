@@ -220,8 +220,8 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                   >
                     <div className="relative aspect-[4/3] md:aspect-[5/4]">
                       <Image
-                        src={item.imageSrc}
-                        alt={item.imageAlt}
+                        src={item.imageSrc!}
+                        alt={item.imageAlt ?? ""}
                         fill
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
