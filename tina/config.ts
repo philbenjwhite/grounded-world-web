@@ -48,6 +48,17 @@ const innerImageTemplate = {
       name: "rounded",
       label: "Rounded Corners",
     },
+    {
+      type: "string" as const,
+      name: "maxWidth",
+      label: "Max Width",
+      description: "e.g. 300px, 24rem",
+    },
+    {
+      type: "boolean" as const,
+      name: "contain",
+      label: "Contain (for logos/diagrams)",
+    },
   ],
 };
 
@@ -1371,6 +1382,19 @@ export default defineConfig({
                     label: "Section Subtitle",
                   },
                   {
+                    type: "number",
+                    name: "columns",
+                    label: "Columns",
+                    description: "Number of columns (2, 3, or 4). Default 3.",
+                  },
+                  {
+                    type: "string",
+                    name: "variant",
+                    label: "Card Variant",
+                    description: "overlay = text over image, stacked = text below image",
+                    options: ["overlay", "stacked"],
+                  },
+                  {
                     type: "object",
                     name: "items",
                     label: "Items",
@@ -1920,6 +1944,19 @@ export default defineConfig({
                     name: "stickyLeft",
                     label: "Sticky Left Column",
                     description: "Make the left column sticky on desktop scroll",
+                  },
+                  {
+                    type: "boolean",
+                    name: "fullBleedImage",
+                    label: "Full-Bleed Image",
+                    description: "Make the right-side image extend edge-to-edge with no container padding",
+                  },
+                  {
+                    type: "string",
+                    name: "sectionVariant",
+                    label: "Section Background",
+                    description: "Background color variant for visual separation",
+                    options: ["default", "alt", "dark"],
                   },
                   {
                     type: "object",
