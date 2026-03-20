@@ -18,6 +18,10 @@ import {
   ChatCircleDotsIcon,
   HandshakeIcon,
   ShoppingBagIcon,
+  EyeSlashIcon,
+  ShieldWarningIcon,
+  HeartBreakIcon,
+  CheckCircleIcon,
   type IconProps,
 } from "@phosphor-icons/react";
 
@@ -41,6 +45,10 @@ export const iconMap: Record<string, React.ComponentType<IconProps>> = {
   ChatCircleDots: ChatCircleDotsIcon,
   Handshake: HandshakeIcon,
   ShoppingBag: ShoppingBagIcon,
+  EyeSlash: EyeSlashIcon,
+  ShieldWarning: ShieldWarningIcon,
+  HeartBreak: HeartBreakIcon,
+  CheckCircle: CheckCircleIcon,
 };
 
 /** Dropdown options for TinaCMS icon fields */
