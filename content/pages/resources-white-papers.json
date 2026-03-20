@@ -13,15 +13,14 @@
     },
     {
       "_template": "splitLayout",
-      "sectionLabel": "Sustainable Fashion",
-      "ratio": "50/50",
+      "ratio": "30/70",
       "gap": "xl",
-      "verticalAlign": "center",
+      "verticalAlign": "start",
       "reverseOnMobile": true,
       "left": [
         {
           "_template": "image",
-          "src": "/images/resources-whitepaper-fashion.jpg",
+          "src": "/images/Sustainability-WhitePaper-new-1.jpg",
           "alt": "Mind the Gap: Policy to Profit in Fashion white paper cover",
           "rounded": true
         }
@@ -29,14 +28,14 @@
       "right": [
         {
           "_template": "richText",
-          "body": "## Mind the Gap: Policy to Profit in Fashion\n\n**How new rules can create commercial wins for fashion**\n\nGrounded's seminal white paper examines how evolving policy creates real commercial opportunity for fashion brands — featuring legal expertise and AI-powered recommendations via Gaia."
+          "body": "## Sustainable Fashion\n\nThe fashion industry is at a turning point.\n\nWith new policies, regulations, and consumer expectations reshaping the industry, brands that adapt will thrive — those that don't will fall behind.\n\nOur free white paper, *Mind the Gap: Policy to Profit in Fashion: How new rules can create commercial wins for fashion*, is a guide for brand, innovation, marketing and sustainability professionals looking to:\n\n- Navigate new ESG policies and sustainability regulations\n- Turn compliance into competitive advantage\n- Commercialize sustainability to deliver a triple bottom line impact\n\nDeveloped with expert legal counsel and industry leaders and supported by Gaia, our real-time AI assistant that customizes recommendations to your brand or business, this white paper equips you with the **data, insights, and practical guidance to navigate the most transformational policies, legislation and reporting standards** and drive sustainable innovation."
         },
         {
           "_template": "buttonGroup",
           "buttons": [
             {
-              "label": "Download Now",
-              "href": "https://grounded.world/resources/",
+              "label": "Download",
+              "href": "https://grounded.world/mind-the-gap_sust-fashion_final-version/",
               "variant": "primary",
               "external": true
             }
@@ -46,48 +45,47 @@
     },
     {
       "_template": "splitLayout",
-      "sectionLabel": "Brand Purpose",
-      "ratio": "50/50",
+      "ratio": "30/70",
       "gap": "xl",
-      "verticalAlign": "center",
-      "reverseOnMobile": false,
+      "verticalAlign": "start",
+      "reverseOnMobile": true,
       "left": [
         {
+          "_template": "image",
+          "src": "/images/ana.jpg",
+          "alt": "ANA Brand Purpose Playbook cover",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
           "_template": "richText",
-          "body": "## Articulating Brand Purpose: The BPP Framework\n\n**Connect the WHY of purpose to the WAY of profit**\n\nPublished by the ANA Center for Brand Purpose, this playbook is recognised globally as a best-in-class approach for articulating brand and corporate purpose."
+          "body": "## Articulating Brand Purpose: The BPP Framework\n\n**Connect the WHY of purpose to the WAY of profit**\n\nThe BPP is a framework designed to help organizations and brands connect the WHY of purpose to the WAY of profit. Think of it as a business strategy / canvas on a page to connect purpose and sustainability with the commercial drivers of your business.\n\nThe BPP is published by the ANA Center for Brand Purpose as a global best in class approach for articulating brand and corporate purpose."
+
         },
         {
           "_template": "buttonGroup",
           "buttons": [
             {
-              "label": "Download Now",
+              "label": "Download",
               "href": "https://www.ana.net/miccontent/show/id/kp-2023-07-grounded-media-articulating-brand-purpose",
               "variant": "primary",
               "external": true
             }
           ]
         }
-      ],
-      "right": [
-        {
-          "_template": "image",
-          "src": "/images/resources-whitepaper-ana.png",
-          "alt": "ANA Brand Purpose Playbook cover",
-          "rounded": true
-        }
       ]
     },
     {
       "_template": "splitLayout",
-      "sectionLabel": "Retail Activation",
-      "ratio": "50/50",
+      "ratio": "30/70",
       "gap": "xl",
-      "verticalAlign": "center",
+      "verticalAlign": "start",
       "reverseOnMobile": true,
       "left": [
         {
           "_template": "image",
-          "src": "/images/resources-whitepaper-retail.jpg",
+          "src": "/images/retail-activation.jpg",
           "alt": "Retail Activation for Good playbook cover",
           "rounded": true
         }
@@ -95,14 +93,15 @@
       "right": [
         {
           "_template": "richText",
-          "body": "## Excellence in Execution: Retail Activation for Good\n\n**Activate brand purpose and sustainability at the shelf**\n\nBuilt on three years of proprietary research and consultation with the world's largest brand owners and retailers — frameworks, tools, and case studies for retail activation."
+          "body": "## Excellence in Execution: Retail Activation for Good\n\n**Activate brand purpose and sustainability at the shelf**\n\nThis playbook includes frameworks, tools, and inspirational case studies to help activate brand purpose and sustainability at retail with excellence.\n\nThe tools and frameworks inside are designed to enhance co-creation and collaboration between sustainability, brand, sales, trade-marketing and customer teams to close the intention-action gap at retail.\n\nThe playbook is a culmination of three years worth of proprietary research, and consultation with some of the world's largest brand owners and retailers."
+
         },
         {
           "_template": "buttonGroup",
           "buttons": [
             {
-              "label": "Download Now",
-              "href": "https://grounded.world/resources/",
+              "label": "Download",
+              "href": "https://grounded.world/wp-content/uploads/2025/09/Excellence-in-Execution-Retail-Activation-for-Good.pdf",
               "variant": "primary",
               "external": true
             }

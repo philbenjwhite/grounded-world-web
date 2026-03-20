@@ -106,6 +106,11 @@ export default function ResourcesClientPage(props: ResourcesClientPageProps) {
   ) as {
     title?: string;
     subtitle?: string;
+    backgroundType?: string;
+    vimeoUrl?: string;
+    posterSrc?: string;
+    imageSrc?: string;
+    imageAlt?: string;
     overlayOpacity?: string;
     contentAlign?: string;
     minHeight?: string;
@@ -125,7 +130,13 @@ export default function ResourcesClientPage(props: ResourcesClientPageProps) {
 
       {/* ── Hero ─────────────────────────────────────────── */}
       <HeroBanner
-        backgroundType="canvas"
+        backgroundType={
+          (heroSection?.backgroundType as "vimeo" | "image" | "canvas") ?? "canvas"
+        }
+        vimeoUrl={heroSection?.vimeoUrl ?? undefined}
+        posterSrc={heroSection?.posterSrc ?? undefined}
+        imageSrc={heroSection?.imageSrc ?? undefined}
+        imageAlt={heroSection?.imageAlt ?? undefined}
         title={heroSection?.title ?? "Resources"}
         subtitle={heroSection?.subtitle ?? undefined}
         minHeight={

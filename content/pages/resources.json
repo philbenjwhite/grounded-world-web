@@ -4,10 +4,11 @@
   "sections": [
     {
       "_template": "heroBanner",
-      "backgroundType": "canvas",
+      "backgroundType": "vimeo",
+      "vimeoUrl": "https://vimeo.com/910946594/e101a70e45",
       "title": "Resources",
       "subtitle": "Ideas, frameworks, and tools to help you activate brand purpose, sustainability, and social impact.",
-      "overlayOpacity": "light",
+      "overlayOpacity": "medium",
       "contentAlign": "center",
       "minHeight": "condensed"
     },
