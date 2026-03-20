@@ -31,10 +31,10 @@
     },
     {
       "_template": "introSection",
-      "heading": "Research That Moves the Needle",
+      "heading": "Closing the Gaps: Transforming Purpose into Profit",
       "paragraphs": [
-        "Most brands know they need to invest in sustainability and social impact. But too often, these investments don't translate into business traction — the message doesn't land, the audience doesn't shift, and the gap between intention and action grows wider.",
-        "Our market research practice is built to close that gap. Through a rigorous three-stage process, we uncover where your brand really stands, map the ecosystem of stakeholders and influences around you, and quantify the barriers and drivers that determine whether people act on their intentions."
+        "Most brands and businesses want to do the right thing. But that doesn't always mean they're doing the right things. Sometimes those good intentions just aren't landing. You can see the big picture (and the opportunity) so clearly, but teams aren't aligned, the business isn't buying it and leadership won't support it — despite all the data.",
+        "Sound familiar? If so, then the chances are there's an intention-action gap. We can help you find it, quantify it and close it."
       ]
     },
     {
@@ -150,6 +150,25 @@
           "body": "Facilitated sessions that align your leadership team around research findings and build consensus on the path forward."
         }
       ]
+    },
+    {
+      "_template": "ctaBanner",
+      "backgroundSrc": "/images/services/market-research-hero-umbrellas.jpg",
+      "backgroundAlt": "Colorful umbrellas symbolizing diverse market perspectives",
+      "heading": "Ready to Close the Gap?",
+      "subtext": "Book a free 30-minute discovery call and find out how we can help you turn good intentions into measurable impact.",
+      "primaryLabel": "Book a Discovery Call",
+      "primaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+      "primaryExternal": true,
+      "overlayOpacity": "heavy"
+    },
+    {
+      "_template": "newsletterCta",
+      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
+      "backgroundAlt": "Stockholm metro station escalators",
+      "newsletterHeading": "Stay Grounded",
+      "newsletterSubtext": "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.",
+      "overlayOpacity": "heavy"
     },
     {
       "_template": "accordionFAQ",
