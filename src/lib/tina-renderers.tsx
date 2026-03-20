@@ -40,6 +40,7 @@ import SectionLabel from "@/components/atoms/SectionLabel";
 import type { HeadingLevel } from "@/components/atoms/Heading/Heading";
 import { CollapsibleText } from "@/components/atoms/CollapsibleText";
 import { iconMap } from "@/lib/iconMap";
+import IntentionActionStats from "@/components/components/IntentionActionStats/IntentionActionStats";
 
 /* ─── Rich-text rendering components ─────────────────── */
 
@@ -76,6 +77,16 @@ export const richTextComponents = {
       </li>
     );
   },
+  a: (props: { url?: string; children?: React.ReactNode }) => (
+    <a
+      href={props.url}
+      target={props.url?.startsWith("http") ? "_blank" : undefined}
+      rel={props.url?.startsWith("http") ? "noopener noreferrer" : undefined}
+      className="text-[color:var(--color-cyan)] hover:underline"
+    >
+      {props.children}
+    </a>
+  ),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } as any;
 
@@ -100,7 +111,8 @@ export function renderSlotBlock(
     case "PageSectionsSplitLayoutRightImage": {
       const imgBlock = block as unknown as {
         src?: string; alt?: string; caption?: string; rounded?: boolean;
-        maxWidth?: string; contain?: boolean;
+        maxWidth?: string; maxHeight?: string; contain?: boolean; layout?: string;
+        animate?: string;
       };
       return imgBlock.src ? (
         <ImageBlock
@@ -110,10 +122,17 @@ export function renderSlotBlock(
           caption={imgBlock.caption ?? undefined}
           rounded={imgBlock.rounded ?? false}
           maxWidth={imgBlock.maxWidth ?? undefined}
+          maxHeight={imgBlock.maxHeight ?? undefined}
           contain={imgBlock.contain ?? false}
+          layout={(imgBlock.layout as "fill" | "centered") ?? "fill"}
+          animate={(imgBlock.animate as "float") ?? undefined}
         />
       ) : null;
     }
+
+    case "PageSectionsSplitLayoutLeftIntentionStats":
+    case "PageSectionsSplitLayoutRightIntentionStats":
+      return <IntentionActionStats key={index} />;
 
     case "PageSectionsSplitLayoutLeftButtonGroup":
     case "PageSectionsSplitLayoutRightButtonGroup": {
@@ -433,6 +452,8 @@ export function renderSection(section: PageSections, index: number): React.React
                 imageAlt: item!.imageAlt ?? "",
                 glowColor: item!.glowColor ?? undefined,
                 href: item!.href ?? undefined,
+                imageContain: !!(item as unknown as { imageContain?: boolean }).imageContain,
+                imageBg: (item as unknown as { imageBg?: string }).imageBg ?? undefined,
               })) ?? []
           }
         />
@@ -802,6 +823,11 @@ export function renderSection(section: PageSections, index: number): React.React
         newsletterHeading?: string;
         newsletterSubtext?: string;
         overlayOpacity?: string;
+        bookingEyebrow?: string;
+        bookingHeading?: string;
+        bookingSubtext?: string;
+        bookingLabel?: string;
+        bookingHref?: string;
       };
       return (
         <NewsletterCTA
@@ -813,6 +839,11 @@ export function renderSection(section: PageSections, index: number): React.React
           overlayOpacity={
             (n.overlayOpacity as "light" | "medium" | "heavy") ?? undefined
           }
+          bookingEyebrow={n.bookingEyebrow ?? undefined}
+          bookingHeading={n.bookingHeading ?? undefined}
+          bookingSubtext={n.bookingSubtext ?? undefined}
+          bookingLabel={n.bookingLabel ?? undefined}
+          bookingHref={n.bookingHref ?? undefined}
         />
       );
     }

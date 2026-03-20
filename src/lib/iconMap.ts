@@ -18,6 +18,7 @@ import {
   ChatCircleDotsIcon,
   HandshakeIcon,
   ShoppingBagIcon,
+  MapTrifoldIcon,
   EyeSlashIcon,
   ShieldWarningIcon,
   HeartBreakIcon,
@@ -45,6 +46,7 @@ export const iconMap: Record<string, React.ComponentType<IconProps>> = {
   ChatCircleDots: ChatCircleDotsIcon,
   Handshake: HandshakeIcon,
   ShoppingBag: ShoppingBagIcon,
+  MapTrifold: MapTrifoldIcon,
   EyeSlash: EyeSlashIcon,
   ShieldWarning: ShieldWarningIcon,
   HeartBreak: HeartBreakIcon,
@@ -72,4 +74,5 @@ export const iconOptions = [
   { value: "ChatCircleDots", label: "Chat Bubble" },
   { value: "Handshake", label: "Handshake" },
   { value: "ShoppingBag", label: "Shopping Bag" },
+  { value: "MapTrifold", label: "Map" },
 ];

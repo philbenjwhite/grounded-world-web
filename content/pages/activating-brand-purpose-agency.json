@@ -1,0 +1,339 @@
+{
+  "title": "How to Activate Brand Purpose | Grounded World",
+  "slug": "activating-brand-purpose-agency",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "image",
+      "imageSrc": "/images/guides/activating-brand-purpose-hero.jpg",
+      "imageAlt": "Activating Brand Purpose hero image",
+      "title": "Understanding and Activating Brand Purpose",
+      "subtitle": "Learn how a brand purpose agency can help you close the intention-action gap and accelerate impact by getting brands and retailers working more collaboratively to drive the right behavior change.",
+      "overlayOpacity": "heavy",
+      "contentAlign": "left",
+      "minHeight": "medium",
+      "bottomFade": true
+    },
+    {
+      "_template": "splitLayout",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "Welcome to our guide to activating brand purpose at retail. This article and accompanying framework will help you develop campaigns and behavior-changing ideas that align with your brand purpose, resonate with your audience, and drive meaningful results by focusing on the interaction of three essential elements:\n\n- **What your brand stands for:** Your brand's purpose, mission or transformational benefit (MISSION)\n- **What the world needs:** The social or environmental issue that matters most to your customers (or the broader community) that your brand purpose enables you to credibly and uniquely solve (MAGIC)\n- **Your biggest intention-action gap:** Find and overcome the biggest barrier preventing shoppers from selecting your brand and/or taking positive action that will enable you to drive purchase (MONEY)"
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "> **\"Retailers, as the main link between consumers and their products, are imperative to communicating sustainable products and increasing their demand.\"**\n\n*Marketing Sustainable Products in the Retail Sector*"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "The Flywheel of Impact",
+      "sectionVariant": "alt",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/guides/social-impact-graphic.png",
+          "alt": "Flywheel of Impact — Mission, Magic, and Money venn diagram",
+          "rounded": false,
+          "contain": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/guides/fly.png",
+          "alt": "Flywheel of Impact logo",
+          "rounded": false,
+          "maxWidth": "120px",
+          "contain": true
+        },
+        {
+          "_template": "richText",
+          "body": "## The Flywheel of Impact\n\nThe intersection of these three key elements (MISSION, MONEY AND MAGIC) can in turn deliver a triple bottom line win for people, planet, and profit.\n\nWe call it the ***Flywheel of impact*** because it's capable of scaling both revenue and impact — enabling you to meaningfully activate your brand purpose and ultimately transform that brand purpose into profit.\n\nThis is what a good brand purpose agency should be able to help you do — by combining insight, strategy, commercial innovation and tactical communications planning to activate your brand purpose and accelerate your impact — commercially, socially and environmentally.\n\nDownload this handy one page guide to find out more"
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "GET STARTED",
+              "href": "https://grounded.world/wp-content/uploads/2025/05/One-Pager_FWI.pdf",
+              "variant": "outline",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Understanding Brand Purpose",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## Understanding Brand Purpose: What Does My Brand Stand For?\n\n### What is Brand Purpose?\n\nA simple definition of brand purpose is:\n\n**\"A higher-order reason for a brand's existence that goes beyond making money and adds value to society.\"**\n\nDigging a little deeper, brand purpose is:\n\n- The brand's reason for being — what does your brand ultimately exist to do?\n- A social impact or ambition that's bigger than the brand itself — How does your brand create a better world that benefits humankind in some way?\n- A motive beyond simply making money — A recent Edelman Trust Barometer found that 71% of respondents said they'd lose trust in a brand if it put its profits over people!"
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/guides/about-us-focus.jpg",
+          "alt": "We Can Do Better — brand purpose protest signs",
+          "rounded": true
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Why It Matters",
+      "sectionVariant": "alt",
+      "ratio": "40/60",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/guides/exponential.png",
+          "alt": "Exponential Organizations 2.0 — The New Playbook for 10x Growth and Impact",
+          "rounded": true,
+          "contain": true,
+          "maxWidth": "320px"
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## Why Brand Purpose Matters\n\nThe eXo (Exponential Organization) community refers to Brand Purpose as an **MTP** or Massive Transformative Purpose. If articulated well and embedded into the DNA of the brand or organization, the MTP scales impact, reduces costs, and gives purpose-driven companies a competitive advantage — delivering financial benefits for all stakeholders.\n\n*\"Massive Transformative Purpose (MTP) describes a better future for the world. It doesn't specify how. It's not about you, your customers, your organization, your products or services. Consider it your north star — one that doesn't restrict your organization from changing direction. It might excite and scare you, and catch in your throat, it matters that much to you.\"*"
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "Brand Purpose Examples from Leading Companies",
+      "sectionSubtitle": "Companies seeking to create a strong brand purpose should look to some of the world's biggest companies who have managed to articulate a compelling brand purpose effectively:",
+      "columns": 4,
+      "variant": "stacked",
+      "items": [
+        {
+          "title": "Steve Jobs articulated Apple's purpose like this...",
+          "description": "\"At Apple, we create tools for the mind that advance humankind.\"",
+          "imageSrc": "/images/guides/apple.jpg",
+          "imageAlt": "Apple logo",
+          "glowColor": "#A2AAAD",
+          "imageContain": true
+        },
+        {
+          "title": "Similarly, Lego's is...",
+          "description": "\"Inspiring the builders of tomorrow.\"",
+          "imageSrc": "/images/guides/lego.png",
+          "imageAlt": "Lego logo",
+          "glowColor": "#FFD700",
+          "imageContain": true
+        },
+        {
+          "title": "And here's the one for Tesla...",
+          "description": "\"To accelerate the world's transition to sustainable energy.\"",
+          "imageSrc": "/images/guides/tesla.jpg",
+          "imageAlt": "Tesla logo",
+          "glowColor": "#CC0000",
+          "imageContain": true
+        },
+        {
+          "title": "They all share a clearly defined brand purpose, yet they don't mention phones, toy bricks, or electric cars!",
+          "description": "",
+          "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_BPP.pdf"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Brand Activation",
+      "sectionVariant": "alt",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## What is Brand Activation?\n\nActivating brand purpose requires far more focus and singularity than simply articulating it. Without access to both the \"real estate\" and consumer attention to tell your story, your brand purpose may not resonate — especially in a fast moving retail context."
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "### The Challenge of Consumer Attention\n\nThe biggest challenge is the shopper's demand for convenience and short attention span while shopping, whether in physical stores or online. Brands have only a brief opportunity to:\n\n- Grab the shopper's attention\n- Communicate their brand purpose and values effectively\n- Communicate the right message, offer, or incentive to change behavior\n\nWithout addressing this challenge, even the best intentions may fail to register with habit-driven or task-focused shoppers."
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "",
+      "sectionSubtitle": "",
+      "columns": 4,
+      "variant": "stacked",
+      "items": [
+        {
+          "title": "Studying Shopping Behavior",
+          "description": "To succeed, brands must take the time to understand how their shoppers behave along the entire path to purchase.\n\nThis involves:\n\n• Identifying the biggest intention-action gap, or what prevents shoppers from making sustainable purchasing decisions.\n• Exploring the tension between what shoppers truly want and what stops them from making better choices.\n• Using these insights to develop the right message or role for the brand to play at retail."
+        },
+        {
+          "title": "Better Buying Decisions",
+          "description": "The best buying decision often emerges at the intersection of those three critical factors we mentioned above:\n\n• What your brand stands for\n• What the world needs\n• The biggest intention action gap\n\nThese intersections provide opportunities to align brand purpose with meaningful behavior change at retail, because no matter how small they seem, at scale they are high stakes and can have a massive impact."
+        },
+        {
+          "title": "Download this handy one page guide to find out more about finding and closing the intention-action gap",
+          "description": "What does brand activation mean and how does it extend beyond simply launching a campaign?",
+          "glowColor": "gaia"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/guides/gaia-face.jpg",
+          "imageAlt": "AI face representing brand intelligence"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Overcoming Barriers",
+      "sectionVariant": "alt",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/retail-activation.jpg",
+          "alt": "Retail Activation for Good — Excellence in Execution Series",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## How to Address Consumer Barriers Through Purpose-Driven Brand Activation\n\n**Closing the Intention-Action Gap and Overcoming Barriers to Purchase**\n\nFor many conscious consumers, the second most common challenge is not knowing where to start when forming sustainable buying habits. Brands and retailers can play a vital role in guiding consumers by co-creating and collaborating around the following principles"
+        },
+        {
+          "_template": "richText",
+          "body": "**Identifying Shared Sustainable Behaviors**\n\nA great starting point is to pinpoint a sustainable behavior that both the brand and retailer can support together. This shared focus:\n\n- Opens a dialogue to agree on strategic alignment.\n- Helps uncover any shortcomings in the existing brand, customer or retail experience.\n\nBy working together, brand and retail leaders can identify white space opportunities to build stronger customer relationships and enhance their sustainability efforts when their sustainability goals and commitments overlap or are intersectional"
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "",
+      "sectionSubtitle": "",
+      "columns": 4,
+      "variant": "stacked",
+      "items": [
+        {
+          "title": "Bridging the Intention-Action Gap",
+          "description": "The ultimate goal is to shift consumer behavior toward sustainable choices by addressing the barriers to action. Key challenges may include:\n\n• Low relevance: Shoppers may not see the product as relevant to their needs.\n• Disbelief: A lack of trust in claims about sustainability.\n• Emotional disconnect: Insufficient resonance with the consumer.\n\nAt a channel level, obstacles might include:\n\n• Inconvenience: Difficulty accessing or using the product.\n• Complexity: Confusion about category options and benefits."
+        },
+        {
+          "title": "Deploying Resources Effectively",
+          "description": "Traditionally, the intention-action gap is described as the shift from \"awareness to consideration\" in the consumer journey. But bridging this gap involves:\n\n• Considering the entire path to purchase from awareness to consumption and even recommendation and referral.\n• Focusing on the key moments that matter most to shoppers along that path to purchase\n• Investing in product development, packaging, display, or improving navigational education and inspiration in the category to ensure that shoppers are more likely to choose your brand\n\nBy addressing these gaps, brands can ensure that shoppers' good intentions lead to action, fostering both category growth and sustainable impact."
+        },
+        {
+          "title": "Have a Question?",
+          "description": "Ask Gaia, our resident ai brand purpose expert by clicking on the question below.",
+          "imageSrc": "/images/guides/Intention.png",
+          "imageAlt": "Intention Action Gap framework",
+          "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_IAG-web2.pdf",
+          "glowColor": "#00AEEF"
+        },
+        {
+          "title": "",
+          "description": "How can we identify and address the consumer barriers that prevent sustainable purchasing decisions?",
+          "imageSrc": "/images/guides/gaia-face.jpg",
+          "imageAlt": "AI face representing brand intelligence",
+          "glowColor": "gaia"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Need States",
+      "sectionVariant": "alt",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## Connecting the Category to the Need State\n\nConnecting your brand to the consumer's 'need state' involves understanding what consumers truly want and finding ways to meet those needs while positively impacting society and the environment. This connection is essential for aligning sustainability goals with tangible outcomes.\n\n### Delivering on Consumer Needs Through Sustainability\n\nAsk yourself: *\"How can our sustainable behavior help drive consumer needs and unlock category growth opportunities for our brand?\"*\n\nFor example, Tide's #TurnToCold campaign linked its sustainability goal — reducing energy use — with consumer priorities like superior cleaning performance and value. They achieved this by:\n\n- Highlighting $150 annual energy savings on retail displays.\n- Partnering with the NFL to showcase effective cold-water cleaning.\n- Promoting online guides for families with energy-saving tips."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/guides/tide.png",
+          "alt": "Tide #TurnToCold campaign retail activation example",
+          "rounded": true
+        },
+        {
+          "_template": "image",
+          "src": "/images/advert.jpg",
+          "alt": "Learn how you can reduce your impact on the planet at home — presented by Tide, Cascade, Crest",
+          "rounded": true
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Retail Activation",
+      "ratio": "40/60",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/image-video-graphic.jpg",
+          "alt": "Retail Activation for Good — Design Sprint graphic",
+          "rounded": true
+        },
+        {
+          "_template": "richText",
+          "body": "Download this handy one page guide to find out more about Retail Activation For Good Design Sprints"
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "DOWNLOAD",
+              "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_RAFG.pdf",
+              "variant": "outline",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "**Creating a Shared Plan of Action: Retail Activation for Good**\n\nBringing a brand to market in the retail space is a critical moment for action. Success hinges on ensuring everyone involved understands their roles and responsibilities. However, there can be differing expectations:\n\n- Some retailers expect brands to take the lead by recommending ways to encourage responsible shopping and consumption and will charge them to 'pay to play' in the category through feature and display\n- Conversely, some brands rely on retailers to set clear expectations and will develop their activation ideas, selling strategies and tactics to help the retailer meet their own sustainability goals and commitments. This is a much better strategy because interests are better aligned and retailers will often offer more support by way of media and placement."
+        }
+      ]
+    }
+  ]
+}

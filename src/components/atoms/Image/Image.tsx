@@ -12,8 +12,18 @@ export interface ImageBlockProps {
   rounded?: boolean;
   /** Constrain the max width (e.g. "320px", "24rem"). Defaults to full column width. */
   maxWidth?: string;
+  /** Constrain the max height (e.g. "400px"). Defaults to "560px" for fill layout. */
+  maxHeight?: string;
   /** Use object-contain instead of object-cover (better for logos/diagrams) */
   contain?: boolean;
+  /**
+   * Layout mode:
+   * - "fill" (default): image spans full column width, capped at maxHeight
+   * - "centered": image renders at natural size, centered with padding — good for book covers, product shots
+   */
+  layout?: "fill" | "centered";
+  /** Optional entrance/idle animation: "float" gently bobs the image up and down */
+  animate?: "float";
 }
 
 const ImageBlock: React.FC<ImageBlockProps> = ({
@@ -22,15 +32,27 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
   caption,
   rounded = false,
   maxWidth,
+  maxHeight = "560px",
   contain = false,
+  layout = "fill",
+  animate,
 }) => {
+  const isCentered = layout === "centered";
+
   return (
-    <figure className={cn("my-0", maxWidth ? "mx-auto" : "mx-0")}>
+    <figure className={cn("my-0", isCentered ? "flex flex-col items-center" : "mx-0", animate === "float" && "animate-float")}>
       <div
-        className={cn("relative w-full overflow-hidden", {
-          "rounded-xl": rounded,
-        })}
-        style={maxWidth ? { maxWidth } : undefined}
+        className={cn(
+          "relative overflow-hidden",
+          isCentered
+            ? cn("inline-flex items-center justify-center p-8 rounded-2xl bg-white/[0.03]", { "rounded-xl": rounded })
+            : cn("w-full", { "rounded-xl": rounded }),
+        )}
+        style={
+          isCentered
+            ? { maxWidth: maxWidth ?? "340px" }
+            : { ...(maxWidth ? { maxWidth } : {}), ...(!contain ? { maxHeight } : {}) }
+        }
       >
         <NextImage
           src={src}
@@ -38,8 +60,8 @@ const ImageBlock: React.FC<ImageBlockProps> = ({
           width={1200}
           height={800}
           className={cn(
-            "h-auto w-full",
-            contain ? "object-contain" : "object-cover",
+            "h-auto",
+            isCentered ? "w-full object-contain drop-shadow-xl" : cn("w-full", contain ? "object-contain" : "object-cover"),
           )}
           sizes="(max-width: 768px) 100vw, 50vw"
         />

@@ -1,0 +1,482 @@
+{
+  "title": "Sustainability Marketing Agency | Grounded World",
+  "slug": "sustainability-marketing-agency",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "image",
+      "imageSrc": "/images/sustainability-marketing/green-world.jpg",
+      "imageAlt": "Sustainability marketing hero image",
+      "title": "How to Get Started with Sustainability Marketing",
+      "subtitle": "The Grounded guide on connecting your business purpose with profit, driving consumer engagement, and supporting good growth.",
+      "overlayOpacity": "heavy",
+      "contentAlign": "left",
+      "minHeight": "condensed",
+      "bottomFade": true
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Sustainability Marketing How-To",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## What is the Goal of Sustainability Marketing?\n\nSustainability marketing isn't only about encouraging people to offset their flights, use less plastic packaging, recycle more, or eat less meat… although these are all important!\n\nSustainability marketing involves promoting products and services that can have a verifiable, net positive impact on people and planet. This is usually done through claims, storytelling and campaigns. The goal of sustainability marketing is to create a 'flywheel of impact' that allows:\n\n- More people buy your sustainable and socially responsible products\n- Which in turn unlocks more profits for the company\n- The company reinvests these profits back into more sustainable innovation — keeping the flywheel spinning\n\n> **\"An organization should meet the needs of its present consumers without compromising the ability of future generations to fulfill their own needs\"**\n>\n> *Philip Kotler*"
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Find Out More",
+              "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+              "variant": "outline",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/fulfilment-graphic-web-600.jpg",
+          "alt": "Fulfillment for Everyone Forever — People, Planet, Profit Venn diagram",
+          "rounded": true,
+          "contain": true
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "",
+      "sectionSubtitle": "",
+      "columns": 4,
+      "variant": "stacked",
+      "sectionVariant": "alt",
+      "items": [
+        {
+          "title": "",
+          "description": "How does sustainability marketing create a \"flywheel of impact\" for both profit and positive change?",
+          "glowColor": "gaia"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/gaia-face-faded.jpg",
+          "imageAlt": "Gaia AI sustainability intelligence"
+        },
+        {
+          "title": "Step 1 – Fly Wheel or Impact",
+          "description": "Discover how to start by building your own flywheel of Impact and articulate your Sustainable Value Proposition (SVP).",
+          "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+        },
+        {
+          "title": "Flywheel of Impact",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/fly.png",
+          "imageAlt": "Flywheel of Impact logo",
+          "imageContain": true,
+          "imageBg": "#0a0a0a"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Is There Demand?",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## Is There Demand for Sustainable Products?\n\nThe Sustainable Market Share Index is published every year by NYU Stern's Center for Sustainable Business, in partnership with IRI. The 2023 report reveals that:\n\n- Sustainable products now have an **18.5% market share**, up 1.2 points from last year, despite high inflation and strong store brands.\n- Sustainable products' market share has risen **4.8 points since 2015**.\n- Products marketed as sustainable achieved a **5-YR CAGR of 9.9%** vs. 6.4% for their conventional counterparts.\n- Sustainability-marketed products delivered approximately **one-third of all CPG growth**, despite representing less than one-fifth of the market share."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/screenshot-of-graph.jpeg",
+          "alt": "Sustainably marketed products grew 2.7x faster in their categories",
+          "rounded": true,
+          "contain": true
+        },
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/sustainable-market-share.png",
+          "alt": "Sustainable Market Share Index — category performance",
+          "rounded": true,
+          "contain": true
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "I'm Often Asked...",
+      "sectionSubtitle": "",
+      "columns": 2,
+      "variant": "stacked",
+      "items": [
+        {
+          "title": "",
+          "description": "Who are the key consumer demographics that prioritize sustainability in their purchasing decisions?",
+          "glowColor": "gaia"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/gaia-face-faded.jpg",
+          "imageAlt": "Gaia AI sustainability intelligence",
+          "imageAspect": "3/4",
+          "imageMaxWidth": "200px",
+          "rowSpan": 2
+        },
+        {
+          "title": "",
+          "description": "What factors contribute to the rising demand and higher market share for sustainably marketed products?",
+          "glowColor": "gaia",
+          "typingDelay": 5000
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "What Are Some Of The Challenges Associated With Sustainability And Sustainability Marketing?",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "**Business Management**\n\nMany brands and businesses struggle to 'commercialize sustainability.' Their sustainability goals don't make it from the board room or ESG report into the brand or business plan because the business case for sustainability can be hard to prove!\n\nA good sustainability marketing agency will help a brand connect its sustainability goals to consumers' needs and purchase intent. They can connect the dots through research, strategy, and creativity. Their sustainability marketing strategy should be able to clearly demonstrate how the WHY of purpose can become the WAY of profit.\n\n**Once done..many of these barriers and challenges get removed!**"
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/Preventing.png",
+          "alt": "Challenges preventing transition towards sustainability",
+          "rounded": true,
+          "contain": true
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "What Are Some Of The Challenges Associated With Sustainability And Sustainability Marketing?",
+      "sectionVariant": "alt",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/Green-washing.png",
+          "alt": "GreenWash3000 — greenwashing art installation",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "**Greenwashing**\n\nGreenwashing presents the biggest challenge for sustainability marketing. To avoid it **brands must ensure that their sustainability claims can be verified by a third party and have a measurable impact on people or planet.**\n\nIf, for example, you claim that your renewable bamboo toilet paper reduces carbon emissions but ignore accounting for your CEO's private jet flights, you risk damaging your reputation and being accused of greenwashing.\n\nHere are [5 ways to avoid greenwashing](https://www.unep.org/news-and-stories/story/unep-tackles-greenwashing) (according to UN experts)."
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "What Are Some Of The Challenges Associated With Sustainability And Sustainability Marketing?",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "**Transparency**\n\nSustainability marketing also requires a wider commitment to transparency. **Your claims, operations and supply chain must be authentic, transparent, accountable, and traceable.** Let your sustainability marketing agency ask the tough questions and find the skeletons in the closet. They can unpack the less-than-perfect parts of your operation and advise on what should or should not be communicated. Remember, without a good grasp of the intention-action gaps and key issues, there's always a risk of greenwashing!\n\n**Quality & Consistency**\n\nAnother challenge to making your product more sustainable is that you cannot do so by removing features, downsizing the product, or compromising quality. Consumers want a sustainable product, but it **must** work as well as any unsustainable alternative. Buying sustainably cannot feel like a trade-off. Think of sustainability marketing as a 'gift with purchase.' It's a reason to feel good about buying a brand or product, that should enhance the product's utility, enjoyment, or brand experience. [Allbirds](https://www.allbirds.com) for example manage to blend style and aspiration with a total commitment to sustainability across their line of footwear."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/shoes.png",
+          "alt": "Allbirds sustainable shoes — quality and sustainability",
+          "rounded": false,
+          "contain": true,
+          "animate": "float"
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "",
+      "sectionSubtitle": "",
+      "columns": 4,
+      "variant": "stacked",
+      "sectionVariant": "alt",
+      "items": [
+        {
+          "title": "Have a Question?",
+          "description": "Ask Gaia, our resident AI sustainability marketing expert.\n\nHow do I overcome the challenges of greenwashing and build an authentic sustainability marketing strategy?",
+          "href": "/gaia"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/gaia-face-faded.jpg",
+          "imageAlt": "Gaia AI sustainability intelligence"
+        },
+        {
+          "title": "Step 2 – Sustain-Agility",
+          "description": "Find out how to create better integration, spark innovation and deliver triple bottom line impact through your sustainability marketing efforts.",
+          "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+        },
+        {
+          "title": "Sustain-Agility",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/sustainagility-graphic-mobile.png",
+          "imageAlt": "Sustain-Agility framework graphic",
+          "imageContain": true,
+          "imageBg": "#0a0a0a"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "The Intention-Action Gap",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## Closing the Intention-Action Gap\n\n**What is the Intention-Action Gap?**\n\nWhat we say we'll do and what we do often differ. This is especially true when price, convenience, habit, or peer pressure come into play.\n\nWe call this the intention-action gap and it's a core behavioral insight in sustainability marketing. At Grounded, we spend a lot of time finding, understanding and measuring it for clients. This can exist within the client's organization… internally, structurally, systemically, or culturally. It almost always exists at a certain stage of the consumer experience journey (CEX).\n\nThe adjacent chart from the [Sustainable Marketing 2030 Report](https://www.wundermanthompson.com/insight/the-sustainable-marketing-2030-report) shows that 97% of us want to live more sustainably. But, only 13% of us take action to do so. And, it may not surprise you that the intention-action gap also varies by category!"
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/billboard.jpg",
+          "alt": "Billboard: the environmentally friendly product is the one you didn't buy — Joshua Becker",
+          "rounded": true
+        },
+        {
+          "_template": "intentionStats"
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "",
+      "sectionSubtitle": "",
+      "columns": 4,
+      "variant": "stacked",
+      "sectionVariant": "alt",
+      "items": [
+        {
+          "title": "Closing the Intention-Action Gap",
+          "description": "How Do You Close the Intention-Action Gap?\n\n• First, determine the size of the intention-action gap (vs. your competition).\n• Then, develop the right content, messaging, and tactics to close it. This will drive purchase intent in your customers.\n• How? Traditional ATL and BTL marketing, digital marketing, SEO, influencer, and social media marketing, email marketing, events, and brand experiences can all help close the gap."
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/gaia-face-faded.jpg",
+          "imageAlt": "Gaia AI sustainability intelligence"
+        },
+        {
+          "title": "Step 3 – Intention Action Gap",
+          "description": "Discover how to start by closing the Intention-Action Gap with this handy one pager.",
+          "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/Intention.png",
+          "imageAlt": "Intention Action Gap logo",
+          "imageContain": true,
+          "imageBg": "#0a0a0a"
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "Get Inspired By Other Award Winning Sustainability Marketing Campaigns",
+      "sectionSubtitle": "See how leading brands have connected purpose to profit through sustainability marketing.",
+      "columns": 4,
+      "variant": "overlay",
+      "items": [
+        {
+          "title": "Lay's Good For All",
+          "description": "Connecting sustainable farming practices to consumer values through powerful retail storytelling.",
+          "imageSrc": "/images/sustainability-marketing/lays-1.jpg",
+          "imageAlt": "Lay's sustainability marketing campaign",
+          "href": "/our-work#work"
+        },
+        {
+          "title": "Better Brand",
+          "description": "Award-winning sustainability marketing turning environmental commitments into a growth engine.",
+          "imageSrc": "/images/sustainability-marketing/better.jpg",
+          "imageAlt": "Better brand sustainability campaign",
+          "href": "/our-work#work"
+        },
+        {
+          "title": "Farm to Future",
+          "description": "Connecting consumers to sustainable agriculture through immersive brand storytelling.",
+          "imageSrc": "/images/sustainability-marketing/farm-1.jpg",
+          "imageAlt": "Farm sustainability marketing campaign",
+          "href": "/our-work#work"
+        },
+        {
+          "title": "Oblivia",
+          "description": "Purpose-driven campaign connecting sustainability credentials to consumer purchase intent.",
+          "imageSrc": "/images/sustainability-marketing/Oblivia.jpg",
+          "imageAlt": "Oblivia sustainability marketing campaign",
+          "href": "/our-work#work"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/3-logos.jpg",
+          "alt": "Award winning sustainability marketing brands",
+          "rounded": true,
+          "contain": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/logos-2.png",
+          "alt": "Sustainability marketing brand logos",
+          "rounded": true,
+          "contain": true
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Choosing an Agency",
+      "sectionVariant": "alt",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## How to Choose the Best Sustainability Marketing Agency\n\n- **Find a top sustainability marketing agency with strong industry connections.** Find out which organisations they belong to and get a list of the brands with which they have achieved success. For example, Grounded actively participates, or works closely, with: B-Corp community, Sustainable Brands, Real Leaders, UN, and 1% for the Planet.\n- **Make sure they get you and your business.** They may have an impressive track record of award-winning campaigns, but if their grasp of your brand's ethos and goals isn't strong, keep looking.\n- **Look for a company that leads by example.** If they tell brands how to behave but lack the accreditations and transparency themselves, don't work with them. Engage an agency as committed to sustainability as you are.\n- **Don't forget digital.** Look for an agency that specialises in digital, social, and influencer marketing services — SEO, social media, influencer marketing, and email marketing.\n- **The best partner should be able to run Design Sprints.** Unlocking sustainability's commercial potential requires fast, agile, innovative work — discovering, ideating, and creating through design sprints."
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## The World's Biggest Opportunity\n\nThe world's biggest sustainability marketing challenges are also the world's biggest business opportunities! Working with a sustainability marketing agency partner will help you:\n\n- Communicate your eco-credentials to your customers and the wider world.\n- Establish yourself as a front-runner in sustainable business practices.\n- Develop a sustainability strategy and work towards building a more regenerative business.\n\nDone well, this can supercharge impact and profitability for your company."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Book a Discovery Call",
+              "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+              "variant": "solid",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/image-video-graphic.jpg",
+          "alt": "Sustainability marketing design sprint and video production",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/grounded_logo_200px.png",
+          "alt": "Grounded World — sustainability marketing agency",
+          "rounded": false,
+          "maxWidth": "200px",
+          "contain": true
+        },
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/b_icon.png",
+          "alt": "B Corp certification",
+          "rounded": false,
+          "maxWidth": "80px",
+          "contain": true
+        },
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/anthem-awards.png",
+          "alt": "Anthem Awards — award-winning sustainability marketing",
+          "rounded": false,
+          "maxWidth": "200px",
+          "contain": true
+        }
+      ]
+    },
+    {
+      "_template": "accordionFAQ",
+      "sectionTitle": "Frequently Asked Questions",
+      "sectionSubtitle": "Common questions about sustainability marketing.",
+      "items": [
+        {
+          "question": "What is sustainability marketing?",
+          "answer": "Sustainability marketing involves promoting products and services that have a verifiable, net positive impact on people and planet. It goes beyond green claims — it connects a brand's purpose to consumer needs, drives purchase intent, and helps businesses build a flywheel of impact where profit and purpose reinforce each other."
+        },
+        {
+          "question": "What is the difference between sustainability and CSR?",
+          "answer": "CSR (Corporate Social Responsibility) typically refers to a company's voluntary initiatives to improve social or environmental outcomes — often reported separately from the core business. Sustainability marketing goes further by embedding these commitments into brand strategy, product development, and consumer communications in a way that drives commercial value."
+        },
+        {
+          "question": "How can a sustainable marketing strategy make a positive impact?",
+          "answer": "By identifying and closing the intention-action gap — the space between what consumers say they want and what they actually do — a sustainability marketing strategy can shift behaviour at scale. It aligns brand purpose with consumer need states, driving more sustainable purchasing decisions while growing market share."
+        },
+        {
+          "question": "What is a sustainability marketing agency, and how can it benefit my business?",
+          "answer": "A sustainability marketing agency specialises in connecting your brand's sustainability credentials to consumer behaviour. They combine research, strategy, and creative execution to help you communicate authentically, avoid greenwashing, and build campaigns that drive both impact and profit."
+        },
+        {
+          "question": "What is the difference between a sustainability marketing agency and a sustainable marketing agency?",
+          "answer": "A sustainability marketing agency focuses specifically on marketing sustainability — helping brands communicate their environmental and social credentials effectively. A sustainable marketing agency is any agency that operates sustainably itself. The best partners are both: agencies that practice what they preach and have deep expertise in purpose-driven marketing."
+        }
+      ]
+    },
+    {
+      "_template": "newsletterCta",
+      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
+      "backgroundAlt": "Stockholm metro station escalators",
+      "newsletterHeading": "Subscribe",
+      "newsletterSubtext": "Get the latest articles, research, reports, case studies and insights on closing the intention-action gap direct to your inbox twice a month.",
+      "overlayOpacity": "heavy",
+      "bookingEyebrow": "Get Started",
+      "bookingHeading": "Discovery Call",
+      "bookingSubtext": "Book a discovery call and we'll get started on your sustainability marketing landscape assessment. In the meantime if you have any questions — Ask Gaia.",
+      "bookingLabel": "Discovery Call",
+      "bookingHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+    }
+  ]
+}

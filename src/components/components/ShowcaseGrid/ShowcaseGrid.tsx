@@ -29,6 +29,18 @@ export interface ShowcaseGridItem {
   glowColor?: string;
   /** Optional link destination */
   href?: string;
+  /** Use object-contain with padding instead of object-cover (for logos/diagrams) */
+  imageContain?: boolean;
+  /** Background color for the image area when imageContain is true (e.g. "#000000", "white"). Defaults to black. */
+  imageBg?: string;
+  /** Number of grid rows this item should span */
+  rowSpan?: number;
+  /** Override the start delay (ms) for the GaiaTypingBubble animation */
+  typingDelay?: number;
+  /** Override the image aspect ratio (e.g. "1/1", "4/3", "3/4"). Defaults to "3/4". */
+  imageAspect?: string;
+  /** Constrain the image-only block to this max width (e.g. "160px"). Useful for keeping rowSpan images small. */
+  imageMaxWidth?: string;
 }
 
 export interface ShowcaseGridProps {
@@ -38,8 +50,8 @@ export interface ShowcaseGridProps {
   sectionSubtitle?: string;
   /** Array of showcase items */
   items: ShowcaseGridItem[];
-  /** Number of columns (2, 3, or 4). Default 3 */
-  columns?: 2 | 3 | 4;
+  /** Number of columns (1, 2, 3, or 4). Default 3 */
+  columns?: 1 | 2 | 3 | 4;
   /** Card layout variant — "overlay" pins text over the image, "stacked" puts text below */
   variant?: "overlay" | "stacked";
   /** Section background variant */
@@ -93,6 +105,7 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                 const cardStyle = {
                   "--item-color": item.glowColor ?? "#ffffff",
                   "--reveal-delay": `${0.1 + index * 0.15}s`,
+                  ...(item.rowSpan ? { gridRow: `span ${item.rowSpan}` } : {}),
                 } as React.CSSProperties;
 
                 if (variant === "stacked") {
@@ -112,7 +125,7 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                         )}
                         {item.glowColor === "gaia" && item.description && (
                           <div className="mt-4">
-                            <GaiaTypingBubble text={item.description} />
+                            <GaiaTypingBubble text={item.description} startDelay={item.typingDelay ?? 1200} />
                           </div>
                         )}
                       </div>
@@ -123,7 +136,7 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                   if (item.imageSrc && item.glowColor === "gaia") {
                     return (
                       <div key={item.imageAlt || index} className="reveal-card flex flex-col gap-4 h-full items-center lg:items-stretch" style={cardStyle}>
-                        <div className="relative w-1/2 lg:w-full aspect-[3/4] overflow-hidden rounded-2xl">
+                        <div className={cn("relative w-1/2 lg:w-full overflow-hidden rounded-2xl", `aspect-[${item.imageAspect ?? "3/4"}]`)}>
                           <Image
                             src={item.imageSrc}
                             alt={item.imageAlt ?? ""}
@@ -133,7 +146,7 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                           />
                         </div>
                         {item.description && (
-                          <GaiaTypingBubble text={item.description} />
+                          <GaiaTypingBubble text={item.description} startDelay={item.typingDelay ?? 1200} />
                         )}
                       </div>
                     );
@@ -143,12 +156,18 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                   if (item.imageSrc && !item.title && !item.description) {
                     return (
                       <div key={item.imageAlt || index} className="reveal-card flex items-start justify-center lg:justify-stretch h-full" style={cardStyle}>
-                        <div className="relative w-1/2 lg:w-full aspect-[3/4] overflow-hidden rounded-2xl">
+                        <div
+                          className={cn("relative w-1/2 lg:w-full overflow-hidden rounded-2xl", `aspect-[${item.imageAspect ?? "3/4"}]`)}
+                          style={{
+                            ...(item.imageMaxWidth ? { maxWidth: item.imageMaxWidth } : {}),
+                            ...(item.imageContain ? { background: item.imageBg ?? "#000000" } : {}),
+                          }}
+                        >
                           <Image
                             src={item.imageSrc}
                             alt={item.imageAlt ?? ""}
                             fill
-                            className="object-cover"
+                            className={item.imageContain ? "object-contain p-6" : "object-cover"}
                             sizes="(max-width: 768px) 50vw, 25vw"
                           />
                         </div>
@@ -169,14 +188,27 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                       style={cardStyle}
                     >
                       {item.imageSrc ? (
-                        <div className="relative aspect-[4/3] overflow-hidden">
-                          <Image
-                            src={item.imageSrc}
-                            alt={item.imageAlt ?? ""}
-                            fill
-                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                          />
-                        </div>
+                        item.imageContain ? (
+                          /* Logo/diagram: fill card area, object-contain keeps logo proportions */
+                          <div className="relative aspect-[4/3] overflow-hidden" style={{ background: item.imageBg ?? "#000000" }}>
+                            <Image
+                              src={item.imageSrc}
+                              alt={item.imageAlt ?? ""}
+                              fill
+                              className="object-contain p-10 transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                          </div>
+                        ) : (
+                          /* Photo: fills card edge-to-edge */
+                          <div className="relative aspect-[4/3] overflow-hidden">
+                            <Image
+                              src={item.imageSrc}
+                              alt={item.imageAlt ?? ""}
+                              fill
+                              className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                            />
+                          </div>
+                        )
                       ) : null}
                       <div className={cn("p-6 xl:p-8 flex flex-col flex-1", !item.imageSrc && "justify-center")}>
                         <Heading level={3} size="h4" color="primary" className={cn("mb-2", !item.imageSrc && "!text-[color:var(--color-cyan)]")}>

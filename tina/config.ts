@@ -59,6 +59,35 @@ const innerImageTemplate = {
       name: "contain",
       label: "Contain (for logos/diagrams)",
     },
+    {
+      type: "string" as const,
+      name: "layout",
+      label: "Layout",
+      options: [
+        { value: "fill", label: "Fill (default)" },
+        { value: "centered", label: "Centered with padding" },
+      ],
+    },
+    {
+      type: "string" as const,
+      name: "animate",
+      label: "Animation",
+      options: [
+        { value: "float", label: "Float (gentle bob)" },
+      ],
+    },
+  ],
+};
+
+const innerIntentionStatsTemplate = {
+  name: "intentionStats" as const,
+  label: "97% vs 13% Animated Pie Charts",
+  fields: [
+    {
+      type: "string" as const,
+      name: "_placeholder",
+      label: "No configuration needed — renders the animated 97% vs 13% intention-action gap charts",
+    },
   ],
 };
 
@@ -1385,7 +1414,7 @@ export default defineConfig({
                     type: "number",
                     name: "columns",
                     label: "Columns",
-                    description: "Number of columns (2, 3, or 4). Default 3.",
+                    description: "Number of columns (1, 2, 3, or 4). Default 3.",
                   },
                   {
                     type: "string",
@@ -1436,6 +1465,17 @@ export default defineConfig({
                         type: "string",
                         name: "href",
                         label: "Link",
+                      },
+                      {
+                        type: "boolean",
+                        name: "imageContain",
+                        label: "Contain Image (logos/diagrams)",
+                      },
+                      {
+                        type: "string",
+                        name: "imageBg",
+                        label: "Image Background Color",
+                        ui: { component: "color" },
                       },
                     ],
                   },
@@ -1963,14 +2003,14 @@ export default defineConfig({
                     name: "left",
                     label: "Left Column",
                     list: true,
-                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate, innerEmbedTemplate],
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate, innerEmbedTemplate, innerIntentionStatsTemplate],
                   },
                   {
                     type: "object",
                     name: "right",
                     label: "Right Column",
                     list: true,
-                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate, innerEmbedTemplate],
+                    templates: [innerRichTextTemplate, innerImageTemplate, innerButtonGroupTemplate, innerExpandingCardsTemplate, innerEmbedTemplate, innerIntentionStatsTemplate],
                   },
                 ],
               },
@@ -2485,6 +2525,32 @@ export default defineConfig({
                       { value: "medium", label: "Medium" },
                       { value: "heavy", label: "Heavy" },
                     ],
+                  },
+                  {
+                    type: "string",
+                    name: "bookingEyebrow",
+                    label: "Booking CTA Eyebrow",
+                  },
+                  {
+                    type: "string",
+                    name: "bookingHeading",
+                    label: "Booking CTA Heading",
+                  },
+                  {
+                    type: "string",
+                    name: "bookingSubtext",
+                    label: "Booking CTA Subtext",
+                    ui: { component: "textarea" },
+                  },
+                  {
+                    type: "string",
+                    name: "bookingLabel",
+                    label: "Booking Button Label",
+                  },
+                  {
+                    type: "string",
+                    name: "bookingHref",
+                    label: "Booking Button URL",
                   },
                 ],
               },

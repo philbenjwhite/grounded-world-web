@@ -164,8 +164,8 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
 
   // When a feature image OR highlightsInRight is active, force left alignment
   const effectiveAlign = (hasFeatureImage || highlightsInRight) ? "left" : contentAlign;
-  // Right column exists when there's a feature image or when highlights are pushed right
-  const hasRightColumn = hasFeatureImage || (highlightsInRight && hasHighlights);
+  // Right column exists when feature image sits in right col, or when highlights are pushed right
+  const hasRightColumn = (hasFeatureImage && !highlightsInRight) || (highlightsInRight && hasHighlights);
 
   // Map predefined token values to static Tailwind class strings so Tailwind
   // can scan them at build time. Falls back to magenta for unknown values.
