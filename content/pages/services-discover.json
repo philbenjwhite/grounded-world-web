@@ -46,6 +46,14 @@
       "reverseOnMobile": false,
       "left": [
         {
+          "_template": "image",
+          "src": "/images/services/market-research-landscape-gaps.jpg",
+          "alt": "4C landscape assessment diagram showing culture, category, consumer, and competitor gaps",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
           "_template": "richText",
           "body": "## Finding the Gaps\n\nEvery engagement starts with our 4C Landscape Assessment — a structured audit of your **culture, category, consumer, and competitor** landscape.\n\nWe map the qualitative gaps between where your brand is and where it needs to be. This isn't surface-level desk research — it's a deep, strategic read of your operating environment that surfaces the real disconnects holding you back."
         },
@@ -59,14 +67,6 @@
               "external": true
             }
           ]
-        }
-      ],
-      "right": [
-        {
-          "_template": "image",
-          "src": "/images/services/market-research-landscape-gaps.jpg",
-          "alt": "4C landscape assessment diagram showing culture, category, consumer, and competitor gaps",
-          "rounded": true
         }
       ]
     },
