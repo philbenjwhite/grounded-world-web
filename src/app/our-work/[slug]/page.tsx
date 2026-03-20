@@ -93,10 +93,7 @@ export default async function WorkPage({ params }: WorkPageProps) {
 
   const relatedWork = await getRelatedWork(slug, work.tags ?? undefined);
 
-  const primaryTag = work.tags?.find(Boolean);
-  const viewAllHref = primaryTag
-    ? `/our-work?filter=${encodeURIComponent(primaryTag)}#work`
-    : "/our-work#work";
+  const viewAllHref = "/our-work#work";
 
   return (
     <div className="min-h-screen bg-(--background) text-white">

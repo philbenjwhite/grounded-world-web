@@ -81,7 +81,7 @@
       "ratio": "30/70",
       "gap": "xl",
       "verticalAlign": "start",
-      "reverseOnMobile": true,
+      "reverseOnMobile": false,
       "left": [
         {
           "_template": "image",

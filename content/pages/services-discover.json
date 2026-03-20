@@ -8,25 +8,13 @@
       "imageSrc": "/images/services/market-research-hero-umbrellas.jpg",
       "imageAlt": "Colorful umbrellas symbolizing diverse market perspectives",
       "title": "Close the Intention-Action Gap",
-      "subtitle": "Your sustainability investments aren't landing. We find out why — and what to do about it.",
-      "ctaLabel": "Try The Workshop",
-      "ctaHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
-      "ctaVariant": "solid",
-      "secondaryCtaLabel": "Learn More",
-      "secondaryCtaHref": "#our-process",
+      "subtitle": "If your investments in sustainability and social impact aren't getting any traction, we can help you find out why.",
       "overlayOpacity": "medium",
       "contentAlign": "left",
       "minHeight": "fit",
       "bottomFade": true,
       "featureImageSrc": "/images/services/intention-action-gap.svg",
       "featureImageAlt": "Intention-Action Gap methodology badge",
-      "highlightsDescription": "If you're feeling a bit stuck or not seeing any business traction or commercial benefit from investments in sustainability, social impact or CSR — then the chances are that there's still an intention-action gap. This is how we can help you find, quantify and close it.",
-      "highlights": [
-        "Culture, category, competitor and consumer landscape assessments",
-        "Intent-to-action gap research and analysis",
-        "Ecosystem mapping, need states, category growth drivers & go to market strategy"
-      ],
-      "highlightColor": "var(--color-gold)",
       "highlightsInRight": true
     },
     {
@@ -55,7 +43,7 @@
       "right": [
         {
           "_template": "richText",
-          "body": "## Finding the Gaps\n\nEvery engagement starts with our 4C Landscape Assessment — a structured audit of your **culture, category, consumer, and competitor** landscape.\n\nWe map the qualitative gaps between where your brand is and where it needs to be. This isn't surface-level desk research — it's a deep, strategic read of your operating environment that surfaces the real disconnects holding you back."
+          "body": "## Finding the Gap\n\nWe'll start by undertaking a complimentary AI driven **5C landscape assessment** (company, culture, category, consumer and competitor) to identify where your biggest intention action gaps are — inside and out.\n\n**The result:** An initial assessment of the intention action gaps preventing your brand or business from commercializing sustainability — along with a strategic recommendation on how to close the biggest gap — quantifying that lost opportunity."
         },
         {
           "_template": "buttonGroup",
@@ -80,7 +68,7 @@
       "left": [
         {
           "_template": "richText",
-          "body": "## Mapping the Ecosystem\n\nWith gaps identified, we go deeper. Through **stakeholder interviews, focus groups, and ethnographic research**, we build a rich picture of the people, forces, and dynamics shaping your market.\n\nOur resident AI tool, Gaia, helps us synthesize vast qualitative datasets at speed — while our researchers bring the human nuance that machines miss. The result: a clear map of opportunities and a defensible go-to-market position."
+          "body": "## Mapping the Ecosystem\n\nOnce the biggest gap has been identified, we go deeper. Using **interviews, workshops and ethnographic research** we map out the ecosystem that connects all of your key stakeholders — capturing their needs, drivers, expectations and pain points — bringing the human insight and nuance that machines will always miss.\n\n**The result:** A clear map of the most significant drivers, barriers, pain points and bottle-necks that are influencing behavior across your stakeholder's ecosystem."
         }
       ],
       "right": [
@@ -110,7 +98,7 @@
       "right": [
         {
           "_template": "richText",
-          "body": "## Quantification\n\nInsight without evidence doesn't move boardrooms. In the final stage, we deploy **Implicit Association Testing (IAT)** to measure the unconscious barriers and drivers behind consumer behaviour.\n\nThis isn't opinion polling — it's behavioural science. We prioritise the factors that actually determine whether people act, and distil them into a single \"propelling problem\" your brand is uniquely positioned to solve."
+          "body": "## Right to Win\n\nInsight without ROI doesn't get buy-in. In the final stage, we deploy **Implicit Association Testing (IAT)** to measure the unconscious barriers and drivers behind your team culture and consumer behaviour — connecting the dots. This isn't opinion polling — it's the very latest in neuroscience and behavioral research!\n\nWe isolate the factors that actually determine whether people will act and then wrap it all up into a propelling problem that your brand or business is uniquely positioned to solve. And, we'll also show you what you can own and how that differentiates you from the competition in your category."
         },
         {
           "_template": "buttonGroup",
@@ -128,47 +116,41 @@
     {
       "_template": "featureCards",
       "sectionLabel": "What You Get",
-      "heading": "Research Deliverables",
+      "heading": "Research & Deliverables",
       "columns": 3,
       "items": [
         {
-          "icon": "Target",
+          "icon": "ChartLineUp",
           "color": "#4DD9FF",
-          "title": "Strategic Reports",
-          "body": "Clear, actionable reports that translate complex research into strategic recommendations your team can act on immediately."
+          "title": "Data Dashboard & Report",
+          "body": "Qualitative and quantitative data with confidence levels that you can prioritize and adjust to identify your biggest intention-action gap."
         },
         {
-          "icon": "ChartLineUp",
+          "icon": "MapTrifold",
           "color": "#FF08CC",
-          "title": "Data Dashboards",
-          "body": "Interactive dashboards that visualise your market landscape, competitive positioning, and consumer sentiment in real time."
+          "title": "Experience Map",
+          "body": "An overview of the barriers, drivers, pressure points and bottlenecks that characterize your key stakeholders and influence their behavior."
         },
         {
           "icon": "Users",
           "color": "#FFA603",
-          "title": "Leadership Workshops",
-          "body": "Facilitated sessions that align your leadership team around research findings and build consensus on the path forward."
+          "title": "Team Collaboration & Buy-In",
+          "body": "A clear articulation of the problem to solve, path to alignment, right to win and size of the prize."
         }
       ]
-    },
-    {
-      "_template": "ctaBanner",
-      "backgroundSrc": "/images/services/market-research-hero-umbrellas.jpg",
-      "backgroundAlt": "Colorful umbrellas symbolizing diverse market perspectives",
-      "heading": "Ready to Close the Gap?",
-      "subtext": "Book a free 30-minute discovery call and find out how we can help you turn good intentions into measurable impact.",
-      "primaryLabel": "Book a Discovery Call",
-      "primaryHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
-      "primaryExternal": true,
-      "overlayOpacity": "heavy"
     },
     {
       "_template": "newsletterCta",
       "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
       "backgroundAlt": "Stockholm metro station escalators",
-      "newsletterHeading": "Stay Grounded",
-      "newsletterSubtext": "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.",
-      "overlayOpacity": "heavy"
+      "newsletterHeading": "Subscribe",
+      "newsletterSubtext": "Get the latest articles, research, reports, case studies and insights on closing the intention-action gap direct to your inbox twice a month.",
+      "overlayOpacity": "heavy",
+      "bookingEyebrow": "Get Started",
+      "bookingHeading": "Discovery Call",
+      "bookingSubtext": "Book a discovery call and we'll get started on your landscape assessment. In the meantime if you have any questions or want to get a sense for what your biggest intention-action gaps might be — Ask Gaia.",
+      "bookingLabel": "Discovery Call",
+      "bookingHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
     },
     {
       "_template": "accordionFAQ",
