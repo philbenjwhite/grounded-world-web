@@ -169,12 +169,12 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                       style={cardStyle}
                     >
                       {item.imageSrc ? (
-                        <div className="relative aspect-[16/9] overflow-hidden bg-black flex items-center justify-center">
+                        <div className="relative aspect-[4/3] overflow-hidden">
                           <Image
                             src={item.imageSrc}
                             alt={item.imageAlt ?? ""}
                             fill
-                            className="object-contain p-8 md:p-10 transition-transform duration-700 ease-out group-hover:scale-105"
+                            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                           />
                         </div>
                       ) : null}
