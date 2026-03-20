@@ -79,16 +79,16 @@
       "reverseOnMobile": true,
       "left": [
         {
-          "_template": "image",
-          "src": "/images/services/market-research-ecosystem-mapping.jpg",
-          "alt": "Ecosystem mapping visualization showing stakeholder connections and influence networks",
-          "rounded": true
+          "_template": "richText",
+          "body": "## Mapping the Ecosystem\n\nWith gaps identified, we go deeper. Through **stakeholder interviews, focus groups, and ethnographic research**, we build a rich picture of the people, forces, and dynamics shaping your market.\n\nOur resident AI tool, Gaia, helps us synthesize vast qualitative datasets at speed — while our researchers bring the human nuance that machines miss. The result: a clear map of opportunities and a defensible go-to-market position."
         }
       ],
       "right": [
         {
-          "_template": "richText",
-          "body": "## Mapping the Ecosystem\n\nWith gaps identified, we go deeper. Through **stakeholder interviews, focus groups, and ethnographic research**, we build a rich picture of the people, forces, and dynamics shaping your market.\n\nOur resident AI tool, Gaia, helps us synthesize vast qualitative datasets at speed — while our researchers bring the human nuance that machines miss. The result: a clear map of opportunities and a defensible go-to-market position."
+          "_template": "image",
+          "src": "/images/services/market-research-ecosystem-mapping.jpg",
+          "alt": "Ecosystem mapping visualization showing stakeholder connections and influence networks",
+          "rounded": true
         }
       ]
     },
@@ -98,8 +98,16 @@
       "ratio": "50/50",
       "gap": "xl",
       "verticalAlign": "center",
-      "reverseOnMobile": false,
+      "reverseOnMobile": true,
       "left": [
+        {
+          "_template": "image",
+          "src": "/images/services/market-research-quantification-chart.jpg",
+          "alt": "Quantification chart showing implicit association testing results and barrier-driver analysis",
+          "rounded": true
+        }
+      ],
+      "right": [
         {
           "_template": "richText",
           "body": "## Quantification\n\nInsight without evidence doesn't move boardrooms. In the final stage, we deploy **Implicit Association Testing (IAT)** to measure the unconscious barriers and drivers behind consumer behaviour.\n\nThis isn't opinion polling — it's behavioural science. We prioritise the factors that actually determine whether people act, and distil them into a single \"propelling problem\" your brand is uniquely positioned to solve."
@@ -114,14 +122,6 @@
               "external": false
             }
           ]
-        }
-      ],
-      "right": [
-        {
-          "_template": "image",
-          "src": "/images/services/market-research-quantification-chart.jpg",
-          "alt": "Quantification chart showing implicit association testing results and barrier-driver analysis",
-          "rounded": true
         }
       ]
     },
