@@ -115,14 +115,12 @@
 /* ─── Title text ─── */
 
 .meetTitle {
-  font-size: clamp(2.8rem, 10vw, 8rem);
-  font-weight: 200;
-  color: rgba(255, 255, 255, 0.55);
-  letter-spacing: 0.14em;
-  line-height: 1;
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  color: var(--font-color-primary);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
   text-align: center;
-  text-transform: uppercase;
-  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
 }
 
 /* ─── Per-character reveal ─── */
@@ -163,89 +161,26 @@
   }
 }
 
-/* ─── Play / CTA button ─── */
+/* ─── Button row ─── */
 
-.playBtn {
+.buttonRow {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: 999px;
-  border: 1px solid rgba(77, 168, 255, 0.25);
-  background: rgba(77, 168, 255, 0.08);
-  backdrop-filter: blur(16px);
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  cursor: pointer;
+  gap: 12px;
   opacity: 0;
   transform: translateY(10px);
   transition:
     opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.3s,
-    background 0.3s,
-    box-shadow 0.3s;
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
 
-@media (min-width: 768px) {
-  .playBtn {
-    gap: 10px;
-    padding: 14px 32px;
-    font-size: 15px;
-  }
-}
-
-.playBtn.playBtnVisible {
+.buttonRow.buttonRowVisible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
 
-.playBtn:hover {
-  border-color: rgba(77, 168, 255, 0.5);
-  background: rgba(77, 168, 255, 0.14);
-  box-shadow:
-    0 0 24px rgba(77, 168, 255, 0.12),
-    0 0 48px rgba(77, 168, 255, 0.06);
-}
-
-.playBtn:active {
-  transform: scale(0.97);
-}
-
-.playIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(77, 168, 255, 0.2);
-  color: #4da8ff;
-  flex-shrink: 0;
-}
-
-/* ─── Audio hint ─── */
-
-.audioHint {
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  color: rgba(255, 255, 255, 0.25);
-  opacity: 0;
-  transform: translateY(6px);
-  transition:
-    opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s,
-    transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
-  pointer-events: none;
-}
-
-.audioHint.audioHintVisible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ─── Video layer ─── */
 
@@ -480,6 +415,55 @@
   transform: scale(0.92);
 }
 
+/* ─── Skip button — bottom-center during video ─── */
+
+.skipBtn {
+  position: absolute;
+  z-index: 6;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s,
+    transform 0.15s;
+  animation: skipFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.5s both;
+}
+
+.skipBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.skipBtn:active {
+  transform: translateX(-50%) scale(0.97);
+}
+
+@keyframes skipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 /* ─── Chat section — in place, intro covers it ─── */
 
 .chatSection {
@@ -524,7 +508,7 @@
   .aiChar {
     animation: none;
   }
-  .playBtn {
+  .buttonRow {
     transition-duration: 0.01ms !important;
   }
   .introWrap,

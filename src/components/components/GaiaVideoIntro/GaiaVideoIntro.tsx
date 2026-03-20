@@ -3,7 +3,8 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import * as THREE from "three";
 import cn from "classnames";
-import { PlayIcon, SpeakerHighIcon, SpeakerSlashIcon } from "@phosphor-icons/react";
+import { PlayIcon, SpeakerHighIcon, SpeakerSlashIcon, ChatCircleDotsIcon } from "@phosphor-icons/react";
+import Button from "@/components/atoms/Button";
 import styles from "./GaiaVideoIntro.module.css";
 
 /* ─── Config ─── */
@@ -95,7 +96,12 @@ const GaiaVideoIntro: React.FC<GaiaVideoIntroProps> = ({
     return () => timers.forEach(clearTimeout);
   }, []);
 
-  /* ── User clicks "Experience Gaia" → play video with audio ── */
+  /* ── User clicks "Ask Gaia" → skip straight to chat ── */
+  const handleAskGaia = useCallback(() => {
+    setPhase("done");
+  }, []);
+
+  /* ── User clicks "Intro" → play video with audio ── */
   const handlePlay = useCallback(() => {
     if (!videoRef.current) return;
     videoRef.current.muted = false;
@@ -335,9 +341,9 @@ const GaiaVideoIntro: React.FC<GaiaVideoIntroProps> = ({
       const phaseTarget = phaseRef.current === "intro" ? introTarget : 0.25;
       waveScale += (phaseTarget - waveScale) * 0.03;
 
-      // Dim dots during video (15%) and chat (40% for visible texture)
+      // Dim dots during video (15%) and hide completely for chat (iframe has its own bg)
       const alphaTarget = phaseRef.current === "intro" ? 1.0
-        : phaseRef.current === "video" ? 0.15 : 0.4;
+        : phaseRef.current === "video" ? 0.15 : 0.0;
       globalAlpha += (alphaTarget - globalAlpha) * 0.03;
       material.uniforms.uGlobalAlpha.value = globalAlpha;
 
@@ -466,6 +472,16 @@ const GaiaVideoIntro: React.FC<GaiaVideoIntroProps> = ({
         </button>
       )}
 
+      {/* ── Skip button — visible during video ── */}
+      {phase === "video" && (
+        <button
+          className={styles.skipBtn}
+          onClick={handleAskGaia}
+        >
+          Skip & Ask Questions
+        </button>
+      )}
+
       {/* ── Intro overlay (title + button) ── */}
       <div className={cn(styles.introWrap, phase === "done" && styles.introDone)}>
         <div className={cn(
@@ -490,18 +506,16 @@ const GaiaVideoIntro: React.FC<GaiaVideoIntroProps> = ({
               ))}
             </h1>
 
-            <button
-              className={cn(styles.playBtn, buttonVisible && styles.playBtnVisible)}
-              onClick={handlePlay}
-            >
-              <span className={styles.playIcon}>
+            <div className={cn(styles.buttonRow, buttonVisible && styles.buttonRowVisible)}>
+              <Button variant="primary" onClick={handleAskGaia}>
+                <ChatCircleDotsIcon size={18} weight="fill" />
+                Ask Gaia
+              </Button>
+              <Button variant="secondary" onClick={handlePlay}>
                 <PlayIcon size={18} weight="fill" />
-              </span>
-              <span>Watch Introduction</span>
-            </button>
-            <p className={cn(styles.audioHint, buttonVisible && styles.audioHintVisible)}>
-              Audio will play
-            </p>
+                Intro
+              </Button>
+            </div>
           </div>
         </div>
       </div>
