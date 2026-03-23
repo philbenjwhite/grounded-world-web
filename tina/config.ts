@@ -1424,6 +1424,12 @@ export default defineConfig({
                     options: ["overlay", "stacked"],
                   },
                   {
+                    type: "string",
+                    name: "sectionVariant",
+                    label: "Section Background",
+                    options: ["default", "alt", "dark"],
+                  },
+                  {
                     type: "object",
                     name: "items",
                     label: "Items",
@@ -1476,6 +1482,12 @@ export default defineConfig({
                         name: "imageBg",
                         label: "Image Background Color",
                         ui: { component: "color" },
+                      },
+                      {
+                        type: "number",
+                        name: "typingDelay",
+                        label: "Typing Delay (ms)",
+                        description: "Start delay for Gaia typing animation (e.g. 1200, 5000)",
                       },
                     ],
                   },

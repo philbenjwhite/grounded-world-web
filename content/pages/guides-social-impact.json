@@ -1,0 +1,389 @@
+{
+  "title": "Social Impact Agency | Grounded World",
+  "slug": "resources/guides/social-impact",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "image",
+      "imageSrc": "/images/resources-guide-social-impact.jpg",
+      "imageAlt": "Social Impact guide hero image",
+      "title": "How to Drive Purpose and Profit with a Social Impact Marketing Agency",
+      "subtitle": "A step-by-step introduction to Social Impact Marketing: Turning your vision into meaningful action.",
+      "overlayOpacity": "heavy",
+      "contentAlign": "left",
+      "minHeight": "condensed",
+      "bottomFade": true
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "What is Social Impact Marketing?",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## What is Social Impact Marketing?\n\nAt Grounded, we define social impact marketing as the positive impact specific acts or initiatives have on people, planet, and communities. For example, building a pump for clean water in a remote Kenyan community can improve hygiene and health. This can increase girls' school attendance and boost the community's prosperity.\n\n## What Does A Social Impact Marketing Agency Do?\n\nA Social Impact Marketing Agency blends traditional marketing expertise with a deep commitment to driving meaningful change. These agencies specialize in helping brands elevate their Corporate Social Responsibility (CSR) from a secondary concern to a core part of their identity and business strategy."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/social-impact/unicef.jpg",
+          "alt": "UNICEF — social impact and community development",
+          "rounded": true
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "What Sets Social Impact Marketing Agencies Apart?",
+      "sectionSubtitle": "Unlike traditional marketing agencies, Social Impact Marketing Agencies aim to build brands not just for profit, but to inspire action and drive transformation.",
+      "columns": 4,
+      "variant": "stacked",
+      "sectionVariant": "alt",
+      "items": [
+        {
+          "title": "Behavioral Insight",
+          "description": "Leverage expertise in human behavior to create campaigns that resonate deeply with audiences — motivating customers and stakeholders to move from intention to action."
+        },
+        {
+          "title": "Purpose-Driven Focus",
+          "description": "Prioritize initiatives that align brand and business strategy with social, environmental, or cultural transformation — not just profit."
+        },
+        {
+          "title": "Holistic Support",
+          "description": "Draw on a diverse range of resources to build authentic engagement around shared values and create systematic change on a social, environmental, or cultural level."
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/gaia-face-faded.jpg",
+          "imageAlt": "Gaia AI social impact expert"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Case Study: Plan International",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/social-impact/we-are-the-girls-ads.jpg",
+          "alt": "Plan International — We Are The Girls campaign changing image bank algorithms",
+          "rounded": true
+        },
+        {
+          "_template": "image",
+          "src": "/images/social-impact/anthem-awards.png",
+          "alt": "Anthem Awards — award-winning social impact campaign",
+          "rounded": false,
+          "contain": true,
+          "maxWidth": "200px"
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## Grounded's Award-Winning Work for Plan International\n\nCheck out Grounded's multi-award-winning case study for Plan International — a campaign that changed the algorithm in image banks to remove gender bias and discrimination for girls.\n\nThis groundbreaking initiative tackled stereotyping at the source: the stock photo libraries that shape how girls are represented in media around the world."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "View Case Study",
+              "href": "/our-work#work",
+              "variant": "outline",
+              "external": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "",
+      "sectionSubtitle": "",
+      "columns": 4,
+      "variant": "stacked",
+      "sectionVariant": "alt",
+      "items": [
+        {
+          "title": "",
+          "description": "Have a question? Ask Gaia, our resident AI social impact marketing expert by clicking on the question below.",
+          "glowColor": "gaia"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/gaia-face-faded.jpg",
+          "imageAlt": "Gaia AI social impact intelligence"
+        },
+        {
+          "title": "Step 1 — Get Started",
+          "description": "Discover how to start by closing the Intention Action Gap with this handy one pager.",
+          "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_IAG-web2.pdf"
+        },
+        {
+          "title": "Intention Action Gap",
+          "description": "",
+          "imageSrc": "/images/guides/Intention.png",
+          "imageAlt": "Intention Action Gap framework",
+          "imageContain": true,
+          "imageBg": "#0a0a0a"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "How Can a Business Create Social Impact?",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "## It Is Possible to Make Money and Make a Difference\n\nThere is an outdated but persistent belief that conscious companies committed to positive social impact do so at the expense of their profit margins. But strong social impact marketing strategies need not limit your business goals or profits — and can help reinforce your brand identity and positioning.\n\nThe world's biggest problems — poverty, pollution, inequality, climate change, political polarization, or human rights — are also the biggest business opportunities. They provide the need and opportunity to demonstrate how companies can transform the **WHY** of purpose into the **WAY** of profit.\n\nAnd nowhere is this mindset better represented and captured as a philosophy and an operating system than an **Exponential Organization**."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/social-impact/exponential.jpg",
+          "alt": "Exponential Organizations — The New Playbook for 10x Growth and Impact",
+          "rounded": true,
+          "contain": true
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "The Role of Exponential Organizations (ExOs) in Social Impact",
+      "sectionVariant": "alt",
+      "ratio": "40/60",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/social-impact/ideas.jpg",
+          "alt": "Ideas and innovation — social impact through exponential organizations",
+          "rounded": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## What is an ExO?\n\nAn ExO (Exponential Organization) is a purpose-driven, agile, and scalable business model that achieves extraordinary results by leveraging cutting-edge technologies and innovative strategies. The ExO model empowers organizations to:\n\n- **Achieve Rapid Growth:** Leverage exponential technologies and agile structures to outpace competitors\n- **Adapt to Change:** Thrive in the face of 21st-century challenges, including global poly-crises\n- **Deliver Exceptional Results:** Generate up to 40x the shareholder returns compared to traditional enterprises\n\n### A Culture of Benevolent Disruption\n\nAn ExO isn't just about growth — it's about transforming industries while creating a positive impact. Key characteristics include:\n\n- **Tribes of Passionate Employees and Customers:** United by a shared vision and mission\n- **Benevolent Disruptors:** Challenging industry norms to make the world better"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 2 — Articulate Your Massive Transformative Purpose (MTP)",
+      "ratio": "40/60",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/social-impact/bpp.png",
+          "alt": "BPP — Belief, Purpose and Pursuits framework by Grounded World",
+          "rounded": true,
+          "contain": true
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Download the BPP",
+              "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_BPP.pdf",
+              "variant": "outline",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## Articulate Your Massive Transformative Purpose\n\nAchieving exponential social impact starts with articulating your MTP. Grounded's open-source tool called the **BPP (Belief, Purpose, and Pursuits)** is published by the ANA as the best-in-class framework to enable brands, retailers, start-ups, and nonprofits worldwide to help them articulate their MTP.\n\nThe BPP helps you connect the **WHY** of purpose to the **WAY** of profit — giving your organization a north star that scales impact and drives commercial value.\n\n### The BPP helps you:\n\n- Define what you believe as an organization\n- Articulate the higher-order purpose beyond making money\n- Identify the pursuits — the specific initiatives — that bring your purpose to life\n\nGet started with this handy one-pager as a guide."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Book a Discovery Call",
+              "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+              "variant": "solid",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 3 — Connect to the Sustainable Development Goals (SDGs)",
+      "sectionVariant": "alt",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/social-impact/global-goals.png",
+          "alt": "UN Sustainable Development Goals — the global goals for a better world",
+          "rounded": true,
+          "contain": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## What Are the SDGs?\n\nThe Sustainable Development Goals (SDGs) are a universal call to action established by the United Nations to address the world's most pressing challenges by 2030. Comprised of 17 interconnected goals, the SDGs aim to:\n\n- End poverty and hunger\n- Improve health, education, and overall well-being\n- Reduce inequalities and promote economic growth\n- Combat climate change\n- Protect oceans, forests, and biodiversity\n\nOften referred to as the 'business plan to save the world,' the SDGs provide a clear roadmap for organizations to align their strategies with global priorities, balancing profit with positive societal and environmental impact.\n\n### A Framework for Business and Impact\n\nFor companies navigating stricter policies and legislation around climate and supply chain disclosures, the SDGs offer a powerful framework for:\n\n- **Sustainability Reporting:** Aligning corporate activities with global goals to demonstrate impact transparently\n- **Governance and Accountability:** Helping boards and investors see how commercial objectives align with social responsibilities\n- **Strategic Alignment:** Positioning businesses as leaders in sustainable growth"
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "Step 4 — Get Inspired by Other Award-Winning Social Impact Campaigns",
+      "sectionSubtitle": "",
+      "columns": 3,
+      "variant": "overlay",
+      "items": [
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/social-impact/cbr.jpg",
+          "imageAlt": "St John Ambulance CPR Bra — award-winning social impact campaign",
+          "href": "https://www.famouscampaigns.com/2024/10/st-john-ambulance-have-released-a-first-of-its-kind-cpr-bra/"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/social-impact/the-look.jpg",
+          "imageAlt": "Pedigree Adoptable — award-winning social impact campaign",
+          "href": "https://www.pedigreeadoptable.com"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/social-impact/tiny.jpg",
+          "imageAlt": "Strands for Trans — queer-affirming beauty salons",
+          "href": "https://www.service95.com/strands-for-trans-queer-affirming-beauty-salons"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/social-impact/turn.jpg",
+          "imageAlt": "Award-winning social impact campaign",
+          "href": "https://www.youtube.com/watch?v=aC7lbdD1hq0"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/social-impact/trans.jpg",
+          "imageAlt": "Award-winning social impact campaign",
+          "href": "https://www.youtube.com/watch?v=pw73tgBmv0g"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/social-impact/metaverse.jpg",
+          "imageAlt": "Tuvalu — Accenture digital twin social impact",
+          "href": "https://www.accenture.com/us-en/case-studies/technology/tuvalu"
+        }
+      ]
+    },
+    {
+      "_template": "accordionFAQ",
+      "sectionTitle": "Criteria for Choosing a Social Impact Agency",
+      "sectionSubtitle": "Not all agencies are created equal. Here are the seven questions to ask before you choose a partner.",
+      "allowMultiple": true,
+      "items": [
+        {
+          "question": "1. Do They Understand Your Brand's Purpose?",
+          "answer": "A good place to start is to make sure the team knows what your brand purpose isn't. It isn't your brand essence, mission, proposition, or marketing slogan. It doesn't include words like 'you', 'we' or 'us' and won't talk about the brand specifically. Rather, brand purpose is 'a higher-order reason for a brand's existence that goes beyond making money and adds value to society.' Ensure your social impact agency understands brand purpose and its role and application — ideally, they will help you define it."
+        },
+        {
+          "question": "2. How Innovative is the Agency?",
+          "answer": "The world's biggest problems are also the world's biggest business opportunities. Social impact marketing agencies are becoming experts in social innovation, as well as in social impact. After all, they are tasked with inventing and creating new products, platforms, and solutions to some of humanity's greatest challenges."
+        },
+        {
+          "question": "3. Who Are Their Clients?",
+          "answer": "Seek out an agency with social impact clients that include for-profits, non-profits, startups, venture capital groups, and foundations. Ask the agency to provide examples of the ways in which they have facilitated and activated partnerships across sectors — because cross-sector collaboration drives innovation. A good social impact agency will be willing to make introductions and connections among their clients to generate collaborative action and even greater impact."
+        },
+        {
+          "question": "4. Does the Agency Walk the Talk?",
+          "answer": "The agency's team should be passionate about making a difference in the world and have a genuine commitment to impact society positively. Many social impact agencies are made up of activists and social enterprises who openly support social and environmental causes they care about. Look for a fearlessly creative agency that operates with transparency, is willing to educate and freely share knowledge, and has a network of like-minded partners. At Grounded, we're very proud of our Certified B Corp status — a community of leaders driving a global movement of people using business as a force for good."
+        },
+        {
+          "question": "5. What Are Their Digital and Social Capabilities?",
+          "answer": "Impact and activism are happening online these days, so working with an agency that is well-versed in all things digital, social, and influencer will be key to your success. From cutting-edge digital content, omnichannel customer service, and water-tight security management services, your agency needs to be familiar with all the online innovations that will facilitate the delivery of your brand purpose."
+        },
+        {
+          "question": "6. Who Are Their Partners?",
+          "answer": "Research the individuals and organizations the agency is affiliated with and with whom they regularly collaborate. They should have a list posted on their site and, if not, ask for it. Are they willing to leverage these relationships with you? At Grounded, we are happy to call upon our connections at the UN Office of Partnerships, Sustainable Brands, Open ExO, ANA, Real Leaders, 1% for the Planet, and the B-Corp community."
+        },
+        {
+          "question": "7. What's Their Process?",
+          "answer": "At Grounded, our process begins with a landscape assessment, articulating the problem and identifying the opportunities. Once we align and have a game plan, we move on to purpose articulation which then drives internal and external activation, bringing a client's story to life and measuring impact on relevant stakeholders. Using quantitative and qualitative research, we map out the desired consumer experience to identify the moments that matter — then build the campaign and tactical plan, plugging in partners, tech, and digital to accelerate impact and power transformation for your brand."
+        }
+      ]
+    },
+    {
+      "_template": "accordionFAQ",
+      "sectionTitle": "Frequently Asked Questions",
+      "sectionSubtitle": "Common questions about social impact marketing and how to get started.",
+      "items": [
+        {
+          "question": "What is social impact marketing?",
+          "answer": "Social impact marketing is the use of marketing strategy, creativity, and communications to drive positive change for people, planet, and communities. It goes beyond traditional CSR by embedding a brand's commitment to impact into its core identity and business strategy — connecting purpose to profit."
+        },
+        {
+          "question": "What does a social impact agency do?",
+          "answer": "A social impact agency blends traditional marketing expertise with a deep commitment to driving meaningful change. They help brands articulate their purpose, identify the intersection of their mission with the world's greatest needs, close the intention-action gap, and develop campaigns that create lasting social, environmental, or cultural transformation."
+        },
+        {
+          "question": "Can social impact marketing be commercially profitable?",
+          "answer": "Absolutely. There is an outdated belief that purpose-driven companies sacrifice profit for impact. In reality, the world's biggest social and environmental challenges are the world's biggest business opportunities. Strong social impact marketing strategies need not limit your business goals or profits — and can help reinforce your brand identity and positioning."
+        },
+        {
+          "question": "How do I choose the right social impact agency?",
+          "answer": "Look for an agency that deeply understands brand purpose, has a track record of cross-sector collaboration, practices what it preaches (e.g., B Corp certification), and has strong digital and social capabilities. Ask for examples of how they have helped brands close the intention-action gap and measure their impact across stakeholder groups."
+        },
+        {
+          "question": "What is the role of the SDGs in social impact marketing?",
+          "answer": "The UN Sustainable Development Goals provide a universal framework for aligning business strategy with the world's most pressing challenges. For brands, connecting their purpose to relevant SDGs can strengthen sustainability reporting, governance, and stakeholder credibility — and position them as leaders in sustainable growth."
+        },
+        {
+          "question": "What is an Exponential Organization (ExO) and why does it matter for social impact?",
+          "answer": "An Exponential Organization is a purpose-driven, agile, and scalable business model that achieves extraordinary results by leveraging cutting-edge technologies and innovative strategies. ExOs generate up to 40x the shareholder returns of traditional enterprises while creating positive societal impact — making them a powerful model for businesses that want to scale both profit and purpose."
+        }
+      ]
+    },
+    {
+      "_template": "newsletterCta",
+      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
+      "backgroundAlt": "Stockholm metro station escalators",
+      "newsletterHeading": "Subscribe",
+      "newsletterSubtext": "Get the latest articles, research, reports, case studies and insights on social impact marketing and closing the intention-action gap direct to your inbox twice a month.",
+      "overlayOpacity": "heavy",
+      "bookingEyebrow": "Get Started",
+      "bookingHeading": "Discovery Call",
+      "bookingSubtext": "Book a discovery call and we'll get started on your social impact landscape assessment. In the meantime if you have any questions — Ask Gaia.",
+      "bookingLabel": "Discovery Call",
+      "bookingHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+    }
+  ]
+}
