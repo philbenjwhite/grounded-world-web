@@ -454,6 +454,7 @@ export function renderSection(section: PageSections, index: number): React.React
                 href: item!.href ?? undefined,
                 imageContain: !!(item as unknown as { imageContain?: boolean }).imageContain,
                 imageBg: (item as unknown as { imageBg?: string }).imageBg ?? undefined,
+                typingDelay: (item as unknown as { typingDelay?: number }).typingDelay ?? undefined,
               })) ?? []
           }
         />

@@ -228,8 +228,14 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                     </div>
                   );
 
+                  const isExternal = item.href?.startsWith("http");
                   return item.href ? (
-                    <Link key={item.title} href={item.href} className="no-underline block h-full">
+                    <Link
+                      key={item.title}
+                      href={item.href}
+                      className="no-underline block h-full"
+                      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
                       {card}
                     </Link>
                   ) : (

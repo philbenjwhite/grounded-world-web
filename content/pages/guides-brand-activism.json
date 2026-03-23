@@ -1,0 +1,351 @@
+{
+  "title": "Brand Activism Agency | Grounded World",
+  "slug": "resources/guides/brand-activism",
+  "sections": [
+    {
+      "_template": "heroBanner",
+      "backgroundType": "image",
+      "imageSrc": "/images/resources-guide-brand-activism.jpg",
+      "imageAlt": "Brand Activism guide hero image",
+      "eyebrow": "A Brand Activism Guide To:",
+      "title": "How to Develop your Brand Activism Plan.",
+      "subtitle": "Developing a brand activism plan is a strategic process that aligns your brand with social, environmental, or political causes, building deeper connections with your audience and contributing positively to society. Here's our step-by-step guide to help you navigate this journey:",
+      "overlayOpacity": "heavy",
+      "contentAlign": "left",
+      "minHeight": "condensed",
+      "bottomFade": true
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 1: Understand Brand Activism",
+      "ratio": "40/60",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/brand-activism/the-body-shop.png",
+          "alt": "The Body Shop — pioneer in brand activism",
+          "rounded": true,
+          "contain": true
+        },
+        {
+          "_template": "image",
+          "src": "/images/brand-activism/the-body-shop-ad.png",
+          "alt": "The Body Shop campaign ad",
+          "rounded": true,
+          "contain": true
+        },
+        {
+          "_template": "image",
+          "src": "/images/brand-activism/greenpeace.png",
+          "alt": "The Body Shop and Greenpeace Save the Whale campaign",
+          "rounded": true,
+          "contain": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "### Defining Brand Activism\n\nBrand activism consists of purposeful actions by companies to address fundamental concerns that reflect society's urgent problems, such as environmental or societal changes.\n\nIf your brand or business is playing a significant role in driving social, political, economic, or environmental change or taking a 'direct' and 'disruptive' approach to influencing policy and legislation beyond advocacy, then it is engaging in brand activism. By taking a stand on a pressing issue (or issues), businesses can add a new facet to their brand mission and influence consumer preferences and purchasing decisions.\n\n*\"Those who stand for nothing, fall for everything\"*\n— Alexander Hamilton\n\nOne of the first companies to publicly declare that driving positive change in the world was as important as making a profit was The Body Shop. Founded in Brighton, England in 1976 by Anita Roddick, The Body Shop was a pioneer in cruelty-free and environmentally friendly cosmetics. Under Roddick's leadership, the company boldly aligned itself with significant social and environmental causes and body positivity.\n\nTheir key campaigns and achievements include:\n\n- Partnering with Greenpeace in 1986 for the Save the Whale campaign to end whale hunting\n- Launching a 1989 petition to halt the burning of Brazilian rainforests\n- Advocating for the Ogoni People and campaigning against animal testing\n- Promoting renewable energy and raising funds for victims of domestic violence\n- Creating the Get Lippy campaign to support those living with HIV/AIDS\n\nBut perhaps its greatest success was a collaboration with ECPAT International to fight child trafficking, resulting in 24 countries adopting new legislation. The company's unwavering commitment to human and animal rights, along with environmental sustainability, has built a fiercely loyal customer base over the years. Customers deeply value the alignment of their own beliefs with the brand's mission, often willing to pay premium prices knowing their money supports meaningful causes."
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Contemporary Relevance",
+      "sectionVariant": "alt",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "Ben & Jerry's has also long funded and built relationships with civil rights leaders, giving the company a credible platform to use its voice and be heard. And like The Body Shop and Ben & Jerry's, activist brands such as Vega, Patagonia, and Tony's Chocolonely have successfully embraced activism because social issues or environmental reform are the higher purpose at the heart of their brand.\n\nIn a world facing socially regressive policies driven out of political and religious division, brand activism offers companies seeking to be agents of change an avenue to directly engage in meaningful demonstration and solutions.\n\nKantar's 2020 report found that 54% of consumers now expect brands to take an active role in social conversations about issues like #MeToo and racial injustices, with consumers also demanding meaningful action rather than empty solidarity."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/brand-activism/vote-the.jpg",
+          "alt": "Vote — brand activism voter registration campaign",
+          "rounded": true
+        },
+        {
+          "_template": "image",
+          "src": "/images/brand-activism/ben-and-jerrys.png",
+          "alt": "Ben and Jerry's — brand activism",
+          "rounded": true,
+          "contain": true
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "Have a Question about Brand Activism?",
+      "sectionSubtitle": "Ask Gaia, our resident AI assistant by clicking on any of the questions below.",
+      "columns": 4,
+      "variant": "stacked",
+      "items": [
+        {
+          "title": "",
+          "description": "What exactly is brand activism, and how does it differ from Traditional CSR or mere advocacy?",
+          "glowColor": "gaia"
+        },
+        {
+          "title": "",
+          "description": "",
+          "imageSrc": "/images/sustainability-marketing/gaia-face-faded.jpg",
+          "imageAlt": "Gaia AI brand activism expert"
+        },
+        {
+          "title": "",
+          "description": "How does embracing brand activism create new business opportunities while driving meaningful social impact?",
+          "glowColor": "gaia",
+          "typingDelay": 5000
+        },
+        {
+          "title": "",
+          "description": "Why is authenticity crucial when defining a brand's purpose for activism, and how can brands avoid appearing opportunistic?",
+          "glowColor": "gaia",
+          "typingDelay": 10000
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 2: Recognize the Business Benefits of Brand Activism",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "> **\"By choosing brands that align with their values, shoppers are voting with their wallets for the kinds of businesses they want in the world and paving the way toward a more sustainable and just economy. We're in an unfortunate time where governments and institutions provide less and less moral leadership and we now expect to see it from the brands we buy.\"**\n\n*From 'B the Change': A collaboration of B Lab, the B Corp community, and the movement of people using business as a force for good.*"
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/brand-activism/change-the-mascot.jpg",
+          "alt": "Change the Mascot — brand activism campaign",
+          "rounded": true
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionVariant": "alt",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "### Aligning with Consumer Values & Enhancing Brand Image\n\nBrands that have either been established with a higher purpose at their core, or those that have naturally evolved beyond corporate social responsibility to become values-driven companies, attract customers whose values align with their own and can more credibly and authentically take an 'activist' stance on issues that they and their consumers care about.\n\nBusinesses that align their efforts with the same values as their audience not only build trust and equity but also gain long-term public support for their initiatives.\n\nThis economic activism on the part of consumers elevates the purchase of everyday items and services from simple commercial transactions to an important expression of their moral code."
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "### Driving Social Impact\n\nThe depth of feeling that pushes people to the streets to protest a political issue or into the courtrooms in an attempt to achieve improvements in society should not be ignored or underestimated.\n\nActivism that addresses environmental change or societal challenges can act as a catalyst for public support and foster long-term loyalty from values-driven consumers.\n\nIf the engine of commerce, fueled by social innovation and kept in check by an ever more conscious consumer, can create sustainable, scalable solutions for what the world needs and what people want, then brands can (and ostensibly should) become the most powerful instruments for change the world has ever seen!"
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 3: Define Your Brand's Purpose and Values",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "For companies seeking to address political issues or societal changes, understanding the intersection of their mission with urgent problems facing society is essential to crafting an authentic message.\n\nA good place to start is to draw a simple Venn diagram and then find the intersection between your mission (your brand purpose) the money (biggest consumer barrier) and the magic (the issue or cultural challenge that you want to address.)\n\n### Download Fly Wheel of Impact\n\nBuild your own brand activism plan and create a flywheel of impact, using this handy one pager as a guide."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Download",
+              "href": "https://grounded.world/wp-content/uploads/2025/05/One-Pager_FWI.pdf",
+              "variant": "outline",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/brand-activism/social-impact-graphic.png",
+          "alt": "Mission, Magic and Money — Brand Activism Venn diagram",
+          "rounded": false,
+          "contain": true
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionVariant": "alt",
+      "ratio": "40/60",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": true,
+      "left": [
+        {
+          "_template": "image",
+          "src": "/images/brand-activism/bud-light.png",
+          "alt": "Bud Light brand activism controversy",
+          "rounded": true
+        },
+        {
+          "_template": "image",
+          "src": "/images/brand-activism/bud-light-sales.png",
+          "alt": "Bud Light sales impact data",
+          "rounded": true,
+          "contain": true
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "#### Authenticity in Activism\n\nCorporate-driven initiatives that fail to align with a brand's core mission and values risk appearing as marketing-driven stunts that impede improvements, damage brand equity, trust and reputation instead of creating meaningful change.\n\nIn April 2023, Bud Light tried collaborating with transgender influencer Dylan Mulvaney on a social media promotional post. This sparked backlash from several prominent conservatives, leading many conservative figures and groups to call for a boycott of Bud Light. Bud Light lost $1.4 billion in U.S. beer sales and AB InBev lost over $27 billion in value following the controversy. They saw their U.S. market share slashed by half, largely fueled by U.S. retailers reducing shelf space for the brand.\n\nActivism isn't meant to be impulsive, reactionary or commercially destructive, but fear of change, misplaced sentiment (or a clash of values) can sometimes drive individuals against brands and corporations that take a stand — if that position isn't authentically connected to their purpose.\n\n**Engaging Stakeholders**\n\nThe Bud Light fiasco is a great example of failure to understand the brand's key stakeholders (in this case, their core consumer base.) Before taking a stand, think about the entire ecosystem of stakeholders, how they are connected (or not!), and where the biggest intention/action gaps are. Listen, learn, and seek to understand differing points of view and then (and only then) see if it's possible to complete that Venn diagram and find some common ground."
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 4: Measure Your Impact and Adapt",
+      "ratio": "60/40",
+      "gap": "lg",
+      "verticalAlign": "start",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "#### Monitoring and Evaluation\n\nEngaging in brand activism should always be driven by a moral compulsion rather than a commercial challenge. Taking a stance based on fear of failure, relevance or retribution alone does not pay off. There's a big difference between an existential fear of standing by and not doing anything to change the status quo and then fear of doing something — anything — just in case you get found out.\n\nTo ensure your efforts remain impactful, you can go back to that Venn diagram and measure the three most important dimensions of your activist stance and brand strategy. How well do your key stakeholders understand and jive with your mission? Have you managed to overcome the biggest intention-action gaps? and are you having a transformative impact on the lived experience of the core community that you serve? Measure each (all can be done with a simple survey) and notice any shifts across each of these dimensions."
+        }
+      ],
+      "right": [
+        {
+          "_template": "image",
+          "src": "/images/sustainability-marketing/gaia-face-faded.jpg",
+          "alt": "Gaia AI — brand activism intelligence",
+          "rounded": true,
+          "contain": true
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "",
+      "sectionSubtitle": "",
+      "columns": 4,
+      "variant": "stacked",
+      "sectionVariant": "alt",
+      "items": [
+        {
+          "title": "",
+          "description": "Why is continuous monitoring and adaptation critical to sustaining long-term impact through brand Activism?",
+          "glowColor": "gaia"
+        },
+        {
+          "title": "",
+          "description": "What differentiates a dedicated brand activism agency from a traditional marketing agency in terms of strategy and expertise?",
+          "glowColor": "gaia",
+          "typingDelay": 5000
+        },
+        {
+          "title": "",
+          "description": "#### Gathering Feedback\n\nAnalyze the responses you get from your audience and stakeholders against these three dimensions and you'll find that you have both a strategy and a compass to help you navigate through the challenges and understand whether your cause and commitment is transforming your purpose into profit.",
+          "glowColor": ""
+        },
+        {
+          "title": "",
+          "description": "#### Continuous Improvement\n\nBe prepared to adapt your strategies based on your 'flywheel of impact' and make sure you stay up to speed with the changing political, economic, social, technological, legal, and environmental (PESTLE) dynamics at play.",
+          "glowColor": ""
+        }
+      ]
+    },
+    {
+      "_template": "splitLayout",
+      "sectionLabel": "Step 5: Understand What a Brand Activism Agency Can Do for Your Brand",
+      "ratio": "50/50",
+      "gap": "lg",
+      "verticalAlign": "center",
+      "reverseOnMobile": false,
+      "left": [
+        {
+          "_template": "richText",
+          "body": "Partnering with a brand activism agency like Grounded can help you understand the culture, context, and societal issues that your brand purpose can best help support and activate. Undertaking landscape assessments, stakeholder ecosystem mapping, intention/action gap analysis through to purpose articulation, campaign development, strategic partnerships, and measurement can all help you make sure you're crystal clear on what you stand for, before taking a stand.\n\nTo find out more about our approach — simply roll over the tiles below."
+        }
+      ],
+      "right": [
+        {
+          "_template": "richText",
+          "body": "## About Grounded\n\nAt Grounded World, we thrive at the intersection of brand purpose, commercial strategy, and social impact, assisting brands in articulating their purpose, activating their brands, and accelerating their impact."
+        },
+        {
+          "_template": "buttonGroup",
+          "buttons": [
+            {
+              "label": "Book a Discovery Call",
+              "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
+              "variant": "solid",
+              "external": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_template": "showcaseGrid",
+      "sectionTitle": "",
+      "sectionSubtitle": "",
+      "columns": 4,
+      "variant": "stacked",
+      "sectionVariant": "alt",
+      "items": [
+        {
+          "title": "Discover",
+          "description": "Assessing culture and the competitive landscape to find the intention-action gaps.",
+          "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+        },
+        {
+          "title": "Articulate",
+          "description": "Connecting the 'why' of purpose to the 'way' of profit to tell your sustainability story and drive innovation.",
+          "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+        },
+        {
+          "title": "Activate",
+          "description": "Driving behavior change and intent at the moments that matter for colleagues, customers and consumers.",
+          "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+        },
+        {
+          "title": "Accelerate",
+          "description": "Measuring impact, reporting on progress sparking engagement and facilitating collaboration and partnerships at scale.",
+          "href": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+        }
+      ]
+    },
+    {
+      "_template": "newsletterCta",
+      "backgroundSrc": "/images/stockholm-metro-station-escalators-dark-underground.jpg",
+      "backgroundAlt": "Stockholm metro station escalators",
+      "newsletterHeading": "Subscribe",
+      "newsletterSubtext": "Get the latest articles, research, reports, case studies and insights on brand activism and closing the intention-action gap direct to your inbox twice a month.",
+      "overlayOpacity": "heavy",
+      "bookingEyebrow": "Get Started",
+      "bookingHeading": "Discovery Call",
+      "bookingSubtext": "Book a discovery call and we'll get started on your brand activism landscape assessment. In the meantime if you have any questions — Ask Gaia.",
+      "bookingLabel": "Discovery Call",
+      "bookingHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins"
+    }
+  ]
+}
