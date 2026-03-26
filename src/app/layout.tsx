@@ -94,6 +94,12 @@ export default async function RootLayout({
           type="text/javascript"
           async
         />
+        {/* RB2B visitor identification */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(key){if(window.reb2b)return;window.reb2b={loaded:true};var s=document.createElement("script");s.async=true;s.src="https://ddwl4m2hdecbv.cloudfront.net/b/"+key+"/"+key+".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s,document.getElementsByTagName("script")[0]);}("XOE9GHRX35OM");`,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
