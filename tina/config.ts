@@ -263,17 +263,21 @@ export default defineConfig({
   branch,
 
   // TinaCloud configuration (required for production)
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || null,
-  token: process.env.TINA_TOKEN || null,
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || "",
+  token: process.env.TINA_TOKEN || "",
 
-  search: {
-    tina: {
-      indexerToken: process.env.TINA_SEARCH_TOKEN || null,
-      stopwordLanguages: ["eng"],
-    },
-    indexBatchSize: 100,
-    maxSearchIndexFieldLength: 100,
-  },
+  ...(process.env.TINA_SEARCH_TOKEN
+    ? {
+        search: {
+          tina: {
+            indexerToken: process.env.TINA_SEARCH_TOKEN,
+            stopwordLanguages: ["eng"],
+          },
+          indexBatchSize: 100,
+          maxSearchIndexFieldLength: 100,
+        },
+      }
+    : {}),
 
   build: {
     outputFolder: "admin",
