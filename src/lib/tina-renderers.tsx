@@ -496,6 +496,20 @@ export function renderSection(section: PageSections, index: number): React.React
           b?.__typename === "PageSectionsSplitLayoutLeftRichText" ||
           b?.__typename === "PageSectionsSplitLayoutLeftExpandingCards",
       );
+      const leftHasImage = section.left?.some(
+        (b) => b?.__typename === "PageSectionsSplitLayoutLeftImage",
+      );
+      const rightHasImage = section.right?.some(
+        (b) => b?.__typename === "PageSectionsSplitLayoutRightImage",
+      );
+      const rightHasText = section.right?.some(
+        (b) =>
+          b?.__typename === "PageSectionsSplitLayoutRightRichText" ||
+          b?.__typename === "PageSectionsSplitLayoutRightExpandingCards",
+      );
+      // Auto-sticky: whichever column has images but no text gets sticky behaviour
+      const stickyImageLeft = !stickyLeft && leftHasImage && !leftHasText;
+      const stickyImageRight = rightHasImage && !rightHasText;
 
       const labelElement = sectionLabel ? (
         <div data-tina-field={tinaField(section as Record<string, unknown>, "sectionLabel")}>
@@ -581,15 +595,19 @@ export function renderSection(section: PageSections, index: number): React.React
                   | "stretch") ?? "start"
               }
               reverseOnMobile={section.reverseOnMobile ?? false}
+              leftClassName={stickyImageLeft ? "lg:self-stretch" : undefined}
+              rightClassName={stickyImageRight ? "lg:self-stretch" : undefined}
               left={
                 stickyLeft ? (
+                  <div className="lg:sticky lg:top-24">{leftContent}</div>
+                ) : stickyImageLeft ? (
                   <div className="lg:sticky lg:top-24">{leftContent}</div>
                 ) : (
                   leftContent
                 )
               }
               right={
-                <div className="flex flex-col gap-6">
+                <div className={cn("flex flex-col gap-6", stickyImageRight && "lg:sticky lg:top-24")}>
                   {!leftHasText && labelElement}
                   {section.right
                     ?.filter(Boolean)
