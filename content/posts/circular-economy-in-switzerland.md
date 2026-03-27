@@ -1,5 +1,7 @@
 ---
 title: "Circular Economy in Switzerland: A Week Inside the World’s Most Circular Nation"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-19T16:22:53.000Z
 description: Anyone working towards more responsible business, operating with purpose, has encountered the ideal of transforming the global marketplace into a circular ec...
 author: content/team-members/paloma-jacome.json

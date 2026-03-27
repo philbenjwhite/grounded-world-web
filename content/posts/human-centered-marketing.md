@@ -1,5 +1,7 @@
 ---
 title: "Human Centered Marketing: Why People First Drives Growth"
+seoTitle: "Human Centered Marketing: Why People First Drives Growth"
+seoDescription: "Discover how human centered marketing builds authentic connections and delivers business outcomes through empathy and purpose."
 date: 2025-12-16T05:56:28.000Z
 description: "A pharmaceutical executive once told me that after twenty years in marketing, he'd forgotten his customers were sick people, not prescribers."
 author: content/team-members/matt-deasy.json

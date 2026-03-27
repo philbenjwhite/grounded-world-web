@@ -1,5 +1,7 @@
 ---
 title: "Brand Purpose: The Foundation That Drives Profit and Impact"
+seoTitle: "Brand Purpose: The Foundation That Drives Profit and Impact"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-04T08:42:11.000Z
 description: "Sixty-four percent of consumers cite shared values as the primary reason they have a relationship with a brand. Yet most companies treat brand purpose as a..."
 author: content/team-members/matt-deasy.json

@@ -1,5 +1,7 @@
 ---
 title: "Composting Day: When Circularity Improves Mental Health"
+seoTitle: "Composting Day: When Circularity Improves Mental Health"
+seoDescription: "Celebrate &quot;Learn About Composting Day&quot; by discovering how composting enhances mental health and supports a circular lifestyle."
 date: 2024-05-28T12:31:29.000Z
 description: "Learn About Composting Day: Composting as a Radical Act of Mental Health Through Circularity  It’s May 29th– which means it’s “Learn About Composting Day”,..."
 author: content/team-members/paloma-jacome.json

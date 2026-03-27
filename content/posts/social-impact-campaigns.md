@@ -1,5 +1,7 @@
 ---
 title: "Social Impact Campaigns: Turning Audience Energy into Lasting Change"
+seoTitle: "Social Impact Campaigns: A Practical Playbook for Action"
+seoDescription: "Design social impact campaigns that convert awareness into action. Learn from a brand purpose agency focused on results."
 date: 2025-12-08T07:48:15.000Z
 description: "Social impact campaigns work best when they blend credible evidence with human stories and invite communities to participate across social media channels..."
 author: content/team-members/matt-deasy.json

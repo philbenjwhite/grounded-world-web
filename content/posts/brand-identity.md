@@ -1,5 +1,7 @@
 ---
 title: "Brand Identity: How a Clearly Defined Brand Identity Builds Trust"
+seoTitle: "Brand Identity: Definition, Elements, and How to Build One"
+seoDescription: "Learn what brand identity means, why it matters, and how to build a strong visual and verbal brand identity that drives growth."
 date: 2025-12-01T10:30:07.000Z
 description: "Brand identity encompasses all visual, verbal, and experiential elements that shape how audiences perceive your organization—from your logo and color..."
 author: content/team-members/matt-deasy.json

@@ -1,5 +1,7 @@
 ---
 title: "Employee Satisfaction: The Hidden Engine of Purpose-Driven Growth"
+seoTitle: "Employee Satisfaction: The Engine of Purpose-Driven Growth"
+seoDescription: "Strategic framework for improving employee satisfaction. Research-backed insights for building engaged, high-performing teams."
 date: 2025-12-06T10:53:30.000Z
 description: "When Salesforce implemented regular employee feedback loops and acted on the insights gathered, the company didn't just see improved employee morale. The..."
 author: content/team-members/matt-deasy.json

@@ -1,5 +1,7 @@
 ---
 title: "Why Your Brand Mission Matters More Than Ever: A Strategic Guide for Purpose-Led Leaders"
+seoTitle: "Brand Mission: Craft a Purpose-Driven Statement That Works"
+seoDescription: "Learn how to create a powerful brand mission statement that drives purpose-led growth with expert insights and real examples."
 date: 2025-11-23T06:45:22.000Z
 description: A strong brand mission articulates what your organization does, how it operates, and why it exists—serving as both compass and credential in markets where au...
 author: content/team-members/matt-deasy.json

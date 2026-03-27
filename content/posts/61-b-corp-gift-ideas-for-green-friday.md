@@ -1,5 +1,7 @@
 ---
 title: 61 B Corp Gift Ideas for Green Friday
+seoTitle: "61 B Corp Gift Ideas For Green Friday: Green Gift Guide"
+seoDescription: "B Corps do it better. Purchase presents with purpose this Green Friday! See our ultimate list of B Corps for sustainable holiday shopping&gt;&gt;"
 date: 2024-11-18T12:26:46.000Z
 description: 'As holiday shopping kicks off, consider this B Corp gift guide for Green Friday and purchase with purpose this gift-giving season. Unlike Black Friday’s rush...'
 featuredImage: /images/blog/b-corp-gift.png

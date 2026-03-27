@@ -1,5 +1,7 @@
 ---
 title: "Avoid Greenwashing: When Misleading Claims Ruin Brands"
+seoTitle: "Avoid Greenwashing: When Misleading Claims Ruin Brands"
+seoDescription: "Learn how to avoid greenwashing with honest sustainability claims. Build trust and protect your brand from green PR disasters."
 date: 2025-05-15T09:56:40.000Z
 description: Avoid greenwashing by resisting the urge to hop on the sustainability bandwagon without substance. In today’s world, misleading eco-claims can turn into a PR...
 author: content/team-members/matt-deasy.json

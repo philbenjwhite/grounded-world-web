@@ -1,5 +1,7 @@
 ---
 title: "Pride 2025: Beige Pride, Pinkhushing & Brand Activism at its Best"
+seoTitle: "Pride 2025: Beige Pride, Pinkhushing &#038; Brand Activism at its Best - Grounded"
+seoDescription: ""
 date: 2025-07-03T11:22:13.000Z
 description: "This June, something strange happened:"
 author: content/team-members/paloma-jacome.json

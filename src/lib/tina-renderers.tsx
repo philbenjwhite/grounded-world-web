@@ -141,6 +141,7 @@ export function renderSlotBlock(
           buttons?: Array<{
             label: string;
             href: string;
+            uploadedFile?: string;
             variant?: string;
             external?: boolean;
           }>;
@@ -152,9 +153,9 @@ export function renderSlotBlock(
           {buttons.filter(Boolean).map((btn) => (
             <Button
               key={btn.label}
-              href={btn.href}
+              href={btn.uploadedFile || btn.href}
               variant={(btn.variant as "primary" | "secondary" | "outline") ?? "secondary"}
-              target={btn.external ? "_blank" : undefined}
+              target={btn.external || btn.uploadedFile ? "_blank" : undefined}
             >
               {btn.label}
             </Button>

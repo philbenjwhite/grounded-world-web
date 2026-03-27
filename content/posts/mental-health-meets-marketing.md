@@ -1,5 +1,7 @@
 ---
 title: "When Mental Health Awareness Meets Marketing… We get a Moment or a Movement?"
+seoTitle: "When Mental Health Meets Marketing: Moment or Movement?"
+seoDescription: "The question is no longer “Should we say something?” It’s “Are we saying anything meaningful AND are we backing it with action?”"
 date: 2025-05-22T18:38:42.000Z
 description: "When Mental Health Awareness Meets Marketing... We get a Moment or a Movement?"
 author: content/team-members/paloma-jacome.json

@@ -1,5 +1,7 @@
 ---
 title: The Top 5 Brands Keeping Our Oceans Plastic-Free
+seoTitle: "The Top 5 Brands Keeping Our Oceans Plastic-Free"
+seoDescription: "Explore the significance of Plastic-Free July and discover the top brands championing a plastic-free future like Grove Collaborative."
 date: 2024-07-31T22:51:12.000Z
 description: You’ll never realize how much plastic you consume until you take the challenge to participate in Plastic-Free July. As we reach the midpoint of the year, it'...
 author: content/team-members/paloma-jacome.json

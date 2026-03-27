@@ -1,5 +1,7 @@
 ---
 title: "Cause Related Marketing: How Purpose-Driven Partnerships Create Shared Value"
+seoTitle: "Cause Related Marketing Guide | Purpose-Driven Partnerships"
+seoDescription: "Learn how cause related marketing builds brand loyalty, drives business success, and creates lasting social impact through partnerships."
 date: 2026-01-05T09:12:37.000Z
 description: "In 2011, Patagonia ran a Black Friday ad in The New York Times with a counterintuitive message: \"Don't Buy This Jacket.\""
 author: content/team-members/matt-deasy.json

@@ -1,5 +1,7 @@
 ---
 title: "Sustainability Initiatives: A Strategic Guide to Building Authentic Environmental Impact"
+seoTitle: "Sustainability Initiatives: A Strategic Guide to Environmental Impact"
+seoDescription: "Strategic guide to sustainability initiatives that reduce carbon emissions, strengthen brands, and create measurable impact."
 date: 2025-12-03T08:07:24.000Z
 description: "In 2023, global greenhouse gas emissions reached a critical threshold, with annual emissions increasing by 50% over the past three decades. Yet..."
 author: content/team-members/matt-deasy.json

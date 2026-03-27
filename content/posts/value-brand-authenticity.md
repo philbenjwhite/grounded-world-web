@@ -1,5 +1,7 @@
 ---
 title: The Value of Brand Authenticity
+seoTitle: "The Value of Brand Authenticity | Grounded World"
+seoDescription: "Balancing purpose and profit through the Belief, Purpose, Pursuit model can help you achieve brand authenticity and anchor brand ambition."
 date: 2019-05-07T16:36:39.000Z
 description: Balancing purpose with profit is a challenge that the more linear and profit-driven entities of yesteryear never really had to reconcile. Enterprises today e...
 author: content/team-members/phil-white.json

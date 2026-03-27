@@ -1,5 +1,7 @@
 ---
 title: "Stopping Plastic Pollution Shouldn't Be This Hard | David Katz"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-18T21:09:12.000Z
 description: "In this episode of It Shouldn't Be This Hard, we had the privilege of having David Katz, Founder and CEO of Plastic Bank on the show — a social entrepreneur..."
 author: content/team-members/paloma-jacome.json

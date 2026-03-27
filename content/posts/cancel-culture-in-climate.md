@@ -1,5 +1,7 @@
 ---
 title: "Cancel Culture in Climate: Why Division Is Derailing Progress"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-19T00:31:05.000Z
 description: "The climate crisis has never been more dire. And yet the movement built to fight it is losing momentum. No commitments are even close to being met. Instead..."
 author: content/team-members/paloma-jacome.json

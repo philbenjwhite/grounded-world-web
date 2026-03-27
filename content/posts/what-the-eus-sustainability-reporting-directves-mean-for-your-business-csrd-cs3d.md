@@ -1,5 +1,7 @@
 ---
 title: "What the EU’s Sustainability Reporting Directives and Potential Changes Mean for Your Business: CSRD, CS3D, and the Proposed Omnibus Simplification Package"
+seoTitle: "CSRD: Understanding New EU Sustainability Regulations"
+seoDescription: "How does the changes to EU&#039;s sustainability reporting directives impact your business? We unpack CSRD, CSDDD and more in this article!"
 date: 2025-02-28T13:00:23.000Z
 description: "Co-Authored by Aimee Simpson, CEO of Sustainability Law & Strategies"
 author: content/team-members/paloma-jacome.json

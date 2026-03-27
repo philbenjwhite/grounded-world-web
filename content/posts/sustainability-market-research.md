@@ -1,5 +1,7 @@
 ---
 title: "Sustainability Market Research: Turn Purpose Into Performance"
+seoTitle: "Sustainability Market Research: Turn Purpose Into Performance"
+seoDescription: "Discover how sustainability market research delivers insights that align consumer demand with environmental goals and drive growth."
 date: 2025-12-22T08:06:43.000Z
 description: "A global beverage company spent eighteen months developing what they believed would be revolutionary sustainable packaging: plant-based bottles that..."
 author: content/team-members/matt-deasy.json

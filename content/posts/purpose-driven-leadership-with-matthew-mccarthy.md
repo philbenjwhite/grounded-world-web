@@ -1,5 +1,7 @@
 ---
 title: Purpose-Driven Leadership with Matthew McCarthy
+seoTitle: "Purpose-Driven Leadership with Matthew McCarthy - Grounded"
+seoDescription: "In this interview with former Ben and Jerry&#039;s CEO, Matthew McCarthy, we explore Purpose-Driven Leadership and what &#039;Democratizing Courageous Leadership’ means."
 date: 2023-11-30T08:45:52.000Z
 description: At Grounded, we had the unique privilege of delving into Matthew McCarthy's wealth of wisdom on the essence of Brand Purpose and uncovering the profound nuan...
 author: content/team-members/paloma-jacome.json

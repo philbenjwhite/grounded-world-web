@@ -1,5 +1,7 @@
 ---
 title: What Social Justice Means
+seoTitle: "What Social Justice Means - Grounded"
+seoDescription: "Ultimate guide including social justice definition and examples. Learn the social justice principles and common human rights issues."
 date: 2021-08-19T13:09:03.000Z
 description: "What is Social Justice?"
 author: content/team-members/phil-white.json

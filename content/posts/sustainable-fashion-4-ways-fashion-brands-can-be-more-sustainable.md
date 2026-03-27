@@ -1,5 +1,7 @@
 ---
 title: 4 Ways Fashion Brands Can Be More Sustainable
+seoTitle: "4 Ways Fashion Brands Can Be More Sustainable"
+seoDescription: "Sustainable fashion aims to create a more responsible and ethical fashion industry committed to creating positive impact."
 date: 2023-03-28T10:22:00.000Z
 description: The Fashion industry is responsible for 2.1 billion tonnes of greenhouse gas per year. That is more than all the international flights and shipping combined...
 author: content/team-members/phil-white.json

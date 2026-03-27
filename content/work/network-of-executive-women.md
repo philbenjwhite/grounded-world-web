@@ -5,7 +5,7 @@ description: "Part of a video series introducing #NEWwisdom — a movement and a
 videoUrl: "https://vimeo.com/312644700"
 date: 2020-01-10T16:42:24.000Z
 seoTitle: "Network of Executive Women Impact Case Study | Grounded"
-seoDescription: Discover how Grounded, a social impact marketing agency, revitalized the Network of Executive Women's brand. Click to see more.
+seoDescription: "Discover how Grounded, a social impact marketing agency, revitalized the Network of Executive Women&#039;s brand. Click to see more."
 featuredImage: /images/work/network-of-executive-women.jpg
 tags:
   - Brand Purpose

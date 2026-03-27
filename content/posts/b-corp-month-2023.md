@@ -1,5 +1,7 @@
 ---
 title: B Corp Month
+seoTitle: "B Corp Month - Grounded"
+seoDescription: "B Corp Certification is more than just a mark, it’s a movement of people going beyond business as usual to make their company better for all people and the planet."
 date: 2023-03-02T19:44:12.000Z
 description: Certified B Corporations like to proudly display their B Corp Certification by placing the “B” mark on storefront windows, websites, and packaging (to name a...
 author: content/team-members/phil-white.json

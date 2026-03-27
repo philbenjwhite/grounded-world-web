@@ -1,5 +1,7 @@
 ---
 title: "Brand Vision: How a Clear Future Direction Drives Strategy and Growth"
+seoTitle: "Brand Vision: Definition, Examples, and a Practical Framework"
+seoDescription: "A brand purpose agency&#039;s guide to learn how to write a strong brand vision, see world-class examples, and turn purpose into growth."
 date: 2025-11-23T06:33:03.000Z
 description: Brand vision defines the aspirational future state your organization aims to create, typically looking 5-20 years ahead. It answers where your brand is going...
 author: content/team-members/matt-deasy.json

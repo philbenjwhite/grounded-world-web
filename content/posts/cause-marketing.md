@@ -1,5 +1,7 @@
 ---
 title: "Cause Marketing: Building Brand Value Through Purpose-Driven Partnerships"
+seoTitle: "Cause Marketing Guide: Build Value Through Purpose Partnerships"
+seoDescription: "Strategic framework for cause marketing that drives customer engagement, and social impact through authentic nonprofit partnerships"
 date: 2025-12-06T11:27:19.000Z
 description: "When American Express coined the term \"cause marketing\" in 1983 to describe its campaign restoring the Statue of Liberty, the company discovered something..."
 author: content/team-members/matt-deasy.json

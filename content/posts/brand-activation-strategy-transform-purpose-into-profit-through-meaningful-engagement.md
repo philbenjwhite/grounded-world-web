@@ -1,5 +1,7 @@
 ---
 title: "Brand Activation Strategy: Transform Purpose Into Profit Through Meaningful Engagement"
+seoTitle: "Brand Activation Strategy: A Purpose-Driven Engagement Guide"
+seoDescription: "Learn how to build a brand activation strategy that drives engagement and proves purpose pays through meaningful experiences."
 date: 2025-12-08T07:30:11.000Z
 description: "Research shows that 91% of consumers are more inclined to purchase after participating in a brand activation or experiential event. Yet most activations..."
 author: content/team-members/matt-deasy.json

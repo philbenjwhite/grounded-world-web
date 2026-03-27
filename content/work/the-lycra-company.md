@@ -5,7 +5,7 @@ description: With fashion and apparel becoming one of the top polluters on our p
 videoUrl: "https://vimeo.com/642853113"
 date: 2026-01-06T10:15:37.000Z
 seoTitle: "LYCRA Sustainability Marketing Case Study | Grounded World"
-seoDescription: See how Grounded World helped Lycra build a sustainability marketing campaign for their new circular innovation. Explore the full case study.
+seoDescription: "See how Grounded World helped Lycra build a sustainability marketing campaign for their new circular innovation. Explore the full case study."
 featuredImage: /images/work/the-lycra-company.jpg
 tags:
   - Sustainability Storytelling

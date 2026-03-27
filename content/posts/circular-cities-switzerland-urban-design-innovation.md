@@ -1,5 +1,7 @@
 ---
 title: "Circular Cities in Action: On-the-Ground Learnings from Switzerland’s Urban Design Innovations"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-12-10T11:26:30.000Z
 description: I’ve spent years researching circularity, studying sustainability strategy, and helping brands close intention–action gaps. But nothing compares to being phy...
 author: content/team-members/paloma-jacome.json

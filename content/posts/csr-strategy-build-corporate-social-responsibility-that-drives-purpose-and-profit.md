@@ -1,5 +1,7 @@
 ---
 title: "CSR Strategy: Build Corporate Social Responsibility That Drives Purpose and Profit"
+seoTitle: "CSR Strategy: How Responsible Brands Build Long-Term Value"
+seoDescription: "Learn how to build a CSR strategy that drives social impact and profit through strategic corporate social responsibility."
 date: 2025-12-08T07:37:21.000Z
 description: "Seventy-one percent of U.S. customers want to buy from socially responsible companies, yet most corporate social responsibility programs fail to create..."
 author: content/team-members/matt-deasy.json

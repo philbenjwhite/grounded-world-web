@@ -1,5 +1,7 @@
 ---
 title: "Going Circular: The Story of Decathlon"
+seoTitle: "Going Circular: The Story of Decathlon - Grounded"
+seoDescription: "Decathlon are making moves to create a circular business model. Learn more about how they are creating products that can be fixed, rented or recycled &gt;&gt;"
 date: 2023-10-24T20:51:17.000Z
 description: The shift to a circular economy is a big deal in France - like pretty much everywhere else. People are realizing that the old way of doing things, where we t...
 author: content/team-members/phil-white.json

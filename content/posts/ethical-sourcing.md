@@ -1,5 +1,7 @@
 ---
 title: "Ethical Sourcing: How To Build Integrity into Supply Chains"
+seoTitle: "Ethical Sourcing: How To Build Integrity into Supply Chains"
+seoDescription: "Discover how ethical ãnd purpose-led sourcing connects brand purpose with trust, transparency, and long-term growth."
 date: 2025-12-03T23:51:54.000Z
 description: "Ethical sourcing is an approach to supply chain management that emphasizes obtaining products and services in a manner that upholds labour rights, safe..."
 author: content/team-members/matt-deasy.json

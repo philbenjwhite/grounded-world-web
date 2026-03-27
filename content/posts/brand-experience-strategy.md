@@ -1,5 +1,7 @@
 ---
 title: "Brand Experience Strategy: How You Turn Touchpoints Into Trust"
+seoTitle: "Brand Experience Strategy: How You Turn Touchpoints Into Trust"
+seoDescription: "Learn how leading brands use experience strategy to build loyalty, drive growth, and create lasting emotional connections with customers."
 date: 2025-12-16T05:40:41.000Z
 description: "The average person encounters between 4,000 and 10,000 brand messages daily, according to research from the American Marketing Association. Yet most of us..."
 author: content/team-members/matt-deasy.json

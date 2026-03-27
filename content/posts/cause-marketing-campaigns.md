@@ -1,5 +1,7 @@
 ---
 title: "Cause Marketing Campaigns: Strategic Frameworks That Unite Purpose With Performance"
+seoTitle: "Cause Marketing Campaigns Guide | Purpose-Driven Strategy"
+seoDescription: "A leading brand activation agency&#039;s guide to creating cause marketing campaigns that create social impact while driving business growth"
 date: 2026-01-05T09:59:25.000Z
 description: "When TOMS Shoes launched their \"One for One\" model in 2006, donating a pair of shoes for every purchase, they didn't just create a marketing campaign—they..."
 author: content/team-members/matt-deasy.json

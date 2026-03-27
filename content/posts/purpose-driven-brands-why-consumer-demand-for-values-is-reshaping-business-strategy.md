@@ -1,5 +1,7 @@
 ---
 title: "Purpose-Driven Brands: Why Consumer Demand for Values Is Reshaping Business Strategy"
+seoTitle: "Purpose-Driven Brands: Values-Based Strategy for Growth"
+seoDescription: "Purpose-driven brands grow faster than profit-focused competitors. Learn how values-based strategy builds loyalty &amp; drives growth."
 date: 2025-11-22T10:48:11.000Z
 description: "In 2022, Patagonia founder Yvon Chouinard transferred ownership of the $3 billion outdoor retailer to a trust and nonprofit dedicated to fighting climate..."
 author: content/team-members/matt-deasy.json

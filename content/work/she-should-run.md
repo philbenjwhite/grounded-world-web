@@ -5,7 +5,7 @@ description: We created a little book to solve a big problem — to close the ge
 videoUrl: "https://vimeo.com/384500219"
 date: 2020-01-10T16:38:41.000Z
 seoTitle: "She Should Run: Social Impact Case Study | Grounded World"
-seoDescription: See how Grounded World helped She Should Run unlock social impact and build awareness. Explore the full case study.
+seoDescription: "See how Grounded World helped She Should Run unlock social impact and build awareness. Explore the full case study."
 featuredImage: /images/work/she-should-run.jpg
 tags:
   - Brand Activation

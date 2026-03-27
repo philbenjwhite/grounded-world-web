@@ -1,5 +1,7 @@
 ---
 title: Articulating Brand Purpose
+seoTitle: "Articulating Brand Purpose - Grounded"
+seoDescription: "A strong purpose underpinned by a well articulated brand purpose statement can cause very large brand effects."
 date: 2023-01-26T06:32:01.000Z
 description: The Purpose of Brand Positioning vs. Positioning Brand Purpose  ‘Marketers are afflicted by a lack of self-confidence and pride, and one of the main symptom...
 author: content/team-members/phil-white.json

@@ -1,5 +1,7 @@
 ---
 title: "Understanding & Activating Brand Purpose in Retail"
+seoTitle: "Understanding &#038; Activating Brand Purpose in Retail - Grounded"
+seoDescription: ""
 date: 2025-02-26T11:55:24.000Z
 description: A Brand Purpose Agency Guide
 author: content/team-members/phil-white.json

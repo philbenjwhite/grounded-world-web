@@ -1,5 +1,7 @@
 ---
 title: "What is Circular Fashion? The Future of Fashion"
+seoTitle: "What is Circular Fashion? The Future of Fashion - Grounded"
+seoDescription: "Discover how circular fashion is reshaping the industry, turning sustainability into a commercial advantage. See best-in-class case studies.."
 date: 2025-02-19T16:04:01.000Z
 description: As the fashion industry grapples with urgent climate-related concerns, circular fashion emerges as a transformative solution that prioritizes sustainability...
 author: content/team-members/paloma-jacome.json

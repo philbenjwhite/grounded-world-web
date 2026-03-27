@@ -1,5 +1,7 @@
 ---
 title: "Understanding Brand Values: The Foundation of a Successful Business"
+seoTitle: "Brand Values: Build Loyalty &amp; Drive Growth | Grounded"
+seoDescription: "Learn how strong brand values drive customer loyalty, employee engagement, and business growth. Expert guide from a brand purpose agency."
 date: 2025-11-22T10:16:39.000Z
 description: "When Patagonia restructured its entire ownership in 2022 to ensure profits would fight climate change rather than enrich shareholders, it wasn't..."
 author: content/team-members/matt-deasy.json

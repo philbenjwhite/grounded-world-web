@@ -1,5 +1,7 @@
 ---
 title: "Brand Marketing Campaigns: Building Impact Through Strategic Creativity"
+seoTitle: "Brand Marketing Campaigns: Purpose-Driven Strategy Guide"
+seoDescription: "Learn how to create brand marketing campaigns that build awareness and loyalty. Strategic insights from purpose-led organizations."
 date: 2025-11-27T12:13:17.000Z
 description: Brand marketing campaigns focus on building long-term brand identity and emotional connection rather than solely driving immediate sales, creating cultural r...
 author: content/team-members/matt-deasy.json

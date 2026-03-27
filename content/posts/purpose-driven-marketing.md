@@ -1,5 +1,7 @@
 ---
 title: "Purpose-Driven Marketing: The New Standard for Brand Activation"
+seoTitle: "Purpose-Driven Marketing: The New Standard for Brand Activation"
+seoDescription: "Discover how purpose-driven marketing builds brand loyalty and impact through authentic storytelling and measurable purpose activation."
 date: 2025-12-16T04:26:42.000Z
 description: "Purpose-driven marketing connects a brand’s commercial success with its contribution to society—building trust, loyalty, and long-term value."
 author: content/team-members/matt-deasy.json

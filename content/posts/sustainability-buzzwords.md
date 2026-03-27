@@ -1,5 +1,7 @@
 ---
 title: Sustainability Buzzwords
+seoTitle: "Sustainability Buzzwords - Grounded"
+seoDescription: "There are a lot of sustainability buzzwords floating around today. Using them correctly can gain consumer trust, but can backfire if wrong."
 date: 2023-03-01T16:22:58.000Z
 description: "How to Use (or Avoid) Sustainability Buzzwords  Is your new bottle made of 100% recycled plastic? Has your travel company announced a commitment to be carbo..."
 author: content/team-members/andrew-yates.json

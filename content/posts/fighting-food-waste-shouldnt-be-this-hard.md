@@ -1,5 +1,7 @@
 ---
 title: Fighting Food Waste Shouldn’t Be This Hard
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-18T20:36:57.000Z
 description: "Food waste is a hidden climate driver and a solvable one. Hilary breaks down why wasted food contributes more to climate change than cars and why this issue..."
 author: content/team-members/paloma-jacome.json

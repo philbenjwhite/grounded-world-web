@@ -1,5 +1,7 @@
 ---
 title: "Circular Brand Activation in Switzerland: How QWSTION, ID Genève, and Zuriga Are Building Regenerative Brands"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-25T15:22:24.000Z
 description: I just came back from Europe and my mind is still buzzing. Not from the espresso (though plenty of that), but from witnessing how a handful of Swiss brands a...
 author: content/team-members/paloma-jacome.json

@@ -1,5 +1,7 @@
 ---
 title: "Company Culture: Building Workplace Environments That Drive Impact and Performance"
+seoTitle: "Company Culture: How to Build High-Performance Workplaces"
+seoDescription: "Learn how to build strong company culture that drives retention, innovation, and performance &amp; creates positive workplace environments."
 date: 2025-11-27T12:00:13.000Z
 description: Company culture represents the shared values, behaviors, and practices that define how work gets done—serving as the foundation for employee engagement, inno...
 author: content/team-members/matt-deasy.json

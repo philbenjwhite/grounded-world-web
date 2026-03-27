@@ -1,5 +1,7 @@
 ---
 title: "Brand Storytelling: How Purpose-Driven Narratives Build Commercial Value"
+seoTitle: "Brand Storytelling Guide: Build Connection &amp; Value"
+seoDescription: "Strategic framework for brand storytelling that creates emotional connections, drives loyalty, and translates purpose into market advantage."
 date: 2025-12-06T11:37:57.000Z
 description: "In 2002, Patagonia took out a full-page ad in The New York Times on Black Friday with a provocative message: \"Don't Buy This Jacket.\" The ad detailed the..."
 author: content/team-members/matt-deasy.json

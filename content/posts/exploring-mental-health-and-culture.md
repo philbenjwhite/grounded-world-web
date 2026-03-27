@@ -1,5 +1,7 @@
 ---
 title: Exploring Mental Health and Culture
+seoTitle: "Exploring Mental Health and Culture - Grounded"
+seoDescription: ""
 date: 2024-05-28T10:24:55.000Z
 description: Exploring Mental Health and Culture  By Isabella Pereira, Summer Intern at Grounded World.  The subject of mental health is quite complex and influenced...
 author: content/team-members/paloma-jacome.json

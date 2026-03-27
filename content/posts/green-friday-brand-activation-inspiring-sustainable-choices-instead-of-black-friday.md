@@ -1,5 +1,7 @@
 ---
 title: "Green Friday Brand Activation: Inspiring Sustainable Choices Instead of Black Friday"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-26T10:37:38.000Z
 description: Black Friday has long been a cornerstone of retail success… a high-voltage sales chaos that can make or break annual revenues. The shopping frenzy that erupt...
 author: content/team-members/paloma-jacome.json

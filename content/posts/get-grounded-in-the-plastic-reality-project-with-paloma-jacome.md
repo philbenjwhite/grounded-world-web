@@ -1,5 +1,7 @@
 ---
 title: Get Grounded in the Plastic Reality Project with Paloma Jacome
+seoTitle: "Plastic Reality Project 2024 by Paloma Jacome"
+seoDescription: "Get grounded in rePurpose Global&#039;s Plastic Reality Project in India with Paloma Jacome of Grounded. See circularity in action!"
 date: 2024-10-30T14:38:20.000Z
 description: "When I was asked, “hey Paloma, want to go to India?” I knew it would be a life-changing experience. The plastic waste crisis crosses my mind daily and greatl..."
 author: content/team-members/paloma-jacome.json

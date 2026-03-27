@@ -1,5 +1,7 @@
 ---
 title: "Intention-Action Gap: Earth Month Intentions Aren’t Enough"
+seoTitle: "Intention-Action Gap: Earth Month Intentions Aren’t Enough"
+seoDescription: "Closing the intention-action gap around Earth Month requires more than just good intentions. How can you close the gap even after Earth Day?"
 date: 2025-04-22T11:55:45.000Z
 description: Earth Month (commonly known as “April”) is often celebrated with sustainability pledges and green campaigns from both consumers and brands. More often than n...
 author: content/team-members/paloma-jacome.json

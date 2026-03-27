@@ -1,5 +1,7 @@
 ---
 title: "Brand Activation at Retail: Transforming Store Spaces Into Purpose-Driven Experiences"
+seoTitle: "Brand Activation at Retail Guide | Purpose-Led Strategies"
+seoDescription: "Master brand activation at retail and build loyalty, drive sales, and communicate sustainability authentically."
 date: 2026-01-05T07:57:07.000Z
 description: "Last spring, a sustainable sneaker brand transformed a corner of a Brooklyn retail store into something unexpected: a mini urban garden where customers..."
 author: content/team-members/matt-deasy.json

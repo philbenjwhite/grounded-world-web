@@ -132,6 +132,12 @@ const innerButtonGroupTemplate = {
           required: true,
         },
         {
+          type: "image" as const,
+          name: "uploadedFile",
+          label: "Upload File (PDF)",
+          description: "Upload a PDF — overrides the Link field above when set",
+        },
+        {
           type: "string" as const,
           name: "variant",
           label: "Style",
@@ -259,6 +265,15 @@ export default defineConfig({
   // TinaCloud configuration (required for production)
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID || null,
   token: process.env.TINA_TOKEN || null,
+
+  search: {
+    tina: {
+      indexerToken: process.env.TINA_SEARCH_TOKEN || "52fdecf0628926e501c319ef95fefd8e6db70b0f",
+      stopwordLanguages: ["eng"],
+    },
+    indexBatchSize: 100,
+    maxSearchIndexFieldLength: 100,
+  },
 
   build: {
     outputFolder: "admin",

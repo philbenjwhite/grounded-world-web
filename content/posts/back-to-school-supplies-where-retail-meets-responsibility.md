@@ -1,5 +1,7 @@
 ---
 title: "Back to School Supplies: Where Retail Meets Responsibility"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-18T17:45:30.000Z
 description: "Back-to-school is a rare, high-impact moment for purpose activation. With millions of families aligned in action, the season gives brands an authentic..."
 author: content/team-members/paloma-jacome.json

@@ -1,5 +1,7 @@
 ---
 title: "Corporate Responsibility: Building Business Strategy Around Impact and Accountability"
+seoTitle: "Corporate Responsibility: Building Business Strategy with Impact"
+seoDescription: "Corporate responsibility helps companies align purpose with performance through ethical, environmental, and social impact"
 date: 2025-12-01T10:47:20.000Z
 description: "In 2019, the Business Roundtable—a group representing America's most powerful CEOs—made a historic announcement. After decades championing shareholder..."
 author: content/team-members/matt-deasy.json

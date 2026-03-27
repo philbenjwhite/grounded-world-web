@@ -5,7 +5,7 @@ description: The Boss Hog is Whistle Pig’s most premium, most unconventional w
 videoUrl: "https://vimeo.com/491192376"
 date: 2021-03-05T12:18:13.000Z
 seoTitle: "WhistlePig Boss Hog Packaging Innovation | Grounded World"
-seoDescription: Explore how Grounded, a boutique creative agency, elevated WhistlePig's limited and luxury whiskey with innovative packaging design.
+seoDescription: "Explore how Grounded, a boutique creative agency, elevated WhistlePig&#039;s limited and luxury whiskey with innovative packaging design."
 featuredImage: /images/work/whistlepig.jpg
 tags:
   - Brand Activation

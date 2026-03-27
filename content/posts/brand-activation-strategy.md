@@ -1,5 +1,7 @@
 ---
 title: "Brand Activation Strategy: Turning Purpose into Participation"
+seoTitle: "Brand Activation Strategy: Turning Purpose into Participation"
+seoDescription: "Learn how a brand activation strategy connects purpose, experience, and results—building loyalty, awareness, and measurable engagement."
 date: 2025-12-16T04:35:11.000Z
 description: "In an attention economy where audiences are bombarded with thousands of ads daily, brand activation offers something rare: presence. It's the point where a..."
 author: content/team-members/matt-deasy.json

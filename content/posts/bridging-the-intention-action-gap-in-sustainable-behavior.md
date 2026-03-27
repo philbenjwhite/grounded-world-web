@@ -1,5 +1,7 @@
 ---
 title: "Bridging the Intention-Action Gap in Sustainable Behavior: Insights from Global Consumer Research"
+seoTitle: "Bridging the Intention-Action Gap in Sustainable Behavior | Insights"
+seoDescription: "Recent reports published by Globescan, Kantar, Nielsen and Mintel offer a deep understanding for closing the intention-action gap."
 date: 2023-12-01T13:25:36.000Z
 description: Full info
 author: content/team-members/phil-white.json

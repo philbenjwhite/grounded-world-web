@@ -1,5 +1,7 @@
 ---
 title: "Shopper Behaviour Insights: How the Path to Purchase Transforms Brand Strategy"
+seoTitle: "Shopper Behaviour Insights Guide | Data-Driven Strategy"
+seoDescription: "Unlock shopper behaviour insights that reveal why customers buy, how to meet expectations, and strategies that drive loyalty and sales."
 date: 2026-01-05T07:43:43.000Z
 description: "A grocery chain analyzing checkout data noticed something puzzling: their premium organic produce had strong sales growth except for one demographic segment..."
 author: content/team-members/matt-deasy.json

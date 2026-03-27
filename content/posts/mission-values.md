@@ -1,5 +1,7 @@
 ---
 title: "Mission and Values: The Strategic Foundation That Drives Purpose-Led Organizations"
+seoTitle: "Mission &amp; Values: Definitions, Examples, and How to Apply Them"
+seoDescription: "Learn how mission &amp; values shape strategy, culture, and performance—plus a practical process to write, embed, and measure."
 date: 2025-11-29T08:14:30.000Z
 description: "When Howard Schultz returned as Starbucks CEO in 2008 during the financial crisis, he didn't start by cutting costs or closing stores. He closed every..."
 author: content/team-members/matt-deasy.json

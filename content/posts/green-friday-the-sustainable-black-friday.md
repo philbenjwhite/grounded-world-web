@@ -1,5 +1,7 @@
 ---
 title: "What is Green Friday? Black Friday Alternative (2025)"
+seoTitle: "Green Friday - The Ethical Alternative to Black Friday (2025)"
+seoDescription: "While lucrative for brands and retailers, Black Friday is not profitable for our planet. Green Friday is a sustainable alternative."
 date: 2022-12-01T14:47:36.000Z
 description: Updated by Matt Deasy, 2025.
 author: content/team-members/phil-white.json

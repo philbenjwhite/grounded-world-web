@@ -1,5 +1,7 @@
 ---
 title: "Ep.1 of ‘It Shouldn’t Be This Hard’ Out Now! Journalism Shouldn’t Be This Hard"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-18T17:10:19.000Z
 description: "Welcome to the VERY FIRST episode of It Shouldn’t Be This Hard!"
 author: content/team-members/paloma-jacome.json

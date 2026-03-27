@@ -1,5 +1,7 @@
 ---
 title: "Impact Measurement: The Brand Purpose Agency’s Guide to Proving What Matters"
+seoTitle: "Impact Measurement: A Brand Purpose Agency&#039;s Guide"
+seoDescription: "Learn how impact measurement helps purpose-driven brands strengthen strategy and close the intention-action gap through data-driven insights."
 date: 2025-12-06T11:50:28.000Z
 description: "In 2019, 181 CEOs signed the Business Roundtable's statement redefining corporate purpose beyond shareholder primacy. Five years later, we're still..."
 author: content/team-members/matt-deasy.json

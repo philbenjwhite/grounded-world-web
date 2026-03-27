@@ -1,5 +1,7 @@
 ---
 title: "z Impact Measurement: test"
+seoTitle: "Impact Measurement: A Brand Purpose Agency&#039;s Guide"
+seoDescription: "Learn how impact measurement helps purpose-driven brands strengthen strategy and close the intention-action gap through data-driven insights."
 date: 2025-11-21T05:30:58.000Z
 description: "In 2019, 181 CEOs signed the Business Roundtable's statement redefining corporate purpose beyond shareholder primacy. Five years later, we're still..."
 author: content/team-members/andrew-yates.json

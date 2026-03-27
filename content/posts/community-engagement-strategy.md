@@ -1,5 +1,7 @@
 ---
 title: "Community Engagement Strategy: Building Authentic Relationships That Drive Lasting Impact"
+seoTitle: "Community Engagement Strategy Guide | Purpose-Driven"
+seoDescription: "A leading brand activation agency&#039;s guide to mastering community engagement strategy through authentic relationships."
 date: 2026-01-05T09:42:30.000Z
 description: "A multinational food company announced plans to build a processing facility in a rural community, promising jobs and economic development."
 author: content/team-members/matt-deasy.json

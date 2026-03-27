@@ -5,7 +5,7 @@ description: Refresh a heritage New York City nonprofit and create a campaign to
 videoUrl: "https://vimeo.com/312643378"
 date: 2020-01-10T16:37:18.000Z
 seoTitle: "The Fresh Air Fund Impact Case Study | Grounded World"
-seoDescription: Explore how Grounded partnered with The Fresh Air Fund to boost camp enrollment, engage donors, and contemporize their story. Learn more.
+seoDescription: "Explore how Grounded partnered with The Fresh Air Fund to boost camp enrollment, engage donors, and contemporize their story. Learn more."
 featuredImage: /images/work/fresh-air-fund.jpg
 tags:
   - Social Impact

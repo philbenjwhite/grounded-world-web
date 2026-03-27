@@ -1,5 +1,7 @@
 ---
 title: "Ethical Practices: Build Trust Through Leadership & Action"
+seoTitle: "Ethical Practices: Build Trust Through Leadership &amp; Action"
+seoDescription: "Strategic guide to ethical practices that strengthen brand reputation, boost engagement, and drive business success through integrity."
 date: 2025-12-04T00:04:20.000Z
 description: "Organizations with strong ethical practices see 82% higher employee productivity and 92% of workers now prioritize companies that value their well-being,..."
 author: content/team-members/matt-deasy.json

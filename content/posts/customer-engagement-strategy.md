@@ -1,5 +1,7 @@
 ---
 title: Building a Customer Engagement Strategy That Activates Your Brand
+seoTitle: "Building a Customer Engagement Strategy to Activate Your Brand"
+seoDescription: "Learn how to design a customer engagement strategy that boosts loyalty and satisfaction, powered by purpose-driven brand activation."
 date: 2025-12-15T08:42:00.000Z
 description: "Customer engagement refers to the ongoing relationship between a brand and its customers—spanning the entire customer journey, from awareness to advocacy...."
 author: content/team-members/matt-deasy.json

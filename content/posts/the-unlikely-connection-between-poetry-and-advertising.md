@@ -1,5 +1,7 @@
 ---
 title: The Power of Brand Poetry in Advertising
+seoTitle: "The Power of Brand Poetry in Advertising | Grounded World"
+seoDescription: "Read about the unlikely connection between poetry and advertising and how embedding poetry in your company’s mission can help activate your brand purpose."
 date: 2023-04-18T07:51:08.000Z
 description: The Unlikely Connection Between Poetry and Advertising   When you think of poetry, you might imagine romantic verses by moonlight or perhaps the angst-fille...
 author: content/team-members/phil-white.json

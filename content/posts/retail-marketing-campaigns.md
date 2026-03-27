@@ -1,5 +1,7 @@
 ---
 title: "Retail Marketing Campaigns: How Purpose-Driven Brands Win in Physical and Digital Spaces"
+seoTitle: "Retail Marketing Campaigns Guide | Purpose-Led Strategies"
+seoDescription: "Master retail marketing campaigns that blend digital innovation, in-store experiences, and sustainability to drive engagement and sales."
 date: 2026-01-05T07:22:02.000Z
 description: "During the 2025 holiday season, a small outdoor apparel retailer in Vermont did something that seemed commercially suicidal: they ran retail marketing..."
 author: content/team-members/matt-deasy.json

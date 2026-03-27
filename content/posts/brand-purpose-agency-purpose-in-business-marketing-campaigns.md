@@ -1,5 +1,7 @@
 ---
 title: "Brand Marketing Campaigns: Building Purpose-Driven Impact Through Strategic Creativity"
+seoTitle: "Brand Marketing Campaigns: Purpose-Driven Strategy Guide"
+seoDescription: "Learn how to create brand marketing campaigns that build loyalty. Strategic insights and examples from purpose-led organizations."
 date: 2026-01-05T06:52:26.000Z
 description: "When Dove launched \"Real Beauty\" in 2004, the campaign broke every rule of beauty advertising. Instead of showcasing impossibly perfect models, the brand..."
 author: content/team-members/matt-deasy.json

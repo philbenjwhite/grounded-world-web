@@ -1,5 +1,7 @@
 ---
 title: "Gender Equality: 5 Ways Brands Can Take Action"
+seoTitle: "Gender Equality: 5 Ways Brands Can Take Action - Grounded"
+seoDescription: "Brands have a role to play in the fight for gender equality. Here are 5 ways your brand can help make a difference."
 date: 2022-11-29T17:05:06.000Z
 description: October 11th marked the 10th anniversary of International Day of the Girl. It is the United Nations international observance day that builds awareness of the...
 author: content/team-members/phil-white.json

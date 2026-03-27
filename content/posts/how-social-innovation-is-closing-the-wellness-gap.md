@@ -1,5 +1,7 @@
 ---
 title: How Social Innovation Is Closing the Wellness Gap
+seoTitle: "How Social Innovation is Closing the Wellness Gap"
+seoDescription: "What if the next breakthrough in wellness wasn’t a new drug or meditation app… but a socially intelligent AI companion?"
 date: 2025-05-28T11:48:44.000Z
 description: In an increasingly overstimulated world plagued by burnout, anxiety, and loneliness, accessing mental health care remains a privilege rather than a right. Bu...
 author: content/team-members/paloma-jacome.json

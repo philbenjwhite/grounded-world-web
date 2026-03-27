@@ -1,5 +1,7 @@
 ---
 title: "Earth Day Campaigns: Are They Really Closing the Gap?"
+seoTitle: "Earth Day Campaigns: Are They Really Closing the Gap?"
+seoDescription: "This year, thousands of events took place around the world for Earth Day, but are these campaigns closing the intention-action gap?"
 date: 2023-04-26T07:50:38.000Z
 description: Since 1970, Earth Day campaigns have led the collective fight for the health and wellbeing of our planet. The very first earth day campaign led to the creati...
 author: content/team-members/phil-white.json

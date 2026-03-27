@@ -1,5 +1,7 @@
 ---
 title: "Making Earth Day Every Day Shouldn’t Be This Hard | Kathleen Rogers"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-12-03T16:54:10.000Z
 description: "In this episode of It Shouldn’t Be This Hard, we dig deep into the world's most renowned environmental day of awareness - Earth Day. Not just the event, but..."
 author: content/team-members/paloma-jacome.json

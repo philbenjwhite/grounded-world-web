@@ -5,7 +5,7 @@ description: "Celebrating a new solar powered whiskey that’s so bright you’l
 videoUrl: "https://vimeo.com/861678197"
 date: 2026-01-06T11:36:13.000Z
 seoTitle: "WhistlePig Boss Hog Packaging Innovation | Grounded World"
-seoDescription: Explore how Grounded, a boutique creative agency, elevated WhistlePig's limited and luxury whiskey with innovative packaging design.
+seoDescription: "Explore how Grounded, a boutique creative agency, elevated WhistlePig&#039;s limited and luxury whiskey with innovative packaging design."
 featuredImage: /images/work/whistlepig-pit-viper.jpg
 tags:
   - Brand Activation

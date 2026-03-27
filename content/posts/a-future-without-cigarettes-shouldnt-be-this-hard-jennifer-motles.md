@@ -1,5 +1,7 @@
 ---
 title: "A Future Without Cigarettes Shouldn’t Be This Hard | Jennifer Motles"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-25T15:36:29.000Z
 description: "What happens when a sustainability leader steps into one of the world’s most controversial industries and decides to change it from the inside out?"
 author: content/team-members/paloma-jacome.json

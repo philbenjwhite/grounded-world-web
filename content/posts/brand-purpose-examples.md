@@ -1,5 +1,7 @@
 ---
 title: "Brand Purpose Examples: How Top Brands Drive Impact"
+seoTitle: "Brand Purpose Examples: How Top Brands Drive Impact"
+seoDescription: "Discover brand purpose examples from top companies that turn values into competitive advantage through authentic commitment."
 date: 2025-11-10T05:42:09.000Z
 description: "Research from Harvard Business Review and EY shows that companies operating with a clear and driving sense of purpose beyond just making money outperformed..."
 author: content/team-members/matt-deasy.json

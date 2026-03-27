@@ -1,5 +1,7 @@
 ---
 title: "Convenience Without Conscience? The Sustainability Gap in Grocery Delivery"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-19T13:11:50.000Z
 description: "In the digital age, convenience has transformed from luxury to expectation. Platforms like Instacart, Amazon Fresh, and Uber Eats Grocery have redefined how..."
 author: content/team-members/paloma-jacome.json

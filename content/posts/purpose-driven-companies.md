@@ -1,5 +1,7 @@
 ---
 title: "PURPOSE DRIVEN COMPANIES: How Clear Purpose Fuels Growth"
+seoTitle: "Purpose Driven Companies: A Brand Purpose Agency&#039;s Roadmap"
+seoDescription: "What purpose driven companies do differently—and how leaders embed purpose to drive growth, engagement, and measurable impact."
 date: 2025-11-30T06:28:21.000Z
 description: "When Patagonia transferred ownership to a trust and nonprofit in 2022, founder Yvon Chouinard didn't sell out, he doubled down."
 author: content/team-members/matt-deasy.json

@@ -1,5 +1,7 @@
 ---
 title: "Fair Price for Coffee Shouldn’t Be This Hard | Bob & Michelle Fish"
+seoTitle: "Brand Purpose: Definition, Examples, and How to Embed It"
+seoDescription: "Learn what brand purpose is, why it matters, and how to embed it across strategy, culture, and customer experience—with world-class examples."
 date: 2025-11-19T16:45:39.000Z
 description: "The coffee industry is built on broken economics. Most farmers are paid less than the cost of production, forcing families off their land and trapping..."
 author: content/team-members/paloma-jacome.json
