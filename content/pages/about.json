@@ -1,9 +1,9 @@
 {
   "title": "About Us",
   "slug": "about",
+  "seoImage": "/images/og-image.jpg",
   "sections": [
     {
-      "_template": "heroBanner",
       "backgroundType": "vimeo",
       "vimeoUrl": "https://vimeo.com/1001182665/5d97b5c38f",
       "title": "Big Brand Muscle. Boutique Hustle.",
@@ -14,10 +14,10 @@
       "overlayOpacity": "medium",
       "contentAlign": "center",
       "minHeight": "large",
-      "bottomFade": false
+      "bottomFade": false,
+      "_template": "heroBanner"
     },
     {
-      "_template": "featureCards",
       "sectionLabel": "What Sets Us Apart",
       "heading": "Why Grounded?",
       "columns": 3,
@@ -40,10 +40,10 @@
           "title": "Certified B Corp",
           "body": "Meeting the highest verified standards of social and environmental performance since 2018. We don’t just help clients embed sustainability — we live it in every decision we make."
         }
-      ]
+      ],
+      "_template": "featureCards"
     },
     {
-      "_template": "logoGrid",
       "logos": [
         {
           "src": "/images/badges/B-Corp-Logo-White-RGB.png",
@@ -75,10 +75,10 @@
           "alt": "Creatives for Climate",
           "href": "https://www.creativesforclimate.co/partner"
         }
-      ]
+      ],
+      "_template": "logoGrid"
     },
     {
-      "_template": "splitLayout",
       "sectionLabel": "Our Leadership",
       "ratio": "50/50",
       "gap": "xl",
@@ -86,11 +86,10 @@
       "reverseOnMobile": true,
       "left": [
         {
-          "_template": "richText",
-          "body": "## Meet the Founders\n\nWe believe every business can drive exponential transformation when grounded in purpose and profit. Making money and making a difference aren’t competing forces — by solving the world’s biggest problems, we unlock its biggest opportunities.\n\nSo we left global agency life in 2018 and started our own social innovation and boutique marketing agency to do exactly that."
+          "body": "## Meet the Founders\n\nWe believe every business can drive exponential transformation when grounded in purpose and profit. Making money and making a difference aren’t competing forces — by solving the world’s biggest problems, we unlock its biggest opportunities.\n\nSo we left global agency life in 2018 and started our own social innovation and boutique marketing agency to do exactly that.\n",
+          "_template": "richText"
         },
         {
-          "_template": "buttonGroup",
           "buttons": [
             {
               "label": "Phil’s LinkedIn",
@@ -104,25 +103,27 @@
               "variant": "secondary",
               "external": true
             }
-          ]
+          ],
+          "_template": "buttonGroup"
         }
       ],
       "right": [
         {
-          "_template": "image",
           "src": "/images/about/founders.jpg",
           "alt": "Phil and Heidi White, founders of Grounded",
-          "rounded": true
+          "rounded": true,
+          "_template": "image"
         }
-      ]
+      ],
+      "_template": "splitLayout"
     },
     {
-      "_template": "contactSection",
-      "heading": "Let\u2019s Talk",
+      "heading": "Let’s Talk",
       "description": "Ready to activate purpose and accelerate impact? Book a discovery call or drop us a message.",
       "bookingUrl": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
       "bookingLabel": "Book a Discovery Call",
-      "email": "getgrounded@grounded.world"
+      "email": "getgrounded@grounded.world",
+      "_template": "contactSection"
     }
   ]
 }
