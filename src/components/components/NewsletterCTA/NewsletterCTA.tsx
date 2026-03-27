@@ -180,10 +180,10 @@ const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
         <div className={cn("absolute inset-0 z-10", overlayClasses[overlayOpacity])} />
 
         {isSplit ? (
-          /* ── 60/40 split: booking left (primary), newsletter right (secondary) ── */
-          <div className="relative z-20 grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-start min-h-[40vh]">
-            {/* Booking CTA — primary */}
-            <div className="relative flex flex-col justify-start px-12 py-16 md:py-20 lg:border-r lg:border-white/10">
+          /* ── Split: Discovery Call card nested inside Subscribe outer box ── */
+          <div className="relative z-20 grid grid-cols-1 lg:grid-cols-[3fr_2fr] items-start min-h-[40vh] gap-6 p-8 md:p-12">
+            {/* Booking CTA — inner card, inset from the outer box edges */}
+            <div className="relative flex flex-col justify-start p-8 md:p-10 rounded-2xl border border-white/10 bg-black/30 backdrop-blur-sm overflow-hidden">
               <div className="absolute inset-0 bg-[var(--color-magenta)]/5 pointer-events-none" />
               <div className="relative">
                 {bookingEyebrow && (
@@ -219,8 +219,8 @@ const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
               </div>
             </div>
 
-            {/* Newsletter — secondary */}
-            <div className="flex flex-col justify-start px-8 py-16 md:py-20 border-t border-white/10 lg:border-t-0">
+            {/* Newsletter — sits in the outer box space */}
+            <div className="flex flex-col justify-start py-4 px-4">
               <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-white/40">
                 Not Quite Ready?
               </p>

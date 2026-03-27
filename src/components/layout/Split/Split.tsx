@@ -14,6 +14,10 @@ export interface SplitProps {
   reverseOnMobile?: boolean;
   /** Vertical alignment of columns */
   align?: "start" | "center" | "end" | "stretch";
+  /** Optional className for the left column wrapper */
+  leftClassName?: string;
+  /** Optional className for the right column wrapper */
+  rightClassName?: string;
   /** Optional className for additional styling */
   className?: string;
 }
@@ -50,6 +54,8 @@ const Split = ({
   gap = "md",
   reverseOnMobile = false,
   align = "start",
+  leftClassName,
+  rightClassName,
   className,
 }: SplitProps) => {
   return (
@@ -62,10 +68,10 @@ const Split = ({
         className,
       )}
     >
-      <div className={cn({ "order-2 lg:order-1": reverseOnMobile })}>
+      <div className={cn({ "order-2 lg:order-1": reverseOnMobile }, leftClassName)}>
         {left}
       </div>
-      <div className={cn({ "order-1 lg:order-2": reverseOnMobile })}>
+      <div className={cn({ "order-1 lg:order-2": reverseOnMobile }, rightClassName)}>
         {right}
       </div>
     </div>

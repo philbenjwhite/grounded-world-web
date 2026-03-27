@@ -70,6 +70,32 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
 }) => {
   const gridRef = useScrollReveal();
 
+  const isGaiaMsg = (item: ShowcaseGridItem) =>
+    item.glowColor === "gaia" && !item.imageSrc && !!item.description;
+
+  const gaiaMessages = items.filter(isGaiaMsg);
+  type ProcessedItem = { item: ShowcaseGridItem; gaiaGroup: ShowcaseGridItem[] | null };
+  const processedItems: ProcessedItem[] =
+    gaiaMessages.length > 1
+      ? (() => {
+          let inserted = false;
+          return items.reduce<ProcessedItem[]>((acc, item) => {
+            if (isGaiaMsg(item)) {
+              if (!inserted) { acc.push({ item, gaiaGroup: gaiaMessages }); inserted = true; }
+            } else {
+              acc.push({ item, gaiaGroup: null });
+            }
+            return acc;
+          }, []);
+        })()
+      : items.map((item) => ({ item, gaiaGroup: null }));
+
+  const hasGaiaGroup = processedItems.some((p) => p.gaiaGroup !== null);
+  const centeredOffset =
+    hasGaiaGroup && processedItems.length < columns
+      ? Math.floor((columns - processedItems.length) / 2)
+      : 0;
+
   return (
     <Section className="py-12 md:py-16 lg:py-20" variant={sectionVariant}>
       <Container className="px-[var(--layout-section-padding-x)]">
@@ -101,11 +127,12 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
           {/* Card grid */}
           <div ref={gridRef}>
             <Grid cols={columns} colsTablet={2} gap="lg" className="relative z-10">
-              {items.map((item, index) => {
+              {processedItems.map(({ item, gaiaGroup }, index) => {
                 const cardStyle = {
                   "--item-color": item.glowColor ?? "#ffffff",
                   "--reveal-delay": `${0.1 + index * 0.15}s`,
                   ...(item.rowSpan ? { gridRow: `span ${item.rowSpan}` } : {}),
+                  ...(centeredOffset > 0 && index === 0 ? { gridColumnStart: centeredOffset + 1 } : {}),
                 } as React.CSSProperties;
 
                 if (variant === "stacked") {
@@ -124,8 +151,10 @@ const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({
                           </Text>
                         )}
                         {item.glowColor === "gaia" && item.description && (
-                          <div className="mt-4">
-                            <GaiaTypingBubble text={item.description} startDelay={item.typingDelay ?? 1200} />
+                          <div className="mt-4 flex flex-col gap-3">
+                            {(gaiaGroup ?? [item]).map((gItem, gIdx) => (
+                              <GaiaTypingBubble key={gIdx} text={gItem.description} startDelay={gItem.typingDelay ?? 1200} showSender={gIdx === 0} />
+                            ))}
                           </div>
                         )}
                       </div>

@@ -9,12 +9,15 @@ interface GaiaTypingBubbleProps {
   startDelay?: number;
   /** Ms per character */
   speed?: number;
+  /** Show the Gaia sender label above the bubble. Default: true */
+  showSender?: boolean;
 }
 
 export default function GaiaTypingBubble({
   text,
   startDelay = 1200,
   speed = 35,
+  showSender = true,
 }: GaiaTypingBubbleProps) {
   const [phase, setPhase] = useState<"dots" | "typing" | "done">("dots");
   const [charIndex, setCharIndex] = useState(0);
@@ -51,10 +54,12 @@ export default function GaiaTypingBubble({
   return (
     <div ref={elRef} className={styles.wrap}>
       {/* Gaia label */}
-      <div className={styles.sender}>
-        <div className={styles.avatar}>G</div>
-        <span className={styles.name}>Gaia</span>
-      </div>
+      {showSender && (
+        <div className={styles.sender}>
+          <div className={styles.avatar}>G</div>
+          <span className={styles.name}>Gaia</span>
+        </div>
+      )}
 
       {/* Dots phase */}
       {phase === "dots" && (
