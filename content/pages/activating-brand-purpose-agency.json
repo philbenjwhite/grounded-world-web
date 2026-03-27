@@ -68,7 +68,7 @@
           "buttons": [
             {
               "label": "GET STARTED",
-              "href": "https://grounded.world/wp-content/uploads/2025/05/One-Pager_FWI.pdf",
+              "href": "/pdfs/One-Pager_FWI.pdf",
               "variant": "outline",
               "external": true
             }
@@ -157,7 +157,7 @@
         {
           "title": "They all share a clearly defined brand purpose, yet they don't mention phones, toy bricks, or electric cars!",
           "description": "",
-          "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_BPP.pdf"
+          "href": "/pdfs/One-Pager_BPP.pdf"
         }
       ]
     },
@@ -257,7 +257,7 @@
           "description": "Ask Gaia, our resident ai brand purpose expert by clicking on the question below.",
           "imageSrc": "/images/guides/Intention.png",
           "imageAlt": "Intention Action Gap framework",
-          "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_IAG-web2.pdf",
+          "href": "/pdfs/One-Pager_IAG-web2.pdf",
           "glowColor": "#00AEEF"
         },
         {
@@ -321,7 +321,7 @@
           "buttons": [
             {
               "label": "DOWNLOAD",
-              "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_RAFG.pdf",
+              "href": "/pdfs/One-Pager_RAFG.pdf",
               "variant": "outline",
               "external": true
             }

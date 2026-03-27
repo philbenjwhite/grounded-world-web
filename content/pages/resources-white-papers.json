@@ -35,7 +35,7 @@
           "buttons": [
             {
               "label": "Download",
-              "href": "https://grounded.world/mind-the-gap_sust-fashion_final-version/",
+              "href": "/pdfs/mind-the-gap-sustainable-fashion.pdf",
               "variant": "primary",
               "external": true
             }
@@ -101,7 +101,7 @@
           "buttons": [
             {
               "label": "Download",
-              "href": "https://grounded.world/wp-content/uploads/2025/09/Excellence-in-Execution-Retail-Activation-for-Good.pdf",
+              "href": "/pdfs/excellence-in-execution-retail-activation-for-good.pdf",
               "variant": "primary",
               "external": true
             }
