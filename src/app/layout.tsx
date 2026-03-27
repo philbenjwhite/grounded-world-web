@@ -7,6 +7,7 @@ import Header from "@/components/components/Header";
 import Footer from "@/components/components/Footer";
 import client from "../../tina/__generated__/client";
 import { getGlobalSettings } from "@/lib/global-settings";
+import { GlobalSettingsProvider } from "@/lib/GlobalSettingsContext";
 import type { Service } from "../../tina/__generated__/types";
 
 const geistSans = Geist({
@@ -31,6 +32,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL("https://grounded.world"),
+    alternates: {
+      canonical: "./",
+    },
     title: {
       default:
         global?.siteTitle ||
@@ -42,9 +46,10 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: "website",
       locale: "en_US",
+      url: "./",
       siteName: "Grounded World",
       description,
-      ...(global?.defaultOgImage ? { images: [global.defaultOgImage] } : {}),
+      images: [global?.defaultOgImage || "/images/og-image.jpg"],
     },
     twitter: {
       card: "summary_large_image",
@@ -104,17 +109,11 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Header services={services} />
-        <main className="flex-1">{children}</main>
-        <Footer
-          newsletter={{
-            heading: global?.newsletter?.heading ?? undefined,
-            body: global?.newsletter?.body ?? undefined,
-          }}
-          social={{
-            linkedin: global?.social?.linkedin ?? undefined,
-          }}
-        />
+        <GlobalSettingsProvider value={global}>
+          <Header services={services} global={global} />
+          <main className="flex-1">{children}</main>
+          <Footer global={global} />
+        </GlobalSettingsProvider>
       </body>
     </html>
   );

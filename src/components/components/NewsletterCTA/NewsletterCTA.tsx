@@ -9,6 +9,7 @@ import Heading from "../../atoms/Heading";
 import Text from "../../atoms/Text";
 import { MAILERLITE_FORM_ID, MAILERLITE_FORM_CODE, loadMailerLiteScript } from "@/lib/mailerlite";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useGlobalSettings } from "@/lib/GlobalSettingsContext";
 import styles from "./NewsletterCTA.module.css";
 
 export interface NewsletterCTAProps {
@@ -41,8 +42,8 @@ const overlayClasses: Record<string, string> = {
 const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
   backgroundSrc,
   backgroundAlt = "",
-  heading = "Stay Grounded",
-  subtext = "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.",
+  heading: headingProp,
+  subtext: subtextProp,
   overlayOpacity = "heavy",
   className,
   bookingEyebrow,
@@ -51,6 +52,15 @@ const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
   bookingLabel,
   bookingHref,
 }) => {
+  const global = useGlobalSettings();
+  const nl = global?.newsletter;
+  const heading = headingProp ?? nl?.heading ?? "Stay Grounded";
+  const subtext = subtextProp ?? nl?.body ?? "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.";
+  const successMessage = nl?.successMessage ?? "You\u2019re now Grounded!";
+  const emailPlaceholder = nl?.emailPlaceholder ?? "Enter your email";
+  const buttonLabel = nl?.buttonLabel ?? "Subscribe";
+  const disclaimer = nl?.disclaimer ?? "No spam, ever. Unsubscribe anytime.";
+
   const isSplit = !!(bookingHref && bookingLabel);
   const ref = useScrollReveal<HTMLElement>(0.15);
   const [submitted, setSubmitted] = useState(false);
@@ -92,7 +102,7 @@ const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
           <div className="flex items-center justify-center gap-3 h-14">
             <CheckCircle size={24} weight="fill" className="text-(--color-cyan)" />
             <Text size="body-lg" color="primary" className="font-semibold">
-              You&rsquo;re now Grounded!
+              {successMessage}
             </Text>
           </div>
         ) : (
@@ -126,14 +136,14 @@ const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
                             className={cn("form-control", styles.emailInput)}
                             data-inputmask=""
                             name="fields[email]"
-                            placeholder="Enter your email"
+                            placeholder={emailPlaceholder}
                             autoComplete="email"
                           />
                         </div>
                       </div>
                       <div className="ml-form-embedSubmit">
                         <button type="submit" className={cn("primary", styles.submitButton)}>
-                          Subscribe
+                          {buttonLabel}
                           <PaperPlaneTilt size={16} weight="bold" />
                         </button>
                         <button disabled style={{ display: "none" }} type="button" className="loading">
@@ -154,7 +164,7 @@ const NewsletterCTA: React.FC<NewsletterCTAProps> = ({
           </div>
         )}
         <Text size="body-sm" color="tertiary" className="mt-3 opacity-60">
-          No spam, ever. Unsubscribe anytime.
+          {disclaimer}
         </Text>
       </div>
     </>

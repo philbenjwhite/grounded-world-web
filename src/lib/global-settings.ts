@@ -2,6 +2,16 @@ import fs from "fs";
 import path from "path";
 import serverClient from "../../tina/server-client";
 
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+export interface ResourceLink extends NavLink {
+  color?: string;
+  icon?: string;
+}
+
 export interface GlobalSettings {
   siteTitle?: string;
   siteDescription?: string;
@@ -15,6 +25,39 @@ export interface GlobalSettings {
   newsletter?: {
     heading?: string;
     body?: string;
+    successMessage?: string;
+    emailPlaceholder?: string;
+    buttonLabel?: string;
+    disclaimer?: string;
+  };
+  navigation?: {
+    mainLinks?: NavLink[];
+    resourceLinks?: ResourceLink[];
+    subscribeLabel?: string;
+    contactLabel?: string;
+    contactHref?: string;
+  };
+  footer?: {
+    serviceLinks?: NavLink[];
+    companyLinks?: NavLink[];
+    servicesHeading?: string;
+    resourcesHeading?: string;
+    companyHeading?: string;
+    copyrightText?: string;
+  };
+  contactForm?: {
+    heading?: string;
+    description?: string;
+    eyebrow?: string;
+    bookingLabel?: string;
+    email?: string;
+    emailContextText?: string;
+    interestOptions?: string[];
+    successHeading?: string;
+    successMessage?: string;
+    submitLabel?: string;
+    sendingLabel?: string;
+    errorMessage?: string;
   };
 }
 

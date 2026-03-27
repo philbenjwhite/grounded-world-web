@@ -2797,6 +2797,273 @@ export default defineConfig({
                 label: "Body Copy",
                 ui: { component: "textarea" },
               },
+              {
+                type: "string",
+                name: "successMessage",
+                label: "Success Message",
+                description: "Shown after successful subscription (e.g. \"You're now Grounded!\")",
+              },
+              {
+                type: "string",
+                name: "emailPlaceholder",
+                label: "Email Placeholder",
+                description: "Placeholder text for the email input",
+              },
+              {
+                type: "string",
+                name: "buttonLabel",
+                label: "Button Label",
+                description: "Text on the subscribe button",
+              },
+              {
+                type: "string",
+                name: "disclaimer",
+                label: "Disclaimer Text",
+                description: "Small print below the form (e.g. \"No spam, ever. Unsubscribe anytime.\")",
+              },
+            ],
+          },
+          /* ── Navigation ── */
+          {
+            type: "object",
+            name: "navigation",
+            label: "Navigation",
+            fields: [
+              {
+                type: "object",
+                name: "mainLinks",
+                label: "Main Navigation Links",
+                list: true,
+                ui: {
+                  itemProps: (item: Record<string, string>) => ({
+                    label: item?.label || "New Link",
+                  }),
+                },
+                fields: [
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Label",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "href",
+                    label: "URL",
+                    required: true,
+                  },
+                ],
+              },
+              {
+                type: "object",
+                name: "resourceLinks",
+                label: "Resource Dropdown Links",
+                list: true,
+                ui: {
+                  itemProps: (item: Record<string, string>) => ({
+                    label: item?.label || "New Link",
+                  }),
+                },
+                fields: [
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Label",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "href",
+                    label: "URL",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "color",
+                    label: "Accent Color",
+                    ui: { component: "color" },
+                  },
+                  {
+                    type: "string",
+                    name: "icon",
+                    label: "Icon",
+                    options: iconOptions,
+                  },
+                ],
+              },
+              {
+                type: "string",
+                name: "subscribeLabel",
+                label: "Subscribe Button Label",
+                description: "Text on the header subscribe button",
+              },
+              {
+                type: "string",
+                name: "contactLabel",
+                label: "Contact Button Label",
+                description: "Text on the header contact CTA",
+              },
+              {
+                type: "string",
+                name: "contactHref",
+                label: "Contact Button URL",
+              },
+            ],
+          },
+          /* ── Footer ── */
+          {
+            type: "object",
+            name: "footer",
+            label: "Footer",
+            fields: [
+              {
+                type: "object",
+                name: "serviceLinks",
+                label: "Service Links",
+                list: true,
+                ui: {
+                  itemProps: (item: Record<string, string>) => ({
+                    label: item?.label || "New Link",
+                  }),
+                },
+                fields: [
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Label",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "href",
+                    label: "URL",
+                    required: true,
+                  },
+                ],
+              },
+              {
+                type: "object",
+                name: "companyLinks",
+                label: "Company Links",
+                list: true,
+                ui: {
+                  itemProps: (item: Record<string, string>) => ({
+                    label: item?.label || "New Link",
+                  }),
+                },
+                fields: [
+                  {
+                    type: "string",
+                    name: "label",
+                    label: "Label",
+                    required: true,
+                  },
+                  {
+                    type: "string",
+                    name: "href",
+                    label: "URL",
+                    required: true,
+                  },
+                ],
+              },
+              {
+                type: "string",
+                name: "servicesHeading",
+                label: "Services Column Heading",
+              },
+              {
+                type: "string",
+                name: "resourcesHeading",
+                label: "Resources Column Heading",
+              },
+              {
+                type: "string",
+                name: "companyHeading",
+                label: "Company Column Heading",
+              },
+              {
+                type: "string",
+                name: "copyrightText",
+                label: "Copyright Text",
+                description: "Use {year} for the current year, e.g. '\u00a9 {year} Grounded World'",
+              },
+            ],
+          },
+          /* ── Contact Form ── */
+          {
+            type: "object",
+            name: "contactForm",
+            label: "Contact Form",
+            fields: [
+              {
+                type: "string",
+                name: "heading",
+                label: "Heading",
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Description",
+                ui: { component: "textarea" },
+              },
+              {
+                type: "string",
+                name: "eyebrow",
+                label: "Eyebrow Text",
+                description: "Small uppercase text above the heading",
+              },
+              {
+                type: "string",
+                name: "bookingLabel",
+                label: "Booking Button Label",
+              },
+              {
+                type: "string",
+                name: "email",
+                label: "Contact Email Address",
+              },
+              {
+                type: "string",
+                name: "emailContextText",
+                label: "Email Context Text",
+                description: "Text around the email link (use {email} as placeholder)",
+                ui: { component: "textarea" },
+              },
+              {
+                type: "string",
+                name: "interestOptions",
+                label: "Interest Dropdown Options",
+                list: true,
+                description: "Options in the 'What are you interested in?' dropdown",
+              },
+              {
+                type: "string",
+                name: "successHeading",
+                label: "Success Heading",
+                description: "Shown after form submission",
+              },
+              {
+                type: "string",
+                name: "successMessage",
+                label: "Success Message",
+                description: "Shown below the success heading",
+              },
+              {
+                type: "string",
+                name: "submitLabel",
+                label: "Submit Button Label",
+              },
+              {
+                type: "string",
+                name: "sendingLabel",
+                label: "Sending Button Label",
+                description: "Text shown while form is submitting",
+              },
+              {
+                type: "string",
+                name: "errorMessage",
+                label: "Error Message",
+              },
             ],
           },
         ],

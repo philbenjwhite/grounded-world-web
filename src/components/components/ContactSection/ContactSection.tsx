@@ -9,6 +9,7 @@ import Heading from "../../atoms/Heading";
 import Text from "../../atoms/Text";
 import Button from "../../atoms/Button";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useGlobalSettings } from "@/lib/GlobalSettingsContext";
 
 /* ─── Types ──────────────────────────────────────────── */
 
@@ -37,7 +38,7 @@ interface FormState {
   message: string;
 }
 
-const INTEREST_OPTIONS = [
+const DEFAULT_INTEREST_OPTIONS = [
   "Culture, Category, Competitor & Consumer Assessments",
   "Intent-to-Action Gap Research & Analysis",
   "Good Growth Drivers & Go-to-Market Strategy",
@@ -76,13 +77,29 @@ const inputBase = [
 /* ─── Component ──────────────────────────────────────── */
 
 const ContactSection: React.FC<ContactSectionProps> = ({
-  heading = "Let\u2019s Talk",
-  description = "For a specific request, submit a contact form. A member of the team will get back to you within 24 hours.",
+  heading,
+  description,
   bookingUrl,
-  bookingLabel = "Book a Discovery Call",
-  email = "getgrounded@grounded.world",
+  bookingLabel,
+  email,
   className,
 }) => {
+  const global = useGlobalSettings();
+  const contactConfig = global?.contactForm;
+
+  const resolvedHeading = heading ?? contactConfig?.heading ?? "Let\u2019s Talk";
+  const resolvedDescription = description ?? contactConfig?.description ?? "For a specific request, submit a contact form. A member of the team will get back to you within 24 hours.";
+  const resolvedBookingLabel = bookingLabel ?? contactConfig?.bookingLabel ?? "Book a Discovery Call";
+  const resolvedEmail = email ?? contactConfig?.email ?? "getgrounded@grounded.world";
+  const resolvedEyebrow = contactConfig?.eyebrow ?? "Get In Touch";
+  const interestOptions = contactConfig?.interestOptions ?? DEFAULT_INTEREST_OPTIONS;
+  const successHeading = contactConfig?.successHeading ?? "Thanks for reaching out!";
+  const successMessage = contactConfig?.successMessage ?? "A member of our team will get back to you within 24 hours.";
+  const submitLabel = contactConfig?.submitLabel ?? "Send Message";
+  const sendingLabel = contactConfig?.sendingLabel ?? "Sending\u2026";
+  const errorMessage = contactConfig?.errorMessage ?? "Something went wrong. Please try again.";
+  const emailContextText = contactConfig?.emailContextText ?? "For any other questions, media enquiries or if you\u2019re interested in joining the team, email us at {email}";
+
   const sectionRef = useScrollReveal(0.1);
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
@@ -114,6 +131,23 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     }
   };
 
+  /* Render email context text with {email} placeholder replaced by a mailto link */
+  const renderEmailContext = () => {
+    const parts = emailContextText.split("{email}");
+    return (
+      <>
+        {parts[0]}
+        <a
+          href={`mailto:${resolvedEmail}`}
+          className="text-[color:var(--font-color-link)] hover:underline"
+        >
+          {resolvedEmail}
+        </a>
+        {parts.slice(1).join("{email}")}
+      </>
+    );
+  };
+
   return (
     <Section className={cn("!py-16 md:!py-24 lg:!py-32", className)}>
       <Container className="px-[var(--layout-section-padding-x)]">
@@ -125,17 +159,17 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             left={
               <div className="lg:sticky lg:top-32 mb-10 lg:mb-0">
                 <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-[color:var(--color-gray-4)] mb-4">
-                  Get In Touch
+                  {resolvedEyebrow}
                 </p>
                 <Heading level={2} size="h2" color="primary" className="mb-6">
-                  {heading}
+                  {resolvedHeading}
                 </Heading>
                 <Text size="body-lg" color="secondary" className="mb-8">
-                  {description}
+                  {resolvedDescription}
                 </Text>
                 {bookingUrl && (
                   <Button href={bookingUrl} target="_blank" variant="primary">
-                    {bookingLabel}
+                    {resolvedBookingLabel}
                   </Button>
                 )}
                 <Text
@@ -143,13 +177,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                   color="tertiary"
                   className="mt-6"
                 >
-                  For any other questions, media enquiries or if you&apos;re interested in joining the team, email us at{" "}
-                  <a
-                    href={`mailto:${email}`}
-                    className="text-[color:var(--font-color-link)] hover:underline"
-                  >
-                    {email}
-                  </a>
+                  {renderEmailContext()}
                 </Text>
               </div>
             }
@@ -157,10 +185,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               status === "sent" ? (
                 <div className="flex flex-col items-center justify-center rounded-2xl bg-white/[0.03] border border-white/[0.06] p-12 text-center min-h-[400px]">
                   <Heading level={3} size="h3" color="primary" className="mb-4">
-                    Thanks for reaching out!
+                    {successHeading}
                   </Heading>
                   <Text size="body-lg" color="secondary">
-                    A member of our team will get back to you within 24 hours.
+                    {successMessage}
                   </Text>
                 </div>
               ) : (
@@ -183,7 +211,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                       <option value="" disabled>
                         Select a topic...
                       </option>
-                      {INTEREST_OPTIONS.map((opt) => (
+                      {interestOptions.map((opt) => (
                         <option key={opt} value={opt} className="bg-[#151515]">
                           {opt}
                         </option>
@@ -292,11 +320,11 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                       variant="primary"
                       disabled={status === "sending"}
                     >
-                      {status === "sending" ? "Sending\u2026" : "Send Message"}
+                      {status === "sending" ? sendingLabel : submitLabel}
                     </Button>
                     {status === "error" && (
                       <Text size="body-sm" color="secondary">
-                        Something went wrong. Please try again.
+                        {errorMessage}
                       </Text>
                     )}
                   </div>

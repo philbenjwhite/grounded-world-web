@@ -7,6 +7,75 @@
   },
   "newsletter": {
     "heading": "Stay Grounded",
-    "body": "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands."
+    "body": "Sign up to receive insights, updates, and stories from the front lines of purpose-driven brands.",
+    "successMessage": "You\u2019re now Grounded!",
+    "emailPlaceholder": "Enter your email",
+    "buttonLabel": "Subscribe",
+    "disclaimer": "No spam, ever. Unsubscribe anytime."
+  },
+  "navigation": {
+    "mainLinks": [
+      { "label": "Home", "href": "/" },
+      { "label": "Services", "href": "/services" },
+      { "label": "About Us", "href": "/about-us" },
+      { "label": "Our Work", "href": "/our-work" },
+      { "label": "Resources", "href": "/resources" },
+      { "label": "Ask Gaia", "href": "/gaia" }
+    ],
+    "resourceLinks": [
+      { "label": "Podcast", "href": "/resources/podcast", "color": "#00AEEF", "icon": "MicrophoneStage" },
+      { "label": "White Papers", "href": "/resources/white-papers", "color": "#1CC35B", "icon": "BookOpenText" },
+      { "label": "How To Guides", "href": "/resources/guides", "color": "#FF08CC", "icon": "Compass" },
+      { "label": "Articles & Blogs", "href": "/resources/articles", "color": "#FFA603", "icon": "Article" }
+    ],
+    "subscribeLabel": "Subscribe",
+    "contactLabel": "Contact Us",
+    "contactHref": "/contact-us"
+  },
+  "footer": {
+    "serviceLinks": [
+      { "label": "Discover", "href": "/services/discover" },
+      { "label": "Articulate", "href": "/services/articulate" },
+      { "label": "Activate", "href": "/services/activate" },
+      { "label": "Accelerate", "href": "/services/accelerate" }
+    ],
+    "companyLinks": [
+      { "label": "About Us", "href": "/about-us" },
+      { "label": "Our Work", "href": "/our-work" },
+      { "label": "Ask Gaia", "href": "/gaia" },
+      { "label": "Contact Us", "href": "/contact-us" }
+    ],
+    "servicesHeading": "Services",
+    "resourcesHeading": "Resources",
+    "companyHeading": "Company",
+    "copyrightText": "\u00a9 {year} Grounded World"
+  },
+  "contactForm": {
+    "heading": "Let\u2019s Talk",
+    "description": "For a specific request, submit a contact form. A member of the team will get back to you within 24 hours.",
+    "eyebrow": "Get In Touch",
+    "bookingLabel": "Book a Discovery Call",
+    "email": "getgrounded@grounded.world",
+    "emailContextText": "For any other questions, media enquiries or if you\u2019re interested in joining the team, email us at {email}",
+    "interestOptions": [
+      "Culture, Category, Competitor & Consumer Assessments",
+      "Intent-to-Action Gap Research & Analysis",
+      "Good Growth Drivers & Go-to-Market Strategy",
+      "Corporate, Brand & Social Purpose",
+      "Sustainability Strategy, Marketing & Storytelling",
+      "Brand Positioning, Architecture & Archetyping",
+      "Brand Identity, Packaging & Design",
+      "Campaigns, Events, Experiences & Stakeholder Engagement",
+      "Retail Activation & Omnichannel Toolkits",
+      "Sustainability & Impact Reporting",
+      "Commercial & Non-Profit Partnerships",
+      "Collaboration Training, Action Labs & Speaking Engagements",
+      "Something Else"
+    ],
+    "successHeading": "Thanks for reaching out!",
+    "successMessage": "A member of our team will get back to you within 24 hours.",
+    "submitLabel": "Send Message",
+    "sendingLabel": "Sending\u2026",
+    "errorMessage": "Something went wrong. Please try again."
   }
 }

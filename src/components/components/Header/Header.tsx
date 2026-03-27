@@ -7,14 +7,17 @@ import Image from "next/image";
 import cn from "classnames";
 import { CaretDownIcon, EnvelopeIcon, PaperPlaneTiltIcon } from "@phosphor-icons/react";
 import styles from "./Header.module.css";
-import { resourceLinks } from "./megaMenuData";
+import { resourceLinks as defaultResourceLinks } from "./megaMenuData";
 import { mapCmsServices, type ServiceItem } from "../VideoHero/utils";
 import type { Service } from "../../../../tina/__generated__/types";
+import type { GlobalSettings } from "@/lib/global-settings";
+import { iconMap } from "@/lib/iconMap";
 import NewsletterModal from "../NewsletterModal/NewsletterModal";
 
 export interface HeaderProps {
   className?: string;
   services?: Service[];
+  global?: GlobalSettings | null;
 }
 
 function isActivePath(current: string, href: string): boolean {
@@ -22,9 +25,10 @@ function isActivePath(current: string, href: string): boolean {
   return current === href || current.startsWith(href + "/");
 }
 
-const Header = ({ className, services = [] }: HeaderProps) => {
+const Header = ({ className, services = [], global }: HeaderProps) => {
   const serviceItems = mapCmsServices(services);
   const pathname = usePathname() ?? "/";
+  const nav = global?.navigation;
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [newsletterOpen, setNewsletterOpen] = useState(false);
@@ -141,7 +145,7 @@ const Header = ({ className, services = [] }: HeaderProps) => {
             className="hidden lg:flex items-center gap-1 relative"
             aria-label="Main navigation"
           >
-            <NavItems services={serviceItems} pathname={pathname} onSubscribeClick={() => setNewsletterOpen(true)} />
+            <NavItems services={serviceItems} pathname={pathname} onSubscribeClick={() => setNewsletterOpen(true)} nav={nav} />
             <span ref={indicatorRef} className={styles.activeIndicator} />
           </nav>
         </div>
@@ -165,26 +169,22 @@ const Header = ({ className, services = [] }: HeaderProps) => {
             const stagger = () => ({ "--stagger": `${50 + 35 * idx++}ms` } as React.CSSProperties);
             return (
               <nav className="flex flex-col w-full text-center">
-                <MobileNavLink href="/" label="Home" active={pathname === "/"} style={stagger()} />
-
-                <MobileNavLink
-                  href="/services"
-                  label="Services"
-                  active={isActivePath(pathname, "/services")}
-                  style={stagger()}
-                />
-
-                <MobileNavLink href="/about-us" label="About Us" active={isActivePath(pathname, "/about-us")} style={stagger()} />
-                <MobileNavLink href="/our-work" label="Our Work" active={isActivePath(pathname, "/our-work")} style={stagger()} />
-
-                <MobileNavLink
-                  href="/resources"
-                  label="Resources"
-                  active={isActivePath(pathname, "/resources")}
-                  style={stagger()}
-                />
-
-                <MobileNavLink href="/gaia" label="Ask Gaia" active={isActivePath(pathname, "/gaia")} style={stagger()} />
+                {(nav?.mainLinks ?? [
+                  { label: "Home", href: "/" },
+                  { label: "Services", href: "/services" },
+                  { label: "About Us", href: "/about-us" },
+                  { label: "Our Work", href: "/our-work" },
+                  { label: "Resources", href: "/resources" },
+                  { label: "Ask Gaia", href: "/gaia" },
+                ]).map((link) => (
+                  <MobileNavLink
+                    key={link.href}
+                    href={link.href}
+                    label={link.label}
+                    active={link.href === "/" ? pathname === "/" : isActivePath(pathname, link.href)}
+                    style={stagger()}
+                  />
+                ))}
               </nav>
             );
           })()}
@@ -198,13 +198,13 @@ const Header = ({ className, services = [] }: HeaderProps) => {
             className={cn(styles.newsletterCta, "flex-1 py-3.5 rounded-full text-[13px] font-semibold flex items-center justify-center gap-2 cursor-pointer")}
           >
             <EnvelopeIcon size={14} weight="bold" />
-            Subscribe
+            {nav?.subscribeLabel || "Subscribe"}
           </button>
           <Link
-            href="/contact-us"
+            href={nav?.contactHref || "/contact-us"}
             className={cn(styles.ctaButton, "flex-1 py-3.5 rounded-full text-[13px] font-bold no-underline flex items-center justify-center")}
           >
-            Contact Us
+            {nav?.contactLabel || "Contact Us"}
           </Link>
         </div>
       </div>
@@ -248,183 +248,146 @@ function NavItems({
   services,
   pathname,
   onSubscribeClick,
+  nav,
 }: {
   services: ServiceItem[];
   pathname: string;
   onSubscribeClick: () => void;
+  nav?: GlobalSettings["navigation"];
 }) {
+  /* Resolve resource links: CMS data → fallback to megaMenuData.ts defaults */
+  const resolvedResourceLinks = (nav?.resourceLinks ?? defaultResourceLinks).map((rl) => ({
+    label: rl.label,
+    href: rl.href,
+    color: rl.color || "#888",
+    icon: ("icon" in rl && typeof rl.icon === "string" ? iconMap[rl.icon] : null) ?? ("icon" in rl && typeof rl.icon === "function" ? rl.icon : null),
+  }));
+
+  /* Build main nav from CMS, defaulting to hardcoded structure */
+  const mainLinks = nav?.mainLinks ?? [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "About Us", href: "/about-us" },
+    { label: "Our Work", href: "/our-work" },
+    { label: "Resources", href: "/resources" },
+    { label: "Ask Gaia", href: "/gaia" },
+  ];
+
   return (
     <>
-      {/* HOME */}
-      <Link
-        href="/"
-        className={cn(
-          styles.navLink,
-          "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap",
-        )}
-        {...(pathname === "/" && { "data-active": "" })}
-      >
-        Home
-      </Link>
+      {mainLinks.map((link) => {
+        const isHome = link.href === "/";
+        const active = isHome ? pathname === "/" : isActivePath(pathname, link.href);
+        const isServices = link.href === "/services";
+        const isResources = link.href === "/resources";
 
-      {/* SERVICES dropdown */}
-      {services.length > 0 && (
-        <div className={styles.dropdownGroup}>
-          <Link
-            href="/services"
-            className={cn(
-              styles.navLink,
-              "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap inline-flex items-center gap-1",
-            )}
-            {...(isActivePath(pathname, "/services") && { "data-active": "" })}
-          >
-            Services
-            <CaretDownIcon
-              size={11}
-              weight="bold"
-              className={styles.chevron}
-            />
-          </Link>
-
-          <div className={cn(styles.dropdown, "w-[640px] p-4")}>
-            <div className="grid grid-cols-2 gap-1">
-              {services.map((svc) => (
-                <Link
-                  key={svc.id}
-                  href={svc.url}
-                  className={cn(
-                    styles.dropdownLink,
-                    "flex items-start gap-3.5 rounded-xl p-4 no-underline",
-                  )}
-                >
-                  <div
-                    className={cn(
-                      styles.serviceOrb,
-                      "w-10 h-10 rounded-full shrink-0 flex items-center justify-center",
-                    )}
-                    style={
-                      { "--service-color": svc.color } as React.CSSProperties
-                    }
-                  >
-                    <svc.icon
-                      size={18}
-                      weight="bold"
-                      className={styles.serviceIcon}
-                    />
-                  </div>
-                  <div className="min-w-0">
-                    <span className="text-[13px] font-bold block text-white">
-                      {svc.label}
-                    </span>
-                    {svc.description && (
-                      <span className="text-[11px] text-white/40 block mt-0.5 leading-snug line-clamp-2">
-                        {svc.description}
-                      </span>
-                    )}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ABOUT US */}
-      <Link
-        href="/about-us"
-        className={cn(
-          styles.navLink,
-          "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap",
-        )}
-        {...(isActivePath(pathname, "/about-us") && { "data-active": "" })}
-      >
-        About Us
-      </Link>
-
-      {/* OUR WORK */}
-      <Link
-        href="/our-work"
-        className={cn(
-          styles.navLink,
-          "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap",
-        )}
-        {...(isActivePath(pathname, "/our-work") && { "data-active": "" })}
-      >
-        Our Work
-      </Link>
-
-      {/* RESOURCES dropdown */}
-      <div className={styles.dropdownGroup}>
-        <Link
-          href="/resources"
-          className={cn(
-            styles.navLink,
-            "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap inline-flex items-center gap-1",
-          )}
-          {...(isActivePath(pathname, "/resources") && { "data-active": "" })}
-        >
-          Resources
-          <CaretDownIcon
-            size={11}
-            weight="bold"
-            className={styles.chevron}
-          />
-        </Link>
-
-        <div className={cn(styles.dropdown, "min-w-[260px] p-4")}>
-          <div className="grid grid-cols-1 gap-1">
-            <Link
-              href="/resources"
-              className={cn(
-                styles.dropdownLink,
-                "flex items-center gap-3 rounded-xl p-3 no-underline",
-              )}
-            >
-              <span className="text-xs font-semibold text-[color:var(--color-white)]">
-                Overview
-              </span>
-            </Link>
-
-            {resourceLinks.map((rt) => (
+        /* Services with dropdown */
+        if (isServices && services.length > 0) {
+          return (
+            <div key={link.href} className={styles.dropdownGroup}>
               <Link
-                key={rt.label}
-                href={rt.href}
+                href={link.href}
                 className={cn(
-                  styles.dropdownLink,
-                  "flex items-center gap-3 rounded-xl p-3 no-underline",
+                  styles.navLink,
+                  "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap inline-flex items-center gap-1",
                 )}
+                {...(active && { "data-active": "" })}
               >
-                <div
-                  className={cn(
-                    styles.serviceOrb,
-                    "w-8 h-8 rounded-full shrink-0 flex items-center justify-center",
-                  )}
-                  style={{ "--service-color": rt.color } as React.CSSProperties}
-                >
-                  <rt.icon
-                    size={14}
-                    weight="bold"
-                    className={styles.serviceIcon}
-                  />
-                </div>
-                <span className="text-xs font-semibold">{rt.label}</span>
+                {link.label}
+                <CaretDownIcon size={11} weight="bold" className={styles.chevron} />
               </Link>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* ASK GAIA */}
-      <Link
-        href="/gaia"
-        className={cn(
-          styles.navLink,
-          "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap",
-        )}
-        {...(isActivePath(pathname, "/gaia") && { "data-active": "" })}
-      >
-        Ask Gaia
-      </Link>
+              <div className={cn(styles.dropdown, "w-[640px] p-4")}>
+                <div className="grid grid-cols-2 gap-1">
+                  {services.map((svc) => (
+                    <Link
+                      key={svc.id}
+                      href={svc.url}
+                      className={cn(styles.dropdownLink, "flex items-start gap-3.5 rounded-xl p-4 no-underline")}
+                    >
+                      <div
+                        className={cn(styles.serviceOrb, "w-10 h-10 rounded-full shrink-0 flex items-center justify-center")}
+                        style={{ "--service-color": svc.color } as React.CSSProperties}
+                      >
+                        <svc.icon size={18} weight="bold" className={styles.serviceIcon} />
+                      </div>
+                      <div className="min-w-0">
+                        <span className="text-[13px] font-bold block text-white">{svc.label}</span>
+                        {svc.description && (
+                          <span className="text-[11px] text-white/40 block mt-0.5 leading-snug line-clamp-2">{svc.description}</span>
+                        )}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        /* Resources with dropdown */
+        if (isResources) {
+          return (
+            <div key={link.href} className={styles.dropdownGroup}>
+              <Link
+                href={link.href}
+                className={cn(
+                  styles.navLink,
+                  "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap inline-flex items-center gap-1",
+                )}
+                {...(active && { "data-active": "" })}
+              >
+                {link.label}
+                <CaretDownIcon size={11} weight="bold" className={styles.chevron} />
+              </Link>
+
+              <div className={cn(styles.dropdown, "min-w-[260px] p-4")}>
+                <div className="grid grid-cols-1 gap-1">
+                  <Link
+                    href="/resources"
+                    className={cn(styles.dropdownLink, "flex items-center gap-3 rounded-xl p-3 no-underline")}
+                  >
+                    <span className="text-xs font-semibold text-[color:var(--color-white)]">Overview</span>
+                  </Link>
+
+                  {resolvedResourceLinks.map((rt) => {
+                    const Icon = rt.icon;
+                    return (
+                      <Link
+                        key={rt.label}
+                        href={rt.href}
+                        className={cn(styles.dropdownLink, "flex items-center gap-3 rounded-xl p-3 no-underline")}
+                      >
+                        {Icon && (
+                          <div
+                            className={cn(styles.serviceOrb, "w-8 h-8 rounded-full shrink-0 flex items-center justify-center")}
+                            style={{ "--service-color": rt.color } as React.CSSProperties}
+                          >
+                            <Icon size={14} weight="bold" className={styles.serviceIcon} />
+                          </div>
+                        )}
+                        <span className="text-xs font-semibold">{rt.label}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        /* Standard nav link */
+        return (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={cn(styles.navLink, "px-3 py-2 text-[13px] font-semibold no-underline whitespace-nowrap")}
+            {...(active && { "data-active": "" })}
+          >
+            {link.label}
+          </Link>
+        );
+      })}
 
       {/* SUBSCRIBE — icon only at lg, full text at xl+ */}
       <button
@@ -439,12 +402,12 @@ function NavItems({
         aria-label="Subscribe to newsletter"
       >
         <EnvelopeIcon size={16} weight="bold" className="shrink-0" />
-        <span className="hidden xl:inline">Subscribe</span>
+        <span className="hidden xl:inline">{nav?.subscribeLabel || "Subscribe"}</span>
       </button>
 
       {/* CONTACT US — icon only at lg, full text at xl+ */}
       <Link
-        href="/contact-us"
+        href={nav?.contactHref || "/contact-us"}
         className={cn(
           styles.ctaButton,
           "ml-1 rounded-full no-underline whitespace-nowrap inline-flex items-center justify-center overflow-hidden",
@@ -454,7 +417,7 @@ function NavItems({
         aria-label="Contact us"
       >
         <PaperPlaneTiltIcon size={16} weight="bold" className="shrink-0" />
-        <span className="hidden xl:inline">Contact Us</span>
+        <span className="hidden xl:inline">{nav?.contactLabel || "Contact Us"}</span>
       </Link>
     </>
   );

@@ -8,29 +8,24 @@ import { LinkedinLogo, EnvelopeSimple, PaperPlaneTilt, CheckCircle } from "@phos
 import Text from "../../atoms/Text";
 import Heading from "../../atoms/Heading";
 import NewsletterModal from "../NewsletterModal";
-import { resourceLinks } from "../Header/megaMenuData";
+import { resourceLinks as defaultResourceLinks } from "../Header/megaMenuData";
 import { MAILERLITE_FORM_ID, MAILERLITE_FORM_CODE, loadMailerLiteScript } from "@/lib/mailerlite";
+import type { GlobalSettings } from "@/lib/global-settings";
 import nlStyles from "../NewsletterCTA/NewsletterCTA.module.css";
 
 export interface FooterProps {
   className?: string;
-  newsletter?: {
-    heading?: string;
-    body?: string;
-  };
-  social?: {
-    linkedin?: string;
-  };
+  global?: GlobalSettings | null;
 }
 
-const SERVICE_LINKS = [
+const DEFAULT_SERVICE_LINKS = [
   { label: "Discover", href: "/services/discover" },
   { label: "Articulate", href: "/services/articulate" },
   { label: "Activate", href: "/services/activate" },
   { label: "Accelerate", href: "/services/accelerate" },
 ];
 
-const COMPANY_LINKS = [
+const DEFAULT_COMPANY_LINKS = [
   { label: "About Us", href: "/about-us" },
   { label: "Our Work", href: "/our-work" },
   { label: "Ask Gaia", href: "/gaia" },
@@ -40,10 +35,17 @@ const COMPANY_LINKS = [
 const footerLinkClass =
   "text-[length:var(--font-size-body-sm)] text-[color:var(--font-color-secondary)] hover:text-[color:var(--font-color-primary)] transition-colors";
 
-const Footer = ({ className, newsletter, social }: FooterProps) => {
+const Footer = ({ className, global }: FooterProps) => {
   const currentYear = new Date().getFullYear();
   const [modalOpen, setModalOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const newsletter = global?.newsletter;
+  const social = global?.social;
+  const footer = global?.footer;
+  const serviceLinks = footer?.serviceLinks ?? DEFAULT_SERVICE_LINKS;
+  const companyLinks = footer?.companyLinks ?? DEFAULT_COMPANY_LINKS;
+  const navResourceLinks = global?.navigation?.resourceLinks ?? defaultResourceLinks;
 
   useEffect(() => {
     loadMailerLiteScript().catch(() => {});
@@ -84,7 +86,7 @@ const Footer = ({ className, newsletter, social }: FooterProps) => {
                 <div className="flex items-center justify-center gap-3 h-14">
                   <CheckCircle size={24} weight="fill" className="text-(--color-cyan)" />
                   <Text size="body-lg" color="primary" className="font-semibold">
-                    You&rsquo;re now Grounded!
+                    {newsletter?.successMessage || "You\u2019re now Grounded!"}
                   </Text>
                 </div>
               ) : (
@@ -122,14 +124,14 @@ const Footer = ({ className, newsletter, social }: FooterProps) => {
                                   className={cn("form-control", nlStyles.emailInput)}
                                   data-inputmask=""
                                   name="fields[email]"
-                                  placeholder="Enter your email"
+                                  placeholder={newsletter?.emailPlaceholder || "Enter your email"}
                                   autoComplete="email"
                                 />
                               </div>
                             </div>
                             <div className="ml-form-embedSubmit">
                               <button type="submit" className={cn("primary", nlStyles.submitButton)}>
-                                Subscribe
+                                {newsletter?.buttonLabel || "Subscribe"}
                                 <PaperPlaneTilt size={16} weight="bold" />
                               </button>
                               <button
@@ -180,17 +182,17 @@ const Footer = ({ className, newsletter, social }: FooterProps) => {
             </div>
 
             {/* Services */}
-            <nav aria-label="Services">
+            <nav aria-label={footer?.servicesHeading || "Services"}>
               <Text
                 size="body-xs"
                 color="primary"
                 as="p"
                 className="font-semibold uppercase tracking-wider mb-4"
               >
-                Services
+                {footer?.servicesHeading || "Services"}
               </Text>
               <ul className="flex flex-col gap-2.5">
-                {SERVICE_LINKS.map((link) => (
+                {serviceLinks.map((link) => (
                   <li key={link.href}>
                     <Link href={link.href} className={footerLinkClass}>
                       {link.label}
@@ -201,17 +203,17 @@ const Footer = ({ className, newsletter, social }: FooterProps) => {
             </nav>
 
             {/* Resources */}
-            <nav aria-label="Resources">
+            <nav aria-label={footer?.resourcesHeading || "Resources"}>
               <Text
                 size="body-xs"
                 color="primary"
                 as="p"
                 className="font-semibold uppercase tracking-wider mb-4"
               >
-                Resources
+                {footer?.resourcesHeading || "Resources"}
               </Text>
               <ul className="flex flex-col gap-2.5">
-                {resourceLinks.map((link) => (
+                {navResourceLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
@@ -225,17 +227,17 @@ const Footer = ({ className, newsletter, social }: FooterProps) => {
             </nav>
 
             {/* Company */}
-            <nav aria-label="Company">
+            <nav aria-label={footer?.companyHeading || "Company"}>
               <Text
                 size="body-xs"
                 color="primary"
                 as="p"
                 className="font-semibold uppercase tracking-wider mb-4"
               >
-                Company
+                {footer?.companyHeading || "Company"}
               </Text>
               <ul className="flex flex-col gap-2.5">
-                {COMPANY_LINKS.map((link) => (
+                {companyLinks.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
@@ -255,7 +257,7 @@ const Footer = ({ className, newsletter, social }: FooterProps) => {
           {/* Bottom bar */}
           <div className="py-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <Text size="body-xs" color="tertiary" as="span">
-              &copy; {currentYear} Grounded World
+              {(footer?.copyrightText || "\u00a9 {year} Grounded World").replace("{year}", String(currentYear))}
             </Text>
 
             <a
