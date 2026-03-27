@@ -76,6 +76,7 @@
     "successMessage": "A member of our team will get back to you within 24 hours.",
     "submitLabel": "Send Message",
     "sendingLabel": "Sending\u2026",
-    "errorMessage": "Something went wrong. Please try again."
+    "errorMessage": "Something went wrong. Please try again.",
+    "textWrapBalance": false
   }
 }

@@ -58,6 +58,7 @@ export interface GlobalSettings {
     submitLabel?: string;
     sendingLabel?: string;
     errorMessage?: string;
+    textWrapBalance?: boolean;
   };
 }
 

@@ -3064,6 +3064,12 @@ export default defineConfig({
                 name: "errorMessage",
                 label: "Error Message",
               },
+              {
+                type: "boolean",
+                name: "textWrapBalance",
+                label: "Balance Text Wrapping",
+                description: "Apply text-wrap: balance to paragraph text for more even line lengths",
+              },
             ],
           },
         ],
