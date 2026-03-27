@@ -11,11 +11,12 @@
       "ctaHref": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
       "overlayOpacity": "medium",
       "contentAlign": "center",
-      "minHeight": "large",
+      "minHeight": "fit",
+      "bottomFade": false,
       "_template": "heroBanner"
     },
     {
-      "heading": "Let\u2019s Talk",
+      "heading": "Let’s Talk",
       "description": "For a specific request, submit a contact form. A member of the team will get back to you within 24 hours.",
       "bookingUrl": "https://calendly.com/phil-grounded/getting-grounded-30-mins",
       "bookingLabel": "Book a Discovery Call",
