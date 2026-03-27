@@ -1,0 +1,8 @@
+- Make sure gaia iframe is populating, I believe Daan may have updated the gaia iframe in production.
+  - Send Daan a css rule he can use to get input border rounded correctly.
+- Check sitemap and compare it to existing URL structure
+- Make sure images are loading on the new site (If we're still having issues, thinking it could be contributed to moving to their setup)
+- Get Matt access to Tina
+- Record a Loom showing the team how to update pages in Tina.
+- Full responsive QA
+- Address any outstanding things from the call from last week (e.g. Potentially removing a form)
