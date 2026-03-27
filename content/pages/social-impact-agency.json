@@ -1,6 +1,6 @@
 {
   "title": "Social Impact Agency | Grounded World",
-  "slug": "resources/guides/social-impact",
+  "slug": "social-impact-agency",
   "sections": [
     {
       "_template": "heroBanner",
@@ -127,7 +127,7 @@
         {
           "title": "Step 1 — Get Started",
           "description": "Discover how to start by closing the Intention Action Gap with this handy one pager.",
-          "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_IAG-web2.pdf"
+          "href": "/pdfs/One-Pager_IAG-web2.pdf"
         },
         {
           "title": "Intention Action Gap",
@@ -205,7 +205,7 @@
           "buttons": [
             {
               "label": "Download the BPP",
-              "href": "https://grounded.world/wp-content/uploads/2025/06/One-Pager_BPP.pdf",
+              "href": "/pdfs/One-Pager_BPP.pdf",
               "variant": "outline",
               "external": true
             }

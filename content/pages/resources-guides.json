@@ -34,16 +34,16 @@
         {
           "title": "Social Impact",
           "description": "Discover what a social impact agency does, how to choose the right partner, and how to design campaigns that create lasting change.",
-          "imageSrc": "/images/resources-guide-social-impact.jpg",
+          "imageSrc": "/images/social-impact/turn.jpg",
           "imageAlt": "Social Impact guide cover",
-          "href": "/resources/guides/social-impact"
+          "href": "/social-impact-agency"
         },
         {
           "title": "Brand Activism",
           "description": "Learn how to take a meaningful stand on the issues that matter — and how to avoid the pitfalls of performative activism.",
-          "imageSrc": "/images/resources-guide-brand-activism.jpg",
+          "imageSrc": "/images/brand-activism/vote-the.jpg",
           "imageAlt": "Brand Activism guide cover",
-          "href": "/resources/guides/brand-activism"
+          "href": "/brand-activism-agency-new"
         }
       ]
     }

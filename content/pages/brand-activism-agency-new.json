@@ -1,6 +1,6 @@
 {
   "title": "Brand Activism Agency | Grounded World",
-  "slug": "resources/guides/brand-activism",
+  "slug": "brand-activism-agency-new",
   "sections": [
     {
       "_template": "heroBanner",
@@ -173,7 +173,7 @@
           "buttons": [
             {
               "label": "Download",
-              "href": "https://grounded.world/wp-content/uploads/2025/05/One-Pager_FWI.pdf",
+              "href": "/pdfs/One-Pager_FWI.pdf",
               "variant": "outline",
               "external": true
             }
