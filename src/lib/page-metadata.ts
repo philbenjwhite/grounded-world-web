@@ -56,7 +56,7 @@ export async function getPageMetadata(
   // Fall back to global default OG image if page has none
   if (!seoImage) {
     const global = await getGlobalSettings();
-    seoImage = global?.defaultOgImage ?? undefined;
+    seoImage = global?.defaultOgImage ?? "/images/og-image.jpg";
   }
 
   const title = seoTitle || fallbackTitle;
@@ -67,19 +67,19 @@ export async function getPageMetadata(
     description,
   };
 
-  if (seoImage) {
-    metadata.openGraph = {
-      title,
-      description: description ?? undefined,
-      images: [seoImage],
-    };
-    metadata.twitter = {
-      card: "summary_large_image",
-      title,
-      description: description ?? undefined,
-      images: [seoImage],
-    };
-  }
+  metadata.openGraph = {
+    type: "website",
+    url: "./",
+    title,
+    description: description ?? undefined,
+    ...(seoImage ? { images: [seoImage] } : {}),
+  };
+  metadata.twitter = {
+    card: "summary_large_image",
+    title,
+    description: description ?? undefined,
+    ...(seoImage ? { images: [seoImage] } : {}),
+  };
 
   if (noIndex) {
     metadata.robots = {
